@@ -1,0 +1,465 @@
+import { getActiveProfile, addXP, updateStreak, saveTopicProgress, saveSM2, saveSession } from '../storage.js';
+import { getExercisesByTopic } from '../data/exercises.js';
+import { assessmentExercises } from '../data/exercises.js';
+import { TOPICS, getTopicById } from '../data/topics.js';
+import { calculateNextReview, qualityFromResult, sortByPriority } from '../sm2.js';
+import { speak, stop, isSupported } from '../tts.js';
+
+const SESSION_SIZE = 8;
+
+export function renderExercise(topicId, mode) {
+  const profile = getActiveProfile();
+  if (!profile) { location.hash = '#profiles'; return document.createElement('div'); }
+
+  const exercises = loadExercises(topicId, mode, profile);
+  if (!exercises.length) {
+    return renderEmpty(topicId);
+  }
+
+  const state = {
+    exercises,
+    current: 0,
+    results: [],
+    usedHint: false,
+    answered: false,
+    topicId,
+    mode,
+    xpEarned: 0,
+  };
+
+  const container = document.createElement('div');
+  container.className = 'exercise-page';
+  renderExerciseCard(container, state, profile);
+  return container;
+}
+
+function loadExercises(topicId, mode, profile) {
+  let pool;
+  if (mode === 'assessment') {
+    pool = [...assessmentExercises];
+  } else {
+    pool = getExercisesByTopic(topicId);
+  }
+
+  const sm2Map = profile.sm2Items || {};
+  const sorted = sortByPriority(pool, sm2Map);
+  return sorted.slice(0, SESSION_SIZE);
+}
+
+function renderExerciseCard(container, state, profile) {
+  const ex = state.exercises[state.current];
+  const total = state.exercises.length;
+  const topic = getTopicById(state.topicId);
+  const topicLabel = state.mode === 'assessment' ? 'Test de Niveau 🎯' : (topic?.label || '');
+
+  container.innerHTML = `
+    <div class="ex-header">
+      <button class="btn-back" id="btn-back">← Retour</button>
+      <div class="ex-topic-label">${topicLabel}</div>
+      <div class="ex-progress-text">${state.current + 1} / ${total}</div>
+    </div>
+
+    <div class="ex-progress-track">
+      <div class="ex-progress-fill" style="width: ${((state.current) / total) * 100}%"></div>
+    </div>
+
+    <div class="ex-body">
+      <div class="ex-type-badge">${typeLabel(ex.type)}</div>
+      <div class="ex-level-badge level-${ex.level}">${ex.level}</div>
+
+      <div class="ex-card">
+        <p class="ex-instruction">${ex.instruction}</p>
+        ${renderQuestion(ex)}
+        <div id="ex-answer-area">
+          ${renderAnswerArea(ex)}
+        </div>
+      </div>
+
+      <div class="ex-actions">
+        <button class="btn-hint" id="btn-hint" title="Voir l'indice">💡 Indice <span class="hint-cost">(-5 XP)</span></button>
+        <button class="btn-submit" id="btn-submit">Vérifier ✓</button>
+      </div>
+
+      <div id="hint-box" class="hint-box hidden">
+        <span class="hint-icon">💡</span>
+        <span>${ex.hint}</span>
+      </div>
+
+      <div id="feedback-box" class="feedback-box hidden"></div>
+    </div>
+  `;
+
+  bindExerciseEvents(container, state, profile, ex);
+}
+
+function renderQuestion(ex) {
+  if (ex.type === 'fill-blank') {
+    return `<div class="ex-question">${escHtml(ex.template).replace('___', '<span class="blank">___</span>')}</div>`;
+  }
+  if (ex.type === 'translate') {
+    return `<div class="ex-question translate-q"><span class="flag">🇫🇷</span> ${escHtml(ex.french)}</div>`;
+  }
+  if (ex.type === 'word-order') {
+    const shuffled = shuffle([...ex.words]);
+    return `
+      <div class="ex-question word-order-q">
+        <div class="wo-answer-area" id="wo-answer"></div>
+        <div class="wo-bank" id="wo-bank">
+          ${shuffled.map((w, i) => `<button class="wo-word" data-word="${escHtml(w)}" data-idx="${i}">${escHtml(w)}</button>`).join('')}
+        </div>
+      </div>
+    `;
+  }
+  if (ex.type === 'listening') {
+    return `
+      <div class="ex-question listening-q">
+        <button class="btn-listen" id="btn-listen">
+          ${isSupported() ? '▶ Écouter' : '🔇 Audio non disponible'}
+        </button>
+        <p class="listen-hint">Écris ce que tu entends</p>
+      </div>
+    `;
+  }
+  if (ex.type === 'error-correct') {
+    return `
+      <div class="ex-question error-q">
+        <p class="error-label">❌ Phrase incorrecte :</p>
+        <p class="error-sentence">"${escHtml(ex.sentence)}"</p>
+        <p class="error-task">Écris la version correcte ↓</p>
+      </div>
+    `;
+  }
+  return '';
+}
+
+function renderAnswerArea(ex) {
+  if (ex.type === 'word-order') return ''; // handled inline
+  return `
+    <input
+      type="text"
+      id="answer-input"
+      class="answer-input"
+      placeholder="Ta réponse en anglais..."
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+    />
+  `;
+}
+
+function bindExerciseEvents(container, state, profile, ex) {
+  // Back button
+  container.querySelector('#btn-back').addEventListener('click', () => {
+    stop();
+    if (state.mode === 'assessment') location.hash = '#dashboard';
+    else location.hash = '#dashboard';
+  });
+
+  // Listen button
+  const listenBtn = container.querySelector('#btn-listen');
+  if (listenBtn) {
+    listenBtn.addEventListener('click', () => {
+      listenBtn.textContent = '🔊 En cours...';
+      speak(ex.audio, {
+        onEnd: () => { listenBtn.textContent = '▶ Réécouter'; }
+      });
+      setTimeout(() => speak(ex.audio), 100);
+    });
+  }
+
+  // Word order
+  if (ex.type === 'word-order') {
+    setupWordOrder(container);
+  }
+
+  // Hint
+  container.querySelector('#btn-hint').addEventListener('click', () => {
+    const hintBox = container.querySelector('#hint-box');
+    hintBox.classList.remove('hidden');
+    state.usedHint = true;
+    container.querySelector('#btn-hint').disabled = true;
+  });
+
+  // Submit
+  container.querySelector('#btn-submit').addEventListener('click', () => {
+    if (!state.answered) {
+      handleSubmit(container, state, profile, ex);
+    } else {
+      nextOrFinish(container, state, profile);
+    }
+  });
+
+  // Enter key
+  const input = container.querySelector('#answer-input');
+  if (input) {
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        if (!state.answered) handleSubmit(container, state, profile, ex);
+        else nextOrFinish(container, state, profile);
+      }
+    });
+    // Auto-focus
+    setTimeout(() => input.focus(), 100);
+  }
+}
+
+function setupWordOrder(container) {
+  const bank = container.querySelector('#wo-bank');
+  const answerArea = container.querySelector('#wo-answer');
+  const selected = [];
+
+  bank.addEventListener('click', e => {
+    const btn = e.target.closest('.wo-word');
+    if (!btn || btn.disabled) return;
+    btn.disabled = true;
+    btn.classList.add('used');
+    selected.push({ word: btn.dataset.word, idx: btn.dataset.idx });
+
+    const chip = document.createElement('button');
+    chip.className = 'wo-chip';
+    chip.textContent = btn.dataset.word;
+    chip.dataset.idx = btn.dataset.idx;
+    answerArea.appendChild(chip);
+  });
+
+  answerArea.addEventListener('click', e => {
+    const chip = e.target.closest('.wo-chip');
+    if (!chip) return;
+    const idx = chip.dataset.idx;
+    const bankBtn = bank.querySelector(`[data-idx="${idx}"]`);
+    if (bankBtn) { bankBtn.disabled = false; bankBtn.classList.remove('used'); }
+    const i = selected.findIndex(s => s.idx === idx);
+    if (i > -1) selected.splice(i, 1);
+    chip.remove();
+  });
+
+  // Expose getter
+  answerArea._getAnswer = () => selected.map(s => s.word).join(' ');
+}
+
+function getInputAnswer(container, ex) {
+  if (ex.type === 'word-order') {
+    const answerArea = container.querySelector('#wo-answer');
+    return answerArea?._getAnswer?.() || '';
+  }
+  return container.querySelector('#answer-input')?.value?.trim() || '';
+}
+
+function handleSubmit(container, state, profile, ex) {
+  const rawAnswer = getInputAnswer(container, ex);
+  if (!rawAnswer) {
+    const input = container.querySelector('#answer-input');
+    if (input) { input.classList.add('shake'); setTimeout(() => input.classList.remove('shake'), 400); }
+    return;
+  }
+
+  const correct = checkAnswer(rawAnswer, ex);
+  const quality = qualityFromResult(correct, state.usedHint);
+  const xp = correct ? (state.usedHint ? 5 : 10) : 0;
+
+  // Update SM2
+  const prevSM2 = profile.sm2Items?.[ex.id] || null;
+  const newSM2 = calculateNextReview(prevSM2, quality);
+  saveSM2(profile.id, ex.id, newSM2);
+
+  // Update profile XP
+  if (xp > 0) {
+    addXP(profile.id, xp);
+    state.xpEarned += xp;
+  }
+
+  state.results.push({ id: ex.id, correct, xp, rawAnswer });
+  state.answered = true;
+
+  showFeedback(container, correct, ex, rawAnswer, xp);
+}
+
+function showFeedback(container, correct, ex, rawAnswer, xp) {
+  const feedbackBox = container.querySelector('#feedback-box');
+  feedbackBox.classList.remove('hidden', 'correct', 'incorrect');
+  feedbackBox.classList.add(correct ? 'correct' : 'incorrect');
+
+  const correctAnswer = ex.answer;
+
+  feedbackBox.innerHTML = correct
+    ? `
+      <div class="feedback-icon">✅</div>
+      <div class="feedback-msg">
+        <strong>Bravo !</strong>
+        ${xp > 0 ? `<span class="xp-gain">+${xp} XP</span>` : ''}
+      </div>
+      ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+    `
+    : `
+      <div class="feedback-icon">❌</div>
+      <div class="feedback-msg">
+        <strong>Pas tout à fait !</strong>
+      </div>
+      <div class="feedback-answer">
+        <span class="your-answer">Toi : <em>${escHtml(rawAnswer)}</em></span>
+        <span class="correct-answer">✓ Correct : <strong>${escHtml(correctAnswer)}</strong></span>
+      </div>
+      ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
+    `;
+
+  const submitBtn = container.querySelector('#btn-submit');
+  submitBtn.textContent = state.current < state.exercises.length - 1 ? 'Suivant →' : 'Voir les résultats 🏆';
+  submitBtn.className = 'btn-submit btn-next';
+
+  const hintBtn = container.querySelector('#btn-hint');
+  if (hintBtn) hintBtn.style.display = 'none';
+
+  // Disable input
+  const input = container.querySelector('#answer-input');
+  if (input) input.disabled = true;
+  container.querySelectorAll('.wo-word, .wo-chip').forEach(el => el.style.pointerEvents = 'none');
+}
+
+function nextOrFinish(container, state, profile) {
+  state.usedHint = false;
+  state.answered = false;
+
+  if (state.current < state.exercises.length - 1) {
+    state.current++;
+    renderExerciseCard(container, state, profile);
+  } else {
+    finishSession(container, state, profile);
+  }
+}
+
+function finishSession(container, state, profile) {
+  const correctCount = state.results.filter(r => r.correct).length;
+  const total = state.results.length;
+  const percent = Math.round((correctCount / total) * 100);
+  const xpTotal = state.results.reduce((s, r) => s + r.xp, 0);
+
+  // Save progress
+  saveTopicProgress(profile.id, state.topicId || 'assessment', total, correctCount);
+  updateStreak(profile.id);
+  saveSession(profile.id, {
+    topic: state.topicId,
+    mode: state.mode,
+    correct: correctCount,
+    total,
+    xp: xpTotal,
+  });
+
+  const emoji = percent >= 80 ? '🏆' : percent >= 60 ? '🌟' : percent >= 40 ? '👍' : '💪';
+  const msg = percent >= 80 ? 'Excellent travail !' : percent >= 60 ? 'Bon travail !' : percent >= 40 ? 'Continue !' : 'Ne lâche pas !';
+
+  container.innerHTML = `
+    <div class="results-page">
+      <div class="results-header">
+        <div class="results-emoji">${emoji}</div>
+        <h2>${msg}</h2>
+      </div>
+
+      <div class="results-score">
+        <div class="score-circle" style="--pct:${percent}">
+          <div class="score-inner">
+            <span class="score-num">${correctCount}</span>
+            <span class="score-den">/ ${total}</span>
+          </div>
+        </div>
+        <div class="score-percent">${percent}% de réussite</div>
+      </div>
+
+      ${xpTotal > 0 ? `<div class="results-xp">+${xpTotal} XP gagnés ⭐</div>` : ''}
+
+      <div class="results-breakdown">
+        ${state.results.map((r, i) => {
+          const ex = state.exercises[i];
+          return `
+            <div class="result-item ${r.correct ? 'ok' : 'err'}">
+              <span class="result-icon">${r.correct ? '✅' : '❌'}</span>
+              <span class="result-q">${getShortQuestion(ex)}</span>
+              ${!r.correct ? `<span class="result-ans">→ ${escHtml(ex.answer)}</span>` : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+
+      <div class="results-actions">
+        <button class="btn-primary" id="btn-again">🔄 Recommencer</button>
+        <button class="btn-secondary" id="btn-dashboard">🏠 Tableau de bord</button>
+      </div>
+    </div>
+  `;
+
+  container.querySelector('#btn-again').addEventListener('click', () => {
+    location.hash = `#exercise?topic=${state.topicId}&mode=${state.mode}`;
+  });
+  container.querySelector('#btn-dashboard').addEventListener('click', () => {
+    location.hash = '#dashboard';
+  });
+}
+
+function checkAnswer(raw, ex) {
+  const normalize = s => s.toLowerCase()
+    .trim()
+    .replace(/[.!?,]/g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/won't/g, "will not")
+    .replace(/don't/g, "do not")
+    .replace(/doesn't/g, "does not")
+    .replace(/didn't/g, "did not")
+    .replace(/isn't/g, "is not")
+    .replace(/aren't/g, "are not")
+    .replace(/i'm/g, "i am")
+    .replace(/she's/g, "she is")
+    .replace(/he's/g, "he is");
+
+  const ans = normalize(raw);
+  const correct = normalize(ex.answer);
+
+  if (ans === correct) return true;
+  if (ex.alternatives) {
+    return ex.alternatives.some(alt => normalize(alt) === ans);
+  }
+  return false;
+}
+
+function getShortQuestion(ex) {
+  if (ex.type === 'translate') return `🇫🇷 ${ex.french?.substring(0, 40)}...`;
+  if (ex.type === 'fill-blank') return ex.template?.substring(0, 40) + '...';
+  if (ex.type === 'word-order') return ex.words?.slice(0, 4).join(' ') + '...';
+  if (ex.type === 'listening') return '🎧 ' + ex.audio?.substring(0, 30) + '...';
+  if (ex.type === 'error-correct') return ex.sentence?.substring(0, 40) + '...';
+  return ex.id;
+}
+
+function renderEmpty(topicId) {
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <div class="empty-page">
+      <p>Aucun exercice trouvé pour ce sujet.</p>
+      <button onclick="location.hash='#dashboard'">Retour</button>
+    </div>
+  `;
+  return div;
+}
+
+function typeLabel(type) {
+  const labels = {
+    'fill-blank': '✏️ Complète',
+    'translate': '🔄 Traduis',
+    'word-order': '🔀 Ordonne',
+    'listening': '🎧 Écoute',
+    'error-correct': '🔍 Corrige',
+  };
+  return labels[type] || type;
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function escHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
