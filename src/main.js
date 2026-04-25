@@ -3,7 +3,7 @@ import { renderDashboard } from './views/DashboardView.js';
 import { renderExercise } from './views/ExerciseView.js';
 import { renderTheory } from './views/TheoryView.js';
 import { renderVocabulary } from './views/VocabularyView.js';
-import { renderDialogueList, renderDialogue } from './views/DialogueView.js';
+import { renderDialogueList, renderDialogue } from './views/DialogueViewV2.js';
 import { getActiveProfile } from './storage.js';
 
 const app = document.getElementById('app');
