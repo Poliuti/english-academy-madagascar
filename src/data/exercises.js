@@ -719,6 +719,358 @@ export const exercises = {
     },
   ],
 
+  // ─── FOOD ────────────────────────────────────────────────────────────────────
+  food: [
+    {
+      id: 'fd01', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais.',
+      french: 'J\'aime les bananes.',
+      answer: 'I like bananas.',
+      alternatives: ['I love bananas.'],
+      hint: '"Aimer" = like. Pluriel de banana = bananas',
+      explanation: '"I like" + pluriel pour exprimer un goût général.'
+    },
+    {
+      id: 'fd02', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec le bon mot.',
+      template: 'I drink ___ every morning.',
+      answer: 'milk',
+      alternatives: ['water', 'tea', 'coffee'],
+      hint: 'Une boisson du petit-déjeuner',
+      explanation: '"Milk" (lait), "water" (eau), "tea" (thé), "coffee" (café) sont tous valides.'
+    },
+    {
+      id: 'fd03', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais.',
+      french: 'Nous mangeons du riz et du poulet.',
+      answer: 'We eat rice and chicken.',
+      hint: '"Riz" = rice, "poulet" = chicken',
+      explanation: 'Pas d\'article devant "rice" et "chicken" en général.'
+    },
+    {
+      id: 'fd04', type: 'word-order', level: 'A1',
+      instruction: 'Mettez les mots dans le bon ordre.',
+      words: ['She', 'wants', 'a', 'glass', 'of', 'water', '.'],
+      answer: 'She wants a glass of water.',
+      hint: 'Sujet + verbe + article + nom + of + nom',
+      explanation: '"A glass of water" = un verre d\'eau.'
+    },
+    {
+      id: 'fd05', type: 'error-correct', level: 'A2',
+      instruction: 'Trouvez et corrigez l\'erreur.',
+      sentence: 'I eat a rice every day.',
+      answer: 'I eat rice every day.',
+      hint: 'Rice est non-dénombrable → pas d\'article "a"',
+      explanation: '"Rice" est indénombrable : pas de "a/an" devant. Juste "rice".'
+    },
+    {
+      id: 'fd06', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec la bonne quantité.',
+      template: 'How ___ bread do you want?',
+      answer: 'much',
+      hint: '"Bread" est indénombrable → how much/many ?',
+      explanation: '"How much" pour indénombrables (bread, water, rice). "How many" pour dénombrables.'
+    },
+    {
+      id: 'fd07', type: 'listening', level: 'A1',
+      instruction: 'Écoutez et écrivez ce que vous entendez.',
+      audio: 'I would like some fish and vegetables.',
+      answer: 'I would like some fish and vegetables.',
+      hint: 'Une commande au restaurant.',
+      explanation: '"I would like" = je voudrais (poli). "Fish" = poisson, "vegetables" = légumes.'
+    },
+    {
+      id: 'fd08', type: 'translate', level: 'A2',
+      instruction: 'Traduisez en anglais.',
+      french: 'Mon plat préféré est le poulet avec du riz.',
+      answer: 'My favourite dish is chicken with rice.',
+      alternatives: ['My favorite dish is chicken with rice.', 'My favourite meal is chicken with rice.'],
+      hint: '"Plat préféré" = favourite dish. "Avec" = with',
+      explanation: '"Favourite" (UK) ou "favorite" (US). "Dish" = plat.'
+    },
+  ],
+
+  // ─── COLORS ──────────────────────────────────────────────────────────────────
+  colors: [
+    {
+      id: 'c01', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais.',
+      french: 'Le ciel est bleu.',
+      answer: 'The sky is blue.',
+      hint: '"Ciel" = sky, "bleu" = blue',
+      explanation: 'L\'adjectif de couleur se place APRÈS "is/are" (sky is blue).'
+    },
+    {
+      id: 'c02', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec la bonne couleur.',
+      template: 'Grass is ___.',
+      answer: 'green',
+      hint: 'De quelle couleur est l\'herbe ?',
+      explanation: '"Green" = vert. L\'herbe est verte.'
+    },
+    {
+      id: 'c03', type: 'word-order', level: 'A1',
+      instruction: 'Mettez les mots dans le bon ordre.',
+      words: ['She', 'has', 'a', 'red', 'bag', '.'],
+      answer: 'She has a red bag.',
+      hint: 'En anglais, la couleur va AVANT le nom',
+      explanation: 'Ordre : sujet + verbe + article + couleur + nom. "A red bag" (pas "a bag red").'
+    },
+    {
+      id: 'c04', type: 'error-correct', level: 'A1',
+      instruction: 'Trouvez et corrigez l\'erreur.',
+      sentence: 'He has a car blue.',
+      answer: 'He has a blue car.',
+      hint: 'La couleur se place AVANT le nom en anglais',
+      explanation: 'En anglais : a + couleur + nom. "A blue car" (pas "a car blue").'
+    },
+    {
+      id: 'c05', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais.',
+      french: 'Mes cheveux sont noirs.',
+      answer: 'My hair is black.',
+      hint: '"Hair" (cheveux) est SINGULIER en anglais',
+      explanation: 'En anglais, "hair" est toujours singulier : "my hair IS" (pas "are").'
+    },
+    {
+      id: 'c06', type: 'listening', level: 'A1',
+      instruction: 'Écoutez et écrivez ce que vous entendez.',
+      audio: 'I like the yellow and white flowers.',
+      answer: 'I like the yellow and white flowers.',
+      hint: 'Deux couleurs et un pluriel.',
+      explanation: '"Yellow" = jaune, "white" = blanc, "flowers" = fleurs.'
+    },
+    {
+      id: 'c07', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec la bonne couleur.',
+      template: 'The Malagasy flag is red, green, and ___.',
+      answer: 'white',
+      hint: 'Drapeau malgache : quelles couleurs ?',
+      explanation: 'Le drapeau de Madagascar : blanc (white), rouge (red), vert (green).'
+    },
+    {
+      id: 'c08', type: 'translate', level: 'A2',
+      instruction: 'Traduisez en anglais.',
+      french: 'Sa voiture n\'est pas noire, elle est grise.',
+      answer: 'His car is not black, it is grey.',
+      alternatives: ['Her car is not black, it is grey.', 'His car isn\'t black, it\'s gray.', 'Her car isn\'t black, it\'s grey.'],
+      hint: '"Grise" = grey (UK) / gray (US)',
+      explanation: 'Forme négative + affirmative. "Grey" (UK) ou "gray" (US) sont tous deux corrects.'
+    },
+  ],
+
+  // ─── NUMBERS ─────────────────────────────────────────────────────────────────
+  numbers: [
+    {
+      id: 'n01', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais (écrivez le nombre en lettres).',
+      french: 'J\'ai quinze ans.',
+      answer: 'I am fifteen years old.',
+      alternatives: ['I\'m fifteen years old.', 'I am 15 years old.', 'I\'m 15 years old.'],
+      hint: '15 = fifteen',
+      explanation: '"I am ___ years old" pour l\'âge. 15 s\'écrit "fifteen".'
+    },
+    {
+      id: 'n02', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec le bon nombre.',
+      template: 'There are ___ months in a year.',
+      answer: 'twelve',
+      alternatives: ['12'],
+      hint: 'Combien de mois dans une année ?',
+      explanation: '12 mois = twelve months.'
+    },
+    {
+      id: 'n03', type: 'word-order', level: 'A1',
+      instruction: 'Mettez les mots dans le bon ordre.',
+      words: ['I', 'have', 'three', 'books', 'and', 'two', 'pens', '.'],
+      answer: 'I have three books and two pens.',
+      hint: 'Nombre + nom pluriel',
+      explanation: 'Après un nombre > 1, le nom est AU PLURIEL : "three books".'
+    },
+    {
+      id: 'n04', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais.',
+      french: 'Il y a vingt étudiants dans la classe.',
+      answer: 'There are twenty students in the class.',
+      hint: '"Il y a" (pluriel) = there are. 20 = twenty.',
+      explanation: 'There are (pluriel). 20 students = twenty students.'
+    },
+    {
+      id: 'n05', type: 'error-correct', level: 'A2',
+      instruction: 'Trouvez et corrigez l\'erreur.',
+      sentence: 'She has five brother.',
+      answer: 'She has five brothers.',
+      hint: 'Après un chiffre > 1, pluriel',
+      explanation: 'Avec un nombre > 1, le nom prend un "s" : "five brothers".'
+    },
+    {
+      id: 'n06', type: 'listening', level: 'A1',
+      instruction: 'Écoutez et écrivez le nombre en lettres.',
+      audio: 'My phone number is zero seven eight.',
+      answer: 'My phone number is zero seven eight.',
+      hint: 'Trois chiffres : 0-7-8',
+      explanation: '"Zero seven eight" = 078. En anglais, on dit souvent chaque chiffre séparément.'
+    },
+    {
+      id: 'n07', type: 'fill-blank', level: 'A2',
+      instruction: 'Complétez avec le bon nombre ordinal.',
+      template: 'Monday is the ___ day of the week.',
+      answer: 'first',
+      hint: '1er = first',
+      explanation: 'Nombres ordinaux : first (1er), second (2e), third (3e), fourth (4e)...'
+    },
+    {
+      id: 'n08', type: 'translate', level: 'A2',
+      instruction: 'Traduisez en anglais.',
+      french: 'Mon anniversaire est le vingt-cinq décembre.',
+      answer: 'My birthday is on the twenty-fifth of December.',
+      alternatives: ['My birthday is December 25th.', 'My birthday is on December the twenty-fifth.'],
+      hint: '25e = twenty-fifth. Pour les dates : the + ordinal + of + mois',
+      explanation: 'Dates en UK : "the 25th of December". Dates en US : "December 25th".'
+    },
+  ],
+
+  // ─── ADJECTIVES ──────────────────────────────────────────────────────────────
+  adjectives: [
+    {
+      id: 'a01', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais.',
+      french: 'Elle est belle et intelligente.',
+      answer: 'She is beautiful and intelligent.',
+      alternatives: ['She\'s beautiful and intelligent.', 'She is pretty and smart.'],
+      hint: '"Belle" = beautiful / pretty. "Intelligente" = intelligent / smart',
+      explanation: 'Les adjectifs en anglais ne changent jamais (beautiful pour masculin et féminin).'
+    },
+    {
+      id: 'a02', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec le contraire.',
+      template: 'The opposite of "big" is ___.',
+      answer: 'small',
+      alternatives: ['little'],
+      hint: 'Contraire de "grand" ?',
+      explanation: '"Small" ou "little" = petit. Contraire de "big" (grand).'
+    },
+    {
+      id: 'a03', type: 'word-order', level: 'A1',
+      instruction: 'Mettez les mots dans le bon ordre.',
+      words: ['He', 'is', 'a', 'tall', 'young', 'man', '.'],
+      answer: 'He is a tall young man.',
+      hint: 'Ordre : taille + âge + nom',
+      explanation: 'Ordre des adjectifs : opinion → taille → âge → couleur → nom. "Tall young man".'
+    },
+    {
+      id: 'a04', type: 'error-correct', level: 'A1',
+      instruction: 'Trouvez et corrigez l\'erreur.',
+      sentence: 'She has eyes blue.',
+      answer: 'She has blue eyes.',
+      hint: 'Adjectif AVANT le nom en anglais',
+      explanation: 'En anglais : adjectif + nom. "Blue eyes" (pas "eyes blue").'
+    },
+    {
+      id: 'a05', type: 'translate', level: 'A2',
+      instruction: 'Traduisez en anglais.',
+      french: 'Cette maison est vieille mais confortable.',
+      answer: 'This house is old but comfortable.',
+      hint: '"Vieille" = old. "Confortable" = comfortable',
+      explanation: 'Les adjectifs "old" et "comfortable" ne changent pas selon le genre.'
+    },
+    {
+      id: 'a06', type: 'listening', level: 'A2',
+      instruction: 'Écoutez et écrivez ce que vous entendez.',
+      audio: 'My little brother is very funny and clever.',
+      answer: 'My little brother is very funny and clever.',
+      hint: 'Deux adjectifs : "drôle" et "intelligent".',
+      explanation: '"Funny" = drôle. "Clever" = intelligent / malin.'
+    },
+    {
+      id: 'a07', type: 'fill-blank', level: 'A2',
+      instruction: 'Complétez avec le comparatif.',
+      template: 'My brother is ___ (tall) than me.',
+      answer: 'taller',
+      hint: 'tall + -er = ?',
+      explanation: 'Comparatif des adjectifs courts : + "-er". "Tall" → "taller".'
+    },
+    {
+      id: 'a08', type: 'translate', level: 'A2',
+      instruction: 'Traduisez en anglais.',
+      french: 'Il est le plus rapide de la classe.',
+      answer: 'He is the fastest in the class.',
+      alternatives: ['He\'s the fastest in the class.'],
+      hint: 'Superlatif : the + adjectif + -est',
+      explanation: '"The fastest" = le plus rapide. Pour superlatif court : "the" + adj + "-est".'
+    },
+  ],
+
+  // ─── PRONOUNS ────────────────────────────────────────────────────────────────
+  pronouns: [
+    {
+      id: 'pr01', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec le bon pronom sujet.',
+      template: '___ is my teacher. (la prof femme)',
+      answer: 'She',
+      hint: 'Une femme = ?',
+      explanation: '"She" pour une femme, "he" pour un homme, "it" pour un objet.'
+    },
+    {
+      id: 'pr02', type: 'translate', level: 'A1',
+      instruction: 'Traduisez en anglais.',
+      french: 'Elle m\'aime.',
+      answer: 'She loves me.',
+      hint: '"Me" = moi (pronom objet)',
+      explanation: 'Pronom objet : me (moi), you (toi), him (lui), her (elle), it, us, them.'
+    },
+    {
+      id: 'pr03', type: 'error-correct', level: 'A1',
+      instruction: 'Trouvez et corrigez l\'erreur.',
+      sentence: 'Me like chocolate.',
+      answer: 'I like chocolate.',
+      hint: 'Sujet = I (pas "me")',
+      explanation: '"I" est un pronom SUJET. "Me" est un pronom OBJET. Sujet → I like.'
+    },
+    {
+      id: 'pr04', type: 'fill-blank', level: 'A1',
+      instruction: 'Complétez avec le bon adjectif possessif.',
+      template: 'Tom and Mary love ___ children.',
+      answer: 'their',
+      hint: 'À eux = ?',
+      explanation: '"Their" = leur(s). Appartient à "they" (eux).'
+    },
+    {
+      id: 'pr05', type: 'translate', level: 'A2',
+      instruction: 'Traduisez en anglais.',
+      french: 'Ce livre est à moi.',
+      answer: 'This book is mine.',
+      alternatives: ['This is my book.'],
+      hint: 'Pronom possessif "à moi" = mine',
+      explanation: '"Mine" = le mien / à moi. Pronom possessif (pas d\'article ni de nom après).'
+    },
+    {
+      id: 'pr06', type: 'word-order', level: 'A1',
+      instruction: 'Mettez les mots dans le bon ordre.',
+      words: ['We', 'see', 'them', 'every', 'day', '.'],
+      answer: 'We see them every day.',
+      hint: 'Sujet + verbe + objet + temps',
+      explanation: '"Them" est pronom objet (les). "We see them" = on les voit.'
+    },
+    {
+      id: 'pr07', type: 'error-correct', level: 'A2',
+      instruction: 'Trouvez et corrigez l\'erreur.',
+      sentence: 'This is her\'s book.',
+      answer: 'This is her book.',
+      alternatives: ['This book is hers.'],
+      hint: '"Her" est déjà possessif',
+      explanation: '"Her" (son/sa) est déjà possessif. Pas d\'apostrophe-s. Le pronom seul est "hers".'
+    },
+    {
+      id: 'pr08', type: 'listening', level: 'A1',
+      instruction: 'Écoutez et écrivez ce que vous entendez.',
+      audio: 'She gives him a new pen.',
+      answer: 'She gives him a new pen.',
+      hint: 'Deux pronoms : she et him.',
+      explanation: '"She" (sujet), "him" (objet, à lui). "Give someone something" = donner qqch à qqn.'
+    },
+  ],
+
   // ─── FUTURE SIMPLE ───────────────────────────────────────────────────────────
   futureSimple: [
     {

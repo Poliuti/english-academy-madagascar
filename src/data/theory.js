@@ -209,6 +209,397 @@ export const theory = {
     ]
   },
 
+  articles: {
+    id: 'articles',
+    title: 'Les Articles (a, an, the)',
+    icon: '🔤',
+    level: 'A1',
+    subtitle: 'Comment utiliser a, an et the correctement',
+    malgasyNote: 'Ny "a/an" dia ampiasaina rehefa zavatra iray tsy voafaritra',
+    sections: [
+      {
+        title: '🅰️ A / An (indéfini)',
+        content: '<strong>A</strong> devant consonne · <strong>An</strong> devant voyelle (a, e, i, o, u)',
+        examples: [
+          { en: '<strong>a</strong> book, <strong>a</strong> car, <strong>a</strong> teacher', fr: 'un livre, une voiture, un professeur' },
+          { en: '<strong>an</strong> apple, <strong>an</strong> elephant, <strong>an</strong> hour', fr: 'une pomme, un éléphant, une heure' },
+          { en: '<strong>a</strong> university (son "you")', fr: 'une université (exception : son consonne)' },
+        ]
+      },
+      {
+        title: '🅾️ The (défini)',
+        content: '<strong>The</strong> = quand on sait de quoi on parle (spécifique)',
+        examples: [
+          { en: '<strong>The</strong> sun is hot today.', fr: 'Le soleil est chaud aujourd\'hui.' },
+          { en: 'I read <strong>the</strong> book you gave me.', fr: 'J\'ai lu le livre que tu m\'as donné.' },
+          { en: 'Close <strong>the</strong> door, please.', fr: 'Ferme la porte, s\'il te plaît.' },
+        ]
+      },
+      {
+        title: '🚫 Sans article',
+        content: 'Pas d\'article devant : noms pluriels généraux, noms abstraits, repas, langues',
+        examples: [
+          { en: 'I love ___ music. (pas d\'article)', fr: 'J\'aime la musique.' },
+          { en: 'She speaks ___ English.', fr: 'Elle parle anglais.' },
+          { en: 'We have ___ breakfast at 7.', fr: 'On prend le petit-déjeuner à 7h.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Première mention = a/an. Deuxième mention = the.',
+      '⚠️ "An hour" (h muet), mais "a hotel" (h prononcé)',
+      '💡 Noms non-dénombrables (water, rice) : souvent sans article',
+    ]
+  },
+
+  pronouns: {
+    id: 'pronouns',
+    title: 'Les Pronoms',
+    icon: '👥',
+    level: 'A1',
+    subtitle: 'Sujet, objet, possessifs',
+    malgasyNote: 'Solon\'anarana : izaho, ianao, izy, isika...',
+    sections: [
+      {
+        title: '🧍 Pronoms sujets',
+        content: 'Celui qui fait l\'action',
+        examples: [
+          { en: '<strong>I</strong> am a student. (je)', fr: 'Je suis étudiant.' },
+          { en: '<strong>You</strong> are kind. (tu / vous)', fr: 'Tu es gentil.' },
+          { en: '<strong>He / She / It</strong> is here. (il / elle)', fr: 'Il / Elle est ici.' },
+          { en: '<strong>We / You / They</strong> are friends.', fr: 'Nous / Vous / Ils sont amis.' },
+        ]
+      },
+      {
+        title: '🎯 Pronoms objets',
+        content: 'Celui qui subit l\'action (après le verbe)',
+        examples: [
+          { en: 'She loves <strong>me</strong>. (moi)', fr: 'Elle m\'aime.' },
+          { en: 'I see <strong>you</strong>. (toi)', fr: 'Je te vois.' },
+          { en: 'We call <strong>him / her / it</strong>.', fr: 'On l\'appelle.' },
+          { en: 'They help <strong>us / you / them</strong>.', fr: 'Ils nous / vous / les aident.' },
+        ]
+      },
+      {
+        title: '🔐 Adjectifs possessifs',
+        content: 'Devant un nom : mon, ton, son...',
+        examples: [
+          { en: '<strong>my</strong> book, <strong>your</strong> pen', fr: 'mon livre, ton stylo' },
+          { en: '<strong>his</strong> bag (à lui), <strong>her</strong> bag (à elle)', fr: 'son sac' },
+          { en: '<strong>our</strong> house, <strong>their</strong> car', fr: 'notre maison, leur voiture' },
+        ]
+      },
+      {
+        title: '💎 Pronoms possessifs',
+        content: 'Seuls, sans nom : le mien, le tien...',
+        examples: [
+          { en: 'This book is <strong>mine</strong>.', fr: 'Ce livre est le mien.' },
+          { en: 'Is this pen <strong>yours</strong>?', fr: 'Ce stylo est à toi ?' },
+          { en: 'The car is <strong>theirs</strong>.', fr: 'La voiture est la leur.' },
+        ]
+      },
+    ],
+    tips: [
+      '⚠️ "It" s\'utilise pour les objets, animaux, le temps : "It is raining."',
+      '🔑 His (à lui) ≠ Her (à elle). Attention à ne pas confondre !',
+      '💡 Ordre possessif : my < our < your < his/her/its < their',
+    ]
+  },
+
+  questions: {
+    id: 'questions',
+    title: 'Les Questions (Wh-)',
+    icon: '❓',
+    level: 'A1–A2',
+    subtitle: 'What, Who, Where, When, Why, How',
+    malgasyNote: 'Fomba fametrahana fanontaniana amin\'ny teny anglisy',
+    sections: [
+      {
+        title: '🙋 Les mots interrogatifs',
+        content: 'Chaque "wh-word" a un sens précis',
+        examples: [
+          { en: '<strong>What</strong>? (Quoi ?)', fr: 'What is your name? — Quel est ton nom ?' },
+          { en: '<strong>Who</strong>? (Qui ?)', fr: 'Who is that? — Qui est-ce ?' },
+          { en: '<strong>Where</strong>? (Où ?)', fr: 'Where do you live? — Où habites-tu ?' },
+          { en: '<strong>When</strong>? (Quand ?)', fr: 'When does it start? — Quand ça commence ?' },
+          { en: '<strong>Why</strong>? (Pourquoi ?)', fr: 'Why are you sad? — Pourquoi es-tu triste ?' },
+          { en: '<strong>How</strong>? (Comment ?)', fr: 'How are you? — Comment vas-tu ?' },
+        ]
+      },
+      {
+        title: '🔨 Structure de la question',
+        content: '<strong>Wh- + auxiliaire + sujet + verbe ?</strong>',
+        examples: [
+          { en: 'Where <strong>do</strong> you <strong>live</strong>?', fr: 'Où habites-tu ?' },
+          { en: 'What <strong>does</strong> she <strong>want</strong>?', fr: 'Que veut-elle ?' },
+          { en: 'Why <strong>did</strong> they <strong>leave</strong>?', fr: 'Pourquoi sont-ils partis ?' },
+          { en: 'When <strong>will</strong> you <strong>come</strong>?', fr: 'Quand viendras-tu ?' },
+        ]
+      },
+      {
+        title: '📏 How + adjectif / adverbe',
+        content: '"How" se combine souvent',
+        examples: [
+          { en: '<strong>How old</strong> are you?', fr: 'Quel âge as-tu ?' },
+          { en: '<strong>How many</strong> brothers?', fr: 'Combien de frères ?' },
+          { en: '<strong>How much</strong> money?', fr: 'Combien d\'argent ?' },
+          { en: '<strong>How often</strong> do you study?', fr: 'À quelle fréquence étudies-tu ?' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 How many (dénombrable : books, pens) vs How much (non-dénombrable : money, water)',
+      '⚠️ "Who" peut être sujet : "Who called?" (sans "did")',
+      '💡 Question Yes/No : sans wh-word. "Do you speak English?"',
+    ]
+  },
+
+  prepositions: {
+    id: 'prepositions',
+    title: 'Prépositions (in, on, at)',
+    icon: '📍',
+    level: 'A1–A2',
+    subtitle: 'Temps et lieu',
+    malgasyNote: 'Ireo mpampitohy manondro toerana sy fotoana',
+    sections: [
+      {
+        title: '⏰ Prépositions de temps',
+        content: 'IN / ON / AT pour parler du temps',
+        examples: [
+          { en: '<strong>at</strong> 7 o\'clock, <strong>at</strong> noon, <strong>at</strong> night', fr: 'Heure précise : AT' },
+          { en: '<strong>on</strong> Monday, <strong>on</strong> July 5th', fr: 'Jours/dates : ON' },
+          { en: '<strong>in</strong> January, <strong>in</strong> 2025, <strong>in</strong> the morning', fr: 'Mois/années/périodes : IN' },
+        ]
+      },
+      {
+        title: '📍 Prépositions de lieu',
+        content: 'IN / ON / AT pour parler du lieu',
+        examples: [
+          { en: '<strong>at</strong> school, <strong>at</strong> home, <strong>at</strong> the bus stop', fr: 'Point précis : AT' },
+          { en: '<strong>on</strong> the table, <strong>on</strong> the wall', fr: 'Surface : ON' },
+          { en: '<strong>in</strong> the box, <strong>in</strong> Madagascar, <strong>in</strong> the room', fr: 'À l\'intérieur : IN' },
+        ]
+      },
+      {
+        title: '🧭 Autres prépositions importantes',
+        content: 'Mouvement et position',
+        examples: [
+          { en: '<strong>to</strong> school (vers)', fr: 'I go to school.' },
+          { en: '<strong>from</strong> home (depuis)', fr: 'I come from home.' },
+          { en: '<strong>under / above / next to</strong>', fr: 'sous / au-dessus / à côté de' },
+          { en: '<strong>between</strong> A and B', fr: 'entre A et B' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Astuce : AT (point), ON (surface), IN (dedans)',
+      '⚠️ "on Monday" mais "in the morning" — mémoriser les combinaisons',
+      '💡 Exception : "at night" (pas "in the night")',
+    ]
+  },
+
+  comparatives: {
+    id: 'comparatives',
+    title: 'Comparatifs et Superlatifs',
+    icon: '⚖️',
+    level: 'A2',
+    subtitle: 'Plus... que / le plus...',
+    malgasyNote: 'Fampitahana : kokoa, indrindra',
+    sections: [
+      {
+        title: '📈 Comparatif (plus... que)',
+        content: 'Adjectif court + <strong>-er than</strong>',
+        examples: [
+          { en: 'Tom is tall<strong>er than</strong> me.', fr: 'Tom est plus grand que moi.' },
+          { en: 'This car is fast<strong>er than</strong> that one.', fr: 'Cette voiture est plus rapide.' },
+          { en: 'My book is old<strong>er than</strong> yours.', fr: 'Mon livre est plus vieux.' },
+        ]
+      },
+      {
+        title: '📉 Adjectifs longs',
+        content: '<strong>More</strong> + adjectif + <strong>than</strong>',
+        examples: [
+          { en: 'English is <strong>more</strong> difficult <strong>than</strong> French.', fr: 'L\'anglais est plus difficile.' },
+          { en: 'She is <strong>more</strong> intelligent <strong>than</strong> him.', fr: 'Elle est plus intelligente.' },
+          { en: 'This film is <strong>more</strong> interesting.', fr: 'Ce film est plus intéressant.' },
+        ]
+      },
+      {
+        title: '🏆 Superlatif (le plus...)',
+        content: 'Adjectif court : <strong>the ___-est</strong> | Long : <strong>the most ___</strong>',
+        examples: [
+          { en: 'She is <strong>the tallest</strong> in the class.', fr: 'Elle est la plus grande de la classe.' },
+          { en: 'This is <strong>the most beautiful</strong> city.', fr: 'C\'est la plus belle ville.' },
+          { en: 'Monday is <strong>the worst</strong> day!', fr: 'Lundi est le pire jour !' },
+        ]
+      },
+      {
+        title: '⚡ Irréguliers',
+        content: 'À apprendre par cœur',
+        examples: [
+          { en: 'good → <strong>better</strong> → <strong>the best</strong>', fr: 'bon / meilleur / le meilleur' },
+          { en: 'bad → <strong>worse</strong> → <strong>the worst</strong>', fr: 'mauvais / pire / le pire' },
+          { en: 'far → <strong>farther</strong> → <strong>the farthest</strong>', fr: 'loin / plus loin / le plus loin' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Règle 1 syllabe : + -er / -est (tall → taller → tallest)',
+      '⚠️ "happy" → "happier" (y devient i)',
+      '💡 "as... as" = aussi... que : "She is as tall as me."',
+    ]
+  },
+
+  modals: {
+    id: 'modals',
+    title: 'Verbes Modaux (can, must, should)',
+    icon: '🛠️',
+    level: 'A2',
+    subtitle: 'Capacité, obligation, conseil',
+    malgasyNote: 'Matoanteny manambara fahaizana, tsy maintsy, tokony',
+    sections: [
+      {
+        title: '💪 Can / Can\'t (pouvoir)',
+        content: 'Capacité ou permission · Suivi d\'un <strong>verbe à l\'infinitif sans "to"</strong>',
+        examples: [
+          { en: 'I <strong>can</strong> swim. (je sais nager)', fr: 'Je sais / peux nager.' },
+          { en: 'She <strong>can\'t</strong> drive.', fr: 'Elle ne sait pas conduire.' },
+          { en: '<strong>Can</strong> I open the window?', fr: 'Puis-je ouvrir la fenêtre ?' },
+        ]
+      },
+      {
+        title: '❗ Must / Mustn\'t (devoir)',
+        content: 'Obligation forte ou interdiction',
+        examples: [
+          { en: 'You <strong>must</strong> study for the test.', fr: 'Tu dois étudier.' },
+          { en: 'You <strong>mustn\'t</strong> be late.', fr: 'Tu ne dois pas être en retard.' },
+          { en: 'We <strong>must</strong> help our family.', fr: 'Nous devons aider notre famille.' },
+        ]
+      },
+      {
+        title: '💡 Should / Shouldn\'t (conseil)',
+        content: 'Suggestion ou conseil (moins fort que "must")',
+        examples: [
+          { en: 'You <strong>should</strong> drink more water.', fr: 'Tu devrais boire plus d\'eau.' },
+          { en: 'He <strong>shouldn\'t</strong> eat so much sugar.', fr: 'Il ne devrait pas manger tant de sucre.' },
+          { en: '<strong>Should</strong> I call her?', fr: 'Devrais-je l\'appeler ?' },
+        ]
+      },
+      {
+        title: '🔑 Have to (obligation externe)',
+        content: 'Obligation venant de l\'extérieur (règles, loi)',
+        examples: [
+          { en: 'I <strong>have to</strong> go to school at 7.', fr: 'Je dois aller à l\'école à 7h.' },
+          { en: 'She <strong>has to</strong> work on Saturday.', fr: 'Elle doit travailler samedi.' },
+          { en: 'We <strong>don\'t have to</strong> wear uniforms.', fr: 'Nous n\'avons pas à porter d\'uniforme.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Modaux : PAS de -s à la 3e pers. singulier (She can, She must)',
+      '⚠️ Après un modal : verbe infinitif SANS "to" (can go, pas can to go)',
+      '💡 must = obligation personnelle ; have to = obligation extérieure',
+    ]
+  },
+
+  plurals: {
+    id: 'plurals',
+    title: 'Les Pluriels',
+    icon: '🔢',
+    level: 'A1',
+    subtitle: 'Règles régulières et irrégulières',
+    malgasyNote: 'Ny fomba fanaovana anarana maromaro',
+    sections: [
+      {
+        title: '✅ Règle générale',
+        content: 'Ajoutez <strong>-s</strong> à la fin',
+        examples: [
+          { en: 'book → book<strong>s</strong>', fr: 'livre → livres' },
+          { en: 'car → car<strong>s</strong>', fr: 'voiture → voitures' },
+          { en: 'friend → friend<strong>s</strong>', fr: 'ami → amis' },
+        ]
+      },
+      {
+        title: '📝 Mots en -s, -x, -ch, -sh',
+        content: 'Ajoutez <strong>-es</strong>',
+        examples: [
+          { en: 'bus → bus<strong>es</strong>', fr: 'bus' },
+          { en: 'box → box<strong>es</strong>', fr: 'boîte → boîtes' },
+          { en: 'watch → watch<strong>es</strong>', fr: 'montre → montres' },
+        ]
+      },
+      {
+        title: '🔁 Mots en -y',
+        content: 'Consonne + y → <strong>-ies</strong>',
+        examples: [
+          { en: 'baby → bab<strong>ies</strong>', fr: 'bébé → bébés' },
+          { en: 'city → cit<strong>ies</strong>', fr: 'ville → villes' },
+          { en: 'boy → boy<strong>s</strong> (voyelle + y, règle normale)', fr: 'garçon' },
+        ]
+      },
+      {
+        title: '⚡ Pluriels irréguliers',
+        content: 'À mémoriser !',
+        examples: [
+          { en: 'man → <strong>men</strong>', fr: 'homme → hommes' },
+          { en: 'woman → <strong>women</strong>', fr: 'femme → femmes' },
+          { en: 'child → <strong>children</strong>', fr: 'enfant → enfants' },
+          { en: 'foot → <strong>feet</strong>', fr: 'pied → pieds' },
+          { en: 'tooth → <strong>teeth</strong>', fr: 'dent → dents' },
+          { en: 'mouse → <strong>mice</strong>', fr: 'souris' },
+          { en: 'person → <strong>people</strong>', fr: 'personne → personnes' },
+        ]
+      },
+    ],
+    tips: [
+      '⚠️ "people" est déjà pluriel (pas de "peoples")',
+      '🔑 Fish, sheep : même forme au singulier et pluriel',
+      '💡 Non-dénombrables (water, rice, money) : pas de pluriel',
+    ]
+  },
+
+  therebeis: {
+    id: 'therebeis',
+    title: 'There is / There are',
+    icon: '📌',
+    level: 'A1',
+    subtitle: 'Pour dire "il y a"',
+    malgasyNote: 'Mba hilazana hoe "misy"',
+    sections: [
+      {
+        title: '✅ Affirmatif',
+        content: '<strong>There is</strong> (singulier) · <strong>There are</strong> (pluriel)',
+        examples: [
+          { en: '<strong>There is</strong> a book on the table.', fr: 'Il y a un livre sur la table.' },
+          { en: '<strong>There are</strong> five students in the class.', fr: 'Il y a cinq étudiants dans la classe.' },
+          { en: '<strong>There\'s</strong> a dog in the garden.', fr: 'Il y a un chien dans le jardin.' },
+        ]
+      },
+      {
+        title: '❌ Négatif',
+        content: '<strong>There isn\'t</strong> / <strong>There aren\'t</strong>',
+        examples: [
+          { en: '<strong>There isn\'t</strong> any milk.', fr: 'Il n\'y a pas de lait.' },
+          { en: '<strong>There aren\'t</strong> many people here.', fr: 'Il n\'y a pas beaucoup de monde.' },
+        ]
+      },
+      {
+        title: '❓ Question',
+        content: '<strong>Is there</strong> / <strong>Are there</strong>',
+        examples: [
+          { en: '<strong>Is there</strong> a hospital near here?', fr: 'Y a-t-il un hôpital près d\'ici ?' },
+          { en: '<strong>Are there</strong> any questions?', fr: 'Y a-t-il des questions ?' },
+          { en: 'How many students <strong>are there</strong>?', fr: 'Combien d\'étudiants y a-t-il ?' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Au passé : There was / There were',
+      '⚠️ "there is" ≠ "it is". "There is a pen" = il y a un stylo. "It is a pen" = c\'est un stylo.',
+      '💡 Avec "a" / "an" (singulier) : there is. Avec chiffre ou pluriel : there are.',
+    ]
+  },
+
   vocabulary: {
     routine: {
       title: 'Vocabulaire : Routine Quotidienne',
@@ -218,11 +609,11 @@ export const theory = {
         { en: 'take a shower', fr: 'prendre une douche', mg: 'manasa vatana', example: 'I take a shower every morning.' },
         { en: 'have breakfast', fr: 'prendre le petit-déjeuner', mg: 'misakafo maraina', example: 'We have breakfast at 7:30.' },
         { en: 'go to school', fr: 'aller à l\'école', mg: 'mankany sekoly', example: 'The children go to school at 8.' },
-        { en: 'have lunch', fr: 'déjeuner', mg: 'misakafo amin\'ny mitataovovonana', example: 'We have lunch at noon.' },
+        { en: 'have lunch', fr: 'déjeuner', mg: 'misakafo atoandro', example: 'We have lunch at noon.' },
         { en: 'come home', fr: 'rentrer à la maison', mg: 'miverina an-trano', example: 'I come home at 5 pm.' },
         { en: 'have dinner', fr: 'dîner', mg: 'misakafo hariva', example: 'My family has dinner together.' },
-        { en: 'go to bed', fr: 'se coucher', mg: 'mandriadrià', example: 'I go to bed at 10 pm.' },
-        { en: 'brush teeth', fr: 'se brosser les dents', mg: 'mitsedry nify', example: 'Brush your teeth twice a day!' },
+        { en: 'go to bed', fr: 'se coucher', mg: 'matory', example: 'I go to bed at 10 pm.' },
+        { en: 'brush teeth', fr: 'se brosser les dents', mg: 'manasa nify', example: 'Brush your teeth twice a day!' },
       ]
     },
     family: {
@@ -236,7 +627,7 @@ export const theory = {
         { en: 'grandfather', fr: 'grand-père', mg: 'raibe', example: 'My grandfather is 70 years old.' },
         { en: 'uncle', fr: 'oncle', mg: 'dadatoa', example: 'My uncle is a doctor.' },
         { en: 'aunt', fr: 'tante', mg: 'nenitoa', example: 'My aunt has three children.' },
-        { en: 'cousin', fr: 'cousin(e)', mg: 'zana-dray / zana-dreny', example: 'I play with my cousins on weekends.' },
+        { en: 'cousin', fr: 'cousin(e)', mg: 'zanak\'olo-mpiray tam-po', example: 'I play with my cousins on weekends.' },
         { en: 'children', fr: 'enfants', mg: 'zanaka', example: 'They have four children.' },
       ]
     },
@@ -246,11 +637,11 @@ export const theory = {
         { en: 'head', fr: 'tête', mg: 'loha', example: 'I have a headache.' },
         { en: 'eye(s)', fr: 'œil / yeux', mg: 'maso', example: 'She has brown eyes.' },
         { en: 'ear(s)', fr: 'oreille(s)', mg: 'sofina', example: 'Listen with your ears!' },
-        { en: 'nose', fr: 'nez', mg: 'orona', example: 'I have a cold and my nose hurts.' },
-        { en: 'mouth', fr: 'bouche', mg: 'vava', example: 'Brush your teeth and wash your mouth.' },
+        { en: 'nose', fr: 'nez', mg: 'orona', example: 'I have a cold.' },
+        { en: 'mouth', fr: 'bouche', mg: 'vava', example: 'Close your mouth when you eat.' },
         { en: 'hand(s)', fr: 'main(s)', mg: 'tanana', example: 'Wash your hands before eating.' },
         { en: 'foot / feet', fr: 'pied(s)', mg: 'tongotra', example: 'My feet are tired after walking.' },
-        { en: 'arm', fr: 'bras', mg: 'sandry', example: 'He broke his arm playing football.' },
+        { en: 'arm', fr: 'bras', mg: 'sandry', example: 'He broke his arm.' },
         { en: 'leg', fr: 'jambe', mg: 'ranjo', example: 'She hurt her leg.' },
         { en: 'back', fr: 'dos', mg: 'lamosina', example: 'I have a backache.' },
       ]
@@ -278,11 +669,18 @@ export function getTheoryById(id) {
 }
 
 export const theoryTopics = [
+  { id: 'articles', label: 'Articles (a/an/the)', icon: '🔤', level: 'A1' },
+  { id: 'pronouns', label: 'Pronoms', icon: '👥', level: 'A1' },
+  { id: 'plurals', label: 'Pluriels', icon: '🔢', level: 'A1' },
+  { id: 'therebeis', label: 'There is / are', icon: '📌', level: 'A1' },
+  { id: 'prepositions', label: 'Prépositions', icon: '📍', level: 'A1–A2' },
+  { id: 'questions', label: 'Questions (Wh-)', icon: '❓', level: 'A1–A2' },
   { id: 'presentSimple', label: 'Present Simple', icon: '📖', level: 'A1–A2' },
   { id: 'presentContinuous', label: 'Present Continuous', icon: '🔄', level: 'A2' },
+  { id: 'comparatives', label: 'Comparatifs', icon: '⚖️', level: 'A2' },
+  { id: 'modals', label: 'Modaux (can/must)', icon: '🛠️', level: 'A2' },
   { id: 'pastSimple', label: 'Past Simple', icon: '⏮️', level: 'A2–B1' },
   { id: 'futureSimple', label: 'Future Simple', icon: '🚀', level: 'A2–B1' },
-  { id: 'vocabulary', label: 'Vocabulaire', icon: '📚', level: 'A1–B1', isVocab: true },
 ];
 
 export const vocabTopics = [

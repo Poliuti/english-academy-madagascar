@@ -47,8 +47,16 @@ export function renderDashboard() {
           <span>Test de niveau</span>
         </button>
         <button class="quick-btn" id="btn-theory">
+          <span class="quick-icon">📖</span>
+          <span>Grammaire</span>
+        </button>
+        <button class="quick-btn" id="btn-vocabulary">
           <span class="quick-icon">📚</span>
-          <span>Théorie</span>
+          <span>Vocabulaire</span>
+        </button>
+        <button class="quick-btn" id="btn-dialogues">
+          <span class="quick-icon">💬</span>
+          <span>Dialogues</span>
         </button>
       </div>
 
@@ -69,6 +77,12 @@ export function renderDashboard() {
   });
   container.querySelector('#btn-theory').addEventListener('click', () => {
     location.hash = '#theory';
+  });
+  container.querySelector('#btn-vocabulary').addEventListener('click', () => {
+    location.hash = '#vocabulary';
+  });
+  container.querySelector('#btn-dialogues').addEventListener('click', () => {
+    location.hash = '#dialogues';
   });
 
   // Topic card clicks

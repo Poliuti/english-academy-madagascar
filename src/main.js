@@ -2,6 +2,8 @@ import { renderProfileSelector } from './views/ProfileView.js';
 import { renderDashboard } from './views/DashboardView.js';
 import { renderExercise } from './views/ExerciseView.js';
 import { renderTheory } from './views/TheoryView.js';
+import { renderVocabulary } from './views/VocabularyView.js';
+import { renderDialogueList, renderDialogue } from './views/DialogueView.js';
 import { getActiveProfile } from './storage.js';
 
 const app = document.getElementById('app');
@@ -37,6 +39,15 @@ function router() {
       break;
     case 'theory':
       view = renderTheory(params.get('topic'));
+      break;
+    case 'vocabulary':
+      view = renderVocabulary(params.get('cat'));
+      break;
+    case 'dialogues':
+      view = renderDialogueList();
+      break;
+    case 'dialogue':
+      view = renderDialogue(params.get('id'));
       break;
     case 'assessment':
       view = renderExercise('assessment', 'assessment');
