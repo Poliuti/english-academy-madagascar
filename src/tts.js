@@ -1,50 +1,52 @@
-// TTS: tries pre-generated MP3 first (edge-tts quality), falls back to Web Speech API.
+// TTS module: uses pre-generated edge-tts MP3s (en-GB-SoniaNeural) when available.
+// Lookup key = normalized text (lowercase, trimmed).
+// Falls back to Web Speech API only if no MP3 exists for that text.
 
 let audioMap = null;
+let mapLoading = null;
 
-async function loadAudioMap() {
-  if (audioMap !== null) return;
-  try {
-    const { AUDIO_MAP } = await import('./data/audio-map.js');
-    audioMap = AUDIO_MAP;
-  } catch {
-    audioMap = {};
-  }
+function loadMap() {
+  if (audioMap !== null) return Promise.resolve();
+  if (mapLoading) return mapLoading;
+  mapLoading = import('./data/audio-map.js')
+    .then(m => { audioMap = m.AUDIO_MAP || {}; })
+    .catch(() => { audioMap = {}; });
+  return mapLoading;
 }
 
-loadAudioMap();
+// Pre-load map as soon as module is imported
+loadMap();
 
-// ─── MP3 playback ────────────────────────────────────────────────────────────
+// ─── normalize ────────────────────────────────────────────────────────────────
+function normalize(text) {
+  return (text || '').toLowerCase().trim();
+}
+
+// ─── MP3 player ───────────────────────────────────────────────────────────────
 let currentAudio = null;
 
-function playMP3(path, { onEnd = null } = {}) {
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+function playMP3(path, onEnd) {
+  if (currentAudio) { currentAudio.pause(); currentAudio.src = ''; currentAudio = null; }
   const audio = new Audio(path);
   currentAudio = audio;
-  if (onEnd) audio.addEventListener('ended', onEnd);
+  if (onEnd) audio.addEventListener('ended', onEnd, { once: true });
   audio.play().catch(() => {
-    // MP3 failed, fall back to SpeechSynthesis
     currentAudio = null;
-    speakFallback(path, { onEnd });
+    if (onEnd) onEnd();
   });
 }
 
 // ─── Web Speech API fallback ──────────────────────────────────────────────────
 let voices = [];
-let ready = false;
 
-function loadVoices() {
-  voices = speechSynthesis.getVoices();
-  if (voices.length > 0) ready = true;
-}
-
+function loadVoices() { voices = speechSynthesis.getVoices(); }
 if ('speechSynthesis' in window) {
   loadVoices();
   speechSynthesis.addEventListener('voiceschanged', loadVoices);
 }
 
-function getBestVoice() {
-  const preferred = [
+function bestVoice() {
+  const tests = [
     v => v.lang === 'en-GB' && v.localService,
     v => v.lang === 'en-US' && v.localService,
     v => v.lang.startsWith('en-') && v.localService,
@@ -52,66 +54,51 @@ function getBestVoice() {
     v => v.lang === 'en-US',
     v => v.lang.startsWith('en-'),
   ];
-  for (const test of preferred) {
-    const found = voices.find(test);
-    if (found) return found;
-  }
+  for (const t of tests) { const v = voices.find(t); if (v) return v; }
   return voices[0] || null;
 }
 
-function speakFallback(text, { rate = 0.85, pitch = 1, onEnd = null } = {}) {
-  if (!('speechSynthesis' in window)) return;
+function speakFallback(text, onEnd) {
+  if (!('speechSynthesis' in window)) { if (onEnd) onEnd(); return; }
   speechSynthesis.cancel();
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = 'en-GB';
-  utter.rate = rate;
-  utter.pitch = pitch;
-  const voice = getBestVoice();
-  if (voice) utter.voice = voice;
-  if (onEnd) utter.onend = onEnd;
-  speechSynthesis.speak(utter);
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-GB';
+  u.rate = 0.85;
+  u.pitch = 1;
+  const v = bestVoice();
+  if (v) u.voice = v;
+  if (onEnd) u.onend = onEnd;
+  speechSynthesis.speak(u);
 }
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
 /**
- * Speak text: checks audio map for pre-generated MP3 by id, then tries text
- * match; falls back to Web Speech API.
- * @param {string} text
- * @param {{ id?: string, rate?: number, onEnd?: Function }} options
+ * Speak English text.
+ * Uses pre-generated MP3 (edge-tts en-GB-SoniaNeural) when available,
+ * falls back to Web Speech API.
+ *
+ * @param {string} text  - English text to speak
+ * @param {{ onEnd?: Function }} opts
  */
-export function speak(text, { id = null, rate = 0.85, onEnd = null } = {}) {
-  // Try MP3 by explicit id first
-  if (id && audioMap && audioMap[id]) {
-    playMP3(audioMap[id], { onEnd });
-    return;
-  }
+export function speak(text, { onEnd = null } = {}) {
+  const key = normalize(text);
 
-  // Try to find MP3 by matching text content
-  if (audioMap) {
-    const textKey = Object.keys(audioMap).find(k => {
-      const mapText = k; // keys are ids, not texts — skip text-match for now
-      return false;
-    });
-    // If we had a text→path map we'd use it here; for now rely on id param
-  }
-
-  // Always fall back to Web Speech API for dynamic TTS (vocab cards, theory, etc.)
-  speakFallback(text, { rate, onEnd });
+  loadMap().then(() => {
+    const path = audioMap[key];
+    if (path) {
+      playMP3(path, onEnd);
+    } else {
+      speakFallback(text, onEnd);
+    }
+  });
 }
 
 export function stop() {
-  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  if (currentAudio) { currentAudio.pause(); currentAudio.src = ''; currentAudio = null; }
   if ('speechSynthesis' in window) speechSynthesis.cancel();
 }
 
 export function isSupported() {
-  return 'speechSynthesis' in window || (audioMap && Object.keys(audioMap).length > 0);
-}
-
-export function getVoiceInfo() {
-  const mp3Count = audioMap ? Object.keys(audioMap).length : 0;
-  if (mp3Count > 0) return `MP3 pré-générés (${mp3Count}) + synthèse vocale`;
-  const v = getBestVoice();
-  return v ? `${v.name} (${v.lang})` : 'Voix par défaut';
+  return true; // MP3 + Web Speech API always available in modern browsers
 }
