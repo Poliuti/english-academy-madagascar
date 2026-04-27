@@ -42,13 +42,35 @@ export const theory = {
           { en: 'work → he work<strong>s</strong>', fr: 'travailler → il travaille' },
           { en: 'go → she go<strong>es</strong>', fr: 'aller → elle va' },
           { en: 'study → he studi<strong>es</strong>', fr: 'étudier → il étudie' },
+          { en: 'have → he <strong>has</strong> (irrégulier !)', fr: 'avoir → il a' },
+          { en: 'be → she <strong>is</strong> (irrégulier !)', fr: 'être → elle est' },
+        ]
+      },
+      {
+        title: '🧠 Verbes d\'état (pas de continuous)',
+        content: 'Ces verbes ne s\'utilisent <em>jamais</em> avec -ing au présent',
+        examples: [
+          { en: 'I <strong>know</strong> the answer. (pas "I am knowing")', fr: 'Je connais la réponse.' },
+          { en: 'She <strong>likes</strong> music. (pas "she is liking")', fr: 'Elle aime la musique.' },
+          { en: 'He <strong>wants</strong> to eat.', fr: 'Il veut manger.' },
+          { en: 'They <strong>understand</strong> French.', fr: 'Ils comprennent le français.' },
+        ]
+      },
+      {
+        title: '📅 Quand l\'utiliser ?',
+        content: 'Situations clés du Present Simple',
+        examples: [
+          { en: 'The sun <strong>rises</strong> in the east. (vérité générale)', fr: 'Le soleil se lève à l\'est.' },
+          { en: 'I <strong>visit</strong> my family every Sunday. (habitude)', fr: 'Je rends visite à ma famille chaque dimanche.' },
+          { en: 'The train <strong>leaves</strong> at 8 am. (horaire fixe)', fr: 'Le train part à 8h.' },
         ]
       },
     ],
     tips: [
-      '🔑 Mots-clés : always, usually, often, sometimes, never',
-      '🔑 Expressions de temps : every day/week, on Mondays, in the morning',
+      '🔑 Mots-clés : always, usually, often, sometimes, rarely, never',
+      '🔑 Expressions de temps : every day/week, on Mondays, in the morning, twice a week',
       '⚠️ he/she/it → toujours avec -s : she goes, he has, it rains',
+      '💡 Verbes d\'état : know, like, love, hate, want, need, understand, believe, see, hear',
     ]
   },
 
@@ -91,16 +113,37 @@ export const theory = {
         title: '⚠️ Orthographe du -ing',
         content: 'Règles importantes pour ajouter -ing',
         examples: [
-          { en: 'run → runn<strong>ing</strong> (double la consonne)', fr: 'courir' },
+          { en: 'run → runn<strong>ing</strong> (double la consonne finale CVC)', fr: 'courir' },
           { en: 'come → com<strong>ing</strong> (enlève le -e final)', fr: 'venir' },
           { en: 'play → play<strong>ing</strong> (normal)', fr: 'jouer' },
+          { en: 'swim → swimm<strong>ing</strong>', fr: 'nager' },
+          { en: 'write → writ<strong>ing</strong> (enlève le -e)', fr: 'écrire' },
+        ]
+      },
+      {
+        title: '📅 Futur proche avec Continuous',
+        content: 'Le Present Continuous peut exprimer un plan déjà organisé',
+        examples: [
+          { en: 'I <strong>am meeting</strong> her tomorrow. (rendez-vous fixé)', fr: 'Je la rencontre demain.' },
+          { en: 'They <strong>are leaving</strong> on Friday.', fr: 'Ils partent vendredi.' },
+          { en: 'We <strong>are having</strong> a party next week.', fr: 'Nous organisons une fête la semaine prochaine.' },
+        ]
+      },
+      {
+        title: '⚡ Situations temporaires vs permanentes',
+        content: 'Continuous = temporaire · Simple = permanent',
+        examples: [
+          { en: 'I <strong>am living</strong> in Antananarivo. (pour le moment)', fr: 'J\'habite à Antananarivo en ce moment.' },
+          { en: 'I <strong>live</strong> in Madagascar. (permanent)', fr: 'J\'habite à Madagascar.' },
+          { en: 'She <strong>is working</strong> at a café this summer.', fr: 'Elle travaille dans un café cet été.' },
         ]
       },
     ],
     tips: [
-      '🔑 Mots-clés : now, right now, at the moment, look!, listen!',
-      '⚠️ Ne pas utiliser avec : know, like, love, want, understand (verbes d\'état)',
-      '💡 I am → I\'m | He is → He\'s | They are → They\'re',
+      '🔑 Mots-clés : now, right now, at the moment, currently, look!, listen!, today',
+      '⚠️ Ne pas utiliser avec : know, like, love, want, understand, believe (verbes d\'état)',
+      '💡 I am → I\'m | He is → He\'s | They are → They\'re | She is not → She isn\'t',
+      '📅 Plan futur : "I am seeing the doctor tomorrow."',
     ]
   },
 
@@ -122,14 +165,34 @@ export const theory = {
         ]
       },
       {
+        title: '⚠️ Orthographe des verbes réguliers',
+        content: 'Règles d\'ajout de <strong>-ed</strong>',
+        examples: [
+          { en: 'work → work<strong>ed</strong> (normal)', fr: 'travailler' },
+          { en: 'live → liv<strong>ed</strong> (enlève -e final)', fr: 'vivre' },
+          { en: 'stop → stopp<strong>ed</strong> (double la consonne CVC)', fr: 'arrêter' },
+          { en: 'study → studi<strong>ed</strong> (y → ied)', fr: 'étudier' },
+        ]
+      },
+      {
         title: '⚡ Verbes irréguliers',
         content: 'Certains verbes changent complètement de forme !',
         examples: [
-          { en: 'go → <strong>went</strong>', fr: 'aller → alla/allé' },
-          { en: 'have → <strong>had</strong>', fr: 'avoir → eut/eu' },
-          { en: 'see → <strong>saw</strong>', fr: 'voir → vit/vu' },
-          { en: 'come → <strong>came</strong>', fr: 'venir → vint/venu' },
-          { en: 'buy → <strong>bought</strong>', fr: 'acheter → acheta/acheté' },
+          { en: 'go → <strong>went</strong>', fr: 'aller' },
+          { en: 'have → <strong>had</strong>', fr: 'avoir' },
+          { en: 'see → <strong>saw</strong>', fr: 'voir' },
+          { en: 'come → <strong>came</strong>', fr: 'venir' },
+          { en: 'buy → <strong>bought</strong>', fr: 'acheter' },
+          { en: 'do → <strong>did</strong>', fr: 'faire' },
+          { en: 'say → <strong>said</strong>', fr: 'dire' },
+          { en: 'get → <strong>got</strong>', fr: 'obtenir/devenir' },
+          { en: 'make → <strong>made</strong>', fr: 'faire/fabriquer' },
+          { en: 'take → <strong>took</strong>', fr: 'prendre' },
+          { en: 'give → <strong>gave</strong>', fr: 'donner' },
+          { en: 'know → <strong>knew</strong>', fr: 'savoir/connaître' },
+          { en: 'write → <strong>wrote</strong>', fr: 'écrire' },
+          { en: 'eat → <strong>ate</strong>', fr: 'manger' },
+          { en: 'drink → <strong>drank</strong>', fr: 'boire' },
         ]
       },
       {
@@ -152,9 +215,10 @@ export const theory = {
       },
     ],
     tips: [
-      '🔑 Mots-clés : yesterday, last night/week/year, ago, in 2005',
+      '🔑 Mots-clés : yesterday, last night/week/year, ago, in 2005, just now, the other day',
       '⚠️ Après didn\'t et did, TOUJOURS l\'infinitif : didn\'t go (pas didn\'t went)',
-      '📝 Liste à apprendre : go/went, have/had, come/came, see/saw, eat/ate',
+      '📝 Liste prioritaire : go/went, have/had, come/came, see/saw, eat/ate, do/did, say/said, get/got',
+      '💡 "Two years ago" = il y a deux ans | "last Monday" = lundi dernier',
     ]
   },
 
@@ -195,17 +259,29 @@ export const theory = {
       },
       {
         title: '💡 Going to vs Will',
-        content: '"Be going to" exprime un plan déjà décidé, "will" une décision immédiate',
+        content: '"Be going to" = plan déjà décidé · "will" = décision spontanée ou prédiction',
         examples: [
           { en: 'I\'m going to study medicine. (plan)', fr: 'Je vais étudier la médecine. (décision prise)' },
-          { en: 'I\'ll help you carry that! (décision immédiate)', fr: 'Je vais t\'aider à porter ça !' },
+          { en: 'I\'ll help you carry that! (décision spontanée)', fr: 'Je vais t\'aider à porter ça !' },
+          { en: 'Look at those clouds — it\'s going to rain. (évidence)', fr: 'Regarde ces nuages — ça va pleuvoir.' },
+          { en: 'I think he\'ll be a good doctor. (prédiction)', fr: 'Je pense qu\'il sera un bon médecin.' },
+        ]
+      },
+      {
+        title: '⏰ Propositions conditionnelles + futur',
+        content: 'Avec "if", "when", "as soon as" → présent (pas de will dans la subordonnée)',
+        examples: [
+          { en: 'If it <strong>rains</strong>, I <strong>will</strong> stay home.', fr: 'S\'il pleut, je resterai à la maison.' },
+          { en: 'When I <strong>finish</strong>, I will call you.', fr: 'Quand j\'aurai fini, je t\'appellerai.' },
+          { en: 'As soon as she <strong>arrives</strong>, we will start.', fr: 'Dès qu\'elle arrive, nous commençons.' },
         ]
       },
     ],
     tips: [
-      '🔑 Mots-clés : tomorrow, next week/year, in the future, one day, soon',
+      '🔑 Mots-clés : tomorrow, next week/year, in the future, one day, soon, in 10 years',
       '⚠️ Après "will", TOUJOURS l\'infinitif : will go, will be, will have',
-      '💡 will = \'ll | will not = won\'t (contraction)',
+      '💡 will = \'ll | will not = won\'t | Pas de will après if/when/as soon as',
+      '🔑 "Be going to" + infinitif : I am going to work, she is going to study',
     ]
   },
 
@@ -494,11 +570,39 @@ export const theory = {
           { en: 'We <strong>don\'t have to</strong> wear uniforms.', fr: 'Nous n\'avons pas à porter d\'uniforme.' },
         ]
       },
+      {
+        title: '🕰️ Could (passé de can / possibilité)',
+        content: 'Capacité passée, ou possibilité moins certaine',
+        examples: [
+          { en: 'When I was young, I <strong>could</strong> run fast.', fr: 'Quand j\'étais jeune, je pouvais courir vite.' },
+          { en: 'It <strong>could</strong> rain later. (possibilité)', fr: 'Il pourrait pleuvoir plus tard.' },
+          { en: '<strong>Could</strong> you help me? (demande polie)', fr: 'Pourriez-vous m\'aider ?' },
+        ]
+      },
+      {
+        title: '🤔 Might (probabilité faible)',
+        content: 'Possibilité incertaine (~30-50%)',
+        examples: [
+          { en: 'I <strong>might</strong> come to the party.', fr: 'Je viendrai peut-être à la fête.' },
+          { en: 'She <strong>might</strong> be sick.', fr: 'Elle est peut-être malade.' },
+          { en: 'It <strong>might not</strong> be true.', fr: 'Ce n\'est peut-être pas vrai.' },
+        ]
+      },
+      {
+        title: '💭 Would (conditionnel / politesse)',
+        content: 'Action hypothétique, ou demande très polie',
+        examples: [
+          { en: 'I <strong>would</strong> travel the world if I had money.', fr: 'Je voyagerais dans le monde si j\'avais de l\'argent.' },
+          { en: '<strong>Would</strong> you like some tea?', fr: 'Voulez-vous du thé ?' },
+          { en: 'She <strong>would</strong> help you if she could.', fr: 'Elle t\'aiderait si elle pouvait.' },
+        ]
+      },
     ],
     tips: [
-      '🔑 Modaux : PAS de -s à la 3e pers. singulier (She can, She must)',
-      '⚠️ Après un modal : verbe infinitif SANS "to" (can go, pas can to go)',
+      '🔑 Modaux : PAS de -s à la 3e pers. singulier (She can, She must, He might)',
+      '⚠️ Après un modal : verbe infinitif SANS "to" (can go, might rain, would help)',
       '💡 must = obligation personnelle ; have to = obligation extérieure',
+      '📊 Certitude : must > should > can > could > might > would',
     ]
   },
 
@@ -600,6 +704,445 @@ export const theory = {
     ]
   },
 
+  pastContinuous: {
+    id: 'pastContinuous',
+    title: 'Past Continuous',
+    icon: '⏸️',
+    level: 'B1',
+    subtitle: 'Action en cours dans le passé, interrompue ou parallèle',
+    malgasyNote: 'Hetsika nifanindrana na nitranga teo aloha',
+    sections: [
+      {
+        title: '✅ Forme affirmative',
+        content: 'Sujet + <strong>was/were</strong> + verbe<strong>-ing</strong>',
+        examples: [
+          { en: 'I <strong>was reading</strong> when you called.', fr: 'J\'étais en train de lire quand tu as appelé.' },
+          { en: 'They <strong>were playing</strong> football at 5pm.', fr: 'Ils jouaient au football à 17h.' },
+          { en: 'She <strong>was cooking</strong> dinner all evening.', fr: 'Elle préparait le dîner toute la soirée.' },
+        ]
+      },
+      {
+        title: '❌ Forme négative',
+        content: 'Sujet + <strong>wasn\'t / weren\'t</strong> + verbe<strong>-ing</strong>',
+        examples: [
+          { en: 'I <strong>wasn\'t sleeping</strong>, I was studying.', fr: 'Je ne dormais pas, j\'étudiais.' },
+          { en: 'They <strong>weren\'t listening</strong> to the teacher.', fr: 'Ils n\'écoutaient pas le professeur.' },
+        ]
+      },
+      {
+        title: '❓ Forme interrogative',
+        content: '<strong>Was/Were</strong> + sujet + verbe<strong>-ing</strong> ?',
+        examples: [
+          { en: '<strong>Were</strong> you <strong>studying</strong> last night?', fr: 'Tu étudiais hier soir ?' },
+          { en: '<strong>Was</strong> she <strong>working</strong> at 3pm?', fr: 'Elle travaillait à 15h ?' },
+        ]
+      },
+      {
+        title: '🔗 Past Continuous + Past Simple',
+        content: 'Action longue (continuous) + action courte (simple)',
+        examples: [
+          { en: 'I <strong>was walking</strong> home when I <strong>saw</strong> an accident.', fr: 'Je rentrais à pied quand j\'ai vu un accident.' },
+          { en: 'While she <strong>was studying</strong>, her phone <strong>rang</strong>.', fr: 'Pendant qu\'elle étudiait, son téléphone a sonné.' },
+          { en: 'They <strong>were eating</strong> when the light <strong>went</strong> out.', fr: 'Ils mangeaient quand la lumière s\'est éteinte.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 "while" introduce souvent le Past Continuous : "while I was sleeping"',
+      '⚠️ was = I/he/she/it · were = you/we/they',
+      '💡 Deux actions parallèles : While she was cooking, he was watching TV.',
+    ]
+  },
+
+  futureContinuous: {
+    id: 'futureContinuous',
+    title: 'Future Continuous',
+    icon: '🔮',
+    level: 'B1',
+    subtitle: 'Action en cours à un moment précis dans le futur',
+    malgasyNote: 'Hetsika hitranga amin\'ny fotoana iray ho avy',
+    sections: [
+      {
+        title: '✅ Forme',
+        content: 'Sujet + <strong>will be</strong> + verbe<strong>-ing</strong>',
+        examples: [
+          { en: 'At 8pm, I <strong>will be studying</strong>.', fr: 'À 20h, je serai en train d\'étudier.' },
+          { en: 'This time tomorrow, she <strong>will be flying</strong> to Paris.', fr: 'Demain à cette heure, elle sera en avion pour Paris.' },
+          { en: 'They <strong>will be waiting</strong> for us at the airport.', fr: 'Ils nous attendront à l\'aéroport.' },
+        ]
+      },
+      {
+        title: '❌ Négatif / ❓ Interrogatif',
+        content: 'won\'t be + -ing / Will + sujet + be + -ing ?',
+        examples: [
+          { en: 'I <strong>won\'t be working</strong> on Sunday.', fr: 'Je ne travaillerai pas dimanche.' },
+          { en: '<strong>Will</strong> you <strong>be using</strong> the computer?', fr: 'Est-ce que tu utiliseras l\'ordinateur ?' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Utile pour demander poliment : "Will you be using the car tonight?"',
+      '💡 Différence : "I will study" (décision) vs "I will be studying" (en cours à un moment)',
+      '⏰ Souvent avec : at this time tomorrow, at 6pm, when you arrive',
+    ]
+  },
+
+  presentPerfect: {
+    id: 'presentPerfect',
+    title: 'Present Perfect',
+    icon: '🔗',
+    level: 'B1',
+    subtitle: 'Action passée liée au présent',
+    malgasyNote: 'Zavatra vita teo aloha misy fiatraikany amin\'izao fotoana izao',
+    sections: [
+      {
+        title: '✅ Forme affirmative',
+        content: 'Sujet + <strong>have/has</strong> + participe passé (3e colonne)',
+        examples: [
+          { en: 'I <strong>have visited</strong> Paris.', fr: 'J\'ai visité Paris. (dans ma vie)' },
+          { en: 'She <strong>has finished</strong> her homework.', fr: 'Elle a fini ses devoirs.' },
+          { en: 'They <strong>have lived</strong> here for 10 years.', fr: 'Ils habitent ici depuis 10 ans.' },
+        ]
+      },
+      {
+        title: '❌ Forme négative',
+        content: 'Sujet + <strong>haven\'t / hasn\'t</strong> + participe passé',
+        examples: [
+          { en: 'I <strong>haven\'t seen</strong> that film.', fr: 'Je n\'ai pas vu ce film.' },
+          { en: 'He <strong>hasn\'t called</strong> me.', fr: 'Il ne m\'a pas appelé.' },
+          { en: 'We <strong>haven\'t eaten</strong> yet.', fr: 'Nous n\'avons pas encore mangé.' },
+        ]
+      },
+      {
+        title: '❓ Forme interrogative',
+        content: '<strong>Have/Has</strong> + sujet + participe passé ?',
+        examples: [
+          { en: '<strong>Have</strong> you ever <strong>eaten</strong> sushi?', fr: 'As-tu déjà mangé des sushis ?' },
+          { en: '<strong>Has</strong> she <strong>arrived</strong> yet?', fr: 'Est-elle déjà arrivée ?' },
+          { en: 'How long <strong>have</strong> you <strong>known</strong> him?', fr: 'Depuis combien de temps le connais-tu ?' },
+        ]
+      },
+      {
+        title: '⚡ Participes passés irréguliers',
+        content: 'Infinitif → Prétérit → Participe passé',
+        examples: [
+          { en: 'go → went → <strong>gone</strong>', fr: 'aller' },
+          { en: 'see → saw → <strong>seen</strong>', fr: 'voir' },
+          { en: 'eat → ate → <strong>eaten</strong>', fr: 'manger' },
+          { en: 'write → wrote → <strong>written</strong>', fr: 'écrire' },
+          { en: 'be → was/were → <strong>been</strong>', fr: 'être' },
+          { en: 'have → had → <strong>had</strong>', fr: 'avoir' },
+          { en: 'do → did → <strong>done</strong>', fr: 'faire' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Mots-clés : already, yet, just, ever, never, since, for, recently',
+      '⚠️ Present Perfect ≠ Past Simple. "I have been to Paris" (vie) vs "I went last year" (moment précis)',
+      '💡 have = I/you/we/they · has = he/she/it',
+      '📅 Since + point de départ : since 2020, since Monday. For + durée : for 3 years, for two days.',
+    ]
+  },
+
+  pastPerfect: {
+    id: 'pastPerfect',
+    title: 'Past Perfect',
+    icon: '⏮️⏮️',
+    level: 'B1',
+    subtitle: 'Action antérieure à une autre action passée',
+    malgasyNote: 'Hetsika vita talohan\'ny hetsika iray hafa teo aloha',
+    sections: [
+      {
+        title: '✅ Forme',
+        content: 'Sujet + <strong>had</strong> + participe passé (même forme pour tous)',
+        examples: [
+          { en: 'When I arrived, she <strong>had already left</strong>.', fr: 'Quand je suis arrivé, elle était déjà partie.' },
+          { en: 'He <strong>had never seen</strong> snow before.', fr: 'Il n\'avait jamais vu de neige avant ça.' },
+          { en: 'They were tired because they <strong>had walked</strong> far.', fr: 'Ils étaient fatigués car ils avaient marché loin.' },
+        ]
+      },
+      {
+        title: '❌ Négatif / ❓ Interrogatif',
+        content: 'hadn\'t + participe · Had + sujet + participe ?',
+        examples: [
+          { en: 'I <strong>hadn\'t eaten</strong> anything.', fr: 'Je n\'avais rien mangé.' },
+          { en: '<strong>Had</strong> you <strong>met</strong> him before?', fr: 'L\'aviez-vous rencontré avant ?' },
+        ]
+      },
+      {
+        title: '🔗 Past Perfect + Past Simple',
+        content: 'Deux actions passées : Past Perfect = avant · Past Simple = après',
+        examples: [
+          { en: 'I <strong>had studied</strong> English before I <strong>moved</strong> to France.', fr: 'J\'avais étudié l\'anglais avant de déménager en France.' },
+          { en: 'When she <strong>arrived</strong>, the film <strong>had already started</strong>.', fr: 'Quand elle est arrivée, le film avait déjà commencé.' },
+          { en: 'He <strong>failed</strong> the exam because he <strong>hadn\'t prepared</strong>.', fr: 'Il a raté l\'examen parce qu\'il ne s\'était pas préparé.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 "Had" = même forme pour tous les sujets : I/you/he/she/we/they had',
+      '💡 Mots-clés : already, just, never, before, after, when, by the time',
+      '⚠️ "After I <strong>had eaten</strong>, I went to school." — le Past Perfect indique l\'antériorité',
+    ]
+  },
+
+  futurePerfect: {
+    id: 'futurePerfect',
+    title: 'Future Perfect',
+    icon: '✅🚀',
+    level: 'B2',
+    subtitle: 'Action terminée avant un moment dans le futur',
+    malgasyNote: 'Hetsika ho vita alohan\'ny fotoana iray ho avy',
+    sections: [
+      {
+        title: '✅ Forme',
+        content: 'Sujet + <strong>will have</strong> + participe passé',
+        examples: [
+          { en: 'By 2030, I <strong>will have graduated</strong>.', fr: 'D\'ici 2030, j\'aurai obtenu mon diplôme.' },
+          { en: 'By the time you arrive, we <strong>will have eaten</strong>.', fr: 'Quand tu arriveras, nous aurons mangé.' },
+          { en: 'She <strong>will have finished</strong> the project by Friday.', fr: 'Elle aura fini le projet avant vendredi.' },
+        ]
+      },
+      {
+        title: '❌ Négatif / ❓ Interrogatif',
+        content: 'won\'t have + participe · Will + sujet + have + participe ?',
+        examples: [
+          { en: 'I <strong>won\'t have finished</strong> by tomorrow.', fr: 'Je n\'aurai pas fini demain.' },
+          { en: '<strong>Will</strong> you <strong>have saved</strong> enough money by then?', fr: 'Aurez-vous économisé assez d\'argent d\'ici là ?' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Marqueurs : by then, by the time, by 2030, by next year',
+      '💡 "By the time" + présent → futur perfect : By the time he arrives, I will have left.',
+      '⚠️ Moins fréquent que les autres temps — utile pour les projets et objectifs',
+    ]
+  },
+
+  timeMarkers: {
+    id: 'timeMarkers',
+    title: 'Indicateurs de Temps',
+    icon: '⏱️',
+    level: 'B1',
+    subtitle: 'already, yet, just, since, for, ago, while, as soon as',
+    malgasyNote: 'Teny manondro fotoana ao amin\'ny fehezanteny',
+    sections: [
+      {
+        title: '✅ Already / Yet / Just',
+        content: '<strong>already</strong> = déjà · <strong>yet</strong> = encore (négatif/question) · <strong>just</strong> = tout juste',
+        examples: [
+          { en: 'I have <strong>already</strong> done my homework.', fr: 'J\'ai déjà fait mes devoirs.' },
+          { en: 'I haven\'t eaten <strong>yet</strong>.', fr: 'Je n\'ai pas encore mangé.' },
+          { en: 'Have you finished <strong>yet</strong>?', fr: 'Tu as déjà fini ?' },
+          { en: 'She has <strong>just</strong> arrived.', fr: 'Elle vient d\'arriver.' },
+        ]
+      },
+      {
+        title: '⏳ Since / For',
+        content: '<strong>since</strong> = depuis un point · <strong>for</strong> = depuis une durée',
+        examples: [
+          { en: 'I have lived here <strong>since</strong> 2018.', fr: 'J\'habite ici depuis 2018. (point de départ)' },
+          { en: 'She has worked there <strong>for</strong> 3 years.', fr: 'Elle y travaille depuis 3 ans. (durée)' },
+          { en: 'I haven\'t seen him <strong>since</strong> Monday.', fr: 'Je ne l\'ai pas vu depuis lundi.' },
+          { en: 'They have been friends <strong>for</strong> a long time.', fr: 'Ils sont amis depuis longtemps.' },
+        ]
+      },
+      {
+        title: '⏮️ Ago',
+        content: '<strong>ago</strong> = il y a (toujours avec le Past Simple)',
+        examples: [
+          { en: 'I saw him two days <strong>ago</strong>.', fr: 'Je l\'ai vu il y a deux jours.' },
+          { en: 'She left an hour <strong>ago</strong>.', fr: 'Elle est partie il y a une heure.' },
+          { en: 'They moved here 5 years <strong>ago</strong>.', fr: 'Ils ont déménagé ici il y a 5 ans.' },
+        ]
+      },
+      {
+        title: '🔗 While / As soon as',
+        content: '<strong>while</strong> = pendant que · <strong>as soon as</strong> = dès que',
+        examples: [
+          { en: '<strong>While</strong> I was cooking, she was studying.', fr: 'Pendant que je cuisinais, elle étudiait.' },
+          { en: '<strong>While</strong> you sleep, the world keeps moving.', fr: 'Pendant que tu dors, le monde continue.' },
+          { en: '<strong>As soon as</strong> I arrive, I will call you.', fr: 'Dès que j\'arrive, je t\'appellerai.' },
+          { en: '<strong>As soon as</strong> she heard the news, she cried.', fr: 'Dès qu\'elle a appris la nouvelle, elle a pleuré.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 since + date/événement · for + durée (nombre)',
+      '⚠️ "ago" → toujours Past Simple. "I saw him ago" — jamais avec Present Perfect',
+      '💡 "yet" en fin de phrase (négatif/question) · "already" au milieu',
+      '🔗 while + continuous · as soon as + simple',
+    ]
+  },
+
+  conditionals: {
+    id: 'conditionals',
+    title: 'Les Conditionnels (If)',
+    icon: '🔀',
+    level: 'B1–B2',
+    subtitle: '0e, 1er, 2e, 3e conditionnel + mixte',
+    malgasyNote: 'Fehezanteny manondro fepetra sy vokatry ny zavatra',
+    sections: [
+      {
+        title: '0️⃣ Zéro conditionnel (vérité générale)',
+        content: '<strong>If + présent → présent</strong> (toujours vrai)',
+        examples: [
+          { en: 'If you <strong>heat</strong> water to 100°C, it <strong>boils</strong>.', fr: 'Si tu chauffes l\'eau à 100°C, elle bout.' },
+          { en: 'If it <strong>rains</strong>, the ground <strong>gets</strong> wet.', fr: 'S\'il pleut, le sol devient mouillé.' },
+          { en: 'If you <strong>don\'t eat</strong>, you <strong>feel</strong> hungry.', fr: 'Si tu ne manges pas, tu as faim.' },
+        ]
+      },
+      {
+        title: '1️⃣ Premier conditionnel (futur réel)',
+        content: '<strong>If + présent → will + infinitif</strong> (possible et probable)',
+        examples: [
+          { en: 'If I <strong>study</strong> hard, I <strong>will pass</strong> the exam.', fr: 'Si j\'étudie dur, je réussirai l\'examen.' },
+          { en: 'If it <strong>doesn\'t rain</strong>, we <strong>will play</strong> outside.', fr: 'S\'il ne pleut pas, nous jouerons dehors.' },
+          { en: 'If she <strong>calls</strong>, I <strong>will answer</strong>.', fr: 'Si elle appelle, je répondrai.' },
+        ]
+      },
+      {
+        title: '2️⃣ Deuxième conditionnel (hypothèse irréelle)',
+        content: '<strong>If + past simple → would + infinitif</strong> (imaginaire/peu probable)',
+        examples: [
+          { en: 'If I <strong>had</strong> money, I <strong>would buy</strong> a house.', fr: 'Si j\'avais de l\'argent, j\'achèterais une maison. (je n\'en ai pas)' },
+          { en: 'If she <strong>were</strong> taller, she <strong>would be</strong> a model.', fr: 'Si elle était plus grande, elle serait mannequin.' },
+          { en: 'What <strong>would</strong> you do if you <strong>won</strong> the lottery?', fr: 'Que ferais-tu si tu gagnais à la loterie ?' },
+        ]
+      },
+      {
+        title: '3️⃣ Troisième conditionnel (passé imaginaire)',
+        content: '<strong>If + past perfect → would have + participe</strong> (regret/situation irréelle)',
+        examples: [
+          { en: 'If I <strong>had studied</strong>, I <strong>would have passed</strong>.', fr: 'Si j\'avais étudié, j\'aurais réussi. (je n\'ai pas étudié)' },
+          { en: 'If she <strong>had left</strong> earlier, she <strong>wouldn\'t have missed</strong> the bus.', fr: 'Si elle était partie plus tôt, elle n\'aurait pas raté le bus.' },
+          { en: 'If he <strong>had known</strong>, he <strong>would have helped</strong>.', fr: 'S\'il avait su, il aurait aidé.' },
+        ]
+      },
+      {
+        title: '🔀 Conditionnel mixte (passé → présent)',
+        content: '<strong>If + past perfect → would + infinitif</strong> (cause passée, effet présent)',
+        examples: [
+          { en: 'If I <strong>had studied</strong> more, I <strong>would be</strong> a doctor now.', fr: 'Si j\'avais plus étudié, je serais médecin maintenant.' },
+          { en: 'If she <strong>hadn\'t moved</strong>, she <strong>would still live</strong> here.', fr: 'Si elle n\'avait pas déménagé, elle vivrait encore ici.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 1er cond. : futur réel/possible. 2e cond. : imaginaire. 3e cond. : passé regretté.',
+      '⚠️ Avec "if" : jamais "will" dans la proposition en "if" (1er conditionnel)',
+      '💡 "If I were you..." = conseil (2e cond.). "Were" pour tous les sujets !',
+      '🔀 Mixte : passé hypothétique + résultat présent',
+    ]
+  },
+
+  passiveVoice: {
+    id: 'passiveVoice',
+    title: 'Voix Passive',
+    icon: '🔄',
+    level: 'B1',
+    subtitle: 'L\'action est reçue par le sujet, non faite par lui',
+    malgasyNote: 'Ny voa-manao no atao sehatra',
+    sections: [
+      {
+        title: '✅ Présent passif',
+        content: 'Sujet + <strong>am/is/are</strong> + participe passé',
+        examples: [
+          { en: 'Rice <strong>is grown</strong> in Madagascar.', fr: 'Le riz est cultivé à Madagascar.' },
+          { en: 'English <strong>is spoken</strong> in many countries.', fr: 'L\'anglais est parlé dans de nombreux pays.' },
+          { en: 'The windows <strong>are cleaned</strong> every week.', fr: 'Les fenêtres sont nettoyées chaque semaine.' },
+        ]
+      },
+      {
+        title: '⏮️ Passé passif',
+        content: 'Sujet + <strong>was/were</strong> + participe passé',
+        examples: [
+          { en: 'The book <strong>was written</strong> in 1900.', fr: 'Le livre a été écrit en 1900.' },
+          { en: 'The children <strong>were helped</strong> by the teacher.', fr: 'Les enfants ont été aidés par le professeur.' },
+          { en: 'A new school <strong>was built</strong> last year.', fr: 'Une nouvelle école a été construite l\'année dernière.' },
+        ]
+      },
+      {
+        title: '🚀 Futur passif',
+        content: 'Sujet + <strong>will be</strong> + participe passé',
+        examples: [
+          { en: 'The project <strong>will be finished</strong> by tomorrow.', fr: 'Le projet sera terminé demain.' },
+          { en: 'You <strong>will be informed</strong> soon.', fr: 'Vous serez informé bientôt.' },
+        ]
+      },
+      {
+        title: '🔄 Actif → Passif',
+        content: 'Transformer une phrase active en passive',
+        examples: [
+          { en: 'The teacher corrects the tests. → The tests <strong>are corrected</strong> by the teacher.', fr: 'Le professeur corrige les tests. → Les tests sont corrigés par le professeur.' },
+          { en: 'They built a hospital. → A hospital <strong>was built</strong> (by them).', fr: 'Ils ont construit un hôpital. → Un hôpital a été construit.' },
+          { en: 'Someone stole my bag. → My bag <strong>was stolen</strong>.', fr: 'Quelqu\'un a volé mon sac. → Mon sac a été volé.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Agent introduit par "by" : "written by Shakespeare", "made by students"',
+      '💡 On omet "by ..." si l\'agent est inconnu ou évident : "My bag was stolen."',
+      '⚠️ Participe passé ≠ prétérit : "was written" (passif) pas "was wrote"',
+      '📝 Utilisation : articles de journal, science, procédures officielles',
+    ]
+  },
+
+  reportedSpeech: {
+    id: 'reportedSpeech',
+    title: 'Discours Indirect (Reported Speech)',
+    icon: '💬',
+    level: 'B1–B2',
+    subtitle: 'Rapporter ce que quelqu\'un a dit',
+    malgasyNote: 'Ny fampitana teny amin\'ny olona hafa',
+    sections: [
+      {
+        title: '💬 Statements (affirmations)',
+        content: 'say/tell + <strong>that</strong> + proposition (temps reculé)',
+        examples: [
+          { en: '"I am tired." → She said (that) she <strong>was</strong> tired.', fr: '"Je suis fatigué." → Elle a dit qu\'elle était fatiguée.' },
+          { en: '"I <strong>work</strong> here." → He said he <strong>worked</strong> here.', fr: '"Je travaille ici." → Il a dit qu\'il travaillait ici.' },
+          { en: '"We <strong>will come</strong>." → They said they <strong>would come</strong>.', fr: '"Nous viendrons." → Ils ont dit qu\'ils viendraient.' },
+        ]
+      },
+      {
+        title: '⏮️ Changements de temps',
+        content: 'Les temps "reculent" d\'un cran dans le passé',
+        examples: [
+          { en: 'present simple → <strong>past simple</strong>', fr: '"I eat" → he said he ate' },
+          { en: 'present continuous → <strong>past continuous</strong>', fr: '"I am eating" → she said she was eating' },
+          { en: 'past simple → <strong>past perfect</strong>', fr: '"I ate" → he said he had eaten' },
+          { en: 'will → <strong>would</strong>', fr: '"I will go" → she said she would go' },
+          { en: 'can → <strong>could</strong>', fr: '"I can help" → he said he could help' },
+        ]
+      },
+      {
+        title: '❓ Questions indirectes',
+        content: 'ask + if/whether (oui/non) · ask + wh-word',
+        examples: [
+          { en: '"Do you speak English?" → She asked if I <strong>spoke</strong> English.', fr: '"Tu parles anglais ?" → Elle a demandé si je parlais anglais.' },
+          { en: '"Where do you live?" → He asked where I <strong>lived</strong>.', fr: '"Où habites-tu ?" → Il a demandé où j\'habitais.' },
+          { en: '"Will you come?" → She asked if I <strong>would come</strong>.', fr: '"Viendras-tu ?" → Elle a demandé si je viendrais.' },
+        ]
+      },
+      {
+        title: '📋 Ordres et demandes',
+        content: 'tell/ask + sujet + <strong>to</strong> + infinitif',
+        examples: [
+          { en: '"Sit down!" → She told him <strong>to sit down</strong>.', fr: '"Assieds-toi !" → Elle lui a dit de s\'asseoir.' },
+          { en: '"Please help me." → She asked me <strong>to help</strong> her.', fr: '"Aide-moi s\'il te plaît." → Elle m\'a demandé de l\'aider.' },
+          { en: '"Don\'t be late." → He told us <strong>not to be</strong> late.', fr: '"Ne soyez pas en retard." → Il nous a dit de ne pas être en retard.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 say (sans objet) : "She said she was tired." · tell (avec objet) : "She told me she was tired."',
+      '⚠️ Question indirecte : ordre normal (sujet + verbe), pas d\'inversion',
+      '💡 Changements de pronoms : "I" → he/she · "we" → they · "you" → I/we',
+      '📅 Expressions de temps : now → then · today → that day · tomorrow → the next day',
+    ]
+  },
+
   vocabulary: {
     routine: {
       title: 'Vocabulaire : Routine Quotidienne',
@@ -669,18 +1212,34 @@ export function getTheoryById(id) {
 }
 
 export const theoryTopics = [
-  { id: 'articles', label: 'Articles (a/an/the)', icon: '🔤', level: 'A1' },
-  { id: 'pronouns', label: 'Pronoms', icon: '👥', level: 'A1' },
-  { id: 'plurals', label: 'Pluriels', icon: '🔢', level: 'A1' },
-  { id: 'therebeis', label: 'There is / are', icon: '📌', level: 'A1' },
-  { id: 'prepositions', label: 'Prépositions', icon: '📍', level: 'A1–A2' },
-  { id: 'questions', label: 'Questions (Wh-)', icon: '❓', level: 'A1–A2' },
-  { id: 'presentSimple', label: 'Present Simple', icon: '📖', level: 'A1–A2' },
-  { id: 'presentContinuous', label: 'Present Continuous', icon: '🔄', level: 'A2' },
-  { id: 'comparatives', label: 'Comparatifs', icon: '⚖️', level: 'A2' },
-  { id: 'modals', label: 'Modaux (can/must)', icon: '🛠️', level: 'A2' },
-  { id: 'pastSimple', label: 'Past Simple', icon: '⏮️', level: 'A2–B1' },
-  { id: 'futureSimple', label: 'Future Simple', icon: '🚀', level: 'A2–B1' },
+  // ── A1 ───────────────────────────────────────────────────────────
+  { id: 'articles',          label: 'Articles (a/an/the)',       icon: '🔤',   level: 'A1' },
+  { id: 'pronouns',          label: 'Pronoms',                   icon: '👥',   level: 'A1' },
+  { id: 'plurals',           label: 'Pluriels',                  icon: '🔢',   level: 'A1' },
+  { id: 'therebeis',         label: 'There is / are',            icon: '📌',   level: 'A1' },
+  // ── A1–A2 ────────────────────────────────────────────────────────
+  { id: 'prepositions',      label: 'Prépositions',              icon: '📍',   level: 'A1–A2' },
+  { id: 'questions',         label: 'Questions (Wh-)',           icon: '❓',   level: 'A1–A2' },
+  { id: 'presentSimple',     label: 'Present Simple',            icon: '📖',   level: 'A1–A2' },
+  // ── A2 ───────────────────────────────────────────────────────────
+  { id: 'presentContinuous', label: 'Present Continuous',        icon: '🔄',   level: 'A2' },
+  { id: 'comparatives',      label: 'Comparatifs & Superlatifs', icon: '⚖️',   level: 'A2' },
+  { id: 'modals',            label: 'Modaux (can/must/would…)',  icon: '🛠️',   level: 'A2' },
+  // ── A2–B1 ────────────────────────────────────────────────────────
+  { id: 'pastSimple',        label: 'Past Simple',               icon: '⏮️',   level: 'A2–B1' },
+  { id: 'futureSimple',      label: 'Future Simple',             icon: '🚀',   level: 'A2–B1' },
+  // ── B1 ───────────────────────────────────────────────────────────
+  { id: 'pastContinuous',    label: 'Past Continuous',           icon: '⏸️',   level: 'B1' },
+  { id: 'futureContinuous',  label: 'Future Continuous',         icon: '🔮',   level: 'B1' },
+  { id: 'presentPerfect',    label: 'Present Perfect',           icon: '🔗',   level: 'B1' },
+  { id: 'pastPerfect',       label: 'Past Perfect',              icon: '⏮️⏮️', level: 'B1' },
+  { id: 'timeMarkers',       label: 'Indicateurs de temps',      icon: '⏱️',   level: 'B1' },
+  { id: 'passiveVoice',      label: 'Voix Passive',              icon: '🔄',   level: 'B1' },
+  // ── B1–B2 ────────────────────────────────────────────────────────
+  { id: 'conditionals',      label: 'Conditionnels (if)',        icon: '🔀',   level: 'B1–B2' },
+  { id: 'reportedSpeech',    label: 'Discours Indirect',         icon: '💬',   level: 'B1–B2' },
+  // ── B2 ───────────────────────────────────────────────────────────
+  { id: 'futurePerfect',     label: 'Future Perfect',            icon: '✅🚀',  level: 'B2' },
 ];
 
 export const vocabTopics = [
