@@ -81,14 +81,35 @@ export function renderTheory(topicId) {
 
     container.querySelectorAll('.do-exercises-btn').forEach(btn => {
       btn.addEventListener('click', () => {
+        // Maps theory section id → exercise topic key in exercises.js
         const topicMap = {
-          presentSimple: 'presentSimple',
+          routine:           'routine',
+          family:            'family',
+          school:            'school',
+          body:              'body',
+          time:              'time',
+          food:              'food',
+          colors:            'colors',
+          numbers:           'numbers',
+          adjectives:        'adjectives',
+          comparatives:      'adjectives',   // comparatives → adjectives exercises
+          pronouns:          'pronouns',
+          presentSimple:     'presentSimple',
           presentContinuous: 'presentContinuous',
-          pastSimple: 'pastSimple',
-          futureSimple: 'futureSimple',
+          pastSimple:        'pastSimple',
+          futureSimple:      'futureSimple',
         };
         const ex = topicMap[currentTopic];
-        if (ex) location.hash = `#exercise?topic=${ex}&mode=topic`;
+        if (ex) {
+          location.hash = `#exercise?topic=${ex}&mode=topic`;
+        } else {
+          btn.textContent = '🚧 Exercices bientôt disponibles !';
+          btn.disabled = true;
+          setTimeout(() => {
+            btn.textContent = '✏️ Faire des exercices sur ce thème';
+            btn.disabled = false;
+          }, 2500);
+        }
       });
     });
   }

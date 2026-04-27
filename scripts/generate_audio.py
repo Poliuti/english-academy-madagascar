@@ -139,8 +139,9 @@ def main():
     for text, fid in sorted(text_map.items(), key=lambda x: x[0]):
         wav_path = os.path.join(OUT_DIR, f"{fid}.{EXT}")
         if os.path.exists(wav_path):
-            escaped = text.replace("\\", "\\\\").replace('"', '\\"')
-            lines.append(f'  "{escaped}": "/audio/{fid}.{EXT}",')
+            # Key MUST be lowercase+trimmed to match tts.js normalize()
+            key = text.lower().strip().replace("\\", "\\\\").replace('"', '\\"')
+            lines.append(f'  "{key}": "/audio/{fid}.{EXT}",')
     lines += ["};", ""]
 
     with open(MAP_JS, "w", encoding="utf-8") as f:
