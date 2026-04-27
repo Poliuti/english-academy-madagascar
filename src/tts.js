@@ -1,4 +1,4 @@
-// TTS module: uses pre-generated edge-tts MP3s (en-GB-SoniaNeural) when available.
+// TTS module: uses pre-generated kokoro-onnx WAVs (af_sarah) when available.
 // Lookup key = normalized text (lowercase, trimmed).
 // Falls back to Web Speech API only if no MP3 exists for that text.
 

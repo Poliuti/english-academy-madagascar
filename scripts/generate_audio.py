@@ -1,24 +1,29 @@
-# Genera MP3 per TUTTI i testi inglesi dell'app (edge-tts, en-GB-SoniaNeural).
+# Genera WAV per TUTTI i testi inglesi dell'app (kokoro-onnx, voce af_sarah).
 # Esegui da: Chatbot_inglese/
 #   python scripts/generate_audio.py
-# Output: public/audio/<md5>.mp3  +  src/data/audio-map.js
+# Output: public/audio/<md5>.wav  +  src/data/audio-map.js
 
-import asyncio
 import os
 import re
-import json
 import hashlib
 
 try:
-    import edge_tts
+    from kokoro_onnx import Kokoro
+    import soundfile as sf
 except ImportError:
-    print("ERROR: pip install edge-tts")
+    print("ERROR: python -m pip install kokoro-onnx soundfile")
     exit(1)
 
-VOICE   = "en-GB-SoniaNeural"
-OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "public", "audio")
-MAP_JS  = os.path.join(os.path.dirname(__file__), "..", "src", "data", "audio-map.js")
-SRC_DIR = os.path.join(os.path.dirname(__file__), "..", "src", "data")
+VOICE    = "af_sarah"
+SPEED    = 1.0
+LANG     = "en-us"
+EXT      = "wav"                          # kokoro output è WAV nativo
+SCRIPT   = os.path.dirname(__file__)
+MODEL    = os.path.join(SCRIPT, "kokoro-v0_19.onnx")
+VOICES_F = os.path.join(SCRIPT, "voices.bin")
+OUT_DIR  = os.path.join(SCRIPT, "..", "public", "audio")
+MAP_JS   = os.path.join(SCRIPT, "..", "src", "data", "audio-map.js")
+SRC_DIR  = os.path.join(SCRIPT, "..", "src", "data")
 
 
 # ─── Estrazione testi dai file JS ────────────────────────────────────────────
@@ -75,64 +80,67 @@ def collect_texts():
     return {t for t in texts if len(t.strip()) >= 2}
 
 
-# ─── Generazione MP3 ──────────────────────────────────────────────────────────
+# ─── Generazione WAV ─────────────────────────────────────────────────────────
 
 def text_to_id(text):
     """MD5 breve del testo normalizzato = nome file."""
     norm = text.lower().strip()
     return hashlib.md5(norm.encode("utf-8")).hexdigest()[:12]
 
-async def generate(text, file_id):
-    out_path = os.path.join(OUT_DIR, f"{file_id}.mp3")
+def generate(kokoro, text, file_id):
+    out_path = os.path.join(OUT_DIR, f"{file_id}.{EXT}")
     if os.path.exists(out_path):
-        return True, file_id
+        return True
     try:
-        communicate = edge_tts.Communicate(text, VOICE, rate="-5%")
-        await communicate.save(out_path)
-        return True, file_id
+        samples, sample_rate = kokoro.create(text, voice=VOICE, speed=SPEED, lang=LANG)
+        sf.write(out_path, samples, sample_rate)
+        return True
     except Exception as e:
         print(f"  [ERR] {text[:50]}: {e}")
-        return False, file_id
+        return False
 
-async def main():
+def main():
+    if not os.path.exists(MODEL) or not os.path.exists(VOICES_F):
+        print("ERROR: model files missing in scripts/")
+        print("  kokoro-v0_19.onnx  and  voices.bin")
+        exit(1)
+
     os.makedirs(OUT_DIR, exist_ok=True)
+
+    print(f"Caricamento modello kokoro...")
+    kokoro = Kokoro(MODEL, VOICES_F)
 
     texts = collect_texts()
     print(f"Testi trovati: {len(texts)}")
-    print(f"Voce: {VOICE}\n")
+    print(f"Voce: {VOICE}  speed: {SPEED}\n")
 
-    # Mappa testo normalizzato -> id
     text_map = {t: text_to_id(t) for t in texts}
 
-    # Genera solo i file mancanti
     to_generate = [(t, fid) for t, fid in text_map.items()
-                   if not os.path.exists(os.path.join(OUT_DIR, f"{fid}.mp3"))]
+                   if not os.path.exists(os.path.join(OUT_DIR, f"{fid}.{EXT}"))]
 
     print(f"Da generare: {len(to_generate)} (gia' presenti: {len(texts) - len(to_generate)})\n")
 
-    if to_generate:
-        # Batch da 10 per non sovraccaricare il servizio
-        BATCH = 10
-        ok = 0
-        for i in range(0, len(to_generate), BATCH):
-            batch = to_generate[i:i+BATCH]
-            results = await asyncio.gather(*[generate(t, fid) for t, fid in batch])
-            ok += sum(1 for r, _ in results if r)
-            print(f"  Batch {i//BATCH + 1}: {sum(1 for r,_ in results if r)}/{len(batch)} OK")
+    ok = 0
+    for i, (t, fid) in enumerate(to_generate, 1):
+        if generate(kokoro, t, fid):
+            ok += 1
+        if i % 50 == 0:
+            print(f"  {i}/{len(to_generate)} ({ok} OK)")
 
-        print(f"\nGenerati: {ok}/{len(to_generate)}")
+    print(f"\nGenerati: {ok}/{len(to_generate)}")
 
     # Scrivi audio-map.js (testo normalizzato -> percorso)
     lines = [
         "// Auto-generato da scripts/generate_audio.py",
-        "// Chiave = testo inglese minuscolo, valore = path MP3",
+        f"// Chiave = testo inglese minuscolo, valore = path {EXT.upper()}",
         "export const AUDIO_MAP = {"
     ]
     for text, fid in sorted(text_map.items(), key=lambda x: x[0]):
-        mp3_path = os.path.join(OUT_DIR, f"{fid}.mp3")
-        if os.path.exists(mp3_path):
+        wav_path = os.path.join(OUT_DIR, f"{fid}.{EXT}")
+        if os.path.exists(wav_path):
             escaped = text.replace("\\", "\\\\").replace('"', '\\"')
-            lines.append(f'  "{escaped}": "/audio/{fid}.mp3",')
+            lines.append(f'  "{escaped}": "/audio/{fid}.{EXT}",')
     lines += ["};", ""]
 
     with open(MAP_JS, "w", encoding="utf-8") as f:
@@ -143,4 +151,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

@@ -58,8 +58,11 @@ export function renderDialogue(scenarioId) {
   const profile = getActiveProfile();
   const dialogue = dialogues[0]; // first one for now
 
+  // Start at the first turn that requires user input
+  const firstTaskIndex = dialogue.turns.findIndex(t => t.task);
+
   const state = {
-    turnIndex: 0,
+    turnIndex: firstTaskIndex >= 0 ? firstTaskIndex : dialogue.turns.length,
     answered: [],
     showHint: false,
     xpGained: 0,
@@ -225,6 +228,10 @@ export function renderDialogue(scenarioId) {
 
   function nextTurn() {
     state.turnIndex++;
+    // Skip display-only turns (no task), they'll be visible in the chat
+    while (state.turnIndex < dialogue.turns.length && !dialogue.turns[state.turnIndex].task) {
+      state.turnIndex++;
+    }
     render();
   }
 
