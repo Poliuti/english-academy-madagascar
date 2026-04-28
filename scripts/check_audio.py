@@ -41,9 +41,14 @@ def parse_audio_map():
         return {}
     with open(AUDIO_MAP_JS, encoding='utf-8') as f:
         content = f.read()
-    # Match: "key": "/public/audio/xxxx.wav",
-    pattern = r'"([^"]+)":\s*"/public/audio/([^"]+)"'
-    return {k.lower().strip(): fname for k, fname in re.findall(pattern, content)}
+    # Match: "key": "/public/audio/xxxx.wav", — handles escaped quotes inside keys
+    pattern = r'"((?:[^"\\]|\\.)*)":\s*"/public/audio/([^"]+)"'
+    result = {}
+    for k, fname in re.findall(pattern, content):
+        # Unescape JS escape sequences in key
+        k_unescaped = k.replace('\\"', '"').replace('\\\\', '\\')
+        result[k_unescaped.lower().strip()] = fname
+    return result
 
 
 def text_to_id(text):
@@ -87,10 +92,10 @@ def collect_app_texts():
 
     # theory.js → examples.en (rimuovi HTML)
     theory = read_src('theory.js')
-    for block in re.finditer(r'\{\s*en\s*:\s*[\'"]([^\'"<>]+)[\'"]', theory):
-        clean = re.sub(r'<[^>]+>', '', block.group(1)).strip()
+    for t in extract_field(theory, 'en'):
+        clean = re.sub(r'<[^>]+>', '', t).strip()
         if clean:
-            texts.add(unescape(clean))
+            texts.add(clean)
 
     # dialogues.js → text, answer
     dlg = read_src('dialogues.js')
@@ -105,13 +110,13 @@ def collect_app_texts():
     boky = read_src('boky.js')
     for t in extract_field(boky, 'en'):
         clean = re.sub(r'<[^>]+>', '', t).strip()
-        # Le righe tipo "go → went" contengono freccia → prendi solo la parte prima
-        parts = [p.strip() for p in re.split(r'→|\.→', clean) if p.strip()]
-        for p in parts:
-            if len(p) >= 3 and not p.startswith('Active') and not p.startswith('Active'):
+        # Allineato a generate_audio.py: split solo su → prima di maiuscola
+        for part in re.split(r'\s*[→.]\s*(?=[A-Z])', clean):
+            p = part.strip()
+            if len(p) >= 4 and not p.startswith('Active') and not p.startswith('Passive'):
                 texts.add(unescape(p))
 
-    return {t for t in texts if len(t.strip()) >= 3}
+    return {t for t in texts if len(t.strip()) >= 2}
 
 
 # ─── Report ──────────────────────────────────────────────────────────────────
@@ -154,7 +159,8 @@ def main():
     print(f"\n{status2} Testi app senza audio mapping   : {len(not_mapped)}")
     if not_mapped:
         for t in not_mapped[:40]:
-            print(f"  '{t[:70]}'")
+            safe = t[:70].encode('ascii', errors='replace').decode('ascii')
+            print(f"  '{safe}'")
         if len(not_mapped) > 40:
             print(f"  ... e altri {len(not_mapped)-40}")
 

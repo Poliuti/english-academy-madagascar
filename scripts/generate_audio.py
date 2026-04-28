@@ -30,9 +30,12 @@ SRC_DIR  = os.path.join(SCRIPT, "..", "src", "data")
 # ─── Estrazione testi dai file JS ────────────────────────────────────────────
 
 def extract_field(js_text, field):
-    """Estrae tutti i valori di 'field: "..."' o "field: '...'" da un file JS."""
-    pattern = rf'{field}\s*:\s*[\'"]([^\'"\\]+(?:\\.[^\'"\\]*)*)[\'"]'
-    return re.findall(pattern, js_text)
+    """Estrae tutti i valori di 'field: "..."' o "field: '...'" da un file JS.
+    Usa pattern non-greedy con ancora di chiusura per gestire correttamente
+    le apostrofi escaped (don't → don\'t)."""
+    pattern = rf"{field}\s*:\s*['\"]([^\n]+?)['\"],?\s*[,\}}]"
+    raw = re.findall(pattern, js_text)
+    return [unescape(r) for r in raw]
 
 def unescape(s):
     return s.replace("\\'", "'").replace('\\"', '"').replace('\\n', ' ')
@@ -61,13 +64,10 @@ def collect_texts():
 
     # ── theory.js ──────────────────────────────────────────────────────────────
     theory = read_file("theory.js")
-    # Estrai solo la parte inglese degli examples: { en: '...', fr: '...' }
-    for block in re.finditer(r'\{\s*en\s*:\s*[\'"]([^\'"<>]+)[\'"]', theory):
-        raw = block.group(1)
-        # Rimuove eventuali tag HTML rimasti
-        clean = re.sub(r'<[^>]+>', '', raw).strip()
+    for t in extract_field(theory, "en"):
+        clean = re.sub(r'<[^>]+>', '', t).strip()
         if clean:
-            texts.add(unescape(clean))
+            texts.add(clean)
 
     # ── dialogues.js ──────────────────────────────────────────────────────────
     dlg = read_file("dialogues.js")
@@ -80,8 +80,8 @@ def collect_texts():
     # ── boky.js ───────────────────────────────────────────────────────────────
     boky = read_file("boky.js")
     # Estrai campo 'en' dalle righe tabella (contengono le frasi inglesi)
-    for block in re.finditer(r'\ben\s*:\s*[\'"]([^\'"\\n<>]{3,})[\'"]', boky):
-        raw = block.group(1)
+    for t in extract_field(boky, "en"):
+        raw = t
         clean = re.sub(r'<[^>]+>', '', raw).strip()
         # Righe tipo "go → went" → prendi solo la parte leggibile
         for part in re.split(r'\s*[→.]\s*(?=[A-Z])', clean):
