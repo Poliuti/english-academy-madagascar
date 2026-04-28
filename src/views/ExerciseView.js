@@ -235,7 +235,8 @@ function setupWordOrder(container) {
   });
 
   // Expose getter
-  answerArea._getAnswer = () => selected.map(s => s.word).join(' ');
+  answerArea._getAnswer = () =>
+    selected.map(s => s.word).join(' ').replace(/\s+([.!?,;?])/g, '$1');
 }
 
 function getInputAnswer(container, ex) {
@@ -395,28 +396,94 @@ function finishSession(container, state, profile) {
   });
 }
 
+// Synonym map: both directions (key ↔ value are interchangeable)
+const SYNONYMS = [
+  ['smart',       'intelligent'],
+  ['intelligent', 'smart'],
+  ['big',         'large'],
+  ['large',       'big'],
+  ['happy',       'glad'],
+  ['glad',        'happy'],
+  ['fast',        'quick'],
+  ['quick',       'fast'],
+  ['little',      'small'],
+  ['small',       'little'],
+  ['tired',       'exhausted'],
+  ['sick',        'ill'],
+  ['ill',         'sick'],
+  ['beautiful',   'pretty'],
+  ['pretty',      'beautiful'],
+  ['angry',       'mad'],
+  ['mad',         'angry'],
+  ['correct',     'right'],
+  ['right',       'correct'],
+  ['incorrect',   'wrong'],
+  ['wrong',       'incorrect'],
+];
+
 function checkAnswer(raw, ex) {
   const normalize = s => s.toLowerCase()
     .trim()
-    .replace(/[.!?,]/g, '')
+    .replace(/[.!?,;:]/g, '')   // strip punctuation
     .replace(/\s+/g, ' ')
-    .replace(/won't/g, "will not")
-    .replace(/don't/g, "do not")
-    .replace(/doesn't/g, "does not")
-    .replace(/didn't/g, "did not")
-    .replace(/isn't/g, "is not")
-    .replace(/aren't/g, "are not")
-    .replace(/i'm/g, "i am")
-    .replace(/she's/g, "she is")
-    .replace(/he's/g, "he is");
+    .trim()                      // ← trim AFTER punctuation removal (fixes "word ." trailing space)
+    // contraction expansions (both directions)
+    .replace(/won't/g,    'will not')
+    .replace(/will not/g, "won't")
+    .replace(/don't/g,    'do not')
+    .replace(/do not/g,   "don't")
+    .replace(/doesn't/g,  'does not')
+    .replace(/does not/g, "doesn't")
+    .replace(/didn't/g,   'did not')
+    .replace(/did not/g,  "didn't")
+    .replace(/isn't/g,    'is not')
+    .replace(/is not/g,   "isn't")
+    .replace(/aren't/g,   'are not')
+    .replace(/are not/g,  "aren't")
+    .replace(/weren't/g,  'were not')
+    .replace(/were not/g, "weren't")
+    .replace(/wasn't/g,   'was not')
+    .replace(/was not/g,  "wasn't")
+    .replace(/haven't/g,  'have not')
+    .replace(/have not/g, "haven't")
+    .replace(/hasn't/g,   'has not')
+    .replace(/has not/g,  "hasn't")
+    .replace(/hadn't/g,   'had not')
+    .replace(/had not/g,  "hadn't")
+    .replace(/wouldn't/g, 'would not')
+    .replace(/would not/g,"wouldn't")
+    .replace(/couldn't/g, 'could not')
+    .replace(/could not/g,"couldn't")
+    .replace(/shouldn't/g,'should not')
+    .replace(/should not/g,"shouldn't")
+    .replace(/i'm/g,      'i am')
+    .replace(/i am/g,     "i'm")
+    .replace(/she's/g,    'she is')
+    .replace(/he's/g,     'he is')
+    .replace(/it's/g,     'it is')
+    .replace(/they're/g,  'they are')
+    .replace(/we're/g,    'we are')
+    .replace(/you're/g,   'you are')
+    .replace(/i've/g,     'i have')
+    .replace(/i'd/g,      'i would')
+    .replace(/i'll/g,     'i will');
 
-  const ans = normalize(raw);
+  const ans     = normalize(raw);
   const correct = normalize(ex.answer);
 
   if (ans === correct) return true;
-  if (ex.alternatives) {
-    return ex.alternatives.some(alt => normalize(alt) === ans);
+
+  // Check official alternatives
+  if (ex.alternatives?.some(alt => normalize(alt) === ans)) return true;
+
+  // Check synonym substitution: replace each synonym in the correct answer
+  // and check if it matches the user's answer
+  for (const [a, b] of SYNONYMS) {
+    const re = new RegExp('\\b' + a + '\\b', 'g');
+    if (normalize(correct.replace(re, b)) === ans) return true;
+    if (normalize(ans.replace(re, b)) === correct) return true;
   }
+
   return false;
 }
 

@@ -593,6 +593,63 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 
 .theory-cta { text-align: center; padding-top: 8px; }
 
+/* ─── MALGASY MANUAL (Boky fampianarana) ────────────────────────────────────── */
+.sidebar-separator { height: 1px; background: var(--border); margin: 8px 0; }
+.sidebar-item-mg { border-top: none; }
+
+.mg-tabs {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--border);
+}
+.mg-tab {
+  padding: 7px 13px; border-radius: 20px; border: 1.5px solid var(--border);
+  background: var(--card); font-size: .8rem; font-weight: 600; cursor: pointer;
+  color: var(--text-muted); transition: all .15s;
+}
+.mg-tab:hover { border-color: var(--primary); color: var(--primary); }
+.mg-tab.active { background: #FFF3E0; border-color: #E65100; color: #E65100; }
+
+.mg-disclaimer {
+  background: #FFF8E1; border-left: 4px solid #FFC107;
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  font-size: .82rem; color: #795548; margin-bottom: 18px;
+}
+.mg-subtitle { font-size: .85rem; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+.mg-explanation {
+  background: var(--primary-light); border-left: 4px solid var(--primary);
+  padding: 12px 16px; border-radius: var(--radius-sm);
+  font-size: .92rem; line-height: 1.6; margin-bottom: 20px; color: var(--text);
+}
+
+.mg-table-wrap { overflow-x: auto; margin-bottom: 20px; }
+.mg-table {
+  width: 100%; border-collapse: collapse; font-size: .88rem;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+.mg-table th {
+  background: var(--primary); color: #fff; padding: 9px 12px;
+  text-align: left; font-weight: 700; font-size: .82rem;
+}
+.mg-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.mg-table tr:last-child td { border-bottom: none; }
+.mg-table tr:nth-child(even) td { background: var(--bg); }
+.mg-col-label { min-width: 110px; }
+.mg-col-struct { min-width: 140px; }
+.mg-col-struct code {
+  background: #F3F4F6; padding: 2px 6px; border-radius: 4px;
+  font-size: .8rem; white-space: pre-line; display: inline-block; line-height: 1.5;
+}
+.mg-col-en { min-width: 150px; display: flex; align-items: flex-start; gap: 6px; }
+.mg-col-mg { min-width: 150px; font-style: italic; color: #2E7D32; }
+.mg-col-note { min-width: 120px; font-size: .78rem; color: var(--text-muted); }
+
+.mg-cta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.btn-secondary {
+  padding: 11px 20px; border-radius: var(--radius); border: 2px solid var(--primary);
+  background: #fff; color: var(--primary); font-weight: 700; font-size: .95rem; cursor: pointer;
+}
+.btn-secondary:hover { background: var(--primary-light); }
+
 /* Vocab cards */
 .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
 .vocab-card { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow-sm); border: 1px solid var(--border); }
@@ -623,6 +680,21 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .quick-btn.primary-btn { background: var(--primary); color: #fff; border-color: var(--primary-dark); }
 .quick-btn.primary-btn:hover { background: var(--primary-dark); }
 .quick-icon { font-size: 1.3rem; }
+
+/* ─── ASSESSMENT BANNER ─────────────────────────────────────────────────────── */
+.assessment-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff; border-radius: var(--radius); padding: 16px 20px;
+  margin-bottom: 20px; cursor: pointer; box-shadow: var(--shadow);
+  border: none; width: 100%; text-align: left;
+}
+.assessment-banner:hover { filter: brightness(1.07); }
+.assessment-banner-left { display: flex; align-items: center; gap: 14px; }
+.assessment-icon { font-size: 2rem; }
+.assessment-title { font-size: 1.05rem; font-weight: 800; }
+.assessment-sub { font-size: .82rem; opacity: .88; margin-top: 2px; }
+.assessment-arrow { font-size: 1.8rem; font-weight: 700; opacity: .8; }
 
 /* ─── DIALOGUE LIST PAGE ────────────────────────────────────────────────────── */
 .dialogue-list-page { min-height: 100vh; background: var(--bg); }

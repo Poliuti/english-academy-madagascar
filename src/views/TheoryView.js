@@ -1,4 +1,4 @@
-import { theory, theoryTopics, vocabTopics } from '../data/theory.js';
+import { theory, theoryTopics, vocabTopics, malgasyManual } from '../data/theory.js';
 import { speak } from '../tts.js';
 
 export function renderTheory(topicId) {
@@ -8,7 +8,9 @@ export function renderTheory(topicId) {
   const defaultTopic = topicId && theory[topicId] ? topicId : 'presentSimple';
   let currentTopic = defaultTopic;
   let isVocab = topicId === 'vocabulary';
+  let isMalgasy = topicId === 'malgasy';
   let currentVocab = 'routine';
+  let currentMalgasyId = malgasyManual[0]?.id || '';
 
   function render() {
     container.innerHTML = `
@@ -20,7 +22,7 @@ export function renderTheory(topicId) {
           <nav class="sidebar-nav">
             ${theoryTopics.map(t => `
               <button
-                class="sidebar-item ${!t.isVocab && currentTopic === t.id && !isVocab ? 'active' : ''} ${t.isVocab && isVocab ? 'active' : ''}"
+                class="sidebar-item ${!t.isVocab && currentTopic === t.id && !isVocab && !isMalgasy ? 'active' : ''} ${t.isVocab && isVocab ? 'active' : ''}"
                 data-topic="${t.id}"
                 data-vocab="${t.isVocab || false}"
               >
@@ -29,14 +31,25 @@ export function renderTheory(topicId) {
                 <span class="sidebar-level">${t.level}</span>
               </button>
             `).join('')}
+            <div class="sidebar-separator"></div>
+            <button class="sidebar-item sidebar-item-mg ${isMalgasy ? 'active' : ''}" data-malgasy="true">
+              <span>🇲🇬</span>
+              <span>Boky fampianarana</span>
+              <span class="sidebar-level">MG</span>
+            </button>
           </nav>
         </aside>
 
         <!-- Main content -->
         <main class="theory-main">
           ${isVocab ? renderVocabNav(currentVocab) : ''}
+          ${isMalgasy ? renderMalgasyNav(currentMalgasyId) : ''}
           <div id="theory-content">
-            ${isVocab ? renderVocab(currentVocab) : renderGrammar(currentTopic)}
+            ${isVocab
+              ? renderVocab(currentVocab)
+              : isMalgasy
+                ? renderMalgasySection(currentMalgasyId)
+                : renderGrammar(currentTopic)}
           </div>
         </main>
       </div>
@@ -50,23 +63,39 @@ export function renderTheory(topicId) {
       location.hash = '#dashboard';
     });
 
-    container.querySelectorAll('.sidebar-item').forEach(btn => {
+    container.querySelectorAll('.sidebar-item:not([data-malgasy])').forEach(btn => {
       btn.addEventListener('click', () => {
         const isVocabTopic = btn.dataset.vocab === 'true';
+        isMalgasy = false;
         if (isVocabTopic) {
           isVocab = true;
-          render();
         } else {
           isVocab = false;
           currentTopic = btn.dataset.topic;
-          render();
         }
+        render();
       });
     });
+
+    const mgBtn = container.querySelector('[data-malgasy="true"]');
+    if (mgBtn) {
+      mgBtn.addEventListener('click', () => {
+        isMalgasy = true;
+        isVocab = false;
+        render();
+      });
+    }
 
     container.querySelectorAll('.vocab-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         currentVocab = btn.dataset.vocab;
+        render();
+      });
+    });
+
+    container.querySelectorAll('.mg-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentMalgasyId = btn.dataset.mgid;
         render();
       });
     });
@@ -81,6 +110,8 @@ export function renderTheory(topicId) {
 
     container.querySelectorAll('.do-exercises-btn').forEach(btn => {
       btn.addEventListener('click', () => {
+        // For Malgasy manual buttons, use data-ref; otherwise use currentTopic
+        const effectiveTopic = btn.dataset.ref || currentTopic;
         // Maps theory section id → exercise topic key in exercises.js
         const topicMap = {
           // vocabulary topics
@@ -122,7 +153,7 @@ export function renderTheory(topicId) {
           // grammar B2
           futurePerfect:     'futurePerfect',
         };
-        const ex = topicMap[currentTopic];
+        const ex = topicMap[effectiveTopic];
         if (ex) {
           location.hash = `#exercise?topic=${ex}&mode=topic`;
         } else {
@@ -135,12 +166,110 @@ export function renderTheory(topicId) {
         }
       });
     });
+
+    container.querySelectorAll('.mg-go-theory-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ref = btn.dataset.ref;
+        if (ref && theory[ref]) {
+          isMalgasy = false;
+          isVocab = false;
+          currentTopic = ref;
+          render();
+        }
+      });
+    });
   }
 
   render();
   return container;
 }
 
+// ─── Malgasy nav tabs ────────────────────────────────────────────────────────
+function renderMalgasyNav(currentId) {
+  return `
+    <div class="mg-tabs">
+      ${malgasyManual.map(m => `
+        <button class="mg-tab ${m.id === currentId ? 'active' : ''}" data-mgid="${m.id}">
+          ${m.icon} ${m.titleMg}
+        </button>
+      `).join('')}
+    </div>
+  `;
+}
+
+// ─── Malgasy section renderer ────────────────────────────────────────────────
+function renderMalgasySection(id) {
+  const m = malgasyManual.find(x => x.id === id);
+  if (!m) return '<p>Tsy hita.</p>';
+
+  return `
+    <div class="theory-content-inner mg-manual">
+      <div class="mg-disclaimer">
+        ⚠️ <em>Ny fanazavana malagasy ato dia natao amin\'ny AI — mety tsy marina tanteraka. Jereo ny mpampianatra raha misy fisalasalana.</em>
+      </div>
+
+      <div class="theory-header">
+        <h2 class="theory-title">${m.icon} ${m.titleMg}</h2>
+        <span class="theory-level-badge">${m.level}</span>
+      </div>
+      <p class="mg-subtitle"><em>${escHtml(m.title)}</em></p>
+
+      <div class="mg-explanation">
+        ${escHtml(m.explanation)}
+      </div>
+
+      <div class="mg-table-wrap">
+        <table class="mg-table">
+          <thead>
+            <tr>
+              <th>Fomba</th>
+              <th>Rafitra (structure)</th>
+              <th>Anglisy 🇬🇧</th>
+              <th>Malagasy 🇲🇬</th>
+              <th>Fanamarihana</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${m.rows.map(r => `
+              <tr>
+                <td class="mg-col-label"><strong>${escHtml(r.label)}</strong></td>
+                <td class="mg-col-struct"><code>${escHtml(r.structure)}</code></td>
+                <td class="mg-col-en">
+                  <button class="tts-btn" data-text="${escHtml(r.example_en)}" title="Écouter">▶</button>
+                  <em>${escHtml(r.example_en)}</em>
+                </td>
+                <td class="mg-col-mg">🇲🇬 ${escHtml(r.example_mg)}</td>
+                <td class="mg-col-note">${escHtml(r.note || '')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+
+      ${m.tipsMg?.length ? `
+        <div class="tips-box">
+          <h3>💡 Torohevitra</h3>
+          <ul>
+            ${m.tipsMg.map(tip => `<li>${escHtml(tip)}</li>`).join('')}
+          </ul>
+        </div>
+      ` : ''}
+
+      ${m.grammarRef ? `
+        <div class="theory-cta mg-cta">
+          <button class="btn-secondary mg-go-theory-btn" data-ref="${m.grammarRef}">
+            📖 Voir la théorie française (${escHtml(m.title)})
+          </button>
+          <button class="btn-primary do-exercises-btn" data-ref="${m.grammarRef}">
+            ✏️ Faire des exercices
+          </button>
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+// ─── Vocab nav ───────────────────────────────────────────────────────────────
 function renderVocabNav(currentVocab) {
   return `
     <div class="vocab-tabs">
@@ -208,7 +337,7 @@ function renderGrammar(topicId) {
             ${s.examples.map(ex => `
               <div class="example-row">
                 <div class="example-en">
-                  <button class="tts-btn" data-text="${ex.en.replace(/<[^>]+>/g, '')}" title="Écouter">▶</button>
+                  <button class="tts-btn" data-text="${escHtml(ex.en.replace(/<[^>]+>/g, ''))}" title="Écouter">▶</button>
                   <span>${ex.en}</span>
                 </div>
                 <div class="example-fr">🇫🇷 ${ex.fr}</div>

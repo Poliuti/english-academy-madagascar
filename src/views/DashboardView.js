@@ -42,10 +42,6 @@ export function renderDashboard() {
 
       <!-- Quick Actions -->
       <div class="quick-actions">
-        <button class="quick-btn primary-btn" id="btn-assessment">
-          <span class="quick-icon">🎯</span>
-          <span>Test de niveau</span>
-        </button>
         <button class="quick-btn" id="btn-theory">
           <span class="quick-icon">📖</span>
           <span>Grammaire</span>
@@ -58,6 +54,18 @@ export function renderDashboard() {
           <span class="quick-icon">💬</span>
           <span>Dialogues</span>
         </button>
+      </div>
+
+      <!-- Assessment Banner -->
+      <div class="assessment-banner" id="btn-assessment">
+        <div class="assessment-banner-left">
+          <span class="assessment-icon">🎯</span>
+          <div>
+            <div class="assessment-title">Test de niveau</div>
+            <div class="assessment-sub">Découvre ton niveau d'anglais</div>
+          </div>
+        </div>
+        <span class="assessment-arrow">›</span>
       </div>
 
       <!-- Learning Path -->

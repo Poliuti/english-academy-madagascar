@@ -1248,3 +1248,447 @@ export const vocabTopics = [
   { id: 'body', label: 'Le Corps', icon: '💪' },
   { id: 'time', label: 'L\'Heure et le Temps', icon: '⏰' },
 ];
+
+// ─── BOKY FAMPIANARANA — Malagasy Grammar Manual ─────────────────────────────
+// Fanazavana ny fitsipiky ny fiteny anglisy amin'ny teny malagasy.
+// ⚠️ Ny dika-tenin'ny malagasy ato dia natao amin'ny AI — mety tsy marina tanteraka.
+export const malgasyManual = [
+
+  {
+    id: 'mg_articles',
+    grammarRef: 'articles',
+    title: 'Articles (a / an / the)',
+    titleMg: 'Ny teny filaza (a / an / the)',
+    icon: '🔤',
+    level: 'A1',
+    explanation: 'Ny anglisy dia manana teny filaza roa karazana: "the" (fantatra) sy "a/an" (tsy fantatra tsara). Ny malagasy dia tsy manana teny filaza toy izany, fa ampiasaina "ny" (= the) na tsy misy (= a/an).',
+    rows: [
+      {
+        label: 'The (fantatra)',
+        structure: 'the + noun',
+        example_en: 'The book is on the table.',
+        example_mg: 'Ny boky dia eo ambonin\'ny latabatra.',
+        note: '"ny" = the',
+      },
+      {
+        label: 'A / An (tsy fantatra)',
+        structure: 'a/an + noun',
+        example_en: 'I have a pen.',
+        example_mg: 'Manana kilalao aho.',
+        note: '"a" alohan\'ny consonant, "an" alohan\'ny vowel (a,e,i,o,u)',
+      },
+      {
+        label: 'Zero article (tsy misy)',
+        structure: '∅ + noun',
+        example_en: 'I like rice.',
+        example_mg: 'Tia vary aho.',
+        note: 'Tsy misy teny filaza alohan\'ny hevitra ankapoben\'ny',
+      },
+    ],
+    tipsMg: [
+      '"a" alohan\'ny teny manomboka amin\'ny consonant: a book, a cat',
+      '"an" alohan\'ny teny manomboka amin\'ny vowel: an apple, an hour',
+      '"the" raha samy mahalala ny mpiresaka izay resahina',
+    ],
+  },
+
+  {
+    id: 'mg_presentSimple',
+    grammarRef: 'presentSimple',
+    title: 'Present Simple',
+    titleMg: 'Ankehitriny Tsotra',
+    icon: '📖',
+    level: 'A1–A2',
+    explanation: 'Ny Present Simple dia ampiasaina ho an\'ny fomba mahazatra, ny marina mandrakariva, ary ny zava-misy amin\'ny andro rehetra. Tsy misy fotoana manokana ny malagasy ho an\'ny asa mahazatra, fa ampiasaina ny adverbe fotoana (isan\'andro, matetika, sns.).',
+    rows: [
+      {
+        label: '✅ Tsy misy fampanontaniana',
+        structure: 'I/You/We/They + verbe\nHe/She/It + verbe + s/es',
+        example_en: 'I eat rice. / She eats rice.',
+        example_mg: 'Mihinam-bary aho. / Mihinam-bary izy.',
+        note: 'He/She/It → +s na +es',
+      },
+      {
+        label: '❌ Fandavana (négatif)',
+        structure: 'I/You/We/They + don\'t + verbe\nHe/She/It + doesn\'t + verbe',
+        example_en: 'I don\'t drink coffee. / He doesn\'t work.',
+        example_mg: 'Tsy misotro kafe aho. / Tsy miasa izy.',
+        note: 'don\'t = do not | doesn\'t = does not',
+      },
+      {
+        label: '❓ Fanontaniana (question)',
+        structure: 'Do + I/you/we/they + verbe?\nDoes + he/she/it + verbe?',
+        example_en: 'Do you speak English? / Does she study?',
+        example_mg: 'Miteny anglisy ve ianao? / Mianatra ve izy?',
+        note: '"ve" ny malagasy = interrogatif',
+      },
+    ],
+    tipsMg: [
+      'I/You/We/They → don\'t; He/She/It → doesn\'t',
+      'Ny adverbe fotoana: always (foana), often (matetika), sometimes (indraindray), never (tsy mba)',
+      'Ohatra: He always drinks tea. = Misotro dite foana izy.',
+    ],
+  },
+
+  {
+    id: 'mg_presentContinuous',
+    grammarRef: 'presentContinuous',
+    title: 'Present Continuous',
+    titleMg: 'Ankehitriny Mitohy',
+    icon: '🔄',
+    level: 'A2',
+    explanation: 'Ny Present Continuous dia ampiasaina ho an\'ny asa atao ankehitriny (amin\'izao fotoana izao). Ny malagasy dia tsy manana forme toy izany, fa ampiasaina "ankehitriny" na "amin\'izao fotoana izao" miaraka amin\'ny verbe.',
+    rows: [
+      {
+        label: '✅ Fomba fanaovana',
+        structure: 'Sujet + am/is/are + verbe-ing',
+        example_en: 'I am reading a book.',
+        example_mg: 'Mamaky boky aho ankehitriny.',
+        note: 'I → am | He/She/It → is | We/You/They → are',
+      },
+      {
+        label: '❌ Fandavana',
+        structure: 'Sujet + am/is/are + not + verbe-ing',
+        example_en: 'She is not sleeping.',
+        example_mg: 'Tsy matory izy ankehitriny.',
+        note: 'isn\'t = is not | aren\'t = are not',
+      },
+      {
+        label: '❓ Fanontaniana',
+        structure: 'Am/Is/Are + sujet + verbe-ing?',
+        example_en: 'Are you eating?',
+        example_mg: 'Mihinana ve ianao ankehitriny?',
+        note: 'Asio "-ing" ny verbe foana',
+      },
+    ],
+    tipsMg: [
+      'Verbe mifarana amin\'ny -e: remoisa ny e alohan\'ny -ing (write → writing)',
+      'Verbe fohy miaraka amin\'ny vowel+consonant: doubla ny consonant (run → running)',
+      'Tsy ampiasaina amin\'ny verbe "state": know, love, want, understand',
+    ],
+  },
+
+  {
+    id: 'mg_pastSimple',
+    grammarRef: 'pastSimple',
+    title: 'Past Simple',
+    titleMg: 'Lasa Tsotra',
+    icon: '⏮️',
+    level: 'A2–B1',
+    explanation: 'Ny Past Simple dia ampiasaina ho an\'ny asa vita tanteraka tamin\'ny lasa. Ny malagasy dia mampiasa ny aloha-n\'ny verbe (ni-) ho fampisehoana ny asa lasa.',
+    rows: [
+      {
+        label: '✅ Verbe mahazatra (+ed)',
+        structure: 'Sujet + verbe + ed',
+        example_en: 'I worked yesterday.',
+        example_mg: 'Niasa aho omaly.',
+        note: 'omaly = yesterday | tamin\'ny omaly = last (week/year...)',
+      },
+      {
+        label: '🔴 Verbe irrégulier',
+        structure: 'Sujet + verbe irrégulier (forme 2)',
+        example_en: 'She went to school. / I ate rice.',
+        example_mg: 'Nankany an\'ny sekoly izy. / Nihinam-bary aho.',
+        note: 'go → went | eat → ate | come → came | see → saw',
+      },
+      {
+        label: '❌ Fandavana',
+        structure: 'Sujet + didn\'t + verbe infinitif',
+        example_en: 'I didn\'t go to school.',
+        example_mg: 'Tsy nankany an\'ny sekoly aho.',
+        note: 'Ny verbe dia tsy miova aty (infinitif foana)',
+      },
+      {
+        label: '❓ Fanontaniana',
+        structure: 'Did + sujet + verbe infinitif?',
+        example_en: 'Did you eat lunch?',
+        example_mg: 'Nihinana ny sakafo amin\'ny antoandro ve ianao?',
+        note: 'did = ny fampisehoana Past Simple',
+      },
+    ],
+    tipsMg: [
+      'Ny fotoana lasa mahazatra: yesterday (omaly), last week (herinandrotsy), in 2020 (tamin\'ny 2020)',
+      'Verbe matetika irrégulier: go/went, come/came, eat/ate, see/saw, do/did, have/had, be/was/were',
+    ],
+  },
+
+  {
+    id: 'mg_futureSimple',
+    grammarRef: 'futureSimple',
+    title: 'Future Simple',
+    titleMg: 'Ho Avy Tsotra',
+    icon: '🚀',
+    level: 'A2–B1',
+    explanation: 'Ny Future Simple (will + verbe) dia ampiasaina ho an\'ny asa ho atao amin\'ny ho avy. Ny malagasy dia mampiasa ny aloha-n\'ny verbe (hi-) ho fampisehoana ny asa ho avy.',
+    rows: [
+      {
+        label: '✅ Fomba fanaovana',
+        structure: 'Sujet + will + verbe infinitif',
+        example_en: 'I will study tomorrow.',
+        example_mg: 'Hianatra aho rahampitso.',
+        note: 'will = ny fampisehoana ho avy | rahampitso = tomorrow',
+      },
+      {
+        label: '❌ Fandavana',
+        structure: 'Sujet + won\'t + verbe infinitif',
+        example_en: 'She won\'t come tonight.',
+        example_mg: 'Tsy ho avy izy anio alina.',
+        note: 'won\'t = will not',
+      },
+      {
+        label: '❓ Fanontaniana',
+        structure: 'Will + sujet + verbe infinitif?',
+        example_en: 'Will you help me?',
+        example_mg: 'Hanampy ahy ve ianao?',
+        note: '"will" dia mitovy ho an\'ny olon-drehetra (tsy miova)',
+      },
+    ],
+    tipsMg: [
+      'Ny fotoana ho avy mahazatra: tomorrow (rahampitso), next week (herinandro ho avy)',
+      'Be going to: I am going to study = Hianatra aho (efa nokendry)',
+      'Will: fanapahan-kevitra vetivety, toky, fanambarana',
+    ],
+  },
+
+  {
+    id: 'mg_modals',
+    grammarRef: 'modals',
+    title: 'Modaux (can/must/should…)',
+    titleMg: 'Ny Verbe Manampy',
+    icon: '🛠️',
+    level: 'A2',
+    explanation: 'Ny verbe manampy (modal verbs) dia ampiasaina miaraka amin\'ny verbe hafa mba hampisehoana ny fahafahana, ny tsy maintsy, ny tokony, na ny fangatahana.',
+    rows: [
+      {
+        label: 'Can (afaka)',
+        structure: 'Sujet + can + verbe',
+        example_en: 'I can swim.',
+        example_mg: 'Afaka milomano aho.',
+        note: 'Fampisehoana ny fahafahana',
+      },
+      {
+        label: 'Can\'t (tsy afaka)',
+        structure: 'Sujet + can\'t + verbe',
+        example_en: 'She can\'t speak Chinese.',
+        example_mg: 'Tsy afaka miteny sinoa izy.',
+        note: 'can\'t = cannot',
+      },
+      {
+        label: 'Must (tsy maintsy)',
+        structure: 'Sujet + must + verbe',
+        example_en: 'You must study.',
+        example_mg: 'Tsy maintsy mianatra ianao.',
+        note: 'Lazaina ho voatery na ilaina tanteraka',
+      },
+      {
+        label: 'Should (tokony)',
+        structure: 'Sujet + should + verbe',
+        example_en: 'You should eat breakfast.',
+        example_mg: 'Tokony hihinana sakafo maraina ianao.',
+        note: 'Tsara raha atao, fa tsy voatery',
+      },
+      {
+        label: 'Would like (te-ho)',
+        structure: 'Sujet + would like + to + verbe',
+        example_en: 'I would like to visit Paris.',
+        example_mg: 'Te-handeha any Paris aho.',
+        note: 'Fomba fandraharahana na fangatahana amin\'ny hatsaram-panahy',
+      },
+    ],
+    tipsMg: [
+      'Ny modal verbs dia tsy manova endrika (tsy misy -s amin\'ny he/she/it)',
+      'Mandrakariva ampiasaina amin\'ny verbe infinitif foana (tsy misy "to")',
+      'Ohatra: She can plays (DISO) → She can play (MARINA)',
+    ],
+  },
+
+  {
+    id: 'mg_questions',
+    grammarRef: 'questions',
+    title: 'Questions (Wh-)',
+    titleMg: 'Fanontaniana',
+    icon: '❓',
+    level: 'A1–A2',
+    explanation: 'Ny fanontaniana amin\'ny anglisy dia ampiasaina amin\'ny teny manontany (what, where, when, who, why, how). Ny malagasy dia manana teny manontany mitovy amin\'izany.',
+    rows: [
+      {
+        label: 'What (inona)',
+        structure: 'What + do/does/is + sujet + verbe?',
+        example_en: 'What is your name?',
+        example_mg: 'Iza no anaranao? / Inona no anaranao?',
+        note: '"Inona" na "Iza" arakaraka ny teny manontany',
+      },
+      {
+        label: 'Where (aiza)',
+        structure: 'Where + do/does/is + sujet + verbe?',
+        example_en: 'Where do you live?',
+        example_mg: 'Aiza no mipetraka ianao?',
+        note: 'aiza = where',
+      },
+      {
+        label: 'When (oviana)',
+        structure: 'When + do/did/will + sujet + verbe?',
+        example_en: 'When do you wake up?',
+        example_mg: 'Oviana no miainga ianao?',
+        note: 'oviana = when',
+      },
+      {
+        label: 'Who (iza)',
+        structure: 'Who + is/are/did/does...?',
+        example_en: 'Who is your teacher?',
+        example_mg: 'Iza no mpampianatra anao?',
+        note: 'iza = who',
+      },
+      {
+        label: 'Why (nahoana)',
+        structure: 'Why + do/did/are + sujet + verbe?',
+        example_en: 'Why are you late?',
+        example_mg: 'Nahoana ianao no tara?',
+        note: 'nahoana = why | because = satria',
+      },
+      {
+        label: 'How (ahoana)',
+        structure: 'How + do/is/are + sujet + verbe?',
+        example_en: 'How are you?',
+        example_mg: 'Ahoana ny valinao? / Tsara ve ianao?',
+        note: 'How many = firy | How much = ohatrinona',
+      },
+    ],
+    tipsMg: [
+      'Ny teny manontany dia ao am-piandohan\'ny fehezanteny foana',
+      'Why → Because: Why are you tired? Because I worked a lot. = Nahoana ianao no vizaka? Satria niasa mafy aho.',
+    ],
+  },
+
+  {
+    id: 'mg_conditionals',
+    grammarRef: 'conditionals',
+    title: 'Conditionnels (if)',
+    titleMg: 'Raha ... dia ... (Conditionals)',
+    icon: '🔀',
+    level: 'B1–B2',
+    explanation: 'Ny conditionals dia ampiasaina mba hampisehoana ny zava-mety mitranga raha voafehin\'ny fepetra iray. "If" = "raha" amin\'ny malagasy.',
+    rows: [
+      {
+        label: 'Type 0 (veritá générale)',
+        structure: 'If + présent, + présent',
+        example_en: 'If you heat water, it boils.',
+        example_mg: 'Raha manafana rano ianao, dia mifoha.',
+        note: 'Ny veritá sy ny lalàna natiora',
+      },
+      {
+        label: 'Type 1 (possible)',
+        structure: 'If + présent, + will + verbe',
+        example_en: 'If it rains, I will stay home.',
+        example_mg: 'Raha milatsaka ny orana, dia hitoetra an-trano aho.',
+        note: 'Zava-mety miseho amin\'ny avy',
+      },
+      {
+        label: 'Type 2 (hypothétique)',
+        structure: 'If + past, + would + verbe',
+        example_en: 'If I had money, I would travel.',
+        example_mg: 'Raha manana vola aho, dia handeha aho.',
+        note: 'Tsy misy ankehitriny — soso-kevitra',
+      },
+      {
+        label: 'Type 3 (regret)',
+        structure: 'If + past perfect, + would have + participe',
+        example_en: 'If I had studied, I would have passed.',
+        example_mg: 'Raha nianatra aho, dia nahajoro aho.',
+        note: 'Zava-nety nitranga tamin\'ny lasa',
+      },
+    ],
+    tipsMg: [
+      '"If" dia miotra foana alohan\'ny fepetra',
+      'Type 1: If + present simple, will + infinitif',
+      'Type 2: If + past simple, would + infinitif — tsy lazaina ny lasa!',
+    ],
+  },
+
+  {
+    id: 'mg_passiveVoice',
+    grammarRef: 'passiveVoice',
+    title: 'Voix Passive',
+    titleMg: 'Ny Endrika Passive (Passive Voice)',
+    icon: '🔄',
+    level: 'B1',
+    explanation: 'Amin\'ny passive voice, ny hetsika dia atao amin\'ny olona na zavatra (tsy izy no manao an\'ilay hetsika). Ny malagasy dia manana endrika mitovy amin\'izany (amin\'ny alalan\'ny "-ana" na "-ina" amin\'ny verbe).',
+    rows: [
+      {
+        label: 'Active → Passive',
+        structure: 'Objet + be + participe passé + (by + sujet)',
+        example_en: 'The teacher explains the lesson. → The lesson is explained by the teacher.',
+        example_mg: 'Manazava ny lesona ny mpampianatra. → Azavain\'ny mpampianatra ny lesona.',
+        note: 'ny sujet active → "by" amin\'ny passive',
+      },
+      {
+        label: 'Present passive',
+        structure: 'am/is/are + participe passé',
+        example_en: 'English is spoken here.',
+        example_mg: 'Atao anglisy eto.',
+        note: 'Tsy ilaina ny "by" raha tsy fantatra ny mpanao',
+      },
+      {
+        label: 'Past passive',
+        structure: 'was/were + participe passé',
+        example_en: 'The book was written in 1990.',
+        example_mg: 'Nosoratana tamin\'ny 1990 ny boky.',
+        note: 'was (I/he/she/it) | were (we/you/they)',
+      },
+    ],
+    tipsMg: [
+      'Ampiasaina indrindra raha tsy fantatra na tsy ilaina ny mpanao',
+      'Participe passé mahazatra: written, spoken, made, done, seen, eaten',
+      'Fampahatsiahy: active = mpanao no lohany | passive = voajanahary no lohany',
+    ],
+  },
+
+  {
+    id: 'mg_presentPerfect',
+    grammarRef: 'presentPerfect',
+    title: 'Present Perfect',
+    titleMg: 'Lasa Mampifandray ny Ankehitriny',
+    icon: '🔗',
+    level: 'B1',
+    explanation: 'Ny Present Perfect dia ampiasaina raha misy fifanatonan\'ny lasa sy ny ankehitriny. Ny malagasy dia tsy manana forme avy hatrany, fa ampiasaina hevitra toy ny "efa" na "vao tsy ela akory".',
+    rows: [
+      {
+        label: '✅ Fomba fanaovana',
+        structure: 'Sujet + have/has + participe passé',
+        example_en: 'I have eaten already.',
+        example_mg: 'Efa nihinana aho.',
+        note: '"efa" = already/just; have → I/you/we/they | has → he/she/it',
+      },
+      {
+        label: 'Already/Yet (efa/mbola)',
+        structure: 'have + already + participe / have + not + participe + yet',
+        example_en: 'I have already finished. / I haven\'t finished yet.',
+        example_mg: 'Efa vita ny asako. / Tsy vita mbola ny asako.',
+        note: 'already = efa | yet (négatif/question) = mbola',
+      },
+      {
+        label: 'Ever/Never (mba/tsy mba)',
+        structure: 'Have you ever + participe? / I have never + participe',
+        example_en: 'Have you ever visited Paris? / I have never eaten sushi.',
+        example_mg: 'Nitsidika Paris ve ianao? / Tsy mba nihinana sushi aho.',
+        note: 'ever = mba (amin\'ny fanontaniana) | never = tsy mba',
+      },
+    ],
+    tipsMg: [
+      'Ny fotoana manokana dia tsy lazaina (≠ Past Simple)',
+      'Past Simple: I ate rice at noon (amin\'ny fotoana voafaritra)',
+      'Present Perfect: I have eaten rice today (ankehitriny mbola mitohy)',
+    ],
+  },
+
+];
+
+// ─── Topics list for the Malgasy sidebar entry ───────────────────────────────
+export const malgasyTopics = malgasyManual.map(m => ({
+  id: m.id,
+  grammarRef: m.grammarRef,
+  title: m.title,
+  titleMg: m.titleMg,
+  icon: m.icon,
+  level: m.level,
+}));
