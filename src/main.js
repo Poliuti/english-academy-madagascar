@@ -5,6 +5,7 @@ import { renderTheory } from './views/TheoryView.js';
 import { renderVocabulary } from './views/VocabularyView.js';
 import { renderDialogueList, renderDialogue } from './views/DialogueViewV2.js';
 import { renderBoky } from './views/BokyView.js';
+import { renderTutor } from './views/TutorView.js';
 import { getActiveProfile } from './storage.js';
 
 const app = document.getElementById('app');
@@ -55,6 +56,9 @@ function router() {
       break;
     case 'boky':
       view = renderBoky(params.get('chapter'));
+      break;
+    case 'tutor':
+      view = renderTutor();
       break;
     default:
       view = profile ? renderDashboard() : renderProfileSelector();

@@ -679,6 +679,8 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .quick-btn:hover { border-color: var(--primary); background: var(--primary-light); }
 .quick-btn-mg { border-color: #2E7D32; color: #2E7D32; }
 .quick-btn-mg:hover { background: #E8F5E9; border-color: #1B5E20; }
+.quick-btn-tutor { border-color: #7C3AED; color: #7C3AED; grid-column: span 2; justify-content: center; }
+.quick-btn-tutor:hover { background: #EDE9FE; border-color: #5B21B6; }
 .quick-btn.primary-btn { background: var(--primary); color: #fff; border-color: var(--primary-dark); }
 .quick-btn.primary-btn:hover { background: var(--primary-dark); }
 .quick-icon { font-size: 1.3rem; }
@@ -877,6 +879,119 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   .boky-sidebar { display: none; }
   .boky-content { padding: 16px; }
   .boky-topbar { padding: 10px 16px; }
+}
+
+/* ─── TUTOR PAGE (Ollama chatbot) ───────────────────────────────────────────── */
+.tutor-page { height: 100vh; display: flex; flex-direction: column; background: var(--bg); overflow: hidden; }
+
+.tutor-layout { display: flex; flex-direction: column; height: 100%; }
+
+.tutor-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  background: var(--card); border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm); flex-shrink: 0;
+}
+.tutor-header-title { display: flex; align-items: center; gap: 10px; flex: 1; }
+.tutor-header-icon { font-size: 1.6rem; }
+.tutor-title { font-size: 1rem; font-weight: 800; }
+.tutor-subtitle { font-size: .75rem; color: var(--text-muted); margin-top: 1px; }
+.tutor-status-online { color: var(--success) !important; }
+.tutor-status-warn   { color: #D97706 !important; }
+.tutor-status-offline{ color: var(--error) !important; }
+.tutor-clear-btn {
+  padding: 6px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: none; cursor: pointer; font-size: 1rem; color: var(--text-muted);
+}
+.tutor-clear-btn:hover { background: var(--error-light); color: var(--error); }
+
+/* Messages list */
+.tutor-messages {
+  flex: 1; overflow-y: auto; padding: 16px; display: flex;
+  flex-direction: column; gap: 14px;
+}
+
+/* Welcome block */
+.tutor-welcome {
+  text-align: center; padding: 24px 16px; max-width: 520px; margin: auto;
+}
+.tutor-welcome-icon { font-size: 3rem; margin-bottom: 10px; }
+.tutor-welcome h2 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.tutor-welcome p { font-size: .9rem; color: var(--text-muted); margin-bottom: 6px; }
+.tutor-welcome-mg { font-style: italic; font-size: .82rem !important; }
+.tutor-suggestions {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 16px;
+}
+.tutor-suggestion {
+  padding: 7px 13px; border-radius: 20px; border: 1.5px solid #7C3AED;
+  background: #F5F3FF; color: #5B21B6; font-size: .8rem; font-weight: 600;
+  cursor: pointer; transition: all .15s;
+}
+.tutor-suggestion:hover { background: #7C3AED; color: #fff; }
+
+/* Message bubbles */
+.tutor-msg { display: flex; }
+.tutor-msg-user  { justify-content: flex-end; }
+.tutor-msg-assistant { justify-content: flex-start; }
+.tutor-msg-error { justify-content: center; }
+
+.tutor-msg-bubble {
+  display: flex; align-items: flex-start; gap: 8px;
+  max-width: 82%; padding: 11px 14px; border-radius: 16px;
+  line-height: 1.55; font-size: .9rem;
+}
+.tutor-msg-user .tutor-msg-bubble {
+  background: #7C3AED; color: #fff; border-bottom-right-radius: 4px;
+}
+.tutor-msg-assistant .tutor-msg-bubble {
+  background: var(--card); border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+.tutor-msg-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.tutor-msg-content code {
+  background: rgba(0,0,0,.08); padding: 1px 5px; border-radius: 4px;
+  font-size: .85em; font-family: monospace;
+}
+.tutor-msg-user .tutor-msg-content code { background: rgba(255,255,255,.2); }
+
+/* Thinking animation */
+.tutor-dots { display: inline-flex; gap: 4px; align-items: center; }
+.tutor-dots span {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--text-muted);
+  animation: tutorDot 1.2s infinite ease-in-out;
+}
+.tutor-dots span:nth-child(2) { animation-delay: .2s; }
+.tutor-dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes tutorDot { 0%,80%,100% { transform: scale(.6); opacity:.4; } 40% { transform: scale(1); opacity:1; } }
+
+/* Error box */
+.tutor-error-box {
+  background: var(--error-light); border: 1px solid var(--error);
+  border-radius: var(--radius-sm); padding: 12px 16px; font-size: .87rem;
+  color: var(--error); max-width: 480px; text-align: center;
+}
+
+/* Input area */
+.tutor-input-area {
+  border-top: 1px solid var(--border); background: var(--card);
+  padding: 12px 16px 10px; flex-shrink: 0;
+}
+.tutor-input-row { display: flex; gap: 8px; align-items: flex-end; }
+.tutor-input {
+  flex: 1; padding: 10px 14px; border: 1.5px solid var(--border);
+  border-radius: var(--radius); font-family: var(--font); font-size: .9rem;
+  resize: none; overflow-y: hidden; line-height: 1.4; background: var(--bg);
+}
+.tutor-input:focus { outline: none; border-color: #7C3AED; }
+.tutor-send-btn {
+  width: 42px; height: 42px; border-radius: 50%; background: #7C3AED;
+  color: #fff; border: none; cursor: pointer; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background .15s;
+}
+.tutor-send-btn:hover:not(:disabled) { background: #5B21B6; }
+.tutor-send-btn:disabled { opacity: .45; cursor: not-allowed; }
+.tutor-info {
+  font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 6px;
 }
 
 /* ─── UTILITY ───────────────────────────────────────────────────────────────── */

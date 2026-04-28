@@ -58,6 +58,10 @@ export function renderDashboard() {
           <span class="quick-icon">🇲🇬</span>
           <span>Boky</span>
         </button>
+        <button class="quick-btn quick-btn-tutor" id="btn-tutor">
+          <span class="quick-icon">🤖</span>
+          <span>Tutor IA</span>
+        </button>
       </div>
 
       <!-- Assessment Banner -->
@@ -98,6 +102,9 @@ export function renderDashboard() {
   });
   container.querySelector('#btn-boky').addEventListener('click', () => {
     location.hash = '#boky';
+  });
+  container.querySelector('#btn-tutor').addEventListener('click', () => {
+    location.hash = '#tutor';
   });
 
   // Topic card clicks
