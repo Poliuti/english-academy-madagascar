@@ -25,14 +25,15 @@ function normalize(text) {
 // ─── MP3 player ───────────────────────────────────────────────────────────────
 let currentAudio = null;
 
-function playMP3(path, onEnd) {
+function playMP3(path, text, onEnd) {
   if (currentAudio) { currentAudio.pause(); currentAudio.src = ''; currentAudio = null; }
   const audio = new Audio(path);
   currentAudio = audio;
   if (onEnd) audio.addEventListener('ended', onEnd, { once: true });
   audio.play().catch(() => {
+    // WAV load/play failed → fall back to Web Speech API
     currentAudio = null;
-    if (onEnd) onEnd();
+    speakFallback(text, onEnd);
   });
 }
 
@@ -87,7 +88,7 @@ export function speak(text, { onEnd = null } = {}) {
   loadMap().then(() => {
     const path = audioMap[key];
     if (path) {
-      playMP3(path, onEnd);
+      playMP3(path, text, onEnd);
     } else {
       speakFallback(text, onEnd);
     }

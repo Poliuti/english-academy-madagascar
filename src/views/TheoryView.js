@@ -83,6 +83,7 @@ export function renderTheory(topicId) {
       btn.addEventListener('click', () => {
         // Maps theory section id → exercise topic key in exercises.js
         const topicMap = {
+          // vocabulary topics
           routine:           'routine',
           family:            'family',
           school:            'school',
@@ -92,12 +93,34 @@ export function renderTheory(topicId) {
           colors:            'colors',
           numbers:           'numbers',
           adjectives:        'adjectives',
-          comparatives:      'adjectives',   // comparatives → adjectives exercises
+          comparatives:      'adjectives',
           pronouns:          'pronouns',
+          // grammar A1
+          articles:          'articles',
+          plurals:           'plurals',
+          therebeis:         'therebeis',
+          // grammar A1-A2
+          prepositions:      'prepositions',
+          questions:         'questions',
+          // grammar A2
           presentSimple:     'presentSimple',
           presentContinuous: 'presentContinuous',
+          modals:            'modals',
+          // grammar A2-B1
           pastSimple:        'pastSimple',
           futureSimple:      'futureSimple',
+          // grammar B1
+          pastContinuous:    'pastContinuous',
+          futureContinuous:  'futureContinuous',
+          presentPerfect:    'presentPerfect',
+          pastPerfect:       'pastPerfect',
+          timeMarkers:       'timeMarkers',
+          passiveVoice:      'passiveVoice',
+          // grammar B1-B2
+          conditionals:      'conditionals',
+          reportedSpeech:    'reportedSpeech',
+          // grammar B2
+          futurePerfect:     'futurePerfect',
         };
         const ex = topicMap[currentTopic];
         if (ex) {

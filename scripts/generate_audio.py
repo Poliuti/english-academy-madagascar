@@ -22,6 +22,7 @@ SCRIPT   = os.path.dirname(__file__)
 MODEL    = os.path.join(SCRIPT, "kokoro-v0_19.onnx")
 VOICES_F = os.path.join(SCRIPT, "voices.bin")
 OUT_DIR  = os.path.join(SCRIPT, "..", "public", "audio")
+AUDIO_URL_PREFIX = "/public/audio"   # path served by Python http.server & Vercel from project root
 MAP_JS   = os.path.join(SCRIPT, "..", "src", "data", "audio-map.js")
 SRC_DIR  = os.path.join(SCRIPT, "..", "src", "data")
 
@@ -141,7 +142,7 @@ def main():
         if os.path.exists(wav_path):
             # Key MUST be lowercase+trimmed to match tts.js normalize()
             key = text.lower().strip().replace("\\", "\\\\").replace('"', '\\"')
-            lines.append(f'  "{key}": "/audio/{fid}.{EXT}",')
+            lines.append(f'  "{key}": "{AUDIO_URL_PREFIX}/{fid}.{EXT}",')
     lines += ["};", ""]
 
     with open(MAP_JS, "w", encoding="utf-8") as f:
