@@ -863,6 +863,14 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .boky-tts-col { width: 48px; text-align: center; }
 .boky-tts-cell { text-align: center; }
 
+.boky-errors {
+  background: var(--error-light); border: 1px solid var(--error);
+  border-radius: var(--radius); padding: 14px 18px;
+}
+.boky-errors h3 { font-size: .9rem; font-weight: 800; margin-bottom: 8px; color: var(--error); }
+.boky-errors ul { padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+.boky-errors li { font-size: .87rem; line-height: 1.5; color: #7F1D1D; }
+
 .boky-tips {
   background: var(--card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 16px 20px;

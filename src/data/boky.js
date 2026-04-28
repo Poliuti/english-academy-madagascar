@@ -34,18 +34,28 @@ export const bokyChapters = [
         },
         {
           title: 'Pas d\'article (Ø)',
-          content: 'Devant les noms généraux, les langues, les matières, les repas.',
+          content: 'Devant les noms généraux, les langues, les matières, les repas. Aussi devant les noms propres, les villes, les pays (sauf exceptions).',
           rows: [
             { en: 'I like Ø rice.', tr: 'J\'aime le riz (en général).' },
             { en: 'She speaks Ø English.', tr: 'Elle parle anglais.' },
             { en: 'We have Ø breakfast at 7.', tr: 'Nous prenons le petit-déjeuner à 7h.' },
+            { en: 'He studies Ø mathematics.', tr: 'Il étudie les mathématiques.' },
+            { en: 'I live in Ø Madagascar.', tr: 'J\'habite à Madagascar.' },
           ]
         },
+      ],
+      commonErrors: [
+        '❌ "I am a student" ✅ — mais ❌ "She is engineer" → ✅ "She is AN engineer" (article obligatoire avec les métiers)',
+        '❌ "I like the rice" → ✅ "I like rice" (goût général = pas d\'article)',
+        '❌ "a university" semble incorrect mais ✅ car "u" se prononce "you" (consonne)',
+        '❌ "an book" → ✅ "a book" (b = consonne)',
+        '❌ "I go to the school" (souvent) → ✅ "I go to school" (institution en général)',
       ],
       tips: [
         'a + consonne : a cat, a dog, a university (« u » se prononce « you »)',
         'an + voyelle : an apple, an hour (« h » muet), an umbrella',
         'the = on sait EXACTEMENT de quoi on parle',
+        'Ø (rien) = noms généraux, langues, repas, pays, villes, matières scolaires',
       ]
     },
     mg: {
@@ -80,10 +90,17 @@ export const bokyChapters = [
           ]
         },
       ],
+      commonErrors: [
+        '❌ "She is engineer" → ✅ "She is AN engineer" (tsy maintsy misy article alohan\'ny asa)',
+        '❌ "I like the rice" → ✅ "I like rice" (hevitra ankapoben\'ny = tsy misy article)',
+        '❌ "an book" → ✅ "a book" (b = consonant)',
+        '❌ "a apple" → ✅ "an apple" (a = vowel)',
+      ],
       tips: [
         'a + consonant : a cat, a dog, a university ("u" = "you")',
         'an + vowel : an apple, an hour ("h" mangina), an umbrella',
         'the = "ny" — samy mahalala ny zavatra resahina',
+        'Tsy misy article : fiteny, sakafo, firenena, tanàna, matière sekoly',
       ]
     }
   },
@@ -256,17 +273,28 @@ export const bokyChapters = [
         },
         {
           title: 'Règle du -s/-es',
-          content: 'Avec he/she/it : work → works, go → goes, study → studies, have → has.',
+          content: 'Avec he/she/it : +s en général. +es après -sh/-ch/-x/-o/-s. Verbes en -y → -ies. Exceptions : have→has, be→is.',
           rows: [
             { en: 'He always reads before sleep.', tr: 'Il lit toujours avant de dormir.' },
             { en: 'She has a big family.', tr: 'Elle a une grande famille.' },
+            { en: 'My father goes to work by bike.', tr: 'Mon père va au travail à vélo.' },
+            { en: 'The baby cries every night.', tr: 'Le bébé pleure chaque nuit.' },
+            { en: 'Water boils at 100 degrees.', tr: 'L\'eau bout à 100 degrés.' },
           ]
         },
+      ],
+      commonErrors: [
+        '❌ "She work every day" → ✅ "She workS every day" (he/she/it → toujours +s)',
+        '❌ "He don\'t like rice" → ✅ "He DOESN\'T like rice" (doesn\'t avec he/she/it)',
+        '❌ "Does she works?" → ✅ "Does she work?" (avec does/doesn\'t → infinitif sans -s)',
+        '❌ "I am always late" (correct) mais ❌ "Always I am late" → adverbe après "be"',
+        '❌ "She studys" → ✅ "She studies" (-y après consonne → -ies)',
       ],
       tips: [
         'Adverbes de fréquence : always, usually, often, sometimes, rarely, never',
         'always/usually → devant le verbe : She always eats breakfast.',
         'don\'t (I/you/we/they) ≠ doesn\'t (he/she/it) — erreur très fréquente !',
+        'he/she/it → TOUJOURS +s, même si ça semble bizarre',
       ]
     },
     mg: {
@@ -305,6 +333,12 @@ export const bokyChapters = [
             { en: 'She has a big family.', tr: 'Manana fianakaviana lehibe izy.' },
           ]
         },
+      ],
+      commonErrors: [
+        '❌ "She work every day" → ✅ "She workS every day" (he/she/it → +s foana)',
+        '❌ "He don\'t like rice" → ✅ "He DOESN\'T like rice"',
+        '❌ "Does she works?" → ✅ "Does she work?" (aorian\'ny does → infinitif)',
+        '❌ "She studys" → ✅ "She studies" (-y aorian\'ny consonant → -ies)',
       ],
       tips: [
         'Adverbe fotoana : always (foana), usually (matetika), often (matetika koa), sometimes (indraindray), never (tsy mba)',
@@ -437,10 +471,19 @@ export const bokyChapters = [
           ]
         },
       ],
+      commonErrors: [
+        '❌ "I goed to school" → ✅ "I WENT to school" (go est irrégulier)',
+        '❌ "She didn\'t went" → ✅ "She didn\'t GO" (avec didn\'t → infinitif, pas past)',
+        '❌ "Did she worked?" → ✅ "Did she WORK?" (avec did → infinitif)',
+        '❌ "I was eat" → ✅ "I ate" (Past Simple ≠ be + verbe, sauf continuous)',
+        '❌ "Yesterday I have eaten" → ✅ "Yesterday I ate" (hier = moment précis → Past Simple)',
+        '❌ "He were happy" → ✅ "He WAS happy" (was pour I/he/she/it)',
+      ],
       tips: [
         'Signal words : yesterday, last week/month/year, ago, in 2020, when I was young',
         'was (I/he/she/it) ≠ were (we/you/they)',
         'Avec didn\'t, le verbe reste à l\'infinitif (sans -ed)',
+        'Apprenez les 30 verbes irréguliers les plus fréquents par cœur !',
       ]
     },
     mg: {
@@ -477,6 +520,12 @@ export const bokyChapters = [
             { en: 'What did she say?', tr: 'Inona no nolazainy [?]?' },
           ]
         },
+      ],
+      commonErrors: [
+        '❌ "I goed" → ✅ "I went" (go = irrégulier)',
+        '❌ "She didn\'t went" → ✅ "She didn\'t go" (aorian\'ny didn\'t → infinitif)',
+        '❌ "Did she worked?" → ✅ "Did she work?"',
+        '❌ "He were" → ✅ "He WAS" (was = I/he/she/it)',
       ],
       tips: [
         'Fotoana lasa : yesterday (omaly), last week (herinandrotsy), ago, in 2020',
@@ -616,6 +665,13 @@ export const bokyChapters = [
           ]
         },
       ],
+      commonErrors: [
+        '❌ "She cans swim" → ✅ "She CAN swim" (modaux = jamais de -s)',
+        '❌ "You must to study" → ✅ "You must study" (pas de "to" après les modaux)',
+        '❌ "He should goes" → ✅ "He should go" (infinitif sans -s après modal)',
+        '❌ "Can you to help me?" → ✅ "Can you help me?"',
+        '❌ "I would like go" → ✅ "I would like TO go" (would like est une exception → to + inf)',
+      ],
       tips: [
         'Les modaux ne prennent jamais de -s avec he/she/it',
         'Toujours suivis de l\'infinitif sans to (sauf ought to, have to)',
@@ -668,6 +724,11 @@ export const bokyChapters = [
           ]
         },
       ],
+      commonErrors: [
+        '❌ "She cans swim" → ✅ "She can swim" (modal = tsy misy -s)',
+        '❌ "You must to study" → ✅ "You must study" (tsy "to" aorian\'ny modal)',
+        '❌ "He should goes" → ✅ "He should go" (infinitif foana)',
+      ],
       tips: [
         'Ny modal verbs dia tsy manova endrika (tsy +s amin\'ny he/she/it)',
         'Tsy ampiasaina "to" aorian\'ny modal (afa-tsy have to, ought to)',
@@ -714,6 +775,13 @@ export const bokyChapters = [
           ]
         },
       ],
+      commonErrors: [
+        '❌ "I have seen him yesterday" → ✅ "I SAW him yesterday" (yesterday = moment précis → Past Simple)',
+        '❌ "She has went to Paris" → ✅ "She has GONE to Paris" (go → gone, pas went)',
+        '❌ "I have lived here since 5 years" → ✅ "...for 5 years" (durée → for)',
+        '❌ "Have you ever went?" → ✅ "Have you ever BEEN?" (participe passé obligatoire)',
+        '❌ "I have already ate" → ✅ "I have already EATEN"',
+      ],
       tips: [
         'Present Perfect ≠ Past Simple : PP = pas de moment précis ; PS = moment précis',
         'I have eaten today (today pas encore fini) / I ate at noon (moment précis)',
@@ -751,6 +819,11 @@ export const bokyChapters = [
             { en: 'She has worked here since 2020.', tr: 'Niasa eto izy hatramin\'ny 2020.' },
           ]
         },
+      ],
+      commonErrors: [
+        '❌ "I have seen him omaly" → ✅ "I SAW him omaly" (fotoana voafaritra → Past Simple)',
+        '❌ "She has went" → ✅ "She has GONE" (go → gone)',
+        '❌ "...since 5 years" → ✅ "...for 5 years" (faharetan\'ny = for)',
       ],
       tips: [
         'Present Perfect ≠ Past Simple : PP = tsy voafaritra; PS = voafaritra',
@@ -864,6 +937,13 @@ export const bokyChapters = [
           ]
         },
       ],
+      commonErrors: [
+        '❌ "If I will study, I will pass" → ✅ "If I STUDY, I will pass" (Type 1 : présent après if)',
+        '❌ "If I was rich" → ✅ "If I WERE rich" (Type 2 : were pour tous les sujets)',
+        '❌ "If I would have money" → ✅ "If I HAD money" (Type 2 : past simple après if)',
+        '❌ "If she studied, she would passed" → ✅ "...she would PASS" (infinitif après would)',
+        '❌ "If I had studied, I would passed" → ✅ "...I would HAVE PASSED" (Type 3)',
+      ],
       tips: [
         'Type 2 : if + were (pas was!) pour tous les sujets : If I were you...',
         'Ordre des propositions : la proposition "if" peut venir en premier ou en second',
@@ -906,6 +986,10 @@ export const bokyChapters = [
           ]
         },
       ],
+      commonErrors: [
+        '❌ Type 2 : "If I was" → ✅ "If I WERE" (were ho an\'ny olon-drehetra)',
+        '❌ "Raha hianatra aho dia hahajoro" → misy "will/would" ilaina amin\'ny fehezanteny faharoa [?]',
+      ],
       tips: [
         'Type 2 : if + were (tsy was!) ho an\'ny olon-drehetra',
         '"raha" = if amin\'ny malagasy — ao am-piandohan\'ny fepetra foana',
@@ -940,6 +1024,12 @@ export const bokyChapters = [
             { en: 'Someone broke the window. → The window was broken.', tr: 'Active → Passive (passé, agent omis)' },
           ]
         },
+      ],
+      commonErrors: [
+        '❌ "The book was write in 1980" → ✅ "The book was WRITTEN in 1980" (participe passé, pas infinitif)',
+        '❌ "The cake is making by my mother" → ✅ "The cake is MADE by my mother"',
+        '❌ "English is speak here" → ✅ "English is SPOKEN here"',
+        '❌ "The window was broke" → ✅ "The window was BROKEN"',
       ],
       tips: [
         'Le participe passé est la forme 3 du verbe : write→written, break→broken, eat→eaten',
@@ -1010,6 +1100,12 @@ export const bokyChapters = [
             { en: '"Please help me." → She asked him to help her.', tr: '"Aide-moi s\'il te plaît." → Elle lui a demandé de l\'aider.' },
           ]
         },
+      ],
+      commonErrors: [
+        '❌ "She said she is tired" → ✅ "She said she WAS tired" (concordance des temps)',
+        '❌ "He asked where do you live" → ✅ "He asked where he LIVED" (ordre affirmatif en indirect)',
+        '❌ "She said to go" → ✅ "She told US to go" (tell + objet + to + inf)',
+        '❌ "He asked if she was ready?" → ✅ sans point d\'interrogation (c\'est une affirmation)',
       ],
       tips: [
         'that peut être omis : She said (that) she was tired.',

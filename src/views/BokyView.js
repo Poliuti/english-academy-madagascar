@@ -150,6 +150,15 @@ function renderChapter(chapter, l) {
         </div>
       `).join('')}
 
+      ${data.commonErrors?.length ? `
+        <div class="boky-errors">
+          <h3>${l === 'fr' ? '⚠️ Erreurs fréquentes' : '⚠️ Hadisoana mahazatra'}</h3>
+          <ul>
+            ${data.commonErrors.map(e => `<li>${escHtml(e)}</li>`).join('')}
+          </ul>
+        </div>
+      ` : ''}
+
       ${data.tips?.length ? `
         <div class="boky-tips">
           <h3>${l === 'fr' ? '💡 Points importants' : '💡 Torohevitra'}</h3>
