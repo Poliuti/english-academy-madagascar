@@ -15,7 +15,8 @@ export const VOCAB_CATEGORIES = [
   { id: 'adjectives',  label: 'Adjectifs courants',  icon: '✨', level: 'A1' },
   { id: 'commonVerbs', label: 'Verbes courants',     icon: '⚡', level: 'A1' },
   { id: 'pronouns',    label: 'Pronoms',             icon: '👤', level: 'A1' },
-  { id: 'connectors',  label: 'Mots de liaison',     icon: '🔗', level: 'A2' },
+  { id: 'connectors',    label: 'Mots de liaison',          icon: '🔗', level: 'A2' },
+  { id: 'presentations', label: 'Présentations',             icon: '🎤', level: 'A1–A2' },
 ];
 
 export const VOCABULARY = {
@@ -333,6 +334,47 @@ export const VOCABULARY = {
     { en: 'after',    fr: 'après',        mg: 'aorian\'ny',  example: 'We play after school.' },
     { en: 'if',       fr: 'si',           mg: 'raha',        example: 'If it rains, we stay home.' },
   ],
+  presentations: [
+    // ── Greetings formal ────────────────────────────────────────────────────
+    { en: 'Hello',                    fr: 'Bonjour',                     mg: 'Manao ahoana',           example: 'Hello, my name is Paul.' },
+    { en: 'Good morning',             fr: 'Bonjour (matin)',             mg: 'Moron\'ny maraina',       example: 'Good morning, everyone!' },
+    { en: 'Good afternoon',           fr: 'Bonjour (après-midi)',        mg: 'Atoandro tsara',          example: 'Good afternoon, ladies and gentlemen.' },
+    { en: 'Good evening',             fr: 'Bonsoir',                     mg: 'Hariva tsara',            example: 'Good evening, nice to meet you.' },
+    { en: 'Nice to meet you',         fr: 'Enchanté(e)',                 mg: 'Faly mahafantatra anao',  example: 'Nice to meet you, I\'m Maria.' },
+    { en: 'Pleased to meet you',      fr: 'Ravi(e) de vous rencontrer',  mg: 'Ravo mahafantatra anao',  example: 'Pleased to meet you, sir.' },
+    { en: 'How do you do?',           fr: 'Comment allez-vous ? (formel)',mg: 'Ahoana ny valinao?',     example: 'How do you do? I am the director.' },
+    // ── Greetings informal ──────────────────────────────────────────────────
+    { en: 'Hi',                       fr: 'Salut',                       mg: 'Salama',                  example: 'Hi! I\'m your new classmate.' },
+    { en: 'Hey',                      fr: 'Salut (très informel)',        mg: 'Hé',                      example: 'Hey, what\'s your name?' },
+    { en: 'How are you?',             fr: 'Comment vas-tu ?',             mg: 'Tsara ve ianao?',         example: 'How are you? Fine, thank you!' },
+    { en: 'What\'s up?',              fr: 'Quoi de neuf ?',              mg: 'Inona vaovao?',           example: 'What\'s up? Not much, thanks.' },
+    // ── Introducing yourself ────────────────────────────────────────────────
+    { en: 'My name is...',            fr: 'Je m\'appelle...',            mg: '...no anarako',           example: 'My name is Jean. I am fifteen years old.' },
+    { en: 'I am from...',             fr: 'Je viens de...',              mg: 'Avy any ... aho',         example: 'I am from Antananarivo, Madagascar.' },
+    { en: 'I live in...',             fr: 'J\'habite à...',              mg: 'Monina any ... aho',      example: 'I live in a small village near Fianarantsoa.' },
+    { en: 'I am ... years old',       fr: 'J\'ai ... ans',               mg: 'Fito ambin\'ny folo taona aho', example: 'I am seventeen years old.' },
+    { en: 'I am a student',           fr: 'Je suis étudiant(e)',         mg: 'Mpianatra aho',           example: 'I am a student at the lycée.' },
+    { en: 'I work as a...',           fr: 'Je travaille comme...',       mg: 'Miasa ... aho',           example: 'I work as a teacher in a primary school.' },
+    { en: 'I study...',               fr: 'J\'étudie...',                mg: 'Mianatra ... aho',        example: 'I study English and mathematics.' },
+    { en: 'I speak...',               fr: 'Je parle...',                 mg: 'Miteny ... aho',          example: 'I speak Malagasy, French and a little English.' },
+    { en: 'My hobby is...',           fr: 'Mon hobby est...',            mg: '... no fialam-boly tiako',example: 'My hobby is reading and football.' },
+    { en: 'I like / I love',          fr: 'J\'aime / J\'adore',         mg: 'Tia / Tia indrindra aho', example: 'I love music and I like cooking.' },
+    // ── Describing others ───────────────────────────────────────────────────
+    { en: 'This is my friend',        fr: 'Voici mon ami(e)',            mg: 'Ity ny namako',           example: 'This is my friend, her name is Sophie.' },
+    { en: 'He / She is...',           fr: 'Il / Elle est...',            mg: 'Izy dia...',              example: 'She is kind and very intelligent.' },
+    { en: 'He / She works as a...',   fr: 'Il / Elle travaille comme...', mg: 'Miasa ... izy',          example: 'He works as a nurse at the hospital.' },
+    { en: 'He / She comes from...',   fr: 'Il / Elle vient de...',       mg: 'Avy any ... izy',        example: 'She comes from a village near Toamasina.' },
+    // ── Useful phrases for oral presentations ──────────────────────────────
+    { en: 'Today I will talk about',  fr: 'Aujourd\'hui je vais parler de', mg: 'Androany hiresaka momba ny ... aho', example: 'Today I will talk about my family.' },
+    { en: 'First of all',             fr: 'Tout d\'abord',               mg: 'Voalohany indrindra',    example: 'First of all, let me introduce myself.' },
+    { en: 'In conclusion',            fr: 'En conclusion',               mg: 'Farany',                  example: 'In conclusion, I am happy to be here.' },
+    { en: 'Thank you for listening',  fr: 'Merci de m\'avoir écouté(e)', mg: 'Misaotra tamin\'ny fihainoana',example: 'Thank you for listening to my presentation.' },
+    { en: 'Do you have any questions?',fr: 'Avez-vous des questions ?',  mg: 'Manan-tsoru-kevitra ve ianareo?', example: 'Do you have any questions about my topic?' },
+    { en: 'I would like to add',      fr: 'J\'aimerais ajouter',        mg: 'Te-hanampy koa aho',     example: 'I would like to add one more thing.' },
+    { en: 'For example',              fr: 'Par exemple',                 mg: 'Ohatra',                  example: 'For example, in my village we speak Malagasy.' },
+    { en: 'In my opinion',            fr: 'À mon avis',                  mg: 'Araka ny hevitro',       example: 'In my opinion, English is very useful.' },
+  ],
+
 };
 
 export function getVocabByCategory(id) {
