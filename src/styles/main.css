@@ -677,6 +677,8 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
 .quick-btn { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; font-size: .95rem; font-weight: 700; color: var(--text); box-shadow: var(--shadow-sm); }
 .quick-btn:hover { border-color: var(--primary); background: var(--primary-light); }
+.quick-btn-mg { border-color: #2E7D32; color: #2E7D32; }
+.quick-btn-mg:hover { background: #E8F5E9; border-color: #1B5E20; }
 .quick-btn.primary-btn { background: var(--primary); color: #fff; border-color: var(--primary-dark); }
 .quick-btn.primary-btn:hover { background: var(--primary-dark); }
 .quick-icon { font-size: 1.3rem; }
@@ -760,6 +762,121 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   .results-actions { flex-direction: column; }
   .quick-actions { grid-template-columns: 1fr 1fr; }
   .dialogue-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── BOKY FAMPIANARANA ─────────────────────────────────────────────────────── */
+.boky-page { min-height: 100vh; background: var(--bg); }
+
+.boky-layout {
+  display: flex; min-height: 100vh;
+}
+
+/* Sidebar */
+.boky-sidebar {
+  width: 260px; min-width: 220px; max-width: 280px;
+  background: var(--card); border-right: 1px solid var(--border);
+  padding: 16px 12px; display: flex; flex-direction: column;
+  gap: 10px; overflow-y: auto; position: sticky; top: 0; height: 100vh;
+}
+.boky-back { align-self: flex-start; }
+.boky-sidebar-title {
+  font-size: .9rem; font-weight: 800; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: .04em; padding: 0 4px;
+}
+.boky-toc { display: flex; flex-direction: column; gap: 2px; }
+.boky-toc-item {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 8px 10px; border-radius: var(--radius-sm); border: none;
+  background: none; text-align: left; cursor: pointer; font-size: .85rem;
+  font-weight: 600; color: var(--text-muted); transition: all .12s;
+}
+.boky-toc-item:hover { background: var(--primary-light); color: var(--text); }
+.boky-toc-item.active { background: var(--primary); color: #fff; }
+.boky-toc-icon { font-size: 1rem; flex-shrink: 0; }
+.boky-toc-label { flex: 1; line-height: 1.3; }
+.boky-toc-level {
+  font-size: .7rem; background: rgba(0,0,0,.08); padding: 2px 5px;
+  border-radius: 4px; flex-shrink: 0; font-weight: 700;
+}
+.boky-toc-item.active .boky-toc-level { background: rgba(255,255,255,.25); color: #fff; }
+
+/* Main */
+.boky-main {
+  flex: 1; overflow-y: auto; display: flex; flex-direction: column;
+}
+.boky-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px; background: var(--card); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10; flex-wrap: wrap; gap: 10px;
+}
+.boky-breadcrumb {
+  display: flex; align-items: center; gap: 8px; font-size: .95rem; font-weight: 700;
+}
+.boky-level-badge {
+  font-size: .72rem; background: var(--primary-light); color: var(--primary-dark);
+  padding: 2px 8px; border-radius: 10px; font-weight: 800;
+}
+.boky-lang-toggle {
+  padding: 8px 16px; border-radius: 20px; border: 2px solid var(--primary);
+  background: #fff; color: var(--primary-dark); font-weight: 800; font-size: .85rem;
+  cursor: pointer; transition: all .15s;
+}
+.boky-lang-toggle:hover { background: var(--primary); color: #fff; }
+
+/* Chapter content */
+.boky-content { padding: 24px; max-width: 860px; }
+.boky-chapter { display: flex; flex-direction: column; gap: 22px; }
+
+.boky-mg-disclaimer {
+  background: #FFF8E1; border-left: 4px solid #FFC107;
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  font-size: .82rem; color: #795548;
+}
+.boky-intro {
+  background: var(--primary-light); border-left: 4px solid var(--primary);
+  padding: 14px 18px; border-radius: var(--radius-sm);
+  font-size: .95rem; line-height: 1.7; color: var(--text);
+}
+
+.boky-section { display: flex; flex-direction: column; gap: 10px; }
+.boky-section-title { font-size: 1rem; font-weight: 800; color: var(--text); }
+.boky-section-desc { font-size: .88rem; color: var(--text-muted); line-height: 1.6; }
+
+.boky-table-wrap { overflow-x: auto; }
+.boky-table {
+  width: 100%; border-collapse: collapse; font-size: .88rem;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+.boky-table th {
+  background: #F3F4F6; color: var(--text); padding: 8px 12px;
+  text-align: left; font-weight: 700; font-size: .8rem;
+  border-bottom: 2px solid var(--border);
+}
+.boky-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.boky-table tr:last-child td { border-bottom: none; }
+.boky-table tr:hover td { background: #FAFAFA; }
+.boky-en { font-weight: 600; }
+.boky-tr { color: var(--text-muted); }
+.boky-uncertain { color: #E65100; font-style: italic; }
+.boky-tts-col { width: 48px; text-align: center; }
+.boky-tts-cell { text-align: center; }
+
+.boky-tips {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px 20px;
+}
+.boky-tips h3 { font-size: .9rem; font-weight: 800; margin-bottom: 10px; color: var(--text); }
+.boky-tips ul { padding-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+.boky-tips li { font-size: .87rem; line-height: 1.5; color: var(--text-muted); }
+.boky-tips li.boky-uncertain { color: #E65100; font-style: italic; }
+
+.boky-cta { text-align: center; padding: 8px 0 16px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .boky-sidebar { display: none; }
+  .boky-content { padding: 16px; }
+  .boky-topbar { padding: 10px 16px; }
 }
 
 /* ─── UTILITY ───────────────────────────────────────────────────────────────── */

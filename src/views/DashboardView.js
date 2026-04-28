@@ -54,6 +54,10 @@ export function renderDashboard() {
           <span class="quick-icon">💬</span>
           <span>Dialogues</span>
         </button>
+        <button class="quick-btn quick-btn-mg" id="btn-boky">
+          <span class="quick-icon">🇲🇬</span>
+          <span>Boky</span>
+        </button>
       </div>
 
       <!-- Assessment Banner -->
@@ -91,6 +95,9 @@ export function renderDashboard() {
   });
   container.querySelector('#btn-dialogues').addEventListener('click', () => {
     location.hash = '#dialogues';
+  });
+  container.querySelector('#btn-boky').addEventListener('click', () => {
+    location.hash = '#boky';
   });
 
   // Topic card clicks
