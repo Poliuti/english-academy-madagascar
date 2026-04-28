@@ -124,7 +124,7 @@ export function renderTheory(topicId) {
           colors:            'colors',
           numbers:           'numbers',
           adjectives:        'adjectives',
-          comparatives:      'adjectives',
+          comparatives:      'comparatives',
           pronouns:          'pronouns',
           // grammar A1
           articles:          'articles',

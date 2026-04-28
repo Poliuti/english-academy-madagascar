@@ -360,6 +360,7 @@ export const AUDIO_MAP = {
   "lemurs live in madagascar.": "/public/audio/c278023397a9.wav",
   "listen carefully.": "/public/audio/c9abab899f6a.wav",
   "listen with your ears.": "/public/audio/9ca125d2264f.wav",
+  "london is bigger than paris but tokyo is the biggest city.": "/public/audio/ee10dd9167aa.wav",
   "look at this photo.": "/public/audio/6641a61ea3f1.wav",
   "look at those clouds — it's going to rain!": "/public/audio/7eede2108263.wav",
   "look at those clouds — it's going to rain. (évidence)": "/public/audio/dec2880d4348.wav",

@@ -1339,6 +1339,18 @@ exercises.futurePerfect = [
   { id: 'fp08', type: 'error-correct', level: 'B2', instruction: 'Corrigez.', sentence: 'By 8pm, I will finished my homework.', answer: 'By 8pm, I will have finished my homework.', hint: 'Future Perfect : will HAVE + pp', explanation: '"Will have finished" (pas "will finished"). Le "have" est obligatoire.' },
 ];
 
+// ─── COMPARATIVES & SUPERLATIVES ────────────────────────────────────────────
+exercises.comparatives = [
+  { id: 'cmp01', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le comparatif correct.', template: 'This film is ___ (interesting) than the last one.', answer: 'more interesting', hint: 'Adjectif long → more + adjectif', explanation: 'Adjectifs longs (2+ syllabes) : "more + adjectif". "More interesting" = plus intéressant.' },
+  { id: 'cmp02', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Elle est plus grande que son frère.', answer: 'She is taller than her brother.', alternatives: ["She's taller than her brother."], hint: 'tall → taller (adjectif court : + -er)', explanation: 'Adjectifs courts (1 syllabe) : + "-er". "Tall" → "taller than".' },
+  { id: 'cmp03', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le superlatif.', template: 'He is ___ (fast) runner in the school.', answer: 'the fastest', hint: 'Adjectif court : the + adj + -est', explanation: 'Superlatif court : "the + adj + -est". "Fast" → "the fastest". Doublement de la consonne finale.' },
+  { id: 'cmp04', type: 'error-correct', level: 'A2', instruction: "Trouvez et corrigez l'erreur.", sentence: 'This box is more heavy than that one.', answer: 'This box is heavier than that one.', hint: '"Heavy" = adjectif en -y → -ier', explanation: '"Heavy" → "heavier" (terminaison en -y : y → i + er). Pas "more heavy".' },
+  { id: 'cmp05', type: 'word-order', level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['English', 'is', 'the', 'most', 'beautiful', 'language', '.'], answer: 'English is the most beautiful language.', hint: 'the most + adjectif long', explanation: 'Superlatif long : "the most + adjectif". "The most beautiful language".' },
+  { id: 'cmp06', type: 'fill-blank', level: 'B1', instruction: 'Complétez (égalité : as … as).', template: 'My car is ___ fast ___ yours.', answer: 'as, as', hint: 'Égalité : as + adjectif + as', explanation: '"As … as" exprime l\'égalité : "My car is as fast as yours" = ma voiture est aussi rapide que la tienne.' },
+  { id: 'cmp07', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: "Plus tu travailles, meilleurs sont tes résultats.", answer: 'The harder you work, the better your results are.', alternatives: ['The more you work, the better your results are.'], hint: 'The + comparatif ..., the + comparatif ...', explanation: 'Structure "the more … the more" / "the harder … the better" = plus… plus…' },
+  { id: 'cmp08', type: 'listening', level: 'B1', instruction: 'Écoutez et écrivez ce que vous entendez.', audio: 'London is bigger than Paris but Tokyo is the biggest city.', answer: 'London is bigger than Paris but Tokyo is the biggest city.', hint: 'Comparatif "bigger" + superlatif "the biggest"', explanation: '"Bigger" (comparatif de "big") et "the biggest" (superlatif). Doublement de "g" pour les adjectifs CVC.' },
+];
+
 export function getAllExercises() {
   return Object.values(exercises).flat();
 }
