@@ -70,10 +70,13 @@ export function renderTutor() {
   const sendBtn     = container.querySelector('#btn-send');
   const statusEl    = container.querySelector('#tutor-status');
 
-  // ─── Connectivity check ────────────────────────────────────────────────────
+  // ─── Connectivity check (with auto-retry) ─────────────────────────────────
+  let _ollamaRetry = null;
+
   checkOllama();
 
   async function checkOllama() {
+    clearTimeout(_ollamaRetry);
     try {
       const res = await fetch('http://localhost:11434/api/tags', {
         signal: AbortSignal.timeout(3000)
@@ -84,12 +87,18 @@ export function renderTutor() {
         const hasModel = models.some(m => m.startsWith('llama3.2'));
         if (hasModel) {
           setStatus('online', '🟢 Ollama connecté');
+          // connected — stop retrying
         } else {
           setStatus('warn', `⚠️ Modèle ${OLLAMA_MODEL} non trouvé — lance: ollama pull llama3.2:3b`);
+          _ollamaRetry = setTimeout(checkOllama, 5000);
         }
+      } else {
+        setStatus('offline', '🔴 Ollama hors ligne — reconnexion dans 5 s…');
+        _ollamaRetry = setTimeout(checkOllama, 5000);
       }
     } catch {
-      setStatus('offline', '🔴 Ollama hors ligne — lance Ollama sur ce PC');
+      setStatus('offline', '🔴 Ollama hors ligne — reconnexion dans 5 s…');
+      _ollamaRetry = setTimeout(checkOllama, 5000);
     }
   }
 
