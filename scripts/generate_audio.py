@@ -77,6 +77,18 @@ def collect_texts():
     for t in extract_field(dlg, "answer"):
         texts.add(unescape(t))
 
+    # ── boky.js ───────────────────────────────────────────────────────────────
+    boky = read_file("boky.js")
+    # Estrai campo 'en' dalle righe tabella (contengono le frasi inglesi)
+    for block in re.finditer(r'\ben\s*:\s*[\'"]([^\'"\\n<>]{3,})[\'"]', boky):
+        raw = block.group(1)
+        clean = re.sub(r'<[^>]+>', '', raw).strip()
+        # Righe tipo "go → went" → prendi solo la parte leggibile
+        for part in re.split(r'\s*[→.]\s*(?=[A-Z])', clean):
+            p = part.strip()
+            if len(p) >= 4 and not p.startswith('Active') and not p.startswith('Passive'):
+                texts.add(unescape(p))
+
     # Filtra stringhe vuote o molto brevi
     return {t for t in texts if len(t.strip()) >= 2}
 
