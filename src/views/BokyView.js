@@ -168,6 +168,33 @@ function renderChapter(chapter, l) {
         </div>
       ` : ''}
 
+      ${data.summary?.length ? `
+        <div class="boky-summary">
+          <h3>${l === 'fr' ? '📌 En bref' : '📌 Andao ho tohizana'}</h3>
+          <ul>
+            ${data.summary.map(s => `<li>${escHtml(s)}</li>`).join('')}
+          </ul>
+        </div>
+      ` : ''}
+
+      ${data.quickExercises?.length ? `
+        <div class="boky-qexercises">
+          <h3>${l === 'fr' ? '✏️ Mini-exercices' : '✏️ Fanazarana fohy'}</h3>
+          <ol class="boky-qlist">
+            ${data.quickExercises.map((ex, i) => `
+              <li class="boky-qitem">
+                <span class="boky-q">${escHtml(ex.q)}</span>
+                ${ex.hint ? `<em class="boky-qhint">(${escHtml(ex.hint)})</em>` : ''}
+                <button class="boky-reveal-btn" data-idx="${i}" onclick="this.nextElementSibling.style.display='inline';this.style.display='none'">
+                  ${l === 'fr' ? 'Voir la réponse' : 'Jereo ny valiny'}
+                </button>
+                <span class="boky-answer" style="display:none">✅ ${escHtml(ex.a)}</span>
+              </li>
+            `).join('')}
+          </ol>
+        </div>
+      ` : ''}
+
       <div class="boky-cta">
         <button class="boky-go-exercises btn-primary" data-topic="${chapter.id}">
           ${exercisesLabel}

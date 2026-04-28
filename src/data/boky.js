@@ -56,7 +56,21 @@ export const bokyChapters = [
         'an + voyelle : an apple, an hour (« h » muet), an umbrella',
         'the = on sait EXACTEMENT de quoi on parle',
         'Ø (rien) = noms généraux, langues, repas, pays, villes, matières scolaires',
-      ]
+      ],
+      summary: [
+        '3 articles : a (indéfini + consonne), an (indéfini + voyelle), the (défini)',
+        'a/an = première mention ou catégorie générale',
+        'the = les deux personnes savent de quoi on parle',
+        'Pas d\'article : langues (English), repas (breakfast), pays (Madagascar)',
+        'Astuce son : "a university" (u = « you ») / "an hour" (h muet)',
+      ],
+      quickExercises: [
+        { q: 'Complete: She is ___ engineer.', a: 'an engineer', hint: 'engineer starts with a vowel sound' },
+        { q: 'Complete: I want ___ coffee. (a/an/the/Ø)', a: 'some coffee / a coffee', hint: 'unspecified quantity' },
+        { q: 'Correct the error: "I like the music."', a: 'I like music. (general taste → no article)', hint: 'general preference' },
+        { q: 'Complete: Please close ___ window.', a: 'the window', hint: 'specific, known window' },
+        { q: 'a or an? : ___ honest man', a: 'an honest man', hint: '"h" is silent in "honest"' },
+      ],
     },
     mg: {
       intro: "Ny teny anglisy dia manana teny filaza telo : <strong>a</strong>, <strong>an</strong> (tsy mazava) ary <strong>the</strong> (mazava). Tsy misy lahy/vavy toy ny teny frantsay.",
@@ -101,7 +115,19 @@ export const bokyChapters = [
         'an + vowel : an apple, an hour ("h" mangina), an umbrella',
         'the = "ny" — samy mahalala ny zavatra resahina',
         'Tsy misy article : fiteny, sakafo, firenena, tanàna, matière sekoly',
-      ]
+      ],
+      summary: [
+        'Article 3 : a (consonant), an (vowel), the (fantatra)',
+        'a/an = voalohany lazaina, na ankapoben\'ny',
+        'the = "ny" malagasy — samy mahalala ny resahina',
+        'Tsy misy article : fiteny (English), sakafo (breakfast), firenena (Madagascar)',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: She is ___ engineer.', a: 'an engineer', hint: '"e" vowel' },
+        { q: 'Mety sa tsia? "I like the music."', a: 'Diso → I like music. (hevitra ankapobeny)', hint: 'tsy misy article' },
+        { q: 'Fenoy: Please close ___ window.', a: 'the window', hint: 'window fantatra' },
+        { q: 'a na an? ___ honest man', a: 'an honest man', hint: '"h" mangina' },
+      ],
     }
   },
 
@@ -140,7 +166,21 @@ export const bokyChapters = [
       tips: [
         'sheep, fish, deer = pareil au singulier et au pluriel',
         'Noms en -f/-fe → -ves : leaf → leaves, knife → knives',
-      ]
+      ],
+      summary: [
+        'Règle générale : nom + -s (books, cats, dogs)',
+        '+es après -s, -sh, -ch, -x, -z (boxes, buses, churches)',
+        '-y → -ies si consonne avant -y (city→cities) ; +s si voyelle (boys)',
+        'Irréguliers clés : man/men, woman/women, child/children, foot/feet, tooth/teeth',
+        'Invariables : sheep, fish, deer (singulier = pluriel)',
+      ],
+      quickExercises: [
+        { q: 'Plural of "box"?', a: 'boxes', hint: '-x → +es' },
+        { q: 'Plural of "child"?', a: 'children', hint: 'irregular' },
+        { q: 'Plural of "city"?', a: 'cities', hint: 'consonant + y → ies' },
+        { q: 'Correct: "I have two foots."', a: 'I have two feet.', hint: 'foot → feet (irregular)' },
+        { q: 'Plural of "leaf"?', a: 'leaves', hint: '-f → -ves' },
+      ],
     },
     mg: {
       intro: 'Ny maromaro (pluriel) amin\'ny anglisy dia ataon\'ny fampiana <strong>-s</strong> na <strong>-es</strong> amin\'ny faranan\'ny teny. Misy teny irrégulier koa.',
@@ -171,7 +211,19 @@ export const bokyChapters = [
       tips: [
         'sheep, fish, deer = mitovy amin\'ny singulier sy pluriel',
         'Teny mifarana -f/-fe → -ves : leaf → leaves, knife → knives',
-      ]
+      ],
+      summary: [
+        'Fitsipika ankapoben\'ny : + -s (books, cats)',
+        '+es aorian\'ny -s/-sh/-ch/-x/-z (boxes, buses)',
+        '-y → -ies raha consonant eo aloha (city→cities)',
+        'Irrégulier manan-danja : man/men, child/children, foot/feet, tooth/teeth',
+      ],
+      quickExercises: [
+        { q: 'Pluriel ny "box"?', a: 'boxes', hint: '-x → +es' },
+        { q: 'Pluriel ny "child"?', a: 'children', hint: 'irrégulier' },
+        { q: 'Mety sa tsia? "I have two foots."', a: 'Diso → I have two feet.', hint: 'irrégulier' },
+        { q: 'Pluriel ny "leaf"?', a: 'leaves', hint: '-f → -ves' },
+      ],
     }
   },
 
@@ -206,7 +258,19 @@ export const bokyChapters = [
       tips: [
         'There\'s = There is (contraction courante)',
         'Utilise "any" dans les phrases négatives et interrogatives',
-      ]
+      ],
+      summary: [
+        'There is + singulier / There are + pluriel',
+        'Négatif : There isn\'t / There aren\'t any',
+        'Question : Is there…? / Are there…?',
+        '"any" dans les phrases négatives et interrogatives',
+      ],
+      quickExercises: [
+        { q: 'Complete: ___ a book on the table.', a: 'There is', hint: 'book = singulier' },
+        { q: 'Complete: ___ many students today.', a: 'There are', hint: 'students = pluriel' },
+        { q: 'Make negative: "There is a hospital."', a: 'There isn\'t a hospital.', hint: 'is → isn\'t' },
+        { q: 'Make question: "There are students."', a: 'Are there any students?', hint: 'Are + there + any?' },
+      ],
     },
     mg: {
       intro: '<strong>There is</strong> (tokana) sy <strong>There are</strong> (maro) dia ampiasaina hilazana ny fisian\'ny zavatra na olona amin\'ny toerana iray.',
@@ -233,7 +297,18 @@ export const bokyChapters = [
       tips: [
         'There\'s = There is (fohiazana)',
         'Ampiasao "any" amin\'ny fandavana sy fanontaniana',
-      ]
+      ],
+      summary: [
+        'There is + tokana / There are + maro',
+        'Fandavana : There isn\'t / There aren\'t any',
+        'Fanontaniana : Is there…? / Are there…?',
+        '"any" amin\'ny fandavana sy fanontaniana',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: ___ a book on the table.', a: 'There is', hint: 'book = tokana' },
+        { q: 'Fenoy: ___ many students today.', a: 'There are', hint: 'students = maro' },
+        { q: 'Ataovy fandavana: "There is a hospital."', a: 'There isn\'t a hospital.', hint: 'is → isn\'t' },
+      ],
     }
   },
 
@@ -295,7 +370,21 @@ export const bokyChapters = [
         'always/usually → devant le verbe : She always eats breakfast.',
         'don\'t (I/you/we/they) ≠ doesn\'t (he/she/it) — erreur très fréquente !',
         'he/she/it → TOUJOURS +s, même si ça semble bizarre',
-      ]
+      ],
+      summary: [
+        'Forme : sujet + verbe (+s avec he/she/it)',
+        'Négatif : don\'t / doesn\'t + verbe (infinitif)',
+        'Question : Do / Does + sujet + verbe ?',
+        'Usages : habitudes (every day), vérités générales, états permanents',
+        'Erreur classique : "He don\'t" → FAUX ; toujours "He doesn\'t"',
+      ],
+      quickExercises: [
+        { q: 'Complete: She ___ (work) at a bank.', a: 'works', hint: 'she → +s' },
+        { q: 'Correct: "He don\'t eat meat."', a: 'He doesn\'t eat meat.', hint: 'he → doesn\'t' },
+        { q: 'Make question: "She lives in Tana."', a: 'Does she live in Tana?', hint: 'Does + verbe infinitif' },
+        { q: 'Complete: They ___ (not/speak) French.', a: 'don\'t speak', hint: 'they → don\'t' },
+        { q: 'Correct: "Does she works here?"', a: 'Does she work here?', hint: 'après does → infinitif sans -s' },
+      ],
     },
     mg: {
       intro: 'Ny Present Simple dia ampiasaina ho an\'ny fomba mahazatra, ny asa andavanandro, ny marina mandrakariva. Ny malagasy dia mampiasa alohan\'ny verbe (mi-) sy adverbe fotoana.',
@@ -344,7 +433,19 @@ export const bokyChapters = [
         'Adverbe fotoana : always (foana), usually (matetika), often (matetika koa), sometimes (indraindray), never (tsy mba)',
         'don\'t (I/you/we/they) ≠ doesn\'t (he/she/it)',
         'Ny fitsipika -s/-es dia ilaina foana amin\'ny he/she/it',
-      ]
+      ],
+      summary: [
+        'Endriky : sujet + verbe (+s amin\'ny he/she/it)',
+        'Fandavana : don\'t / doesn\'t + verbe (infinitif)',
+        'Fanontaniana : Do / Does + sujet + verbe ?',
+        'Ampiasaina : fomba mahazatra, marina mandrakariva',
+        'Hadisoana mahazatra : "He don\'t" → DISO ; "He doesn\'t" METY',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: She ___ (work) at a bank.', a: 'works', hint: 'she → +s' },
+        { q: 'Ataovy fandavana: "He eats rice."', a: 'He doesn\'t eat rice.', hint: 'he → doesn\'t' },
+        { q: 'Ataovy fanontaniana: "She lives in Tana."', a: 'Does she live in Tana?', hint: 'Does + infinitif' },
+      ],
     }
   },
 
@@ -388,7 +489,20 @@ export const bokyChapters = [
       tips: [
         'Ne pas utiliser avec les verbes d\'état : know, love, hate, want, need, understand, believe',
         'Signal words : now, at the moment, currently, right now, look! listen!',
-      ]
+      ],
+      summary: [
+        'Forme : am/is/are + verbe-ing',
+        'Négatif : am not / isn\'t / aren\'t + verbe-ing',
+        'Question : Am/Is/Are + sujet + verbe-ing ?',
+        'Usage : action en cours maintenant, situation temporaire',
+        'Verbes d\'état JAMAIS en -ing : know, love, want, need, understand',
+      ],
+      quickExercises: [
+        { q: 'Complete: She ___ (study) right now.', a: 'is studying', hint: 'she + is + -ing' },
+        { q: 'Make negative: "They are playing."', a: 'They aren\'t playing.', hint: 'are → aren\'t' },
+        { q: 'Correct: "I am knowing the answer."', a: 'I know the answer.', hint: '"know" is a state verb' },
+        { q: 'Complete: What ___ you ___ (do)?', a: 'are, doing', hint: 'are + subject + -ing' },
+      ],
     },
     mg: {
       intro: 'Ny Present Continuous (be + verbe-ing) dia fampisehoana ny asa atao amin\'izao fotoana izao, na asa vonjimaika.',
@@ -423,7 +537,19 @@ export const bokyChapters = [
       tips: [
         'Tsy ampiasaina amin\'ny "state verbs" : know, love, hate, want, need',
         'Teny fampitandremana : now (ankehitriny), at the moment, currently',
-      ]
+      ],
+      summary: [
+        'Endrika : am/is/are + verbe-ing',
+        'Fandavana : isn\'t / aren\'t + verbe-ing',
+        'Fanontaniana : Is/Are + sujet + verbe-ing ?',
+        'Ampiasaina : asa atao ankehitriny, na vonjimaika',
+        '"State verbs" TSY ampiasaina amin\'ny -ing : know, love, want',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: She ___ (study) ankehitriny.', a: 'is studying', hint: 'is + -ing' },
+        { q: 'Ataovy fandavana: "They are playing."', a: 'They aren\'t playing.', hint: 'are → aren\'t' },
+        { q: 'Mety sa tsia? "I am knowing the answer."', a: 'Diso → I know the answer. (state verb)', hint: '"know" = state verb' },
+      ],
     }
   },
 
@@ -484,7 +610,21 @@ export const bokyChapters = [
         'was (I/he/she/it) ≠ were (we/you/they)',
         'Avec didn\'t, le verbe reste à l\'infinitif (sans -ed)',
         'Apprenez les 30 verbes irréguliers les plus fréquents par cœur !',
-      ]
+      ],
+      summary: [
+        'Régulier : verbe + -ed (worked, studied)',
+        'Irrégulier : forme 2 à apprendre (went, ate, came…)',
+        'Négatif : didn\'t + infinitif (pas de -ed !)',
+        'Question : Did + sujet + infinitif ?',
+        'was = I/he/she/it ; were = we/you/they',
+      ],
+      quickExercises: [
+        { q: 'Past of "go"?', a: 'went', hint: 'irregular verb' },
+        { q: 'Correct: "She didn\'t went home."', a: 'She didn\'t go home.', hint: 'didn\'t + infinitif' },
+        { q: 'Complete: ___ you study yesterday?', a: 'Did', hint: 'question = Did + sujet + infinitif' },
+        { q: 'Past of "eat"?', a: 'ate', hint: 'irregular' },
+        { q: 'was or were? "They ___ happy."', a: 'were', hint: 'they → were' },
+      ],
     },
     mg: {
       intro: 'Ny Past Simple dia ampiasaina hilazana ny asa <strong>vita tanteraka</strong> tamin\'ny lasa, amin\'ny fotoana voafaritra.',
@@ -531,7 +671,20 @@ export const bokyChapters = [
         'Fotoana lasa : yesterday (omaly), last week (herinandrotsy), ago, in 2020',
         'was (I/he/she/it) ≠ were (we/you/they)',
         'Aorian\'ny didn\'t → infinitif foana (tsy -ed)',
-      ]
+      ],
+      summary: [
+        'Mahazatra : verbe + -ed (worked, studied)',
+        'Tsy mahazatra : endrika 2 (went, ate, came, saw…)',
+        'Fandavana : didn\'t + infinitif (tsy misy -ed)',
+        'Fanontaniana : Did + sujet + infinitif ?',
+        'was = I/he/she/it ; were = we/you/they',
+      ],
+      quickExercises: [
+        { q: 'Past ny "go"?', a: 'went', hint: 'irrégulier' },
+        { q: 'Mety sa tsia? "She didn\'t went home."', a: 'Diso → She didn\'t go home.', hint: 'aorian\'ny didn\'t → infinitif' },
+        { q: 'Fenoy: ___ you study omaly?', a: 'Did', hint: 'Did + sujet + infinitif' },
+        { q: 'was na were? "They ___ happy."', a: 'were', hint: 'they → were' },
+      ],
     }
   },
 
@@ -574,7 +727,20 @@ export const bokyChapters = [
         'will = décision spontanée / promesse / prédiction générale',
         'be going to = intention déjà décidée / preuve visible',
         'Signal words : tomorrow, next week/year, in the future, soon',
-      ]
+      ],
+      summary: [
+        'will + infinitif (même forme pour tous les sujets)',
+        'Négatif : won\'t + infinitif',
+        'Question : Will + sujet + infinitif ?',
+        'will = décision spontanée, promesse, prédiction',
+        'be going to = intention planifiée, preuve visible',
+      ],
+      quickExercises: [
+        { q: 'Complete: She ___ (pass) her exam.', a: 'will pass', hint: 'will + infinitif' },
+        { q: 'Correct: "He will goes to school."', a: 'He will go to school.', hint: 'will + infinitif sans -s' },
+        { q: 'Negative: "I will help you."', a: 'I won\'t help you.', hint: 'will → won\'t' },
+        { q: 'will or be going to? "Look at those clouds — ___"', a: 'it\'s going to rain!', hint: 'visible proof → be going to' },
+      ],
     },
     mg: {
       intro: 'Ny Future Simple (<strong>will</strong> + verbe) dia ampiasaina ho an\'ny fanapahan-kevitra vetivety, toky, na fanambarana ho avy. Ny <strong>be going to</strong> dia ho an\'ny fikasana efa nokendry.',
@@ -609,7 +775,18 @@ export const bokyChapters = [
         'will = fanapahan-kevitra vetivety / toky',
         'be going to = fikasana efa nokendry / porofo hita',
         'Fotoana ho avy : tomorrow (rahampitso), next week (herinandro ho avy)',
-      ]
+      ],
+      summary: [
+        'will + infinitif (mitovy ho an\'ny olon-drehetra)',
+        'Fandavana : won\'t + infinitif',
+        'Fanontaniana : Will + sujet + infinitif ?',
+        'will = fanapahan-kevitra vetivety; be going to = fikasana efa nokendry',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: She ___ (help) you tomorrow.', a: 'will help', hint: 'will + infinitif' },
+        { q: 'Ataovy fandavana: "I will come."', a: 'I won\'t come.', hint: 'will → won\'t' },
+        { q: 'will na be going to? Misy rahona be — ___', a: 'It\'s going to rain.', hint: 'porofo hita → be going to' },
+      ],
     }
   },
 
@@ -676,7 +853,21 @@ export const bokyChapters = [
         'Les modaux ne prennent jamais de -s avec he/she/it',
         'Toujours suivis de l\'infinitif sans to (sauf ought to, have to)',
         'can → could (passé) ; will → would ; may → might',
-      ]
+      ],
+      summary: [
+        'can = capacité/permission ; must = obligation forte ; should = conseil',
+        'may/might = possibilité ; would = politesse/conditionnel',
+        'JAMAIS de -s avec he/she/it : she can (pas she cans)',
+        'JAMAIS "to" après le modal (sauf have to, ought to)',
+        'Exception : would like + to + infinitif',
+      ],
+      quickExercises: [
+        { q: 'Correct: "She cans speak English."', a: 'She can speak English.', hint: 'modals never take -s' },
+        { q: 'Correct: "You must to study."', a: 'You must study.', hint: 'no "to" after modal' },
+        { q: 'Fill: You ___ eat more vegetables. (conseil)', a: 'should', hint: 'advice → should' },
+        { q: 'Fill: It ___ rain later. (possibility)', a: 'may / might', hint: 'possibility' },
+        { q: 'Correct: "He should goes home."', a: 'He should go home.', hint: 'modal + infinitif' },
+      ],
     },
     mg: {
       intro: 'Ny verbe manampy (can, must, should, may, might, would) dia fampisehoana ny fahafahana, ny tsy maintsy, ny tsara atao, na ny mety mitranga. Ampiasaina foana miaraka amin\'ny infinitif tsy misy "to".',
@@ -733,7 +924,19 @@ export const bokyChapters = [
         'Ny modal verbs dia tsy manova endrika (tsy +s amin\'ny he/she/it)',
         'Tsy ampiasaina "to" aorian\'ny modal (afa-tsy have to, ought to)',
         'can → could (lasa); will → would; may → might',
-      ]
+      ],
+      summary: [
+        'can = afaka; must = tsy maintsy; should = tokony',
+        'may/might = mety; would = fandraharahana/conditionnelle',
+        'TSY misy -s amin\'ny he/she/it : she can (tsy she cans)',
+        'TSY "to" aorian\'ny modal (afa-tsy have to)',
+      ],
+      quickExercises: [
+        { q: 'Mety sa tsia? "She cans swim."', a: 'Diso → She can swim.', hint: 'tsy misy -s amin\'ny modal' },
+        { q: 'Mety sa tsia? "You must to study."', a: 'Diso → You must study.', hint: 'tsy "to" aorian\'ny modal' },
+        { q: 'Fenoy: You ___ eat more vegetables. (tsara)', a: 'should', hint: 'tsara raha atao = should' },
+        { q: 'Fenoy: He ___ help me. (mety)', a: 'may / might', hint: 'mety mitranga' },
+      ],
     }
   },
 
@@ -786,7 +989,21 @@ export const bokyChapters = [
         'Present Perfect ≠ Past Simple : PP = pas de moment précis ; PS = moment précis',
         'I have eaten today (today pas encore fini) / I ate at noon (moment précis)',
         'for = durée (for 3 years) ; since = point de départ (since 2020)',
-      ]
+      ],
+      summary: [
+        'Forme : have/has + participe passé',
+        'Usage : expériences de vie, résultats récents, durée avec for/since',
+        'already (affirmatif) / yet (négatif+question) / just (il vient de)',
+        'ever (déjà?) / never (jamais)',
+        'for = durée (3 years) ; since = début (2020)',
+      ],
+      quickExercises: [
+        { q: 'Correct: "I have seen him yesterday."', a: 'I saw him yesterday.', hint: 'yesterday = moment précis → Past Simple' },
+        { q: 'Complete: She ___ (just/arrive).', a: 'has just arrived', hint: 'has + just + pp' },
+        { q: 'for or since? "I\'ve lived here ___ 2019."', a: 'since 2019', hint: 'point de départ = since' },
+        { q: 'Complete: Have you ever ___ (be) to Paris?', a: 'been', hint: 'go → gone, be → been' },
+        { q: 'Correct: "She has went home."', a: 'She has gone home.', hint: 'go → gone (pp irrégulier)' },
+      ],
     },
     mg: {
       intro: 'Ny Present Perfect (<strong>have/has + participe passé</strong>) dia mampifandray ny lasa sy ny ankehitriny. Tsy lazaina ny fotoana manokana nanaovana ilay asa.',
@@ -829,7 +1046,18 @@ export const bokyChapters = [
         'Present Perfect ≠ Past Simple : PP = tsy voafaritra; PS = voafaritra',
         'for = faharetan\'ny fotoana (for 3 years); since = fiandohan\'ny fotoana (since 2020)',
         '"ever" ampiasaina amin\'ny fanontaniana; "never" amin\'ny fandavana',
-      ]
+      ],
+      summary: [
+        'Endrika : have/has + participe passé',
+        'Ampiasaina : traikefa (tsy voafaritra), vokatra vao vita, for/since',
+        'already (efa) / yet (tsara? amin\'ny fanontaniana) / just (vao)',
+        'for = faharetan\'ny fotoana; since = fiandohana',
+      ],
+      quickExercises: [
+        { q: 'Mety sa tsia? "I have seen him omaly."', a: 'Diso → I saw him yesterday. (Past Simple)', hint: 'fotoana voafaritra → Past Simple' },
+        { q: 'Fenoy: She ___ (just/arrive).', a: 'has just arrived', hint: 'has + just + pp' },
+        { q: 'for na since? "...since ___ 2019"', a: 'since 2019', hint: 'fiandohana = since' },
+      ],
     }
   },
 
@@ -864,7 +1092,19 @@ export const bokyChapters = [
         'was (I/he/she/it) ; were (we/you/they)',
         'Deux actions passées simultanées → while + Past Continuous / Past Continuous',
         'Action longue (PC) interrompue par action courte (PS)',
-      ]
+      ],
+      summary: [
+        'Forme : was/were + verbe-ing',
+        'was = I/he/she/it ; were = we/you/they',
+        'while + PC = action en cours ; when + PS = interruption',
+        'PC (action longue) + PS (action courte qui interrompt)',
+      ],
+      quickExercises: [
+        { q: 'Complete: I ___ (sleep) when the phone rang.', a: 'was sleeping', hint: 'I → was + -ing' },
+        { q: 'was or were? "They ___ playing."', a: 'were', hint: 'they → were' },
+        { q: 'Complete: While she ___ (cook), he arrived.', a: 'was cooking', hint: 'while + PC' },
+        { q: 'Correct: "I were studying."', a: 'I was studying.', hint: 'I → was (not were)' },
+      ],
     },
     mg: {
       intro: 'Ny Past Continuous (<strong>was/were + verbe-ing</strong>) dia fampisehoana ny asa nitohy tamin\'ny lasa, matetika voaraotry ny asa hafa.',
@@ -891,7 +1131,17 @@ export const bokyChapters = [
         'was (I/he/she/it) ; were (we/you/they)',
         'while + Past Continuous = asa nitohy',
         'when + Past Simple = asa nanapaka ny asa nitohy',
-      ]
+      ],
+      summary: [
+        'Endrika : was/were + verbe-ing',
+        'was = I/he/she/it ; were = we/you/they',
+        'while + PC = asa nitohy; when + PS = asa nanapaka',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: I ___ (sleep) fony niantso ny finaonan\'i.', a: 'was sleeping', hint: 'I → was + -ing' },
+        { q: 'was na were? "They ___ playing."', a: 'were', hint: 'they → were' },
+        { q: 'Fenoy: While she ___ (cook), tonga izy.', a: 'was cooking', hint: 'while + PC' },
+      ],
     }
   },
 
@@ -948,7 +1198,20 @@ export const bokyChapters = [
         'Type 2 : if + were (pas was!) pour tous les sujets : If I were you...',
         'Ordre des propositions : la proposition "if" peut venir en premier ou en second',
         'Si "if" en premier → virgule obligatoire entre les deux propositions',
-      ]
+      ],
+      summary: [
+        'Type 0 : If + présent, présent (vérité générale)',
+        'Type 1 : If + présent, will + inf (futur réel)',
+        'Type 2 : If + past simple, would + inf (hypothèse)',
+        'Type 3 : If + past perfect, would have + pp (regret passé)',
+        'Type 2 : TOUJOURS "were" (jamais "was") : If I were you…',
+      ],
+      quickExercises: [
+        { q: 'Type 1: If it rains, we ___ (stay) home.', a: 'will stay', hint: 'If + présent → will + inf' },
+        { q: 'Correct: "If I was rich, I would help everyone."', a: 'If I were rich, I would help everyone.', hint: 'Type 2 : were (pas was)' },
+        { q: 'Type 3: If I ___ (study), I would have passed.', a: 'had studied', hint: 'If + past perfect' },
+        { q: 'Correct: "If I will come, I will call you."', a: 'If I come, I will call you.', hint: 'No will after if in Type 1' },
+      ],
     },
     mg: {
       intro: 'Ny conditionals dia fampisehoana ny toe-javatra hypothétique. Misy karazana 4 arakaraka ny tena mety mitranga.',
@@ -994,7 +1257,19 @@ export const bokyChapters = [
         'Type 2 : if + were (tsy was!) ho an\'ny olon-drehetra',
         '"raha" = if amin\'ny malagasy — ao am-piandohan\'ny fepetra foana',
         'Comma (,) ilaina raha "if" eo aloha',
-      ]
+      ],
+      summary: [
+        'Type 0 : fitsipika ankapoben\'ny (If + présent, présent)',
+        'Type 1 : hety mitranga (If + présent, will + inf)',
+        'Type 2 : soso-kevitra (If + past, would + inf)',
+        'Type 3 : tsoa-panahy (If + past perfect, would have + pp)',
+        'Type 2 : "were" foana (tsy "was") : If I were you…',
+      ],
+      quickExercises: [
+        { q: 'Type 1: If it rains, we ___ (stay) home.', a: 'will stay', hint: 'If + présent → will + inf' },
+        { q: 'Mety sa tsia? "If I was rich…"', a: 'Diso → If I were rich… (Type 2 : were foana)', hint: 'were, tsy was' },
+        { q: 'Type 3: If I ___ (study), I would have passed.', a: 'had studied', hint: 'past perfect' },
+      ],
     }
   },
 
@@ -1035,7 +1310,20 @@ export const bokyChapters = [
         'Le participe passé est la forme 3 du verbe : write→written, break→broken, eat→eaten',
         '"by + agent" est souvent omis quand l\'agent est inconnu ou évident',
         'English is spoken here. (agent évident = les gens)',
-      ]
+      ],
+      summary: [
+        'Forme : be (conjugué) + participe passé',
+        'Présent passif : is/are + pp | Passé passif : was/were + pp',
+        'Futur passif : will be + pp',
+        '"by + agent" optionnel (omis si inconnu/évident)',
+        'Participe passé (forme 3) : write→written, break→broken',
+      ],
+      quickExercises: [
+        { q: 'Make passive: "My mother makes the cake."', a: 'The cake is made by my mother.', hint: 'objet → sujet passif' },
+        { q: 'Correct: "The book was write in 1980."', a: 'The book was written in 1980.', hint: 'write → written (pp)' },
+        { q: 'Make passive (future): "They will build a school."', a: 'A school will be built.', hint: 'will be + pp' },
+        { q: 'Correct: "English is speak here."', a: 'English is spoken here.', hint: 'speak → spoken (pp)' },
+      ],
     },
     mg: {
       intro: 'Ny passive voice dia mampifantoka amin\'ny voajanahary (objet), fa tsy amin\'ny mpanao. Ampiasaina rehefa tsy fantatra na tsy ilaina ny mpanao.',
@@ -1062,7 +1350,18 @@ export const bokyChapters = [
         'Participe passé (forme 3) : write→written, break→broken, eat→eaten',
         '"by + mpanao" dia sarotra tsy lazaina rehefa tsy fantatra ny mpanao',
         'Amin\'ny malagasy: ny "-ana" / "-ina" amin\'ny faranan\'ny verbe = passive matetika [?]',
-      ]
+      ],
+      summary: [
+        'Endrika : be (conjugué) + participe passé',
+        'Présent : is/are + pp | Lasa : was/were + pp',
+        'Ho avy : will be + pp',
+        '"by + mpanao" azo esory raha tsy fantatra ny mpanao',
+      ],
+      quickExercises: [
+        { q: 'Ataovy passive: "My mother makes the cake."', a: 'The cake is made by my mother.', hint: 'objet → sujet' },
+        { q: 'Mety sa tsia? "The book was write in 1980."', a: 'Diso → was written', hint: 'write → written' },
+        { q: 'Fenoy: English ___ (speak) here.', a: 'is spoken', hint: 'is + pp' },
+      ],
     }
   },
 
@@ -1111,7 +1410,20 @@ export const bokyChapters = [
         'that peut être omis : She said (that) she was tired.',
         'Changements temporels : today→that day, yesterday→the day before, tomorrow→the next day',
         'Les modaux : can→could, must→had to, will→would, may→might',
-      ]
+      ],
+      summary: [
+        'Temps : présent→passé, past→past perfect, will→would',
+        'Pronoms : I→he/she, we→they, my→his/her',
+        'Question indirecte : ordre affirmatif (sujet + verbe), pas d\'inversion',
+        'Ordre indirect : tell/ask + objet + to + infinitif',
+        'that est optionnel : She said (that) she was tired.',
+      ],
+      quickExercises: [
+        { q: 'Report: "I am happy." → She said she ___ happy.', a: 'was', hint: 'am/is → was' },
+        { q: 'Report: "I will come." → She said she ___ come.', a: 'would', hint: 'will → would' },
+        { q: 'Correct: "He asked where did she live."', a: 'He asked where she lived.', hint: 'ordre affirmatif en indirect' },
+        { q: 'Report order: "Sit down!" → The teacher told us ___.', a: 'to sit down', hint: 'tell + objet + to + inf' },
+      ],
     },
     mg: {
       intro: 'Ny discours indirect dia ampiasaina hampitana ny teny nolazain\'ny olona hafa. Miova ny fotoana (tense) sy ny solontena (pronoun).',
@@ -1146,7 +1458,18 @@ export const bokyChapters = [
         '"that" dia azo esory : She said (that) she was tired.',
         'Fiovaovan\'ny fotoana : today→that day, yesterday→the day before, tomorrow→the next day',
         'Modals : can→could, must→had to, will→would',
-      ]
+      ],
+      summary: [
+        'Fotoana : présent→lasa, lasa→past perfect, will→would',
+        'Fanontaniana tsy mivantana : sujet + verbe (tsy misy inversement)',
+        'Baiko tsy mivantana : tell/ask + olona + to + infinitif',
+        '"that" azo esory',
+      ],
+      quickExercises: [
+        { q: 'Report: "I am tired." → She said she ___ tired.', a: 'was', hint: 'am → was' },
+        { q: 'Report: "I will come." → She said she ___ come.', a: 'would', hint: 'will → would' },
+        { q: 'Mety sa tsia? "He asked where did she live."', a: 'Diso → He asked where she lived.', hint: 'tsy misy inversion' },
+      ],
     }
   },
 
@@ -1181,7 +1504,19 @@ export const bokyChapters = [
         'Past Perfect = le "plus-que-parfait" français',
         'Signal words : already, yet, after, before, by the time, when, as soon as',
         'Past Perfect vs Past Simple : le PP arrive AVANT le PS dans la réalité',
-      ]
+      ],
+      summary: [
+        'Forme : had + participe passé (même pour tous les sujets)',
+        'Usage : action terminée avant une autre action dans le passé',
+        'Séquence : Past Perfect (avant) → Past Simple (après)',
+        'Signal words : already, before, after, by the time, when',
+      ],
+      quickExercises: [
+        { q: 'Complete: When I arrived, she ___ (already/leave).', a: 'had already left', hint: 'had + already + pp' },
+        { q: 'Complete: He ___ (study) English before he moved.', a: 'had studied', hint: 'action avant = Past Perfect' },
+        { q: 'Correct: "By the time she came, I already ate."', a: 'By the time she came, I had already eaten.', hint: 'avant l\'autre action = Past Perfect' },
+        { q: 'Negative: "She had left." → She ___', a: 'hadn\'t left.', hint: 'had → hadn\'t' },
+      ],
     },
     mg: {
       intro: 'Ny Past Perfect (<strong>had + participe passé</strong>) dia fampisehoana ny asa vita <em>mialoha</em> ny asa hafa tamin\'ny lasa.',
@@ -1208,7 +1543,17 @@ export const bokyChapters = [
         'Past Perfect = "plus-que-parfait" amin\'ny teny frantsay',
         'Teny mampitandremana : already, yet, after, before, by the time, when',
         'PP = asa vita mialoha ny asa Past Simple hafa',
-      ]
+      ],
+      summary: [
+        'Endrika : had + participe passé (mitovy ho an\'ny olon-drehetra)',
+        'Ampiasaina : asa vita mialoha ny asa Past Simple hafa',
+        'Teny mampitandremana : already, before, after, by the time',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: When I arrived, she ___ (already/leave).', a: 'had already left', hint: 'had + pp' },
+        { q: 'Fenoy: He ___ (study) mialoha ny nifindrahana.', a: 'had studied', hint: 'asa vita mialoha = Past Perfect' },
+        { q: 'Fandavana: "She had left." → She ___', a: 'hadn\'t left.', hint: 'had → hadn\'t' },
+      ],
     }
   },
 
@@ -1235,7 +1580,18 @@ export const bokyChapters = [
         'Signal words : by (then/tomorrow/2030), before, by the time',
         'Négatif : won\'t have + participe passé',
         'Moins fréquent que les autres temps, mais important en B2',
-      ]
+      ],
+      summary: [
+        'Forme : will have + participe passé',
+        'Usage : action terminée avant un moment futur précis',
+        'Signal words : by (then/Friday/2030), by the time',
+        'Négatif : won\'t have + pp',
+      ],
+      quickExercises: [
+        { q: 'Complete: By 2030, she ___ (finish) university.', a: 'will have finished', hint: 'will have + pp' },
+        { q: 'Negative: "I will have saved money." → I ___', a: 'won\'t have saved money.', hint: 'will → won\'t' },
+        { q: 'Correct: "By then, I will finish my work."', a: 'By then, I will have finished my work.', hint: '"by" + futur = Future Perfect' },
+      ],
     },
     mg: {
       intro: 'Ny Future Perfect (<strong>will have + participe passé</strong>) dia fampisehoana ny asa hvita tanteraka mialoha ny fotoana voafaritra amin\'ny ho avy.',
@@ -1254,7 +1610,18 @@ export const bokyChapters = [
         'Teny mampitandremana : by (then/tomorrow/2030), before, by the time',
         'Fandavana : won\'t have + participe passé',
         'Tsy matetika ampiasaina, fa ilaina amin\'ny B2',
-      ]
+      ],
+      summary: [
+        'Endrika : will have + participe passé',
+        'Ampiasaina : asa vita mialoha ny fotoana ho avy voafaritra',
+        'Teny mampitandremana : by (then/2030/Friday), by the time',
+        'Fandavana : won\'t have + pp',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: By 2030, she ___ (finish) ny fianarany.', a: 'will have finished', hint: 'will have + pp' },
+        { q: 'Fandavana: "I will have saved money." → I ___', a: 'won\'t have saved money.', hint: 'will → won\'t' },
+        { q: 'Mety sa tsia? "By then, I will finish my work."', a: 'Diso → I will have finished my work.', hint: '"by" → Future Perfect' },
+      ],
     }
   },
 
@@ -1294,7 +1661,20 @@ export const bokyChapters = [
         'What = quoi/quel | Where = où | When = quand | Who = qui | Why = pourquoi | How = comment',
         'How many + nom dénombrable | How much + nom indénombrable',
         'Whose = à qui : Whose bag is this?',
-      ]
+      ],
+      summary: [
+        'Yes/No : auxiliaire + sujet + verbe ?',
+        'Wh- : mot interrogatif + auxiliaire + sujet + verbe ?',
+        'What/Where/When/Who/Why/How — les 6 essentiels',
+        'How many (dénombrable) / How much (indénombrable)',
+        'Jamais de "do" si le mot interrogatif EST le sujet : Who lives here? (pas Who does live)',
+      ],
+      quickExercises: [
+        { q: 'Make Wh-question for: "She lives in Tana."', a: 'Where does she live?', hint: 'where + does + sujet + infinitif' },
+        { q: 'Make question: "They arrived at noon."', a: 'When did they arrive?', hint: 'when + did + sujet + infinitif' },
+        { q: 'How many or how much? "___ students are there?"', a: 'How many', hint: 'students = dénombrable' },
+        { q: 'Correct: "Where does she lives?"', a: 'Where does she live?', hint: 'does + infinitif (sans -s)' },
+      ],
     },
     mg: {
       intro: 'Ny fanontaniana amin\'ny anglisy dia mampiasa ny fiovaovan\'ny sujet/auxiliaire (eny/tsia), na teny manontany (Wh-).',
@@ -1326,7 +1706,19 @@ export const bokyChapters = [
         'What=inona/iza | Where=aiza | When=oviana | Who=iza | Why=nahoana | How=ahoana',
         'How many + azo isaina | How much + tsy azo isaina',
         '"ve" amin\'ny malagasy = marqueur interrogatif',
-      ]
+      ],
+      summary: [
+        'Eny/Tsia : auxiliaire + sujet + verbe ?',
+        'Wh- : teny manontany + auxiliaire + sujet + verbe ?',
+        'What/Where/When/Who/Why/How — fototra 6',
+        'How many (azo isaina) / How much (tsy azo isaina)',
+      ],
+      quickExercises: [
+        { q: 'Ataovy fanontaniana: "She lives in Tana."', a: 'Where does she live?', hint: 'where + does + infinitif' },
+        { q: 'Ataovy fanontaniana: "They arrived at noon."', a: 'When did they arrive?', hint: 'when + did + infinitif' },
+        { q: 'How many na how much? "___ mpianatra misy?"', a: 'How many', hint: 'mpianatra = azo isaina' },
+        { q: 'Mety sa tsia? "Where does she lives?"', a: 'Diso → Where does she live?', hint: 'does + infinitif tsy misy -s' },
+      ],
     }
   },
 

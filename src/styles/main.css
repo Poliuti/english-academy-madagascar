@@ -882,6 +882,33 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 
 .boky-cta { text-align: center; padding: 8px 0 16px; }
 
+.boky-summary {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border-left: 4px solid #3B82F6;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+.boky-summary h3 { font-size: .9rem; font-weight: 800; margin-bottom: 8px; color: #1D4ED8; }
+.boky-summary ul { padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+.boky-summary li { font-size: .87rem; line-height: 1.5; color: #1E40AF; }
+
+.boky-qexercises {
+  background: #F0FDF4;
+  border-left: 4px solid #22C55E;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+.boky-qexercises h3 { font-size: .9rem; font-weight: 800; margin-bottom: 10px; color: #15803D; }
+.boky-qlist { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
+.boky-qitem { font-size: .87rem; line-height: 1.6; }
+.boky-q { font-weight: 600; color: var(--text); }
+.boky-qhint { font-size: .8rem; color: var(--text-muted); margin-left: 4px; }
+.boky-reveal-btn { font-size: .78rem; padding: 2px 8px; margin-left: 8px; background: #22C55E; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+.boky-reveal-btn:hover { background: #16A34A; }
+.boky-answer { margin-left: 8px; font-weight: 700; color: #15803D; }
+
 /* Responsive */
 @media (max-width: 640px) {
   .boky-sidebar { display: none; }
