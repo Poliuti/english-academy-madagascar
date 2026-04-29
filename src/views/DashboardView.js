@@ -151,6 +151,15 @@ const GRAMMAR_THEORY_MAP = {
   interrogative:     'interrogative',
   imperatives:       'imperatives',
   someAny:           'someAny',
+  toBe:              'toBe',
+  irregularVerbs:    'irregularVerbs',
+  prepositions:      'prepositions',
+  interrogative:     'interrogative',
+  imperatives:       'imperatives',
+  someAny:           'someAny',
+  comparatives:      'comparatives',
+  futureContinuous:  'futureContinuous',
+  timeMarkers:       'timeMarkers',
   verbs:             'presentSimple',    // best grammar ref for verbs
   timeAdverbs:       'presentSimple',    // adverbs link to presentSimple
 };

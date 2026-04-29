@@ -1390,6 +1390,32 @@ exercises.someAny = [
   { id: 'sa10', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: "I don't have no time.", answer: "I don't have any time.", hint: 'Pas de double négation en anglais', explanation: 'En anglais, on évite la double négation. "I don\'t have no time" est incorrect. On dit "I don\'t have any time" ou "I have no time".' },
 ];
 
+exercises.toBe = [
+  { id: 'tobe01', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'I ___ a student.', answer: 'am', hint: 'I → am', explanation: '"I am" — avec I on utilise toujours "am".' },
+  { id: 'tobe02', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'She ___ a teacher.', answer: 'is', hint: 'she = he/she/it → is', explanation: '"She is" — avec he/she/it on utilise "is".' },
+  { id: 'tobe03', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'They ___ happy.', answer: 'are', hint: 'they → are', explanation: '"They are" — avec you/we/they on utilise "are".' },
+  { id: 'tobe04', type: 'translate', level: 'A1', instruction: 'Traduisez en anglais.', french: 'Elle n\'est pas fatiguée.', answer: "She isn't tired.", alternatives: ['She is not tired.'], hint: 'she is + not → isn\'t', explanation: '"She isn\'t tired." — la contraction de "is not" est "isn\'t".' },
+  { id: 'tobe05', type: 'word-order', level: 'A1', instruction: 'Mettez les mots dans le bon ordre.', words: ['are', 'you', 'a', 'student', '?'], answer: 'Are you a student?', hint: 'Question : Are + sujet + …', explanation: '"Are you a student?" — on inverse sujet et are pour former une question.' },
+  { id: 'tobe06', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec was ou were.', template: 'He ___ at school yesterday.', answer: 'was', hint: 'he → was (passé)', explanation: '"He was" — au passé, he/she/it → was.' },
+  { id: 'tobe07', type: 'error-correct', level: 'A1', instruction: "Corrigez l'erreur.", sentence: 'She are my friend.', answer: 'She is my friend.', hint: 'she → is (pas are)', explanation: '"She is my friend." — she/he/it utilise "is", jamais "are".' },
+  { id: 'tobe08', type: 'translate', level: 'A1', instruction: 'Traduisez en anglais.', french: 'J\'ai 15 ans.', answer: 'I am 15 years old.', alternatives: ["I'm 15 years old.", 'I am 15.'], hint: 'Âge en anglais = I am … years old', explanation: 'En anglais, l\'âge se dit avec "to be" : "I am 15 years old." Jamais "I have 15 years".' },
+  { id: 'tobe09', type: 'fill-blank', level: 'A1', instruction: 'Complétez la réponse courte.', template: 'Are they students? — Yes, they ___.', answer: 'are', hint: 'Réponse courte : Yes, they + are', explanation: '"Yes, they are." — la réponse courte répète le verbe to be.' },
+  { id: 'tobe10', type: 'error-correct', level: 'A1', instruction: "Corrigez l'erreur.", sentence: "They was here.", answer: 'They were here.', hint: 'they → were (passé pluriel)', explanation: '"They were here." — au passé, you/we/they utilisent "were".' },
+];
+
+exercises.irregularVerbs = [
+  { id: 'irr01', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'go → ___', answer: 'went', hint: 'go est irrégulier — groupe 3', explanation: '"go" → "went" au Past Simple. "I went to school."' },
+  { id: 'irr02', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'have → ___', answer: 'had', hint: 'have est irrégulier — groupe 2', explanation: '"have" → "had". "She had breakfast early."' },
+  { id: 'irr03', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'see → ___', answer: 'saw', hint: 'see est irrégulier — groupe 3', explanation: '"see" → "saw". "I saw a good film yesterday."' },
+  { id: 'irr04', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'buy → ___', answer: 'bought', hint: 'buy est irrégulier — groupe 2', explanation: '"buy" → "bought". "She bought a new dress."' },
+  { id: 'irr05', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Ils ont mangé du riz hier.', answer: 'They ate rice yesterday.', alternatives: ['They ate some rice yesterday.'], hint: 'eat → ate (Past Simple)', explanation: '"eat" → "ate" au Past Simple. "They ate rice yesterday."' },
+  { id: 'irr06', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'She goed to the market.', answer: 'She went to the market.', hint: 'go → went (irrégulier)', explanation: '"go" est irrégulier : "went". Jamais "goed".' },
+  { id: 'irr07', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le participe passé.', template: 'I have ___ (write) two letters.', answer: 'written', hint: 'write → wrote → written', explanation: '"write" → "written" au participe passé (Present Perfect).' },
+  { id: 'irr08', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le participe passé.', template: 'She has ___ (take) my book.', answer: 'taken', hint: 'take → took → taken', explanation: '"take" → "taken" au participe passé.' },
+  { id: 'irr09', type: 'word-order', level: 'A2', instruction: 'Mettez dans le bon ordre.', words: ['she', 'the', 'exam', 'passed', '?', 'Did'], answer: 'Did she pass the exam?', hint: 'Did + sujet + infinitif (pas -ed)', explanation: 'Au Past Simple, "Did" + infinitif. Ne pas dire "Did she passed".' },
+  { id: 'irr10', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Nous avons commencé le cours à 8h.', answer: 'We began the lesson at 8.', alternatives: ['We began the class at 8.', 'We began class at 8.', 'We began the lesson at 8am.'], hint: 'begin → began (Past Simple)', explanation: '"begin" → "began" au Past Simple.' },
+];
+
 export function getAllExercises() {
   return Object.values(exercises).flat();
 }

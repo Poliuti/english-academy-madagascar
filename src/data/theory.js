@@ -1313,6 +1313,150 @@ export const theory = {
     ]
   },
 
+  toBe: {
+    id: 'toBe',
+    title: 'To Be — Être',
+    icon: '🔵',
+    level: 'A1',
+    subtitle: 'am / is / are — was / were : le verbe le plus important de l\'anglais',
+    malgasyNote: 'Ny matoanteny be indrindra ampiasaina — am, is, are amin\'ny ankehitriny; was, were amin\'ny lasa',
+    sections: [
+      {
+        title: '✅ Présent affirmatif : am / is / are',
+        content: 'I → <strong>am</strong> · He/She/It → <strong>is</strong> · You/We/They → <strong>are</strong>',
+        examples: [
+          { en: 'I am a student.', fr: 'Je suis étudiant(e).' },
+          { en: "He is a teacher.", fr: 'Il est professeur.' },
+          { en: "She's from Madagascar.", fr: 'Elle est de Madagascar. (contraction)' },
+          { en: 'We are in class.', fr: 'Nous sommes en classe.' },
+          { en: "They're happy.", fr: 'Ils sont heureux. (contraction)' },
+        ]
+      },
+      {
+        title: '❌ Présent négatif : isn\'t / aren\'t',
+        content: 'Sujet + <strong>am/is/are not</strong> → contractions : <strong>isn\'t</strong>, <strong>aren\'t</strong>. Jamais <em>amn\'t</em> — toujours <em>I\'m not</em>.',
+        examples: [
+          { en: "I'm not tired.", fr: 'Je ne suis pas fatigué(e).' },
+          { en: "He isn't at school.", fr: "Il n'est pas à l'école." },
+          { en: "They aren't ready.", fr: 'Ils ne sont pas prêts.' },
+        ]
+      },
+      {
+        title: '❓ Questions + réponses courtes',
+        content: 'Inverser sujet et <em>to be</em>. Répondre avec <strong>Yes/No + to be</strong> — jamais juste "yes" ou "no".',
+        examples: [
+          { en: 'Are you a student? — Yes, I am. / No, I\'m not.', fr: 'Es-tu étudiant ? — Oui. / Non.' },
+          { en: 'Is she happy? — Yes, she is.', fr: 'Est-elle heureuse ? — Oui.' },
+          { en: 'Were they at home? — No, they weren\'t.', fr: 'Étaient-ils chez eux ? — Non.' },
+        ]
+      },
+      {
+        title: '⏮️ Passé : was / were',
+        content: 'I/He/She/It → <strong>was</strong> · You/We/They → <strong>were</strong>. Négatif : <strong>wasn\'t / weren\'t</strong>.',
+        examples: [
+          { en: 'I was at school yesterday.', fr: "J'étais à l'école hier." },
+          { en: 'We were very tired.', fr: 'Nous étions très fatigués.' },
+          { en: "She wasn't there.", fr: "Elle n'était pas là." },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Présent : I am · he/she/it is · you/we/they are',
+      '🔑 Passé : I/he/she/it was · you/we/they were',
+      '⚠️ Âge en anglais : "I am 15 years old" — jamais "I have 15"',
+      '💡 Contractions : I\'m · you\'re · he\'s · she\'s · it\'s · we\'re · they\'re',
+    ]
+  },
+
+  irregularVerbs: {
+    id: 'irregularVerbs',
+    title: 'Verbes Irréguliers',
+    icon: '📋',
+    level: 'A2',
+    subtitle: 'Les verbes irréguliers essentiels : infinitif → passé → participe',
+    malgasyNote: 'Matoanteny tsy manaraka ny fitsipika — tsy azo ampiana -ed fotsiny, tsy maintsy hadinina',
+    sections: [
+      {
+        title: '📌 Groupe 1 — Même forme (Base = Passé = Participe)',
+        content: 'Ces verbes ne changent pas — la même forme pour toutes les colonnes.',
+        examples: [
+          { en: 'cut → cut → cut', fr: 'couper' },
+          { en: 'put → put → put', fr: 'mettre' },
+          { en: 'let → let → let', fr: 'laisser' },
+          { en: 'hit → hit → hit', fr: 'frapper' },
+        ]
+      },
+      {
+        title: '📌 Groupe 2 — Passé = Participe passé (2 formes)',
+        content: 'Le passé et le participe passé sont identiques mais différents de la base.',
+        examples: [
+          { en: 'buy → bought → bought', fr: 'acheter' },
+          { en: 'bring → brought → brought', fr: 'apporter' },
+          { en: 'think → thought → thought', fr: 'penser' },
+          { en: 'teach → taught → taught', fr: 'enseigner' },
+          { en: 'catch → caught → caught', fr: 'attraper' },
+          { en: 'find → found → found', fr: 'trouver' },
+          { en: 'feel → felt → felt', fr: 'ressentir' },
+          { en: 'keep → kept → kept', fr: 'garder' },
+          { en: 'sleep → slept → slept', fr: 'dormir' },
+          { en: 'leave → left → left', fr: 'partir/laisser' },
+          { en: 'meet → met → met', fr: 'rencontrer' },
+          { en: 'have → had → had', fr: 'avoir' },
+          { en: 'make → made → made', fr: 'faire/fabriquer' },
+          { en: 'say → said → said', fr: 'dire' },
+          { en: 'tell → told → told', fr: 'dire/raconter' },
+          { en: 'hear → heard → heard', fr: 'entendre' },
+          { en: 'hold → held → held', fr: 'tenir' },
+          { en: 'stand → stood → stood', fr: 'se tenir debout' },
+          { en: 'understand → understood → understood', fr: 'comprendre' },
+        ]
+      },
+      {
+        title: '📌 Groupe 3 — 3 formes différentes',
+        content: 'Trois formes complètement différentes — à mémoriser !',
+        examples: [
+          { en: 'go → went → gone', fr: 'aller' },
+          { en: 'come → came → come', fr: 'venir' },
+          { en: 'be → was/were → been', fr: 'être' },
+          { en: 'do → did → done', fr: 'faire' },
+          { en: 'give → gave → given', fr: 'donner' },
+          { en: 'take → took → taken', fr: 'prendre' },
+          { en: 'get → got → gotten/got', fr: 'obtenir/devenir' },
+          { en: 'see → saw → seen', fr: 'voir' },
+          { en: 'know → knew → known', fr: 'savoir/connaître' },
+          { en: 'speak → spoke → spoken', fr: 'parler' },
+          { en: 'write → wrote → written', fr: 'écrire' },
+          { en: 'eat → ate → eaten', fr: 'manger' },
+          { en: 'drink → drank → drunk', fr: 'boire' },
+          { en: 'run → ran → run', fr: 'courir' },
+          { en: 'sing → sang → sung', fr: 'chanter' },
+          { en: 'swim → swam → swum', fr: 'nager' },
+          { en: 'break → broke → broken', fr: 'casser' },
+          { en: 'choose → chose → chosen', fr: 'choisir' },
+          { en: 'forget → forgot → forgotten', fr: 'oublier' },
+          { en: 'begin → began → begun', fr: 'commencer' },
+          { en: 'fall → fell → fallen', fr: 'tomber' },
+          { en: 'fly → flew → flown', fr: 'voler' },
+          { en: 'grow → grew → grown', fr: 'grandir' },
+          { en: 'throw → threw → thrown', fr: 'lancer' },
+          { en: 'drive → drove → driven', fr: 'conduire' },
+          { en: 'ride → rode → ridden', fr: 'faire du vélo/cheval' },
+          { en: 'rise → rose → risen', fr: 'se lever (soleil)' },
+          { en: 'wear → wore → worn', fr: 'porter (vêtement)' },
+          { en: 'win → won → won', fr: 'gagner' },
+          { en: 'lose → lost → lost', fr: 'perdre' },
+        ]
+      },
+    ],
+    tips: [
+      '📋 La liste complète est dans le Boky → chapitre Verbes Irréguliers',
+      '🔑 Pour le Past Simple : utilise directement la 2ᵉ colonne',
+      '🔑 Pour le Present Perfect / Past Perfect : utilise la 3ᵉ colonne (participe passé)',
+      '💡 Astuce : regroupe les verbes par pattern sonore (ring/rang/rung · sing/sang/sung)',
+      '🇲🇬 Tsy misy fitsipika — tsy maintsy hadinina tsirairay!',
+    ]
+  },
+
   vocabulary: {
     routine: {
       title: 'Vocabulaire : Routine Quotidienne',
@@ -1383,6 +1527,7 @@ export function getTheoryById(id) {
 
 export const theoryTopics = [
   // ── A1 ───────────────────────────────────────────────────────────
+  { id: 'toBe',              label: 'To Be (am/is/are/was)',     icon: '🔵',   level: 'A1' },
   { id: 'articles',          label: 'Articles (a/an/the)',       icon: '🔤',   level: 'A1' },
   { id: 'pronouns',          label: 'Pronoms',                   icon: '👥',   level: 'A1' },
   { id: 'plurals',           label: 'Pluriels',                  icon: '🔢',   level: 'A1' },
@@ -1397,6 +1542,7 @@ export const theoryTopics = [
   { id: 'imperatives',       label: 'L\'Impératif',              icon: '📢',   level: 'A2' },
   { id: 'someAny',           label: 'Some, Any & No',            icon: '🔢',   level: 'A2' },
   { id: 'comparatives',      label: 'Comparatifs & Superlatifs', icon: '⚖️',   level: 'A2' },
+  { id: 'irregularVerbs',    label: 'Verbes Irréguliers',        icon: '📋',   level: 'A2' },
   { id: 'modals',            label: 'Modaux (can/must/would…)',  icon: '🛠️',   level: 'A2' },
   // ── A2–B1 ────────────────────────────────────────────────────────
   { id: 'pastSimple',        label: 'Past Simple',               icon: '⏮️',   level: 'A2–B1' },

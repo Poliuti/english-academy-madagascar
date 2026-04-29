@@ -133,12 +133,16 @@ export function renderTheory(topicId) {
           // grammar A1-A2
           prepositions:      'prepositions',
           questions:         'questions',
+          // grammar A1
+          toBe:              'toBe',
           // grammar A2
           presentSimple:     'presentSimple',
           presentContinuous: 'presentContinuous',
           interrogative:     'interrogative',
           imperatives:       'imperatives',
           someAny:           'someAny',
+          comparatives:      'comparatives',
+          irregularVerbs:    'irregularVerbs',
           modals:            'modals',
           // grammar A2-B1
           pastSimple:        'pastSimple',
@@ -322,24 +326,39 @@ function renderVocab(vocabId) {
 
 // Grammar topic → corresponding Boky chapter id
 const GRAMMAR_TO_BOKY = {
+  // A1
+  toBe:              'toBe',
   articles:          'articles',
   plurals:           'plurals',
   therebeis:         'therebeis',
+  pronouns:          'pronouns',
+  // A1-A2
+  prepositions:      'prepositions',
+  questions:         'questions',
+  // A2
   presentSimple:     'presentSimple',
   presentContinuous: 'presentContinuous',
+  interrogative:     'interrogative',
+  imperatives:       'imperatives',
+  someAny:           'someAny',
+  comparatives:      'comparatives',
+  irregularVerbs:    'irregularVerbs',
+  modals:            'modals',
+  // A2-B1
   pastSimple:        'pastSimple',
   futureSimple:      'futureSimple',
-  modals:            'modals',
-  presentPerfect:    'presentPerfect',
+  // B1
   pastContinuous:    'pastContinuous',
-  conditionals:      'conditionals',
-  passiveVoice:      'passiveVoice',
-  reportedSpeech:    'reportedSpeech',
+  futureContinuous:  'futureContinuous',
+  presentPerfect:    'presentPerfect',
   pastPerfect:       'pastPerfect',
+  timeMarkers:       'timeMarkers',
+  passiveVoice:      'passiveVoice',
+  // B1-B2
+  conditionals:      'conditionals',
+  reportedSpeech:    'reportedSpeech',
+  // B2
   futurePerfect:     'futurePerfect',
-  questions:         'questions',
-  pronouns:          'pronouns',
-  // prepositions and comparatives have no boky chapter → button hidden for these
 };
 
 function renderGrammar(topicId) {

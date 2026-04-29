@@ -71,6 +71,11 @@ const INSTRUCTION_MG = {
   "Corrigez l'erreur.":                          "Amboary ny hadisoana.",
   "Trouvez et corrigez l'erreur.":               "Tadiavo ny hadisoana ka amboary.",
   "Corrigez l'impératif.":                       "Amboary ny baiko.",
+  'Complétez avec am, is ou are.':               "Fenoy amin'ny am, is na are.",
+  'Complétez avec was ou were.':                 "Fenoy amin'ny was na were.",
+  'Complétez la réponse courte.':                "Fenoy ny valiny fohy.",
+  'Donnez le Past Simple.':                      "Omeo ny Past Simple.",
+  'Complétez avec le participe passé.':          "Fenoy amin'ny participe passé.",
 };
 function getMgInstruction(fr) {
   if (INSTRUCTION_MG[fr]) return INSTRUCTION_MG[fr];
