@@ -61,6 +61,14 @@ const INSTRUCTION_MG = {
   'Since ou for ?':                              "Since na for ?",
   'Already, yet ou just ?':                      "Already, yet na just ?",
   'Pluriel ou singulier ?':                      "Maro na tokana ?",
+  'Complétez avec Do ou Does.':                  "Fenoy amin'ny Do na Does.",
+  'Complétez avec Is, Are, Was ou Were.':        "Fenoy amin'ny Is, Are, Was na Were.",
+  'Complétez avec some ou any.':                 "Fenoy amin'ny some na any.",
+  'Complétez avec something, anything ou nothing.': "Fenoy amin'ny something, anything na nothing.",
+  "Complétez avec Let's ou Don't.":              "Fenoy amin'ny Let's na Don't.",
+  "Corrigez l'erreur.":                          "Amboary ny hadisoana.",
+  "Trouvez et corrigez l'erreur.":               "Tadiavo ny hadisoana ka amboary.",
+  "Corrigez l'impératif.":                       "Amboary ny baiko.",
 };
 function getMgInstruction(fr) {
   if (INSTRUCTION_MG[fr]) return INSTRUCTION_MG[fr];

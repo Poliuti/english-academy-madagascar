@@ -136,6 +136,9 @@ export function renderTheory(topicId) {
           // grammar A2
           presentSimple:     'presentSimple',
           presentContinuous: 'presentContinuous',
+          interrogative:     'interrogative',
+          imperatives:       'imperatives',
+          someAny:           'someAny',
           modals:            'modals',
           // grammar A2-B1
           pastSimple:        'pastSimple',

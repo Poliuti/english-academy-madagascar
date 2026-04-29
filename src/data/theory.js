@@ -1143,6 +1143,176 @@ export const theory = {
     ]
   },
 
+  interrogative: {
+    id: 'interrogative',
+    title: 'Questions (Yes/No & Wh-)',
+    icon: '❓',
+    level: 'A2',
+    subtitle: 'Former toutes les questions en anglais',
+    malgasyNote: 'Fanaovana fanontaniana amin\'ny fiteny anglisy — Do/Does, Be, Modal, Wh-',
+    sections: [
+      {
+        title: '✅ Questions Yes/No — Do / Does (Present Simple)',
+        content: '<strong>Do</strong> (I/you/we/they) / <strong>Does</strong> (he/she/it) + sujet + verbe infinitif ?',
+        examples: [
+          { en: 'Do you speak English?', fr: 'Est-ce que tu parles anglais ?' },
+          { en: 'Does she live in Antananarivo?', fr: 'Est-ce qu\'elle habite à Antananarivo ?' },
+          { en: 'Do they have a car?', fr: 'Est-ce qu\'ils ont une voiture ?' },
+        ]
+      },
+      {
+        title: '✅ Questions Yes/No — Did (Past Simple)',
+        content: '<strong>Did</strong> + sujet + verbe infinitif ? (pour tous les sujets)',
+        examples: [
+          { en: 'Did you eat this morning?', fr: 'Est-ce que tu as mangé ce matin ?' },
+          { en: 'Did she go to school yesterday?', fr: 'Est-ce qu\'elle est allée à l\'école hier ?' },
+          { en: 'Did they understand the lesson?', fr: 'Est-ce qu\'ils ont compris la leçon ?' },
+        ]
+      },
+      {
+        title: '✅ Questions avec Be (is / are / was / were)',
+        content: 'On inverse simplement le sujet et le verbe <strong>be</strong>',
+        examples: [
+          { en: 'Are you a student?', fr: 'Es-tu étudiant ?' },
+          { en: 'Is she at home?', fr: 'Est-elle à la maison ?' },
+          { en: 'Were they happy?', fr: 'Étaient-ils heureux ?' },
+        ]
+      },
+      {
+        title: '✅ Questions avec les Modaux',
+        content: 'Modal + sujet + verbe infinitif ?',
+        examples: [
+          { en: 'Can you help me?', fr: 'Peux-tu m\'aider ?' },
+          { en: 'Should we leave now?', fr: 'Devrions-nous partir maintenant ?' },
+          { en: 'Will you come tomorrow?', fr: 'Est-ce que tu viendras demain ?' },
+        ]
+      },
+      {
+        title: '❓ Questions Wh- (question word + auxiliaire + sujet + verbe)',
+        content: '<strong>What / Where / When / Who / Why / How</strong> + auxiliaire + sujet + verbe ?',
+        examples: [
+          { en: 'Where do you live?', fr: 'Où habites-tu ?' },
+          { en: 'What does she eat?', fr: 'Qu\'est-ce qu\'elle mange ?' },
+          { en: 'Why did they leave?', fr: 'Pourquoi sont-ils partis ?' },
+          { en: 'How many books do you have?', fr: 'Combien de livres as-tu ?' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Do/Does pour le Present Simple — Did pour le Past Simple',
+      '⚠️ Avec "be" et les modaux : on inverse directement, pas besoin de Do/Did',
+      '💡 Wh- question + auxiliaire + sujet + verbe infinitif (pas de -s avec does)',
+      '🇲🇬 En malagasy, on met "ve" après le verbe : "Manao ahoana ve ianao?" = "How are you?"',
+    ]
+  },
+
+  imperatives: {
+    id: 'imperatives',
+    title: 'L\'Impératif',
+    icon: '📢',
+    level: 'A2',
+    subtitle: 'Donner des ordres, des conseils et des instructions',
+    malgasyNote: 'Ny baiko sy torohevitra amin\'ny anglisy — verbe fotsiny, tsy misy "you"',
+    sections: [
+      {
+        title: '✅ Impératif affirmatif',
+        content: 'Verbe seul (infinitif sans "to") — le sujet "you" est toujours sous-entendu',
+        examples: [
+          { en: 'Open the book.', fr: 'Ouvre le livre.' },
+          { en: 'Listen carefully.', fr: 'Écoute attentivement.' },
+          { en: 'Sit down, please.', fr: 'Assieds-toi, s\'il te plaît.' },
+        ]
+      },
+      {
+        title: '❌ Impératif négatif',
+        content: '<strong>Don\'t</strong> + verbe infinitif',
+        examples: [
+          { en: 'Don\'t speak in class.', fr: 'Ne parle pas en classe.' },
+          { en: 'Don\'t be late!', fr: 'Ne sois pas en retard !' },
+          { en: 'Don\'t touch that.', fr: 'Ne touche pas ça.' },
+        ]
+      },
+      {
+        title: '👥 Let\'s — proposition / suggestion',
+        content: '<strong>Let\'s</strong> + verbe pour suggérer quelque chose à faire ensemble',
+        examples: [
+          { en: 'Let\'s go to school.', fr: 'Allons à l\'école.' },
+          { en: 'Let\'s eat!', fr: 'Mangeons !' },
+          { en: 'Let\'s not argue.', fr: 'Ne nous disputons pas.' },
+        ]
+      },
+      {
+        title: '🙏 Impératif poli',
+        content: 'Ajouter <strong>please</strong> au début ou à la fin pour être poli',
+        examples: [
+          { en: 'Please close the door.', fr: 'S\'il te plaît, ferme la porte.' },
+          { en: 'Repeat after me, please.', fr: 'Répète après moi, s\'il te plaît.' },
+          { en: 'Please be quiet.', fr: 'Sois tranquille, s\'il te plaît.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 L\'impératif = verbe seul, sans sujet. "Eat!" = Mange ! "Stop!" = Arrête !',
+      '⚠️ Don\'t + verbe pour le négatif — jamais "No eat!" ou "Not eat!"',
+      '💡 Let\'s = Let us — pour inclure tout le monde dans la suggestion',
+      '🇲🇬 En malagasy, l\'impératif change selon le verbe — en anglais c\'est toujours simple !',
+    ]
+  },
+
+  someAny: {
+    id: 'someAny',
+    title: 'Some, Any & No',
+    icon: '🔢',
+    level: 'A2',
+    subtitle: 'Exprimer la quantité indéfinie en anglais',
+    malgasyNote: 'Some, any, no — ny fanehoana habetsaky ny zavatra tsy fantatra tsara',
+    sections: [
+      {
+        title: '✅ Some — phrases affirmatives',
+        content: '<strong>Some</strong> = "quelques" / "du/de la/des" — utilisé dans les phrases affirmatives',
+        examples: [
+          { en: 'I have some water.', fr: 'J\'ai de l\'eau.' },
+          { en: 'There are some books on the table.', fr: 'Il y a des livres sur la table.' },
+          { en: 'She wants some rice.', fr: 'Elle veut du riz.' },
+        ]
+      },
+      {
+        title: '❓ Any — phrases négatives et interrogatives',
+        content: '<strong>Any</strong> = "du/de la/des" dans les questions et les négatives',
+        examples: [
+          { en: 'Do you have any money?', fr: 'Est-ce que tu as de l\'argent ?' },
+          { en: 'I don\'t have any friends here.', fr: 'Je n\'ai pas d\'amis ici.' },
+          { en: 'Is there any milk in the fridge?', fr: 'Il y a du lait dans le frigo ?' },
+        ]
+      },
+      {
+        title: '🚫 No — quantité zéro',
+        content: '<strong>No</strong> + nom = aucun/e — plus direct que "not any"',
+        examples: [
+          { en: 'I have no money.', fr: 'Je n\'ai pas d\'argent. (= I don\'t have any money)' },
+          { en: 'There is no time.', fr: 'Il n\'y a pas de temps.' },
+          { en: 'We have no class today.', fr: 'Nous n\'avons pas cours aujourd\'hui.' },
+        ]
+      },
+      {
+        title: '🧩 Composés : something, anything, nothing…',
+        content: '<strong>some-</strong> (affirmatif) / <strong>any-</strong> (question/négatif) / <strong>no-</strong> (zéro)',
+        examples: [
+          { en: 'I want something to eat.', fr: 'Je veux quelque chose à manger.' },
+          { en: 'Do you need anything?', fr: 'As-tu besoin de quelque chose ?' },
+          { en: 'There is nothing in the bag.', fr: 'Il n\'y a rien dans le sac.' },
+          { en: 'Is there someone at the door?', fr: 'Il y a quelqu\'un à la porte ?' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 SOME = affirmatif · ANY = négatif ou question · NO = zéro (remplace "not any")',
+      '💡 Astuce offre/demande : "Would you like some tea?" — some dans une question polie',
+      '🧩 Composés : some + body/one/thing/where · any + body/one/thing/where · no + body/one/thing/where',
+      '🇲🇬 "Manana zavatra hisakafo ve ianao?" = "Do you have anything to eat?"',
+    ]
+  },
+
   vocabulary: {
     routine: {
       title: 'Vocabulaire : Routine Quotidienne',
@@ -1223,6 +1393,9 @@ export const theoryTopics = [
   { id: 'presentSimple',     label: 'Present Simple',            icon: '📖',   level: 'A1–A2' },
   // ── A2 ───────────────────────────────────────────────────────────
   { id: 'presentContinuous', label: 'Present Continuous',        icon: '🔄',   level: 'A2' },
+  { id: 'interrogative',     label: 'Questions (Yes/No & Wh-)',  icon: '❓',   level: 'A2' },
+  { id: 'imperatives',       label: 'L\'Impératif',              icon: '📢',   level: 'A2' },
+  { id: 'someAny',           label: 'Some, Any & No',            icon: '🔢',   level: 'A2' },
   { id: 'comparatives',      label: 'Comparatifs & Superlatifs', icon: '⚖️',   level: 'A2' },
   { id: 'modals',            label: 'Modaux (can/must/would…)',  icon: '🛠️',   level: 'A2' },
   // ── A2–B1 ────────────────────────────────────────────────────────
