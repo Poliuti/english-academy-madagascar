@@ -7,6 +7,67 @@ import { speak, stop, isSupported } from '../tts.js';
 
 const SESSION_SIZE = 8;
 
+// ─── Malagasy instruction translations ───────────────────────────────────────
+// Consegne standard tradotte in malgascio (verifcate con attenzione)
+const INSTRUCTION_MG = {
+  'Complétez avec la bonne forme du verbe.':     "Fenoy ny banga amin'ny endrika mety ny matoanteny.",
+  'Complétez avec la bonne forme négative.':      "Fenoy amin'ny fandavana mety.",
+  'Complétez avec la bonne préposition.':         "Fenoy amin'ny teny mampifandray mety.",
+  'Complétez avec le bon mot.':                   "Fenoy amin'ny teny mety.",
+  'Complétez avec a, an ou the.':                 "Fenoy amin'ny a, an na the.",
+  'Complétez avec there is ou there are.':        "Fenoy amin'ny there is na there are.",
+  'Complétez avec le bon pronom sujet.':          "Fenoy amin'ny pronom sujet mety.",
+  'Complétez avec le bon adjectif possessif.':    "Fenoy amin'ny adjectif possessif mety.",
+  'Complétez avec le bon adverbe.':               "Fenoy amin'ny adverbe mety.",
+  'Choisissez le bon adverbe.':                   "Safidio ny adverbe mety.",
+  'Complétez avec le comparatif correct.':        "Fenoy amin'ny comparatif mety.",
+  'Complétez avec le comparatif.':                "Fenoy amin'ny comparatif mety.",
+  'Complétez avec le superlatif.':                "Fenoy amin'ny superlatif mety.",
+  'Complétez avec le contraire.':                 "Fenoy amin'ny teny mifanohitra.",
+  'Complétez avec in, on ou at.':                 "Fenoy amin'ny in, on na at.",
+  "Complétez avec can ou can't.":                 "Fenoy amin'ny can na can't.",
+  'Complétez avec could ou can.':                 "Fenoy amin'ny could na can.",
+  "Complétez avec 'will' + verbe.":               "Fenoy amin'ny will + matoanteny.",
+  'Complétez avec how many ou how much.':         "Fenoy amin'ny how many na how much.",
+  'Complétez avec la bonne couleur.':             "Fenoy amin'ny loko mety.",
+  'Complétez avec la bonne quantité.':            "Fenoy amin'ny habetsahana mety.",
+  'Complétez avec la bonne forme du verbe "be" au passé.': "Fenoy amin'ny endrika lasa ny matoanteny 'be'.",
+  'Complétez avec la forme correcte (Present Continuous).': "Fenoy amin'ny Present Continuous mety.",
+  'Complétez avec la forme correcte du Past Simple.': "Fenoy amin'ny Past Simple mety.",
+  'Complétez avec la forme négative du Past Simple.': "Fenoy amin'ny fandavana Past Simple.",
+  'Complétez au Present Perfect.':               "Fenoy amin'ny Present Perfect.",
+  'Complétez au Past Continuous.':               "Fenoy amin'ny Past Continuous.",
+  'Complétez au Past Perfect.':                  "Fenoy amin'ny Past Perfect.",
+  'Complétez au Future Continuous.':             "Fenoy amin'ny Future Continuous.",
+  'Complétez au Future Perfect.':                "Fenoy amin'ny Future Perfect.",
+  'Complétez au passé.':                         "Fenoy amin'ny lasa.",
+  'Complétez la question.':                      "Fenoy ny fanontaniana.",
+  'Complétez les deux verbes.':                  "Fenoy ny matoanteny roa.",
+  'Complétez.':                                  "Fenoy.",
+  'Traduisez en anglais.':                       "Adikao amin'ny teny anglisy.",
+  'Traduisez.':                                  "Adikao amin'ny teny anglisy.",
+  'Traduisez la question.':                      "Adikao ny fanontaniana amin'ny teny anglisy.",
+  'Mettez les mots dans le bon ordre.':          "Ataovy ny teny araka ny filaharan'ny mety.",
+  'Écoutez et écrivez ce que vous entendez.':    "Henoy ka soratoy izay re.",
+  'Écoutez et écrivez le nombre en lettres.':    "Henoy ka soratoy ny isa amin'ny litera.",
+  "Trouvez et corrigez l'erreur dans la phrase.": "Tadiavo ny hadisoana ka amboary ny fehezanteny.",
+  'Corrigez la phrase.':                         "Amboary ny fehezanteny.",
+  'Corrigez le pluriel.':                        "Amboary ny endrika maro.",
+  'Corrigez la préposition.':                    "Amboary ny teny mampifandray.",
+  'Corrigez la question.':                       "Amboary ny fanontaniana.",
+  'Corrigez.':                                   "Amboary.",
+  'Donnez le pluriel.':                          "Omeo ny endrika maro.",
+  'Formez une question.':                        "Ataovy fanontaniana.",
+  'Since ou for ?':                              "Since na for ?",
+  'Already, yet ou just ?':                      "Already, yet na just ?",
+  'Pluriel ou singulier ?':                      "Maro na tokana ?",
+};
+function getMgInstruction(fr) {
+  if (INSTRUCTION_MG[fr]) return INSTRUCTION_MG[fr];
+  const key = Object.keys(INSTRUCTION_MG).find(k => fr.startsWith(k.slice(0, 20)));
+  return key ? INSTRUCTION_MG[key] : null;
+}
+
 export function renderExercise(topicId, mode) {
   const profile = getActiveProfile();
   if (!profile) { location.hash = '#profiles'; return document.createElement('div'); }
@@ -69,6 +130,7 @@ function renderExerciseCard(container, state, profile) {
 
       <div class="ex-card">
         <p class="ex-instruction">${ex.instruction}</p>
+        ${getMgInstruction(ex.instruction) ? `<p class="ex-instruction-mg">🇲🇬 ${getMgInstruction(ex.instruction)}</p>` : ''}
         ${renderQuestion(ex)}
         <div id="ex-answer-area">
           ${renderAnswerArea(ex)}
