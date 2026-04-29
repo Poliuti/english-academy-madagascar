@@ -37,7 +37,7 @@ function router() {
       view = renderDashboard();
       break;
     case 'exercise':
-      view = renderExercise(params.get('topic'), params.get('mode') || 'topic');
+      view = renderExercise(params.get('topic'), params.get('mode') || 'topic', params.get('level'));
       break;
     case 'theory':
       view = renderTheory(params.get('topic'));

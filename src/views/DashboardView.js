@@ -1,4 +1,4 @@
-import { getActiveProfile, getLevelTitle, getTopicCompletionPercent } from '../storage.js';
+import { getActiveProfile, getLevelTitle, getTopicCompletionPercent, getLevelScore, isLevelUnlocked } from '../storage.js';
 import { TOPICS, isTopicUnlocked } from '../data/topics.js';
 
 export function renderDashboard() {
@@ -186,6 +186,16 @@ function renderLearningPath(profile) {
       sectionHeader = `<div class="path-level-header"><span class="path-level-badge">${topic.level}</span></div>`;
     }
 
+    // Difficulty level mini-dots (only for unlocked topics)
+    const levelDots = unlocked ? [1,2,3].map(lv => {
+      const sc = getLevelScore(profile, topic.id, lv);
+      const lvUnlocked = isLevelUnlocked(profile, topic.id, lv);
+      if (!lvUnlocked) return `<span class="lv-dot lv-dot-locked" title="Niveau ${lv} : verrouillé">●</span>`;
+      if (sc >= 80)    return `<span class="lv-dot lv-dot-done"   title="Niveau ${lv} : ${sc}%">●</span>`;
+      if (sc > 0)      return `<span class="lv-dot lv-dot-progress" title="Niveau ${lv} : ${sc}%">●</span>`;
+      return              `<span class="lv-dot lv-dot-open"   title="Niveau ${lv} : pas encore commencé">●</span>`;
+    }).join('') : '';
+
     return sectionHeader + `
       <div class="topic-card ${statusClass}" data-topic="${topic.id}" style="--topic-color:${topic.color};--topic-dark:${topic.colorDark}">
         <div class="topic-card-left">
@@ -202,6 +212,7 @@ function renderLearningPath(profile) {
                   ${percent > 0 ? `<span class="topic-pct-badge" style="background:${topic.colorDark}">${percent}%</span>` : ''}
                 </div>
               </div>
+              <div class="lv-dots">${levelDots}</div>
             ` : `<div class="topic-locked-msg">🔒 ${lockMsg}</div>`}
           </div>
         </div>

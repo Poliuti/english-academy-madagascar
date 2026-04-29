@@ -176,3 +176,38 @@ export function getTopicCompletionPercent(profile, topicId) {
   const done = profile.topicProgress?.[topicId]?.done || 0;
   return Math.min(100, Math.round((done / total) * 100));
 }
+
+// ─── LEVEL PROGRESS (3 difficulty tiers per topic) ──────────────────────────
+// Key: `${topicId}_lv${level}` (level = 1, 2, or 3)
+
+export function saveLevelProgress(profileId, topicId, level, done, correct) {
+  return updateProfile(profileId, p => {
+    if (!p.levelProgress) p.levelProgress = {};
+    const key = `${topicId}_lv${level}`;
+    const prev = p.levelProgress[key] || { done: 0, correct: 0, sessions: 0 };
+    p.levelProgress[key] = {
+      done:     prev.done + done,
+      correct:  prev.correct + correct,
+      sessions: prev.sessions + 1,
+    };
+    return p;
+  });
+}
+
+export function getLevelProgress(profile, topicId, level) {
+  const key = `${topicId}_lv${level}`;
+  return profile.levelProgress?.[key] || { done: 0, correct: 0, sessions: 0 };
+}
+
+/** Returns 0-100 percent score for the best session on this level */
+export function getLevelScore(profile, topicId, level) {
+  const prog = getLevelProgress(profile, topicId, level);
+  if (!prog.done) return 0;
+  return Math.min(100, Math.round((prog.correct / prog.done) * 100));
+}
+
+/** Level 1 always unlocked; level 2 requires ≥ 80% on level 1; level 3 requires ≥ 80% on level 2 */
+export function isLevelUnlocked(profile, topicId, diffLevel) {
+  if (diffLevel <= 1) return true;
+  return getLevelScore(profile, topicId, diffLevel - 1) >= 80;
+}

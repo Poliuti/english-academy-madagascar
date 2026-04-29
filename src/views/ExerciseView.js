@@ -1,11 +1,13 @@
-import { getActiveProfile, addXP, updateStreak, saveTopicProgress, saveSM2, saveSession } from '../storage.js';
-import { getExercisesByTopic } from '../data/exercises.js';
+import { getActiveProfile, addXP, updateStreak, saveTopicProgress, saveSM2, saveSession,
+         saveLevelProgress, getLevelScore, isLevelUnlocked } from '../storage.js';
+import { getExercisesByTopic, getExercisesByLevel } from '../data/exercises.js';
 import { assessmentExercises } from '../data/exercises.js';
 import { TOPICS, getTopicById } from '../data/topics.js';
 import { calculateNextReview, qualityFromResult, sortByPriority } from '../sm2.js';
 import { speak, stop, isSupported } from '../tts.js';
 
 const SESSION_SIZE = 8;
+const LEVEL_LABELS = { 1: '🌱 Débutant', 2: '📈 Intermédiaire', 3: '🚀 Avancé' };
 
 // ─── Malagasy instruction translations ───────────────────────────────────────
 // Consegne standard tradotte in malgascio (verifcate con attenzione)
@@ -76,36 +78,98 @@ function getMgInstruction(fr) {
   return key ? INSTRUCTION_MG[key] : null;
 }
 
-export function renderExercise(topicId, mode) {
+export function renderExercise(topicId, mode, diffLevel) {
   const profile = getActiveProfile();
   if (!profile) { location.hash = '#profiles'; return document.createElement('div'); }
 
-  const exercises = loadExercises(topicId, mode, profile);
-  if (!exercises.length) {
-    return renderEmpty(topicId);
-  }
-
-  const state = {
-    exercises,
-    current: 0,
-    results: [],
-    usedHint: false,
-    answered: false,
-    topicId,
-    mode,
-    xpEarned: 0,
-  };
-
   const container = document.createElement('div');
   container.className = 'exercise-page';
-  renderExerciseCard(container, state, profile);
+
+  // Assessment mode skips level picker
+  if (mode === 'assessment') {
+    const exs = loadExercises(topicId, mode, profile, null);
+    if (!exs.length) return renderEmpty(topicId);
+    const state = { exercises: exs, current: 0, results: [], usedHint: false, answered: false,
+                    topicId, mode, diffLevel: null, xpEarned: 0 };
+    renderExerciseCard(container, state, profile);
+    return container;
+  }
+
+  // If a specific level was provided, start immediately
+  if (diffLevel) {
+    const lv = parseInt(diffLevel, 10);
+    if (!isLevelUnlocked(profile, topicId, lv)) {
+      renderLevelPicker(container, topicId, mode, profile);
+      return container;
+    }
+    const exs = loadExercises(topicId, mode, profile, lv);
+    if (!exs.length) return renderEmpty(topicId);
+    const state = { exercises: exs, current: 0, results: [], usedHint: false, answered: false,
+                    topicId, mode, diffLevel: lv, xpEarned: 0 };
+    renderExerciseCard(container, state, profile);
+    return container;
+  }
+
+  // No level → show level picker
+  renderLevelPicker(container, topicId, mode, profile);
   return container;
 }
 
-function loadExercises(topicId, mode, profile) {
+function renderLevelPicker(container, topicId, mode, profile) {
+  const topic = getTopicById(topicId);
+  const topicLabel = topic?.label || topicId;
+
+  container.innerHTML = `
+    <div class="ex-header">
+      <button class="btn-back" id="btn-back">← Retour</button>
+      <div class="ex-topic-label">${topic?.icon || ''} ${topicLabel}</div>
+      <div></div>
+    </div>
+    <div class="level-picker">
+      <h2 class="level-picker-title">Choisis ton niveau</h2>
+      <p class="level-picker-sub">🇲🇬 Safidio ny sehatra mety</p>
+      <div class="level-picker-cards">
+        ${[1,2,3].map(lv => {
+          const unlocked = isLevelUnlocked(profile, topicId, lv);
+          const score    = getLevelScore(profile, topicId, lv);
+          const pool     = getExercisesByLevel(topicId, lv);
+          return `
+            <button class="level-card ${unlocked ? '' : 'level-card-locked'}" data-lv="${lv}" ${unlocked ? '' : 'disabled'}>
+              <div class="level-card-icon">${unlocked ? (lv === 1 ? '🌱' : lv === 2 ? '📈' : '🚀') : '🔒'}</div>
+              <div class="level-card-label">${LEVEL_LABELS[lv]}</div>
+              <div class="level-card-count">${pool.length} exercice${pool.length !== 1 ? 's' : ''}</div>
+              ${score > 0 ? `<div class="level-card-score">${score}% ✓</div>` : ''}
+              ${score >= 80 ? `<div class="level-card-badge">⭐ Maîtrisé</div>` : ''}
+              ${!unlocked && lv > 1 ? `<div class="level-card-lock-msg">Obtiens 80% au niveau ${lv-1}</div>` : ''}
+            </button>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+
+  container.querySelector('#btn-back').addEventListener('click', () => {
+    location.hash = '#dashboard';
+  });
+
+  container.querySelectorAll('.level-card:not([disabled])').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lv = parseInt(btn.dataset.lv, 10);
+      const exs = loadExercises(topicId, mode, profile, lv);
+      if (!exs.length) return;
+      const state = { exercises: exs, current: 0, results: [], usedHint: false, answered: false,
+                      topicId, mode, diffLevel: lv, xpEarned: 0 };
+      renderExerciseCard(container, state, profile);
+    });
+  });
+}
+
+function loadExercises(topicId, mode, profile, diffLevel) {
   let pool;
   if (mode === 'assessment') {
     pool = [...assessmentExercises];
+  } else if (diffLevel) {
+    pool = getExercisesByLevel(topicId, diffLevel);
   } else {
     pool = getExercisesByTopic(topicId);
   }
@@ -407,6 +471,9 @@ function finishSession(container, state, profile) {
 
   // Save progress
   saveTopicProgress(profile.id, state.topicId || 'assessment', total, correctCount);
+  if (state.diffLevel) {
+    saveLevelProgress(profile.id, state.topicId, state.diffLevel, total, correctCount);
+  }
   updateStreak(profile.id);
   saveSession(profile.id, {
     topic: state.topicId,
@@ -416,8 +483,14 @@ function finishSession(container, state, profile) {
     xp: xpTotal,
   });
 
+  // Check if next level just unlocked
+  const freshProfile = getActiveProfile();
+  const nextLv = state.diffLevel ? state.diffLevel + 1 : null;
+  const nextUnlocked = nextLv && nextLv <= 3 && percent >= 80 && isLevelUnlocked(freshProfile, state.topicId, nextLv);
+
   const emoji = percent >= 80 ? '🏆' : percent >= 60 ? '🌟' : percent >= 40 ? '👍' : '💪';
-  const msg = percent >= 80 ? 'Excellent travail !' : percent >= 60 ? 'Bon travail !' : percent >= 40 ? 'Continue !' : 'Ne lâche pas !';
+  const msg   = percent >= 80 ? 'Excellent travail !' : percent >= 60 ? 'Bon travail !' : percent >= 40 ? 'Continue !' : 'Ne lâche pas !';
+  const levelLabel = state.diffLevel ? LEVEL_LABELS[state.diffLevel] : null;
 
   container.innerHTML = `
     <div class="results-page">
@@ -437,6 +510,12 @@ function finishSession(container, state, profile) {
       </div>
 
       ${xpTotal > 0 ? `<div class="results-xp">+${xpTotal} XP gagnés ⭐</div>` : ''}
+      ${levelLabel ? `<div class="results-level-badge">${levelLabel}</div>` : ''}
+      ${nextUnlocked ? `
+        <div class="results-unlock-banner">
+          🎉 Niveau ${LEVEL_LABELS[nextLv]} débloqué !
+        </div>
+      ` : ''}
 
       <div class="results-breakdown">
         ${state.results.map((r, i) => {
@@ -452,31 +531,44 @@ function finishSession(container, state, profile) {
       </div>
 
       <div class="results-actions">
-        <button class="btn-primary" id="btn-again">🔄 Recommencer</button>
+        ${nextUnlocked ? `<button class="btn-primary results-next-lv" id="btn-next-lv">🚀 Niveau ${nextLv} →</button>` : ''}
+        <button class="btn-${nextUnlocked ? 'secondary' : 'primary'}" id="btn-again">🔄 Recommencer</button>
         <button class="btn-secondary" id="btn-dashboard">🏠 Tableau de bord</button>
+        ${state.diffLevel ? `<button class="btn-secondary" id="btn-levels">📊 Niveaux</button>` : ''}
       </div>
     </div>
   `;
 
+  const nextLvBtn = container.querySelector('#btn-next-lv');
+  if (nextLvBtn) {
+    nextLvBtn.addEventListener('click', () => {
+      const newEx = loadExercises(state.topicId, state.mode, getActiveProfile(), nextLv);
+      if (!newEx.length) return;
+      const newState = { exercises: newEx, current: 0, results: [], usedHint: false, answered: false,
+                         topicId: state.topicId, mode: state.mode, diffLevel: nextLv, xpEarned: 0 };
+      renderExerciseCard(container, newState, getActiveProfile());
+    });
+  }
+
   container.querySelector('#btn-again').addEventListener('click', () => {
-    // Cannot rely on hashchange (same hash = no event). Re-render directly.
-    const newEx = loadExercises(state.topicId, state.mode, profile);
+    const freshProfile = getActiveProfile();
+    const newEx = loadExercises(state.topicId, state.mode, freshProfile, state.diffLevel);
     if (!newEx.length) return;
-    const newState = {
-      exercises:  newEx,
-      current:    0,
-      results:    [],
-      usedHint:   false,
-      answered:   false,
-      topicId:    state.topicId,
-      mode:       state.mode,
-      xpEarned:   0,
-    };
-    renderExerciseCard(container, newState, profile);
+    const newState = { exercises: newEx, current: 0, results: [], usedHint: false, answered: false,
+                       topicId: state.topicId, mode: state.mode, diffLevel: state.diffLevel, xpEarned: 0 };
+    renderExerciseCard(container, newState, freshProfile);
   });
+
   container.querySelector('#btn-dashboard').addEventListener('click', () => {
     location.hash = '#dashboard';
   });
+
+  const levelsBtn = container.querySelector('#btn-levels');
+  if (levelsBtn) {
+    levelsBtn.addEventListener('click', () => {
+      renderLevelPicker(container, state.topicId, state.mode, getActiveProfile());
+    });
+  }
 }
 
 // Synonym map: both directions (key ↔ value are interchangeable)

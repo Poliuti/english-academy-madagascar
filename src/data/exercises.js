@@ -1401,3 +1401,38 @@ export function getExercisesByTopic(topicId) {
 export function getExerciseById(id) {
   return getAllExercises().find(ex => ex.id === id);
 }
+
+/**
+ * Returns exercises for a specific difficulty tier (1 = easy, 2 = medium, 3 = hard).
+ * Assignment strategy:
+ *  - If the topic has exercises with mixed `level` values → map A1→1, A2→2, B1/B2→3
+ *  - If all exercises share the same `level` → distribute by position (thirds)
+ *  - Falls back to full topic pool if a tier has 0 exercises
+ */
+export function getExercisesByLevel(topicId, diffLevel) {
+  const pool = exercises[topicId] || [];
+  if (!pool.length) return [];
+
+  const LEVEL_TO_DIFF = { A1: 1, A2: 2, B1: 3, 'B1-B2': 3, B2: 3 };
+
+  // Check if pool has mixed levels
+  const levels = new Set(pool.map(e => e.level));
+  let filtered;
+
+  if (levels.size > 1) {
+    // Mixed levels → assign by level tag
+    filtered = pool.filter(e => (LEVEL_TO_DIFF[e.level] || 2) === diffLevel);
+  } else {
+    // Uniform level → distribute by position
+    const third = Math.ceil(pool.length / 3);
+    const ranges = [
+      pool.slice(0, third),
+      pool.slice(third, third * 2),
+      pool.slice(third * 2),
+    ];
+    filtered = ranges[diffLevel - 1] || [];
+  }
+
+  // Fallback: if this tier is empty, use the full pool
+  return filtered.length >= 2 ? filtered : pool;
+}
