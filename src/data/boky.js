@@ -5,6 +5,333 @@
 export const bokyChapters = [
 
   // ══════════════════════════════════════════════════════════════════════════
+  // TO BE — A1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'toBe',
+    title: 'To Be — être',
+    icon: '🔵',
+    level: 'A1',
+    fr: {
+      intro: "Le verbe <strong>to be</strong> est le verbe le plus important de l'anglais. Il correspond à « être » en français. Il est indispensable pour se présenter, décrire, situer. Il ne se conjugue PAS comme les autres verbes et doit être mémorisé.",
+      sections: [
+        {
+          title: 'Présent affirmatif — tableau complet',
+          content: 'Le présent de <em>to be</em> a trois formes : <strong>am</strong> (I), <strong>is</strong> (he/she/it), <strong>are</strong> (you/we/they). Attention : contrairement au français, le pronom sujet est obligatoire.',
+          rows: [
+            { en: 'I am a student.', tr: 'Je suis étudiant(e).' },
+            { en: 'You are my friend.', tr: 'Tu es mon ami(e).' },
+            { en: 'He is a doctor.', tr: 'Il est médecin.' },
+            { en: 'She is from Madagascar.', tr: 'Elle vient de Madagascar.' },
+            { en: 'It is very hot today.', tr: "Il fait très chaud aujourd'hui." },
+            { en: 'We are in class.', tr: 'Nous sommes en classe.' },
+            { en: 'They are happy.', tr: 'Ils/Elles sont heureux.' },
+          ]
+        },
+        {
+          title: 'Formes contractées (usage courant)',
+          content: 'En anglais parlé et écrit informel, on contracte le pronom et <em>to be</em>. Ces formes sont très fréquentes — il faut les reconnaître et les utiliser.',
+          rows: [
+            { en: "I'm tired.", tr: 'Je suis fatigué(e).' },
+            { en: "You're right.", tr: 'Tu as raison. / Vous avez raison.' },
+            { en: "He's a good teacher.", tr: "C'est un bon professeur." },
+            { en: "She's at home.", tr: 'Elle est à la maison.' },
+            { en: "It's raining.", tr: 'Il pleut.' },
+            { en: "We're ready.", tr: 'Nous sommes prêts.' },
+            { en: "They're late.", tr: 'Ils sont en retard.' },
+          ]
+        },
+        {
+          title: 'Présent négatif',
+          content: 'On ajoute <strong>not</strong> après <em>am/is/are</em>. Contractions : <em>isn\'t</em>, <em>aren\'t</em>. Attention : la forme <em>amn\'t</em> n\'existe pas — on dit toujours <em>I\'m not</em>.',
+          rows: [
+            { en: "I'm not hungry.", tr: "Je n'ai pas faim." },
+            { en: "You aren't wrong.", tr: "Tu n'as pas tort." },
+            { en: "He isn't at school.", tr: "Il n'est pas à l'école." },
+            { en: "She isn't tired.", tr: "Elle n'est pas fatiguée." },
+            { en: "It isn't cold.", tr: "Il ne fait pas froid." },
+            { en: "We aren't ready.", tr: "Nous ne sommes pas prêts." },
+            { en: "They aren't from here.", tr: "Ils ne sont pas d'ici." },
+          ]
+        },
+        {
+          title: 'Questions au présent + réponses courtes',
+          content: "Pour former une question, on <strong>inverse</strong> le sujet et le verbe. Les réponses courtes répètent le verbe <em>to be</em> — on n'utilise jamais 'yes' ou 'no' seuls en anglais soutenu.",
+          rows: [
+            { en: 'Are you a teacher? — Yes, I am. / No, I\'m not.', tr: 'Es-tu enseignant ? — Oui. / Non.' },
+            { en: 'Is she happy? — Yes, she is. / No, she isn\'t.', tr: 'Est-elle heureuse ? — Oui. / Non.' },
+            { en: 'Are they students? — Yes, they are. / No, they aren\'t.', tr: 'Sont-ils étudiants ? — Oui. / Non.' },
+            { en: 'Is it a good film? — Yes, it is. / No, it isn\'t.', tr: "Est-ce un bon film ? — Oui. / Non." },
+          ]
+        },
+        {
+          title: 'Passé simple — was / were',
+          content: 'Au passé, <em>to be</em> a deux formes : <strong>was</strong> pour I/he/she/it, et <strong>were</strong> pour you/we/they. Négatif : <em>wasn\'t, weren\'t</em>.',
+          rows: [
+            { en: 'I was at school yesterday.', tr: "J'étais à l'école hier." },
+            { en: 'She was very tired last night.', tr: 'Elle était très fatiguée hier soir.' },
+            { en: 'It was a beautiful day.', tr: "C'était une belle journée." },
+            { en: 'We were in Antananarivo.', tr: 'Nous étions à Antananarivo.' },
+            { en: "They weren't there.", tr: "Ils n'étaient pas là." },
+            { en: 'Was he your teacher?', tr: 'Était-il ton professeur ?' },
+            { en: 'Were you at home?', tr: 'Étais-tu à la maison ?' },
+          ]
+        },
+        {
+          title: 'To be + adjectif / nom / lieu',
+          content: '<em>To be</em> s\'utilise pour trois fonctions principales : décrire (+ adjectif), identifier (+ nom) et situer (+ lieu).',
+          rows: [
+            { en: 'She is intelligent.', tr: 'Elle est intelligente. (+ adjectif)' },
+            { en: 'He is a nurse.', tr: 'Il est infirmier. (+ nom de métier)' },
+            { en: 'The keys are on the table.', tr: 'Les clés sont sur la table. (+ lieu)' },
+            { en: 'I am 20 years old.', tr: "J'ai 20 ans. (âge)" },
+            { en: 'We are hungry.', tr: 'Nous avons faim. (sensation)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "He be a student" → ✅ "He IS a student" (to be obligatoire, jamais omis)',
+        '❌ "I amn\'t ready" → ✅ "I\'m not ready" (amn\'t n\'existe pas)',
+        '❌ "She are tired" → ✅ "She IS tired" (he/she/it → IS uniquement)',
+        '❌ "They was here" → ✅ "They WERE here" (we/you/they → were au passé)',
+        '❌ "Is you happy?" → ✅ "Are you happy?" (you → are, jamais is)',
+        '❌ "I have 20 years" → ✅ "I am 20 years old" (l\'âge se dit avec to be en anglais)',
+      ],
+      tips: [
+        'Présent : I → <strong>am</strong> | He/She/It → <strong>is</strong> | You/We/They → <strong>are</strong>',
+        'Passé : I/He/She/It → <strong>was</strong> | You/We/They → <strong>were</strong>',
+        "Contractions courantes : I'm · you're · he's · she's · it's · we're · they're",
+        'Question = inverser sujet et verbe : "Are you…?" "Is she…?" "Were they…?"',
+        'To be sert aussi pour l\'âge, les sensations (hungry, cold, hot) et les prix en anglais',
+      ],
+      summary: [
+        'Présent : am (I) / is (he,she,it) / are (you,we,they)',
+        'Passé : was (I,he,she,it) / were (you,we,they)',
+        'Négatif : not après → isn\'t, aren\'t, wasn\'t, weren\'t (jamais amn\'t)',
+        'Question : inverser verbe et sujet → "Are you…?" "Was he…?"',
+        'Réponse courte : "Yes, I am." / "No, she isn\'t." — jamais yes/no seul',
+      ],
+    },
+    mg: {
+      intro: "Ny matoanteny <strong>to be</strong> dia ny matoanteny ampiasaina indrindra amin\'ny teny anglisy. Mitovy amin\'ny \"être\" frantsay. Ny teny malagasy dia tsy mampiasa matoanteny mitovy aminy [?], ka ny hoe \"Mpianatra aho\" (Je suis étudiant) dia tsy misy matoanteny eto. Koa sarotra ny hahazo azy, saingy tsy maintsy hadinina.",
+      sections: [
+        {
+          title: 'Présent affirmatif — latabatra feno',
+          content: 'Ny <em>to be</em> amin\'ny présent dia manana endrika telo : <strong>am</strong> (I), <strong>is</strong> (he/she/it), <strong>are</strong> (you/we/they). Ny pronom sujet dia tsy azo atao hofany [?].',
+          rows: [
+            { en: 'I am a student.', tr: 'Mpianatra aho. [?]' },
+            { en: 'You are my friend.', tr: 'Namako ianao. [?]' },
+            { en: 'He is a doctor.', tr: 'Dokotera izy. [?]' },
+            { en: 'She is from Madagascar.', tr: 'Malagasy izy.' },
+            { en: 'It is very hot today.', tr: 'Mafana loatra anio. [?]' },
+            { en: 'We are in class.', tr: 'Eo amin\'ny kilasy izahay. [?]' },
+            { en: 'They are happy.', tr: 'Faly izy ireo.' },
+          ]
+        },
+        {
+          title: 'Endrika fohy (contractions)',
+          content: 'Amin\'ny resaka andavanandro, ampiasaina ny endrika fohy. Tena ampiasaina matetika ireo ka tsy maintsy fantatrao.',
+          rows: [
+            { en: "I'm tired.", tr: 'Reraka aho. [?]' },
+            { en: "You're right.", tr: 'Marina ianao. [?]' },
+            { en: "He's a good teacher.", tr: 'Mpampianatra tsara izy. [?]' },
+            { en: "We're ready.", tr: 'Vonona izahay. [?]' },
+            { en: "They're late.", tr: 'Diso fotoana izy ireo. [?]' },
+          ]
+        },
+        {
+          title: 'Présent négatif',
+          content: 'Ampiana <strong>not</strong> aorian\'ny am/is/are. Endrika fohy : <em>isn\'t</em>, <em>aren\'t</em>. Ny <em>amn\'t</em> tsy misy — <em>I\'m not</em> foana.',
+          rows: [
+            { en: "I'm not hungry.", tr: 'Tsy noana aho. [?]' },
+            { en: "He isn't at school.", tr: 'Tsy any an\'ny sekoly izy. [?]' },
+            { en: "They aren't from here.", tr: 'Tsy avy eto izy ireo. [?]' },
+          ]
+        },
+        {
+          title: 'Lasa tsotra — was / were',
+          content: 'Amin\'ny lasa, <strong>was</strong> ampiasaina amin\'ny I/he/she/it, ary <strong>were</strong> amin\'ny you/we/they.',
+          rows: [
+            { en: 'I was at school yesterday.', tr: 'Tao an\'ny sekoly aho omaly. [?]' },
+            { en: 'We were in Antananarivo.', tr: 'Tany Antananarivo izahay. [?]' },
+            { en: "They weren't there.", tr: 'Tsy tao izy ireo. [?]' },
+            { en: 'Was he your teacher?', tr: 'Mpampianatrao ve izy teo aloha? [?]' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "He be student" → ✅ "He IS a student" (tsy maintsy misy to be)',
+        '❌ "I amn\'t" → ✅ "I\'m not" (tsy misy amn\'t)',
+        '❌ "She are tired" → ✅ "She IS tired" (he/she/it → IS)',
+        '❌ "They was here" → ✅ "They WERE here" (we/you/they → were)',
+        '❌ "I have 20 years" → ✅ "I am 20 years old" (taona = to be)',
+      ],
+      tips: [
+        'Présent : I → am | He/She/It → is | You/We/They → are',
+        'Lasa : I/He/She/It → was | You/We/They → were',
+        'Fanontaniana : mifamadika sujet sy verbe → "Are you...?" "Was he...?"',
+      ],
+      summary: [
+        'Présent : am (I) / is (he,she,it) / are (you,we,they)',
+        'Lasa : was (I,he,she,it) / were (you,we,they)',
+        'Négatif : isn\'t, aren\'t, wasn\'t, weren\'t [?]',
+        'Fanontaniana : mifamadika sujet sy verbe',
+      ],
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // PRONOUNS — A1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'pronouns',
+    title: 'Pronoms — Pronouns',
+    icon: '👤',
+    level: 'A1',
+    fr: {
+      intro: "Les pronoms remplacent les noms pour éviter les répétitions. En anglais, le pronom sujet est <strong>obligatoire</strong> — on ne peut pas l'omettre comme parfois en français (« parle » n'est pas possible sans « il/elle »). Il existe plusieurs catégories : sujets, compléments, réfléchis.",
+      sections: [
+        {
+          title: 'Pronoms sujets (Subject pronouns)',
+          content: 'Utilisés comme sujet du verbe — avant le verbe. Obligatoires en anglais même quand le contexte est clair.',
+          rows: [
+            { en: 'I am a student.', tr: 'Je suis étudiant(e). → I' },
+            { en: 'You are my friend.', tr: 'Tu es / Vous êtes mon ami(e). → You (sing. ET plur.)' },
+            { en: 'He speaks English.', tr: 'Il parle anglais. → He (masc. humain)' },
+            { en: 'She lives in Tana.', tr: 'Elle habite à Tana. → She (fém. humain)' },
+            { en: 'It is raining.', tr: "Il pleut. → It (neutre : objets, animaux, météo)" },
+            { en: 'We study together.', tr: 'Nous étudions ensemble. → We' },
+            { en: 'They are my friends.', tr: 'Ce sont mes amis. → They (masc., fém. ou mixte)' },
+          ]
+        },
+        {
+          title: 'Pronoms compléments (Object pronouns)',
+          content: 'Utilisés après un verbe ou une préposition (at, with, for, to, about…). Ne jamais utiliser les pronoms sujets ici.',
+          rows: [
+            { en: 'Call me later.', tr: 'Appelle-moi plus tard. → me' },
+            { en: 'I can help you.', tr: "Je peux t'aider. → you" },
+            { en: 'Tell him the truth.', tr: 'Dis-lui la vérité. → him' },
+            { en: 'She loves him.', tr: "Elle l'aime. → him" },
+            { en: 'Can you hear her?', tr: "Tu peux l'entendre ? → her" },
+            { en: 'This gift is for us.', tr: 'Ce cadeau est pour nous. → us' },
+            { en: 'I know them well.', tr: 'Je les connais bien. → them' },
+          ]
+        },
+        {
+          title: 'Tableau récapitulatif',
+          content: 'Chaque pronom sujet correspond à un pronom complément. Mémoriser ces paires est essentiel.',
+          rows: [
+            { en: 'I → me', tr: 'je → moi/me' },
+            { en: 'you → you', tr: 'tu/vous → toi/vous' },
+            { en: 'he → him', tr: 'il → lui' },
+            { en: 'she → her', tr: 'elle → la/lui' },
+            { en: 'it → it', tr: '(neutre) → (neutre)' },
+            { en: 'we → us', tr: 'nous → nous' },
+            { en: 'they → them', tr: 'ils/elles → les/leur' },
+          ]
+        },
+        {
+          title: 'Pronoms réfléchis (Reflexive pronouns)',
+          content: 'Utilisés quand le sujet et le complément désignent la même personne. Formés avec <em>-self</em> (singulier) ou <em>-selves</em> (pluriel). Servent aussi à insister : "I did it myself" (je l\'ai fait moi-même).',
+          rows: [
+            { en: 'I hurt myself.', tr: 'Je me suis blessé(e). → myself' },
+            { en: 'He did it himself.', tr: "Il l'a fait lui-même. → himself" },
+            { en: 'She looked at herself in the mirror.', tr: 'Elle se regarda dans le miroir. → herself' },
+            { en: 'We enjoyed ourselves at the party.', tr: "Nous nous sommes bien amusés. → ourselves" },
+            { en: 'They organized everything themselves.', tr: 'Ils ont tout organisé eux-mêmes. → themselves' },
+          ]
+        },
+        {
+          title: 'Le pronom "it" — usage neutre',
+          content: '<strong>It</strong> est indispensable en anglais pour les objets, les animaux, la météo, l\'heure, la distance. En français ces constructions n\'ont souvent pas de sujet visible.',
+          rows: [
+            { en: "It is cold outside.", tr: 'Il fait froid dehors.' },
+            { en: "It is 3 o'clock.", tr: 'Il est 3 heures.' },
+            { en: "It takes one hour.", tr: "Ça prend une heure." },
+            { en: "It is a beautiful country.", tr: "C'est un beau pays." },
+            { en: "It was a good idea.", tr: "C'était une bonne idée." },
+          ]
+        },
+      ],
+      commonErrors: [
+        "❌ \"Me and my friend went\" → ✅ \"My friend and I went\" (sujet = I, jamais Me)",
+        "❌ \"He gaved it to I\" → ✅ \"He gave it to me\" (après préposition → pronom complément)",
+        "❌ \"Her is happy\" → ✅ \"She is happy\" (sujet → pronom sujet)",
+        "❌ \"I buyed it by me\" → ✅ \"I bought it myself\" (réfléchi, pas 'by me')",
+        "❌ \"Is raining\" → ✅ \"It is raining\" (le sujet 'it' est obligatoire)",
+      ],
+      tips: [
+        'Sujets : I / you / he / she / it / we / they — <em>avant</em> le verbe',
+        'Compléments : me / you / him / her / it / us / them — <em>après</em> verbe ou préposition',
+        '"You" = tutoiement ET vouvoiement, singulier ET pluriel — contexte seul précise',
+        '"It" = météo, heure, durée, animaux non identifiés, objets, situations',
+        'Réfléchis : myself / yourself / himself / herself / itself / ourselves / yourselves / themselves',
+      ],
+      summary: [
+        'Sujets : I / you / he / she / it / we / they → avant le verbe',
+        'Compléments : me / you / him / her / it / us / them → après verbe/préposition',
+        'Réfléchis : -self (sing.) / -selves (plur.)',
+        '"It" obligatoire pour la météo, l\'heure, les objets, les animaux',
+        '"You" = tu et vous — le contexte fait la différence',
+      ],
+    },
+    mg: {
+      intro: "Ny pronoms dia manolo ny anarana mba hialana amin\'ny famenoana [?]. Amin\'ny teny anglisy, ny pronom sujet dia tsy maintsy hita alohan\'ny matoanteny — tsy azo atao atsy [?] toy ny frantsay matetika. Misy karazany maro : sujet, complément, réfléchi.",
+      sections: [
+        {
+          title: 'Pronoms sujets — latabatra',
+          content: 'Ampiasaina alohan\'ny matoanteny. Tsy azo hofany ireo amin\'ny teny anglisy.',
+          rows: [
+            { en: 'I am a student.', tr: 'Mpianatra aho. → I = aho' },
+            { en: 'You are my friend.', tr: 'Namako ianao. → You = ianao / ianareo [?]' },
+            { en: 'He speaks English.', tr: 'Miteny anglisy izy. → He = izy (lahy)' },
+            { en: 'She lives in Tana.', tr: 'Monina any Tana izy. → She = izy (vavy)' },
+            { en: 'It is raining.', tr: 'Ranonorana. → It = tsy misy mitovy amin\'ny malagasy [?]' },
+            { en: 'We study together.', tr: 'Mianatra miaraka isika. → We = izahay/isika [?]' },
+            { en: 'They are my friends.', tr: 'Sakaizako izy ireo. → They = izy ireo' },
+          ]
+        },
+        {
+          title: 'Pronoms compléments',
+          content: 'Ampiasaina aorian\'ny matoanteny na préposition.',
+          rows: [
+            { en: 'Call me later.', tr: 'Antsoy aho [?] → me' },
+            { en: 'I can help you.', tr: 'Afaka manampy anao aho. → you' },
+            { en: 'Tell him the truth.', tr: 'Lazao aminy ny marina. → him' },
+            { en: 'This gift is for us.', tr: 'Ny tohana ity dia ho anay. → us [?]' },
+            { en: 'I know them well.', tr: 'Fantatro tsara izy ireo. → them' },
+          ]
+        },
+        {
+          title: 'Pronoms réfléchis',
+          content: 'Ampiasaina rehefa mitovy ny sujet sy ny complément. Fototra : -self (sing.) / -selves (plur.).',
+          rows: [
+            { en: 'I hurt myself.', tr: 'Naharatra tena aho. [?]' },
+            { en: 'He did it himself.', tr: 'Nataony irery izy. [?]' },
+            { en: 'We enjoyed ourselves.', tr: 'Namana tsara izahay. [?]' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "Me and my friend went" → ✅ "My friend and I went"',
+        '❌ "Is raining" → ✅ "It is raining" (It tsy azo hadinoina)',
+        '❌ "Her is happy" → ✅ "She is happy"',
+      ],
+      tips: [
+        'Sujets : I / you / he / she / it / we / they — alohan\'ny matoanteny',
+        'Compléments : me / you / him / her / it / us / them — aorian\'ny matoanteny',
+        '"It" ampiasaina amin\'ny toetr\'andro, ora, zavatra, biby [?]',
+      ],
+      summary: [
+        'Sujets : I / you / he / she / it / we / they',
+        'Compléments : me / you / him / her / it / us / them',
+        'Réfléchis : myself / yourself / himself / herself / itself / ourselves / themselves [?]',
+        '"It" tsy maintsy ao amin\'ny météo sy ora [?]',
+      ],
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
   {
     id: 'articles',
     title: 'Articles (a / an / the)',
@@ -308,6 +635,187 @@ export const bokyChapters = [
         { q: 'Fenoy: ___ a book on the table.', a: 'There is', hint: 'book = tokana' },
         { q: 'Fenoy: ___ many students today.', a: 'There are', hint: 'students = maro' },
         { q: 'Ataovy fandavana: "There is a hospital."', a: 'There isn\'t a hospital.', hint: 'is → isn\'t' },
+      ],
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // IRREGULAR VERBS — A2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'irregularVerbs',
+    title: 'Verbes irréguliers',
+    icon: '📋',
+    level: 'A2',
+    fr: {
+      intro: "En anglais, de nombreux verbes courants ont des formes irrégulières au passé. Ils ne suivent pas la règle standard <em>verbe + -ed</em>. Les 50 verbes ci-dessous sont les plus fréquents — ils couvrent ~80 % des textes et conversations courantes. Format : <strong>Infinitif → Passé simple → Participe passé</strong>.",
+      sections: [
+        {
+          title: 'Groupe 1 — Forme unique (les 3 temps identiques)',
+          content: 'Ces verbes ne changent jamais. Le contexte ou un marqueur de temps (yesterday, already…) indique le temps.',
+          rows: [
+            { en: 'cut, cut, cut', tr: 'couper', tts: 'cut' },
+            { en: 'hit, hit, hit', tr: 'frapper / atteindre', tts: 'hit' },
+            { en: 'hurt, hurt, hurt', tr: 'blesser / faire mal', tts: 'hurt' },
+            { en: 'let, let, let', tr: 'laisser / permettre', tts: 'let' },
+            { en: 'put, put, put', tr: 'mettre / poser', tts: 'put' },
+            { en: 'read, read, read', tr: 'lire (prononciation différente au passé : « red »)', tts: 'read' },
+            { en: 'set, set, set', tr: 'régler / placer', tts: 'set' },
+            { en: 'shut, shut, shut', tr: 'fermer', tts: 'shut' },
+          ]
+        },
+        {
+          title: 'Groupe 2 — Passé = Participe passé',
+          content: 'Ces verbes ont le même passé simple et participe passé. Les deux dernières formes sont identiques.',
+          rows: [
+            { en: 'bring, brought, brought', tr: 'apporter', tts: 'bring' },
+            { en: 'build, built, built', tr: 'construire', tts: 'build' },
+            { en: 'buy, bought, bought', tr: 'acheter', tts: 'buy' },
+            { en: 'catch, caught, caught', tr: 'attraper', tts: 'catch' },
+            { en: 'feel, felt, felt', tr: 'ressentir', tts: 'feel' },
+            { en: 'find, found, found', tr: 'trouver', tts: 'find' },
+            { en: 'get, got, got', tr: 'obtenir / devenir', tts: 'get' },
+            { en: 'have, had, had', tr: 'avoir', tts: 'have' },
+            { en: 'hear, heard, heard', tr: 'entendre', tts: 'hear' },
+            { en: 'keep, kept, kept', tr: 'garder / conserver', tts: 'keep' },
+            { en: 'leave, left, left', tr: 'partir / laisser', tts: 'leave' },
+            { en: 'lose, lost, lost', tr: 'perdre', tts: 'lose' },
+            { en: 'make, made, made', tr: 'faire / fabriquer', tts: 'make' },
+            { en: 'meet, met, met', tr: 'rencontrer', tts: 'meet' },
+            { en: 'pay, paid, paid', tr: 'payer', tts: 'pay' },
+            { en: 'say, said, said', tr: 'dire', tts: 'say' },
+            { en: 'sell, sold, sold', tr: 'vendre', tts: 'sell' },
+            { en: 'send, sent, sent', tr: 'envoyer', tts: 'send' },
+            { en: 'sit, sat, sat', tr: "s'asseoir", tts: 'sit' },
+            { en: 'sleep, slept, slept', tr: 'dormir', tts: 'sleep' },
+            { en: 'spend, spent, spent', tr: 'dépenser / passer (temps)', tts: 'spend' },
+            { en: 'stand, stood, stood', tr: 'se lever / être debout', tts: 'stand' },
+            { en: 'teach, taught, taught', tr: 'enseigner', tts: 'teach' },
+            { en: 'tell, told, told', tr: 'dire / raconter', tts: 'tell' },
+            { en: 'think, thought, thought', tr: 'penser / croire', tts: 'think' },
+            { en: 'understand, understood, understood', tr: 'comprendre', tts: 'understand' },
+            { en: 'win, won, won', tr: 'gagner', tts: 'win' },
+          ]
+        },
+        {
+          title: 'Groupe 3 — Les 3 formes différentes',
+          content: 'Ces verbes ont trois formes complètement distinctes. Ce sont souvent les plus fréquents. Attention particulière requise.',
+          rows: [
+            { en: 'be, was/were, been', tr: 'être', tts: 'be' },
+            { en: 'become, became, become', tr: 'devenir', tts: 'become' },
+            { en: 'begin, began, begun', tr: 'commencer', tts: 'begin' },
+            { en: 'break, broke, broken', tr: 'casser', tts: 'break' },
+            { en: 'choose, chose, chosen', tr: 'choisir', tts: 'choose' },
+            { en: 'come, came, come', tr: 'venir', tts: 'come' },
+            { en: 'do, did, done', tr: 'faire', tts: 'do' },
+            { en: 'drink, drank, drunk', tr: 'boire', tts: 'drink' },
+            { en: 'drive, drove, driven', tr: 'conduire', tts: 'drive' },
+            { en: 'eat, ate, eaten', tr: 'manger', tts: 'eat' },
+            { en: 'fall, fell, fallen', tr: 'tomber', tts: 'fall' },
+            { en: 'fly, flew, flown', tr: 'voler', tts: 'fly' },
+            { en: 'forget, forgot, forgotten', tr: 'oublier', tts: 'forget' },
+            { en: 'give, gave, given', tr: 'donner', tts: 'give' },
+            { en: 'go, went, gone', tr: 'aller', tts: 'go' },
+            { en: 'grow, grew, grown', tr: 'grandir / pousser', tts: 'grow' },
+            { en: 'know, knew, known', tr: 'savoir / connaître', tts: 'know' },
+            { en: 'run, ran, run', tr: 'courir', tts: 'run' },
+            { en: 'see, saw, seen', tr: 'voir', tts: 'see' },
+            { en: 'show, showed, shown', tr: 'montrer', tts: 'show' },
+            { en: 'speak, spoke, spoken', tr: 'parler', tts: 'speak' },
+            { en: 'swim, swam, swum', tr: 'nager', tts: 'swim' },
+            { en: 'take, took, taken', tr: 'prendre', tts: 'take' },
+            { en: 'throw, threw, thrown', tr: 'lancer', tts: 'throw' },
+            { en: 'wake, woke, woken', tr: 'se réveiller', tts: 'wake' },
+            { en: 'wear, wore, worn', tr: 'porter (vêtements)', tts: 'wear' },
+            { en: 'write, wrote, written', tr: 'écrire', tts: 'write' },
+          ]
+        },
+      ],
+      commonErrors: [
+        "❌ \"I goed to school\" → ✅ \"I went to school\" (go est irrégulier)",
+        "❌ \"She has ate\" → ✅ \"She has eaten\" (participe passé ≠ passé simple pour eat)",
+        "❌ \"He buyed it\" → ✅ \"He bought it\"",
+        "❌ \"They thinked about it\" → ✅ \"They thought about it\"",
+        "❌ \"I have wrote\" → ✅ \"I have written\" (wrote = passé simple, written = participe passé)",
+        "❌ \"She drived fast\" → ✅ \"She drove fast\"",
+      ],
+      tips: [
+        'Groupe 1 (même forme) : put-put-put, let-let-let, cut-cut-cut, read-read-read',
+        'Groupe 2 (passé=participe) : buy-bought-bought, think-thought-thought, catch-caught-caught',
+        'Astuce sons similaires : bring/brought · think/thought · catch/caught · teach/taught',
+        'Autres sons : keep/kept · feel/felt · sleep/slept · leave/left',
+        'Méthode : apprendre 5 verbes par jour en 3 groupes de sons',
+      ],
+      summary: [
+        'Format : Infinitif → Passé simple → Participe passé',
+        'Groupe 1 : même forme (put-put-put)',
+        'Groupe 2 : passé = participe passé (buy-bought-bought)',
+        'Groupe 3 : 3 formes différentes — les plus importants à mémoriser',
+        'Verbes clés : be / have / do / go / say / get / make / know / think / come',
+      ],
+    },
+    mg: {
+      intro: "Amin\'ny teny anglisy, maro ny matoanteny tena ampiasaina fa tsy manaraka ny fitsipika -ed amin\'ny lasa [?]. Ireo matoanteny ireo dia antsoina hoe matoanteny tsy mahazatra. Tsy maintsy hadinina. Endrika : <strong>Infinitif → Lasa tsotra → Participe passé</strong>.",
+      sections: [
+        {
+          title: 'Vondrona 1 — endrika mitovy foana',
+          content: 'Ireto matoanteny ireto dia tsy miova na oviana na oviana [?].',
+          rows: [
+            { en: 'cut, cut, cut', tr: 'manapaka [?]', tts: 'cut' },
+            { en: 'put, put, put', tr: 'mametraka [?]', tts: 'put' },
+            { en: 'let, let, let', tr: 'mamela [?]', tts: 'let' },
+            { en: 'read, read, read', tr: 'mamaky [?]', tts: 'read' },
+          ]
+        },
+        {
+          title: 'Vondrona 2 — lasa = participe passé',
+          content: 'Ireto matoanteny ireto dia mitovy ny endrika lasa sy ny participe passé [?].',
+          rows: [
+            { en: 'bring, brought, brought', tr: 'mitondra [?]', tts: 'bring' },
+            { en: 'buy, bought, bought', tr: 'mividy [?]', tts: 'buy' },
+            { en: 'have, had, had', tr: 'manana', tts: 'have' },
+            { en: 'keep, kept, kept', tr: 'mitahiry [?]', tts: 'keep' },
+            { en: 'leave, left, left', tr: 'miala / mandao [?]', tts: 'leave' },
+            { en: 'make, made, made', tr: 'manao / manao [?]', tts: 'make' },
+            { en: 'say, said, said', tr: 'milaza', tts: 'say' },
+            { en: 'think, thought, thought', tr: 'mihevitra', tts: 'think' },
+          ]
+        },
+        {
+          title: 'Vondrona 3 — endrika telo samy hafa',
+          content: 'Ireto no matoanteny manan-danja indrindra sy mahasarotra indrindra [?]. Hadinina tsara.',
+          rows: [
+            { en: 'be, was/were, been', tr: 'to be [matoanteny manan-danja indrindra]', tts: 'be' },
+            { en: 'come, came, come', tr: 'avy [?]', tts: 'come' },
+            { en: 'do, did, done', tr: 'manao', tts: 'do' },
+            { en: 'eat, ate, eaten', tr: 'mihinana', tts: 'eat' },
+            { en: 'give, gave, given', tr: 'manome', tts: 'give' },
+            { en: 'go, went, gone', tr: 'mandeha', tts: 'go' },
+            { en: 'know, knew, known', tr: 'mahalala', tts: 'know' },
+            { en: 'see, saw, seen', tr: 'mahita', tts: 'see' },
+            { en: 'speak, spoke, spoken', tr: 'miteny', tts: 'speak' },
+            { en: 'take, took, taken', tr: 'mitondra / mandray [?]', tts: 'take' },
+            { en: 'write, wrote, written', tr: 'manoratra', tts: 'write' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I goed" → ✅ "I went"',
+        '❌ "She has ate" → ✅ "She has eaten"',
+        '❌ "He buyed" → ✅ "He bought"',
+        '❌ "I have wrote" → ✅ "I have written"',
+      ],
+      tips: [
+        'Vondrona 1 : mitovy foana — put, let, cut, read',
+        'Vondrona 2 : lasa = participe — buy/bought, think/thought',
+        'Vondrona 3 : telo samy hafa — be/was/been, go/went/gone',
+        'Matoanteny manan-danja : be, have, do, go, say, get, make',
+      ],
+      summary: [
+        'Endrika : Infinitif → Lasa tsotra → Participe passé',
+        'Vondrona 1 : mitovy (put-put-put)',
+        'Vondrona 2 : lasa = participe (buy-bought-bought)',
+        'Vondrona 3 : telo samy hafa — hadinina tsara',
       ],
     }
   },

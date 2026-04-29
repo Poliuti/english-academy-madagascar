@@ -167,6 +167,12 @@ export function renderTheory(topicId) {
       });
     });
 
+    container.querySelectorAll('.boky-ref-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        location.hash = `#boky?chapter=${btn.dataset.boky}`;
+      });
+    });
+
     container.querySelectorAll('.mg-go-theory-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const ref = btn.dataset.ref;
@@ -311,9 +317,33 @@ function renderVocab(vocabId) {
   `;
 }
 
+// Grammar topic → corresponding Boky chapter id
+const GRAMMAR_TO_BOKY = {
+  articles:          'articles',
+  plurals:           'plurals',
+  therebeis:         'therebeis',
+  presentSimple:     'presentSimple',
+  presentContinuous: 'presentContinuous',
+  pastSimple:        'pastSimple',
+  futureSimple:      'futureSimple',
+  modals:            'modals',
+  presentPerfect:    'presentPerfect',
+  pastContinuous:    'pastContinuous',
+  conditionals:      'conditionals',
+  passiveVoice:      'passiveVoice',
+  reportedSpeech:    'reportedSpeech',
+  pastPerfect:       'pastPerfect',
+  futurePerfect:     'futurePerfect',
+  questions:         'questions',
+  pronouns:          'pronouns',
+  prepositions:      'prepositions',
+  comparatives:      'comparatives',
+};
+
 function renderGrammar(topicId) {
   const t = theory[topicId];
   if (!t) return '<p>Section non trouvée.</p>';
+  const bokyChapter = GRAMMAR_TO_BOKY[topicId];
 
   return `
     <div class="theory-content-inner">
@@ -357,6 +387,11 @@ function renderGrammar(topicId) {
       ` : ''}
 
       <div class="theory-cta">
+        ${bokyChapter ? `
+          <button class="btn-secondary boky-ref-btn" data-boky="${bokyChapter}">
+            📖 Théorie complète → Boky
+          </button>
+        ` : ''}
         <button class="btn-primary do-exercises-btn">
           ✏️ Faire des exercices sur ce thème
         </button>

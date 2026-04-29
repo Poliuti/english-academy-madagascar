@@ -591,7 +591,10 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .tips-box ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .tips-box li { font-size: .9rem; }
 
-.theory-cta { text-align: center; padding-top: 8px; }
+.theory-cta {
+  display: flex; flex-wrap: wrap; gap: .6rem;
+  justify-content: center; padding-top: 8px;
+}
 
 /* ─── MALGASY MANUAL (Boky fampianarana) ────────────────────────────────────── */
 .sidebar-separator { height: 1px; background: var(--border); margin: 8px 0; }

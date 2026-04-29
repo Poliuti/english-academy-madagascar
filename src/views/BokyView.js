@@ -89,10 +89,10 @@ export function renderBoky(chapterId) {
       });
     });
 
-    container.querySelectorAll('.boky-go-exercises').forEach(btn => {
+    container.querySelectorAll('.boky-go-grammar').forEach(btn => {
       btn.addEventListener('click', () => {
-        const topic = btn.dataset.topic;
-        location.hash = `#exercise?topic=${topic}&mode=topic`;
+        const ref = btn.dataset.ref;
+        if (ref) location.hash = `#theory?topic=${ref}`;
       });
     });
   }
@@ -108,7 +108,7 @@ function renderChapter(chapter, l) {
 
   const isUncertain = l === 'mg'; // flag uncertain MG translations
   const trLabel = l === 'fr' ? '🇫🇷' : '🇲🇬';
-  const exercisesLabel = l === 'fr' ? '✏️ Faire des exercices' : '✏️ Exercices (fanazarana)';
+  const grammarLabel = l === 'fr' ? '✏️ Pratique & Exercices → Grammaire' : '✏️ Fampiharana → Grammaire';
 
   return `
     <div class="boky-chapter">
@@ -140,7 +140,7 @@ function renderChapter(chapter, l) {
                     <td class="boky-en">${escHtml(row.en)}</td>
                     <td class="boky-tr ${row.tr.includes('[?]') ? 'boky-uncertain' : ''}">${escHtml(row.tr)}</td>
                     <td class="boky-tts-cell">
-                      <button class="tts-btn" data-text="${escHtml(stripTags(row.en))}" title="Écouter">▶</button>
+                      <button class="tts-btn" data-text="${escHtml(stripTags(row.tts || row.en))}" title="Écouter">▶</button>
                     </td>
                   </tr>
                 `).join('')}
@@ -177,29 +177,13 @@ function renderChapter(chapter, l) {
         </div>
       ` : ''}
 
-      ${data.quickExercises?.length ? `
-        <div class="boky-qexercises">
-          <h3>${l === 'fr' ? '✏️ Mini-exercices' : '✏️ Fanazarana fohy'}</h3>
-          <ol class="boky-qlist">
-            ${data.quickExercises.map((ex, i) => `
-              <li class="boky-qitem">
-                <span class="boky-q">${escHtml(ex.q)}</span>
-                ${ex.hint ? `<em class="boky-qhint">(${escHtml(ex.hint)})</em>` : ''}
-                <button class="boky-reveal-btn" data-idx="${i}" onclick="this.nextElementSibling.style.display='inline';this.style.display='none'">
-                  ${l === 'fr' ? 'Voir la réponse' : 'Jereo ny valiny'}
-                </button>
-                <span class="boky-answer" style="display:none">✅ ${escHtml(ex.a)}</span>
-              </li>
-            `).join('')}
-          </ol>
+      ${chapter.id && chapter.id !== 'irregularVerbs' ? `
+        <div class="boky-cta">
+          <button class="boky-go-grammar btn-secondary" data-ref="${chapter.id}">
+            ${grammarLabel}
+          </button>
         </div>
       ` : ''}
-
-      <div class="boky-cta">
-        <button class="boky-go-exercises btn-primary" data-topic="${chapter.id}">
-          ${exercisesLabel}
-        </button>
-      </div>
 
     </div>
   `;
