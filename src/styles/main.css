@@ -671,7 +671,6 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .vocab-search { width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font); font-size: .9rem; }
 .vocab-search:focus { outline: 2px solid var(--primary); border-color: transparent; }
 .vocab-content { max-width: 900px; }
-.vocab-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
 .vocab-title { font-size: 1.5rem; font-weight: 900; }
 .vocab-count { background: var(--primary-light); color: var(--primary-dark); border-radius: 20px; padding: 3px 12px; font-size: .85rem; font-weight: 700; }
 .vocab-empty { color: var(--text-muted); font-style: italic; padding: 40px; text-align: center; }
@@ -1031,6 +1030,91 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .tutor-send-btn:disabled { opacity: .45; cursor: not-allowed; }
 .tutor-info {
   font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 6px;
+}
+
+/* ─── VOCAB HEADER (flashcards button) ─────────────────────────────────────── */
+.vocab-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.vocab-header-left { display: flex; align-items: center; gap: 12px; }
+.flash-start-btn { font-size: .9rem; padding: 8px 16px; white-space: nowrap; }
+
+/* ─── FLASHCARD MODE ────────────────────────────────────────────────────────── */
+.flash-wrap { display: flex; flex-direction: column; align-items: center; padding: 24px 16px; max-width: 540px; margin: 0 auto; }
+.flash-topbar { display: flex; align-items: center; gap: 12px; width: 100%; margin-bottom: 24px; }
+.flash-counter { font-size: .9rem; font-weight: 700; color: var(--text-light); white-space: nowrap; }
+.flash-progress-track { flex: 1; height: 8px; background: var(--border); border-radius: 8px; overflow: hidden; }
+.flash-progress-fill { height: 100%; background: var(--primary); border-radius: 8px; transition: width .4s; }
+.flash-stop-x { background: transparent; border: none; font-size: 1.1rem; color: var(--text-muted); padding: 4px 8px; cursor: pointer; }
+.flash-stop-x:hover { color: var(--text); }
+
+/* Card 3D flip */
+.flash-scene { width: 100%; max-width: 420px; perspective: 1000px; margin-bottom: 24px; }
+.flash-inner {
+  position: relative; width: 100%; min-height: 220px;
+  transform-style: preserve-3d; transition: transform .45s ease;
+}
+.flash-inner.flipped { transform: rotateY(180deg); }
+.flash-face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  background: var(--card); border: 2px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 32px 24px; gap: 16px;
+  min-height: 220px;
+}
+.flash-back { transform: rotateY(180deg); }
+
+/* Front face */
+.flash-front-content { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.flash-word { font-size: 1.8rem; font-weight: 900; color: var(--text); text-align: center; }
+.flash-tts { font-size: 1.1rem; background: var(--primary-light); color: var(--primary-dark); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; }
+.flash-tts:hover { background: var(--primary); color: #fff; }
+.flash-reveal-btn { margin-top: 8px; }
+
+/* Back face */
+.flash-back-content { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.flash-fr { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.flash-mg { font-size: .95rem; color: #2E7D32; }
+.flash-example { font-size: .85rem; color: var(--text-light); display: flex; align-items: center; gap: 8px; }
+
+/* Know/Review buttons */
+.flash-btns { display: flex; gap: 16px; width: 100%; max-width: 420px; }
+.flash-btn {
+  flex: 1; padding: 14px; border-radius: var(--radius); font-size: 1rem; font-weight: 700;
+  cursor: pointer; border: 2px solid; transition: background .15s, color .15s;
+}
+.flash-btn-review { background: #FFF3E0; border-color: #F57C00; color: #E65100; }
+.flash-btn-review:hover { background: #F57C00; color: #fff; }
+.flash-btn-known { background: #E8F5E9; border-color: #388E3C; color: #1B5E20; }
+.flash-btn-known:hover { background: #388E3C; color: #fff; }
+
+/* Summary */
+.flash-summary {
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+  padding: 40px 24px; max-width: 420px; margin: 0 auto; text-align: center;
+}
+.flash-summary-icon { font-size: 3rem; }
+.flash-summary-title { font-size: 1.5rem; font-weight: 900; }
+.flash-summary-stats { display: flex; gap: 24px; }
+.flash-stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.flash-stat-num { font-size: 2.5rem; font-weight: 900; }
+.flash-stat-known .flash-stat-num { color: #388E3C; }
+.flash-stat-review .flash-stat-num { color: #F57C00; }
+.flash-stat-label { font-size: .85rem; color: var(--text-light); }
+.flash-retry-btn { width: 100%; }
+.flash-stop-btn { width: 100%; }
+.flash-perfect { font-size: 1.1rem; color: #388E3C; font-weight: 700; }
+
+/* ─── DASHBOARD: % badge + level header ─────────────────────────────────────── */
+.topic-progress-row { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
+.topic-pct-badge {
+  font-size: .68rem; font-weight: 800; color: #fff;
+  border-radius: 10px; padding: 2px 7px; letter-spacing: .02em;
+}
+.path-level-header { display: flex; align-items: center; gap: 10px; padding: 8px 0 4px; margin-top: 8px; }
+.path-level-badge {
+  background: var(--primary-light); color: var(--primary-dark);
+  border-radius: 12px; padding: 3px 12px; font-size: .8rem; font-weight: 800;
+  letter-spacing: .05em;
 }
 
 /* ─── UTILITY ───────────────────────────────────────────────────────────────── */

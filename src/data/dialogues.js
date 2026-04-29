@@ -58,6 +58,46 @@ export const DIALOGUE_SCENARIOS = [
     description: 'Se présenter professionnellement',
     malgasy: 'Fanadihadiana asa',
   },
+  {
+    id: 'ecole',
+    title: 'À l\'École',
+    icon: '🏫',
+    level: 'A1',
+    description: 'Parler de l\'école et des cours',
+    malgasy: 'Ny fiainana an-tsekoly',
+  },
+  {
+    id: 'sport',
+    title: 'Le Sport',
+    icon: '⚽',
+    level: 'A2',
+    description: 'Parler de ses sports préférés',
+    malgasy: 'Ny fanatanjahan-tena',
+  },
+  {
+    id: 'famille',
+    title: 'La Famille',
+    icon: '👨‍👩‍👧',
+    level: 'A1',
+    description: 'Présenter les membres de sa famille',
+    malgasy: 'Ny fianakaviana',
+  },
+  {
+    id: 'shopping',
+    title: 'Faire les Courses',
+    icon: '🛍️',
+    level: 'A2',
+    description: 'Acheter des vêtements au marché',
+    malgasy: 'Mividy fitafiana',
+  },
+  {
+    id: 'weekend',
+    title: 'Le Week-end',
+    icon: '🎉',
+    level: 'A2',
+    description: 'Raconter et planifier son week-end',
+    malgasy: 'Ny herinandro farany',
+  },
 ];
 
 // Chaque dialogue = array de "turns"
@@ -175,6 +215,86 @@ export const DIALOGUES = {
       ]
     }
   ],
+  ecole: [
+    {
+      title: 'Oubli des devoirs',
+      turns: [
+        { speaker: 'Prof', text: 'Good morning, class. Open your books, please.', fr: 'Bonjour, la classe. Ouvrez vos livres, s\'il vous plaît.' },
+        { speaker: 'Élève', text: '___', task: { type: 'fill', answer: 'Good morning, teacher.', french: 'Bonjour, professeur.', hint: '"Professeur" = teacher. "Bonjour" = Good morning.', alternatives: ['Good morning.'] } },
+        { speaker: 'Prof', text: 'Did you do your homework?', fr: 'Est-ce que tu as fait tes devoirs ?' },
+        { speaker: 'Élève', text: '___', task: { type: 'choice', options: ['No, I forgot. I am sorry.', 'Yes, I want to eat.', 'My name is Paul.'], answer: 'No, I forgot. I am sorry.', hint: '"Oublier" = forget. "Désolé" = sorry.' } },
+        { speaker: 'Prof', text: 'Please bring it tomorrow.', fr: 'Apporte-le demain, s\'il te plaît.' },
+        { speaker: 'Élève', text: '___', task: { type: 'fill', answer: 'Yes, I will. Thank you.', french: 'Oui, je le ferai. Merci.', hint: '"Je le ferai" = I will. Futur simple.', alternatives: ['Yes, I will bring it tomorrow.', 'Ok, I will.'] } },
+        { speaker: 'Prof', text: 'What is your favourite subject?', fr: 'Quelle est ta matière préférée ?' },
+        { speaker: 'Élève', text: '___', task: { type: 'fill', answer: 'My favourite subject is English.', french: 'Ma matière préférée est l\'anglais.', hint: '"Matière préférée" = favourite subject. "Anglais" = English.', alternatives: ['I like English.', 'English is my favourite subject.'] } },
+      ]
+    }
+  ],
+
+  sport: [
+    {
+      title: 'Sports préférés',
+      turns: [
+        { speaker: 'Ana', text: 'Do you like sports?', fr: 'Est-ce que tu aimes le sport ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'Yes, I love football.', french: 'Oui, j\'adore le football.', hint: '"J\'adore" = I love. "Football" = football / soccer.', alternatives: ['Yes, I like football.', 'Yes, I love soccer.'] } },
+        { speaker: 'Ana', text: 'How often do you play?', fr: 'Tu joues combien de fois ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'I play twice a week.', french: 'Je joue deux fois par semaine.', hint: '"Deux fois par semaine" = twice a week.', alternatives: ['Twice a week.'] } },
+        { speaker: 'Ana', text: 'Are you good at football?', fr: 'Est-ce que tu es bon au football ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'choice', options: ['Yes, I am quite good.', 'I have a headache.', 'The bus is coming.'], answer: 'Yes, I am quite good.', hint: '"Assez bon" = quite good.' } },
+        { speaker: 'Ana', text: 'What sport do you prefer: running or swimming?', fr: 'Quel sport préfères-tu : la course ou la natation ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'I prefer swimming. It is relaxing.', french: 'Je préfère la natation. C\'est relaxant.', hint: '"Préférer" = prefer. "Relaxant" = relaxing.', alternatives: ['I prefer swimming.', 'Swimming. It is relaxing.'] } },
+      ]
+    }
+  ],
+
+  famille: [
+    {
+      title: 'Présenter sa famille',
+      turns: [
+        { speaker: 'Ami', text: 'Tell me about your family.', fr: 'Parle-moi de ta famille.' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'I have a small family.', french: 'J\'ai une petite famille.', hint: '"Petite famille" = small family.', alternatives: ['My family is small.'] } },
+        { speaker: 'Ami', text: 'How many brothers and sisters do you have?', fr: 'Tu as combien de frères et sœurs ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'I have one brother and two sisters.', french: 'J\'ai un frère et deux sœurs.', hint: '"Frère" = brother. "Sœur" = sister.', alternatives: ['I have a brother and two sisters.'] } },
+        { speaker: 'Ami', text: 'What does your father do?', fr: 'Que fait ton père ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'choice', options: ['He is a farmer.', 'She is at home.', 'I am a student.'], answer: 'He is a farmer.', hint: '"Agriculteur" = farmer. Le père = He.' } },
+        { speaker: 'Ami', text: 'Do you live with your grandparents?', fr: 'Est-ce que tu habites avec tes grands-parents ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'No, they live in the village.', french: 'Non, ils habitent au village.', hint: '"Ils habitent" = they live. "Village" = village.', alternatives: ['No, they live in a village.', 'No. They live in the village.'] } },
+      ]
+    }
+  ],
+
+  shopping: [
+    {
+      title: 'Acheter un tee-shirt',
+      turns: [
+        { speaker: 'Vendeur', text: 'Hello! Can I help you?', fr: 'Bonjour ! Je peux vous aider ?' },
+        { speaker: 'Vous', text: '___', task: { type: 'fill', answer: 'Yes, I am looking for a tee-shirt.', french: 'Oui, je cherche un tee-shirt.', hint: '"Je cherche" = I am looking for.', alternatives: ['Yes, I need a tee-shirt.', 'I am looking for a tee-shirt.'] } },
+        { speaker: 'Vendeur', text: 'What size do you need?', fr: 'Quelle taille vous faut-il ?' },
+        { speaker: 'Vous', text: '___', task: { type: 'choice', options: ['Medium, please.', 'I want to go home.', 'It is too expensive.'], answer: 'Medium, please.', hint: 'Les tailles : small, medium, large' } },
+        { speaker: 'Vendeur', text: 'What colour do you prefer?', fr: 'Quelle couleur préférez-vous ?' },
+        { speaker: 'Vous', text: '___', task: { type: 'fill', answer: 'I prefer blue or black.', french: 'Je préfère le bleu ou le noir.', hint: '"Bleu" = blue. "Noir" = black.', alternatives: ['Blue or black, please.', 'I like blue or black.'] } },
+        { speaker: 'Vendeur', text: 'This one is five thousand ariary.', fr: 'Celui-ci coûte cinq mille ariary.' },
+        { speaker: 'Vous', text: '___', task: { type: 'fill', answer: 'I will take it. Thank you.', french: 'Je le prends. Merci.', hint: '"Je le prends" = I will take it.', alternatives: ['I\'ll take it. Thank you.', 'OK, I will take it.'] } },
+      ]
+    }
+  ],
+
+  weekend: [
+    {
+      title: 'Le week-end passé',
+      turns: [
+        { speaker: 'Marie', text: 'What did you do last weekend?', fr: 'Qu\'est-ce que tu as fait le week-end dernier ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'I went to the beach with my family.', french: 'Je suis allé à la plage avec ma famille.', hint: '"Aller" (passé) = went. "Plage" = beach.', alternatives: ['I visited the beach with my family.', 'I went to the beach with my family'] } },
+        { speaker: 'Marie', text: 'Did you swim?', fr: 'Est-ce que tu as nagé ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'choice', options: ['Yes, the water was great!', 'No, I like coffee.', 'I am studying now.'], answer: 'Yes, the water was great!', hint: 'Répondre au passé : Did + Yes/No + détail.' } },
+        { speaker: 'Marie', text: 'What will you do next weekend?', fr: 'Qu\'est-ce que tu feras le prochain week-end ?' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'I will visit my grandparents.', french: 'Je rendrai visite à mes grands-parents.', hint: '"Je rendrai visite" = I will visit. Futur avec will.', alternatives: ['I\'ll visit my grandparents.', 'I will see my grandparents.'] } },
+        { speaker: 'Marie', text: 'That sounds nice! Have a good weekend.', fr: 'Ça a l\'air bien ! Bon week-end.' },
+        { speaker: 'Paul', text: '___', task: { type: 'fill', answer: 'Thank you! You too!', french: 'Merci ! Toi aussi !', hint: '"Toi aussi" = You too.', alternatives: ['Thank you! Same to you!', 'Thanks, you too!'] } },
+      ]
+    }
+  ],
+
 };
 
 export function getDialoguesByScenario(scenarioId) {

@@ -127,9 +127,39 @@ export function renderDashboard() {
   return container;
 }
 
+// Grammar topics that have a theory page
+const GRAMMAR_THEORY_MAP = {
+  presentSimple:     'presentSimple',
+  presentContinuous: 'presentContinuous',
+  pastSimple:        'pastSimple',
+  futureSimple:      'futureSimple',
+  modals:            'modals',
+  prepositions:      'prepositions',
+  questions:         'questions',
+  comparatives:      'comparatives',
+  articles:          'articles',
+  plurals:           'plurals',
+  therebeis:         'therebeis',
+  pronouns:          'pronouns',
+  pastContinuous:    'pastContinuous',
+  presentPerfect:    'presentPerfect',
+  conditionals:      'conditionals',
+  passiveVoice:      'passiveVoice',
+  reportedSpeech:    'reportedSpeech',
+  pastPerfect:       'pastPerfect',
+  futurePerfect:     'futurePerfect',
+  interrogative:     'interrogative',
+  imperatives:       'imperatives',
+  someAny:           'someAny',
+  verbs:             'presentSimple',    // best grammar ref for verbs
+  timeAdverbs:       'presentSimple',    // adverbs link to presentSimple
+};
+
 function renderLearningPath(profile) {
   const completedTopics = profile.completedTopics || [];
 
+  // Group topics by level for section headers
+  let lastLevel = null;
   return TOPICS.map((topic, i) => {
     const unlocked = isTopicUnlocked(topic.id, completedTopics);
     const percent = getTopicCompletionPercent(profile, topic.id);
@@ -139,30 +169,44 @@ function renderLearningPath(profile) {
     const done = progress?.done || 0;
 
     const statusClass = isCompleted ? 'completed' : (unlocked ? 'available' : 'locked');
-    const statusIcon = isCompleted ? '✅' : (unlocked ? '' : '🔒');
+    const theoryId = GRAMMAR_THEORY_MAP[topic.id] || null;
 
-    const grammarTopics = ['presentSimple','presentContinuous','pastSimple','futureSimple'];
-    const theoryId = grammarTopics.includes(topic.id) ? topic.id : null;
+    // Lock reason: which prerequisites are missing
+    const missingReqs = topic.unlockRequires
+      ? topic.unlockRequires.filter(r => !completedTopics.includes(r))
+      : [];
+    const lockMsg = missingReqs.length > 0
+      ? `Complète d'abord : ${missingReqs.join(', ')}`
+      : 'Continue pour débloquer';
 
-    return `
+    // Level section header
+    let sectionHeader = '';
+    if (topic.level !== lastLevel) {
+      lastLevel = topic.level;
+      sectionHeader = `<div class="path-level-header"><span class="path-level-badge">${topic.level}</span></div>`;
+    }
+
+    return sectionHeader + `
       <div class="topic-card ${statusClass}" data-topic="${topic.id}" style="--topic-color:${topic.color};--topic-dark:${topic.colorDark}">
         <div class="topic-card-left">
           <div class="topic-icon" style="background:${topic.color}">${topic.icon}</div>
           <div class="topic-info">
             <div class="topic-name">${topic.label}</div>
-            <div class="topic-level-tag">${topic.level}</div>
             ${unlocked ? `
               <div class="topic-progress-bar-wrap">
                 <div class="topic-progress-bar">
                   <div class="topic-progress-fill" style="width:${percent}%;background:${topic.colorDark}"></div>
                 </div>
-                <span class="topic-progress-text">${done} exercice${done !== 1 ? 's' : ''} · ${correct} correct${correct !== 1 ? 's' : ''}</span>
+                <div class="topic-progress-row">
+                  <span class="topic-progress-text">${done} ex · ${correct} ✓</span>
+                  ${percent > 0 ? `<span class="topic-pct-badge" style="background:${topic.colorDark}">${percent}%</span>` : ''}
+                </div>
               </div>
-            ` : `<div class="topic-locked-msg">Complète d'autres sujets pour débloquer</div>`}
+            ` : `<div class="topic-locked-msg">🔒 ${lockMsg}</div>`}
           </div>
         </div>
         <div class="topic-card-right">
-          ${statusIcon ? `<span class="status-icon">${statusIcon}</span>` : ''}
+          ${isCompleted ? '<span class="status-icon">✅</span>' : ''}
           ${unlocked && theoryId ? `<button class="topic-theory-btn" data-topic="${theoryId}" title="Voir la théorie">📖</button>` : ''}
           ${unlocked ? `<span class="topic-arrow">›</span>` : ''}
         </div>
