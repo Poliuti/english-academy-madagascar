@@ -73,7 +73,16 @@ export function renderTutor() {
   // ─── Connectivity check (with auto-retry) ─────────────────────────────────
   let _ollamaRetry = null;
 
-  checkOllama();
+  // HTTPS pages (Vercel) cannot reach http://localhost — browser blocks it
+  // as "Mixed Content". The tutor only works via avvia.bat (localhost:3000).
+  const _isHttps = location.protocol === 'https:';
+
+  if (_isHttps) {
+    setStatus('offline',
+      '🔐 Tutor IA disponible uniquement en local (avvia.bat → localhost:3000)');
+  } else {
+    checkOllama();
+  }
 
   async function checkOllama() {
     clearTimeout(_ollamaRetry);
@@ -166,7 +175,9 @@ export function renderTutor() {
       history.push({ role: 'assistant', content: reply });
     } catch (err) {
       thinkingEl.remove();
-      if (err.name === 'AbortError' || err.message?.includes('fetch')) {
+      if (_isHttps) {
+        appendError('🔐 Le Tutor IA fonctionne uniquement en local.<br><br>Lance <strong>avvia.bat</strong> sur ton PC et ouvre <strong>http://localhost:3000</strong>');
+      } else if (err.name === 'AbortError' || err.message?.includes('fetch')) {
         appendError('⚠️ Ollama ne répond pas. Assure-toi qu\'Ollama est lancé sur ce PC.\n\nCommande : <code>ollama serve</code>');
       } else {
         appendError(`Erreur : ${err.message}`);
