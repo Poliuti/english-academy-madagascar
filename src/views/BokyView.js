@@ -101,6 +101,29 @@ export function renderBoky(chapterId) {
   return container;
 }
 
+// ─── Boky chapter → Grammar topic mapping ────────────────────────────────────
+// Only chapters that have a corresponding grammar+exercise section are listed.
+// toBe and irregularVerbs are Boky-only reference → no link.
+const BOKY_TO_GRAMMAR = {
+  pronouns:          'pronouns',
+  articles:          'articles',
+  plurals:           'plurals',
+  therebeis:         'therebeis',
+  questions:         'questions',
+  presentSimple:     'presentSimple',
+  presentContinuous: 'presentContinuous',
+  pastSimple:        'pastSimple',
+  futureSimple:      'futureSimple',
+  modals:            'modals',
+  presentPerfect:    'presentPerfect',
+  pastContinuous:    'pastContinuous',
+  pastPerfect:       'pastPerfect',
+  passiveVoice:      'passiveVoice',
+  conditionals:      'conditionals',
+  reportedSpeech:    'reportedSpeech',
+  futurePerfect:     'futurePerfect',
+};
+
 // ─── Chapter renderer ─────────────────────────────────────────────────────────
 function renderChapter(chapter, l) {
   const data = chapter[l];
@@ -108,7 +131,8 @@ function renderChapter(chapter, l) {
 
   const isUncertain = l === 'mg'; // flag uncertain MG translations
   const trLabel = l === 'fr' ? '🇫🇷' : '🇲🇬';
-  const grammarLabel = l === 'fr' ? '✏️ Pratique & Exercices → Grammaire' : '✏️ Fampiharana → Grammaire';
+  const grammarRef   = BOKY_TO_GRAMMAR[chapter.id];
+  const grammarLabel = l === 'fr' ? '✏️ Faire les exercices → Grammaire' : '✏️ Fanazarana → Grammaire';
 
   return `
     <div class="boky-chapter">
@@ -177,9 +201,9 @@ function renderChapter(chapter, l) {
         </div>
       ` : ''}
 
-      ${chapter.id && chapter.id !== 'irregularVerbs' ? `
+      ${grammarRef ? `
         <div class="boky-cta">
-          <button class="boky-go-grammar btn-secondary" data-ref="${chapter.id}">
+          <button class="boky-go-grammar btn-secondary" data-ref="${grammarRef}">
             ${grammarLabel}
           </button>
         </div>

@@ -83,6 +83,7 @@ function speakFallback(text, onEnd) {
  * @param {{ onEnd?: Function }} opts
  */
 export function speak(text, { onEnd = null } = {}) {
+  stop(); // ensure only one audio at a time across WAV + Web Speech API
   const key = normalize(text);
 
   loadMap().then(() => {

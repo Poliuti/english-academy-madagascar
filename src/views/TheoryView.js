@@ -18,7 +18,7 @@ export function renderTheory(topicId) {
         <!-- Sidebar -->
         <aside class="theory-sidebar">
           <button class="btn-back sidebar-back" id="btn-back">← Retour</button>
-          <h3 class="sidebar-title">📚 Théorie</h3>
+          <h3 class="sidebar-title">📚 Grammaire</h3>
           <nav class="sidebar-nav">
             ${theoryTopics.map(t => `
               <button
@@ -336,8 +336,7 @@ const GRAMMAR_TO_BOKY = {
   futurePerfect:     'futurePerfect',
   questions:         'questions',
   pronouns:          'pronouns',
-  prepositions:      'prepositions',
-  comparatives:      'comparatives',
+  // prepositions and comparatives have no boky chapter → button hidden for these
 };
 
 function renderGrammar(topicId) {
@@ -367,7 +366,7 @@ function renderGrammar(topicId) {
             ${s.examples.map(ex => `
               <div class="example-row">
                 <div class="example-en">
-                  <button class="tts-btn" data-text="${escHtml(ex.en.replace(/<[^>]+>/g, ''))}" title="Écouter">▶</button>
+                  <button class="tts-btn" data-text="${escHtml(ex.en.replace(/<[^>]+>/g,'').replace(/\s*\([^)]*\)\s*/g,' ').trim())}" title="Écouter">▶</button>
                   <span>${ex.en}</span>
                 </div>
                 <div class="example-fr">🇫🇷 ${ex.fr}</div>

@@ -2232,6 +2232,35 @@ export const bokyChapters = [
 
 ];
 
+// ─── Natural textbook progression order ──────────────────────────────────────
+// (Cambridge / Oxford English Grammar in Use style)
+const _CHAPTER_ORDER = [
+  'pronouns',          // A1 — subject/object pronouns first
+  'toBe',              // A1 — most basic verb
+  'articles',          // A1 — a / an / the
+  'plurals',           // A1 — singular → plural
+  'therebeis',         // A1 — there is / there are
+  'questions',         // A1–A2 — question words (introduced early)
+  'presentSimple',     // A2 — first main tense
+  'presentContinuous', // A2 — contrast with present simple
+  'pastSimple',        // A2–B1 — past tense
+  'irregularVerbs',    // A2 — needed for past simple
+  'futureSimple',      // A2–B1 — will / going to
+  'modals',            // A2 — can / should / must
+  'presentPerfect',    // B1 — have / has + p.p.
+  'pastContinuous',    // B1 — was/were + -ing
+  'pastPerfect',       // B1 — had + p.p.
+  'passiveVoice',      // B1 — is done / was done
+  'conditionals',      // B1–B2 — if clauses
+  'reportedSpeech',    // B1–B2 — he said that…
+  'futurePerfect',     // B2 — will have done
+];
+bokyChapters.sort((a, b) => {
+  const ai = _CHAPTER_ORDER.indexOf(a.id);
+  const bi = _CHAPTER_ORDER.indexOf(b.id);
+  return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+});
+
 // ─── Chapter index for sidebar ───────────────────────────────────────────────
 export const bokyIndex = bokyChapters.map(c => ({
   id: c.id,

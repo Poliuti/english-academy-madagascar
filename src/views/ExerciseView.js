@@ -389,7 +389,20 @@ function finishSession(container, state, profile) {
   `;
 
   container.querySelector('#btn-again').addEventListener('click', () => {
-    location.hash = `#exercise?topic=${state.topicId}&mode=${state.mode}`;
+    // Cannot rely on hashchange (same hash = no event). Re-render directly.
+    const newEx = loadExercises(state.topicId, state.mode, profile);
+    if (!newEx.length) return;
+    const newState = {
+      exercises:  newEx,
+      current:    0,
+      results:    [],
+      usedHint:   false,
+      answered:   false,
+      topicId:    state.topicId,
+      mode:       state.mode,
+      xpEarned:   0,
+    };
+    renderExerciseCard(container, newState, profile);
   });
   container.querySelector('#btn-dashboard').addEventListener('click', () => {
     location.hash = '#dashboard';
