@@ -8,6 +8,9 @@ echo ============================================
 echo.
 
 REM ── 1. Avvia Ollama in background (se non già attivo) ──────────────────
+REM     OLLAMA_ORIGINS=* abilita le richieste dal browser (CORS fix)
+set OLLAMA_ORIGINS=*
+
 tasklist /FI "IMAGENAME eq ollama.exe" 2>nul | find /I "ollama.exe" >nul
 if %errorlevel% neq 0 (
     echo [1/3] Avvio Ollama in background...
