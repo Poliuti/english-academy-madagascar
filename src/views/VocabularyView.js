@@ -8,22 +8,29 @@ export function renderVocabulary(categoryId) {
   let current = categoryId && VOCABULARY[categoryId] ? categoryId : VOCAB_CATEGORIES[0].id;
   let search = '';
   let flashMode = false;
+  let matchMode = false;
   // Flashcard state
   let flashDeck = [];
   let flashIndex = 0;
   let flashFlipped = false;
   let flashKnown = [];
   let flashReview = [];
+  // Match state
+  let matchPairs = [];
+  let matchSelected = null;   // { idx, side }
+  let matchMatched = new Set();
+  let matchMoves = 0;
+  const MATCH_SIZE = 6;
 
   function startFlash() {
     const words = VOCABULARY[current] || [];
-    // Shuffle
     flashDeck = [...words].sort(() => Math.random() - 0.5);
     flashIndex = 0;
     flashFlipped = false;
     flashKnown = [];
     flashReview = [];
     flashMode = true;
+    matchMode = false;
     render();
   }
 
@@ -32,16 +39,34 @@ export function renderVocabulary(categoryId) {
     render();
   }
 
+  function startMatch() {
+    const words = VOCABULARY[current] || [];
+    const sample = [...words].sort(() => Math.random() - 0.5).slice(0, MATCH_SIZE);
+    matchPairs = sample;
+    matchSelected = null;
+    matchMatched = new Set();
+    matchMoves = 0;
+    matchMode = true;
+    flashMode = false;
+    render();
+  }
+
+  function stopMatch() {
+    matchMode = false;
+    render();
+  }
+
   function render() {
+    const inGame = flashMode || matchMode;
     container.innerHTML = `
       <div class="vocab-layout">
         <aside class="vocab-sidebar">
           <button class="btn-back sidebar-back" id="btn-back">← Retour</button>
           <h3 class="sidebar-title">📚 Vocabulaire</h3>
-          ${flashMode ? '' : `<input type="text" class="vocab-search" id="vocab-search" placeholder="🔎 Rechercher..." value="${escHtml(search)}" />`}
+          ${inGame ? '' : `<input type="text" class="vocab-search" id="vocab-search" placeholder="🔎 Rechercher..." value="${escHtml(search)}" />`}
           <nav class="sidebar-nav">
             ${VOCAB_CATEGORIES.map(c => `
-              <button class="sidebar-item ${c.id === current ? 'active' : ''}" data-cat="${c.id}">
+              <button class="sidebar-item ${c.id === current && !inGame ? 'active' : ''}" data-cat="${c.id}">
                 <span>${c.icon}</span>
                 <span>${c.label}</span>
                 <span class="sidebar-level">${c.level}</span>
@@ -50,7 +75,7 @@ export function renderVocabulary(categoryId) {
           </nav>
         </aside>
         <main class="vocab-main">
-          ${flashMode ? renderFlashcardUI() : renderCategory(current, search)}
+          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : renderCategory(current, search)}
         </main>
       </div>
     `;
@@ -141,6 +166,7 @@ export function renderVocabulary(categoryId) {
   function bindEvents() {
     container.querySelector('#btn-back').addEventListener('click', () => {
       if (flashMode) { stopFlash(); return; }
+      if (matchMode) { stopMatch(); return; }
       location.hash = '#dashboard';
     });
 
@@ -149,9 +175,50 @@ export function renderVocabulary(categoryId) {
         current = btn.dataset.cat;
         search = '';
         flashMode = false;
+        matchMode = false;
         render();
       });
     });
+
+    if (matchMode) {
+      const stopBtn = container.querySelector('#btn-match-stop');
+      if (stopBtn) stopBtn.addEventListener('click', stopMatch);
+      const againBtn = container.querySelector('#btn-match-again');
+      if (againBtn) againBtn.addEventListener('click', startMatch);
+
+      container.querySelectorAll('.match-card:not([disabled])').forEach(card => {
+        card.addEventListener('click', () => {
+          const idx = +card.dataset.idx;
+          const side = card.dataset.side;
+          if (matchMatched.has(idx)) return;
+
+          if (!matchSelected) {
+            matchSelected = { idx, side };
+            render();
+            return;
+          }
+          // Same side clicked again — re-select
+          if (matchSelected.side === side) {
+            matchSelected = { idx, side };
+            render();
+            return;
+          }
+          // Opposite side clicked — check match
+          matchMoves++;
+          if (matchSelected.idx === idx) {
+            // ✅ Correct pair
+            matchMatched.add(idx);
+            speak(matchPairs[idx].en);
+            matchSelected = null;
+          } else {
+            // ❌ Wrong — flash error then clear
+            matchSelected = null;
+          }
+          render();
+        });
+      });
+      return;
+    }
 
     if (!flashMode) {
       const searchInput = container.querySelector('#vocab-search');
@@ -162,9 +229,11 @@ export function renderVocabulary(categoryId) {
           if (main) main.innerHTML = renderCategory(current, search);
           bindTts();
           bindFlashStart();
+          bindMatchStart();
         });
       }
       bindFlashStart();
+      bindMatchStart();
     } else {
       // Flash mode events
       const stopBtn = container.querySelector('#btn-flash-stop');
@@ -217,9 +286,79 @@ export function renderVocabulary(categoryId) {
     bindTts();
   }
 
+  function renderMatchUI() {
+    const total = matchPairs.length;
+    const done = matchMatched.size;
+
+    if (done === total) {
+      return `
+        <div class="flash-summary">
+          <div class="flash-summary-icon">🎉</div>
+          <h2 class="flash-summary-title">Bravo ! Tout trouvé !</h2>
+          <div class="flash-summary-stats">
+            <div class="flash-stat flash-stat-known">
+              <div class="flash-stat-num">${matchMoves}</div>
+              <div class="flash-stat-label">🔀 Tentatives</div>
+            </div>
+            <div class="flash-stat flash-stat-review">
+              <div class="flash-stat-num">${total}</div>
+              <div class="flash-stat-label">✅ Paires trouvées</div>
+            </div>
+          </div>
+          <button class="btn-primary flash-retry-btn" id="btn-match-again">🔀 Nouveau round</button>
+          <button class="btn-secondary flash-stop-btn" id="btn-match-stop">← Retour à la liste</button>
+        </div>
+      `;
+    }
+
+    // Build shuffled EN and FR columns
+    const enOrder = [...matchPairs.keys()].sort(() => Math.random() - 0.5);
+    const frOrder = [...matchPairs.keys()].sort(() => Math.random() - 0.5);
+
+    return `
+      <div class="match-wrap">
+        <div class="match-topbar">
+          <span class="match-info">${done}/${total} paires · ${matchMoves} essais</span>
+          <button class="flash-stop-x" id="btn-match-stop" title="Arrêter">✕</button>
+        </div>
+        <div class="match-columns">
+          <div class="match-col" id="match-col-en">
+            ${enOrder.map(i => {
+              const w = matchPairs[i];
+              const isMatched = matchMatched.has(i);
+              const isSelected = matchSelected?.side === 'en' && matchSelected?.idx === i;
+              return `<button
+                class="match-card match-en ${isMatched ? 'matched' : ''} ${isSelected ? 'selected' : ''}"
+                data-idx="${i}" data-side="en"
+                ${isMatched ? 'disabled' : ''}
+              >${w.icon ? w.icon + ' ' : ''}${escHtml(w.en)}</button>`;
+            }).join('')}
+          </div>
+          <div class="match-col" id="match-col-fr">
+            ${frOrder.map(i => {
+              const w = matchPairs[i];
+              const isMatched = matchMatched.has(i);
+              const isSelected = matchSelected?.side === 'fr' && matchSelected?.idx === i;
+              return `<button
+                class="match-card match-fr ${isMatched ? 'matched' : ''} ${isSelected ? 'selected' : ''}"
+                data-idx="${i}" data-side="fr"
+                ${isMatched ? 'disabled' : ''}
+              >🇫🇷 ${escHtml(w.fr)}</button>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   function bindFlashStart() {
     const btn = container.querySelector('#btn-flash-start');
     if (btn) btn.addEventListener('click', startFlash);
+  }
+
+  function bindMatchStart() {
+    const btn = container.querySelector('#btn-match-start');
+    if (btn) btn.addEventListener('click', startMatch);
   }
 
   function bindTts() {
@@ -261,9 +400,10 @@ function renderCategory(catId, search) {
           <span class="vocab-count">${words.length} mot${words.length !== 1 ? 's' : ''}</span>
         </div>
         ${words.length > 0 ? `
-          <button class="btn-primary flash-start-btn" id="btn-flash-start" title="Mode Flashcards">
-            🃏 Flashcards
-          </button>
+          <div class="vocab-game-btns">
+            <button class="btn-primary flash-start-btn" id="btn-flash-start" title="Mode Flashcards">🃏 Flashcards</button>
+            <button class="btn-secondary match-start-btn" id="btn-match-start" title="Jeu de mémorisation">🔀 Match</button>
+          </div>
         ` : ''}
       </div>
       ${words.length === 0 ? `
@@ -273,6 +413,7 @@ function renderCategory(catId, search) {
           ${words.map(w => `
             <div class="vocab-card">
               <div class="vocab-card-top">
+                ${w.icon ? `<div class="vocab-icon">${w.icon}</div>` : ''}
                 <div class="vocab-en">
                   ${escHtml(w.en)}
                   <button class="tts-btn" data-text="${escHtml(w.en)}" title="Écouter">▶</button>

@@ -1158,6 +1158,56 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 }
 .results-next-lv { width: 100%; margin-bottom: 8px; }
 
+/* ─── VOCAB: game buttons + icon ────────────────────────────────────────────── */
+.vocab-game-btns { display: flex; gap: 10px; flex-shrink: 0; }
+.vocab-icon { font-size: 1.6rem; line-height: 1; }
+
+/* ─── MATCH GAME ─────────────────────────────────────────────────────────────── */
+.match-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 20px; width: 100%; max-width: 680px; margin: 0 auto; padding: 20px 0;
+}
+.match-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; gap: 12px;
+}
+.match-info { font-size: .9rem; color: var(--text-light); font-weight: 600; }
+
+.match-columns {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; width: 100%;
+}
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+
+.match-card {
+  padding: 12px 16px; border-radius: var(--radius);
+  border: 2px solid var(--border); background: var(--card);
+  font-size: .95rem; font-weight: 600; color: var(--text);
+  cursor: pointer; text-align: center;
+  transition: border-color .15s, background .15s, transform .1s, opacity .2s;
+  min-height: 52px; display: flex; align-items: center; justify-content: center;
+  word-break: break-word;
+}
+.match-card:hover:not([disabled]):not(.matched) {
+  border-color: var(--primary); background: var(--primary-light); color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+.match-card.selected {
+  border-color: var(--primary); background: var(--primary);
+  color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.match-card.matched {
+  border-color: #388E3C; background: #E8F5E9; color: #1B5E20;
+  opacity: .7; cursor: default;
+}
+.match-card[disabled]:not(.matched) { opacity: .4; cursor: not-allowed; }
+
+@media (max-width: 500px) {
+  .match-columns { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .match-card { font-size: .82rem; padding: 10px 8px; min-height: 46px; }
+  .vocab-game-btns { flex-direction: column; gap: 6px; }
+}
+
 /* ─── UTILITY ───────────────────────────────────────────────────────────────── */
 .hidden { display: none !important; }
 .empty-page { text-align: center; padding: 60px 20px; color: var(--text-muted); }
