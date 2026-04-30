@@ -25,11 +25,12 @@ function normalize(text) {
 // ─── MP3 player ───────────────────────────────────────────────────────────────
 let currentAudio = null;
 
-function playMP3(path, text, onEnd) {
+function playMP3(path, text, onEnd, onError) {
   if (currentAudio) { currentAudio.pause(); currentAudio.src = ''; currentAudio = null; }
   const audio = new Audio(path);
   currentAudio = audio;
   if (onEnd) audio.addEventListener('ended', onEnd, { once: true });
+  if (onError) audio.addEventListener('error', onError, { once: true });
   audio.play().catch(() => {
     // WAV load/play failed → fall back to Web Speech API
     currentAudio = null;
@@ -82,18 +83,24 @@ function speakFallback(text, onEnd) {
  * @param {string} text  - English text to speak
  * @param {{ onEnd?: Function }} opts
  */
-export function speak(text, { onEnd = null } = {}) {
+export function speak(text, { onEnd = null, onError = null } = {}) {
   stop(); // ensure only one audio at a time across WAV + Web Speech API
   const key = normalize(text);
 
   loadMap().then(() => {
     const path = audioMap[key];
     if (path) {
-      playMP3(path, text, onEnd);
+      playMP3(path, text, onEnd, onError);
     } else {
       speakFallback(text, onEnd);
     }
   });
+}
+
+/** Returns true if a WAV or Web Speech utterance is currently active */
+export function isPlaying() {
+  return !!(currentAudio && !currentAudio.paused) ||
+         ('speechSynthesis' in window && speechSynthesis.speaking);
 }
 
 export function stop() {

@@ -83,9 +83,11 @@ export function renderBoky(chapterId) {
 
     container.querySelectorAll('.tts-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const text = btn.dataset.text;
+        if (btn.disabled) return;
+        btn.disabled = true;
         btn.textContent = '🔊';
-        speak(text, { onEnd: () => { btn.textContent = '▶'; } });
+        const restore = () => { btn.disabled = false; btn.textContent = '▶'; };
+        speak(btn.dataset.text, { onEnd: restore, onError: restore });
       });
     });
 

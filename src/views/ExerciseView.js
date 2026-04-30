@@ -295,15 +295,18 @@ function bindExerciseEvents(container, state, profile, ex) {
     else location.hash = '#dashboard';
   });
 
-  // Listen button
+  // Listen button — single instance guard
   const listenBtn = container.querySelector('#btn-listen');
   if (listenBtn) {
     listenBtn.addEventListener('click', () => {
+      if (listenBtn.disabled) return;
+      listenBtn.disabled = true;
       listenBtn.textContent = '🔊 En cours...';
-      speak(ex.audio, {
-        onEnd: () => { listenBtn.textContent = '▶ Réécouter'; }
-      });
-      setTimeout(() => speak(ex.audio), 100);
+      const restore = () => {
+        listenBtn.disabled = false;
+        listenBtn.textContent = '▶ Réécouter';
+      };
+      speak(ex.audio, { onEnd: restore, onError: restore });
     });
   }
 

@@ -225,9 +225,14 @@ export function renderVocabulary(categoryId) {
   function bindTts() {
     container.querySelectorAll('.tts-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const text = btn.dataset.text;
+        if (btn.disabled) return;
+        btn.disabled = true;
         btn.classList.add('playing');
-        speak(text, { onEnd: () => btn.classList.remove('playing') });
+        const restore = () => {
+          btn.disabled = false;
+          btn.classList.remove('playing');
+        };
+        speak(btn.dataset.text, { onEnd: restore, onError: restore });
       });
     });
   }
