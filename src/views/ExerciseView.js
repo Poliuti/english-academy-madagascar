@@ -76,6 +76,13 @@ const INSTRUCTION_MG = {
   'Complétez la réponse courte.':                "Fenoy ny valiny fohy.",
   'Donnez le Past Simple.':                      "Omeo ny Past Simple.",
   'Complétez avec le participe passé.':          "Fenoy amin'ny participe passé.",
+  'Choisissez la bonne réponse.':                "Safidio ny valiny mety.",
+  'Choisissez la bonne option.':                 "Safidio ny safidy mety.",
+  'Écris une phrase avec le mot donné.':         "Sorata fehezanteny iray mampiasa ny teny omena.",
+  'Utilisez le mot donné dans une phrase.':      "Mampiasao ny teny omena anaty fehezanteny.",
+  'Traduisez en français.':                      "Adikao amin'ny teny frantsay.",
+  'Écoutez et répondez à la question.':          "Henoy ka valio ny fanontaniana.",
+  'Remettez les mots dans le bon ordre.':        "Ataovy ny teny araka ny filaharan'ny mety.",
 };
 function getMgInstruction(fr) {
   if (INSTRUCTION_MG[fr]) return INSTRUCTION_MG[fr];
@@ -268,17 +275,57 @@ function renderQuestion(ex) {
       </div>
     `;
   }
+  if (ex.type === 'translate-fr') {
+    return `<div class="ex-question translate-q"><span class="flag">🇬🇧</span> ${escHtml(ex.english)}</div>`;
+  }
+  if (ex.type === 'multiple-choice') {
+    const q = ex.question || ex.template || '';
+    return `
+      <div class="ex-question mc-q">
+        <p class="mc-sentence">${escHtml(q).replace('___', '<span class="blank">___</span>')}</p>
+        <div class="mc-options" id="mc-options">
+          ${ex.options.map((opt, i) => `
+            <button class="mc-option" data-idx="${i}" data-value="${escHtml(opt)}">${escHtml(opt)}</button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+  if (ex.type === 'listening-comp') {
+    return `
+      <div class="ex-question listening-q">
+        <button class="btn-listen" id="btn-listen">
+          ${isSupported() ? '▶ Écouter' : '🔇 Audio non disponible'}
+        </button>
+        <p class="listen-hint comp-question">❓ ${escHtml(ex.question || '')}</p>
+      </div>
+    `;
+  }
+  if (ex.type === 'free-production') {
+    return `
+      <div class="ex-question free-prod-q">
+        <p class="fp-label">📝 Utilise ce mot dans une phrase :</p>
+        <p class="fp-keyword">${escHtml(ex.keyword)}</p>
+      </div>
+    `;
+  }
   return '';
 }
 
 function renderAnswerArea(ex) {
   if (ex.type === 'word-order') return ''; // handled inline
+  if (ex.type === 'multiple-choice') return ''; // options are clickable buttons
+  const placeholder = ex.type === 'translate-fr'
+    ? 'Ta réponse en français...'
+    : ex.type === 'free-production'
+      ? 'Écris ta phrase ici...'
+      : 'Ta réponse en anglais...';
   return `
     <input
       type="text"
       id="answer-input"
       class="answer-input"
-      placeholder="Ta réponse en anglais..."
+      placeholder="${placeholder}"
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
@@ -313,6 +360,16 @@ function bindExerciseEvents(container, state, profile, ex) {
   // Word order
   if (ex.type === 'word-order') {
     setupWordOrder(container);
+  }
+
+  // Multiple choice — clicking an option selects it
+  if (ex.type === 'multiple-choice') {
+    container.querySelectorAll('.mc-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('.mc-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
   }
 
   // Hint
@@ -386,14 +443,24 @@ function getInputAnswer(container, ex) {
     const answerArea = container.querySelector('#wo-answer');
     return answerArea?._getAnswer?.() || '';
   }
+  if (ex.type === 'multiple-choice') {
+    const sel = container.querySelector('.mc-option.selected');
+    return sel ? sel.dataset.value : '';
+  }
   return container.querySelector('#answer-input')?.value?.trim() || '';
 }
 
 function handleSubmit(container, state, profile, ex) {
   const rawAnswer = getInputAnswer(container, ex);
   if (!rawAnswer) {
-    const input = container.querySelector('#answer-input');
-    if (input) { input.classList.add('shake'); setTimeout(() => input.classList.remove('shake'), 400); }
+    // For MC, shake the options; for text, shake the input
+    if (ex.type === 'multiple-choice') {
+      const opts = container.querySelector('#mc-options');
+      if (opts) { opts.classList.add('shake'); setTimeout(() => opts.classList.remove('shake'), 400); }
+    } else {
+      const input = container.querySelector('#answer-input');
+      if (input) { input.classList.add('shake'); setTimeout(() => input.classList.remove('shake'), 400); }
+    }
     return;
   }
 
@@ -453,10 +520,11 @@ function showFeedback(container, correct, ex, rawAnswer, xp) {
   const hintBtn = container.querySelector('#btn-hint');
   if (hintBtn) hintBtn.style.display = 'none';
 
-  // Disable input
+  // Disable input / options after submit
   const input = container.querySelector('#answer-input');
   if (input) input.disabled = true;
   container.querySelectorAll('.wo-word, .wo-chip').forEach(el => el.style.pointerEvents = 'none');
+  container.querySelectorAll('.mc-option').forEach(el => { el.disabled = true; });
 }
 
 function nextOrFinish(container, state, profile) {
@@ -651,6 +719,12 @@ function checkAnswer(raw, ex) {
     .replace(/i'd/g,      'i would')
     .replace(/i'll/g,     'i will');
 
+  // Free production: correct if the keyword appears and answer is ≥ 4 words
+  if (ex.type === 'free-production') {
+    const words = raw.trim().split(/\s+/);
+    return words.length >= 4 && raw.toLowerCase().includes(ex.keyword.toLowerCase());
+  }
+
   const ans     = normalize(raw);
   const correct = normalize(ex.answer);
 
@@ -672,6 +746,10 @@ function checkAnswer(raw, ex) {
 
 function getShortQuestion(ex) {
   if (ex.type === 'translate') return `🇫🇷 ${ex.french?.substring(0, 40)}...`;
+  if (ex.type === 'translate-fr') return `🇬🇧 ${ex.english?.substring(0, 40)}...`;
+  if (ex.type === 'multiple-choice') return (ex.question || ex.template || '')?.substring(0, 40) + '...';
+  if (ex.type === 'free-production') return `📝 ${ex.keyword}`;
+  if (ex.type === 'listening-comp') return `🎧 ${ex.question?.substring(0, 30)}...`;
   if (ex.type === 'fill-blank') return ex.template?.substring(0, 40) + '...';
   if (ex.type === 'word-order') return ex.words?.slice(0, 4).join(' ') + '...';
   if (ex.type === 'listening') return '🎧 ' + ex.audio?.substring(0, 30) + '...';
@@ -692,11 +770,15 @@ function renderEmpty(topicId) {
 
 function typeLabel(type) {
   const labels = {
-    'fill-blank': '✏️ Complète',
-    'translate': '🔄 Traduis',
-    'word-order': '🔀 Ordonne',
-    'listening': '🎧 Écoute',
-    'error-correct': '🔍 Corrige',
+    'fill-blank':       '✏️ Complète',
+    'translate':        '🔄 Traduis FR→EN',
+    'translate-fr':     '🔄 Traduis EN→FR',
+    'word-order':       '🔀 Ordonne',
+    'listening':        '🎧 Écoute',
+    'listening-comp':   '🎧 Compréhension',
+    'error-correct':    '🔍 Corrige',
+    'multiple-choice':  '🎯 Choix multiple',
+    'free-production':  '✍️ Production libre',
   };
   return labels[type] || type;
 }

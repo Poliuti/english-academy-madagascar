@@ -1208,6 +1208,32 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   .vocab-game-btns { flex-direction: column; gap: 6px; }
 }
 
+/* ─── EXERCISE: new types ────────────────────────────────────────────────────── */
+/* Multiple-choice */
+.mc-q { display: flex; flex-direction: column; gap: 14px; }
+.mc-sentence { font-size: 1.1rem; font-weight: 600; color: var(--text); }
+.mc-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mc-option {
+  padding: 12px 16px; border-radius: var(--radius);
+  border: 2px solid var(--border); background: var(--card);
+  font-size: 1rem; font-weight: 600; cursor: pointer; transition: all .15s;
+}
+.mc-option:hover:not([disabled]) { border-color: var(--primary); background: var(--primary-light); color: var(--primary-dark); }
+.mc-option.selected { border-color: var(--primary); background: var(--primary); color: #fff; }
+.mc-option[disabled] { opacity: .6; cursor: default; }
+
+/* Free-production */
+.free-prod-q { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.fp-label { font-size: .95rem; color: var(--text-light); }
+.fp-keyword {
+  font-size: 2rem; font-weight: 900; color: var(--primary-dark);
+  background: var(--primary-light); border-radius: var(--radius);
+  padding: 10px 28px; letter-spacing: .04em;
+}
+
+/* Listening comprehension */
+.comp-question { font-size: 1rem; font-weight: 700; color: var(--text); margin-top: 6px; }
+
 /* ─── UTILITY ───────────────────────────────────────────────────────────────── */
 .hidden { display: none !important; }
 .empty-page { text-align: center; padding: 60px 20px; color: var(--text-muted); }

@@ -1514,26 +1514,28 @@ export function getExerciseById(id) {
 
 /**
  * Returns exercises for a specific difficulty tier (1 = easy, 2 = medium, 3 = hard).
- * Assignment strategy:
- *  - If the topic has exercises with mixed `level` values → map A1→1, A2→2, B1/B2→3
- *  - If all exercises share the same `level` → distribute by position (thirds)
- *  - Falls back to full topic pool if a tier has 0 exercises
+ * Strategy:
+ *  - Prefer explicit `diffLevel` field on each exercise (new system).
+ *  - Fallback: map `level` tag A1→1, A2→2, B1/B2→3, or distribute by position.
+ *  - Falls back to full topic pool if a tier has 0 exercises.
  */
 export function getExercisesByLevel(topicId, diffLevel) {
   const pool = exercises[topicId] || [];
   if (!pool.length) return [];
 
-  const LEVEL_TO_DIFF = { A1: 1, A2: 2, B1: 3, 'B1-B2': 3, B2: 3 };
+  // Prefer explicit diffLevel field
+  if (pool.some(e => e.diffLevel != null)) {
+    const filtered = pool.filter(e => e.diffLevel === diffLevel);
+    return filtered.length >= 2 ? filtered : pool;
+  }
 
-  // Check if pool has mixed levels
+  // Legacy fallback: use 'level' string tag
+  const LEVEL_TO_DIFF = { A1: 1, A2: 2, B1: 3, 'B1-B2': 3, B2: 3 };
   const levels = new Set(pool.map(e => e.level));
   let filtered;
-
   if (levels.size > 1) {
-    // Mixed levels → assign by level tag
     filtered = pool.filter(e => (LEVEL_TO_DIFF[e.level] || 2) === diffLevel);
   } else {
-    // Uniform level → distribute by position
     const third = Math.ceil(pool.length / 3);
     const ranges = [
       pool.slice(0, third),
