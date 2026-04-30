@@ -256,9 +256,6 @@ export function renderVocabulary(categoryId) {
         revealBtn.addEventListener('click', () => {
           flashFlipped = true;
           render();
-          // Auto-speak the word
-          const w = flashDeck[flashIndex];
-          if (w) speak(w.en);
         });
       }
 
