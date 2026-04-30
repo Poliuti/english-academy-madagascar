@@ -1,6 +1,6 @@
 // ─── BOKY FAMPIANARANA — Grammaire bilingue FR / MG ─────────────────────────
 // Chaque chapitre contient { fr: {...}, mg: {...} } pour permettre le switch de langue.
-// ⚠️ Les traductions malagasy marquées [?] sont incertaines — à vérifier.
+// ⚠️ Les traductions malagasy marquées sont incertaines — à vérifier.
 
 export const bokyChapters = [
 
@@ -113,18 +113,18 @@ export const bokyChapters = [
       ],
     },
     mg: {
-      intro: "Ny matoanteny <strong>to be</strong> dia ny matoanteny ampiasaina indrindra amin\'ny teny anglisy. Mitovy amin\'ny \"être\" frantsay. Ny teny malagasy dia tsy mampiasa matoanteny mitovy aminy [?], ka ny hoe \"Mpianatra aho\" (Je suis étudiant) dia tsy misy matoanteny eto. Koa sarotra ny hahazo azy, saingy tsy maintsy hadinina.",
+      intro: "Ny matoanteny <strong>to be</strong> dia ny matoanteny ampiasaina indrindra amin\'ny teny anglisy. Mitovy amin\'ny \"être\" frantsay. Ny teny malagasy dia tsy mampiasa matoanteny mitovy aminy, ka ny hoe \"Mpianatra aho\" (Je suis étudiant) dia tsy misy matoanteny eto. Koa sarotra ny hahazo azy, saingy tsy maintsy hadinina.",
       sections: [
         {
           title: 'Présent affirmatif — latabatra feno',
-          content: 'Ny <em>to be</em> amin\'ny présent dia manana endrika telo : <strong>am</strong> (I), <strong>is</strong> (he/she/it), <strong>are</strong> (you/we/they). Ny pronom sujet dia tsy azo atao hofany [?].',
+          content: 'Ny <em>to be</em> amin\'ny présent dia manana endrika telo : <strong>am</strong> (I), <strong>is</strong> (he/she/it), <strong>are</strong> (you/we/they). Ny pronom sujet dia tsy azo atao hofany.',
           rows: [
-            { en: 'I am a student.', tr: 'Mpianatra aho. [?]' },
-            { en: 'You are my friend.', tr: 'Namako ianao. [?]' },
-            { en: 'He is a doctor.', tr: 'Dokotera izy. [?]' },
+            { en: 'I am a student.', tr: 'Mpianatra aho.' },
+            { en: 'You are my friend.', tr: 'Namako ianao.' },
+            { en: 'He is a doctor.', tr: 'Dokotera izy.' },
             { en: 'She is from Madagascar.', tr: 'Malagasy izy.' },
-            { en: 'It is very hot today.', tr: 'Mafana loatra anio. [?]' },
-            { en: 'We are in class.', tr: 'Eo amin\'ny kilasy izahay. [?]' },
+            { en: 'It is very hot today.', tr: 'Mafana loatra anio.' },
+            { en: 'We are in class.', tr: 'Eo amin\'ny kilasy izahay.' },
             { en: 'They are happy.', tr: 'Faly izy ireo.' },
           ]
         },
@@ -132,30 +132,30 @@ export const bokyChapters = [
           title: 'Endrika fohy (contractions)',
           content: 'Amin\'ny resaka andavanandro, ampiasaina ny endrika fohy. Tena ampiasaina matetika ireo ka tsy maintsy fantatrao.',
           rows: [
-            { en: "I'm tired.", tr: 'Reraka aho. [?]' },
-            { en: "You're right.", tr: 'Marina ianao. [?]' },
-            { en: "He's a good teacher.", tr: 'Mpampianatra tsara izy. [?]' },
-            { en: "We're ready.", tr: 'Vonona izahay. [?]' },
-            { en: "They're late.", tr: 'Diso fotoana izy ireo. [?]' },
+            { en: "I'm tired.", tr: 'Reraka aho.' },
+            { en: "You're right.", tr: 'Marina ianao.' },
+            { en: "He's a good teacher.", tr: 'Mpampianatra tsara izy.' },
+            { en: "We're ready.", tr: 'Vonona izahay.' },
+            { en: "They're late.", tr: 'Diso fotoana izy ireo.' },
           ]
         },
         {
           title: 'Présent négatif',
           content: 'Ampiana <strong>not</strong> aorian\'ny am/is/are. Endrika fohy : <em>isn\'t</em>, <em>aren\'t</em>. Ny <em>amn\'t</em> tsy misy — <em>I\'m not</em> foana.',
           rows: [
-            { en: "I'm not hungry.", tr: 'Tsy noana aho. [?]' },
-            { en: "He isn't at school.", tr: 'Tsy any an\'ny sekoly izy. [?]' },
-            { en: "They aren't from here.", tr: 'Tsy avy eto izy ireo. [?]' },
+            { en: "I'm not hungry.", tr: 'Tsy noana aho.' },
+            { en: "He isn't at school.", tr: 'Tsy any an\'ny sekoly izy.' },
+            { en: "They aren't from here.", tr: 'Tsy avy eto izy ireo.' },
           ]
         },
         {
           title: 'Lasa tsotra — was / were',
           content: 'Amin\'ny lasa, <strong>was</strong> ampiasaina amin\'ny I/he/she/it, ary <strong>were</strong> amin\'ny you/we/they.',
           rows: [
-            { en: 'I was at school yesterday.', tr: 'Tao an\'ny sekoly aho omaly. [?]' },
-            { en: 'We were in Antananarivo.', tr: 'Tany Antananarivo izahay. [?]' },
-            { en: "They weren't there.", tr: 'Tsy tao izy ireo. [?]' },
-            { en: 'Was he your teacher?', tr: 'Mpampianatrao ve izy teo aloha? [?]' },
+            { en: 'I was at school yesterday.', tr: 'Tao an\'ny sekoly aho omaly.' },
+            { en: 'We were in Antananarivo.', tr: 'Tany Antananarivo izahay.' },
+            { en: "They weren't there.", tr: 'Tsy tao izy ireo.' },
+            { en: 'Was he your teacher?', tr: 'Mpampianatrao ve izy teo aloha?' },
           ]
         },
       ],
@@ -174,7 +174,7 @@ export const bokyChapters = [
       summary: [
         'Présent : am (I) / is (he,she,it) / are (you,we,they)',
         'Lasa : was (I,he,she,it) / were (you,we,they)',
-        'Négatif : isn\'t, aren\'t, wasn\'t, weren\'t [?]',
+        'Négatif : isn\'t, aren\'t, wasn\'t, weren\'t',
         'Fanontaniana : mifamadika sujet sy verbe',
       ],
     }
@@ -276,18 +276,18 @@ export const bokyChapters = [
       ],
     },
     mg: {
-      intro: "Ny pronoms dia manolo ny anarana mba hialana amin\'ny famenoana [?]. Amin\'ny teny anglisy, ny pronom sujet dia tsy maintsy hita alohan\'ny matoanteny — tsy azo atao atsy [?] toy ny frantsay matetika. Misy karazany maro : sujet, complément, réfléchi.",
+      intro: "Ny pronoms dia manolo ny anarana mba hialana amin\'ny famenoana. Amin\'ny teny anglisy, ny pronom sujet dia tsy maintsy hita alohan\'ny matoanteny — tsy azo atao atsy toy ny frantsay matetika. Misy karazany maro : sujet, complément, réfléchi.",
       sections: [
         {
           title: 'Pronoms sujets — latabatra',
           content: 'Ampiasaina alohan\'ny matoanteny. Tsy azo hofany ireo amin\'ny teny anglisy.',
           rows: [
             { en: 'I am a student.', tr: 'Mpianatra aho. → I = aho' },
-            { en: 'You are my friend.', tr: 'Namako ianao. → You = ianao / ianareo [?]' },
+            { en: 'You are my friend.', tr: 'Namako ianao. → You = ianao / ianareo' },
             { en: 'He speaks English.', tr: 'Miteny anglisy izy. → He = izy (lahy)' },
             { en: 'She lives in Tana.', tr: 'Monina any Tana izy. → She = izy (vavy)' },
-            { en: 'It is raining.', tr: 'Ranonorana. → It = tsy misy mitovy amin\'ny malagasy [?]' },
-            { en: 'We study together.', tr: 'Mianatra miaraka isika. → We = izahay/isika [?]' },
+            { en: 'It is raining.', tr: 'Ranonorana. → It = tsy misy mitovy amin\'ny malagasy' },
+            { en: 'We study together.', tr: 'Mianatra miaraka isika. → We = izahay/isika' },
             { en: 'They are my friends.', tr: 'Sakaizako izy ireo. → They = izy ireo' },
           ]
         },
@@ -295,10 +295,10 @@ export const bokyChapters = [
           title: 'Pronoms compléments',
           content: 'Ampiasaina aorian\'ny matoanteny na préposition.',
           rows: [
-            { en: 'Call me later.', tr: 'Antsoy aho [?] → me' },
+            { en: 'Call me later.', tr: 'Antsoy aho → me' },
             { en: 'I can help you.', tr: 'Afaka manampy anao aho. → you' },
             { en: 'Tell him the truth.', tr: 'Lazao aminy ny marina. → him' },
-            { en: 'This gift is for us.', tr: 'Ny tohana ity dia ho anay. → us [?]' },
+            { en: 'This gift is for us.', tr: 'Ny tohana ity dia ho anay. → us' },
             { en: 'I know them well.', tr: 'Fantatro tsara izy ireo. → them' },
           ]
         },
@@ -306,9 +306,9 @@ export const bokyChapters = [
           title: 'Pronoms réfléchis',
           content: 'Ampiasaina rehefa mitovy ny sujet sy ny complément. Fototra : -self (sing.) / -selves (plur.).',
           rows: [
-            { en: 'I hurt myself.', tr: 'Naharatra tena aho. [?]' },
-            { en: 'He did it himself.', tr: 'Nataony irery izy. [?]' },
-            { en: 'We enjoyed ourselves.', tr: 'Namana tsara izahay. [?]' },
+            { en: 'I hurt myself.', tr: 'Naharatra tena aho.' },
+            { en: 'He did it himself.', tr: 'Nataony irery izy.' },
+            { en: 'We enjoyed ourselves.', tr: 'Namana tsara izahay.' },
           ]
         },
       ],
@@ -320,13 +320,13 @@ export const bokyChapters = [
       tips: [
         'Sujets : I / you / he / she / it / we / they — alohan\'ny matoanteny',
         'Compléments : me / you / him / her / it / us / them — aorian\'ny matoanteny',
-        '"It" ampiasaina amin\'ny toetr\'andro, ora, zavatra, biby [?]',
+        '"It" ampiasaina amin\'ny toetr\'andro, ora, zavatra, biby',
       ],
       summary: [
         'Sujets : I / you / he / she / it / we / they',
         'Compléments : me / you / him / her / it / us / them',
-        'Réfléchis : myself / yourself / himself / herself / itself / ourselves / themselves [?]',
-        '"It" tsy maintsy ao amin\'ny météo sy ora [?]',
+        'Réfléchis : myself / yourself / himself / herself / itself / ourselves / themselves',
+        '"It" tsy maintsy ao amin\'ny météo sy ora',
       ],
     }
   },
@@ -530,7 +530,7 @@ export const bokyChapters = [
             { en: 'woman → women', tr: 'vehivavy → vehivavy maro' },
             { en: 'child → children', tr: 'ankizy → ankizy maro' },
             { en: 'tooth → teeth', tr: 'nify → nify maro' },
-            { en: 'foot → feet', tr: 'tongotra → tongotra maro [?]' },
+            { en: 'foot → feet', tr: 'tongotra → tongotra maro' },
             { en: 'mouse → mice', tr: 'voalavo → voalavo maro' },
           ]
         },
@@ -755,38 +755,38 @@ export const bokyChapters = [
       ],
     },
     mg: {
-      intro: "Amin\'ny teny anglisy, maro ny matoanteny tena ampiasaina fa tsy manaraka ny fitsipika -ed amin\'ny lasa [?]. Ireo matoanteny ireo dia antsoina hoe matoanteny tsy mahazatra. Tsy maintsy hadinina. Endrika : <strong>Infinitif → Lasa tsotra → Participe passé</strong>.",
+      intro: "Amin\'ny teny anglisy, maro ny matoanteny tena ampiasaina fa tsy manaraka ny fitsipika -ed amin\'ny lasa. Ireo matoanteny ireo dia antsoina hoe matoanteny tsy mahazatra. Tsy maintsy hadinina. Endrika : <strong>Infinitif → Lasa tsotra → Participe passé</strong>.",
       sections: [
         {
           title: 'Vondrona 1 — endrika mitovy foana',
-          content: 'Ireto matoanteny ireto dia tsy miova na oviana na oviana [?].',
+          content: 'Ireto matoanteny ireto dia tsy miova na oviana na oviana.',
           rows: [
-            { en: 'cut, cut, cut', tr: 'manapaka [?]', tts: 'cut' },
-            { en: 'put, put, put', tr: 'mametraka [?]', tts: 'put' },
-            { en: 'let, let, let', tr: 'mamela [?]', tts: 'let' },
-            { en: 'read, read, read', tr: 'mamaky [?]', tts: 'read' },
+            { en: 'cut, cut, cut', tr: 'manapaka', tts: 'cut' },
+            { en: 'put, put, put', tr: 'mametraka', tts: 'put' },
+            { en: 'let, let, let', tr: 'mamela', tts: 'let' },
+            { en: 'read, read, read', tr: 'mamaky', tts: 'read' },
           ]
         },
         {
           title: 'Vondrona 2 — lasa = participe passé',
-          content: 'Ireto matoanteny ireto dia mitovy ny endrika lasa sy ny participe passé [?].',
+          content: 'Ireto matoanteny ireto dia mitovy ny endrika lasa sy ny participe passé.',
           rows: [
-            { en: 'bring, brought, brought', tr: 'mitondra [?]', tts: 'bring' },
-            { en: 'buy, bought, bought', tr: 'mividy [?]', tts: 'buy' },
+            { en: 'bring, brought, brought', tr: 'mitondra', tts: 'bring' },
+            { en: 'buy, bought, bought', tr: 'mividy', tts: 'buy' },
             { en: 'have, had, had', tr: 'manana', tts: 'have' },
-            { en: 'keep, kept, kept', tr: 'mitahiry [?]', tts: 'keep' },
-            { en: 'leave, left, left', tr: 'miala / mandao [?]', tts: 'leave' },
-            { en: 'make, made, made', tr: 'manao / manao [?]', tts: 'make' },
+            { en: 'keep, kept, kept', tr: 'mitahiry', tts: 'keep' },
+            { en: 'leave, left, left', tr: 'miala / mandao', tts: 'leave' },
+            { en: 'make, made, made', tr: 'manao / manao', tts: 'make' },
             { en: 'say, said, said', tr: 'milaza', tts: 'say' },
             { en: 'think, thought, thought', tr: 'mihevitra', tts: 'think' },
           ]
         },
         {
           title: 'Vondrona 3 — endrika telo samy hafa',
-          content: 'Ireto no matoanteny manan-danja indrindra sy mahasarotra indrindra [?]. Hadinina tsara.',
+          content: 'Ireto no matoanteny manan-danja indrindra sy mahasarotra indrindra. Hadinina tsara.',
           rows: [
             { en: 'be, was/were, been', tr: 'to be [matoanteny manan-danja indrindra]', tts: 'be' },
-            { en: 'come, came, come', tr: 'avy [?]', tts: 'come' },
+            { en: 'come, came, come', tr: 'avy', tts: 'come' },
             { en: 'do, did, done', tr: 'manao', tts: 'do' },
             { en: 'eat, ate, eaten', tr: 'mihinana', tts: 'eat' },
             { en: 'give, gave, given', tr: 'manome', tts: 'give' },
@@ -794,7 +794,7 @@ export const bokyChapters = [
             { en: 'know, knew, known', tr: 'mahalala', tts: 'know' },
             { en: 'see, saw, seen', tr: 'mahita', tts: 'see' },
             { en: 'speak, spoke, spoken', tr: 'miteny', tts: 'speak' },
-            { en: 'take, took, taken', tr: 'mitondra / mandray [?]', tts: 'take' },
+            { en: 'take, took, taken', tr: 'mitondra / mandray', tts: 'take' },
             { en: 'write, wrote, written', tr: 'manoratra', tts: 'write' },
           ]
         },
@@ -1030,7 +1030,7 @@ export const bokyChapters = [
           rows: [
             { en: 'I am not sleeping.', tr: 'Tsy matory aho ankehitriny.' },
             { en: 'Is she working now?', tr: 'Miasa ve izy ankehitriny?' },
-            { en: 'What are you doing?', tr: 'Inona no ataonao [?]?' },
+            { en: 'What are you doing?', tr: 'Inona no ataonao?' },
           ]
         },
         {
@@ -1156,7 +1156,7 @@ export const bokyChapters = [
             { en: 'see → saw', tr: 'mahita → nahita' },
             { en: 'have → had', tr: 'manana → nanana' },
             { en: 'do → did', tr: 'manao → nanao' },
-            { en: 'be → was/were', tr: 'no → ... [?]' },
+            { en: 'be → was/were', tr: 'no → ...' },
           ]
         },
         {
@@ -1165,7 +1165,7 @@ export const bokyChapters = [
           rows: [
             { en: 'I didn\'t go to school today.', tr: 'Tsy nankany an\'ny sekoly aho androany.' },
             { en: 'Did you eat lunch?', tr: 'Nihinana ny sakafo amin\'ny antoandro ve ianao?' },
-            { en: 'What did she say?', tr: 'Inona no nolazainy [?]?' },
+            { en: 'What did she say?', tr: 'Inona no nolazainy?' },
           ]
         },
       ],
@@ -1258,7 +1258,7 @@ export const bokyChapters = [
           content: 'Sujet + <strong>will</strong> + infinitif. Mitovy ho an\'ny olon-drehetra.',
           rows: [
             { en: 'I will help you.', tr: 'Hanampy anao aho.' },
-            { en: 'She will pass her exam.', tr: 'Hahajoro ny fanadinany izy [?].' },
+            { en: 'She will pass her exam.', tr: 'Hahajoro ny fanadinany izy.' },
             { en: 'It will rain tomorrow.', tr: 'Handatsaka ny orana rahampitso.' },
           ]
         },
@@ -1274,7 +1274,7 @@ export const bokyChapters = [
           title: 'Be going to',
           content: 'Fikasana efa nokendry na faminaniana mifototra amin\'ny porofo hita.',
           rows: [
-            { en: 'I am going to study medicine.', tr: 'Hianatra fanafody aho [?].' },
+            { en: 'I am going to study medicine.', tr: 'Hianatra fanafody aho.' },
             { en: 'It\'s going to rain!', tr: 'Handatsaka ny orana!' },
           ]
         },
@@ -1386,7 +1386,7 @@ export const bokyChapters = [
           rows: [
             { en: 'I can swim.', tr: 'Afaka milomano aho.' },
             { en: 'Can I use your phone?', tr: 'Afaka mampiasa ny finaonanao ve aho?' },
-            { en: 'She can\'t drive yet.', tr: 'Tsy afaka mampiasa fiara izy mbola [?].' },
+            { en: 'She can\'t drive yet.', tr: 'Tsy afaka mampiasa fiara izy mbola.' },
           ]
         },
         {
@@ -1394,7 +1394,7 @@ export const bokyChapters = [
           content: '',
           rows: [
             { en: 'You must study harder.', tr: 'Tsy maintsy mianatra mafy kokoa ianao.' },
-            { en: 'I have to wear a uniform.', tr: 'Tsy maintsy manao akanjo iray mitovy aho [?].' },
+            { en: 'I have to wear a uniform.', tr: 'Tsy maintsy manao akanjo iray mitovy aho.' },
             { en: 'You mustn\'t be late.', tr: 'Tsy tokony hatara ianao.' },
           ]
         },
@@ -1411,7 +1411,7 @@ export const bokyChapters = [
           content: '',
           rows: [
             { en: 'It may rain this afternoon.', tr: 'Mety handatsaka ny orana tolakandro.' },
-            { en: 'She might come later.', tr: 'Mety ho avy izy avy eo [?].' },
+            { en: 'She might come later.', tr: 'Mety ho avy izy avy eo.' },
           ]
         },
         {
@@ -1530,7 +1530,7 @@ export const bokyChapters = [
           content: '',
           rows: [
             { en: 'I have already eaten.', tr: 'Efa nihinana aho.' },
-            { en: 'Have you finished yet?', tr: 'Vita sahady ve ianao [?]?' },
+            { en: 'Have you finished yet?', tr: 'Vita sahady ve ianao?' },
             { en: 'She has just arrived.', tr: 'Vao tonga izy.' },
           ]
         },
@@ -1621,7 +1621,7 @@ export const bokyChapters = [
           title: 'Fomba fanaovana',
           content: 'I/He/She/It + <strong>was</strong> + verbe-ing. We/You/They + <strong>were</strong> + verbe-ing.',
           rows: [
-            { en: 'I was sleeping when the phone rang.', tr: 'Natory aho fony niantso ny finaonan\'i [?].' },
+            { en: 'I was sleeping when the phone rang.', tr: 'Natory aho fony niantso ny finaonan\'i.' },
             { en: 'She was studying all evening.', tr: 'Nianatra hariva manontolo izy.' },
             { en: 'They were playing when it rained.', tr: 'Nilalao izy ireo fony nilatsaka ny orana.' },
           ]
@@ -1630,7 +1630,7 @@ export const bokyChapters = [
           title: 'Past Continuous + Past Simple (while / when)',
           content: '',
           rows: [
-            { en: 'While I was cooking, the light went out.', tr: 'Raha nanao sakafo aho, dia niala ny jiro [?].' },
+            { en: 'While I was cooking, the light went out.', tr: 'Raha nanao sakafo aho, dia niala ny jiro.' },
             { en: 'When she arrived, we were eating.', tr: 'Fony tonga izy, nihinana izahay.' },
           ]
         },
@@ -1736,7 +1736,7 @@ export const bokyChapters = [
           title: 'Type 1 — mety mitranga',
           content: '<strong>If + présent, will + infinitif.</strong>',
           rows: [
-            { en: 'If I study, I will pass.', tr: 'Raha mianatra aho, dia hahajoro [?].' },
+            { en: 'If I study, I will pass.', tr: 'Raha mianatra aho, dia hahajoro.' },
             { en: 'If it rains tomorrow, we won\'t go out.', tr: 'Raha milatsaka ny orana rahampitso, tsy hivoaka izahay.' },
           ]
         },
@@ -1744,7 +1744,7 @@ export const bokyChapters = [
           title: 'Type 2 — tsy misy / soso-kevitra',
           content: '<strong>If + past simple, would + infinitif.</strong>',
           rows: [
-            { en: 'If I had a car, I would drive to work.', tr: 'Raha manana fiara aho, dia hamily mankany amin\'ny asako [?].' },
+            { en: 'If I had a car, I would drive to work.', tr: 'Raha manana fiara aho, dia hamily mankany amin\'ny asako.' },
             { en: 'If I were you, I would study more.', tr: 'Raha ianao aho, dia hianatra mafy kokoa.' },
           ]
         },
@@ -1752,14 +1752,14 @@ export const bokyChapters = [
           title: 'Type 3 — tsoa-panahy tamin\'ny lasa',
           content: '<strong>If + past perfect, would have + participe passé.</strong>',
           rows: [
-            { en: 'If I had studied, I would have passed.', tr: 'Raha nianatra aho, dia nohajoro [?].' },
-            { en: 'If she had left earlier, she wouldn\'t have missed the bus.', tr: 'Raha nivoaka mialoha izy, tsy diso lamasinina [?].' },
+            { en: 'If I had studied, I would have passed.', tr: 'Raha nianatra aho, dia nohajoro.' },
+            { en: 'If she had left earlier, she wouldn\'t have missed the bus.', tr: 'Raha nivoaka mialoha izy, tsy diso lamasinina.' },
           ]
         },
       ],
       commonErrors: [
         '❌ Type 2 : "If I was" → ✅ "If I WERE" (were ho an\'ny olon-drehetra)',
-        '❌ "Raha hianatra aho dia hahajoro" → misy "will/would" ilaina amin\'ny fehezanteny faharoa [?]',
+        '❌ "Raha hianatra aho dia hahajoro" → misy "will/would" ilaina amin\'ny fehezanteny faharoa',
       ],
       tips: [
         'Type 2 : if + were (tsy was!) ho an\'ny olon-drehetra',
@@ -1842,7 +1842,7 @@ export const bokyChapters = [
           rows: [
             { en: 'The cake is made by my mother.', tr: 'Ny mofomamy dia nataon\'ny reniko.' },
             { en: 'The book was written in 1980.', tr: 'Ny boky dia nosoratana tamin\'ny 1980.' },
-            { en: 'This road will be built next year.', tr: 'Ny lalana ity dia haorina taona ho avy [?].' },
+            { en: 'This road will be built next year.', tr: 'Ny lalana ity dia haorina taona ho avy.' },
           ]
         },
         {
@@ -1857,7 +1857,7 @@ export const bokyChapters = [
       tips: [
         'Participe passé (forme 3) : write→written, break→broken, eat→eaten',
         '"by + mpanao" dia sarotra tsy lazaina rehefa tsy fantatra ny mpanao',
-        'Amin\'ny malagasy: ny "-ana" / "-ina" amin\'ny faranan\'ny verbe = passive matetika [?]',
+        'Amin\'ny malagasy: ny "-ana" / "-ina" amin\'ny faranan\'ny verbe = passive matetika',
       ],
       summary: [
         'Endrika : be (conjugué) + participe passé',
@@ -1941,16 +1941,16 @@ export const bokyChapters = [
           content: 'Present → Past, Past Simple → Past Perfect, will → would',
           rows: [
             { en: '"I am tired." → She said she was tired.', tr: '"Vizaka aho." → Nilaza izy fa vizaka izy.' },
-            { en: '"I worked hard." → He said he had worked hard.', tr: '"Niasa mafy aho." → Nilaza izy fa niasa mafy izy [?].' },
-            { en: '"I will come." → She said she would come.', tr: '"Ho avy aho." → Nilaza izy fa ho avy izy [?].' },
+            { en: '"I worked hard." → He said he had worked hard.', tr: '"Niasa mafy aho." → Nilaza izy fa niasa mafy izy.' },
+            { en: '"I will come." → She said she would come.', tr: '"Ho avy aho." → Nilaza izy fa ho avy izy.' },
           ]
         },
         {
           title: 'Fanontaniana tsy mivantana',
           content: '',
           rows: [
-            { en: '"Are you ready?" → He asked if she was ready.', tr: '"Vonona ve ianao?" → Nanontany izy raha vonona izy [?].' },
-            { en: '"Where do you live?" → She asked where he lived.', tr: '"Aiza no monina ianao?" → Nanontany izy hoe aiza no monina izy [?].' },
+            { en: '"Are you ready?" → He asked if she was ready.', tr: '"Vonona ve ianao?" → Nanontany izy raha vonona izy.' },
+            { en: '"Where do you live?" → She asked where he lived.', tr: '"Aiza no monina ianao?" → Nanontany izy hoe aiza no monina izy.' },
           ]
         },
         {
@@ -1958,7 +1958,7 @@ export const bokyChapters = [
           content: '',
           rows: [
             { en: '"Sit down!" → The teacher told us to sit down.', tr: '"Mipetraha!" → Nasain\'ny mpampianatra mipetraka izahay.' },
-            { en: '"Please help me." → She asked him to help her.', tr: '"Ampio aho." → Nangataka azy hanampy azy izy [?].' },
+            { en: '"Please help me." → She asked him to help her.', tr: '"Ampio aho." → Nangataka azy hanampy azy izy.' },
           ]
         },
       ],
@@ -2035,7 +2035,7 @@ export const bokyChapters = [
           rows: [
             { en: 'When I arrived, she had already left.', tr: 'Fony tonga aho, efa niala izy.' },
             { en: 'He had studied English before moving to London.', tr: 'Efa nianatra anglisy izy mialoha ny fandehany any Londona.' },
-            { en: 'They hadn\'t eaten, so they were very hungry.', tr: 'Tsy nihinana izy ireo, ka noana izy ireo dia nihinana [?].' },
+            { en: 'They hadn\'t eaten, so they were very hungry.', tr: 'Tsy nihinana izy ireo, ka noana izy ireo dia nihinana.' },
           ]
         },
         {
@@ -2108,9 +2108,9 @@ export const bokyChapters = [
           title: 'Fomba fanaovana sy fampiasana',
           content: 'Sujet + <strong>will have</strong> + participe passé.',
           rows: [
-            { en: 'By 2030, I will have finished university.', tr: 'Amin\'ny 2030, efa vita ny fianarako any amin\'ny oniversite [?].' },
-            { en: 'She will have cooked dinner by the time you arrive.', tr: 'Efa vita ny sakafo hariva fony tonga ianao [?].' },
-            { en: 'Will you have finished the report by Friday?', tr: 'Vita ny tatitra alohan\'ny Zoma ve [?]?' },
+            { en: 'By 2030, I will have finished university.', tr: 'Amin\'ny 2030, efa vita ny fianarako any amin\'ny oniversite.' },
+            { en: 'She will have cooked dinner by the time you arrive.', tr: 'Efa vita ny sakafo hariva fony tonga ianao.' },
+            { en: 'Will you have finished the report by Friday?', tr: 'Vita ny tatitra alohan\'ny Zoma ve?' },
           ]
         },
       ],
@@ -2287,30 +2287,30 @@ export const bokyChapters = [
       summary: ['at = heure & point précis', 'on = surface & jour/date', 'in = intérieur & période', 'to = vers (mouvement) · from = depuis'],
     },
     mg: {
-      intro: "Ny <strong>prépositions</strong> dia teny kely milaza ny toerana, ny fotoana na ny fifandraisana. Amin\'ny teny malagasy, matetika ampiasaina ny endrika hoe \"eo am-\" na \"ao anaty\" [?]. Tsy maintsy hadinina amin\'ny teny anglisy ireo prépositions ireo.",
+      intro: "Ny <strong>prépositions</strong> dia teny kely milaza ny toerana, ny fotoana na ny fifandraisana. Amin\'ny teny malagasy, matetika ampiasaina ny endrika hoe \"eo am-\" na \"ao anaty\". Tsy maintsy hadinina amin\'ny teny anglisy ireo prépositions ireo.",
       sections: [
         {
           title: 'Prépositions toerana',
           content: '<strong>in</strong> (ao anaty) · <strong>on</strong> (eo ambonin\'ny) · <strong>at</strong> (eo amin\'ny) · <strong>under</strong> (eo ambanin\'ny) · <strong>next to</strong> (eo anilany)',
           rows: [
-            { en: 'The book is on the table.', tr: 'Ny boky dia eo ambonin\'ny latabatra. [?]' },
+            { en: 'The book is on the table.', tr: 'Ny boky dia eo ambonin\'ny latabatra.' },
             { en: 'She lives in Antananarivo.', tr: 'Monina any Antananarivo izy.' },
-            { en: 'He is at school.', tr: 'Any an\'ny sekoly izy. [?]' },
-            { en: 'The cat is under the chair.', tr: 'Ny saka dia eo ambanin\'ny seza. [?]' },
+            { en: 'He is at school.', tr: 'Any an\'ny sekoly izy.' },
+            { en: 'The cat is under the chair.', tr: 'Ny saka dia eo ambanin\'ny seza.' },
           ]
         },
         {
           title: 'Prépositions fotoana',
           content: '<strong>at</strong> (ora) · <strong>on</strong> (andro/daty) · <strong>in</strong> (volana/taona)',
           rows: [
-            { en: 'The lesson starts at 8 o\'clock.', tr: 'Manomboka amin\'ny 8 ora ny lesona. [?]' },
-            { en: 'I was born on 3rd May.', tr: 'Teraka ny 3 mai aho. [?]' },
-            { en: 'We have a holiday in August.', tr: 'Manana fialantsasatra amin\'ny Aogositra izahay. [?]' },
+            { en: 'The lesson starts at 8 o\'clock.', tr: 'Manomboka amin\'ny 8 ora ny lesona.' },
+            { en: 'I was born on 3rd May.', tr: 'Teraka ny 3 mai aho.' },
+            { en: 'We have a holiday in August.', tr: 'Manana fialantsasatra amin\'ny Aogositra izahay.' },
           ]
         },
       ],
       commonErrors: ['❌ "born in Monday" → ✅ "born on Monday"', '❌ "go to the school" → ✅ "go to school"'],
-      tips: ['⏰ Fotoana : at (ora) → on (andro) → in (volana/taona)', '📍 Toerana : at (toerana) → on (ambony) → in (ao anaty) [?]'],
+      tips: ['⏰ Fotoana : at (ora) → on (andro) → in (volana/taona)', '📍 Toerana : at (toerana) → on (ambony) → in (ao anaty)'],
       summary: ['at = ora sy toerana mazava', 'on = ambonin\'ny & andro/daty', 'in = ao anaty & volana/taona'],
     },
   },
@@ -2380,23 +2380,23 @@ export const bokyChapters = [
       summary: ['Yes/No : Do/Does/Did + sujet + infinitif ?', 'Be : Is/Are/Was/Were + sujet ?', 'Wh- : mot interrogatif + auxiliaire + sujet + infinitif ?'],
     },
     mg: {
-      intro: "Ny fanontaniana amin\'ny teny anglisy dia mampiasa <strong>auxiliaires</strong> (Do/Does/Did, is/are…). Amin\'ny teny malagasy, matetika ampiana \"ve\" aorian\'ny matoanteny na ny lohalahateny. [?]",
+      intro: "Ny fanontaniana amin\'ny teny anglisy dia mampiasa <strong>auxiliaires</strong> (Do/Does/Did, is/are…). Amin\'ny teny malagasy, matetika ampiana \"ve\" aorian\'ny matoanteny na ny lohalahateny.",
       sections: [
         {
           title: 'Fanontaniana Do/Does (Present Simple)',
           content: '<strong>Do</strong> + I/you/we/they · <strong>Does</strong> + he/she/it → matoanteny infinitif',
           rows: [
-            { en: 'Do you speak English?', tr: 'Miteny anglisy ve ianao? [?]' },
-            { en: 'Does she live in Tana?', tr: 'Monina any Tana ve izy? [?]' },
+            { en: 'Do you speak English?', tr: 'Miteny anglisy ve ianao?' },
+            { en: 'Does she live in Tana?', tr: 'Monina any Tana ve izy?' },
           ]
         },
         {
           title: 'Fanontaniana Wh-',
           content: 'Teny manontaniana + auxiliaire + sujet + matoanteny',
           rows: [
-            { en: 'Where do you live?', tr: 'Aiza no mipetraka ianao? [?]' },
-            { en: 'What does she eat?', tr: 'Inona no haniny izy? [?]' },
-            { en: 'Why did they leave?', tr: 'Nahoana izy no lasa? [?]' },
+            { en: 'Where do you live?', tr: 'Aiza no mipetraka ianao?' },
+            { en: 'What does she eat?', tr: 'Inona no haniny izy?' },
+            { en: 'Why did they leave?', tr: 'Nahoana izy no lasa?' },
           ]
         },
       ],
@@ -2468,31 +2468,31 @@ export const bokyChapters = [
       summary: ['Affirmatif : verbe seul (Open! / Be quiet!)', 'Négatif : Don\'t + verbe (Don\'t run!)', 'Suggestion : Let\'s + verbe (Let\'s go!)'],
     },
     mg: {
-      intro: "Ny <strong>impératif</strong> amin\'ny anglisy dia tsotra : matoanteny fotsiny, tsy misy pronom sujet. Mifandrindra amin\'ny baiko amin\'ny teny malagasy. [?]",
+      intro: "Ny <strong>impératif</strong> amin\'ny anglisy dia tsotra : matoanteny fotsiny, tsy misy pronom sujet. Mifandrindra amin\'ny baiko amin\'ny teny malagasy.",
       sections: [
         {
           title: 'Baiko mivantana (affirmatif)',
           content: 'Matoanteny infinitif fotsiny — tsy misy "you"',
           rows: [
-            { en: 'Open the book.', tr: 'Asio ny boky. [?]' },
-            { en: 'Listen carefully.', tr: 'Mihainoa tsara. [?]' },
-            { en: 'Be quiet!', tr: 'Mangina! [?]' },
+            { en: 'Open the book.', tr: 'Asio ny boky.' },
+            { en: 'Listen carefully.', tr: 'Mihainoa tsara.' },
+            { en: 'Be quiet!', tr: 'Mangina!' },
           ]
         },
         {
           title: 'Baiko fandavana (négatif)',
           content: '<strong>Don\'t</strong> + matoanteny infinitif',
           rows: [
-            { en: "Don't speak in class.", tr: 'Aza miteny ao an-kilasy. [?]' },
-            { en: "Don't be late!", tr: 'Aza diso fotoana! [?]' },
+            { en: "Don't speak in class.", tr: 'Aza miteny ao an-kilasy.' },
+            { en: "Don't be late!", tr: 'Aza diso fotoana!' },
           ]
         },
         {
           title: 'Let\'s — soso-kevitra',
           content: '<strong>Let\'s</strong> + matoanteny — manondro hetsika ho an\'ny rehetra',
           rows: [
-            { en: "Let's go to school.", tr: 'Andeha any an\'ny sekoly. [?]' },
-            { en: "Let's eat!", tr: 'Aoka hohanina! [?]' },
+            { en: "Let's go to school.", tr: 'Andeha any an\'ny sekoly.' },
+            { en: "Let's eat!", tr: 'Aoka hohanina!' },
           ]
         },
       ],
@@ -2564,30 +2564,30 @@ export const bokyChapters = [
       summary: ['some → affirmatif', 'any → question / négatif', 'no → quantité zéro', 'Composés : something / anything / nothing / someone / anyone / nowhere'],
     },
     mg: {
-      intro: "Ny <strong>some</strong>, <strong>any</strong> ary <strong>no</strong> dia milaza habetsahana tsy mazava tsara. Ny safidiny miankina amin\'ny karazana fehezanteny (fanambara, fandavana, fanontaniana). [?]",
+      intro: "Ny <strong>some</strong>, <strong>any</strong> ary <strong>no</strong> dia milaza habetsahana tsy mazava tsara. Ny safidiny miankina amin\'ny karazana fehezanteny (fanambara, fandavana, fanontaniana).",
       sections: [
         {
           title: 'Some — fehezanteny fanambara',
           content: '"Zavatra kely" amin\'ny fehezanteny tsara',
           rows: [
-            { en: 'I have some water.', tr: 'Manana rano kely aho. [?]' },
-            { en: 'There are some books on the table.', tr: 'Misy boky kely eo ambonin\'ny latabatra. [?]' },
+            { en: 'I have some water.', tr: 'Manana rano kely aho.' },
+            { en: 'There are some books on the table.', tr: 'Misy boky kely eo ambonin\'ny latabatra.' },
           ]
         },
         {
           title: 'Any — fanontaniana sy fandavana',
           content: '"Inona na inona" amin\'ny fanontaniana sy fandavana',
           rows: [
-            { en: 'Do you have any money?', tr: 'Manana vola ve ianao? [?]' },
-            { en: 'I don\'t have any friends here.', tr: 'Tsy manana namana eto aho. [?]' },
+            { en: 'Do you have any money?', tr: 'Manana vola ve ianao?' },
+            { en: 'I don\'t have any friends here.', tr: 'Tsy manana namana eto aho.' },
           ]
         },
         {
           title: 'No — vola aotra',
           content: '"Tsy misy" = zero',
           rows: [
-            { en: 'I have no money.', tr: 'Tsy manana vola aho. [?]' },
-            { en: 'There is nothing in the bag.', tr: 'Tsy misy na inona ao anaty kitapom-boky. [?]' },
+            { en: 'I have no money.', tr: 'Tsy manana vola aho.' },
+            { en: 'There is nothing in the bag.', tr: 'Tsy misy na inona ao anaty kitapom-boky.' },
           ]
         },
       ],
@@ -2660,22 +2660,22 @@ export const bokyChapters = [
       summary: ['Court (-er/-est) : tall/taller/tallest', 'Long (more/most) : beautiful/more beautiful/most beautiful', 'Égalité : as … as', 'Irréguliers : good/better/best · bad/worse/worst'],
     },
     mg: {
-      intro: "Ny <strong>comparatif</strong> sy <strong>superlative</strong> dia mampiasa endrika hafa arakaraky ny halavan\'ny adjectif. Tsotra ny fitsipika. [?]",
+      intro: "Ny <strong>comparatif</strong> sy <strong>superlative</strong> dia mampiasa endrika hafa arakaraky ny halavan\'ny adjectif. Tsotra ny fitsipika.",
       sections: [
         {
           title: 'Comparatif (mitovy na tsy mitovy)',
           content: 'Adjectif fohy + -er than · Adjectif lava : more … than',
           rows: [
-            { en: 'She is taller than her brother.', tr: 'Lehibe kokoa izy noho ny rahalahiny. [?]' },
-            { en: 'This film is more interesting than the last one.', tr: 'Ny sarimihetsika ity dia maro lamintsasa kokoa noho ny farany. [?]' },
+            { en: 'She is taller than her brother.', tr: 'Lehibe kokoa izy noho ny rahalahiny.' },
+            { en: 'This film is more interesting than the last one.', tr: 'Ny sarimihetsika ity dia maro lamintsasa kokoa noho ny farany.' },
           ]
         },
         {
           title: 'Superlative',
           content: 'Adjectif fohy : the … -est · Adjectif lava : the most …',
           rows: [
-            { en: 'He is the fastest runner in the school.', tr: 'Izy no manerinerina indrindra ao an-tsekoly. [?]' },
-            { en: 'This is the most beautiful place.', tr: 'Ity no toerana tsara indrindra. [?]' },
+            { en: 'He is the fastest runner in the school.', tr: 'Izy no manerinerina indrindra ao an-tsekoly.' },
+            { en: 'This is the most beautiful place.', tr: 'Ity no toerana tsara indrindra.' },
           ]
         },
         {
@@ -2750,22 +2750,22 @@ export const bokyChapters = [
       summary: ['Affirmatif : will be + -ing', 'Négatif : won\'t be + -ing', 'Interrogatif : Will + sujet + be + -ing ?', 'Usage : action en cours à un moment futur précis'],
     },
     mg: {
-      intro: "Ny <strong>Future Continuous</strong> (will be + -ing) dia milaza hetsika izay <strong>ho eo am-pandehanana</strong> amin\'ny fotoana iray ho avy. [?]",
+      intro: "Ny <strong>Future Continuous</strong> (will be + -ing) dia milaza hetsika izay <strong>ho eo am-pandehanana</strong> amin\'ny fotoana iray ho avy.",
       sections: [
         {
           title: 'Endrika fanambara',
           content: 'Sujet + <strong>will be</strong> + matoanteny-<strong>ing</strong>',
           rows: [
-            { en: 'I will be studying at 8pm.', tr: 'Eo am-pianakaviana aho amin\'ny 8 ora hariva. [?]' },
-            { en: 'She will be sleeping when you arrive.', tr: 'Ho eo am-patory izy rehefa tonga ianao. [?]' },
+            { en: 'I will be studying at 8pm.', tr: 'Eo am-pianakaviana aho amin\'ny 8 ora hariva.' },
+            { en: 'She will be sleeping when you arrive.', tr: 'Ho eo am-patory izy rehefa tonga ianao.' },
           ]
         },
         {
           title: 'Endrika fandavana sy fanontaniana',
           content: 'Négatif : won\'t be + -ing · Fanontaniana : Will + sujet + be + -ing?',
           rows: [
-            { en: "I won't be working tomorrow.", tr: 'Tsy ho eo am-panao asa aho rahampitso. [?]' },
-            { en: 'Will you be joining us for dinner?', tr: 'Ho hiara-misakafo aminay ve ianao? [?]' },
+            { en: "I won't be working tomorrow.", tr: 'Tsy ho eo am-panao asa aho rahampitso.' },
+            { en: 'Will you be joining us for dinner?', tr: 'Ho hiara-misakafo aminay ve ianao?' },
           ]
         },
       ],
@@ -2840,36 +2840,36 @@ export const bokyChapters = [
       summary: ['Past Simple : yesterday / ago / last / when', 'Present Perfect : already / yet / just / since / for', 'Present Simple : always / usually / every', 'Future : tomorrow / next / soon'],
     },
     mg: {
-      intro: "Ny <strong>indicateurs de temps</strong> dia teny izay milaza avy hatrany ny temps verbal tokony ampiasaina. Tsotra ny fitsipika. [?]",
+      intro: "Ny <strong>indicateurs de temps</strong> dia teny izay milaza avy hatrany ny temps verbal tokony ampiasaina. Tsotra ny fitsipika.",
       sections: [
         {
           title: 'Past Simple — hetsika vita',
           content: 'Teny fototra : yesterday, ago, last, when',
           rows: [
-            { en: 'I saw him yesterday.', tr: 'Nahita azy aho omaly. [?]' },
-            { en: 'She left two hours ago.', tr: 'Lasa izy roa ora lasa izay. [?]' },
+            { en: 'I saw him yesterday.', tr: 'Nahita azy aho omaly.' },
+            { en: 'She left two hours ago.', tr: 'Lasa izy roa ora lasa izay.' },
           ]
         },
         {
           title: 'Present Perfect — mifandray amin\'ny ankehitriny',
           content: 'Teny fototra : already, yet, just, since, for',
           rows: [
-            { en: 'I have already eaten.', tr: 'Efa nihinana aho. [?]' },
-            { en: 'She hasn\'t arrived yet.', tr: 'Tsy tonga mbola izy. [?]' },
+            { en: 'I have already eaten.', tr: 'Efa nihinana aho.' },
+            { en: 'She hasn\'t arrived yet.', tr: 'Tsy tonga mbola izy.' },
           ]
         },
         {
           title: 'Present Simple — zava-mahazatra',
           content: 'Teny fototra : always, usually, often, never, every',
           rows: [
-            { en: 'She always wakes up early.', tr: 'Mifohaza marobe foana izy. [?]' },
+            { en: 'She always wakes up early.', tr: 'Mifohaza marobe foana izy.' },
           ]
         },
         {
           title: 'Future — hetsika ho avy',
           content: 'Teny fototra : tomorrow, next, soon, tonight',
           rows: [
-            { en: 'I will call you tomorrow.', tr: 'Hantsaina ianao aho rahampitso. [?]' },
+            { en: 'I will call you tomorrow.', tr: 'Hantsaina ianao aho rahampitso.' },
           ]
         },
       ],
@@ -2946,54 +2946,54 @@ export const bokyChapters = [
       ]
     },
     mg: {
-      intro: "Amin\'ny anglisy, ny fananana dia asehon\'ny <strong>adjectif possessif</strong> (my, your, his...) eo alohan\'ny noun, na ny <strong>pronom possessif</strong> (mine, yours, his...) ampiasaina irery tsy misy noun aorian\'ny. [?]",
+      intro: "Amin\'ny anglisy, ny fananana dia asehon\'ny <strong>adjectif possessif</strong> (my, your, his...) eo alohan\'ny noun, na ny <strong>pronom possessif</strong> (mine, yours, his...) ampiasaina irery tsy misy noun aorian\'ny.",
       sections: [
         {
           title: 'Adjectif possessif (eo alohan\'ny noun)',
           content: 'Tsy miova arakaraka ny genre na ny isan\'ny noun.',
           rows: [
-            { en: 'This is my book.', tr: 'Io boky-ko io. [?]' },
-            { en: 'What is your name?', tr: 'Iza ny anaranao? [?]' },
-            { en: 'His bag is blue.', tr: 'Ny kitapo-ny (lehilahy) dia manga. [?]' },
-            { en: 'Her phone is new.', tr: 'Ny finday-ny (vehivavy) dia vaovao. [?]' },
-            { en: 'Our school is big.', tr: 'Lehibe ny sekolin\'ny. [?]' },
-            { en: 'Their parents are teachers.', tr: 'Mpampianatra ny ray aman-dreny-ny. [?]' },
+            { en: 'This is my book.', tr: 'Io boky-ko io.' },
+            { en: 'What is your name?', tr: 'Iza ny anaranao?' },
+            { en: 'His bag is blue.', tr: 'Ny kitapo-ny (lehilahy) dia manga.' },
+            { en: 'Her phone is new.', tr: 'Ny finday-ny (vehivavy) dia vaovao.' },
+            { en: 'Our school is big.', tr: 'Lehibe ny sekolin\'ny.' },
+            { en: 'Their parents are teachers.', tr: 'Mpampianatra ny ray aman-dreny-ny.' },
           ]
         },
         {
           title: 'Pronom possessif (misolo ny noun)',
           content: 'Ampiasaina irery, misolo ny noun efa voalaza.',
           rows: [
-            { en: 'That book is mine.', tr: 'Io boky io an\'ny. [?]' },
-            { en: 'Is this bag yours?', tr: 'Anao ve ity kitapo ity? [?]' },
-            { en: 'The blue pen is his.', tr: 'An\'ny lehilahy ny penina manga. [?]' },
-            { en: 'The red car is ours.', tr: 'An\'ny fiara mena no an\'ny. [?]' },
+            { en: 'That book is mine.', tr: 'Io boky io an\'ny.' },
+            { en: 'Is this bag yours?', tr: 'Anao ve ity kitapo ity?' },
+            { en: 'The blue pen is his.', tr: 'An\'ny lehilahy ny penina manga.' },
+            { en: 'The red car is ours.', tr: 'An\'ny fiara mena no an\'ny.' },
           ]
         },
         {
           title: 'Latabatra fampitahana',
           content: 'Adjectif possessif → Pronom possessif',
           rows: [
-            { en: 'my → mine', tr: 'ahy / an\'ny (= an\'aho) [?]' },
-            { en: 'your → yours', tr: 'anao / an\'ianao [?]' },
-            { en: 'his → his', tr: 'azy (lehilahy) — endrika iray ihany! [?]' },
-            { en: 'her → hers', tr: 'azy (vehivavy) [?]' },
-            { en: 'our → ours', tr: 'an\'ny / an\'izahay [?]' },
-            { en: 'their → theirs', tr: 'azy ireo [?]' },
+            { en: 'my → mine', tr: 'ahy / an\'ny (= an\'aho)' },
+            { en: 'your → yours', tr: 'anao / an\'ianao' },
+            { en: 'his → his', tr: 'azy (lehilahy) — endrika iray ihany!' },
+            { en: 'her → hers', tr: 'azy (vehivavy)' },
+            { en: 'our → ours', tr: 'an\'ny / an\'izahay' },
+            { en: 'their → theirs', tr: 'azy ireo' },
           ]
         },
       ],
       commonErrors: [
-        '"It\'s tail is long." ✗ → "Its tail is long." ✓ (its = possessif, tsy misy apostrophe) [?]',
-        '"The book is my." ✗ → "The book is mine." ✓ [?]',
+        '"It\'s tail is long." ✗ → "Its tail is long." ✓ (its = possessif, tsy misy apostrophe)',
+        '"The book is my." ✗ → "The book is mine." ✓',
       ],
       tips: [
-        '"His" = adjectif sy pronom iray ihany: his car / the car is his [?]',
-        '"Its" tsy misy apostrophe (possessif) ≠ "it\'s" = it is [?]',
+        '"His" = adjectif sy pronom iray ihany: his car / the car is his',
+        '"Its" tsy misy apostrophe (possessif) ≠ "it\'s" = it is',
       ],
       summary: [
-        'Adjectif possessif + noun: my book, your bag... [?]',
-        'Pronom possessif irery: mine, yours, his, hers, ours, theirs [?]',
+        'Adjectif possessif + noun: my book, your bag...',
+        'Pronom possessif irery: mine, yours, his, hers, ours, theirs',
       ]
     }
   },
@@ -3068,49 +3068,49 @@ export const bokyChapters = [
       ]
     },
     mg: {
-      intro: "Ny <strong>adverbe de fréquence</strong> dia milaza ny matetika isaterahan\'ny asa (always → never). Ny <strong>adverbe de manière</strong> dia milaza ny fomba fanao (quickly, carefully). Ny toerana ao amin\'ny fehezanteny dia lehibe. [?]",
+      intro: "Ny <strong>adverbe de fréquence</strong> dia milaza ny matetika isaterahan\'ny asa (always → never). Ny <strong>adverbe de manière</strong> dia milaza ny fomba fanao (quickly, carefully). Ny toerana ao amin\'ny fehezanteny dia lehibe.",
       sections: [
         {
           title: 'Adverbe de fréquence (100% → 0%)',
           content: 'Eo alohan\'ny matoanteny lehibe, nefa aorian\'ny to be.',
           rows: [
-            { en: 'I always brush my teeth in the morning.', tr: 'Mandrakariva manasa nify aho maraina. [?]' },
-            { en: 'She usually wakes up at six.', tr: 'Matetika mifohaza amin\'ny enina izy. [?]' },
-            { en: 'We often eat rice for dinner.', tr: 'Matetika mihinana vary amin\'ny alina izahay. [?]' },
-            { en: 'I never drink alcohol.', tr: 'Tsy mba misotro toaka aho. [?]' },
+            { en: 'I always brush my teeth in the morning.', tr: 'Mandrakariva manasa nify aho maraina.' },
+            { en: 'She usually wakes up at six.', tr: 'Matetika mifohaza amin\'ny enina izy.' },
+            { en: 'We often eat rice for dinner.', tr: 'Matetika mihinana vary amin\'ny alina izahay.' },
+            { en: 'I never drink alcohol.', tr: 'Tsy mba misotro toaka aho.' },
           ]
         },
         {
           title: 'Toerana aorian\'ny "to be"',
           content: 'Aorian\'ny to be, ny adverbe dia apetraka aorian\'ny matoanteny.',
           rows: [
-            { en: 'He is always late.', tr: 'Mandrakariva diso fotoana izy. [?]' },
-            { en: 'She is never rude.', tr: 'Tsy mba manevateva izy. [?]' },
+            { en: 'He is always late.', tr: 'Mandrakariva diso fotoana izy.' },
+            { en: 'She is never rude.', tr: 'Tsy mba manevateva izy.' },
           ]
         },
         {
           title: 'Adverbe de manière (adjectif + -ly)',
           content: 'Apetraka aorian\'ny matoanteny na ny objet.',
           rows: [
-            { en: 'She speaks English quickly.', tr: 'Haingana ny fitenenany anglisy. [?]' },
-            { en: 'He drives very carefully.', tr: 'Mitandrina be izy rehefa mitondra fiara. [?]' },
-            { en: 'She plays the piano very well.', tr: 'Mahay manao piano tsara izy. [?] (good → well)' },
-            { en: 'He runs very fast.', tr: 'Mihazakazaka haingana be izy. [?] (fast → fast)' },
+            { en: 'She speaks English quickly.', tr: 'Haingana ny fitenenany anglisy.' },
+            { en: 'He drives very carefully.', tr: 'Mitandrina be izy rehefa mitondra fiara.' },
+            { en: 'She plays the piano very well.', tr: 'Mahay manao piano tsara izy. (good → well)' },
+            { en: 'He runs very fast.', tr: 'Mihazakazaka haingana be izy. (fast → fast)' },
           ]
         },
       ],
       commonErrors: [
-        '"She sings beautiful." ✗ → "She sings beautifully." ✓ [?]',
-        '"He plays good." ✗ → "He plays well." ✓ [?]',
+        '"She sings beautiful." ✗ → "She sings beautifully." ✓',
+        '"He plays good." ✗ → "He plays well." ✓',
       ],
       tips: [
-        'Manetrika: MANIÈRE → LIEU → FOTOANA (beautifully in the park yesterday) [?]',
-        '"hardly" = saika tsy (à peine) ≠ "hard" = mafy / mafy be [?]',
+        'Manetrika: MANIÈRE → LIEU → FOTOANA (beautifully in the park yesterday)',
+        '"hardly" = saika tsy (à peine) ≠ "hard" = mafy / mafy be',
       ],
       summary: [
-        'Fréquence: eo alohan\'ny matoanteny / aorian\'ny to be [?]',
-        'Manière: adjectif + -ly, aorian\'ny matoanteny [?]',
-        'Tsy ara-dalàna: good → well, fast → fast, hard → hard [?]',
+        'Fréquence: eo alohan\'ny matoanteny / aorian\'ny to be',
+        'Manière: adjectif + -ly, aorian\'ny matoanteny',
+        'Tsy ara-dalàna: good → well, fast → fast, hard → hard',
       ]
     }
   },
@@ -3185,57 +3185,57 @@ export const bokyChapters = [
       ]
     },
     mg: {
-      intro: "Amin\'ny anglisy, ny noun dia mizara ho <strong>countable</strong> (azo isaina) sy <strong>uncountable</strong> (tsy azo isaina). Io no mametra ny fampiasana much, many, a lot of, a few, a little. [?]",
+      intro: "Amin\'ny anglisy, ny noun dia mizara ho <strong>countable</strong> (azo isaina) sy <strong>uncountable</strong> (tsy azo isaina). Io no mametra ny fampiasana much, many, a lot of, a few, a little.",
       sections: [
         {
           title: 'Countable (azo isaina)',
           content: 'Misy endrika tokana sy endrika maro. Azo asiana a/an eo aloha.',
           rows: [
-            { en: 'one apple, two apples, three books', tr: 'paoma iray, paoma roa, boky telo [?]' },
-            { en: 'How many oranges do you have?', tr: 'Ôranjy firy no anananao? [?]' },
-            { en: 'I have a few coins in my pocket.', tr: 'Manana vola vitsivitsy ao am-paosy aho. [?]' },
+            { en: 'one apple, two apples, three books', tr: 'paoma iray, paoma roa, boky telo' },
+            { en: 'How many oranges do you have?', tr: 'Ôranjy firy no anananao?' },
+            { en: 'I have a few coins in my pocket.', tr: 'Manana vola vitsivitsy ao am-paosy aho.' },
           ]
         },
         {
           title: 'Uncountable (tsy azo isaina)',
           content: 'Tsy misy endrika maro. Tsy misy a/an. Matoanteny amin\'ny tokana foana.',
           rows: [
-            { en: 'water, milk, rice, bread, sugar, money', tr: 'rano, ronono, vary, mofo, siramamy, vola [?]' },
-            { en: 'information, advice, furniture, news', tr: 'vaovao, torohevitra, firavaka, vaovao madinidinika [?]' },
-            { en: 'How much water do you drink every day?', tr: 'Rano ohatrinona no sotrohinao isan\'andro? [?]' },
+            { en: 'water, milk, rice, bread, sugar, money', tr: 'rano, ronono, vary, mofo, siramamy, vola' },
+            { en: 'information, advice, furniture, news', tr: 'vaovao, torohevitra, firavaka, vaovao madinidinika' },
+            { en: 'How much water do you drink every day?', tr: 'Rano ohatrinona no sotrohinao isan\'andro?' },
           ]
         },
         {
           title: 'Much / Many / A lot of',
           content: 'much + uncountable · many + countable · a lot of = izy roa',
           rows: [
-            { en: 'I don\'t have much time today.', tr: 'Tsy manana fotoana be aho anio. [?]' },
-            { en: 'She has a lot of friends at school.', tr: 'Manana namana maro izy any an-tsekoly. [?]' },
-            { en: 'He drinks a lot of water every day.', tr: 'Misotro rano be izy isan\'andro. [?]' },
+            { en: 'I don\'t have much time today.', tr: 'Tsy manana fotoana be aho anio.' },
+            { en: 'She has a lot of friends at school.', tr: 'Manana namana maro izy any an-tsekoly.' },
+            { en: 'He drinks a lot of water every day.', tr: 'Misotro rano be izy isan\'andro.' },
           ]
         },
         {
           title: 'A few / A little',
           content: 'a few + countable · a little + uncountable',
           rows: [
-            { en: 'I have a few friends in this city.', tr: 'Manana namana vitsivitsy aho ato an-tanàna. [?]' },
-            { en: 'She speaks a little French.', tr: 'Mahay teny frantsay kely izy. [?]' },
-            { en: 'Add a little sugar to the tea.', tr: 'Ampio siramamy kely ao amin\'ny dite. [?]' },
+            { en: 'I have a few friends in this city.', tr: 'Manana namana vitsivitsy aho ato an-tanàna.' },
+            { en: 'She speaks a little French.', tr: 'Mahay teny frantsay kely izy.' },
+            { en: 'Add a little sugar to the tea.', tr: 'Ampio siramamy kely ao amin\'ny dite.' },
           ]
         },
       ],
       commonErrors: [
-        '"I have many informations." ✗ → "I have a lot of information." ✓ [?]',
-        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓ [?]',
+        '"I have many informations." ✗ → "I have a lot of information." ✓',
+        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓',
       ],
       tips: [
-        '"advice", "information", "furniture", "news" — uncountable foana ireo! [?]',
-        'A few / a little = kely nefa misy (positif) · few / little = tena kely be (négatif) [?]',
+        '"advice", "information", "furniture", "news" — uncountable foana ireo!',
+        'A few / a little = kely nefa misy (positif) · few / little = tena kely be (négatif)',
       ],
       summary: [
-        'Countable → a/an, endrika maro, many, a few [?]',
-        'Uncountable → tsy misy a/an, tsy misy endrika maro, much, a little [?]',
-        'A lot of → azo ampiasaina amin\'ny izy roa [?]',
+        'Countable → a/an, endrika maro, many, a few',
+        'Uncountable → tsy misy a/an, tsy misy endrika maro, much, a little',
+        'A lot of → azo ampiasaina amin\'ny izy roa',
       ]
     }
   },
@@ -3307,55 +3307,55 @@ export const bokyChapters = [
       ]
     },
     mg: {
-      intro: "Ny connector sy conjonction dia teny mampifandray hevitra roa na misea. Ilaina indrindra amin\'ny soratra sy ny resaka voalamina. [?]",
+      intro: "Ny connector sy conjonction dia teny mampifandray hevitra roa na misea. Ilaina indrindra amin\'ny soratra sy ny resaka voalamina.",
       sections: [
         {
           title: 'Coordination (and, but, or, so)',
           content: 'Mampifandray element na proposition amin\'ny ambaratonga mitovy.',
           rows: [
-            { en: 'I like tea and coffee.', tr: 'Tia dite sy kafe aho. [?]' },
-            { en: 'She is tired but she keeps working hard.', tr: 'Vizana izy nefa mitohy miasa. [?]' },
-            { en: 'It was raining, so we stayed home.', tr: 'Nisy orana, koa nijanona tao an-trano izahay. [?]' },
+            { en: 'I like tea and coffee.', tr: 'Tia dite sy kafe aho.' },
+            { en: 'She is tired but she keeps working hard.', tr: 'Vizana izy nefa mitohy miasa.' },
+            { en: 'It was raining, so we stayed home.', tr: 'Nisy orana, koa nijanona tao an-trano izahay.' },
           ]
         },
         {
           title: 'Antony sy Vokatr\'izany (because, since, therefore)',
           content: 'because / since → ny antony · therefore → ny vokatr\'izany',
           rows: [
-            { en: 'I was late because the bus broke down.', tr: 'Diso fotoana aho satria very ny bus. [?]' },
-            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Nahery fianarana izy. Koa amin\'izany, nahita fandaharam-potoana izy. [?]' },
+            { en: 'I was late because the bus broke down.', tr: 'Diso fotoana aho satria very ny bus.' },
+            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Nahery fianarana izy. Koa amin\'izany, nahita fandaharam-potoana izy.' },
           ]
         },
         {
           title: 'Fanoherana (although, however, nevertheless)',
           content: 'although + proposition · however / nevertheless eo am-piandohan\'ny fehezanteny',
           rows: [
-            { en: 'Although it was expensive, she bought it.', tr: 'Na dia lafo aza, novidiny ihany. [?]' },
-            { en: 'I was very tired. However, I finished my homework.', tr: 'Vizana be aho. Kanefa, vita ny asako. [?]' },
-            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Na dia nisy orana aza, nanana fialam-boly tsara izahay. [?]' },
+            { en: 'Although it was expensive, she bought it.', tr: 'Na dia lafo aza, novidiny ihany.' },
+            { en: 'I was very tired. However, I finished my homework.', tr: 'Vizana be aho. Kanefa, vita ny asako.' },
+            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Na dia nisy orana aza, nanana fialam-boly tsara izahay.' },
           ]
         },
         {
           title: 'Fanampiana (moreover, furthermore, in addition)',
           content: 'Manampy vaovao. Fampiasana amin\'ny ssoratra indrindra.',
           rows: [
-            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'Madio ny hotely. Ho fanampin\'izany, mora ny vidiny. [?]' },
-            { en: 'In addition to English, she also speaks Spanish.', tr: 'Ho fanampin\'ny anglisy, mahay espaniola koa izy. [?]' },
+            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'Madio ny hotely. Ho fanampin\'izany, mora ny vidiny.' },
+            { en: 'In addition to English, she also speaks Spanish.', tr: 'Ho fanampin\'ny anglisy, mahay espaniola koa izy.' },
           ]
         },
       ],
       commonErrors: [
-        '"Although...but..." ✗ → "Although..." fotsiny ✓ (tsy mampifandray "but" aorian\'ny "although") [?]',
-        '"Because...so..." ✗ → "Because..." fotsiny ✓ [?]',
+        '"Although...but..." ✗ → "Although..." fotsiny ✓ (tsy mampifandray "but" aorian\'ny "although")',
+        '"Because...so..." ✗ → "Because..." fotsiny ✓',
       ],
       tips: [
-        '"So" = vokatr\'izany · "because" = antony [?]',
-        '"Although" + fehezanteny feno roa lafiny; tsy misy "but" aorian\'ny [?]',
+        '"So" = vokatr\'izany · "because" = antony',
+        '"Although" + fehezanteny feno roa lafiny; tsy misy "but" aorian\'ny',
       ],
       summary: [
-        'and / but / or / so → fampifandraisana tsotra [?]',
-        'because / since → antony ; therefore → vokatr\'izany [?]',
-        'although → fanoherana (+ fehezanteny) ; however → fanoherana (+ fehezanteny vaovao) [?]',
+        'and / but / or / so → fampifandraisana tsotra',
+        'because / since → antony ; therefore → vokatr\'izany',
+        'although → fanoherana (+ fehezanteny) ; however → fanoherana (+ fehezanteny vaovao)',
       ]
     }
   },
@@ -3429,58 +3429,58 @@ export const bokyChapters = [
       ]
     },
     mg: {
-      intro: "Ny fisaraham-potoana amin\'ny anglisy dia misy indicators (teny famantarana) manokana. Ireo teny ireo no mametra ny temps ampiasaina. [?]",
+      intro: "Ny fisaraham-potoana amin\'ny anglisy dia misy indicators (teny famantarana) manokana. Ireo teny ireo no mametra ny temps ampiasaina.",
       sections: [
         {
           title: 'Past Simple — indicators',
           content: 'yesterday · ago · last… · in + taona · when I was…',
           rows: [
-            { en: 'I met her yesterday at the market.', tr: 'Nahita azy aho omaly teny an-tsena. [?]' },
-            { en: 'He left two hours ago.', tr: 'Nandeha izy efatra ora lasa izay. [?]' },
-            { en: 'We went to the beach last summer.', tr: 'Nankany an-dranomasina izahay ny lohataona lasa. [?]' },
+            { en: 'I met her yesterday at the market.', tr: 'Nahita azy aho omaly teny an-tsena.' },
+            { en: 'He left two hours ago.', tr: 'Nandeha izy efatra ora lasa izay.' },
+            { en: 'We went to the beach last summer.', tr: 'Nankany an-dranomasina izahay ny lohataona lasa.' },
           ]
         },
         {
           title: 'Present Perfect — indicators',
           content: 'already · yet · just · since · for · ever · never · recently',
           rows: [
-            { en: 'I have already eaten lunch.', tr: 'Efa nisakafo atoandro aho. [?]' },
-            { en: 'Have you finished your homework yet?', tr: 'Vita ny asanao ve? [?]' },
-            { en: 'She has just arrived home.', tr: 'Vao tonga an-trano izy. [?]' },
-            { en: 'He has lived here since 2020.', tr: 'Monina eto izy hatramin\'ny 2020. [?]' },
-            { en: 'We have studied English for three years.', tr: 'Nandalina anglisy izahay mandritra ny telo taona. [?]' },
+            { en: 'I have already eaten lunch.', tr: 'Efa nisakafo atoandro aho.' },
+            { en: 'Have you finished your homework yet?', tr: 'Vita ny asanao ve?' },
+            { en: 'She has just arrived home.', tr: 'Vao tonga an-trano izy.' },
+            { en: 'He has lived here since 2020.', tr: 'Monina eto izy hatramin\'ny 2020.' },
+            { en: 'We have studied English for three years.', tr: 'Nandalina anglisy izahay mandritra ny telo taona.' },
           ]
         },
         {
           title: 'Present Simple — indicators',
           content: 'every day · always · usually · often · never · on Sundays',
           rows: [
-            { en: 'I go to school every day.', tr: 'Mankany sekoly aho isan\'andro. [?]' },
-            { en: 'She always drinks coffee in the morning.', tr: 'Mandrakariva misotro kafe maraina izy. [?]' },
+            { en: 'I go to school every day.', tr: 'Mankany sekoly aho isan\'andro.' },
+            { en: 'She always drinks coffee in the morning.', tr: 'Mandrakariva misotro kafe maraina izy.' },
           ]
         },
         {
           title: 'Future — indicators',
           content: 'tomorrow · next… · soon · in + fotoana ho avy',
           rows: [
-            { en: 'She will call you tomorrow morning.', tr: 'Hiantso anao izy rahampitso maraina. [?]' },
-            { en: 'We are going to travel next month.', tr: 'Handeha dia izahay ny volana ho avy. [?]' },
+            { en: 'She will call you tomorrow morning.', tr: 'Hiantso anao izy rahampitso maraina.' },
+            { en: 'We are going to travel next month.', tr: 'Handeha dia izahay ny volana ho avy.' },
           ]
         },
       ],
       commonErrors: [
-        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple) [?]',
-        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect) [?]',
+        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple)',
+        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect)',
       ],
       tips: [
-        '"since" + fotoana manokana (since 2020) · "for" + faharetan\'ny fotoana (for 3 years) [?]',
-        'Fotoana mifarana = Past Simple · Mifandray amin\'ny ankehitriny = Present Perfect [?]',
+        '"since" + fotoana manokana (since 2020) · "for" + faharetan\'ny fotoana (for 3 years)',
+        'Fotoana mifarana = Past Simple · Mifandray amin\'ny ankehitriny = Present Perfect',
       ],
       summary: [
-        'yesterday / ago / last / in 2005 → Past Simple [?]',
-        'already / yet / just / since / for → Present Perfect [?]',
-        'every day / always / usually → Present Simple [?]',
-        'tomorrow / next / soon → Future [?]',
+        'yesterday / ago / last / in 2005 → Past Simple',
+        'already / yet / just / since / for → Present Perfect',
+        'every day / always / usually → Present Simple',
+        'tomorrow / next / soon → Future',
       ]
     }
   },
@@ -3555,56 +3555,56 @@ export const bokyChapters = [
       ]
     },
     mg: {
-      intro: "Ny <strong>phrasal verb</strong> = matoanteny + particule (adverbe na préposition). Ny heviny dia hafa tanteraka amin\'ny teny tsirairay, ka tsy maintsy hadinina tsirairay. [?]",
+      intro: "Ny <strong>phrasal verb</strong> = matoanteny + particule (adverbe na préposition). Ny heviny dia hafa tanteraka amin\'ny teny tsirairay, ka tsy maintsy hadinina tsirairay.",
       sections: [
         {
           title: 'Phrasal verbs lehibe indrindra — vondrona 1 (10)',
           content: 'Ny mahazatra indrindra amin\'ny andavanandro.',
           rows: [
-            { en: 'I get up at six every morning.', tr: 'get up = mitsangana [?]' },
-            { en: "Don't give up, keep trying!", tr: 'give up = manafoana / miala amin\'ny ezaka [?]' },
-            { en: "I'm looking for my keys.", tr: 'look for = mitady [?]' },
-            { en: 'She looks after her little brother.', tr: 'look after = mikarakara [?]' },
-            { en: 'Turn on the light, please.', tr: 'turn on = mampirehitra [?]' },
-            { en: 'Turn off the TV before bed.', tr: 'turn off = mampivoaka [?]' },
-            { en: 'Can you pick me up at the station?', tr: 'pick up = maka / handeha haka [?]' },
-            { en: "Put on your coat, it's cold outside.", tr: 'put on = mitafy [?]' },
-            { en: 'I woke up very late today.', tr: 'wake up = mifohaza [?]' },
+            { en: 'I get up at six every morning.', tr: 'get up = mitsangana' },
+            { en: "Don't give up, keep trying!", tr: 'give up = manafoana / miala amin\'ny ezaka' },
+            { en: "I'm looking for my keys.", tr: 'look for = mitady' },
+            { en: 'She looks after her little brother.', tr: 'look after = mikarakara' },
+            { en: 'Turn on the light, please.', tr: 'turn on = mampirehitra' },
+            { en: 'Turn off the TV before bed.', tr: 'turn off = mampivoaka' },
+            { en: 'Can you pick me up at the station?', tr: 'pick up = maka / handeha haka' },
+            { en: "Put on your coat, it's cold outside.", tr: 'put on = mitafy' },
+            { en: 'I woke up very late today.', tr: 'wake up = mifohaza' },
           ]
         },
         {
           title: 'Phrasal verbs lehibe indrindra — vondrona 2 (10)',
           content: 'Folo phrasal verbs hafa mahasoa.',
           rows: [
-            { en: 'When will you come back home?', tr: 'come back = miverina [?]' },
-            { en: 'They go out every Friday evening.', tr: 'go out = mivoaka [?]' },
-            { en: 'I need to find out the truth.', tr: 'find out = mahita / mahalala [?]' },
-            { en: 'The car broke down on the highway.', tr: 'break down = very [?]' },
-            { en: 'We ran out of milk this morning.', tr: 'run out of = lany / tsy ampy [?]' },
-            { en: 'Hold on, I will be right back.', tr: 'hold on = andraso [?]' },
-            { en: "Don't put off your homework until tomorrow.", tr: 'put off = mametraka ho rahampitso [?]' },
+            { en: 'When will you come back home?', tr: 'come back = miverina' },
+            { en: 'They go out every Friday evening.', tr: 'go out = mivoaka' },
+            { en: 'I need to find out the truth.', tr: 'find out = mahita / mahalala' },
+            { en: 'The car broke down on the highway.', tr: 'break down = very' },
+            { en: 'We ran out of milk this morning.', tr: 'run out of = lany / tsy ampy' },
+            { en: 'Hold on, I will be right back.', tr: 'hold on = andraso' },
+            { en: "Don't put off your homework until tomorrow.", tr: 'put off = mametraka ho rahampitso' },
           ]
         },
         {
           title: 'Azo zaraina sy tsy azo zaraina',
           content: 'Separable: ny objet azo apetraka eo anelanelan\'ny verbe sy particule · Inseparable: ny objet aorian\'ny particule foana',
           rows: [
-            { en: 'Turn off the TV. OR Turn it off. (séparable)', tr: 'Mahazo zaraina: "turn it off" ✓ [?]' },
-            { en: 'Look after the children. (inséparable)', tr: 'Tsy azo zaraina: "look after them" ✓ [?]' },
+            { en: 'Turn off the TV. OR Turn it off. (séparable)', tr: 'Mahazo zaraina: "turn it off" ✓' },
+            { en: 'Look after the children. (inséparable)', tr: 'Tsy azo zaraina: "look after them" ✓' },
           ]
         },
       ],
       commonErrors: [
-        '"Turn off it." ✗ → "Turn it off." ✓ (pronom eo anelanelan\'ny verbe sy particule) [?]',
+        '"Turn off it." ✗ → "Turn it off." ✓ (pronom eo anelanelan\'ny verbe sy particule)',
       ],
       tips: [
-        'Amin\'ny pronom (it, them): ny particule aorian\'ny pronom foana: "turn it off" ✓ [?]',
-        'Mianatra phrasal verbs amin\'ny fehezanteny feno, fa tsy hevitra fotsiny [?]',
+        'Amin\'ny pronom (it, them): ny particule aorian\'ny pronom foana: "turn it off" ✓',
+        'Mianatra phrasal verbs amin\'ny fehezanteny feno, fa tsy hevitra fotsiny',
       ],
       summary: [
-        'Phrasal verb = verbe + particule (hevitra vaovao) [?]',
-        'Séparable: "turn off the TV" / "turn it off" [?]',
-        'Inséparable: "look after the children" [?]',
+        'Phrasal verb = verbe + particule (hevitra vaovao)',
+        'Séparable: "turn off the TV" / "turn it off"',
+        'Inséparable: "look after the children"',
       ]
     }
   },
