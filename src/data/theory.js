@@ -1457,6 +1457,337 @@ export const theory = {
     ]
   },
 
+  // ─── TASK 2 new topics ──────────────────────────────────────────────────────
+
+  possessives: {
+    id: 'possessives',
+    title: 'Adjectifs & Pronoms Possessifs',
+    icon: '🏷️',
+    level: 'A2',
+    subtitle: 'My/mine, your/yours, his/her — exprimer la possession',
+    malgasyNote: 'Ny fananana amin\'ny anglisy: adjectif (+ nom) na pronom (irery). Miova arakaraka ny toerana.',
+    sections: [
+      {
+        title: '📋 Tableau complet',
+        content: '<strong>Adjectif possessif</strong> + nom · <strong>Pronom possessif</strong> seul (remplace le nom)',
+        examples: [
+          { en: 'This is my book. The book is mine.', fr: 'C\'est mon livre. / Le livre est à moi.' },
+          { en: 'This is your bag. The bag is yours.', fr: 'C\'est ton sac. / Le sac est à toi.' },
+          { en: 'This is his pen. The pen is his.', fr: 'C\'est son stylo (à lui). / Le stylo est à lui.' },
+          { en: 'This is her phone. The phone is hers.', fr: 'C\'est son téléphone (à elle). / Le téléphone est à elle.' },
+          { en: 'This is our house. The house is ours.', fr: 'C\'est notre maison. / La maison est à nous.' },
+          { en: 'This is their car. The car is theirs.', fr: 'C\'est leur voiture. / La voiture est à eux.' },
+        ]
+      },
+      {
+        title: '✅ Adjectif possessif (avant un nom)',
+        content: 'Toujours devant un nom. Invariable (pas de masculin/féminin/pluriel).',
+        examples: [
+          { en: 'This is my brother.', fr: 'Voici mon frère.' },
+          { en: 'Her name is Miora.', fr: 'Elle s\'appelle Miora.' },
+          { en: 'We love our country.', fr: 'Nous aimons notre pays.' },
+          { en: 'Their parents are teachers.', fr: 'Leurs parents sont professeurs.' },
+        ]
+      },
+      {
+        title: '🔄 Pronom possessif (remplace le nom)',
+        content: 'Utilisé seul, sans nom. Évite la répétition.',
+        examples: [
+          { en: 'That book is mine.', fr: 'Ce livre est à moi.' },
+          { en: 'Is this pen yours?', fr: 'Ce stylo est à toi ?' },
+          { en: 'The red car is ours.', fr: 'La voiture rouge est à nous.' },
+          { en: 'Their house is bigger than ours.', fr: 'Leur maison est plus grande que la nôtre.' },
+        ]
+      },
+    ],
+    tips: [
+      '⚠️ "His" est identique pour l\'adjectif ET le pronom : his book / the book is his',
+      '⚠️ "Its" (adjectif possessif) n\'a pas de forme pronom courante',
+      '💡 Pas d\'apostrophe ! "its" (possessif) ≠ "it\'s" (it is)',
+      '🇲🇬 En malagasy la possession suit le nom : "ny boky-ko" (mon livre) ≠ "my book" (devant)',
+    ]
+  },
+
+  adverbs: {
+    id: 'adverbs',
+    title: 'Adverbes de fréquence & de manière',
+    icon: '⚡',
+    level: 'A2',
+    subtitle: 'Always, usually, often, never — quickly, carefully, well',
+    malgasyNote: 'Adverbes de fréquence: always = mandrakariva, often = matetika, never = tsy mba. Adverbes de manière: quickly = haingana.',
+    sections: [
+      {
+        title: '📅 Adverbes de fréquence (100% → 0%)',
+        content: 'Se placent <strong>avant le verbe principal</strong> mais <strong>après "to be"</strong>.',
+        examples: [
+          { en: 'I always brush my teeth in the morning. (100%)', fr: 'Je me brosse toujours les dents le matin.' },
+          { en: 'She usually wakes up at six. (80%)', fr: 'Elle se réveille généralement à 6h.' },
+          { en: 'We often eat rice for dinner. (60%)', fr: 'Nous mangeons souvent du riz le soir.' },
+          { en: 'He sometimes watches TV after school. (40%)', fr: 'Il regarde parfois la télé après l\'école.' },
+          { en: 'They rarely go to the cinema. (20%)', fr: 'Ils vont rarement au cinéma.' },
+          { en: 'I never drink alcohol. (0%)', fr: 'Je ne bois jamais d\'alcool.' },
+        ]
+      },
+      {
+        title: '📍 Position avec "to be"',
+        content: 'Avec "to be", l\'adverbe de fréquence se place <strong>après</strong> le verbe.',
+        examples: [
+          { en: 'He is always late.', fr: 'Il est toujours en retard.' },
+          { en: 'They are usually tired after school.', fr: 'Ils sont généralement fatigués après l\'école.' },
+          { en: 'She is never rude.', fr: 'Elle n\'est jamais impolie.' },
+        ]
+      },
+      {
+        title: '🏃 Adverbes de manière (adjectif + -ly)',
+        content: 'Indiquent comment quelque chose est fait. Se placent après le verbe ou l\'objet.',
+        examples: [
+          { en: 'She speaks English quickly.', fr: 'Elle parle anglais rapidement. (quick + ly)' },
+          { en: 'He drives very carefully.', fr: 'Il conduit très prudemment. (careful + ly)' },
+          { en: 'The team played badly last night.', fr: 'L\'équipe a très mal joué hier soir.' },
+          { en: 'She sings beautifully at every concert.', fr: 'Elle chante magnifiquement à chaque concert.' },
+        ]
+      },
+      {
+        title: '⚠️ Adverbes irréguliers',
+        content: 'Certains adverbes ne suivent pas la règle "-ly".',
+        examples: [
+          { en: 'She plays the piano very well.', fr: 'Elle joue très bien du piano. (good → well)' },
+          { en: 'He runs very fast.', fr: 'Il court très vite. (fast → fast, même forme)' },
+          { en: 'She works really hard every day.', fr: 'Elle travaille vraiment dur chaque jour. (hard → hard)' },
+          { en: 'He arrived late to the meeting.', fr: 'Il est arrivé en retard à la réunion. (late → late)' },
+        ]
+      },
+    ],
+    tips: [
+      '💡 Ordre en fin de phrase : MANIÈRE → LIEU → TEMPS (She sang beautifully in the park yesterday)',
+      '⚠️ "hardly" ≠ "hard" : hardly = à peine / hard = fort ou dur',
+      '⚠️ "lately" ≠ "late" : lately = récemment / late = en retard ou tard',
+    ]
+  },
+
+  countableUncountable: {
+    id: 'countableUncountable',
+    title: 'Dénombrables & Indénombrables',
+    icon: '🧮',
+    level: 'A2–B1',
+    subtitle: 'Much, many, a lot of, a few, a little — choisir la bonne quantité',
+    malgasyNote: 'Countable (azo isaina: apple, book) sy uncountable (tsy azo isaina: water, money, advice)',
+    sections: [
+      {
+        title: '📦 Noms dénombrables (Countable nouns)',
+        content: 'On peut les compter (1, 2, 3…). Ils ont un singulier et un pluriel.',
+        examples: [
+          { en: 'one apple, two apples, three books', fr: 'une pomme, deux pommes, trois livres' },
+          { en: 'How many oranges do you have?', fr: 'Combien d\'oranges as-tu ?' },
+          { en: 'I have a few coins in my pocket.', fr: 'J\'ai quelques pièces dans ma poche.' },
+          { en: 'There are many students in the class.', fr: 'Il y a beaucoup d\'étudiants dans la classe.' },
+        ]
+      },
+      {
+        title: '💧 Noms indénombrables (Uncountable nouns)',
+        content: 'Pas de pluriel. Pas de "a/an". Verbe toujours au singulier.',
+        examples: [
+          { en: 'water, milk, rice, bread, sugar, money, air', fr: 'eau, lait, riz, pain, sucre, argent, air' },
+          { en: 'information, advice, furniture, news, luggage', fr: 'information, conseil, meubles, nouvelles, bagages' },
+          { en: 'How much water do you drink every day?', fr: 'Combien d\'eau bois-tu chaque jour ?' },
+          { en: 'The information is correct.', fr: 'L\'information est correcte. (pas "informations")' },
+        ]
+      },
+      {
+        title: '⚖️ Much / Many / A lot of',
+        content: '<strong>much</strong> + indénombrable · <strong>many</strong> + dénombrable · <strong>a lot of</strong> + les deux (surtout en affirmatif)',
+        examples: [
+          { en: 'I don\'t have much time today.', fr: 'Je n\'ai pas beaucoup de temps aujourd\'hui.' },
+          { en: 'She has a lot of friends at school.', fr: 'Elle a beaucoup d\'amis à l\'école.' },
+          { en: 'He drinks a lot of water every day.', fr: 'Il boit beaucoup d\'eau chaque jour.' },
+          { en: 'Do you have much homework tonight?', fr: 'Tu as beaucoup de devoirs ce soir ?' },
+        ]
+      },
+      {
+        title: '🔹 A few / A little',
+        content: '<strong>a few</strong> + dénombrable · <strong>a little</strong> + indénombrable (sens positif)',
+        examples: [
+          { en: 'I have a few friends in this city.', fr: 'J\'ai quelques amis dans cette ville.' },
+          { en: 'She speaks a little French.', fr: 'Elle parle un peu français.' },
+          { en: 'Wait a few minutes, please.', fr: 'Attends quelques minutes, s\'il te plaît.' },
+          { en: 'Add a little sugar to the tea.', fr: 'Ajoute un peu de sucre dans le thé.' },
+        ]
+      },
+    ],
+    tips: [
+      '⚠️ "advice", "information", "furniture", "news", "luggage" → toujours indénombrables en anglais !',
+      '💡 Much/many → surtout en négatifs et questions ; en affirmatif préfère "a lot of"',
+      '🔑 Few (sans "a") = peu de (presque rien, négatif) · a few = quelques (positif)',
+      '🔑 Little (sans "a") = peu de (négatif) · a little = un peu (positif)',
+    ]
+  },
+
+  connectors: {
+    id: 'connectors',
+    title: 'Connecteurs & Conjonctions',
+    icon: '🔗',
+    level: 'B1',
+    subtitle: 'And, but, because, although, however, therefore — relier les idées',
+    malgasyNote: 'Ny connector = teny mampifandray hevitra roa. Ilaina indrindra amin\'ny soratra sy ny resaka.',
+    sections: [
+      {
+        title: '➕ Coordination (and, but, or, so)',
+        content: 'Relient deux propositions de même niveau.',
+        examples: [
+          { en: 'I like tea and coffee.', fr: 'J\'aime le thé et le café.' },
+          { en: 'She is tired but she keeps working hard.', fr: 'Elle est fatiguée mais elle continue à travailler.' },
+          { en: 'You can stay or leave now.', fr: 'Tu peux rester ou partir maintenant.' },
+          { en: 'It was raining, so we stayed home.', fr: 'Il pleuvait, donc nous sommes restés à la maison.' },
+        ]
+      },
+      {
+        title: '❓ Cause & Résultat (because, since, therefore)',
+        content: '<strong>because / since</strong> → la cause · <strong>therefore / as a result</strong> → la conséquence',
+        examples: [
+          { en: 'I was late because the bus broke down.', fr: 'J\'étais en retard parce que le bus est tombé en panne.' },
+          { en: 'Since it was cold outside, we put on our coats.', fr: 'Comme il faisait froid dehors, nous avons mis nos manteaux.' },
+          { en: 'He studied very hard. Therefore, he passed the exam.', fr: 'Il a beaucoup étudié. Par conséquent, il a réussi.' },
+        ]
+      },
+      {
+        title: '🔄 Contraste (although, however, nevertheless)',
+        content: '<strong>although</strong> + proposition · <strong>however / nevertheless</strong> en début de phrase (+ virgule)',
+        examples: [
+          { en: 'Although it was expensive, she bought it.', fr: 'Bien que ce soit cher, elle l\'a acheté.' },
+          { en: 'I was very tired. However, I finished my homework.', fr: 'J\'étais très fatigué. Cependant, j\'ai fini mes devoirs.' },
+          { en: 'The plan was risky. Nevertheless, they all agreed.', fr: 'Le plan était risqué. Néanmoins, ils ont tous accepté.' },
+          { en: 'Even though it rained, we enjoyed the trip.', fr: 'Même s\'il a plu, nous avons profité du voyage.' },
+        ]
+      },
+      {
+        title: '➕ Addition (moreover, furthermore, in addition)',
+        content: 'Ajoutent une information supplémentaire. Registre soutenu, surtout à l\'écrit.',
+        examples: [
+          { en: 'The hotel is clean. Moreover, it is very affordable.', fr: 'L\'hôtel est propre. De plus, il est abordable.' },
+          { en: 'Furthermore, the location is excellent.', fr: 'En outre, l\'emplacement est excellent.' },
+          { en: 'In addition to English, she also speaks Spanish.', fr: 'En plus de l\'anglais, elle parle aussi espagnol.' },
+        ]
+      },
+    ],
+    tips: [
+      '💡 "So" exprime la conséquence (donc) ; "because" exprime la cause (parce que)',
+      '⚠️ "Although" et "even though" sont synonymes ; "even though" est plus fort / plus émotionnel',
+      '💡 "However" et "nevertheless" viennent en début de phrase ou après un point-virgule',
+    ]
+  },
+
+  tenseChooser: {
+    id: 'tenseChooser',
+    title: 'Choisir le bon temps verbal',
+    icon: '🎯',
+    level: 'B1',
+    subtitle: 'Yesterday/ago → Past Simple · Already/since/for → Present Perfect',
+    malgasyNote: 'Ny fotoana manokana no mametra ny temps. Yesterday = Past Simple. Already/just/since = Present Perfect.',
+    sections: [
+      {
+        title: '⏮️ Past Simple — indicateurs temporels',
+        content: 'Utilise le Past Simple avec : <strong>yesterday, ago, last…, in + année, when I was…</strong>',
+        examples: [
+          { en: 'I met her yesterday at the market.', fr: 'Je l\'ai rencontrée hier au marché.' },
+          { en: 'He left two hours ago.', fr: 'Il est parti il y a deux heures.' },
+          { en: 'We went to the beach last summer.', fr: 'Nous sommes allés à la plage l\'été dernier.' },
+          { en: 'She was born in 2005.', fr: 'Elle est née en 2005.' },
+        ]
+      },
+      {
+        title: '🔗 Present Perfect — indicateurs temporels',
+        content: 'Utilise le Present Perfect avec : <strong>already, yet, just, since, for, ever, never, recently, so far</strong>',
+        examples: [
+          { en: 'I have already eaten lunch.', fr: 'J\'ai déjà déjeuné.' },
+          { en: 'Have you finished your homework yet?', fr: 'Tu as déjà fini tes devoirs ?' },
+          { en: 'She has just arrived home.', fr: 'Elle vient juste d\'arriver à la maison.' },
+          { en: 'He has lived here since 2020.', fr: 'Il habite ici depuis 2020.' },
+          { en: 'We have studied English for three years.', fr: 'Nous étudions l\'anglais depuis trois ans.' },
+        ]
+      },
+      {
+        title: '📖 Present Simple — indicateurs temporels',
+        content: 'Utilise le Present Simple avec : <strong>every day/week, always, usually, often, never, on Mondays</strong>',
+        examples: [
+          { en: 'I go to school every day.', fr: 'Je vais à l\'école tous les jours.' },
+          { en: 'She always drinks coffee in the morning.', fr: 'Elle boit toujours du café le matin.' },
+          { en: 'They play football on Sundays.', fr: 'Ils jouent au foot le dimanche.' },
+        ]
+      },
+      {
+        title: '🚀 Future — indicateurs temporels',
+        content: 'Utilise <strong>will</strong> ou <strong>going to</strong> avec : tomorrow, next…, soon, in + durée future',
+        examples: [
+          { en: 'She will call you tomorrow morning.', fr: 'Elle t\'appellera demain matin.' },
+          { en: 'We are going to travel next month.', fr: 'Nous allons voyager le mois prochain.' },
+          { en: 'He will be back in two days.', fr: 'Il sera de retour dans deux jours.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 "since" + moment précis (since 2020, since Monday) · "for" + durée (for 3 years, for a week)',
+      '⚠️ "I have been here since yesterday" (PP) ≠ "I was here yesterday" (PS)',
+      '💡 Moment précis et terminé → Past Simple · Lien avec le présent → Present Perfect',
+    ]
+  },
+
+  phrasalVerbs: {
+    id: 'phrasalVerbs',
+    title: 'Phrasal Verbs essentiels',
+    icon: '💡',
+    level: 'B1–B2',
+    subtitle: 'Get up, give up, look for, turn on/off — les 20 indispensables',
+    malgasyNote: 'Phrasal verbs = verbe + particule. Ny hevitr\'izy ireo dia hafa amin\'ny teny tsirairay — tsy maintsy hadinina!',
+    sections: [
+      {
+        title: '📋 Phrasal verbs essentiels — groupe 1',
+        content: 'Verbe + particule (adverbe/préposition) = sens nouveau. Souvent impossible à deviner !',
+        examples: [
+          { en: 'I get up at six every morning.', fr: 'get up = se lever' },
+          { en: "Don't give up, keep trying!", fr: 'give up = abandonner' },
+          { en: "I'm looking for my keys.", fr: 'look for = chercher' },
+          { en: 'She looks after her little brother.', fr: 'look after = s\'occuper de' },
+          { en: 'Turn on the light, please.', fr: 'turn on = allumer' },
+          { en: 'Turn off the TV before bed.', fr: 'turn off = éteindre' },
+          { en: 'Can you pick me up at the station?', fr: 'pick up = ramasser / aller chercher' },
+          { en: 'Put on your coat, it\'s cold outside.', fr: 'put on = mettre (un vêtement)' },
+          { en: 'Take off your shoes at the door.', fr: 'take off = enlever (vêtement) / décoller' },
+          { en: 'I woke up very late today.', fr: 'wake up = se réveiller' },
+        ]
+      },
+      {
+        title: '📋 Phrasal verbs essentiels — groupe 2',
+        content: 'Dix phrasal verbs supplémentaires très fréquents.',
+        examples: [
+          { en: 'When will you come back home?', fr: 'come back = revenir / rentrer' },
+          { en: 'They go out every Friday evening.', fr: 'go out = sortir' },
+          { en: 'I need to find out the truth.', fr: 'find out = découvrir / apprendre' },
+          { en: 'She set up her own business last year.', fr: 'set up = créer / mettre en place' },
+          { en: 'The car broke down on the highway.', fr: 'break down = tomber en panne' },
+          { en: 'We ran out of milk this morning.', fr: 'run out of = manquer de / ne plus avoir' },
+          { en: 'They made up after the argument.', fr: 'make up = se réconcilier / inventer' },
+          { en: 'The doctor carried out the tests carefully.', fr: 'carry out = effectuer / réaliser' },
+          { en: 'Hold on, I will be right back.', fr: 'hold on = attendre / tenir bon' },
+          { en: "Don't put off your homework until tomorrow.", fr: 'put off = remettre à plus tard' },
+        ]
+      },
+      {
+        title: '🔀 Séparables vs. Inséparables',
+        content: '<strong>Séparable</strong> : l\'objet peut aller entre verbe et particule · <strong>Inséparable</strong> : l\'objet vient toujours après',
+        examples: [
+          { en: 'Turn off the TV. OR Turn it off. (séparable)', fr: 'Éteins la télé. / Éteins-la.' },
+          { en: 'Look after the children. (inséparable, jamais "look the children after")', fr: 'Occupe-toi des enfants.' },
+          { en: 'Pick up the book. OR Pick it up. (séparable)', fr: 'Ramasse le livre. / Ramasse-le.' },
+        ]
+      },
+    ],
+    tips: [
+      '💡 Avec un pronom (it, them, him), la particule vient TOUJOURS après : "turn it off" ✓ (pas "turn off it")',
+      '📚 Apprends les phrasal verbs par phrases complètes, pas juste la traduction',
+      '🔑 "Run out of" et "look after" sont inséparables — l\'objet ne peut jamais se glisser entre',
+    ]
+  },
+
   vocabulary: {
     routine: {
       title: 'Vocabulaire : Routine Quotidienne',
@@ -1544,9 +1875,12 @@ export const theoryTopics = [
   { id: 'comparatives',      label: 'Comparatifs & Superlatifs', icon: '⚖️',   level: 'A2' },
   { id: 'irregularVerbs',    label: 'Verbes Irréguliers',        icon: '📋',   level: 'A2' },
   { id: 'modals',            label: 'Modaux (can/must/would…)',  icon: '🛠️',   level: 'A2' },
+  { id: 'possessives',       label: 'Adjectifs & Pronoms Possessifs', icon: '🏷️', level: 'A2' },
+  { id: 'adverbs',           label: 'Adverbes (fréquence & manière)', icon: '⚡', level: 'A2' },
   // ── A2–B1 ────────────────────────────────────────────────────────
   { id: 'pastSimple',        label: 'Past Simple',               icon: '⏮️',   level: 'A2–B1' },
   { id: 'futureSimple',      label: 'Future Simple',             icon: '🚀',   level: 'A2–B1' },
+  { id: 'countableUncountable', label: 'Dénombrables & Indénombrables', icon: '🧮', level: 'A2–B1' },
   // ── B1 ───────────────────────────────────────────────────────────
   { id: 'pastContinuous',    label: 'Past Continuous',           icon: '⏸️',   level: 'B1' },
   { id: 'futureContinuous',  label: 'Future Continuous',         icon: '🔮',   level: 'B1' },
@@ -1554,9 +1888,12 @@ export const theoryTopics = [
   { id: 'pastPerfect',       label: 'Past Perfect',              icon: '⏮️⏮️', level: 'B1' },
   { id: 'timeMarkers',       label: 'Indicateurs de temps',      icon: '⏱️',   level: 'B1' },
   { id: 'passiveVoice',      label: 'Voix Passive',              icon: '🔄',   level: 'B1' },
+  { id: 'connectors',        label: 'Connecteurs & Conjonctions', icon: '🔗',  level: 'B1' },
+  { id: 'tenseChooser',      label: 'Choisir le bon temps',      icon: '🎯',   level: 'B1' },
   // ── B1–B2 ────────────────────────────────────────────────────────
   { id: 'conditionals',      label: 'Conditionnels (if)',        icon: '🔀',   level: 'B1–B2' },
   { id: 'reportedSpeech',    label: 'Discours Indirect',         icon: '💬',   level: 'B1–B2' },
+  { id: 'phrasalVerbs',      label: 'Phrasal Verbs essentiels',  icon: '💡',   level: 'B1–B2' },
   // ── B2 ───────────────────────────────────────────────────────────
   { id: 'futurePerfect',     label: 'Future Perfect',            icon: '✅🚀',  level: 'B2' },
 ];

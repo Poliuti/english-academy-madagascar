@@ -2879,37 +2879,773 @@ export const bokyChapters = [
     },
   },
 
+  // ══════════════════════════════════════════════════════════════════════════
+  // POSSESSIVES — A2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'possessives',
+    title: 'Possessives — Possessifs',
+    icon: '🏷️',
+    level: 'A2',
+    fr: {
+      intro: "En anglais, on exprime la possession de deux façons : avec un <strong>adjectif possessif</strong> (my, your, his…) placé devant un nom, ou avec un <strong>pronom possessif</strong> (mine, yours, his…) utilisé seul à la place du nom. Les deux formes ne s'utilisent pas dans les mêmes contextes.",
+      sections: [
+        {
+          title: 'Adjectifs possessifs (devant un nom)',
+          content: 'Invariables. Pas de masculin/féminin/pluriel.',
+          rows: [
+            { en: 'This is my book.', tr: 'C\'est mon livre.' },
+            { en: 'What is your name?', tr: 'Comment tu t\'appelles ?' },
+            { en: 'His bag is blue.', tr: 'Son sac (à lui) est bleu.' },
+            { en: 'Her phone is new.', tr: 'Son téléphone (à elle) est neuf.' },
+            { en: 'The dog wags its tail.', tr: 'Le chien remue sa queue.' },
+            { en: 'Our school is big.', tr: 'Notre école est grande.' },
+            { en: 'Their parents are teachers.', tr: 'Leurs parents sont professeurs.' },
+          ]
+        },
+        {
+          title: 'Pronoms possessifs (à la place du nom)',
+          content: 'Remplacent un groupe nominal déjà mentionné.',
+          rows: [
+            { en: 'That book is mine.', tr: 'Ce livre est à moi.' },
+            { en: 'Is this bag yours?', tr: 'Ce sac est à toi ?' },
+            { en: 'The blue pen is his.', tr: 'Le stylo bleu est à lui.' },
+            { en: 'The phone is hers.', tr: 'Le téléphone est à elle.' },
+            { en: 'The red car is ours.', tr: 'La voiture rouge est à nous.' },
+            { en: 'The big house is theirs.', tr: 'La grande maison est à eux.' },
+          ]
+        },
+        {
+          title: 'Tableau récapitulatif',
+          content: 'Adjectif possessif → pronom possessif',
+          rows: [
+            { en: 'my → mine', tr: 'mon/ma/mes → le mien / la mienne' },
+            { en: 'your → yours', tr: 'ton/ta → le tien / la tienne' },
+            { en: 'his → his', tr: 'son (masc.) → le sien (même forme !)' },
+            { en: 'her → hers', tr: 'son (fém.) → le sien (à elle)' },
+            { en: 'its → (no pronoun)', tr: 'son (chose/animal) → pas de pronom seul usuel' },
+            { en: 'our → ours', tr: 'notre → le nôtre / la nôtre' },
+            { en: 'their → theirs', tr: 'leur → le leur / la leur' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"It\'s tail is long." ✗ → "Its tail is long." ✓ (its = possessif, pas d\'apostrophe)',
+        '"The book is my." ✗ → "The book is mine." ✓',
+        '"She lost her\'s keys." ✗ → "She lost her keys." ✓',
+      ],
+      tips: [
+        '"His" est la même forme pour adjectif et pronom : his car / the car is his',
+        '"Its" n\'a pas d\'apostrophe (possessif) ; "it\'s" = it is',
+        'Les pronoms possessifs remplacent un nom : "This is my pen. Mine is red." (mine = my pen)',
+      ],
+      summary: [
+        'Adjectif possessif + nom : my book, your bag, their car…',
+        'Pronom possessif seul : mine, yours, his, hers, ours, theirs',
+        '"his" reste "his" dans les deux cas',
+      ]
+    },
+    mg: {
+      intro: "Amin\'ny anglisy, ny fananana dia asehon\'ny <strong>adjectif possessif</strong> (my, your, his...) eo alohan\'ny noun, na ny <strong>pronom possessif</strong> (mine, yours, his...) ampiasaina irery tsy misy noun aorian\'ny. [?]",
+      sections: [
+        {
+          title: 'Adjectif possessif (eo alohan\'ny noun)',
+          content: 'Tsy miova arakaraka ny genre na ny isan\'ny noun.',
+          rows: [
+            { en: 'This is my book.', tr: 'Io boky-ko io. [?]' },
+            { en: 'What is your name?', tr: 'Iza ny anaranao? [?]' },
+            { en: 'His bag is blue.', tr: 'Ny kitapo-ny (lehilahy) dia manga. [?]' },
+            { en: 'Her phone is new.', tr: 'Ny finday-ny (vehivavy) dia vaovao. [?]' },
+            { en: 'Our school is big.', tr: 'Lehibe ny sekolin\'ny. [?]' },
+            { en: 'Their parents are teachers.', tr: 'Mpampianatra ny ray aman-dreny-ny. [?]' },
+          ]
+        },
+        {
+          title: 'Pronom possessif (misolo ny noun)',
+          content: 'Ampiasaina irery, misolo ny noun efa voalaza.',
+          rows: [
+            { en: 'That book is mine.', tr: 'Io boky io an\'ny. [?]' },
+            { en: 'Is this bag yours?', tr: 'Anao ve ity kitapo ity? [?]' },
+            { en: 'The blue pen is his.', tr: 'An\'ny lehilahy ny penina manga. [?]' },
+            { en: 'The red car is ours.', tr: 'An\'ny fiara mena no an\'ny. [?]' },
+          ]
+        },
+        {
+          title: 'Latabatra fampitahana',
+          content: 'Adjectif possessif → Pronom possessif',
+          rows: [
+            { en: 'my → mine', tr: 'ahy / an\'ny (= an\'aho) [?]' },
+            { en: 'your → yours', tr: 'anao / an\'ianao [?]' },
+            { en: 'his → his', tr: 'azy (lehilahy) — endrika iray ihany! [?]' },
+            { en: 'her → hers', tr: 'azy (vehivavy) [?]' },
+            { en: 'our → ours', tr: 'an\'ny / an\'izahay [?]' },
+            { en: 'their → theirs', tr: 'azy ireo [?]' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"It\'s tail is long." ✗ → "Its tail is long." ✓ (its = possessif, tsy misy apostrophe) [?]',
+        '"The book is my." ✗ → "The book is mine." ✓ [?]',
+      ],
+      tips: [
+        '"His" = adjectif sy pronom iray ihany: his car / the car is his [?]',
+        '"Its" tsy misy apostrophe (possessif) ≠ "it\'s" = it is [?]',
+      ],
+      summary: [
+        'Adjectif possessif + noun: my book, your bag... [?]',
+        'Pronom possessif irery: mine, yours, his, hers, ours, theirs [?]',
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // ADVERBS — A2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'adverbs',
+    title: 'Adverbs — Adverbes',
+    icon: '⚡',
+    level: 'A2',
+    fr: {
+      intro: "Les <strong>adverbes de fréquence</strong> indiquent à quelle fréquence une action se produit (always → never). Les <strong>adverbes de manière</strong> décrivent comment une action est effectuée (quickly, carefully). Leur position dans la phrase est essentielle.",
+      sections: [
+        {
+          title: 'Adverbes de fréquence (100% → 0%)',
+          content: 'Se placent avant le verbe principal, mais après "to be".',
+          rows: [
+            { en: 'I always brush my teeth in the morning.', tr: 'Je me brosse toujours les dents le matin. (100%)' },
+            { en: 'She usually wakes up at six.', tr: 'Elle se réveille généralement à 6h. (80%)' },
+            { en: 'We often eat rice for dinner.', tr: 'Nous mangeons souvent du riz le soir. (60%)' },
+            { en: 'He sometimes watches TV after school.', tr: 'Il regarde parfois la télé après l\'école. (40%)' },
+            { en: 'They rarely go to the cinema.', tr: 'Ils vont rarement au cinéma. (20%)' },
+            { en: 'I never drink alcohol.', tr: 'Je ne bois jamais d\'alcool. (0%)' },
+          ]
+        },
+        {
+          title: 'Position avec "to be"',
+          content: 'Après "to be", l\'adverbe de fréquence se place après le verbe.',
+          rows: [
+            { en: 'He is always late.', tr: 'Il est toujours en retard.' },
+            { en: 'They are usually tired after school.', tr: 'Ils sont généralement fatigués après l\'école.' },
+            { en: 'She is never rude.', tr: 'Elle n\'est jamais impolie.' },
+          ]
+        },
+        {
+          title: 'Adverbes de manière (adjectif + -ly)',
+          content: 'Se placent après le verbe ou l\'objet direct.',
+          rows: [
+            { en: 'She speaks English quickly.', tr: 'Elle parle anglais rapidement.' },
+            { en: 'He drives very carefully.', tr: 'Il conduit très prudemment.' },
+            { en: 'The team played badly last night.', tr: 'L\'équipe a très mal joué hier soir.' },
+            { en: 'She sings beautifully at every concert.', tr: 'Elle chante magnifiquement à chaque concert.' },
+          ]
+        },
+        {
+          title: 'Adverbes irréguliers (pas de -ly)',
+          content: 'Formes à mémoriser.',
+          rows: [
+            { en: 'She plays the piano very well.', tr: 'Elle joue très bien du piano. (good → well)' },
+            { en: 'He runs very fast.', tr: 'Il court très vite. (fast → fast)' },
+            { en: 'She works really hard every day.', tr: 'Elle travaille vraiment dur chaque jour. (hard → hard)' },
+            { en: 'He arrived late to the meeting.', tr: 'Il est arrivé en retard à la réunion. (late → late)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"She sings beautiful." ✗ → "She sings beautifully." ✓',
+        '"He plays good the guitar." ✗ → "He plays the guitar well." ✓',
+        '"I sometimes am late." ✗ → "I am sometimes late." ✓ (après to be)',
+      ],
+      tips: [
+        'Ordre en fin de phrase : MANIÈRE → LIEU → TEMPS (She sang beautifully in the park yesterday)',
+        '"hardly" ≠ "hard" : hardly = à peine / hard = fort ou dur',
+        '"lately" ≠ "late" : lately = récemment / late = en retard',
+      ],
+      summary: [
+        'Fréquence : avant le verbe principal / après to be',
+        'Manière : adjectif + -ly, après le verbe ou l\'objet',
+        'Irréguliers à retenir : good → well, fast → fast, hard → hard',
+      ]
+    },
+    mg: {
+      intro: "Ny <strong>adverbe de fréquence</strong> dia milaza ny matetika isaterahan\'ny asa (always → never). Ny <strong>adverbe de manière</strong> dia milaza ny fomba fanao (quickly, carefully). Ny toerana ao amin\'ny fehezanteny dia lehibe. [?]",
+      sections: [
+        {
+          title: 'Adverbe de fréquence (100% → 0%)',
+          content: 'Eo alohan\'ny matoanteny lehibe, nefa aorian\'ny to be.',
+          rows: [
+            { en: 'I always brush my teeth in the morning.', tr: 'Mandrakariva manasa nify aho maraina. [?]' },
+            { en: 'She usually wakes up at six.', tr: 'Matetika mifohaza amin\'ny enina izy. [?]' },
+            { en: 'We often eat rice for dinner.', tr: 'Matetika mihinana vary amin\'ny alina izahay. [?]' },
+            { en: 'I never drink alcohol.', tr: 'Tsy mba misotro toaka aho. [?]' },
+          ]
+        },
+        {
+          title: 'Toerana aorian\'ny "to be"',
+          content: 'Aorian\'ny to be, ny adverbe dia apetraka aorian\'ny matoanteny.',
+          rows: [
+            { en: 'He is always late.', tr: 'Mandrakariva diso fotoana izy. [?]' },
+            { en: 'She is never rude.', tr: 'Tsy mba manevateva izy. [?]' },
+          ]
+        },
+        {
+          title: 'Adverbe de manière (adjectif + -ly)',
+          content: 'Apetraka aorian\'ny matoanteny na ny objet.',
+          rows: [
+            { en: 'She speaks English quickly.', tr: 'Haingana ny fitenenany anglisy. [?]' },
+            { en: 'He drives very carefully.', tr: 'Mitandrina be izy rehefa mitondra fiara. [?]' },
+            { en: 'She plays the piano very well.', tr: 'Mahay manao piano tsara izy. [?] (good → well)' },
+            { en: 'He runs very fast.', tr: 'Mihazakazaka haingana be izy. [?] (fast → fast)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"She sings beautiful." ✗ → "She sings beautifully." ✓ [?]',
+        '"He plays good." ✗ → "He plays well." ✓ [?]',
+      ],
+      tips: [
+        'Manetrika: MANIÈRE → LIEU → FOTOANA (beautifully in the park yesterday) [?]',
+        '"hardly" = saika tsy (à peine) ≠ "hard" = mafy / mafy be [?]',
+      ],
+      summary: [
+        'Fréquence: eo alohan\'ny matoanteny / aorian\'ny to be [?]',
+        'Manière: adjectif + -ly, aorian\'ny matoanteny [?]',
+        'Tsy ara-dalàna: good → well, fast → fast, hard → hard [?]',
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // COUNTABLE / UNCOUNTABLE — A2–B1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'countableUncountable',
+    title: 'Countable & Uncountable Nouns',
+    icon: '🧮',
+    level: 'A2–B1',
+    fr: {
+      intro: "En anglais, les noms se divisent en <strong>countable</strong> (dénombrables, qu\'on peut compter) et <strong>uncountable</strong> (indénombrables, qu\'on ne peut pas compter). Ce choix détermine quel quantificateur utiliser : much, many, a lot of, a few, a little.",
+      sections: [
+        {
+          title: 'Dénombrables (Countable nouns)',
+          content: 'Ont un singulier et un pluriel. Peuvent être précédés de a/an.',
+          rows: [
+            { en: 'one apple, two apples, three books', tr: 'une pomme, deux pommes, trois livres' },
+            { en: 'How many oranges do you have?', tr: 'Combien d\'oranges as-tu ?' },
+            { en: 'I have a few coins in my pocket.', tr: 'J\'ai quelques pièces dans ma poche.' },
+            { en: 'There are many students in the class.', tr: 'Il y a beaucoup d\'étudiants dans la classe.' },
+          ]
+        },
+        {
+          title: 'Indénombrables (Uncountable nouns)',
+          content: 'Pas de pluriel. Pas de a/an. Verbe toujours singulier.',
+          rows: [
+            { en: 'water, milk, rice, bread, sugar, money, air', tr: 'eau, lait, riz, pain, sucre, argent, air' },
+            { en: 'information, advice, furniture, news, luggage', tr: 'information, conseil, meubles, nouvelles, bagages' },
+            { en: 'How much water do you drink every day?', tr: 'Combien d\'eau bois-tu chaque jour ?' },
+            { en: 'The information is correct.', tr: 'L\'information est correcte. (pas "informations")' },
+          ]
+        },
+        {
+          title: 'Much / Many / A lot of',
+          content: 'much + uncountable · many + countable · a lot of + les deux',
+          rows: [
+            { en: 'I don\'t have much time today.', tr: 'Je n\'ai pas beaucoup de temps aujourd\'hui.' },
+            { en: 'She has a lot of friends at school.', tr: 'Elle a beaucoup d\'amis à l\'école.' },
+            { en: 'He drinks a lot of water every day.', tr: 'Il boit beaucoup d\'eau chaque jour.' },
+            { en: 'Do you have much homework tonight?', tr: 'Tu as beaucoup de devoirs ce soir ?' },
+          ]
+        },
+        {
+          title: 'A few / A little',
+          content: 'a few + countable · a little + uncountable (sens positif)',
+          rows: [
+            { en: 'I have a few friends in this city.', tr: 'J\'ai quelques amis dans cette ville.' },
+            { en: 'She speaks a little French.', tr: 'Elle parle un peu français.' },
+            { en: 'Wait a few minutes, please.', tr: 'Attends quelques minutes, s\'il te plaît.' },
+            { en: 'Add a little sugar to the tea.', tr: 'Ajoute un peu de sucre dans le thé.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"I have many informations." ✗ → "I have a lot of information." ✓',
+        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓',
+        '"She has much friends." ✗ → "She has many friends." ✓',
+        '"I have few money." ✗ → "I have little money." ✓',
+      ],
+      tips: [
+        '"advice", "information", "furniture", "news", "luggage" → toujours uncountable !',
+        'Few (sans "a") = peu de (presque rien) · a few = quelques (positif)',
+        'Little (sans "a") = peu de (négatif) · a little = un peu (positif)',
+      ],
+      summary: [
+        'Countable → a/an, pluriel, many, a few',
+        'Uncountable → pas de a/an, pas de pluriel, much, a little',
+        'A lot of → universel (les deux, surtout en affirmatif)',
+      ]
+    },
+    mg: {
+      intro: "Amin\'ny anglisy, ny noun dia mizara ho <strong>countable</strong> (azo isaina) sy <strong>uncountable</strong> (tsy azo isaina). Io no mametra ny fampiasana much, many, a lot of, a few, a little. [?]",
+      sections: [
+        {
+          title: 'Countable (azo isaina)',
+          content: 'Misy endrika tokana sy endrika maro. Azo asiana a/an eo aloha.',
+          rows: [
+            { en: 'one apple, two apples, three books', tr: 'paoma iray, paoma roa, boky telo [?]' },
+            { en: 'How many oranges do you have?', tr: 'Ôranjy firy no anananao? [?]' },
+            { en: 'I have a few coins in my pocket.', tr: 'Manana vola vitsivitsy ao am-paosy aho. [?]' },
+          ]
+        },
+        {
+          title: 'Uncountable (tsy azo isaina)',
+          content: 'Tsy misy endrika maro. Tsy misy a/an. Matoanteny amin\'ny tokana foana.',
+          rows: [
+            { en: 'water, milk, rice, bread, sugar, money', tr: 'rano, ronono, vary, mofo, siramamy, vola [?]' },
+            { en: 'information, advice, furniture, news', tr: 'vaovao, torohevitra, firavaka, vaovao madinidinika [?]' },
+            { en: 'How much water do you drink every day?', tr: 'Rano ohatrinona no sotrohinao isan\'andro? [?]' },
+          ]
+        },
+        {
+          title: 'Much / Many / A lot of',
+          content: 'much + uncountable · many + countable · a lot of = izy roa',
+          rows: [
+            { en: 'I don\'t have much time today.', tr: 'Tsy manana fotoana be aho anio. [?]' },
+            { en: 'She has a lot of friends at school.', tr: 'Manana namana maro izy any an-tsekoly. [?]' },
+            { en: 'He drinks a lot of water every day.', tr: 'Misotro rano be izy isan\'andro. [?]' },
+          ]
+        },
+        {
+          title: 'A few / A little',
+          content: 'a few + countable · a little + uncountable',
+          rows: [
+            { en: 'I have a few friends in this city.', tr: 'Manana namana vitsivitsy aho ato an-tanàna. [?]' },
+            { en: 'She speaks a little French.', tr: 'Mahay teny frantsay kely izy. [?]' },
+            { en: 'Add a little sugar to the tea.', tr: 'Ampio siramamy kely ao amin\'ny dite. [?]' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"I have many informations." ✗ → "I have a lot of information." ✓ [?]',
+        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓ [?]',
+      ],
+      tips: [
+        '"advice", "information", "furniture", "news" — uncountable foana ireo! [?]',
+        'A few / a little = kely nefa misy (positif) · few / little = tena kely be (négatif) [?]',
+      ],
+      summary: [
+        'Countable → a/an, endrika maro, many, a few [?]',
+        'Uncountable → tsy misy a/an, tsy misy endrika maro, much, a little [?]',
+        'A lot of → azo ampiasaina amin\'ny izy roa [?]',
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // CONNECTORS — B1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'connectors',
+    title: 'Connectors & Conjunctions — Connecteurs',
+    icon: '🔗',
+    level: 'B1',
+    fr: {
+      intro: "Les connecteurs et conjonctions permettent de relier des idées, d\'exprimer des causes, des contrastes ou des ajouts. Ils sont indispensables pour écrire et parler de façon fluide et structurée.",
+      sections: [
+        {
+          title: 'Coordination (and, but, or, so)',
+          content: 'Relient deux éléments ou propositions de même niveau.',
+          rows: [
+            { en: 'I like tea and coffee.', tr: 'J\'aime le thé et le café.' },
+            { en: 'She is tired but she keeps working hard.', tr: 'Elle est fatiguée mais elle continue à travailler.' },
+            { en: 'You can stay or leave now.', tr: 'Tu peux rester ou partir maintenant.' },
+            { en: 'It was raining, so we stayed home.', tr: 'Il pleuvait, donc nous sommes restés à la maison.' },
+          ]
+        },
+        {
+          title: 'Cause & Résultat (because, since, therefore)',
+          content: 'because / since → la cause · therefore / as a result → la conséquence',
+          rows: [
+            { en: 'I was late because the bus broke down.', tr: 'J\'étais en retard parce que le bus est tombé en panne.' },
+            { en: 'Since it was cold outside, we put on our coats.', tr: 'Comme il faisait froid dehors, nous avons mis nos manteaux.' },
+            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Il a beaucoup étudié. Par conséquent, il a réussi.' },
+          ]
+        },
+        {
+          title: 'Contraste (although, however, nevertheless)',
+          content: 'although + proposition · however / nevertheless en début de phrase (+ virgule)',
+          rows: [
+            { en: 'Although it was expensive, she bought it.', tr: 'Bien que ce soit cher, elle l\'a acheté.' },
+            { en: 'I was very tired. However, I finished my homework.', tr: 'J\'étais très fatigué. Cependant, j\'ai fini mes devoirs.' },
+            { en: 'The plan was risky. Nevertheless, they all agreed.', tr: 'Le plan était risqué. Néanmoins, ils ont tous accepté.' },
+            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Même s\'il a plu, nous avons profité du voyage.' },
+          ]
+        },
+        {
+          title: 'Addition (moreover, furthermore, in addition)',
+          content: 'Ajoutent une information. Registre soutenu (surtout à l\'écrit).',
+          rows: [
+            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'L\'hôtel est propre. De plus, il est abordable.' },
+            { en: 'Furthermore, the location is excellent.', tr: 'En outre, l\'emplacement est excellent.' },
+            { en: 'In addition to English, she also speaks Spanish.', tr: 'En plus de l\'anglais, elle parle aussi espagnol.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"Although she was tired, but she worked." ✗ → "Although she was tired, she worked." ✓ (pas de "but" après "although")',
+        '"Because I was tired, so I slept." ✗ → "Because I was tired, I slept." ✓',
+        '"However she was tired, she worked." ✗ → "Although she was tired, she worked." ✓ (however ≠ although)',
+      ],
+      tips: [
+        '"So" = conséquence · "because" = cause',
+        '"Although" + proposition complète des deux côtés ; jamais suivi de "but"',
+        '"However" = début de nouvelle phrase ou après un point-virgule (registre soutenu)',
+      ],
+      summary: [
+        'and / but / or / so → coordination simple',
+        'because / since → cause ; therefore → conséquence',
+        'although / even though → contraste (+ proposition) ; however → contraste (+ phrase)',
+      ]
+    },
+    mg: {
+      intro: "Ny connector sy conjonction dia teny mampifandray hevitra roa na misea. Ilaina indrindra amin\'ny soratra sy ny resaka voalamina. [?]",
+      sections: [
+        {
+          title: 'Coordination (and, but, or, so)',
+          content: 'Mampifandray element na proposition amin\'ny ambaratonga mitovy.',
+          rows: [
+            { en: 'I like tea and coffee.', tr: 'Tia dite sy kafe aho. [?]' },
+            { en: 'She is tired but she keeps working hard.', tr: 'Vizana izy nefa mitohy miasa. [?]' },
+            { en: 'It was raining, so we stayed home.', tr: 'Nisy orana, koa nijanona tao an-trano izahay. [?]' },
+          ]
+        },
+        {
+          title: 'Antony sy Vokatr\'izany (because, since, therefore)',
+          content: 'because / since → ny antony · therefore → ny vokatr\'izany',
+          rows: [
+            { en: 'I was late because the bus broke down.', tr: 'Diso fotoana aho satria very ny bus. [?]' },
+            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Nahery fianarana izy. Koa amin\'izany, nahita fandaharam-potoana izy. [?]' },
+          ]
+        },
+        {
+          title: 'Fanoherana (although, however, nevertheless)',
+          content: 'although + proposition · however / nevertheless eo am-piandohan\'ny fehezanteny',
+          rows: [
+            { en: 'Although it was expensive, she bought it.', tr: 'Na dia lafo aza, novidiny ihany. [?]' },
+            { en: 'I was very tired. However, I finished my homework.', tr: 'Vizana be aho. Kanefa, vita ny asako. [?]' },
+            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Na dia nisy orana aza, nanana fialam-boly tsara izahay. [?]' },
+          ]
+        },
+        {
+          title: 'Fanampiana (moreover, furthermore, in addition)',
+          content: 'Manampy vaovao. Fampiasana amin\'ny ssoratra indrindra.',
+          rows: [
+            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'Madio ny hotely. Ho fanampin\'izany, mora ny vidiny. [?]' },
+            { en: 'In addition to English, she also speaks Spanish.', tr: 'Ho fanampin\'ny anglisy, mahay espaniola koa izy. [?]' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"Although...but..." ✗ → "Although..." fotsiny ✓ (tsy mampifandray "but" aorian\'ny "although") [?]',
+        '"Because...so..." ✗ → "Because..." fotsiny ✓ [?]',
+      ],
+      tips: [
+        '"So" = vokatr\'izany · "because" = antony [?]',
+        '"Although" + fehezanteny feno roa lafiny; tsy misy "but" aorian\'ny [?]',
+      ],
+      summary: [
+        'and / but / or / so → fampifandraisana tsotra [?]',
+        'because / since → antony ; therefore → vokatr\'izany [?]',
+        'although → fanoherana (+ fehezanteny) ; however → fanoherana (+ fehezanteny vaovao) [?]',
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // TENSE CHOOSER — B1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'tenseChooser',
+    title: 'Choosing the Right Tense — Choisir le bon temps',
+    icon: '🎯',
+    level: 'B1',
+    fr: {
+      intro: "Choisir le bon temps verbal est souvent difficile. Les <strong>indicateurs temporels</strong> (time markers) sont la clé : chaque groupe de mots signaux est associé à un temps précis. Maîtriser ces associations te permettra d\'utiliser les temps automatiquement.",
+      sections: [
+        {
+          title: 'Past Simple — indicateurs',
+          content: 'yesterday · ago · last… · in + année · when I was…',
+          rows: [
+            { en: 'I met her yesterday at the market.', tr: 'Je l\'ai rencontrée hier au marché.' },
+            { en: 'He left two hours ago.', tr: 'Il est parti il y a deux heures.' },
+            { en: 'We went to the beach last summer.', tr: 'Nous sommes allés à la plage l\'été dernier.' },
+            { en: 'She was born in 2005.', tr: 'Elle est née en 2005.' },
+          ]
+        },
+        {
+          title: 'Present Perfect — indicateurs',
+          content: 'already · yet · just · since · for · ever · never · recently · so far',
+          rows: [
+            { en: 'I have already eaten lunch.', tr: 'J\'ai déjà déjeuné.' },
+            { en: 'Have you finished your homework yet?', tr: 'Tu as déjà fini tes devoirs ?' },
+            { en: 'She has just arrived home.', tr: 'Elle vient juste d\'arriver à la maison.' },
+            { en: 'He has lived here since 2020.', tr: 'Il habite ici depuis 2020.' },
+            { en: 'We have studied English for three years.', tr: 'Nous étudions l\'anglais depuis trois ans.' },
+          ]
+        },
+        {
+          title: 'Present Simple — indicateurs',
+          content: 'every day/week · always · usually · often · never · on Mondays',
+          rows: [
+            { en: 'I go to school every day.', tr: 'Je vais à l\'école tous les jours.' },
+            { en: 'She always drinks coffee in the morning.', tr: 'Elle boit toujours du café le matin.' },
+            { en: 'They play football on Sundays.', tr: 'Ils jouent au foot le dimanche.' },
+          ]
+        },
+        {
+          title: 'Future (will / going to) — indicateurs',
+          content: 'tomorrow · next… · soon · in + durée future',
+          rows: [
+            { en: 'She will call you tomorrow morning.', tr: 'Elle t\'appellera demain matin.' },
+            { en: 'We are going to travel next month.', tr: 'Nous allons voyager le mois prochain.' },
+            { en: 'He will be back in two days.', tr: 'Il sera de retour dans deux jours.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple)',
+        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect)',
+        '"I know him since 5 years." ✗ → "I have known him for 5 years." ✓ (for + durée = PP)',
+      ],
+      tips: [
+        '"since" + moment précis (since 2020, since Monday) · "for" + durée (for 3 years)',
+        'Moment précis et terminé → Past Simple · Lien avec le présent → Present Perfect',
+        '"ago" = il y a (passé) · "in 2 days" = dans 2 jours (futur)',
+      ],
+      summary: [
+        'yesterday / ago / last / in 2005 → Past Simple',
+        'already / yet / just / since / for → Present Perfect',
+        'every day / always / usually → Present Simple',
+        'tomorrow / next / soon / in 2 days → Future',
+      ]
+    },
+    mg: {
+      intro: "Ny fisaraham-potoana amin\'ny anglisy dia misy indicators (teny famantarana) manokana. Ireo teny ireo no mametra ny temps ampiasaina. [?]",
+      sections: [
+        {
+          title: 'Past Simple — indicators',
+          content: 'yesterday · ago · last… · in + taona · when I was…',
+          rows: [
+            { en: 'I met her yesterday at the market.', tr: 'Nahita azy aho omaly teny an-tsena. [?]' },
+            { en: 'He left two hours ago.', tr: 'Nandeha izy efatra ora lasa izay. [?]' },
+            { en: 'We went to the beach last summer.', tr: 'Nankany an-dranomasina izahay ny lohataona lasa. [?]' },
+          ]
+        },
+        {
+          title: 'Present Perfect — indicators',
+          content: 'already · yet · just · since · for · ever · never · recently',
+          rows: [
+            { en: 'I have already eaten lunch.', tr: 'Efa nisakafo atoandro aho. [?]' },
+            { en: 'Have you finished your homework yet?', tr: 'Vita ny asanao ve? [?]' },
+            { en: 'She has just arrived home.', tr: 'Vao tonga an-trano izy. [?]' },
+            { en: 'He has lived here since 2020.', tr: 'Monina eto izy hatramin\'ny 2020. [?]' },
+            { en: 'We have studied English for three years.', tr: 'Nandalina anglisy izahay mandritra ny telo taona. [?]' },
+          ]
+        },
+        {
+          title: 'Present Simple — indicators',
+          content: 'every day · always · usually · often · never · on Sundays',
+          rows: [
+            { en: 'I go to school every day.', tr: 'Mankany sekoly aho isan\'andro. [?]' },
+            { en: 'She always drinks coffee in the morning.', tr: 'Mandrakariva misotro kafe maraina izy. [?]' },
+          ]
+        },
+        {
+          title: 'Future — indicators',
+          content: 'tomorrow · next… · soon · in + fotoana ho avy',
+          rows: [
+            { en: 'She will call you tomorrow morning.', tr: 'Hiantso anao izy rahampitso maraina. [?]' },
+            { en: 'We are going to travel next month.', tr: 'Handeha dia izahay ny volana ho avy. [?]' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple) [?]',
+        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect) [?]',
+      ],
+      tips: [
+        '"since" + fotoana manokana (since 2020) · "for" + faharetan\'ny fotoana (for 3 years) [?]',
+        'Fotoana mifarana = Past Simple · Mifandray amin\'ny ankehitriny = Present Perfect [?]',
+      ],
+      summary: [
+        'yesterday / ago / last / in 2005 → Past Simple [?]',
+        'already / yet / just / since / for → Present Perfect [?]',
+        'every day / always / usually → Present Simple [?]',
+        'tomorrow / next / soon → Future [?]',
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // PHRASAL VERBS — B1–B2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'phrasalVerbs',
+    title: 'Phrasal Verbs — Verbes à particule',
+    icon: '💡',
+    level: 'B1–B2',
+    fr: {
+      intro: "Un <strong>phrasal verb</strong> est formé d\'un verbe + une particule (adverbe ou préposition). Le sens est souvent totalement différent du verbe de base et ne peut pas être deviné. Ils sont très fréquents dans l\'anglais oral et écrit courant.",
+      sections: [
+        {
+          title: 'Phrasal verbs essentiels — groupe 1 (10)',
+          content: 'Les plus fréquents du quotidien.',
+          rows: [
+            { en: 'I get up at six every morning.', tr: 'get up = se lever' },
+            { en: "Don't give up, keep trying!", tr: 'give up = abandonner' },
+            { en: "I'm looking for my keys.", tr: 'look for = chercher' },
+            { en: 'She looks after her little brother.', tr: 'look after = s\'occuper de' },
+            { en: 'Turn on the light, please.', tr: 'turn on = allumer' },
+            { en: 'Turn off the TV before bed.', tr: 'turn off = éteindre' },
+            { en: 'Can you pick me up at the station?', tr: 'pick up = ramasser / aller chercher' },
+            { en: "Put on your coat, it's cold outside.", tr: 'put on = mettre (un vêtement)' },
+            { en: 'Take off your shoes at the door.', tr: 'take off = enlever (vêtement) / décoller' },
+            { en: 'I woke up very late today.', tr: 'wake up = se réveiller' },
+          ]
+        },
+        {
+          title: 'Phrasal verbs essentiels — groupe 2 (10)',
+          content: 'Dix phrasal verbs supplémentaires très fréquents.',
+          rows: [
+            { en: 'When will you come back home?', tr: 'come back = revenir / rentrer' },
+            { en: 'They go out every Friday evening.', tr: 'go out = sortir' },
+            { en: 'I need to find out the truth.', tr: 'find out = découvrir / apprendre' },
+            { en: 'She set up her own business last year.', tr: 'set up = créer / mettre en place' },
+            { en: 'The car broke down on the highway.', tr: 'break down = tomber en panne' },
+            { en: 'We ran out of milk this morning.', tr: 'run out of = manquer de / ne plus avoir' },
+            { en: 'They made up after the argument.', tr: 'make up = se réconcilier / inventer' },
+            { en: 'The doctor carried out the tests carefully.', tr: 'carry out = effectuer / réaliser' },
+            { en: 'Hold on, I will be right back.', tr: 'hold on = attendre / tenir bon' },
+            { en: "Don't put off your homework until tomorrow.", tr: 'put off = remettre à plus tard' },
+          ]
+        },
+        {
+          title: 'Séparables vs. Inséparables',
+          content: 'Séparable : l\'objet peut aller entre verbe et particule · Inséparable : l\'objet vient après',
+          rows: [
+            { en: 'Turn off the TV. OR Turn it off. (séparable)', tr: 'Éteins la télé. / Éteins-la. ✓' },
+            { en: 'Look after the children. (inséparable)', tr: 'Occupe-toi des enfants. (jamais "look the children after")' },
+            { en: 'Pick up the book. OR Pick it up. (séparable)', tr: 'Ramasse le livre. / Ramasse-le. ✓' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"Turn off it." ✗ → "Turn it off." ✓ (pronom entre verbe et particule)',
+        '"I look for it on the shelf." ✓ mais "I look for the book." ✓ aussi (look for = inséparable)',
+        '"She gave up it." ✗ → "She gave it up." ✓ (give up = séparable)',
+      ],
+      tips: [
+        'Avec un pronom (it, them, him), la particule vient TOUJOURS après : "turn it off" ✓',
+        '"Run out of" et "look after" sont inséparables — l\'objet ne peut pas se glisser entre',
+        'Apprends les phrasal verbs par phrases complètes, pas juste la traduction',
+      ],
+      summary: [
+        'Phrasal verb = verbe + particule (sens nouveau à mémoriser)',
+        'Séparable : "turn off the TV" / "turn it off"',
+        'Inséparable : "look after the children" (jamais "look the children after")',
+      ]
+    },
+    mg: {
+      intro: "Ny <strong>phrasal verb</strong> = matoanteny + particule (adverbe na préposition). Ny heviny dia hafa tanteraka amin\'ny teny tsirairay, ka tsy maintsy hadinina tsirairay. [?]",
+      sections: [
+        {
+          title: 'Phrasal verbs lehibe indrindra — vondrona 1 (10)',
+          content: 'Ny mahazatra indrindra amin\'ny andavanandro.',
+          rows: [
+            { en: 'I get up at six every morning.', tr: 'get up = mitsangana [?]' },
+            { en: "Don't give up, keep trying!", tr: 'give up = manafoana / miala amin\'ny ezaka [?]' },
+            { en: "I'm looking for my keys.", tr: 'look for = mitady [?]' },
+            { en: 'She looks after her little brother.', tr: 'look after = mikarakara [?]' },
+            { en: 'Turn on the light, please.', tr: 'turn on = mampirehitra [?]' },
+            { en: 'Turn off the TV before bed.', tr: 'turn off = mampivoaka [?]' },
+            { en: 'Can you pick me up at the station?', tr: 'pick up = maka / handeha haka [?]' },
+            { en: "Put on your coat, it's cold outside.", tr: 'put on = mitafy [?]' },
+            { en: 'I woke up very late today.', tr: 'wake up = mifohaza [?]' },
+          ]
+        },
+        {
+          title: 'Phrasal verbs lehibe indrindra — vondrona 2 (10)',
+          content: 'Folo phrasal verbs hafa mahasoa.',
+          rows: [
+            { en: 'When will you come back home?', tr: 'come back = miverina [?]' },
+            { en: 'They go out every Friday evening.', tr: 'go out = mivoaka [?]' },
+            { en: 'I need to find out the truth.', tr: 'find out = mahita / mahalala [?]' },
+            { en: 'The car broke down on the highway.', tr: 'break down = very [?]' },
+            { en: 'We ran out of milk this morning.', tr: 'run out of = lany / tsy ampy [?]' },
+            { en: 'Hold on, I will be right back.', tr: 'hold on = andraso [?]' },
+            { en: "Don't put off your homework until tomorrow.", tr: 'put off = mametraka ho rahampitso [?]' },
+          ]
+        },
+        {
+          title: 'Azo zaraina sy tsy azo zaraina',
+          content: 'Separable: ny objet azo apetraka eo anelanelan\'ny verbe sy particule · Inseparable: ny objet aorian\'ny particule foana',
+          rows: [
+            { en: 'Turn off the TV. OR Turn it off. (séparable)', tr: 'Mahazo zaraina: "turn it off" ✓ [?]' },
+            { en: 'Look after the children. (inséparable)', tr: 'Tsy azo zaraina: "look after them" ✓ [?]' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"Turn off it." ✗ → "Turn it off." ✓ (pronom eo anelanelan\'ny verbe sy particule) [?]',
+      ],
+      tips: [
+        'Amin\'ny pronom (it, them): ny particule aorian\'ny pronom foana: "turn it off" ✓ [?]',
+        'Mianatra phrasal verbs amin\'ny fehezanteny feno, fa tsy hevitra fotsiny [?]',
+      ],
+      summary: [
+        'Phrasal verb = verbe + particule (hevitra vaovao) [?]',
+        'Séparable: "turn off the TV" / "turn it off" [?]',
+        'Inséparable: "look after the children" [?]',
+      ]
+    }
+  },
+
 ];
 
 // ─── Natural textbook progression order ──────────────────────────────────────
 // (Cambridge / Oxford English Grammar in Use style)
 const _CHAPTER_ORDER = [
-  'pronouns',          // A1 — subject/object pronouns first
-  'toBe',              // A1 — most basic verb
-  'articles',          // A1 — a / an / the
-  'plurals',           // A1 — singular → plural
-  'therebeis',         // A1 — there is / there are
-  'prepositions',      // A1–A2 — in/on/at/to/from
-  'questions',         // A1–A2 — question words
-  'presentSimple',     // A2 — first main tense
-  'presentContinuous', // A2 — contrast with present simple
-  'interrogative',     // A2 — Yes/No & Wh- questions
-  'imperatives',       // A2 — commands & suggestions
-  'someAny',           // A2 — some / any / no
-  'comparatives',      // A2 — taller / more interesting / best
-  'pastSimple',        // A2–B1 — past tense
-  'irregularVerbs',    // A2 — needed for past simple
-  'futureSimple',      // A2–B1 — will / going to
-  'modals',            // A2 — can / should / must
-  'presentPerfect',    // B1 — have / has + p.p.
-  'pastContinuous',    // B1 — was/were + -ing
-  'futureContinuous',  // B1 — will be + -ing
-  'pastPerfect',       // B1 — had + p.p.
-  'timeMarkers',       // B1 — yesterday/ago → already/yet/just
-  'passiveVoice',      // B1 — is done / was done
-  'conditionals',      // B1–B2 — if clauses
-  'reportedSpeech',    // B1–B2 — he said that…
-  'futurePerfect',     // B2 — will have done
+  'pronouns',              // A1 — subject/object pronouns first
+  'toBe',                  // A1 — most basic verb
+  'articles',              // A1 — a / an / the
+  'plurals',               // A1 — singular → plural
+  'therebeis',             // A1 — there is / there are
+  'prepositions',          // A1–A2 — in/on/at/to/from
+  'questions',             // A1–A2 — question words
+  'presentSimple',         // A2 — first main tense
+  'presentContinuous',     // A2 — contrast with present simple
+  'interrogative',         // A2 — Yes/No & Wh- questions
+  'imperatives',           // A2 — commands & suggestions
+  'someAny',               // A2 — some / any / no
+  'comparatives',          // A2 — taller / more interesting / best
+  'irregularVerbs',        // A2 — needed for past simple
+  'modals',                // A2 — can / should / must
+  'possessives',           // A2 — my/mine, your/yours…
+  'adverbs',               // A2 — always, quickly, well
+  'pastSimple',            // A2–B1 — past tense
+  'futureSimple',          // A2–B1 — will / going to
+  'countableUncountable',  // A2–B1 — much/many/a lot of
+  'presentPerfect',        // B1 — have / has + p.p.
+  'pastContinuous',        // B1 — was/were + -ing
+  'futureContinuous',      // B1 — will be + -ing
+  'pastPerfect',           // B1 — had + p.p.
+  'timeMarkers',           // B1 — yesterday/ago → already/yet/just
+  'passiveVoice',          // B1 — is done / was done
+  'connectors',            // B1 — and/but/because/although/however
+  'tenseChooser',          // B1 — choosing the right tense
+  'conditionals',          // B1–B2 — if clauses
+  'reportedSpeech',        // B1–B2 — he said that…
+  'phrasalVerbs',          // B1–B2 — get up / give up / look for
+  'futurePerfect',         // B2 — will have done
 ];
 bokyChapters.sort((a, b) => {
   const ai = _CHAPTER_ORDER.indexOf(a.id);
