@@ -10,7 +10,7 @@ export const exercises = {
   // ─── ROUTINE ────────────────────────────────────────────────────────────────
   routine: [
     {
-      id: 'r01', type: 'fill-blank', level: 'A1',
+      id: 'r01', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne forme du verbe.',
       template: 'Every morning, I ___ at 6 o\'clock.',
       verb: 'wake up', answer: 'wake up',
@@ -18,7 +18,7 @@ export const exercises = {
       explanation: 'On utilise le Present Simple pour les routines. Avec "I", le verbe ne change pas.'
     },
     {
-      id: 'r02', type: 'translate', level: 'A1',
+      id: 'r02', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Je mange le petit-déjeuner à sept heures.',
       answer: 'I eat breakfast at seven o\'clock.',
@@ -27,7 +27,7 @@ export const exercises = {
       explanation: '"Eat breakfast" et "have breakfast" sont tous les deux corrects en anglais.'
     },
     {
-      id: 'r03', type: 'word-order', level: 'A1',
+      id: 'r03', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['I', 'go', 'to', 'school', 'every', 'day', '.'],
       answer: 'I go to school every day.',
@@ -35,7 +35,7 @@ export const exercises = {
       explanation: 'En anglais, le verbe vient toujours juste après le sujet.'
     },
     {
-      id: 'r04', type: 'fill-blank', level: 'A1',
+      id: 'r04', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne forme du verbe.',
       template: 'She ___ her teeth twice a day.',
       verb: 'brush', answer: 'brushes',
@@ -43,7 +43,7 @@ export const exercises = {
       explanation: 'Avec he/she/it, on ajoute -s ou -es au verbe. "brush" → "brushes".'
     },
     {
-      id: 'r05', type: 'translate', level: 'A1',
+      id: 'r05', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Il se couche à dix heures du soir.',
       answer: 'He goes to bed at ten o\'clock.',
@@ -52,7 +52,7 @@ export const exercises = {
       explanation: '"Go to bed" = aller dormir. Avec "he", "go" devient "goes".'
     },
     {
-      id: 'r06', type: 'error-correct', level: 'A2',
+      id: 'r06', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur dans la phrase.',
       sentence: 'She go to work by bus every morning.',
       answer: 'She goes to work by bus every morning.',
@@ -60,7 +60,7 @@ export const exercises = {
       explanation: 'Avec "she", on doit écrire "goes" et non "go".'
     },
     {
-      id: 'r07', type: 'listening', level: 'A1',
+      id: 'r07', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'I take a shower every morning.',
       answer: 'I take a shower every morning.',
@@ -68,7 +68,7 @@ export const exercises = {
       explanation: '"Take a shower" = prendre une douche.'
     },
     {
-      id: 'r08', type: 'fill-blank', level: 'A2',
+      id: 'r08', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec la bonne forme du verbe.',
       template: 'My father ___ at seven and ___ home at six.',
       verb: 'start work / come back', answer: 'starts work, comes back',
@@ -81,7 +81,7 @@ export const exercises = {
   // ─── FAMILY ─────────────────────────────────────────────────────────────────
   family: [
     {
-      id: 'f01', type: 'translate', level: 'A1',
+      id: 'f01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Mon père s\'appelle Paul.',
       answer: 'My father\'s name is Paul.',
@@ -90,7 +90,7 @@ export const exercises = {
       explanation: 'En anglais : "My father\'s name is Paul" ou "My father is called Paul".'
     },
     {
-      id: 'f02', type: 'fill-blank', level: 'A1',
+      id: 'f02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'Your father\'s mother is your ___.',
       answer: 'grandmother',
@@ -99,7 +99,7 @@ export const exercises = {
       explanation: 'La mère de ton père ou de ta mère s\'appelle "grandmother" (ou "grandma").'
     },
     {
-      id: 'f03', type: 'translate', level: 'A1',
+      id: 'f03', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'J\'ai deux frères et une sœur.',
       answer: 'I have two brothers and one sister.',
@@ -108,7 +108,7 @@ export const exercises = {
       explanation: '"Brothers" est le pluriel de "brother". "One" et "a" sont tous les deux corrects.'
     },
     {
-      id: 'f04', type: 'word-order', level: 'A1',
+      id: 'f04', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['My', 'sister', 'is', 'older', 'than', 'me', '.'],
       answer: 'My sister is older than me.',
@@ -116,7 +116,7 @@ export const exercises = {
       explanation: 'Pour comparer, on utilise : adjectif + -er + than. "old" → "older than".'
     },
     {
-      id: 'f05', type: 'error-correct', level: 'A2',
+      id: 'f05', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'My parents has three children.',
       answer: 'My parents have three children.',
@@ -124,7 +124,7 @@ export const exercises = {
       explanation: '"Has" s\'utilise avec he/she/it. "My parents" est pluriel, donc on utilise "have".'
     },
     {
-      id: 'f06', type: 'translate', level: 'A1',
+      id: 'f06', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Mes grands-parents habitent au village.',
       answer: 'My grandparents live in the village.',
@@ -133,7 +133,7 @@ export const exercises = {
       explanation: '"Live in" est le verbe le plus courant pour "habiter".'
     },
     {
-      id: 'f07', type: 'listening', level: 'A1',
+      id: 'f07', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'I live with my mother and my father.',
       answer: 'I live with my mother and my father.',
@@ -141,7 +141,7 @@ export const exercises = {
       explanation: '"Live with" = habiter avec.'
     },
     {
-      id: 'f08', type: 'fill-blank', level: 'A1',
+      id: 'f08', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'My mother\'s brother is my ___.',
       answer: 'uncle',
@@ -153,7 +153,7 @@ export const exercises = {
   // ─── SCHOOL ─────────────────────────────────────────────────────────────────
   school: [
     {
-      id: 's01', type: 'translate', level: 'A1',
+      id: 's01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Mon livre est sur la table.',
       answer: 'My book is on the table.',
@@ -162,7 +162,7 @@ export const exercises = {
       explanation: 'La préposition "sur" se traduit par "on" en anglais.'
     },
     {
-      id: 's02', type: 'fill-blank', level: 'A1',
+      id: 's02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'The person who teaches in a school is a ___.',
       answer: 'teacher',
@@ -170,7 +170,7 @@ export const exercises = {
       explanation: '"Teacher" = enseignant(e). "Teach" est le verbe, "teacher" est la personne.'
     },
     {
-      id: 's03', type: 'word-order', level: 'A1',
+      id: 's03', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['I', 'study', 'English', 'at', 'school', '.'],
       answer: 'I study English at school.',
@@ -178,7 +178,7 @@ export const exercises = {
       explanation: 'L\'ordre habituel en anglais : Sujet → Verbe → Objet → Lieu.'
     },
     {
-      id: 's04', type: 'translate', level: 'A1',
+      id: 's04', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Quand est-ce que l\'école commence ?',
       answer: 'When does school start?',
@@ -187,7 +187,7 @@ export const exercises = {
       explanation: 'Pour une question au Present Simple, on utilise "does" avec he/she/it/school.'
     },
     {
-      id: 's05', type: 'error-correct', level: 'A2',
+      id: 's05', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'I doesn\'t have a pencil.',
       answer: 'I don\'t have a pencil.',
@@ -195,7 +195,7 @@ export const exercises = {
       explanation: '"Doesn\'t" s\'utilise avec he/she/it. Avec "I", on utilise "don\'t".'
     },
     {
-      id: 's06', type: 'fill-blank', level: 'A1',
+      id: 's06', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'A place full of books where you can study quietly is a ___.',
       answer: 'library',
@@ -204,7 +204,7 @@ export const exercises = {
       explanation: '"Library" = bibliothèque. Ne pas confondre avec "bookshop" (librairie).'
     },
     {
-      id: 's07', type: 'translate', level: 'A2',
+      id: 's07', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Mon ami s\'appelle Jean.',
       answer: 'My friend\'s name is Jean.',
@@ -213,7 +213,7 @@ export const exercises = {
       explanation: '"My friend\'s name is" utilise le génitif saxo (\'s) pour montrer la possession.'
     },
     {
-      id: 's08', type: 'listening', level: 'A1',
+      id: 's08', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'We have five lessons every day.',
       answer: 'We have five lessons every day.',
@@ -225,7 +225,7 @@ export const exercises = {
   // ─── BODY ───────────────────────────────────────────────────────────────────
   body: [
     {
-      id: 'b01', type: 'translate', level: 'A1',
+      id: 'b01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'J\'ai mal à la tête.',
       answer: 'I have a headache.',
@@ -234,7 +234,7 @@ export const exercises = {
       explanation: '"Headache" est un seul mot qui signifie "mal de tête". "Have a headache" = avoir mal à la tête.'
     },
     {
-      id: 'b02', type: 'fill-blank', level: 'A1',
+      id: 'b02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'We have ten fingers and ten ___.',
       answer: 'toes',
@@ -242,7 +242,7 @@ export const exercises = {
       explanation: '"Fingers" = doigts de main. "Toes" = doigts de pied.'
     },
     {
-      id: 'b03', type: 'translate', level: 'A1',
+      id: 'b03', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Ses yeux sont marrons.',
       answer: 'His eyes are brown.',
@@ -251,7 +251,7 @@ export const exercises = {
       explanation: '"Eyes" est le pluriel de "eye". "His" pour un homme, "her" pour une femme.'
     },
     {
-      id: 'b04', type: 'word-order', level: 'A1',
+      id: 'b04', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['We', 'have', 'two', 'eyes', 'and', 'two', 'ears', '.'],
       answer: 'We have two eyes and two ears.',
@@ -259,7 +259,7 @@ export const exercises = {
       explanation: 'Simple présentation du corps humain avec "have" (avoir).'
     },
     {
-      id: 'b05', type: 'error-correct', level: 'A2',
+      id: 'b05', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'She hurts her foots.',
       answer: 'She hurts her feet.',
@@ -267,7 +267,7 @@ export const exercises = {
       explanation: '"Foot" → pluriel = "feet" (irrégulier). Pas "foots"!'
     },
     {
-      id: 'b06', type: 'translate', level: 'A1',
+      id: 'b06', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Je me lave les mains avant de manger.',
       answer: 'I wash my hands before eating.',
@@ -276,7 +276,7 @@ export const exercises = {
       explanation: '"Wash my hands" = se laver les mains. "Before eating" ou "before I eat".'
     },
     {
-      id: 'b07', type: 'fill-blank', level: 'A1',
+      id: 'b07', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'You use your ___ to see and your ___ to hear.',
       answer: 'eyes, ears',
@@ -284,7 +284,7 @@ export const exercises = {
       explanation: '"Eyes" = yeux, "ears" = oreilles.'
     },
     {
-      id: 'b08', type: 'listening', level: 'A1',
+      id: 'b08', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'He is tall and has short black hair.',
       answer: 'He is tall and has short black hair.',
@@ -296,7 +296,7 @@ export const exercises = {
   // ─── TIME ────────────────────────────────────────────────────────────────────
   time: [
     {
-      id: 't01', type: 'translate', level: 'A1',
+      id: 't01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Il est trois heures et demie.',
       answer: 'It is half past three.',
@@ -305,7 +305,7 @@ export const exercises = {
       explanation: '"Half past three" = 3h30. On peut aussi dire "three thirty".'
     },
     {
-      id: 't02', type: 'fill-blank', level: 'A1',
+      id: 't02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne préposition.',
       template: 'School starts ___ 7:30 in the morning.',
       answer: 'at',
@@ -313,7 +313,7 @@ export const exercises = {
       explanation: 'On utilise "at" devant une heure précise : at 7:30, at noon, at midnight.'
     },
     {
-      id: 't03', type: 'translate', level: 'A1',
+      id: 't03', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Quelle heure est-il ?',
       answer: 'What time is it?',
@@ -322,7 +322,7 @@ export const exercises = {
       explanation: '"What time is it?" ou "What\'s the time?" sont tous deux corrects.'
     },
     {
-      id: 't04', type: 'error-correct', level: 'A1',
+      id: 't04', type: 'error-correct', diffLevel: 3, level: 'A1',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'I wake up in 6 o\'clock.',
       answer: 'I wake up at 6 o\'clock.',
@@ -330,7 +330,7 @@ export const exercises = {
       explanation: 'On utilise "at" pour les heures précises, jamais "in". "At 6 o\'clock".'
     },
     {
-      id: 't05', type: 'fill-blank', level: 'A1',
+      id: 't05', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'There are ___ days in a week.',
       answer: 'seven',
@@ -339,7 +339,7 @@ export const exercises = {
       explanation: 'Il y a 7 jours dans une semaine : Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.'
     },
     {
-      id: 't06', type: 'translate', level: 'A2',
+      id: 't06', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Le lundi, j\'ai cours de mathématiques.',
       answer: 'On Mondays, I have a mathematics class.',
@@ -348,7 +348,7 @@ export const exercises = {
       explanation: '"On Mondays" (pluriel) exprime une habitude hebdomadaire. "On Monday" est aussi accepté.'
     },
     {
-      id: 't07', type: 'listening', level: 'A1',
+      id: 't07', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'The train arrives at quarter past ten.',
       answer: 'The train arrives at quarter past ten.',
@@ -356,7 +356,7 @@ export const exercises = {
       explanation: '"Quarter past ten" = 10h15. "Quarter to ten" = 9h45.'
     },
     {
-      id: 't08', type: 'word-order', level: 'A2',
+      id: 't08', type: 'word-order', diffLevel: 2, level: 'A2',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['was', 'I', 'born', 'in', 'January', '.'],
       answer: 'I was born in January.',
@@ -368,7 +368,7 @@ export const exercises = {
   // ─── VERBS ───────────────────────────────────────────────────────────────────
   verbs: [
     {
-      id: 'v01', type: 'translate', level: 'A1',
+      id: 'v01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Je parle français et malgache.',
       answer: 'I speak French and Malagasy.',
@@ -376,7 +376,7 @@ export const exercises = {
       explanation: '"Speak" = parler une langue. On dit "speak French", pas "speak the French".'
     },
     {
-      id: 'v02', type: 'fill-blank', level: 'A1',
+      id: 'v02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne forme du verbe.',
       template: 'She ___ animals very much.',
       verb: 'love', answer: 'loves',
@@ -384,7 +384,7 @@ export const exercises = {
       explanation: 'Avec "she", on ajoute -s : "love" → "loves".'
     },
     {
-      id: 'v03', type: 'translate', level: 'A1',
+      id: 'v03', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Nous mangeons du riz tous les jours.',
       answer: 'We eat rice every day.',
@@ -393,7 +393,7 @@ export const exercises = {
       explanation: '"Eat rice" = manger du riz. Pas d\'article devant "rice" en anglais.'
     },
     {
-      id: 'v04', type: 'error-correct', level: 'A2',
+      id: 'v04', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'He don\'t work on Sundays.',
       answer: 'He doesn\'t work on Sundays.',
@@ -401,7 +401,7 @@ export const exercises = {
       explanation: 'La forme négative de "he" est "he doesn\'t", jamais "he don\'t".'
     },
     {
-      id: 'v05', type: 'word-order', level: 'A1',
+      id: 'v05', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['Can', 'you', 'speak', 'English', '?'],
       answer: 'Can you speak English?',
@@ -409,7 +409,7 @@ export const exercises = {
       explanation: 'Pour les questions avec "can", on met "can" en premier : Can you...?'
     },
     {
-      id: 'v06', type: 'translate', level: 'A1',
+      id: 'v06', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Je comprends un peu l\'anglais.',
       answer: 'I understand a little English.',
@@ -418,7 +418,7 @@ export const exercises = {
       explanation: '"Understand" est un verbe irrégulier mais au Present Simple il est régulier.'
     },
     {
-      id: 'v07', type: 'fill-blank', level: 'A2',
+      id: 'v07', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec la bonne forme négative.',
       template: 'She ___ coffee.',
       verb: 'not like', answer: 'doesn\'t like',
@@ -427,7 +427,7 @@ export const exercises = {
       explanation: 'Forme négative avec she/he/it : doesn\'t + verbe (sans -s).'
     },
     {
-      id: 'v08', type: 'listening', level: 'A1',
+      id: 'v08', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'They play football and swim every week.',
       answer: 'They play football and swim every week.',
@@ -439,7 +439,7 @@ export const exercises = {
   // ─── TIME ADVERBS ────────────────────────────────────────────────────────────
   timeAdverbs: [
     {
-      id: 'ta01', type: 'translate', level: 'A2',
+      id: 'ta01', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Je vais toujours à l\'école à pied.',
       answer: 'I always walk to school.',
@@ -448,7 +448,7 @@ export const exercises = {
       explanation: 'Les adverbes de fréquence se placent avant le verbe principal : I always walk...'
     },
     {
-      id: 'ta02', type: 'fill-blank', level: 'A2',
+      id: 'ta02', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec le bon adverbe.',
       template: 'She ___ eats meat. She is vegetarian.',
       answer: 'never',
@@ -456,7 +456,7 @@ export const exercises = {
       explanation: '"Never" = jamais. Fréquence 0%. Se place avant le verbe principal.'
     },
     {
-      id: 'ta03', type: 'error-correct', level: 'A2',
+      id: 'ta03', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur (position de l\'adverbe).',
       sentence: 'I go sometimes to the market.',
       answer: 'I sometimes go to the market.',
@@ -465,7 +465,7 @@ export const exercises = {
       explanation: 'L\'adverbe "sometimes" se place avant le verbe : "I sometimes go", ou au début : "Sometimes I go".'
     },
     {
-      id: 'ta04', type: 'word-order', level: 'A2',
+      id: 'ta04', type: 'word-order', diffLevel: 2, level: 'A2',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['She', 'is', 'often', 'late', '.'],
       answer: 'She is often late.',
@@ -473,7 +473,7 @@ export const exercises = {
       explanation: 'Avec le verbe "to be", l\'adverbe de fréquence se place après : She is often late.'
     },
     {
-      id: 'ta05', type: 'translate', level: 'A2',
+      id: 'ta05', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Il vient rarement ici.',
       answer: 'He rarely comes here.',
@@ -482,7 +482,7 @@ export const exercises = {
       explanation: '"Rarely" et "seldom" signifient tous les deux "rarement". "Rarely" est plus courant.'
     },
     {
-      id: 'ta06', type: 'fill-blank', level: 'A2',
+      id: 'ta06', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Choisissez le bon adverbe.',
       template: 'She is ___ tired after work. She works twelve hours a day!',
       answer: 'always',
@@ -491,7 +491,7 @@ export const exercises = {
       explanation: '"Always" = 100% du temps. C\'est logique après 12h de travail chaque jour.'
     },
     {
-      id: 'ta07', type: 'listening', level: 'A2',
+      id: 'ta07', type: 'listening', diffLevel: 2, level: 'A2',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'I have already finished my homework.',
       answer: 'I have already finished my homework.',
@@ -499,7 +499,7 @@ export const exercises = {
       explanation: '"Already" = déjà. Se place entre "have" et le participe passé.'
     },
     {
-      id: 'ta08', type: 'translate', level: 'A2',
+      id: 'ta08', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Ils ne jouent presque jamais dehors.',
       answer: 'They hardly ever play outside.',
@@ -512,7 +512,7 @@ export const exercises = {
   // ─── PRESENT SIMPLE ──────────────────────────────────────────────────────────
   presentSimple: [
     {
-      id: 'ps01', type: 'fill-blank', level: 'A1',
+      id: 'ps01', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne forme du verbe.',
       template: 'She ___ to the market every Sunday.',
       verb: 'go', answer: 'goes',
@@ -520,7 +520,7 @@ export const exercises = {
       explanation: 'Avec she/he/it : go → goes, do → does, watch → watches.'
     },
     {
-      id: 'ps02', type: 'error-correct', level: 'A1',
+      id: 'ps02', type: 'error-correct', diffLevel: 3, level: 'A1',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'He don\'t like bananas.',
       answer: 'He doesn\'t like bananas.',
@@ -528,7 +528,7 @@ export const exercises = {
       explanation: 'Forme négative : I/you/we/they + don\'t. He/she/it + doesn\'t.'
     },
     {
-      id: 'ps03', type: 'translate', level: 'A2',
+      id: 'ps03', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Est-ce qu\'il habite à Antananarivo ?',
       answer: 'Does he live in Antananarivo?',
@@ -536,7 +536,7 @@ export const exercises = {
       explanation: 'Question au Present Simple avec he/she/it : Does + sujet + verbe (infinitif)?'
     },
     {
-      id: 'ps04', type: 'fill-blank', level: 'A1',
+      id: 'ps04', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne forme du verbe.',
       template: 'Water ___ at 100 degrees Celsius.',
       verb: 'boil', answer: 'boils',
@@ -544,7 +544,7 @@ export const exercises = {
       explanation: 'Le Present Simple exprime les vérités générales. "Water boils" = l\'eau bout.'
     },
     {
-      id: 'ps05', type: 'word-order', level: 'A2',
+      id: 'ps05', type: 'word-order', diffLevel: 2, level: 'A2',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['He', 'plays', 'football', 'every', 'Saturday', '.'],
       answer: 'He plays football every Saturday.',
@@ -552,7 +552,7 @@ export const exercises = {
       explanation: 'Ordre standard : He plays (quoi ?) football (quand ?) every Saturday.'
     },
     {
-      id: 'ps06', type: 'error-correct', level: 'A2',
+      id: 'ps06', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'They doesn\'t know the answer.',
       answer: 'They don\'t know the answer.',
@@ -560,7 +560,7 @@ export const exercises = {
       explanation: '"Doesn\'t" s\'utilise seulement avec he/she/it. Avec "they" : don\'t.'
     },
     {
-      id: 'ps07', type: 'translate', level: 'A2',
+      id: 'ps07', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Elle ne travaille pas le dimanche.',
       answer: 'She doesn\'t work on Sundays.',
@@ -569,7 +569,7 @@ export const exercises = {
       explanation: '"She doesn\'t work" = elle ne travaille pas. "On Sundays" = le dimanche (habitude).'
     },
     {
-      id: 'ps08', type: 'listening', level: 'A2',
+      id: 'ps08', type: 'listening', diffLevel: 2, level: 'A2',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'My brother doesn\'t study very much.',
       answer: 'My brother doesn\'t study very much.',
@@ -581,7 +581,7 @@ export const exercises = {
   // ─── PRESENT CONTINUOUS ──────────────────────────────────────────────────────
   presentContinuous: [
     {
-      id: 'pc01', type: 'fill-blank', level: 'A2',
+      id: 'pc01', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec la forme correcte (Present Continuous).',
       template: 'Look! It ___ outside.',
       verb: 'rain', answer: 'is raining',
@@ -589,7 +589,7 @@ export const exercises = {
       explanation: 'Present Continuous = be (am/is/are) + verbe-ing. "It is raining" = il pleut maintenant.'
     },
     {
-      id: 'pc02', type: 'translate', level: 'A2',
+      id: 'pc02', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Elle est en train de lire un livre.',
       answer: 'She is reading a book.',
@@ -598,7 +598,7 @@ export const exercises = {
       explanation: '"She is reading" = she\'s reading. Le Present Continuous traduit "être en train de".'
     },
     {
-      id: 'pc03', type: 'error-correct', level: 'A2',
+      id: 'pc03', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'I am study English right now.',
       answer: 'I am studying English right now.',
@@ -606,7 +606,7 @@ export const exercises = {
       explanation: 'Present Continuous : am/is/are + verbe + -ing. "study" → "studying".'
     },
     {
-      id: 'pc04', type: 'word-order', level: 'A2',
+      id: 'pc04', type: 'word-order', diffLevel: 2, level: 'A2',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['The', 'children', 'are', 'playing', 'in', 'the', 'garden', '.'],
       answer: 'The children are playing in the garden.',
@@ -614,7 +614,7 @@ export const exercises = {
       explanation: 'Avec "the children" (pluriel), on utilise "are" : are playing.'
     },
     {
-      id: 'pc05', type: 'fill-blank', level: 'A2',
+      id: 'pc05', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez la question.',
       template: 'What are you ___ right now?',
       verb: 'do', answer: 'doing',
@@ -622,7 +622,7 @@ export const exercises = {
       explanation: '"What are you doing?" = Qu\'est-ce que tu fais en ce moment ?'
     },
     {
-      id: 'pc06', type: 'translate', level: 'A2',
+      id: 'pc06', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Ils ne travaillent pas en ce moment.',
       answer: 'They are not working right now.',
@@ -631,7 +631,7 @@ export const exercises = {
       explanation: 'Forme négative : They are not working = They aren\'t working.'
     },
     {
-      id: 'pc07', type: 'error-correct', level: 'A2',
+      id: 'pc07', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'He is eat a mango.',
       answer: 'He is eating a mango.',
@@ -639,7 +639,7 @@ export const exercises = {
       explanation: '"Eat" doit prendre la forme -ing : "eating". He is eating a mango.'
     },
     {
-      id: 'pc08', type: 'listening', level: 'A2',
+      id: 'pc08', type: 'listening', diffLevel: 2, level: 'A2',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'She is not sleeping. She is doing her homework.',
       answer: 'She is not sleeping. She is doing her homework.',
@@ -651,7 +651,7 @@ export const exercises = {
   // ─── PAST SIMPLE ─────────────────────────────────────────────────────────────
   pastSimple: [
     {
-      id: 'past01', type: 'fill-blank', level: 'A2',
+      id: 'past01', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec la forme correcte du Past Simple.',
       template: 'Yesterday, I ___ to school by bus.',
       verb: 'go', answer: 'went',
@@ -659,7 +659,7 @@ export const exercises = {
       explanation: '"Go" → Past Simple = "went" (irrégulier). Apprenez les verbes irréguliers!'
     },
     {
-      id: 'past02', type: 'translate', level: 'A2',
+      id: 'past02', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Elle est arrivée en retard hier.',
       answer: 'She arrived late yesterday.',
@@ -668,7 +668,7 @@ export const exercises = {
       explanation: '"Arrive" est régulier : arrived. "Yesterday" = hier. Vient à la fin.'
     },
     {
-      id: 'past03', type: 'error-correct', level: 'A2',
+      id: 'past03', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'He didn\'t went to the party.',
       answer: 'He didn\'t go to the party.',
@@ -676,7 +676,7 @@ export const exercises = {
       explanation: 'Avec "didn\'t", le verbe reste à l\'infinitif : didn\'t go (pas didn\'t went).'
     },
     {
-      id: 'past04', type: 'word-order', level: 'A2',
+      id: 'past04', type: 'word-order', diffLevel: 2, level: 'A2',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['They', 'watched', 'television', 'last', 'night', '.'],
       answer: 'They watched television last night.',
@@ -684,7 +684,7 @@ export const exercises = {
       explanation: '"Watched" = Past Simple de "watch" (régulier : + -ed). "Last night" = hier soir.'
     },
     {
-      id: 'past05', type: 'fill-blank', level: 'A2',
+      id: 'past05', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec la forme négative du Past Simple.',
       template: 'We ___ electricity last week.',
       verb: 'not have', answer: 'didn\'t have',
@@ -693,7 +693,7 @@ export const exercises = {
       explanation: 'Forme négative au Past Simple : didn\'t + verbe (infinitif). Pour tout sujet.'
     },
     {
-      id: 'past06', type: 'translate', level: 'B1',
+      id: 'past06', type: 'translate', diffLevel: 3, level: 'B1',
       instruction: 'Traduisez en anglais.',
       french: 'As-tu mangé ce matin ?',
       answer: 'Did you eat this morning?',
@@ -702,7 +702,7 @@ export const exercises = {
       explanation: 'Question au Past Simple : Did + sujet + verbe (infinitif) ? "Did you eat?"'
     },
     {
-      id: 'past07', type: 'fill-blank', level: 'A2',
+      id: 'past07', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec la bonne forme du verbe "be" au passé.',
       template: 'She ___ born in 2005.',
       verb: 'be', answer: 'was',
@@ -710,7 +710,7 @@ export const exercises = {
       explanation: 'Past Simple de "be" : I/he/she/it → was. You/we/they → were.'
     },
     {
-      id: 'past08', type: 'error-correct', level: 'B1',
+      id: 'past08', type: 'error-correct', diffLevel: 3, level: 'B1',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'I buyed a new pen yesterday.',
       answer: 'I bought a new pen yesterday.',
@@ -722,7 +722,7 @@ export const exercises = {
   // ─── FOOD ────────────────────────────────────────────────────────────────────
   food: [
     {
-      id: 'fd01', type: 'translate', level: 'A1',
+      id: 'fd01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'J\'aime les bananes.',
       answer: 'I like bananas.',
@@ -731,7 +731,7 @@ export const exercises = {
       explanation: '"I like" + pluriel pour exprimer un goût général.'
     },
     {
-      id: 'fd02', type: 'fill-blank', level: 'A1',
+      id: 'fd02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon mot.',
       template: 'I drink ___ every morning.',
       answer: 'milk',
@@ -740,7 +740,7 @@ export const exercises = {
       explanation: '"Milk" (lait), "water" (eau), "tea" (thé), "coffee" (café) sont tous valides.'
     },
     {
-      id: 'fd03', type: 'translate', level: 'A1',
+      id: 'fd03', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Nous mangeons du riz et du poulet.',
       answer: 'We eat rice and chicken.',
@@ -748,7 +748,7 @@ export const exercises = {
       explanation: 'Pas d\'article devant "rice" et "chicken" en général.'
     },
     {
-      id: 'fd04', type: 'word-order', level: 'A1',
+      id: 'fd04', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['She', 'wants', 'a', 'glass', 'of', 'water', '.'],
       answer: 'She wants a glass of water.',
@@ -756,7 +756,7 @@ export const exercises = {
       explanation: '"A glass of water" = un verre d\'eau.'
     },
     {
-      id: 'fd05', type: 'error-correct', level: 'A2',
+      id: 'fd05', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'I eat a rice every day.',
       answer: 'I eat rice every day.',
@@ -764,7 +764,7 @@ export const exercises = {
       explanation: '"Rice" est indénombrable : pas de "a/an" devant. Juste "rice".'
     },
     {
-      id: 'fd06', type: 'fill-blank', level: 'A1',
+      id: 'fd06', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne quantité.',
       template: 'How ___ bread do you want?',
       answer: 'much',
@@ -772,7 +772,7 @@ export const exercises = {
       explanation: '"How much" pour indénombrables (bread, water, rice). "How many" pour dénombrables.'
     },
     {
-      id: 'fd07', type: 'listening', level: 'A1',
+      id: 'fd07', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'I would like some fish and vegetables.',
       answer: 'I would like some fish and vegetables.',
@@ -780,7 +780,7 @@ export const exercises = {
       explanation: '"I would like" = je voudrais (poli). "Fish" = poisson, "vegetables" = légumes.'
     },
     {
-      id: 'fd08', type: 'translate', level: 'A2',
+      id: 'fd08', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Mon plat préféré est le poulet avec du riz.',
       answer: 'My favourite dish is chicken with rice.',
@@ -793,7 +793,7 @@ export const exercises = {
   // ─── COLORS ──────────────────────────────────────────────────────────────────
   colors: [
     {
-      id: 'c01', type: 'translate', level: 'A1',
+      id: 'c01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Le ciel est bleu.',
       answer: 'The sky is blue.',
@@ -801,7 +801,7 @@ export const exercises = {
       explanation: 'L\'adjectif de couleur se place APRÈS "is/are" (sky is blue).'
     },
     {
-      id: 'c02', type: 'fill-blank', level: 'A1',
+      id: 'c02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne couleur.',
       template: 'Grass is ___.',
       answer: 'green',
@@ -809,7 +809,7 @@ export const exercises = {
       explanation: '"Green" = vert. L\'herbe est verte.'
     },
     {
-      id: 'c03', type: 'word-order', level: 'A1',
+      id: 'c03', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['She', 'has', 'a', 'red', 'bag', '.'],
       answer: 'She has a red bag.',
@@ -817,7 +817,7 @@ export const exercises = {
       explanation: 'Ordre : sujet + verbe + article + couleur + nom. "A red bag" (pas "a bag red").'
     },
     {
-      id: 'c04', type: 'error-correct', level: 'A1',
+      id: 'c04', type: 'error-correct', diffLevel: 3, level: 'A1',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'He has a car blue.',
       answer: 'He has a blue car.',
@@ -825,7 +825,7 @@ export const exercises = {
       explanation: 'En anglais : a + couleur + nom. "A blue car" (pas "a car blue").'
     },
     {
-      id: 'c05', type: 'translate', level: 'A1',
+      id: 'c05', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Mes cheveux sont noirs.',
       answer: 'My hair is black.',
@@ -833,7 +833,7 @@ export const exercises = {
       explanation: 'En anglais, "hair" est toujours singulier : "my hair IS" (pas "are").'
     },
     {
-      id: 'c06', type: 'listening', level: 'A1',
+      id: 'c06', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'I like the yellow and white flowers.',
       answer: 'I like the yellow and white flowers.',
@@ -841,7 +841,7 @@ export const exercises = {
       explanation: '"Yellow" = jaune, "white" = blanc, "flowers" = fleurs.'
     },
     {
-      id: 'c07', type: 'fill-blank', level: 'A1',
+      id: 'c07', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne couleur.',
       template: 'The Malagasy flag is red, green, and ___.',
       answer: 'white',
@@ -849,7 +849,7 @@ export const exercises = {
       explanation: 'Le drapeau de Madagascar : blanc (white), rouge (red), vert (green).'
     },
     {
-      id: 'c08', type: 'translate', level: 'A2',
+      id: 'c08', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Sa voiture n\'est pas noire, elle est grise.',
       answer: 'His car is not black, it is grey.',
@@ -862,7 +862,7 @@ export const exercises = {
   // ─── NUMBERS ─────────────────────────────────────────────────────────────────
   numbers: [
     {
-      id: 'n01', type: 'translate', level: 'A1',
+      id: 'n01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais (écrivez le nombre en lettres).',
       french: 'J\'ai quinze ans.',
       answer: 'I am fifteen years old.',
@@ -871,7 +871,7 @@ export const exercises = {
       explanation: '"I am ___ years old" pour l\'âge. 15 s\'écrit "fifteen".'
     },
     {
-      id: 'n02', type: 'fill-blank', level: 'A1',
+      id: 'n02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon nombre.',
       template: 'There are ___ months in a year.',
       answer: 'twelve',
@@ -880,7 +880,7 @@ export const exercises = {
       explanation: '12 mois = twelve months.'
     },
     {
-      id: 'n03', type: 'word-order', level: 'A1',
+      id: 'n03', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['I', 'have', 'three', 'books', 'and', 'two', 'pens', '.'],
       answer: 'I have three books and two pens.',
@@ -888,7 +888,7 @@ export const exercises = {
       explanation: 'Après un nombre > 1, le nom est AU PLURIEL : "three books".'
     },
     {
-      id: 'n04', type: 'translate', level: 'A1',
+      id: 'n04', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Il y a vingt étudiants dans la classe.',
       answer: 'There are twenty students in the class.',
@@ -896,7 +896,7 @@ export const exercises = {
       explanation: 'There are (pluriel). 20 students = twenty students.'
     },
     {
-      id: 'n05', type: 'error-correct', level: 'A2',
+      id: 'n05', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'She has five brother.',
       answer: 'She has five brothers.',
@@ -904,7 +904,7 @@ export const exercises = {
       explanation: 'Avec un nombre > 1, le nom prend un "s" : "five brothers".'
     },
     {
-      id: 'n06', type: 'listening', level: 'A1',
+      id: 'n06', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez le nombre en lettres.',
       audio: 'My phone number is zero seven eight.',
       answer: 'My phone number is zero seven eight.',
@@ -912,7 +912,7 @@ export const exercises = {
       explanation: '"Zero seven eight" = 078. En anglais, on dit souvent chaque chiffre séparément.'
     },
     {
-      id: 'n07', type: 'fill-blank', level: 'A2',
+      id: 'n07', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec le bon nombre ordinal.',
       template: 'Monday is the ___ day of the week.',
       answer: 'first',
@@ -920,7 +920,7 @@ export const exercises = {
       explanation: 'Nombres ordinaux : first (1er), second (2e), third (3e), fourth (4e)...'
     },
     {
-      id: 'n08', type: 'translate', level: 'A2',
+      id: 'n08', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Mon anniversaire est le vingt-cinq décembre.',
       answer: 'My birthday is on the twenty-fifth of December.',
@@ -933,7 +933,7 @@ export const exercises = {
   // ─── ADJECTIVES ──────────────────────────────────────────────────────────────
   adjectives: [
     {
-      id: 'a01', type: 'translate', level: 'A1',
+      id: 'a01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Elle est belle et intelligente.',
       answer: 'She is beautiful and intelligent.',
@@ -942,7 +942,7 @@ export const exercises = {
       explanation: 'Les adjectifs en anglais ne changent jamais (beautiful pour masculin et féminin).'
     },
     {
-      id: 'a02', type: 'fill-blank', level: 'A1',
+      id: 'a02', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le contraire.',
       template: 'The opposite of "big" is ___.',
       answer: 'small',
@@ -951,7 +951,7 @@ export const exercises = {
       explanation: '"Small" ou "little" = petit. Contraire de "big" (grand).'
     },
     {
-      id: 'a03', type: 'word-order', level: 'A1',
+      id: 'a03', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['He', 'is', 'a', 'tall', 'young', 'man', '.'],
       answer: 'He is a tall young man.',
@@ -959,7 +959,7 @@ export const exercises = {
       explanation: 'Ordre des adjectifs : opinion → taille → âge → couleur → nom. "Tall young man".'
     },
     {
-      id: 'a04', type: 'error-correct', level: 'A1',
+      id: 'a04', type: 'error-correct', diffLevel: 3, level: 'A1',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'She has eyes blue.',
       answer: 'She has blue eyes.',
@@ -967,7 +967,7 @@ export const exercises = {
       explanation: 'En anglais : adjectif + nom. "Blue eyes" (pas "eyes blue").'
     },
     {
-      id: 'a05', type: 'translate', level: 'A2',
+      id: 'a05', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Cette maison est vieille mais confortable.',
       answer: 'This house is old but comfortable.',
@@ -975,7 +975,7 @@ export const exercises = {
       explanation: 'Les adjectifs "old" et "comfortable" ne changent pas selon le genre.'
     },
     {
-      id: 'a06', type: 'listening', level: 'A2',
+      id: 'a06', type: 'listening', diffLevel: 2, level: 'A2',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'My little brother is very funny and clever.',
       answer: 'My little brother is very funny and clever.',
@@ -983,7 +983,7 @@ export const exercises = {
       explanation: '"Funny" = drôle. "Clever" = intelligent / malin.'
     },
     {
-      id: 'a07', type: 'fill-blank', level: 'A2',
+      id: 'a07', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec le comparatif.',
       template: 'My brother is ___ (tall) than me.',
       answer: 'taller',
@@ -991,7 +991,7 @@ export const exercises = {
       explanation: 'Comparatif des adjectifs courts : + "-er". "Tall" → "taller".'
     },
     {
-      id: 'a08', type: 'translate', level: 'A2',
+      id: 'a08', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Il est le plus rapide de la classe.',
       answer: 'He is the fastest in the class.',
@@ -1004,7 +1004,7 @@ export const exercises = {
   // ─── PRONOUNS ────────────────────────────────────────────────────────────────
   pronouns: [
     {
-      id: 'pr01', type: 'fill-blank', level: 'A1',
+      id: 'pr01', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon pronom sujet.',
       template: '___ is my teacher. (la prof femme)',
       answer: 'She',
@@ -1012,7 +1012,7 @@ export const exercises = {
       explanation: '"She" pour une femme, "he" pour un homme, "it" pour un objet.'
     },
     {
-      id: 'pr02', type: 'translate', level: 'A1',
+      id: 'pr02', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Elle m\'aime.',
       answer: 'She loves me.',
@@ -1020,7 +1020,7 @@ export const exercises = {
       explanation: 'Pronom objet : me (moi), you (toi), him (lui), her (elle), it, us, them.'
     },
     {
-      id: 'pr03', type: 'error-correct', level: 'A1',
+      id: 'pr03', type: 'error-correct', diffLevel: 3, level: 'A1',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'Me like chocolate.',
       answer: 'I like chocolate.',
@@ -1028,7 +1028,7 @@ export const exercises = {
       explanation: '"I" est un pronom SUJET. "Me" est un pronom OBJET. Sujet → I like.'
     },
     {
-      id: 'pr04', type: 'fill-blank', level: 'A1',
+      id: 'pr04', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec le bon adjectif possessif.',
       template: 'Tom and Mary love ___ children.',
       answer: 'their',
@@ -1036,7 +1036,7 @@ export const exercises = {
       explanation: '"Their" = leur(s). Appartient à "they" (eux).'
     },
     {
-      id: 'pr05', type: 'translate', level: 'A2',
+      id: 'pr05', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Ce livre est à moi.',
       answer: 'This book is mine.',
@@ -1045,7 +1045,7 @@ export const exercises = {
       explanation: '"Mine" = le mien / à moi. Pronom possessif (pas d\'article ni de nom après).'
     },
     {
-      id: 'pr06', type: 'word-order', level: 'A1',
+      id: 'pr06', type: 'word-order', diffLevel: 1, level: 'A1',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['We', 'see', 'them', 'every', 'day', '.'],
       answer: 'We see them every day.',
@@ -1053,7 +1053,7 @@ export const exercises = {
       explanation: '"Them" est pronom objet (les). "We see them" = on les voit.'
     },
     {
-      id: 'pr07', type: 'error-correct', level: 'A2',
+      id: 'pr07', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'This is her\'s book.',
       answer: 'This is her book.',
@@ -1062,7 +1062,7 @@ export const exercises = {
       explanation: '"Her" (son/sa) est déjà possessif. Pas d\'apostrophe-s. Le pronom seul est "hers".'
     },
     {
-      id: 'pr08', type: 'listening', level: 'A1',
+      id: 'pr08', type: 'listening', diffLevel: 2, level: 'A1',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'She gives him a new pen.',
       answer: 'She gives him a new pen.',
@@ -1074,7 +1074,7 @@ export const exercises = {
   // ─── FUTURE SIMPLE ───────────────────────────────────────────────────────────
   futureSimple: [
     {
-      id: 'fut01', type: 'fill-blank', level: 'A2',
+      id: 'fut01', type: 'fill-blank', diffLevel: 2, level: 'A2',
       instruction: 'Complétez avec "will" + verbe.',
       template: 'Tomorrow, I ___ my grandmother.',
       verb: 'visit', answer: 'will visit',
@@ -1082,7 +1082,7 @@ export const exercises = {
       explanation: 'Future Simple : will + verbe (infinitif). Même forme pour tous les sujets.'
     },
     {
-      id: 'fut02', type: 'translate', level: 'A2',
+      id: 'fut02', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Il va pleuvoir demain.',
       answer: 'It will rain tomorrow.',
@@ -1091,7 +1091,7 @@ export const exercises = {
       explanation: '"Will rain" et "is going to rain" sont tous les deux corrects pour une prédiction.'
     },
     {
-      id: 'fut03', type: 'error-correct', level: 'A2',
+      id: 'fut03', type: 'error-correct', diffLevel: 3, level: 'A2',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'She will goes to the hospital tomorrow.',
       answer: 'She will go to the hospital tomorrow.',
@@ -1099,7 +1099,7 @@ export const exercises = {
       explanation: 'Après "will", le verbe reste à l\'infinitif : will go (jamais will goes).'
     },
     {
-      id: 'fut04', type: 'word-order', level: 'A2',
+      id: 'fut04', type: 'word-order', diffLevel: 2, level: 'A2',
       instruction: 'Mettez les mots dans le bon ordre.',
       words: ['He', 'will', 'be', 'a', 'doctor', 'one', 'day', '.'],
       answer: 'He will be a doctor one day.',
@@ -1107,7 +1107,7 @@ export const exercises = {
       explanation: '"Will be" = sera. "One day" = un jour. Rêve ou ambition future.'
     },
     {
-      id: 'fut05', type: 'translate', level: 'A2',
+      id: 'fut05', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
       french: 'Je ne serai pas à l\'école demain.',
       answer: 'I will not be at school tomorrow.',
@@ -1116,7 +1116,7 @@ export const exercises = {
       explanation: '"Will not" = "won\'t". "I won\'t be at school" = je ne serai pas à l\'école.'
     },
     {
-      id: 'fut06', type: 'fill-blank', level: 'B1',
+      id: 'fut06', type: 'fill-blank', diffLevel: 3, level: 'B1',
       instruction: 'Complétez avec "will" ou "won\'t" + verbe.',
       template: 'If it rains, we ___ at home.',
       verb: 'stay', answer: 'will stay',
@@ -1124,7 +1124,7 @@ export const exercises = {
       explanation: 'Structure conditionnelle : If + Present Simple, + will + verbe. Classique!'
     },
     {
-      id: 'fut07', type: 'error-correct', level: 'B1',
+      id: 'fut07', type: 'error-correct', diffLevel: 3, level: 'B1',
       instruction: 'Trouvez et corrigez l\'erreur.',
       sentence: 'Will she comes to the party?',
       answer: 'Will she come to the party?',
@@ -1132,7 +1132,7 @@ export const exercises = {
       explanation: 'Question au Future Simple : Will + sujet + verbe (infinitif) ? Pas "comes".'
     },
     {
-      id: 'fut08', type: 'listening', level: 'A2',
+      id: 'fut08', type: 'listening', diffLevel: 2, level: 'A2',
       instruction: 'Écoutez et écrivez ce que vous entendez.',
       audio: 'I think she will pass her exam.',
       answer: 'I think she will pass her exam.',
@@ -1145,360 +1145,672 @@ export const exercises = {
 // ─── LEVEL ASSESSMENT EXERCISES ─────────────────────────────────────────────
 export const assessmentExercises = [
   // A1
-  { id: 'as01', type: 'fill-blank', level: 'A1', instruction: 'Complétez.', template: 'I ___ a student.', verb: 'be', answer: 'am', hint: '"I" + be = ?', explanation: 'Le verbe "be" avec "I" = am.' },
-  { id: 'as02', type: 'translate', level: 'A1', instruction: 'Traduisez.', french: 'J\'ai un frère.', answer: 'I have a brother.', alternatives: ['I have one brother.'], hint: '"Avoir" = have', explanation: '"Have" = avoir. "A brother" = un frère.' },
-  { id: 'as03', type: 'fill-blank', level: 'A1', instruction: 'Complétez.', template: 'She ___ to school every day.', verb: 'go', answer: 'goes', hint: 'She + go = ?', explanation: '"Go" avec she/he/it = goes.' },
+  { id: 'as01', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez.', template: 'I ___ a student.', verb: 'be', answer: 'am', hint: '"I" + be = ?', explanation: 'Le verbe "be" avec "I" = am.' },
+  { id: 'as02', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez.', french: 'J\'ai un frère.', answer: 'I have a brother.', alternatives: ['I have one brother.'], hint: '"Avoir" = have', explanation: '"Have" = avoir. "A brother" = un frère.' },
+  { id: 'as03', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez.', template: 'She ___ to school every day.', verb: 'go', answer: 'goes', hint: 'She + go = ?', explanation: '"Go" avec she/he/it = goes.' },
   // A2
-  { id: 'as04', type: 'error-correct', level: 'A2', instruction: 'Corrigez.', sentence: 'He don\'t speak English.', answer: 'He doesn\'t speak English.', hint: 'He → doesn\'t', explanation: '"He doesn\'t" est correct.' },
-  { id: 'as05', type: 'translate', level: 'A2', instruction: 'Traduisez.', french: 'Elle est en train de manger.', answer: 'She is eating.', alternatives: ['She\'s eating.'], hint: 'Present Continuous', explanation: '"Is eating" = être en train de manger.' },
-  { id: 'as06', type: 'fill-blank', level: 'A2', instruction: 'Complétez.', template: 'I ___ my homework yesterday.', verb: 'finish', answer: 'finished', hint: 'Hier → Past Simple', explanation: '"Finish" au Past Simple = finished (régulier).' },
+  { id: 'as04', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: 'Corrigez.', sentence: 'He don\'t speak English.', answer: 'He doesn\'t speak English.', hint: 'He → doesn\'t', explanation: '"He doesn\'t" est correct.' },
+  { id: 'as05', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez.', french: 'Elle est en train de manger.', answer: 'She is eating.', alternatives: ['She\'s eating.'], hint: 'Present Continuous', explanation: '"Is eating" = être en train de manger.' },
+  { id: 'as06', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez.', template: 'I ___ my homework yesterday.', verb: 'finish', answer: 'finished', hint: 'Hier → Past Simple', explanation: '"Finish" au Past Simple = finished (régulier).' },
   // B1
-  { id: 'as07', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Il n\'est pas venu à la fête.', answer: 'He didn\'t come to the party.', alternatives: ['He did not come to the party.'], hint: 'Past Simple négatif', explanation: '"Didn\'t come" = négatif de "came".' },
-  { id: 'as08', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'If I will have money, I will buy a book.', answer: 'If I have money, I will buy a book.', hint: 'Après "if" : Present Simple (pas will)', explanation: 'Structure : If + Present Simple, + will + verbe.' },
-  { id: 'as09', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: 'She ___ already ___ her work.', verb: 'have/finish', answer: 'has, finished', hint: 'Present Perfect : have/has + past participle', explanation: '"Has finished" = Present Perfect. Elle a déjà fini.' },
-  { id: 'as10', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Que fais-tu quand il pleut ?', answer: 'What do you do when it rains?', hint: 'Question + habitude (Present Simple)', explanation: '"What do you do" = que fais-tu? "When it rains" = quand il pleut.' },
+  { id: 'as07', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Il n\'est pas venu à la fête.', answer: 'He didn\'t come to the party.', alternatives: ['He did not come to the party.'], hint: 'Past Simple négatif', explanation: '"Didn\'t come" = négatif de "came".' },
+  { id: 'as08', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'If I will have money, I will buy a book.', answer: 'If I have money, I will buy a book.', hint: 'Après "if" : Present Simple (pas will)', explanation: 'Structure : If + Present Simple, + will + verbe.' },
+  { id: 'as09', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: 'She ___ already ___ her work.', verb: 'have/finish', answer: 'has, finished', hint: 'Present Perfect : have/has + past participle', explanation: '"Has finished" = Present Perfect. Elle a déjà fini.' },
+  { id: 'as10', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Que fais-tu quand il pleut ?', answer: 'What do you do when it rains?', hint: 'Question + habitude (Present Simple)', explanation: '"What do you do" = que fais-tu? "When it rains" = quand il pleut.' },
 ];
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
 exercises.articles = [
-  { id: 'art01', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec a, an ou the.', template: 'I have ___ apple in my bag.', answer: 'an', hint: 'Apple commence par une voyelle → an', explanation: '"An" devant un son vocalique : an apple, an elephant, an hour.' },
-  { id: 'art02', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec a, an ou the.', template: 'She is ___ teacher at our school.', answer: 'a', hint: 'Teacher commence par une consonne → a', explanation: '"A" devant un son consonantique : a teacher, a book, a car.' },
-  { id: 'art03', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec a, an ou the.', template: 'Close ___ door, please!', answer: 'the', hint: 'On sait de quelle porte il s\'agit → the', explanation: '"The" quand on parle d\'une chose spécifique déjà connue des deux interlocuteurs.' },
-  { id: 'art04', type: 'error-correct', level: 'A1', instruction: 'Corrigez l\'article.', sentence: 'I drink a milk every morning.', answer: 'I drink milk every morning.', hint: 'Milk est non-dénombrable → pas d\'article', explanation: 'Les noms non-dénombrables (water, rice, milk, money) ne prennent pas d\'article au sens général.' },
-  { id: 'art05', type: 'translate', level: 'A1', instruction: 'Traduisez en anglais.', french: 'J\'ai un chien et un chat.', answer: 'I have a dog and a cat.', hint: 'Première mention → a/an', explanation: '"A dog, a cat" : première fois qu\'on en parle. Deuxième mention → "the dog, the cat".' },
-  { id: 'art06', type: 'fill-blank', level: 'A1', instruction: 'Complétez.', template: '___ sun is very hot today.', answer: 'The', hint: 'Il n\'y a qu\'un seul soleil → the', explanation: '"The sun, the moon, the sky" : objets uniques → toujours "the".' },
-  { id: 'art07', type: 'error-correct', level: 'A1', instruction: 'Corrigez l\'article.', sentence: 'She speaks the English very well.', answer: 'She speaks English very well.', hint: 'Les langues n\'ont pas d\'article', explanation: 'Les langues (English, French, Malagasy) ne prennent jamais d\'article.' },
-  { id: 'art08', type: 'word-order', level: 'A1', instruction: 'Remettez dans l\'ordre.', words: ['is', 'He', 'an', 'engineer'], answer: 'He is an engineer.', hint: 'engineer commence par une voyelle → an', explanation: '"An engineer" car "engineer" commence par le son vocalique /ɛ/.' },
+  { id: 'art01', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec a, an ou the.', template: 'I have ___ apple in my bag.', answer: 'an', hint: 'Apple commence par une voyelle → an', explanation: '"An" devant un son vocalique : an apple, an elephant, an hour.' },
+  { id: 'art02', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec a, an ou the.', template: 'She is ___ teacher at our school.', answer: 'a', hint: 'Teacher commence par une consonne → a', explanation: '"A" devant un son consonantique : a teacher, a book, a car.' },
+  { id: 'art03', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec a, an ou the.', template: 'Close ___ door, please!', answer: 'the', hint: 'On sait de quelle porte il s\'agit → the', explanation: '"The" quand on parle d\'une chose spécifique déjà connue des deux interlocuteurs.' },
+  { id: 'art04', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: 'Corrigez l\'article.', sentence: 'I drink a milk every morning.', answer: 'I drink milk every morning.', hint: 'Milk est non-dénombrable → pas d\'article', explanation: 'Les noms non-dénombrables (water, rice, milk, money) ne prennent pas d\'article au sens général.' },
+  { id: 'art05', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez en anglais.', french: 'J\'ai un chien et un chat.', answer: 'I have a dog and a cat.', hint: 'Première mention → a/an', explanation: '"A dog, a cat" : première fois qu\'on en parle. Deuxième mention → "the dog, the cat".' },
+  { id: 'art06', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez.', template: '___ sun is very hot today.', answer: 'The', hint: 'Il n\'y a qu\'un seul soleil → the', explanation: '"The sun, the moon, the sky" : objets uniques → toujours "the".' },
+  { id: 'art07', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: 'Corrigez l\'article.', sentence: 'She speaks the English very well.', answer: 'She speaks English very well.', hint: 'Les langues n\'ont pas d\'article', explanation: 'Les langues (English, French, Malagasy) ne prennent jamais d\'article.' },
+  { id: 'art08', type: 'word-order', diffLevel: 1, level: 'A1', instruction: 'Remettez dans l\'ordre.', words: ['is', 'He', 'an', 'engineer'], answer: 'He is an engineer.', hint: 'engineer commence par une voyelle → an', explanation: '"An engineer" car "engineer" commence par le son vocalique /ɛ/.' },
 ];
 
 // ─── PLURALS ────────────────────────────────────────────────────────────────
 exercises.plurals = [
-  { id: 'pl01', type: 'fill-blank', level: 'A1', instruction: 'Donnez le pluriel.', template: 'One book → two ___', answer: 'books', hint: 'Règle générale : + s', explanation: 'Pluriel régulier : book + s = books.' },
-  { id: 'pl02', type: 'fill-blank', level: 'A1', instruction: 'Donnez le pluriel.', template: 'One bus → three ___', answer: 'buses', hint: 'Mots en -s → + es', explanation: 'Mots qui finissent en -s, -x, -ch, -sh : on ajoute -es. bus → buses.' },
-  { id: 'pl03', type: 'error-correct', level: 'A1', instruction: 'Corrigez le pluriel.', sentence: 'I have two childs at school.', answer: 'I have two children at school.', hint: 'Pluriel irrégulier de child', explanation: 'child → children (irrégulier). man → men, woman → women, child → children.' },
-  { id: 'pl04', type: 'fill-blank', level: 'A1', instruction: 'Donnez le pluriel.', template: 'One city → five ___', answer: 'cities', hint: 'Consonne + y → ies', explanation: 'city : consonne (t) + y → retire le y et ajoute -ies : cities.' },
-  { id: 'pl05', type: 'translate', level: 'A1', instruction: 'Traduisez.', french: 'Il y a beaucoup de gens dans la rue.', answer: 'There are many people in the street.', alternatives: ['There are a lot of people in the street.'], hint: 'people = pluriel de person', explanation: '"People" est déjà pluriel. On ne dit jamais "peoples" pour désigner des personnes.' },
-  { id: 'pl06', type: 'error-correct', level: 'A1', instruction: 'Corrigez.', sentence: 'My foots are tired after the walk.', answer: 'My feet are tired after the walk.', hint: 'Pluriel irrégulier de foot', explanation: 'foot → feet (irrégulier). tooth → teeth, man → men, woman → women.' },
-  { id: 'pl07', type: 'fill-blank', level: 'A1', instruction: 'Pluriel ou singulier ?', template: 'The ___ (sheep) are in the field.', answer: 'sheep', hint: 'Sheep = même forme au singulier et pluriel', explanation: 'Certains mots ont la même forme : sheep → sheep, fish → fish.' },
-  { id: 'pl08', type: 'word-order', level: 'A1', instruction: 'Remettez dans l\'ordre.', words: ['women', 'The', 'the', 'market', 'are', 'at'], answer: 'The women are at the market.', hint: 'women = pluriel de woman', explanation: 'woman → women (irrégulier). Sujet pluriel → are.' },
+  { id: 'pl01', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Donnez le pluriel.', template: 'One book → two ___', answer: 'books', hint: 'Règle générale : + s', explanation: 'Pluriel régulier : book + s = books.' },
+  { id: 'pl02', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Donnez le pluriel.', template: 'One bus → three ___', answer: 'buses', hint: 'Mots en -s → + es', explanation: 'Mots qui finissent en -s, -x, -ch, -sh : on ajoute -es. bus → buses.' },
+  { id: 'pl03', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: 'Corrigez le pluriel.', sentence: 'I have two childs at school.', answer: 'I have two children at school.', hint: 'Pluriel irrégulier de child', explanation: 'child → children (irrégulier). man → men, woman → women, child → children.' },
+  { id: 'pl04', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Donnez le pluriel.', template: 'One city → five ___', answer: 'cities', hint: 'Consonne + y → ies', explanation: 'city : consonne (t) + y → retire le y et ajoute -ies : cities.' },
+  { id: 'pl05', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez.', french: 'Il y a beaucoup de gens dans la rue.', answer: 'There are many people in the street.', alternatives: ['There are a lot of people in the street.'], hint: 'people = pluriel de person', explanation: '"People" est déjà pluriel. On ne dit jamais "peoples" pour désigner des personnes.' },
+  { id: 'pl06', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: 'Corrigez.', sentence: 'My foots are tired after the walk.', answer: 'My feet are tired after the walk.', hint: 'Pluriel irrégulier de foot', explanation: 'foot → feet (irrégulier). tooth → teeth, man → men, woman → women.' },
+  { id: 'pl07', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Pluriel ou singulier ?', template: 'The ___ (sheep) are in the field.', answer: 'sheep', hint: 'Sheep = même forme au singulier et pluriel', explanation: 'Certains mots ont la même forme : sheep → sheep, fish → fish.' },
+  { id: 'pl08', type: 'word-order', diffLevel: 1, level: 'A1', instruction: 'Remettez dans l\'ordre.', words: ['women', 'The', 'the', 'market', 'are', 'at'], answer: 'The women are at the market.', hint: 'women = pluriel de woman', explanation: 'woman → women (irrégulier). Sujet pluriel → are.' },
 ];
 
 // ─── THERE IS / ARE ─────────────────────────────────────────────────────────
 exercises.therebeis = [
-  { id: 'tbi01', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec there is ou there are.', template: '___ a book on the table.', answer: 'There is', hint: 'a book = singulier → there is', explanation: '"There is" avec un nom singulier. "There are" avec un nom pluriel.' },
-  { id: 'tbi02', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec there is ou there are.', template: '___ five students in the classroom.', answer: 'There are', hint: 'five students = pluriel → there are', explanation: '"There are" avec un chiffre supérieur à 1 ou un nom pluriel.' },
-  { id: 'tbi03', type: 'translate', level: 'A1', instruction: 'Traduisez.', french: 'Il y a un hôpital près d\'ici.', answer: 'There is a hospital near here.', alternatives: ["There's a hospital near here."], hint: 'hospital = singulier', explanation: '"There is" = il y a (singulier). Contraction : There\'s.' },
-  { id: 'tbi04', type: 'error-correct', level: 'A1', instruction: 'Corrigez la phrase.', sentence: 'There are a cat in the garden.', answer: 'There is a cat in the garden.', hint: 'a cat = singulier → there is', explanation: '"A cat" est singulier → "there is", pas "there are".' },
-  { id: 'tbi05', type: 'fill-blank', level: 'A1', instruction: 'Négatif : complétez.', template: '___ any milk in the fridge.', answer: "There isn't", hint: 'Forme négative de there is', explanation: '"There isn\'t any..." = il n\'y a pas de... (singulier/non-dénombrable).' },
-  { id: 'tbi06', type: 'translate', level: 'A1', instruction: 'Traduisez (question).', french: 'Y a-t-il des questions ?', answer: 'Are there any questions?', hint: 'Inverser there are pour la question', explanation: 'Question : Are there...? / Is there...? On utilise souvent "any" dans les questions.' },
-  { id: 'tbi07', type: 'fill-blank', level: 'A2', instruction: 'Complétez au passé.', template: '___ many people at the party last night.', answer: 'There were', hint: 'Au passé : was/were', explanation: 'Au passé : "there was" (singulier) / "there were" (pluriel).' },
-  { id: 'tbi08', type: 'word-order', level: 'A1', instruction: 'Remettez dans l\'ordre.', words: ['a', 'Is', 'there', 'here', 'near', 'pharmacy', '?'], answer: 'Is there a pharmacy near here?', hint: 'Question avec there is → inversion', explanation: 'Question : Is there + singulier? / Are there + pluriel?' },
+  { id: 'tbi01', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec there is ou there are.', template: '___ a book on the table.', answer: 'There is', hint: 'a book = singulier → there is', explanation: '"There is" avec un nom singulier. "There are" avec un nom pluriel.' },
+  { id: 'tbi02', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec there is ou there are.', template: '___ five students in the classroom.', answer: 'There are', hint: 'five students = pluriel → there are', explanation: '"There are" avec un chiffre supérieur à 1 ou un nom pluriel.' },
+  { id: 'tbi03', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez.', french: 'Il y a un hôpital près d\'ici.', answer: 'There is a hospital near here.', alternatives: ["There's a hospital near here."], hint: 'hospital = singulier', explanation: '"There is" = il y a (singulier). Contraction : There\'s.' },
+  { id: 'tbi04', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: 'Corrigez la phrase.', sentence: 'There are a cat in the garden.', answer: 'There is a cat in the garden.', hint: 'a cat = singulier → there is', explanation: '"A cat" est singulier → "there is", pas "there are".' },
+  { id: 'tbi05', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Négatif : complétez.', template: '___ any milk in the fridge.', answer: "There isn't", hint: 'Forme négative de there is', explanation: '"There isn\'t any..." = il n\'y a pas de... (singulier/non-dénombrable).' },
+  { id: 'tbi06', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez (question).', french: 'Y a-t-il des questions ?', answer: 'Are there any questions?', hint: 'Inverser there are pour la question', explanation: 'Question : Are there...? / Is there...? On utilise souvent "any" dans les questions.' },
+  { id: 'tbi07', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez au passé.', template: '___ many people at the party last night.', answer: 'There were', hint: 'Au passé : was/were', explanation: 'Au passé : "there was" (singulier) / "there were" (pluriel).' },
+  { id: 'tbi08', type: 'word-order', diffLevel: 1, level: 'A1', instruction: 'Remettez dans l\'ordre.', words: ['a', 'Is', 'there', 'here', 'near', 'pharmacy', '?'], answer: 'Is there a pharmacy near here?', hint: 'Question avec there is → inversion', explanation: 'Question : Is there + singulier? / Are there + pluriel?' },
 ];
 
 // ─── PREPOSITIONS ───────────────────────────────────────────────────────────
 exercises.prepositions = [
-  { id: 'prep01', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec in, on ou at.', template: 'I wake up ___ 6 o\'clock.', answer: 'at', hint: 'Heure précise → at', explanation: '"At" pour les heures précises : at 6 o\'clock, at noon, at midnight.' },
-  { id: 'prep02', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec in, on ou at.', template: 'School starts ___ Monday.', answer: 'on', hint: 'Jours de la semaine → on', explanation: '"On" pour les jours : on Monday, on Friday, on my birthday.' },
-  { id: 'prep03', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec in, on ou at.', template: 'My birthday is ___ January.', answer: 'in', hint: 'Mois → in', explanation: '"In" pour les mois, les années et les saisons : in January, in 2025, in summer.' },
-  { id: 'prep04', type: 'error-correct', level: 'A1', instruction: 'Corrigez la préposition.', sentence: 'I go to school in 7 am.', answer: 'I go to school at 7 am.', hint: 'Heure précise → at', explanation: 'Heure précise : "at 7 am", pas "in 7 am".' },
-  { id: 'prep05', type: 'fill-blank', level: 'A1', instruction: 'Complétez.', template: 'The cat is ___ the box.', answer: 'in', hint: 'À l\'intérieur → in', explanation: '"In" pour l\'intérieur. "On" pour la surface. "At" pour un point précis.' },
-  { id: 'prep06', type: 'translate', level: 'A2', instruction: 'Traduisez.', french: 'Je suis né en 1999.', answer: 'I was born in 1999.', hint: 'Année → in', explanation: '"In + année" pour situer dans le temps.' },
-  { id: 'prep07', type: 'fill-blank', level: 'A2', instruction: 'Complétez.', template: 'She lives ___ home and goes ___ school every day.', answer: 'at, to', hint: 'at home (lieu), to school (direction)', explanation: '"At home" = chez soi. "To school" = direction vers l\'école.' },
-  { id: 'prep08', type: 'error-correct', level: 'A2', instruction: 'Corrigez.', sentence: 'The party is in the night.', answer: 'The party is at night.', hint: 'Night → at night (exception)', explanation: 'Exception : "at night" (pas "in the night"). Mais : "in the morning/afternoon/evening".' },
+  { id: 'prep01', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec in, on ou at.', template: 'I wake up ___ 6 o\'clock.', answer: 'at', hint: 'Heure précise → at', explanation: '"At" pour les heures précises : at 6 o\'clock, at noon, at midnight.' },
+  { id: 'prep02', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec in, on ou at.', template: 'School starts ___ Monday.', answer: 'on', hint: 'Jours de la semaine → on', explanation: '"On" pour les jours : on Monday, on Friday, on my birthday.' },
+  { id: 'prep03', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec in, on ou at.', template: 'My birthday is ___ January.', answer: 'in', hint: 'Mois → in', explanation: '"In" pour les mois, les années et les saisons : in January, in 2025, in summer.' },
+  { id: 'prep04', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: 'Corrigez la préposition.', sentence: 'I go to school in 7 am.', answer: 'I go to school at 7 am.', hint: 'Heure précise → at', explanation: 'Heure précise : "at 7 am", pas "in 7 am".' },
+  { id: 'prep05', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez.', template: 'The cat is ___ the box.', answer: 'in', hint: 'À l\'intérieur → in', explanation: '"In" pour l\'intérieur. "On" pour la surface. "At" pour un point précis.' },
+  { id: 'prep06', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez.', french: 'Je suis né en 1999.', answer: 'I was born in 1999.', hint: 'Année → in', explanation: '"In + année" pour situer dans le temps.' },
+  { id: 'prep07', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez.', template: 'She lives ___ home and goes ___ school every day.', answer: 'at, to', hint: 'at home (lieu), to school (direction)', explanation: '"At home" = chez soi. "To school" = direction vers l\'école.' },
+  { id: 'prep08', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: 'Corrigez.', sentence: 'The party is in the night.', answer: 'The party is at night.', hint: 'Night → at night (exception)', explanation: 'Exception : "at night" (pas "in the night"). Mais : "in the morning/afternoon/evening".' },
 ];
 
 // ─── QUESTIONS ──────────────────────────────────────────────────────────────
 exercises.questions = [
-  { id: 'q01', type: 'fill-blank', level: 'A1', instruction: 'Complétez la question.', template: '___ is your name?', answer: 'What', hint: 'Pour demander une chose/un nom', explanation: '"What" = quoi / quel. "What is your name?" = Quel est ton prénom?' },
-  { id: 'q02', type: 'fill-blank', level: 'A1', instruction: 'Complétez la question.', template: '___ do you live?', answer: 'Where', hint: 'Pour demander un lieu', explanation: '"Where" = où. "Where do you live?" = Où habites-tu?' },
-  { id: 'q03', type: 'fill-blank', level: 'A1', instruction: 'Complétez la question.', template: '___ old are you?', answer: 'How', hint: '"How" se combine avec des adjectifs', explanation: '"How old" = quel âge. "How many" = combien (dénombrable). "How much" = combien (non-dénombrable).' },
-  { id: 'q04', type: 'translate', level: 'A1', instruction: 'Traduisez la question.', french: 'Quand est-ce que tu vas à l\'école ?', answer: 'When do you go to school?', hint: 'When = quand + auxiliaire do', explanation: 'Structure : When + do/does + sujet + verbe infinitif ?' },
-  { id: 'q05', type: 'error-correct', level: 'A2', instruction: 'Corrigez la question.', sentence: 'What she does for work?', answer: 'What does she do for work?', hint: 'Does se place avant le sujet', explanation: 'Question avec "does" (he/she/it) : Does + sujet + infinitif? Le verbe retourne à l\'infinitif.' },
-  { id: 'q06', type: 'word-order', level: 'A2', instruction: 'Formez une question.', words: ['Why', 'you', 'did', 'school', 'miss', '?'], answer: 'Why did you miss school?', hint: 'Why + did + sujet + infinitif', explanation: 'Au passé : Did + sujet + verbe infinitif. "Why did you miss..." (pas "missed").' },
-  { id: 'q07', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec how many ou how much.', template: '___ brothers do you have?', answer: 'How many', hint: 'brothers = dénombrable', explanation: '"How many" pour les noms dénombrables. "How much" pour les non-dénombrables (water, money).' },
-  { id: 'q08', type: 'translate', level: 'A2', instruction: 'Traduisez.', french: 'Pourquoi est-ce qu\'il n\'est pas venu ?', answer: "Why didn't he come?", alternatives: ['Why did he not come?'], hint: 'Why + didn\'t + sujet + infinitif', explanation: '"Why didn\'t he come?" = Why + didn\'t (passé négatif) + sujet + infinitif.' },
+  { id: 'q01', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez la question.', template: '___ is your name?', answer: 'What', hint: 'Pour demander une chose/un nom', explanation: '"What" = quoi / quel. "What is your name?" = Quel est ton prénom?' },
+  { id: 'q02', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez la question.', template: '___ do you live?', answer: 'Where', hint: 'Pour demander un lieu', explanation: '"Where" = où. "Where do you live?" = Où habites-tu?' },
+  { id: 'q03', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez la question.', template: '___ old are you?', answer: 'How', hint: '"How" se combine avec des adjectifs', explanation: '"How old" = quel âge. "How many" = combien (dénombrable). "How much" = combien (non-dénombrable).' },
+  { id: 'q04', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez la question.', french: 'Quand est-ce que tu vas à l\'école ?', answer: 'When do you go to school?', hint: 'When = quand + auxiliaire do', explanation: 'Structure : When + do/does + sujet + verbe infinitif ?' },
+  { id: 'q05', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: 'Corrigez la question.', sentence: 'What she does for work?', answer: 'What does she do for work?', hint: 'Does se place avant le sujet', explanation: 'Question avec "does" (he/she/it) : Does + sujet + infinitif? Le verbe retourne à l\'infinitif.' },
+  { id: 'q06', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Formez une question.', words: ['Why', 'you', 'did', 'school', 'miss', '?'], answer: 'Why did you miss school?', hint: 'Why + did + sujet + infinitif', explanation: 'Au passé : Did + sujet + verbe infinitif. "Why did you miss..." (pas "missed").' },
+  { id: 'q07', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec how many ou how much.', template: '___ brothers do you have?', answer: 'How many', hint: 'brothers = dénombrable', explanation: '"How many" pour les noms dénombrables. "How much" pour les non-dénombrables (water, money).' },
+  { id: 'q08', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez.', french: 'Pourquoi est-ce qu\'il n\'est pas venu ?', answer: "Why didn't he come?", alternatives: ['Why did he not come?'], hint: 'Why + didn\'t + sujet + infinitif', explanation: '"Why didn\'t he come?" = Why + didn\'t (passé négatif) + sujet + infinitif.' },
 ];
 
 // ─── MODALS ─────────────────────────────────────────────────────────────────
 exercises.modals = [
-  { id: 'mod01', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec can ou can\'t.', template: 'She ___ swim very well — she is a champion!', answer: 'can', hint: 'Capacité positive', explanation: '"Can" exprime la capacité. Pas de -s à la 3e personne : "She can" (pas "she cans").' },
-  { id: 'mod02', type: 'translate', level: 'A2', instruction: 'Traduisez.', french: 'Tu dois étudier ce soir.', answer: 'You must study tonight.', alternatives: ['You have to study tonight.'], hint: 'Obligation forte → must ou have to', explanation: '"Must" = obligation personnelle. "Have to" = obligation externe. Les deux sont acceptés.' },
-  { id: 'mod03', type: 'fill-blank', level: 'A2', instruction: 'Conseil : complétez.', template: 'You ___ drink more water every day.', answer: 'should', hint: 'Conseil (moins fort que must)', explanation: '"Should" donne un conseil. "You should eat vegetables."' },
-  { id: 'mod04', type: 'error-correct', level: 'A2', instruction: 'Corrigez la phrase.', sentence: 'She can to drive a car.', answer: 'She can drive a car.', hint: 'Après un modal : infinitif sans to', explanation: 'Après les modaux (can, must, should, might, would) : jamais de "to".' },
-  { id: 'mod05', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec could ou can.', template: 'When I was 5, I ___ read already.', answer: 'could', hint: 'Capacité dans le passé → could', explanation: '"Could" est le passé de "can". "I could swim at age 3."' },
-  { id: 'mod06', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Vous devriez prendre un parapluie — il pourrait pleuvoir.', answer: 'You should take an umbrella — it might rain.', alternatives: ['You should take an umbrella, it might rain.'], hint: 'Conseil + possibilité', explanation: '"Should" = conseil. "Might" = possibilité incertaine.' },
-  { id: 'mod07', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: '___ you like some tea?', answer: 'Would', hint: 'Offre polie → would', explanation: '"Would you like...?" = offre polie. "Would" = conditionnel/politesse.' },
-  { id: 'mod08', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'He musts leave now.', answer: 'He must leave now.', hint: 'Must ne prend jamais de -s', explanation: 'Les modaux sont invariables : must, can, should, might → jamais de -s à la 3e personne.' },
+  { id: 'mod01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec can ou can\'t.', template: 'She ___ swim very well — she is a champion!', answer: 'can', hint: 'Capacité positive', explanation: '"Can" exprime la capacité. Pas de -s à la 3e personne : "She can" (pas "she cans").' },
+  { id: 'mod02', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez.', french: 'Tu dois étudier ce soir.', answer: 'You must study tonight.', alternatives: ['You have to study tonight.'], hint: 'Obligation forte → must ou have to', explanation: '"Must" = obligation personnelle. "Have to" = obligation externe. Les deux sont acceptés.' },
+  { id: 'mod03', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Conseil : complétez.', template: 'You ___ drink more water every day.', answer: 'should', hint: 'Conseil (moins fort que must)', explanation: '"Should" donne un conseil. "You should eat vegetables."' },
+  { id: 'mod04', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: 'Corrigez la phrase.', sentence: 'She can to drive a car.', answer: 'She can drive a car.', hint: 'Après un modal : infinitif sans to', explanation: 'Après les modaux (can, must, should, might, would) : jamais de "to".' },
+  { id: 'mod05', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec could ou can.', template: 'When I was 5, I ___ read already.', answer: 'could', hint: 'Capacité dans le passé → could', explanation: '"Could" est le passé de "can". "I could swim at age 3."' },
+  { id: 'mod06', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Vous devriez prendre un parapluie — il pourrait pleuvoir.', answer: 'You should take an umbrella — it might rain.', alternatives: ['You should take an umbrella, it might rain.'], hint: 'Conseil + possibilité', explanation: '"Should" = conseil. "Might" = possibilité incertaine.' },
+  { id: 'mod07', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: '___ you like some tea?', answer: 'Would', hint: 'Offre polie → would', explanation: '"Would you like...?" = offre polie. "Would" = conditionnel/politesse.' },
+  { id: 'mod08', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'He musts leave now.', answer: 'He must leave now.', hint: 'Must ne prend jamais de -s', explanation: 'Les modaux sont invariables : must, can, should, might → jamais de -s à la 3e personne.' },
 ];
 
 // ─── PAST CONTINUOUS ────────────────────────────────────────────────────────
 exercises.pastContinuous = [
-  { id: 'pastc01', type: 'fill-blank', level: 'B1', instruction: 'Complétez au Past Continuous.', template: 'At 8pm, I ___ (read) a book.', answer: 'was reading', hint: 'was/were + -ing', explanation: '"Was reading" = j\'étais en train de lire. "I" → was.' },
-  { id: 'pastc02', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Ils jouaient au foot quand il a plu.', answer: 'They were playing football when it rained.', hint: 'Action longue (continuous) + action courte (simple)', explanation: 'Past Continuous pour l\'action en cours + Past Simple pour l\'interruption.' },
-  { id: 'pastc03', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: 'While she ___ (cook), her phone rang.', answer: 'was cooking', hint: 'While + Past Continuous', explanation: '"While" introduit souvent une action en cours au passé (Past Continuous).' },
-  { id: 'pastc04', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'They was studying when I arrived.', answer: 'They were studying when I arrived.', hint: 'they → were (pas was)', explanation: '"Was" = I/he/she/it. "Were" = you/we/they.' },
-  { id: 'pastc05', type: 'word-order', level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['was', 'I', 'the', 'when', 'sleeping', 'rang', 'phone'], answer: 'I was sleeping when the phone rang.', hint: 'Past Continuous + when + Past Simple', explanation: 'Structure : sujet + was/were + V-ing + when + Past Simple.' },
-  { id: 'pastc06', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Qu\'est-ce que tu faisais hier soir à 20h ?', answer: 'What were you doing last night at 8pm?', hint: 'Question au Past Continuous', explanation: 'Question : What + were + you + doing?' },
-  { id: 'pastc07', type: 'fill-blank', level: 'B1', instruction: 'Complétez les deux verbes.', template: 'While she ___ (study), he ___ (sleep).', answer: 'was studying, was sleeping', hint: 'Deux actions parallèles → deux Past Continuous', explanation: 'Deux actions simultanées dans le passé → les deux au Past Continuous.' },
-  { id: 'pastc08', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'She was knowing the answer.', answer: 'She knew the answer.', hint: 'Know = verbe d\'état → pas de continuous', explanation: 'Verbes d\'état (know, like, love, believe, understand) → jamais au continuous.' },
+  { id: 'pastc01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez au Past Continuous.', template: 'At 8pm, I ___ (read) a book.', answer: 'was reading', hint: 'was/were + -ing', explanation: '"Was reading" = j\'étais en train de lire. "I" → was.' },
+  { id: 'pastc02', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Ils jouaient au foot quand il a plu.', answer: 'They were playing football when it rained.', hint: 'Action longue (continuous) + action courte (simple)', explanation: 'Past Continuous pour l\'action en cours + Past Simple pour l\'interruption.' },
+  { id: 'pastc03', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: 'While she ___ (cook), her phone rang.', answer: 'was cooking', hint: 'While + Past Continuous', explanation: '"While" introduit souvent une action en cours au passé (Past Continuous).' },
+  { id: 'pastc04', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'They was studying when I arrived.', answer: 'They were studying when I arrived.', hint: 'they → were (pas was)', explanation: '"Was" = I/he/she/it. "Were" = you/we/they.' },
+  { id: 'pastc05', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['was', 'I', 'the', 'when', 'sleeping', 'rang', 'phone'], answer: 'I was sleeping when the phone rang.', hint: 'Past Continuous + when + Past Simple', explanation: 'Structure : sujet + was/were + V-ing + when + Past Simple.' },
+  { id: 'pastc06', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Qu\'est-ce que tu faisais hier soir à 20h ?', answer: 'What were you doing last night at 8pm?', hint: 'Question au Past Continuous', explanation: 'Question : What + were + you + doing?' },
+  { id: 'pastc07', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez les deux verbes.', template: 'While she ___ (study), he ___ (sleep).', answer: 'was studying, was sleeping', hint: 'Deux actions parallèles → deux Past Continuous', explanation: 'Deux actions simultanées dans le passé → les deux au Past Continuous.' },
+  { id: 'pastc08', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'She was knowing the answer.', answer: 'She knew the answer.', hint: 'Know = verbe d\'état → pas de continuous', explanation: 'Verbes d\'état (know, like, love, believe, understand) → jamais au continuous.' },
 ];
 
 // ─── PRESENT PERFECT ────────────────────────────────────────────────────────
 exercises.presentPerfect = [
-  { id: 'pp01', type: 'fill-blank', level: 'B1', instruction: 'Complétez au Present Perfect.', template: 'I ___ (visit) Paris twice.', answer: 'have visited', hint: 'have/has + participe passé', explanation: '"Have visited" = j\'ai visité (dans ma vie). Present Perfect pour les expériences.' },
-  { id: 'pp02', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: 'She ___ (not/eat) yet.', answer: "hasn't eaten", hint: 'hasn\'t + pp pour he/she/it', explanation: '"Hasn\'t eaten" = elle n\'a pas encore mangé.' },
-  { id: 'pp03', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'As-tu déjà mangé du riz rouge ?', answer: 'Have you ever eaten red rice?', alternatives: ['Have you ever tried red rice?'], hint: 'ever = déjà (dans ta vie)', explanation: '"Have you ever...?" pour une expérience de vie.' },
-  { id: 'pp04', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'I have went to school yesterday.', answer: 'I went to school yesterday.', hint: 'yesterday → Past Simple (pas Present Perfect)', explanation: '"Yesterday" = moment précis → Past Simple. Le Present Perfect ne s\'utilise jamais avec "yesterday".' },
-  { id: 'pp05', type: 'fill-blank', level: 'B1', instruction: 'Since ou for ?', template: 'I have lived here ___ 2018.', answer: 'since', hint: '2018 = point de départ', explanation: '"Since" + point dans le temps. "For" + durée.' },
-  { id: 'pp06', type: 'fill-blank', level: 'B1', instruction: 'Since ou for ?', template: 'She has worked here ___ five years.', answer: 'for', hint: 'five years = durée', explanation: '"For" + durée : for five years, for two months.' },
-  { id: 'pp07', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Il vient de partir.', answer: 'He has just left.', hint: 'just = tout juste → Present Perfect', explanation: '"Has just left" = il vient de partir. "Just" → entre have/has et le participe passé.' },
-  { id: 'pp08', type: 'word-order', level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['has', 'She', 'already', 'her', 'finished', 'homework'], answer: 'She has already finished her homework.', hint: 'already se place entre has et le pp', explanation: '"Already" se place entre have/has et le participe passé.' },
+  { id: 'pp01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez au Present Perfect.', template: 'I ___ (visit) Paris twice.', answer: 'have visited', hint: 'have/has + participe passé', explanation: '"Have visited" = j\'ai visité (dans ma vie). Present Perfect pour les expériences.' },
+  { id: 'pp02', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: 'She ___ (not/eat) yet.', answer: "hasn't eaten", hint: 'hasn\'t + pp pour he/she/it', explanation: '"Hasn\'t eaten" = elle n\'a pas encore mangé.' },
+  { id: 'pp03', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'As-tu déjà mangé du riz rouge ?', answer: 'Have you ever eaten red rice?', alternatives: ['Have you ever tried red rice?'], hint: 'ever = déjà (dans ta vie)', explanation: '"Have you ever...?" pour une expérience de vie.' },
+  { id: 'pp04', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'I have went to school yesterday.', answer: 'I went to school yesterday.', hint: 'yesterday → Past Simple (pas Present Perfect)', explanation: '"Yesterday" = moment précis → Past Simple. Le Present Perfect ne s\'utilise jamais avec "yesterday".' },
+  { id: 'pp05', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Since ou for ?', template: 'I have lived here ___ 2018.', answer: 'since', hint: '2018 = point de départ', explanation: '"Since" + point dans le temps. "For" + durée.' },
+  { id: 'pp06', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Since ou for ?', template: 'She has worked here ___ five years.', answer: 'for', hint: 'five years = durée', explanation: '"For" + durée : for five years, for two months.' },
+  { id: 'pp07', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Il vient de partir.', answer: 'He has just left.', hint: 'just = tout juste → Present Perfect', explanation: '"Has just left" = il vient de partir. "Just" → entre have/has et le participe passé.' },
+  { id: 'pp08', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['has', 'She', 'already', 'her', 'finished', 'homework'], answer: 'She has already finished her homework.', hint: 'already se place entre has et le pp', explanation: '"Already" se place entre have/has et le participe passé.' },
 ];
 
 // ─── PAST PERFECT ───────────────────────────────────────────────────────────
 exercises.pastPerfect = [
-  { id: 'patp01', type: 'fill-blank', level: 'B1', instruction: 'Complétez au Past Perfect.', template: 'When I arrived, she ___ (already/leave).', answer: 'had already left', hint: 'had + participe passé', explanation: '"Had left" = elle était déjà partie (avant mon arrivée).' },
-  { id: 'patp02', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Il a raté le bus parce qu\'il ne s\'était pas levé tôt.', answer: "He missed the bus because he hadn't got up early.", alternatives: ["He missed the bus because he had not gotten up early."], hint: 'hadn\'t + pp pour l\'action antérieure', explanation: '"Hadn\'t got up" = il ne s\'était pas levé (avant de rater le bus).' },
-  { id: 'patp03', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'After I ate, I have gone to sleep.', answer: 'After I had eaten, I went to sleep.', hint: 'Action antérieure → Past Perfect; action principale → Past Simple', explanation: '"After I had eaten" (antérieur) + "I went" (résultat).' },
-  { id: 'patp04', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: 'She failed because she ___ (not/study).', answer: "hadn't studied", hint: 'hadn\'t + pp = n\'avait pas', explanation: '"Hadn\'t studied" = elle n\'avait pas étudié (avant l\'examen).' },
-  { id: 'patp05', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Je n\'avais jamais vu la mer avant ce voyage.', answer: "I had never seen the sea before that trip.", hint: 'never + had + pp', explanation: '"Had never seen" = je n\'avais jamais vu (avant un moment du passé).' },
-  { id: 'patp06', type: 'word-order', level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['had', 'The', 'already', 'film', 'when', 'arrived', 'we', 'started'], answer: 'The film had already started when we arrived.', hint: 'Past Perfect pour l\'action antérieure', explanation: 'Le film avait commencé (Past Perfect) avant notre arrivée (Past Simple).' },
-  { id: 'patp07', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: 'By the time he called, I ___ (already/eat).', answer: 'had already eaten', hint: 'by the time + Past Perfect', explanation: '"By the time" exprime l\'antériorité. "By the time he called, I had eaten."' },
-  { id: 'patp08', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'He was angry because I broke his pen.', answer: 'He was angry because I had broken his pen.', hint: 'L\'action antérieure (casser) → Past Perfect', explanation: 'Casser est AVANT la colère → Past Perfect : "had broken".' },
+  { id: 'patp01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez au Past Perfect.', template: 'When I arrived, she ___ (already/leave).', answer: 'had already left', hint: 'had + participe passé', explanation: '"Had left" = elle était déjà partie (avant mon arrivée).' },
+  { id: 'patp02', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Il a raté le bus parce qu\'il ne s\'était pas levé tôt.', answer: "He missed the bus because he hadn't got up early.", alternatives: ["He missed the bus because he had not gotten up early."], hint: 'hadn\'t + pp pour l\'action antérieure', explanation: '"Hadn\'t got up" = il ne s\'était pas levé (avant de rater le bus).' },
+  { id: 'patp03', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'After I ate, I have gone to sleep.', answer: 'After I had eaten, I went to sleep.', hint: 'Action antérieure → Past Perfect; action principale → Past Simple', explanation: '"After I had eaten" (antérieur) + "I went" (résultat).' },
+  { id: 'patp04', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: 'She failed because she ___ (not/study).', answer: "hadn't studied", hint: 'hadn\'t + pp = n\'avait pas', explanation: '"Hadn\'t studied" = elle n\'avait pas étudié (avant l\'examen).' },
+  { id: 'patp05', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Je n\'avais jamais vu la mer avant ce voyage.', answer: "I had never seen the sea before that trip.", hint: 'never + had + pp', explanation: '"Had never seen" = je n\'avais jamais vu (avant un moment du passé).' },
+  { id: 'patp06', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['had', 'The', 'already', 'film', 'when', 'arrived', 'we', 'started'], answer: 'The film had already started when we arrived.', hint: 'Past Perfect pour l\'action antérieure', explanation: 'Le film avait commencé (Past Perfect) avant notre arrivée (Past Simple).' },
+  { id: 'patp07', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: 'By the time he called, I ___ (already/eat).', answer: 'had already eaten', hint: 'by the time + Past Perfect', explanation: '"By the time" exprime l\'antériorité. "By the time he called, I had eaten."' },
+  { id: 'patp08', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'He was angry because I broke his pen.', answer: 'He was angry because I had broken his pen.', hint: 'L\'action antérieure (casser) → Past Perfect', explanation: 'Casser est AVANT la colère → Past Perfect : "had broken".' },
 ];
 
 // ─── TIME MARKERS ───────────────────────────────────────────────────────────
 exercises.timeMarkers = [
-  { id: 'tm01', type: 'fill-blank', level: 'B1', instruction: 'Already, yet ou just ?', template: 'I have ___ finished — I\'m free now!', answer: 'just', hint: 'Tout juste terminé', explanation: '"Just" = tout juste. "I have just finished." → entre have et le participe.' },
-  { id: 'tm02', type: 'fill-blank', level: 'B1', instruction: 'Already, yet ou just ?', template: 'Have you eaten ___?', answer: 'yet', hint: 'Question sur quelque chose attendu', explanation: '"Yet" en fin de phrase dans les questions et les négatifs.' },
-  { id: 'tm03', type: 'fill-blank', level: 'B1', instruction: 'Since ou for ?', template: 'He has known her ___ 10 years.', answer: 'for', hint: '10 years = durée', explanation: '"For" + durée. "Since" + point de départ. "For 10 years".' },
-  { id: 'tm04', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'I met him since 3 years ago.', answer: 'I met him 3 years ago.', hint: 'ago = il y a → Past Simple', explanation: '"Ago" avec le Past Simple seulement. Jamais "since ... ago".' },
-  { id: 'tm05', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Pendant que je dormais, mon frère regardait la télé.', answer: 'While I was sleeping, my brother was watching TV.', hint: 'while + Past Continuous', explanation: '"While" + Past Continuous pour deux actions parallèles dans le passé.' },
-  { id: 'tm06', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: '___ soon as she arrives, we will eat.', answer: 'As', hint: 'Dès que = as soon as', explanation: '"As soon as" = dès que. Suivi du Present Simple pour le futur.' },
-  { id: 'tm07', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'I haven\'t seen him since two weeks.', answer: "I haven't seen him for two weeks.", hint: 'two weeks = durée → for', explanation: '"For" + durée (two weeks). "Since" + point précis (Monday, 2020).' },
-  { id: 'tm08', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Elle vient juste de sortir.', answer: 'She has just gone out.', alternatives: ["She's just gone out."], hint: 'juste = just → Present Perfect', explanation: '"Has just gone out" = elle vient de sortir.' },
+  { id: 'tm01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Already, yet ou just ?', template: 'I have ___ finished — I\'m free now!', answer: 'just', hint: 'Tout juste terminé', explanation: '"Just" = tout juste. "I have just finished." → entre have et le participe.' },
+  { id: 'tm02', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Already, yet ou just ?', template: 'Have you eaten ___?', answer: 'yet', hint: 'Question sur quelque chose attendu', explanation: '"Yet" en fin de phrase dans les questions et les négatifs.' },
+  { id: 'tm03', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Since ou for ?', template: 'He has known her ___ 10 years.', answer: 'for', hint: '10 years = durée', explanation: '"For" + durée. "Since" + point de départ. "For 10 years".' },
+  { id: 'tm04', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'I met him since 3 years ago.', answer: 'I met him 3 years ago.', hint: 'ago = il y a → Past Simple', explanation: '"Ago" avec le Past Simple seulement. Jamais "since ... ago".' },
+  { id: 'tm05', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Pendant que je dormais, mon frère regardait la télé.', answer: 'While I was sleeping, my brother was watching TV.', hint: 'while + Past Continuous', explanation: '"While" + Past Continuous pour deux actions parallèles dans le passé.' },
+  { id: 'tm06', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: '___ soon as she arrives, we will eat.', answer: 'As', hint: 'Dès que = as soon as', explanation: '"As soon as" = dès que. Suivi du Present Simple pour le futur.' },
+  { id: 'tm07', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'I haven\'t seen him since two weeks.', answer: "I haven't seen him for two weeks.", hint: 'two weeks = durée → for', explanation: '"For" + durée (two weeks). "Since" + point précis (Monday, 2020).' },
+  { id: 'tm08', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Elle vient juste de sortir.', answer: 'She has just gone out.', alternatives: ["She's just gone out."], hint: 'juste = just → Present Perfect', explanation: '"Has just gone out" = elle vient de sortir.' },
 ];
 
 // ─── CONDITIONALS ───────────────────────────────────────────────────────────
 exercises.conditionals = [
-  { id: 'cond01', type: 'fill-blank', level: 'B1', instruction: '1er conditionnel : complétez.', template: 'If it ___ (rain), I will stay home.', answer: 'rains', hint: 'If + Present Simple → will', explanation: '1er conditionnel : If + Present Simple, + will + infinitif.' },
-  { id: 'cond02', type: 'fill-blank', level: 'B1', instruction: '1er conditionnel : complétez.', template: 'If you study hard, you ___ (pass) the exam.', answer: 'will pass', hint: 'Résultat futur → will + infinitif', explanation: '"Will pass" = tu réussiras. Condition dans "if" → Present Simple.' },
-  { id: 'cond03', type: 'translate', level: 'B1', instruction: '2e conditionnel : traduisez.', french: 'Si j\'avais de l\'argent, j\'achèterais une maison.', answer: 'If I had money, I would buy a house.', hint: 'If + Past Simple → would', explanation: '2e conditionnel : hypothèse irréelle. If + Past Simple, + would + infinitif.' },
-  { id: 'cond04', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'If I will win the lottery, I will travel.', answer: 'If I won the lottery, I would travel.', hint: 'Pas de will après if (2e conditionnel)', explanation: '2e conditionnel : "If I won" (Past Simple), "I would travel". Jamais "will" après "if" ici.' },
-  { id: 'cond05', type: 'translate', level: 'B2', instruction: '3e conditionnel : traduisez.', french: 'Si j\'avais étudié, j\'aurais réussi l\'examen.', answer: "If I had studied, I would have passed the exam.", hint: 'If + Past Perfect → would have + pp', explanation: '3e conditionnel : regret. If + Past Perfect, + would have + participe passé.' },
-  { id: 'cond06', type: 'fill-blank', level: 'B2', instruction: '3e conditionnel : complétez.', template: 'If she ___ (leave) earlier, she ___ (not/miss) the bus.', answer: "had left, wouldn't have missed", hint: 'had + pp / wouldn\'t have + pp', explanation: '"Had left" + "wouldn\'t have missed".' },
-  { id: 'cond07', type: 'fill-blank', level: 'B1', instruction: 'Zéro conditionnel : complétez.', template: 'If you ___ (heat) ice, it ___ (melt).', answer: 'heat, melts', hint: 'Vérité générale → Present Simple + Present Simple', explanation: 'Zéro conditionnel : If + Present Simple, + Present Simple.' },
-  { id: 'cond08', type: 'error-correct', level: 'B2', instruction: 'Corrigez (3e conditionnel).', sentence: 'If I had more money, I would have bought that car.', answer: 'If I had had more money, I would have bought that car.', hint: '3e conditionnel : if + past perfect (had + pp)', explanation: '"Had had" = had (auxiliaire) + had (pp de have). Le Past Perfect de "have" est "had had".' },
+  { id: 'cond01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: '1er conditionnel : complétez.', template: 'If it ___ (rain), I will stay home.', answer: 'rains', hint: 'If + Present Simple → will', explanation: '1er conditionnel : If + Present Simple, + will + infinitif.' },
+  { id: 'cond02', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: '1er conditionnel : complétez.', template: 'If you study hard, you ___ (pass) the exam.', answer: 'will pass', hint: 'Résultat futur → will + infinitif', explanation: '"Will pass" = tu réussiras. Condition dans "if" → Present Simple.' },
+  { id: 'cond03', type: 'translate', diffLevel: 3, level: 'B1', instruction: '2e conditionnel : traduisez.', french: 'Si j\'avais de l\'argent, j\'achèterais une maison.', answer: 'If I had money, I would buy a house.', hint: 'If + Past Simple → would', explanation: '2e conditionnel : hypothèse irréelle. If + Past Simple, + would + infinitif.' },
+  { id: 'cond04', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'If I will win the lottery, I will travel.', answer: 'If I won the lottery, I would travel.', hint: 'Pas de will après if (2e conditionnel)', explanation: '2e conditionnel : "If I won" (Past Simple), "I would travel". Jamais "will" après "if" ici.' },
+  { id: 'cond05', type: 'translate', diffLevel: 3, level: 'B2', instruction: '3e conditionnel : traduisez.', french: 'Si j\'avais étudié, j\'aurais réussi l\'examen.', answer: "If I had studied, I would have passed the exam.", hint: 'If + Past Perfect → would have + pp', explanation: '3e conditionnel : regret. If + Past Perfect, + would have + participe passé.' },
+  { id: 'cond06', type: 'fill-blank', diffLevel: 3, level: 'B2', instruction: '3e conditionnel : complétez.', template: 'If she ___ (leave) earlier, she ___ (not/miss) the bus.', answer: "had left, wouldn't have missed", hint: 'had + pp / wouldn\'t have + pp', explanation: '"Had left" + "wouldn\'t have missed".' },
+  { id: 'cond07', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Zéro conditionnel : complétez.', template: 'If you ___ (heat) ice, it ___ (melt).', answer: 'heat, melts', hint: 'Vérité générale → Present Simple + Present Simple', explanation: 'Zéro conditionnel : If + Present Simple, + Present Simple.' },
+  { id: 'cond08', type: 'error-correct', diffLevel: 3, level: 'B2', instruction: 'Corrigez (3e conditionnel).', sentence: 'If I had more money, I would have bought that car.', answer: 'If I had had more money, I would have bought that car.', hint: '3e conditionnel : if + past perfect (had + pp)', explanation: '"Had had" = had (auxiliaire) + had (pp de have). Le Past Perfect de "have" est "had had".' },
 ];
 
 // ─── PASSIVE VOICE ──────────────────────────────────────────────────────────
 exercises.passiveVoice = [
-  { id: 'pass01', type: 'fill-blank', level: 'B1', instruction: 'Transformez au passif (présent).', template: 'English ___ (speak) in many countries.', answer: 'is spoken', hint: 'is/are + participe passé', explanation: 'Passif présent : is/are + pp. "English is spoken" (sujet singulier → is).' },
-  { id: 'pass02', type: 'fill-blank', level: 'B1', instruction: 'Transformez au passif (passé).', template: 'The letter ___ (write) in 1900.', answer: 'was written', hint: 'was/were + participe passé', explanation: 'Passif passé : was/were + pp. "The letter was written" (singulier → was).' },
-  { id: 'pass03', type: 'translate', level: 'B1', instruction: 'Traduisez au passif.', french: 'Le riz est cultivé à Madagascar.', answer: 'Rice is grown in Madagascar.', hint: 'is + pp de grow = grown', explanation: 'Grow → grown (irrégulier). Rice est non-dénombrable → "Rice is".' },
-  { id: 'pass04', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'The windows are clean every day.', answer: 'The windows are cleaned every day.', hint: 'Passif : are + participe passé', explanation: '"Are cleaned" (passif) ≠ "are clean" (adjectif). Le participe passé est nécessaire.' },
-  { id: 'pass05', type: 'word-order', level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['was', 'The', 'school', 'built', 'last', 'year'], answer: 'The school was built last year.', hint: 'was + pp', explanation: '"Was built" = passif passé. "The school" = sujet qui reçoit l\'action.' },
-  { id: 'pass06', type: 'translate', level: 'B1', instruction: 'Actif → passif : traduisez.', french: 'On a volé mon sac.', answer: 'My bag was stolen.', hint: 'Auteur inconnu → passif sans by', explanation: 'Quand l\'auteur est inconnu, on omet "by". "My bag was stolen."' },
-  { id: 'pass07', type: 'fill-blank', level: 'B1', instruction: 'Futur passif : complétez.', template: 'The results ___ (announce) tomorrow.', answer: 'will be announced', hint: 'will be + pp', explanation: 'Passif futur : will be + pp. "Will be announced" = seront annoncés.' },
-  { id: 'pass08', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'The book was wrote by a student.', answer: 'The book was written by a student.', hint: 'write → written (pp irrégulier)', explanation: '"Written" = pp de "write". Passif : was + pp (pas prétérit).' },
+  { id: 'pass01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Transformez au passif (présent).', template: 'English ___ (speak) in many countries.', answer: 'is spoken', hint: 'is/are + participe passé', explanation: 'Passif présent : is/are + pp. "English is spoken" (sujet singulier → is).' },
+  { id: 'pass02', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Transformez au passif (passé).', template: 'The letter ___ (write) in 1900.', answer: 'was written', hint: 'was/were + participe passé', explanation: 'Passif passé : was/were + pp. "The letter was written" (singulier → was).' },
+  { id: 'pass03', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez au passif.', french: 'Le riz est cultivé à Madagascar.', answer: 'Rice is grown in Madagascar.', hint: 'is + pp de grow = grown', explanation: 'Grow → grown (irrégulier). Rice est non-dénombrable → "Rice is".' },
+  { id: 'pass04', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'The windows are clean every day.', answer: 'The windows are cleaned every day.', hint: 'Passif : are + participe passé', explanation: '"Are cleaned" (passif) ≠ "are clean" (adjectif). Le participe passé est nécessaire.' },
+  { id: 'pass05', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['was', 'The', 'school', 'built', 'last', 'year'], answer: 'The school was built last year.', hint: 'was + pp', explanation: '"Was built" = passif passé. "The school" = sujet qui reçoit l\'action.' },
+  { id: 'pass06', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Actif → passif : traduisez.', french: 'On a volé mon sac.', answer: 'My bag was stolen.', hint: 'Auteur inconnu → passif sans by', explanation: 'Quand l\'auteur est inconnu, on omet "by". "My bag was stolen."' },
+  { id: 'pass07', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Futur passif : complétez.', template: 'The results ___ (announce) tomorrow.', answer: 'will be announced', hint: 'will be + pp', explanation: 'Passif futur : will be + pp. "Will be announced" = seront annoncés.' },
+  { id: 'pass08', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'The book was wrote by a student.', answer: 'The book was written by a student.', hint: 'write → written (pp irrégulier)', explanation: '"Written" = pp de "write". Passif : was + pp (pas prétérit).' },
 ];
 
 // ─── REPORTED SPEECH ────────────────────────────────────────────────────────
 exercises.reportedSpeech = [
-  { id: 'rs01', type: 'fill-blank', level: 'B1', instruction: 'Discours indirect : complétez.', template: '"I am tired." → She said she ___ tired.', answer: 'was', hint: 'am/is → was en discours indirect', explanation: 'En discours indirect, les temps reculent. am/is/are → was/were.' },
-  { id: 'rs02', type: 'fill-blank', level: 'B1', instruction: 'Transformez au discours indirect.', template: '"I work here." → He said he ___ there.', answer: 'worked', hint: 'works → worked en discours indirect', explanation: 'Present Simple → Past Simple. "He said he worked there."' },
-  { id: 'rs03', type: 'translate', level: 'B1', instruction: 'Mettez au discours indirect.', french: 'Il a dit : "Je viendrai demain."', answer: 'He said he would come the next day.', alternatives: ['He said that he would come the next day.'], hint: 'will → would; tomorrow → the next day', explanation: '"Will" → "would". "Tomorrow" → "the next day".' },
-  { id: 'rs04', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'She said she will help me.', answer: 'She said she would help me.', hint: 'will → would en discours indirect', explanation: '"Will" devient "would" dans un discours indirect au passé.' },
-  { id: 'rs05', type: 'translate', level: 'B1', instruction: 'Question indirecte : traduisez.', french: 'Il a demandé si je parlais anglais.', answer: 'He asked if I spoke English.', alternatives: ['He asked whether I spoke English.'], hint: 'Asked if/whether pour les questions oui/non', explanation: '"Asked if" + ordre normal (sujet + verbe). Pas d\'inversion.' },
-  { id: 'rs06', type: 'fill-blank', level: 'B1', instruction: 'Complétez (ordre indirect).', template: 'She said: "Sit down!" → She told him ___ down.', answer: 'to sit', hint: 'Ordre → tell/ask + to + infinitif', explanation: 'Ordre indirect : tell + objet + to + infinitif. "She told him to sit down."' },
-  { id: 'rs07', type: 'error-correct', level: 'B2', instruction: 'Corrigez.', sentence: 'He asked where did she live.', answer: 'He asked where she lived.', hint: 'Question indirecte : ordre normal (sujet + verbe)', explanation: 'Dans une question indirecte, pas d\'inversion : "where she lived" (pas "where did she live").' },
-  { id: 'rs08', type: 'translate', level: 'B2', instruction: 'Traduisez.', french: 'Elle m\'a demandé de ne pas être en retard.', answer: 'She asked me not to be late.', hint: 'Demande négative → ask + not + to + infinitif', explanation: '"Ask + objet + not to + infinitif". "She asked me not to be late."' },
+  { id: 'rs01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Discours indirect : complétez.', template: '"I am tired." → She said she ___ tired.', answer: 'was', hint: 'am/is → was en discours indirect', explanation: 'En discours indirect, les temps reculent. am/is/are → was/were.' },
+  { id: 'rs02', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Transformez au discours indirect.', template: '"I work here." → He said he ___ there.', answer: 'worked', hint: 'works → worked en discours indirect', explanation: 'Present Simple → Past Simple. "He said he worked there."' },
+  { id: 'rs03', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Mettez au discours indirect.', french: 'Il a dit : "Je viendrai demain."', answer: 'He said he would come the next day.', alternatives: ['He said that he would come the next day.'], hint: 'will → would; tomorrow → the next day', explanation: '"Will" → "would". "Tomorrow" → "the next day".' },
+  { id: 'rs04', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'She said she will help me.', answer: 'She said she would help me.', hint: 'will → would en discours indirect', explanation: '"Will" devient "would" dans un discours indirect au passé.' },
+  { id: 'rs05', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Question indirecte : traduisez.', french: 'Il a demandé si je parlais anglais.', answer: 'He asked if I spoke English.', alternatives: ['He asked whether I spoke English.'], hint: 'Asked if/whether pour les questions oui/non', explanation: '"Asked if" + ordre normal (sujet + verbe). Pas d\'inversion.' },
+  { id: 'rs06', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez (ordre indirect).', template: 'She said: "Sit down!" → She told him ___ down.', answer: 'to sit', hint: 'Ordre → tell/ask + to + infinitif', explanation: 'Ordre indirect : tell + objet + to + infinitif. "She told him to sit down."' },
+  { id: 'rs07', type: 'error-correct', diffLevel: 3, level: 'B2', instruction: 'Corrigez.', sentence: 'He asked where did she live.', answer: 'He asked where she lived.', hint: 'Question indirecte : ordre normal (sujet + verbe)', explanation: 'Dans une question indirecte, pas d\'inversion : "where she lived" (pas "where did she live").' },
+  { id: 'rs08', type: 'translate', diffLevel: 3, level: 'B2', instruction: 'Traduisez.', french: 'Elle m\'a demandé de ne pas être en retard.', answer: 'She asked me not to be late.', hint: 'Demande négative → ask + not + to + infinitif', explanation: '"Ask + objet + not to + infinitif". "She asked me not to be late."' },
 ];
 
 // ─── FUTURE CONTINUOUS ──────────────────────────────────────────────────────
 exercises.futureContinuous = [
-  { id: 'fc01', type: 'fill-blank', level: 'B1', instruction: 'Complétez au Future Continuous.', template: 'At 8pm tomorrow, I ___ (study).', answer: 'will be studying', hint: 'will be + V-ing', explanation: '"Will be studying" = je serai en train d\'étudier demain à 20h.' },
-  { id: 'fc02', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Demain à cette heure, elle sera en avion.', answer: 'This time tomorrow, she will be flying.', hint: 'will be + -ing', explanation: '"Will be flying" = elle sera en train de voler.' },
-  { id: 'fc03', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'At noon, they will study.', answer: 'At noon, they will be studying.', hint: 'Action en cours à un moment précis → Future Continuous', explanation: '"Will be studying" (en cours à midi) est plus précis que "will study".' },
-  { id: 'fc04', type: 'fill-blank', level: 'B1', instruction: 'Complétez la question.', template: '___ you ___ (use) the computer tonight?', answer: 'Will, be using', hint: 'Question : will + sujet + be + V-ing', explanation: '"Will you be using...?" = demande polie. Structure : Will + sujet + be + V-ing?' },
-  { id: 'fc05', type: 'translate', level: 'B1', instruction: 'Traduisez.', french: 'Je ne travaillerai pas samedi.', answer: "I won't be working on Saturday.", alternatives: ["I will not be working on Saturday."], hint: 'Négatif : won\'t be + -ing', explanation: '"Won\'t be working" = je ne serai pas en train de travailler.' },
-  { id: 'fc06', type: 'word-order', level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['be', 'She', 'will', 'waiting', 'the', 'at', 'airport'], answer: 'She will be waiting at the airport.', hint: 'will be + -ing', explanation: '"Will be waiting" = elle sera en train d\'attendre.' },
-  { id: 'fc07', type: 'fill-blank', level: 'B1', instruction: 'Complétez.', template: 'When you arrive, we ___ (already/eat).', answer: 'will already be eating', hint: 'Action en cours à l\'arrivée', explanation: '"Will be eating" = nous serons en train de manger quand tu arrives.' },
-  { id: 'fc08', type: 'error-correct', level: 'B1', instruction: 'Corrigez.', sentence: 'At 9pm, I am studying.', answer: 'At 9pm, I will be studying.', hint: 'Futur prévu → Future Continuous', explanation: 'Pour une action en cours dans le futur → will be + -ing.' },
+  { id: 'fc01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez au Future Continuous.', template: 'At 8pm tomorrow, I ___ (study).', answer: 'will be studying', hint: 'will be + V-ing', explanation: '"Will be studying" = je serai en train d\'étudier demain à 20h.' },
+  { id: 'fc02', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Demain à cette heure, elle sera en avion.', answer: 'This time tomorrow, she will be flying.', hint: 'will be + -ing', explanation: '"Will be flying" = elle sera en train de voler.' },
+  { id: 'fc03', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'At noon, they will study.', answer: 'At noon, they will be studying.', hint: 'Action en cours à un moment précis → Future Continuous', explanation: '"Will be studying" (en cours à midi) est plus précis que "will study".' },
+  { id: 'fc04', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez la question.', template: '___ you ___ (use) the computer tonight?', answer: 'Will, be using', hint: 'Question : will + sujet + be + V-ing', explanation: '"Will you be using...?" = demande polie. Structure : Will + sujet + be + V-ing?' },
+  { id: 'fc05', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez.', french: 'Je ne travaillerai pas samedi.', answer: "I won't be working on Saturday.", alternatives: ["I will not be working on Saturday."], hint: 'Négatif : won\'t be + -ing', explanation: '"Won\'t be working" = je ne serai pas en train de travailler.' },
+  { id: 'fc06', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Remettez dans l\'ordre.', words: ['be', 'She', 'will', 'waiting', 'the', 'at', 'airport'], answer: 'She will be waiting at the airport.', hint: 'will be + -ing', explanation: '"Will be waiting" = elle sera en train d\'attendre.' },
+  { id: 'fc07', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez.', template: 'When you arrive, we ___ (already/eat).', answer: 'will already be eating', hint: 'Action en cours à l\'arrivée', explanation: '"Will be eating" = nous serons en train de manger quand tu arrives.' },
+  { id: 'fc08', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: 'Corrigez.', sentence: 'At 9pm, I am studying.', answer: 'At 9pm, I will be studying.', hint: 'Futur prévu → Future Continuous', explanation: 'Pour une action en cours dans le futur → will be + -ing.' },
 ];
 
 // ─── FUTURE PERFECT ─────────────────────────────────────────────────────────
 exercises.futurePerfect = [
-  { id: 'fp01', type: 'fill-blank', level: 'B2', instruction: 'Complétez au Future Perfect.', template: 'By 2030, I ___ (graduate).', answer: 'will have graduated', hint: 'will have + participe passé', explanation: '"Will have graduated" = j\'aurai obtenu mon diplôme. Future Perfect pour une action terminée avant un moment futur.' },
-  { id: 'fp02', type: 'translate', level: 'B2', instruction: 'Traduisez.', french: 'Quand tu arriveras, nous aurons mangé.', answer: 'By the time you arrive, we will have eaten.', hint: 'By the time + Present Simple → Future Perfect', explanation: '"By the time" + Present Simple + Future Perfect dans la principale.' },
-  { id: 'fp03', type: 'error-correct', level: 'B2', instruction: 'Corrigez.', sentence: 'By next year, she will finish her studies.', answer: 'By next year, she will have finished her studies.', hint: 'by next year → action terminée → Future Perfect', explanation: '"By next year" implique une action terminée avant ce moment → will have + pp.' },
-  { id: 'fp04', type: 'fill-blank', level: 'B2', instruction: 'Négatif : complétez.', template: 'I ___ (not/save) enough money by then.', answer: "won't have saved", hint: 'won\'t have + pp', explanation: '"Won\'t have saved" = je n\'aurai pas économisé.' },
-  { id: 'fp05', type: 'translate', level: 'B2', instruction: 'Traduisez.', french: 'Est-ce qu\'il aura fini avant vendredi ?', answer: 'Will he have finished by Friday?', hint: 'Question : Will + sujet + have + pp', explanation: 'Question Future Perfect : Will + sujet + have + pp?' },
-  { id: 'fp06', type: 'word-order', level: 'B2', instruction: 'Remettez dans l\'ordre.', words: ['have', 'We', 'will', 'by', 'the', 'time', 'left', 'arrives', 'he'], answer: 'We will have left by the time he arrives.', hint: 'will have + pp + by the time', explanation: '"Will have left" = nous serons partis quand il arrivera.' },
-  { id: 'fp07', type: 'fill-blank', level: 'B2', instruction: 'Complétez.', template: 'By the time she is 30, she ___ (travel) to 10 countries.', answer: 'will have travelled', hint: 'Accomplissement avant un âge futur', explanation: '"Will have travelled" = elle aura voyagé.' },
-  { id: 'fp08', type: 'error-correct', level: 'B2', instruction: 'Corrigez.', sentence: 'By 8pm, I will finished my homework.', answer: 'By 8pm, I will have finished my homework.', hint: 'Future Perfect : will HAVE + pp', explanation: '"Will have finished" (pas "will finished"). Le "have" est obligatoire.' },
+  { id: 'fp01', type: 'fill-blank', diffLevel: 3, level: 'B2', instruction: 'Complétez au Future Perfect.', template: 'By 2030, I ___ (graduate).', answer: 'will have graduated', hint: 'will have + participe passé', explanation: '"Will have graduated" = j\'aurai obtenu mon diplôme. Future Perfect pour une action terminée avant un moment futur.' },
+  { id: 'fp02', type: 'translate', diffLevel: 3, level: 'B2', instruction: 'Traduisez.', french: 'Quand tu arriveras, nous aurons mangé.', answer: 'By the time you arrive, we will have eaten.', hint: 'By the time + Present Simple → Future Perfect', explanation: '"By the time" + Present Simple + Future Perfect dans la principale.' },
+  { id: 'fp03', type: 'error-correct', diffLevel: 3, level: 'B2', instruction: 'Corrigez.', sentence: 'By next year, she will finish her studies.', answer: 'By next year, she will have finished her studies.', hint: 'by next year → action terminée → Future Perfect', explanation: '"By next year" implique une action terminée avant ce moment → will have + pp.' },
+  { id: 'fp04', type: 'fill-blank', diffLevel: 3, level: 'B2', instruction: 'Négatif : complétez.', template: 'I ___ (not/save) enough money by then.', answer: "won't have saved", hint: 'won\'t have + pp', explanation: '"Won\'t have saved" = je n\'aurai pas économisé.' },
+  { id: 'fp05', type: 'translate', diffLevel: 3, level: 'B2', instruction: 'Traduisez.', french: 'Est-ce qu\'il aura fini avant vendredi ?', answer: 'Will he have finished by Friday?', hint: 'Question : Will + sujet + have + pp', explanation: 'Question Future Perfect : Will + sujet + have + pp?' },
+  { id: 'fp06', type: 'word-order', diffLevel: 3, level: 'B2', instruction: 'Remettez dans l\'ordre.', words: ['have', 'We', 'will', 'by', 'the', 'time', 'left', 'arrives', 'he'], answer: 'We will have left by the time he arrives.', hint: 'will have + pp + by the time', explanation: '"Will have left" = nous serons partis quand il arrivera.' },
+  { id: 'fp07', type: 'fill-blank', diffLevel: 3, level: 'B2', instruction: 'Complétez.', template: 'By the time she is 30, she ___ (travel) to 10 countries.', answer: 'will have travelled', hint: 'Accomplissement avant un âge futur', explanation: '"Will have travelled" = elle aura voyagé.' },
+  { id: 'fp08', type: 'error-correct', diffLevel: 3, level: 'B2', instruction: 'Corrigez.', sentence: 'By 8pm, I will finished my homework.', answer: 'By 8pm, I will have finished my homework.', hint: 'Future Perfect : will HAVE + pp', explanation: '"Will have finished" (pas "will finished"). Le "have" est obligatoire.' },
 ];
 
 // ─── COMPARATIVES & SUPERLATIVES ────────────────────────────────────────────
 exercises.comparatives = [
-  { id: 'cmp01', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le comparatif correct.', template: 'This film is ___ (interesting) than the last one.', answer: 'more interesting', hint: 'Adjectif long → more + adjectif', explanation: 'Adjectifs longs (2+ syllabes) : "more + adjectif". "More interesting" = plus intéressant.' },
-  { id: 'cmp02', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Elle est plus grande que son frère.', answer: 'She is taller than her brother.', alternatives: ["She's taller than her brother."], hint: 'tall → taller (adjectif court : + -er)', explanation: 'Adjectifs courts (1 syllabe) : + "-er". "Tall" → "taller than".' },
-  { id: 'cmp03', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le superlatif.', template: 'He is ___ (fast) runner in the school.', answer: 'the fastest', hint: 'Adjectif court : the + adj + -est', explanation: 'Superlatif court : "the + adj + -est". "Fast" → "the fastest". Doublement de la consonne finale.' },
-  { id: 'cmp04', type: 'error-correct', level: 'A2', instruction: "Trouvez et corrigez l'erreur.", sentence: 'This box is more heavy than that one.', answer: 'This box is heavier than that one.', hint: '"Heavy" = adjectif en -y → -ier', explanation: '"Heavy" → "heavier" (terminaison en -y : y → i + er). Pas "more heavy".' },
-  { id: 'cmp05', type: 'word-order', level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['English', 'is', 'the', 'most', 'beautiful', 'language', '.'], answer: 'English is the most beautiful language.', hint: 'the most + adjectif long', explanation: 'Superlatif long : "the most + adjectif". "The most beautiful language".' },
-  { id: 'cmp06', type: 'fill-blank', level: 'B1', instruction: 'Complétez (égalité : as … as).', template: 'My car is ___ fast ___ yours.', answer: 'as, as', hint: 'Égalité : as + adjectif + as', explanation: '"As … as" exprime l\'égalité : "My car is as fast as yours" = ma voiture est aussi rapide que la tienne.' },
-  { id: 'cmp07', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: "Plus tu travailles, meilleurs sont tes résultats.", answer: 'The harder you work, the better your results are.', alternatives: ['The more you work, the better your results are.'], hint: 'The + comparatif ..., the + comparatif ...', explanation: 'Structure "the more … the more" / "the harder … the better" = plus… plus…' },
-  { id: 'cmp08', type: 'listening', level: 'B1', instruction: 'Écoutez et écrivez ce que vous entendez.', audio: 'London is bigger than Paris but Tokyo is the biggest city.', answer: 'London is bigger than Paris but Tokyo is the biggest city.', hint: 'Comparatif "bigger" + superlatif "the biggest"', explanation: '"Bigger" (comparatif de "big") et "the biggest" (superlatif). Doublement de "g" pour les adjectifs CVC.' },
+  { id: 'cmp01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le comparatif correct.', template: 'This film is ___ (interesting) than the last one.', answer: 'more interesting', hint: 'Adjectif long → more + adjectif', explanation: 'Adjectifs longs (2+ syllabes) : "more + adjectif". "More interesting" = plus intéressant.' },
+  { id: 'cmp02', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Elle est plus grande que son frère.', answer: 'She is taller than her brother.', alternatives: ["She's taller than her brother."], hint: 'tall → taller (adjectif court : + -er)', explanation: 'Adjectifs courts (1 syllabe) : + "-er". "Tall" → "taller than".' },
+  { id: 'cmp03', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le superlatif.', template: 'He is ___ (fast) runner in the school.', answer: 'the fastest', hint: 'Adjectif court : the + adj + -est', explanation: 'Superlatif court : "the + adj + -est". "Fast" → "the fastest". Doublement de la consonne finale.' },
+  { id: 'cmp04', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Trouvez et corrigez l'erreur.", sentence: 'This box is more heavy than that one.', answer: 'This box is heavier than that one.', hint: '"Heavy" = adjectif en -y → -ier', explanation: '"Heavy" → "heavier" (terminaison en -y : y → i + er). Pas "more heavy".' },
+  { id: 'cmp05', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['English', 'is', 'the', 'most', 'beautiful', 'language', '.'], answer: 'English is the most beautiful language.', hint: 'the most + adjectif long', explanation: 'Superlatif long : "the most + adjectif". "The most beautiful language".' },
+  { id: 'cmp06', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez (égalité : as … as).', template: 'My car is ___ fast ___ yours.', answer: 'as, as', hint: 'Égalité : as + adjectif + as', explanation: '"As … as" exprime l\'égalité : "My car is as fast as yours" = ma voiture est aussi rapide que la tienne.' },
+  { id: 'cmp07', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: "Plus tu travailles, meilleurs sont tes résultats.", answer: 'The harder you work, the better your results are.', alternatives: ['The more you work, the better your results are.'], hint: 'The + comparatif ..., the + comparatif ...', explanation: 'Structure "the more … the more" / "the harder … the better" = plus… plus…' },
+  { id: 'cmp08', type: 'listening', diffLevel: 3, level: 'B1', instruction: 'Écoutez et écrivez ce que vous entendez.', audio: 'London is bigger than Paris but Tokyo is the biggest city.', answer: 'London is bigger than Paris but Tokyo is the biggest city.', hint: 'Comparatif "bigger" + superlatif "the biggest"', explanation: '"Bigger" (comparatif de "big") et "the biggest" (superlatif). Doublement de "g" pour les adjectifs CVC.' },
 ];
 
 exercises.interrogative = [
-  { id: 'intr01', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec Do ou Does.', template: '___ she speak French?', answer: 'Does', hint: 'she = he/she/it → Does', explanation: 'Avec he/she/it au Present Simple, on utilise "Does". "Does she speak French?"' },
-  { id: 'intr02', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec Do ou Does.', template: '___ they go to school every day?', answer: 'Do', hint: 'they = pluriel → Do', explanation: 'Avec I/you/we/they au Present Simple, on utilise "Do". "Do they go to school?"' },
-  { id: 'intr03', type: 'word-order', level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['did', 'she', 'eat', 'what', '?'], answer: 'What did she eat?', hint: 'Wh- + did + sujet + verbe', explanation: 'Question Wh- au passé : "What did she eat?" Le verbe reste à l\'infinitif après "did".' },
-  { id: 'intr04', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Est-ce qu\'il a un frère ?', answer: 'Does he have a brother?', alternatives: ['Does he have a brother ?'], hint: 'he → Does; have reste à l\'infinitif', explanation: 'Avec "he" on utilise "Does" et le verbe reste à l\'infinitif : "Does he have…?" (pas "Does he has?")'  },
-  { id: 'intr05', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'Does she speaks English?', answer: 'Does she speak English?', hint: 'Après Does, le verbe est à l\'infinitif (sans -s)', explanation: 'Après l\'auxiliaire "Does", le verbe perd le -s : "Does she speak?" (pas "speaks").' },
-  { id: 'intr06', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec Is, Are, Was ou Were.', template: '___ your parents at home yesterday?', answer: 'Were', hint: 'parents = pluriel, passé → Were', explanation: '"Were" = be au passé pluriel. "Were your parents at home?" = Vos parents étaient-ils à la maison ?' },
-  { id: 'intr07', type: 'word-order', level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['you', 'do', 'where', 'live', '?'], answer: 'Where do you live?', hint: 'Wh- + Do + sujet + verbe infinitif', explanation: '"Where do you live?" — question Wh- avec "do" pour I/you/we/they.' },
-  { id: 'intr08', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Pourquoi sont-ils partis tôt ?', answer: 'Why did they leave early?', alternatives: ['Why did they leave early ?'], hint: 'Why + did + they + verbe infinitif', explanation: 'Questions Wh- au Past Simple : "Why did they leave early?" Le verbe reste à l\'infinitif.' },
-  { id: 'intr09', type: 'fill-blank', level: 'A2', instruction: 'Complétez la question.', template: 'How many books ___ you have?', answer: 'do', hint: 'you → do (Present Simple)', explanation: '"How many" + nom pluriel + "do" + sujet + verbe. "How many books do you have?"' },
-  { id: 'intr10', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'What you did yesterday?', answer: 'What did you do yesterday?', hint: 'Question Wh- : What + did + sujet + verbe infinitif', explanation: 'Il faut l\'auxiliaire "did" en question : "What did you do?" Le verbe "do" reste à l\'infinitif.' },
+  { id: 'intr01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec Do ou Does.', template: '___ she speak French?', answer: 'Does', hint: 'she = he/she/it → Does', explanation: 'Avec he/she/it au Present Simple, on utilise "Does". "Does she speak French?"' },
+  { id: 'intr02', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec Do ou Does.', template: '___ they go to school every day?', answer: 'Do', hint: 'they = pluriel → Do', explanation: 'Avec I/you/we/they au Present Simple, on utilise "Do". "Do they go to school?"' },
+  { id: 'intr03', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['did', 'she', 'eat', 'what', '?'], answer: 'What did she eat?', hint: 'Wh- + did + sujet + verbe', explanation: 'Question Wh- au passé : "What did she eat?" Le verbe reste à l\'infinitif après "did".' },
+  { id: 'intr04', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Est-ce qu\'il a un frère ?', answer: 'Does he have a brother?', alternatives: ['Does he have a brother ?'], hint: 'he → Does; have reste à l\'infinitif', explanation: 'Avec "he" on utilise "Does" et le verbe reste à l\'infinitif : "Does he have…?" (pas "Does he has?")'  },
+  { id: 'intr05', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'Does she speaks English?', answer: 'Does she speak English?', hint: 'Après Does, le verbe est à l\'infinitif (sans -s)', explanation: 'Après l\'auxiliaire "Does", le verbe perd le -s : "Does she speak?" (pas "speaks").' },
+  { id: 'intr06', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec Is, Are, Was ou Were.', template: '___ your parents at home yesterday?', answer: 'Were', hint: 'parents = pluriel, passé → Were', explanation: '"Were" = be au passé pluriel. "Were your parents at home?" = Vos parents étaient-ils à la maison ?' },
+  { id: 'intr07', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['you', 'do', 'where', 'live', '?'], answer: 'Where do you live?', hint: 'Wh- + Do + sujet + verbe infinitif', explanation: '"Where do you live?" — question Wh- avec "do" pour I/you/we/they.' },
+  { id: 'intr08', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Pourquoi sont-ils partis tôt ?', answer: 'Why did they leave early?', alternatives: ['Why did they leave early ?'], hint: 'Why + did + they + verbe infinitif', explanation: 'Questions Wh- au Past Simple : "Why did they leave early?" Le verbe reste à l\'infinitif.' },
+  { id: 'intr09', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez la question.', template: 'How many books ___ you have?', answer: 'do', hint: 'you → do (Present Simple)', explanation: '"How many" + nom pluriel + "do" + sujet + verbe. "How many books do you have?"' },
+  { id: 'intr10', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'What you did yesterday?', answer: 'What did you do yesterday?', hint: 'Question Wh- : What + did + sujet + verbe infinitif', explanation: 'Il faut l\'auxiliaire "did" en question : "What did you do?" Le verbe "do" reste à l\'infinitif.' },
 ];
 
 exercises.imperatives = [
-  { id: 'imp01', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Ouvre le livre.', answer: 'Open the book.', hint: 'Impératif = verbe seul', explanation: 'L\'impératif anglais = verbe à l\'infinitif sans sujet. "Open the book."' },
-  { id: 'imp02', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Ne parle pas en classe.', answer: "Don't speak in class.", alternatives: ["Do not speak in class."], hint: 'Négatif : Don\'t + verbe', explanation: 'Impératif négatif = "Don\'t" + verbe infinitif. "Don\'t speak in class."' },
-  { id: 'imp03', type: 'word-order', level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ["don't", 'be', 'late', '!'], answer: "Don't be late!", hint: 'Don\'t + be + adjectif', explanation: '"Don\'t be late!" — impératif négatif avec "be". On utilise "Don\'t be", jamais "Don\'t are".' },
-  { id: 'imp04', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec Let\'s ou Don\'t.', template: "___ forget your homework!", answer: "Don't", hint: 'Conseil négatif → Don\'t', explanation: '"Don\'t forget your homework!" — ordre négatif. "Let\'s" serait utilisé pour une suggestion ("Let\'s study!").' },
-  { id: 'imp05', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Allons à la plage !', answer: "Let's go to the beach!", alternatives: ["Let's go to the beach!"], hint: 'Let\'s + verbe infinitif', explanation: '"Let\'s go to the beach!" — "Let\'s" = "Let us", utilisé pour suggérer une action à faire ensemble.' },
-  { id: 'imp06', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'Not speak in class!', answer: "Don't speak in class!", hint: 'Négatif impératif → Don\'t + verbe', explanation: 'On ne peut pas dire "Not speak" — l\'impératif négatif en anglais c\'est toujours "Don\'t + verbe".' },
-  { id: 'imp07', type: 'word-order', level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['please', 'door', 'the', 'close', '.'], answer: 'Close the door, please.', hint: 'Impératif + please à la fin (ou au début)', explanation: '"Close the door, please." — "please" peut se mettre au début ou à la fin pour être poli.' },
-  { id: 'imp08', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Écoute attentivement, s\'il te plaît.', answer: 'Listen carefully, please.', alternatives: ['Please listen carefully.'], hint: 'Verbe seul + adverbe + please', explanation: '"Listen carefully, please." — l\'adverbe "carefully" vient après le verbe.' },
-  { id: 'imp09', type: 'fill-blank', level: 'A2', instruction: 'Complétez l\'impératif.', template: "___ quiet, please. I'm studying.", answer: 'Be', hint: 'Be + adjectif (état)', explanation: '"Be quiet, please." — "be" s\'utilise à l\'impératif devant un adjectif d\'état : "Be careful!", "Be quiet!"' },
-  { id: 'imp10', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: "Let's to go to the cinema.", answer: "Let's go to the cinema.", hint: 'Let\'s + verbe infinitif (sans "to")', explanation: '"Let\'s" est déjà suivi directement du verbe infinitif, sans "to". "Let\'s go!" et non "Let\'s to go!"' },
+  { id: 'imp01', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Ouvre le livre.', answer: 'Open the book.', hint: 'Impératif = verbe seul', explanation: 'L\'impératif anglais = verbe à l\'infinitif sans sujet. "Open the book."' },
+  { id: 'imp02', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Ne parle pas en classe.', answer: "Don't speak in class.", alternatives: ["Do not speak in class."], hint: 'Négatif : Don\'t + verbe', explanation: 'Impératif négatif = "Don\'t" + verbe infinitif. "Don\'t speak in class."' },
+  { id: 'imp03', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ["don't", 'be', 'late', '!'], answer: "Don't be late!", hint: 'Don\'t + be + adjectif', explanation: '"Don\'t be late!" — impératif négatif avec "be". On utilise "Don\'t be", jamais "Don\'t are".' },
+  { id: 'imp04', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec Let\'s ou Don\'t.', template: "___ forget your homework!", answer: "Don't", hint: 'Conseil négatif → Don\'t', explanation: '"Don\'t forget your homework!" — ordre négatif. "Let\'s" serait utilisé pour une suggestion ("Let\'s study!").' },
+  { id: 'imp05', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Allons à la plage !', answer: "Let's go to the beach!", alternatives: ["Let's go to the beach!"], hint: 'Let\'s + verbe infinitif', explanation: '"Let\'s go to the beach!" — "Let\'s" = "Let us", utilisé pour suggérer une action à faire ensemble.' },
+  { id: 'imp06', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'Not speak in class!', answer: "Don't speak in class!", hint: 'Négatif impératif → Don\'t + verbe', explanation: 'On ne peut pas dire "Not speak" — l\'impératif négatif en anglais c\'est toujours "Don\'t + verbe".' },
+  { id: 'imp07', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['please', 'door', 'the', 'close', '.'], answer: 'Close the door, please.', hint: 'Impératif + please à la fin (ou au début)', explanation: '"Close the door, please." — "please" peut se mettre au début ou à la fin pour être poli.' },
+  { id: 'imp08', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Écoute attentivement, s\'il te plaît.', answer: 'Listen carefully, please.', alternatives: ['Please listen carefully.'], hint: 'Verbe seul + adverbe + please', explanation: '"Listen carefully, please." — l\'adverbe "carefully" vient après le verbe.' },
+  { id: 'imp09', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez l\'impératif.', template: "___ quiet, please. I'm studying.", answer: 'Be', hint: 'Be + adjectif (état)', explanation: '"Be quiet, please." — "be" s\'utilise à l\'impératif devant un adjectif d\'état : "Be careful!", "Be quiet!"' },
+  { id: 'imp10', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: "Let's to go to the cinema.", answer: "Let's go to the cinema.", hint: 'Let\'s + verbe infinitif (sans "to")', explanation: '"Let\'s" est déjà suivi directement du verbe infinitif, sans "to". "Let\'s go!" et non "Let\'s to go!"' },
 ];
 
 exercises.someAny = [
-  { id: 'sa01', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec some ou any.', template: 'I have ___ rice in the kitchen.', answer: 'some', hint: 'Phrase affirmative → some', explanation: '"Some" s\'utilise dans les phrases affirmatives. "I have some rice in the kitchen."' },
-  { id: 'sa02', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec some ou any.', template: 'Do you have ___ money?', answer: 'any', hint: 'Question → any', explanation: '"Any" s\'utilise dans les questions et les négatives. "Do you have any money?"' },
-  { id: 'sa03', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec some ou any.', template: "I don't have ___ friends here.", answer: 'any', hint: 'Phrase négative → any', explanation: '"Any" s\'utilise après "don\'t/doesn\'t/didn\'t". "I don\'t have any friends here."' },
-  { id: 'sa04', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'There are some books on the table? Are there some books?', answer: 'Are there any books on the table?', hint: 'Question → any (pas some)', explanation: 'Dans les questions, on utilise normalement "any" : "Are there any books?" (pas "some books?").' },
-  { id: 'sa05', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Il n\'y a pas de lait dans le frigo.', answer: 'There is no milk in the fridge.', alternatives: ["There isn't any milk in the fridge."], hint: 'No + nom = quantité zéro', explanation: '"There is no milk" = quantité zéro. Équivalent : "There isn\'t any milk." Les deux sont corrects.' },
-  { id: 'sa06', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec something, anything ou nothing.', template: "I'm hungry. I want ___ to eat.", answer: 'something', hint: 'Affirmatif → something', explanation: '"Something" s\'utilise dans les phrases affirmatives. "I want something to eat."' },
-  { id: 'sa07', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec something, anything ou nothing.', template: "There is ___ in the bag. It's empty.", answer: 'nothing', hint: 'Quantité zéro → nothing', explanation: '"Nothing" = rien. "There is nothing in the bag." (Attention : ne pas dire "There isn\'t nothing" — double négation incorrecte.)' },
-  { id: 'sa08', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Est-ce qu\'il y a quelque chose à faire ?', answer: 'Is there anything to do?', alternatives: ['Is there anything to do ?'], hint: 'Question → anything', explanation: '"Is there anything to do?" — dans une question, on utilise "anything" (pas "something").' },
-  { id: 'sa09', type: 'word-order', level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['she', 'have', "doesn't", 'money', 'any', '.'], answer: "She doesn't have any money.", hint: 'doesn\'t + any', explanation: '"She doesn\'t have any money." — négative avec "any". On pourrait aussi dire "She has no money."' },
-  { id: 'sa10', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: "I don't have no time.", answer: "I don't have any time.", hint: 'Pas de double négation en anglais', explanation: 'En anglais, on évite la double négation. "I don\'t have no time" est incorrect. On dit "I don\'t have any time" ou "I have no time".' },
+  { id: 'sa01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec some ou any.', template: 'I have ___ rice in the kitchen.', answer: 'some', hint: 'Phrase affirmative → some', explanation: '"Some" s\'utilise dans les phrases affirmatives. "I have some rice in the kitchen."' },
+  { id: 'sa02', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec some ou any.', template: 'Do you have ___ money?', answer: 'any', hint: 'Question → any', explanation: '"Any" s\'utilise dans les questions et les négatives. "Do you have any money?"' },
+  { id: 'sa03', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec some ou any.', template: "I don't have ___ friends here.", answer: 'any', hint: 'Phrase négative → any', explanation: '"Any" s\'utilise après "don\'t/doesn\'t/didn\'t". "I don\'t have any friends here."' },
+  { id: 'sa04', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'There are some books on the table? Are there some books?', answer: 'Are there any books on the table?', hint: 'Question → any (pas some)', explanation: 'Dans les questions, on utilise normalement "any" : "Are there any books?" (pas "some books?").' },
+  { id: 'sa05', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Il n\'y a pas de lait dans le frigo.', answer: 'There is no milk in the fridge.', alternatives: ["There isn't any milk in the fridge."], hint: 'No + nom = quantité zéro', explanation: '"There is no milk" = quantité zéro. Équivalent : "There isn\'t any milk." Les deux sont corrects.' },
+  { id: 'sa06', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec something, anything ou nothing.', template: "I'm hungry. I want ___ to eat.", answer: 'something', hint: 'Affirmatif → something', explanation: '"Something" s\'utilise dans les phrases affirmatives. "I want something to eat."' },
+  { id: 'sa07', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec something, anything ou nothing.', template: "There is ___ in the bag. It's empty.", answer: 'nothing', hint: 'Quantité zéro → nothing', explanation: '"Nothing" = rien. "There is nothing in the bag." (Attention : ne pas dire "There isn\'t nothing" — double négation incorrecte.)' },
+  { id: 'sa08', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Est-ce qu\'il y a quelque chose à faire ?', answer: 'Is there anything to do?', alternatives: ['Is there anything to do ?'], hint: 'Question → anything', explanation: '"Is there anything to do?" — dans une question, on utilise "anything" (pas "something").' },
+  { id: 'sa09', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez les mots dans le bon ordre.', words: ['she', 'have', "doesn't", 'money', 'any', '.'], answer: "She doesn't have any money.", hint: 'doesn\'t + any', explanation: '"She doesn\'t have any money." — négative avec "any". On pourrait aussi dire "She has no money."' },
+  { id: 'sa10', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: "I don't have no time.", answer: "I don't have any time.", hint: 'Pas de double négation en anglais', explanation: 'En anglais, on évite la double négation. "I don\'t have no time" est incorrect. On dit "I don\'t have any time" ou "I have no time".' },
 ];
 
 exercises.toBe = [
-  { id: 'tobe01', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'I ___ a student.', answer: 'am', hint: 'I → am', explanation: '"I am" — avec I on utilise toujours "am".' },
-  { id: 'tobe02', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'She ___ a teacher.', answer: 'is', hint: 'she = he/she/it → is', explanation: '"She is" — avec he/she/it on utilise "is".' },
-  { id: 'tobe03', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'They ___ happy.', answer: 'are', hint: 'they → are', explanation: '"They are" — avec you/we/they on utilise "are".' },
-  { id: 'tobe04', type: 'translate', level: 'A1', instruction: 'Traduisez en anglais.', french: 'Elle n\'est pas fatiguée.', answer: "She isn't tired.", alternatives: ['She is not tired.'], hint: 'she is + not → isn\'t', explanation: '"She isn\'t tired." — la contraction de "is not" est "isn\'t".' },
-  { id: 'tobe05', type: 'word-order', level: 'A1', instruction: 'Mettez les mots dans le bon ordre.', words: ['are', 'you', 'a', 'student', '?'], answer: 'Are you a student?', hint: 'Question : Are + sujet + …', explanation: '"Are you a student?" — on inverse sujet et are pour former une question.' },
-  { id: 'tobe06', type: 'fill-blank', level: 'A1', instruction: 'Complétez avec was ou were.', template: 'He ___ at school yesterday.', answer: 'was', hint: 'he → was (passé)', explanation: '"He was" — au passé, he/she/it → was.' },
-  { id: 'tobe07', type: 'error-correct', level: 'A1', instruction: "Corrigez l'erreur.", sentence: 'She are my friend.', answer: 'She is my friend.', hint: 'she → is (pas are)', explanation: '"She is my friend." — she/he/it utilise "is", jamais "are".' },
-  { id: 'tobe08', type: 'translate', level: 'A1', instruction: 'Traduisez en anglais.', french: 'J\'ai 15 ans.', answer: 'I am 15 years old.', alternatives: ["I'm 15 years old.", 'I am 15.'], hint: 'Âge en anglais = I am … years old', explanation: 'En anglais, l\'âge se dit avec "to be" : "I am 15 years old." Jamais "I have 15 years".' },
-  { id: 'tobe09', type: 'fill-blank', level: 'A1', instruction: 'Complétez la réponse courte.', template: 'Are they students? — Yes, they ___.', answer: 'are', hint: 'Réponse courte : Yes, they + are', explanation: '"Yes, they are." — la réponse courte répète le verbe to be.' },
-  { id: 'tobe10', type: 'error-correct', level: 'A1', instruction: "Corrigez l'erreur.", sentence: "They was here.", answer: 'They were here.', hint: 'they → were (passé pluriel)', explanation: '"They were here." — au passé, you/we/they utilisent "were".' },
+  { id: 'tobe01', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'I ___ a student.', answer: 'am', hint: 'I → am', explanation: '"I am" — avec I on utilise toujours "am".' },
+  { id: 'tobe02', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'She ___ a teacher.', answer: 'is', hint: 'she = he/she/it → is', explanation: '"She is" — avec he/she/it on utilise "is".' },
+  { id: 'tobe03', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec am, is ou are.', template: 'They ___ happy.', answer: 'are', hint: 'they → are', explanation: '"They are" — avec you/we/they on utilise "are".' },
+  { id: 'tobe04', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez en anglais.', french: 'Elle n\'est pas fatiguée.', answer: "She isn't tired.", alternatives: ['She is not tired.'], hint: 'she is + not → isn\'t', explanation: '"She isn\'t tired." — la contraction de "is not" est "isn\'t".' },
+  { id: 'tobe05', type: 'word-order', diffLevel: 1, level: 'A1', instruction: 'Mettez les mots dans le bon ordre.', words: ['are', 'you', 'a', 'student', '?'], answer: 'Are you a student?', hint: 'Question : Are + sujet + …', explanation: '"Are you a student?" — on inverse sujet et are pour former une question.' },
+  { id: 'tobe06', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez avec was ou were.', template: 'He ___ at school yesterday.', answer: 'was', hint: 'he → was (passé)', explanation: '"He was" — au passé, he/she/it → was.' },
+  { id: 'tobe07', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: "Corrigez l'erreur.", sentence: 'She are my friend.', answer: 'She is my friend.', hint: 'she → is (pas are)', explanation: '"She is my friend." — she/he/it utilise "is", jamais "are".' },
+  { id: 'tobe08', type: 'translate', diffLevel: 2, level: 'A1', instruction: 'Traduisez en anglais.', french: 'J\'ai 15 ans.', answer: 'I am 15 years old.', alternatives: ["I'm 15 years old.", 'I am 15.'], hint: 'Âge en anglais = I am … years old', explanation: 'En anglais, l\'âge se dit avec "to be" : "I am 15 years old." Jamais "I have 15 years".' },
+  { id: 'tobe09', type: 'fill-blank', diffLevel: 1, level: 'A1', instruction: 'Complétez la réponse courte.', template: 'Are they students? — Yes, they ___.', answer: 'are', hint: 'Réponse courte : Yes, they + are', explanation: '"Yes, they are." — la réponse courte répète le verbe to be.' },
+  { id: 'tobe10', type: 'error-correct', diffLevel: 3, level: 'A1', instruction: "Corrigez l'erreur.", sentence: "They was here.", answer: 'They were here.', hint: 'they → were (passé pluriel)', explanation: '"They were here." — au passé, you/we/they utilisent "were".' },
 ];
 
 exercises.irregularVerbs = [
-  { id: 'irr01', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'go → ___', answer: 'went', hint: 'go est irrégulier — groupe 3', explanation: '"go" → "went" au Past Simple. "I went to school."' },
-  { id: 'irr02', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'have → ___', answer: 'had', hint: 'have est irrégulier — groupe 2', explanation: '"have" → "had". "She had breakfast early."' },
-  { id: 'irr03', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'see → ___', answer: 'saw', hint: 'see est irrégulier — groupe 3', explanation: '"see" → "saw". "I saw a good film yesterday."' },
-  { id: 'irr04', type: 'fill-blank', level: 'A2', instruction: 'Donnez le Past Simple.', template: 'buy → ___', answer: 'bought', hint: 'buy est irrégulier — groupe 2', explanation: '"buy" → "bought". "She bought a new dress."' },
-  { id: 'irr05', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Ils ont mangé du riz hier.', answer: 'They ate rice yesterday.', alternatives: ['They ate some rice yesterday.'], hint: 'eat → ate (Past Simple)', explanation: '"eat" → "ate" au Past Simple. "They ate rice yesterday."' },
-  { id: 'irr06', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'She goed to the market.', answer: 'She went to the market.', hint: 'go → went (irrégulier)', explanation: '"go" est irrégulier : "went". Jamais "goed".' },
-  { id: 'irr07', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le participe passé.', template: 'I have ___ (write) two letters.', answer: 'written', hint: 'write → wrote → written', explanation: '"write" → "written" au participe passé (Present Perfect).' },
-  { id: 'irr08', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le participe passé.', template: 'She has ___ (take) my book.', answer: 'taken', hint: 'take → took → taken', explanation: '"take" → "taken" au participe passé.' },
-  { id: 'irr09', type: 'word-order', level: 'A2', instruction: 'Mettez dans le bon ordre.', words: ['she', 'the', 'exam', 'passed', '?', 'Did'], answer: 'Did she pass the exam?', hint: 'Did + sujet + infinitif (pas -ed)', explanation: 'Au Past Simple, "Did" + infinitif. Ne pas dire "Did she passed".' },
-  { id: 'irr10', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Nous avons commencé le cours à 8h.', answer: 'We began the lesson at 8.', alternatives: ['We began the class at 8.', 'We began class at 8.', 'We began the lesson at 8am.'], hint: 'begin → began (Past Simple)', explanation: '"begin" → "began" au Past Simple.' },
+  { id: 'irr01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Donnez le Past Simple.', template: 'go → ___', answer: 'went', hint: 'go est irrégulier — groupe 3', explanation: '"go" → "went" au Past Simple. "I went to school."' },
+  { id: 'irr02', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Donnez le Past Simple.', template: 'have → ___', answer: 'had', hint: 'have est irrégulier — groupe 2', explanation: '"have" → "had". "She had breakfast early."' },
+  { id: 'irr03', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Donnez le Past Simple.', template: 'see → ___', answer: 'saw', hint: 'see est irrégulier — groupe 3', explanation: '"see" → "saw". "I saw a good film yesterday."' },
+  { id: 'irr04', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Donnez le Past Simple.', template: 'buy → ___', answer: 'bought', hint: 'buy est irrégulier — groupe 2', explanation: '"buy" → "bought". "She bought a new dress."' },
+  { id: 'irr05', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Ils ont mangé du riz hier.', answer: 'They ate rice yesterday.', alternatives: ['They ate some rice yesterday.'], hint: 'eat → ate (Past Simple)', explanation: '"eat" → "ate" au Past Simple. "They ate rice yesterday."' },
+  { id: 'irr06', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'She goed to the market.', answer: 'She went to the market.', hint: 'go → went (irrégulier)', explanation: '"go" est irrégulier : "went". Jamais "goed".' },
+  { id: 'irr07', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le participe passé.', template: 'I have ___ (write) two letters.', answer: 'written', hint: 'write → wrote → written', explanation: '"write" → "written" au participe passé (Present Perfect).' },
+  { id: 'irr08', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le participe passé.', template: 'She has ___ (take) my book.', answer: 'taken', hint: 'take → took → taken', explanation: '"take" → "taken" au participe passé.' },
+  { id: 'irr09', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez dans le bon ordre.', words: ['she', 'the', 'exam', 'passed', '?', 'Did'], answer: 'Did she pass the exam?', hint: 'Did + sujet + infinitif (pas -ed)', explanation: 'Au Past Simple, "Did" + infinitif. Ne pas dire "Did she passed".' },
+  { id: 'irr10', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Nous avons commencé le cours à 8h.', answer: 'We began the lesson at 8.', alternatives: ['We began the class at 8.', 'We began class at 8.', 'We began the lesson at 8am.'], hint: 'begin → began (Past Simple)', explanation: '"begin" → "began" au Past Simple.' },
 ];
 
 // ─── Possessives ─────────────────────────────────────────────────────────────
 exercises.possessives = [
-  { id: 'pos01', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le bon adjectif possessif.', template: '___ name is Miora. (she)', answer: 'Her', hint: 'she → her', explanation: '"Her name is Miora." — adjectif possessif pour she = her.' },
-  { id: 'pos02', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le bon adjectif possessif.', template: 'This is ___ book. (I)', answer: 'my', hint: 'I → my', explanation: '"This is my book." — adjectif possessif pour I = my.' },
-  { id: 'pos03', type: 'fill-blank', level: 'A2', instruction: 'Choisissez : adjectif ou pronom possessif.', template: 'The red bag is ___. (she)', answer: 'hers', hint: 'Ici pas de nom après → pronom', explanation: '"The red bag is hers." — pronom possessif (seul, sans nom après) pour she = hers.' },
-  { id: 'pos04', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le bon adjectif possessif.', template: 'We love ___ country.', answer: 'our', hint: 'we → our', explanation: '"We love our country." — adjectif possessif pour we = our.' },
-  { id: 'pos05', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'The book is my.', answer: 'The book is mine.', hint: 'Après "is", on utilise le pronom possessif', explanation: '"The book is mine." — après "to be" seul, on utilise le pronom possessif (mine, not my).' },
-  { id: 'pos06', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Leur maison est grande.', answer: 'Their house is big.', alternatives: ['Their home is big.', 'Their house is large.'], hint: 'their = adjectif possessif pour they', explanation: '"Their house is big." — leur = their.' },
-  { id: 'pos07', type: 'fill-blank', level: 'A2', instruction: 'Complétez avec le pronom possessif.', template: 'My bag is red. What colour is ___? (you)', answer: 'yours', hint: 'you → yours', explanation: '"What colour is yours?" — pronom possessif pour you = yours.' },
-  { id: 'pos08', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: "It's tail is very long.", answer: "Its tail is very long.", hint: "its (possessif) pas d'apostrophe", explanation: '"Its tail is very long." — "its" (possessif) n\'a pas d\'apostrophe. "it\'s" = it is.' },
-  { id: 'pos09', type: 'word-order', level: 'A2', instruction: 'Mettez dans le bon ordre.', words: ['parents', 'Their', 'are', 'teachers'], answer: 'Their parents are teachers.', hint: 'adjectif possessif + nom', explanation: '"Their parents are teachers." — Their est l\'adjectif possessif pour they.' },
-  { id: 'pos10', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Est-ce que ce stylo est à lui ?', answer: 'Is this pen his?', alternatives: ['Is this his pen?'], hint: 'his = même forme pour adjectif et pronom', explanation: '"Is this pen his?" — his est le pronom possessif pour he.' },
+  { id: 'pos01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le bon adjectif possessif.', template: '___ name is Miora. (she)', answer: 'Her', hint: 'she → her', explanation: '"Her name is Miora." — adjectif possessif pour she = her.' },
+  { id: 'pos02', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le bon adjectif possessif.', template: 'This is ___ book. (I)', answer: 'my', hint: 'I → my', explanation: '"This is my book." — adjectif possessif pour I = my.' },
+  { id: 'pos03', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Choisissez : adjectif ou pronom possessif.', template: 'The red bag is ___. (she)', answer: 'hers', hint: 'Ici pas de nom après → pronom', explanation: '"The red bag is hers." — pronom possessif (seul, sans nom après) pour she = hers.' },
+  { id: 'pos04', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le bon adjectif possessif.', template: 'We love ___ country.', answer: 'our', hint: 'we → our', explanation: '"We love our country." — adjectif possessif pour we = our.' },
+  { id: 'pos05', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'The book is my.', answer: 'The book is mine.', hint: 'Après "is", on utilise le pronom possessif', explanation: '"The book is mine." — après "to be" seul, on utilise le pronom possessif (mine, not my).' },
+  { id: 'pos06', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Leur maison est grande.', answer: 'Their house is big.', alternatives: ['Their home is big.', 'Their house is large.'], hint: 'their = adjectif possessif pour they', explanation: '"Their house is big." — leur = their.' },
+  { id: 'pos07', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Complétez avec le pronom possessif.', template: 'My bag is red. What colour is ___? (you)', answer: 'yours', hint: 'you → yours', explanation: '"What colour is yours?" — pronom possessif pour you = yours.' },
+  { id: 'pos08', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: "It's tail is very long.", answer: "Its tail is very long.", hint: "its (possessif) pas d'apostrophe", explanation: '"Its tail is very long." — "its" (possessif) n\'a pas d\'apostrophe. "it\'s" = it is.' },
+  { id: 'pos09', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez dans le bon ordre.', words: ['parents', 'Their', 'are', 'teachers'], answer: 'Their parents are teachers.', hint: 'adjectif possessif + nom', explanation: '"Their parents are teachers." — Their est l\'adjectif possessif pour they.' },
+  { id: 'pos10', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Est-ce que ce stylo est à lui ?', answer: 'Is this pen his?', alternatives: ['Is this his pen?'], hint: 'his = même forme pour adjectif et pronom', explanation: '"Is this pen his?" — his est le pronom possessif pour he.' },
 ];
 
 // ─── Adverbs ─────────────────────────────────────────────────────────────────
 exercises.adverbs = [
-  { id: 'adv01', type: 'fill-blank', level: 'A2', instruction: 'Choisissez le bon adverbe de fréquence.', template: 'I ___ brush my teeth. (100%)', answer: 'always', hint: '100% = always', explanation: '"I always brush my teeth." — always = 100% du temps.' },
-  { id: 'adv02', type: 'fill-blank', level: 'A2', instruction: 'Choisissez le bon adverbe de fréquence.', template: 'She ___ goes to school on foot. (0%)', answer: 'never', hint: '0% = never', explanation: '"She never goes to school on foot." — never = 0%.' },
-  { id: 'adv03', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'She sings beautiful.', answer: 'She sings beautifully.', hint: 'adverbe de manière = adjectif + -ly', explanation: '"She sings beautifully." — on ajoute -ly à l\'adjectif pour former l\'adverbe.' },
-  { id: 'adv04', type: 'fill-blank', level: 'A2', instruction: "Formez l'adverbe.", template: 'quick → ___', answer: 'quickly', hint: 'adjectif + -ly', explanation: '"quick" + -ly = "quickly". She speaks quickly.' },
-  { id: 'adv05', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'He plays the guitar good.', answer: 'He plays the guitar well.', hint: 'good → well (irrégulier)', explanation: '"He plays the guitar well." — good → well est irrégulier.' },
-  { id: 'adv06', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Il est toujours en retard.', answer: 'He is always late.', hint: 'toujours = always, après to be', explanation: '"He is always late." — avec to be, l\'adverbe de fréquence vient après le verbe.' },
-  { id: 'adv07', type: 'fill-blank', level: 'A2', instruction: 'Placez correctement "often".', template: 'We ___ eat rice for dinner.', answer: 'often', hint: 'often avant le verbe principal', explanation: '"We often eat rice for dinner." — often se place avant le verbe principal.' },
-  { id: 'adv08', type: 'word-order', level: 'A2', instruction: 'Mettez dans le bon ordre.', words: ['usually', 'wakes', 'She', 'up', 'at', 'six'], answer: 'She usually wakes up at six.', hint: 'adverbe avant le verbe principal', explanation: '"She usually wakes up at six." — usually avant le verbe.' },
-  { id: 'adv09', type: 'translate', level: 'A2', instruction: 'Traduisez en anglais.', french: 'Elle conduit très prudemment.', answer: 'She drives very carefully.', alternatives: ['She drives carefully.'], hint: 'careful + -ly = carefully', explanation: '"She drives very carefully." — careful + -ly = carefully.' },
-  { id: 'adv10', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'I sometimes am late.', answer: 'I am sometimes late.', hint: 'avec to be, adverbe après le verbe', explanation: '"I am sometimes late." — avec to be, l\'adverbe vient APRÈS le verbe.' },
+  { id: 'adv01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Choisissez le bon adverbe de fréquence.', template: 'I ___ brush my teeth. (100%)', answer: 'always', hint: '100% = always', explanation: '"I always brush my teeth." — always = 100% du temps.' },
+  { id: 'adv02', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Choisissez le bon adverbe de fréquence.', template: 'She ___ goes to school on foot. (0%)', answer: 'never', hint: '0% = never', explanation: '"She never goes to school on foot." — never = 0%.' },
+  { id: 'adv03', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'She sings beautiful.', answer: 'She sings beautifully.', hint: 'adverbe de manière = adjectif + -ly', explanation: '"She sings beautifully." — on ajoute -ly à l\'adjectif pour former l\'adverbe.' },
+  { id: 'adv04', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: "Formez l'adverbe.", template: 'quick → ___', answer: 'quickly', hint: 'adjectif + -ly', explanation: '"quick" + -ly = "quickly". She speaks quickly.' },
+  { id: 'adv05', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'He plays the guitar good.', answer: 'He plays the guitar well.', hint: 'good → well (irrégulier)', explanation: '"He plays the guitar well." — good → well est irrégulier.' },
+  { id: 'adv06', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Il est toujours en retard.', answer: 'He is always late.', hint: 'toujours = always, après to be', explanation: '"He is always late." — avec to be, l\'adverbe de fréquence vient après le verbe.' },
+  { id: 'adv07', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Placez correctement "often".', template: 'We ___ eat rice for dinner.', answer: 'often', hint: 'often avant le verbe principal', explanation: '"We often eat rice for dinner." — often se place avant le verbe principal.' },
+  { id: 'adv08', type: 'word-order', diffLevel: 2, level: 'A2', instruction: 'Mettez dans le bon ordre.', words: ['usually', 'wakes', 'She', 'up', 'at', 'six'], answer: 'She usually wakes up at six.', hint: 'adverbe avant le verbe principal', explanation: '"She usually wakes up at six." — usually avant le verbe.' },
+  { id: 'adv09', type: 'translate', diffLevel: 2, level: 'A2', instruction: 'Traduisez en anglais.', french: 'Elle conduit très prudemment.', answer: 'She drives very carefully.', alternatives: ['She drives carefully.'], hint: 'careful + -ly = carefully', explanation: '"She drives very carefully." — careful + -ly = carefully.' },
+  { id: 'adv10', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'I sometimes am late.', answer: 'I am sometimes late.', hint: 'avec to be, adverbe après le verbe', explanation: '"I am sometimes late." — avec to be, l\'adverbe vient APRÈS le verbe.' },
 ];
 
 // ─── Countable / Uncountable ─────────────────────────────────────────────────
 exercises.countableUncountable = [
-  { id: 'cu01', type: 'fill-blank', level: 'A2', instruction: 'Choisissez : much ou many.', template: 'I don\'t have ___ time today.', answer: 'much', hint: 'time = uncountable', explanation: '"I don\'t have much time." — time est uncountable → much.' },
-  { id: 'cu02', type: 'fill-blank', level: 'A2', instruction: 'Choisissez : much ou many.', template: 'There are ___ students in the class.', answer: 'many', hint: 'students = countable', explanation: '"There are many students." — students est countable → many.' },
-  { id: 'cu03', type: 'fill-blank', level: 'A2', instruction: 'Choisissez : a few ou a little.', template: 'She speaks ___ French.', answer: 'a little', hint: 'French (langue) = uncountable', explanation: '"She speaks a little French." — French est uncountable → a little.' },
-  { id: 'cu04', type: 'fill-blank', level: 'A2', instruction: 'Choisissez : a few ou a little.', template: 'I have ___ friends here.', answer: 'a few', hint: 'friends = countable', explanation: '"I have a few friends here." — friends est countable → a few.' },
-  { id: 'cu05', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'I have many informations.', answer: 'I have a lot of information.', hint: 'information = uncountable', explanation: '"information" est uncountable : pas de pluriel, pas de "many". → "a lot of information".' },
-  { id: 'cu06', type: 'error-correct', level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'Can I have an advice?', answer: 'Can I have some advice?', hint: 'advice = uncountable, pas de "an"', explanation: '"advice" est uncountable : pas de "an". → "some advice".' },
-  { id: 'cu07', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Elle a beaucoup d\'amis à l\'école.', answer: 'She has a lot of friends at school.', alternatives: ['She has many friends at school.'], hint: 'friends = countable, beaucoup = a lot of / many', explanation: '"She has a lot of friends at school." — friends = countable, a lot of ou many.' },
-  { id: 'cu08', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Il boit beaucoup d\'eau chaque jour.', answer: 'He drinks a lot of water every day.', hint: 'water = uncountable, beaucoup = a lot of', explanation: '"He drinks a lot of water every day." — water = uncountable, a lot of.' },
-  { id: 'cu09', type: 'fill-blank', level: 'B1', instruction: 'Complétez avec a lot of, much ou many.', template: 'Do you have ___ homework tonight?', answer: 'much', hint: 'homework = uncountable', explanation: '"Do you have much homework tonight?" — homework est uncountable → much (en question).' },
-  { id: 'cu10', type: 'word-order', level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['sugar', 'a', 'to', 'Add', 'little', 'the', 'tea'], answer: 'Add a little sugar to the tea.', hint: 'a little + uncountable noun', explanation: '"Add a little sugar to the tea." — sugar est uncountable → a little.' },
+  { id: 'cu01', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Choisissez : much ou many.', template: 'I don\'t have ___ time today.', answer: 'much', hint: 'time = uncountable', explanation: '"I don\'t have much time." — time est uncountable → much.' },
+  { id: 'cu02', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Choisissez : much ou many.', template: 'There are ___ students in the class.', answer: 'many', hint: 'students = countable', explanation: '"There are many students." — students est countable → many.' },
+  { id: 'cu03', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Choisissez : a few ou a little.', template: 'She speaks ___ French.', answer: 'a little', hint: 'French (langue) = uncountable', explanation: '"She speaks a little French." — French est uncountable → a little.' },
+  { id: 'cu04', type: 'fill-blank', diffLevel: 2, level: 'A2', instruction: 'Choisissez : a few ou a little.', template: 'I have ___ friends here.', answer: 'a few', hint: 'friends = countable', explanation: '"I have a few friends here." — friends est countable → a few.' },
+  { id: 'cu05', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'I have many informations.', answer: 'I have a lot of information.', hint: 'information = uncountable', explanation: '"information" est uncountable : pas de pluriel, pas de "many". → "a lot of information".' },
+  { id: 'cu06', type: 'error-correct', diffLevel: 3, level: 'A2', instruction: "Corrigez l'erreur.", sentence: 'Can I have an advice?', answer: 'Can I have some advice?', hint: 'advice = uncountable, pas de "an"', explanation: '"advice" est uncountable : pas de "an". → "some advice".' },
+  { id: 'cu07', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Elle a beaucoup d\'amis à l\'école.', answer: 'She has a lot of friends at school.', alternatives: ['She has many friends at school.'], hint: 'friends = countable, beaucoup = a lot of / many', explanation: '"She has a lot of friends at school." — friends = countable, a lot of ou many.' },
+  { id: 'cu08', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Il boit beaucoup d\'eau chaque jour.', answer: 'He drinks a lot of water every day.', hint: 'water = uncountable, beaucoup = a lot of', explanation: '"He drinks a lot of water every day." — water = uncountable, a lot of.' },
+  { id: 'cu09', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez avec a lot of, much ou many.', template: 'Do you have ___ homework tonight?', answer: 'much', hint: 'homework = uncountable', explanation: '"Do you have much homework tonight?" — homework est uncountable → much (en question).' },
+  { id: 'cu10', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['sugar', 'a', 'to', 'Add', 'little', 'the', 'tea'], answer: 'Add a little sugar to the tea.', hint: 'a little + uncountable noun', explanation: '"Add a little sugar to the tea." — sugar est uncountable → a little.' },
 ];
 
 // ─── Connectors ──────────────────────────────────────────────────────────────
 exercises.connectors = [
-  { id: 'con01', type: 'fill-blank', level: 'B1', instruction: 'Choisissez le bon connecteur (but / so / because).', template: 'I was late ___ the bus broke down.', answer: 'because', hint: 'cause → because', explanation: '"I was late because the bus broke down." — because introduit la cause.' },
-  { id: 'con02', type: 'fill-blank', level: 'B1', instruction: 'Choisissez le bon connecteur (but / so / because).', template: 'It was raining, ___ we stayed home.', answer: 'so', hint: 'conséquence → so', explanation: '"It was raining, so we stayed home." — so indique la conséquence.' },
-  { id: 'con03', type: 'fill-blank', level: 'B1', instruction: 'Choisissez le bon connecteur (although / however / therefore).', template: '___ it was expensive, she bought it.', answer: 'Although', hint: 'contraste en début de phrase → although', explanation: '"Although it was expensive, she bought it." — although = bien que (contraste).' },
-  { id: 'con04', type: 'fill-blank', level: 'B1', instruction: 'Choisissez le bon connecteur.', template: 'I was very tired. ___, I finished my homework.', answer: 'However', hint: 'contraste avec nouvelle phrase → however', explanation: '"However, I finished my homework." — however = cependant (début de nouvelle phrase).' },
-  { id: 'con05', type: 'error-correct', level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'Although she was tired, but she worked.', answer: 'Although she was tired, she worked.', hint: 'Pas de "but" après "although"', explanation: '"Although" et "but" ne s\'utilisent pas ensemble. Choisir l\'un ou l\'autre.' },
-  { id: 'con06', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Il a beaucoup étudié. Par conséquent, il a réussi.', answer: 'He studied very hard. Therefore, he passed.', alternatives: ['He studied hard. Therefore, he passed the exam.'], hint: 'par conséquent = therefore', explanation: '"Therefore" indique la conséquence logique (registre soutenu).' },
-  { id: 'con07', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Même s\'il a plu, nous avons profité du voyage.', answer: 'Even though it rained, we enjoyed the trip.', alternatives: ['Although it rained, we enjoyed the trip.'], hint: 'même si = even though / although', explanation: '"Even though" est plus fort qu\'"although" pour exprimer le contraste.' },
-  { id: 'con08', type: 'fill-blank', level: 'B1', instruction: 'Complétez avec moreover ou furthermore.', template: 'The hotel is clean. ___, it is affordable.', answer: 'Moreover', alternatives: ['Furthermore'], hint: 'addition dans un registre soutenu', explanation: '"Moreover" ou "Furthermore" ajoutent une information supplémentaire (registre soutenu).' },
-  { id: 'con09', type: 'word-order', level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['cold', 'Since', 'outside', 'coats', 'put', 'on', 'our', 'was', 'it', ',', 'we'], answer: 'Since it was cold outside, we put on our coats.', hint: 'since = comme / puisque (cause)', explanation: '"Since it was cold outside, we put on our coats." — since = puisque (cause).' },
-  { id: 'con10', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'En plus de l\'anglais, elle parle aussi espagnol.', answer: 'In addition to English, she also speaks Spanish.', hint: 'en plus de = in addition to', explanation: '"In addition to English, she also speaks Spanish." — in addition to = en plus de.' },
+  { id: 'con01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Choisissez le bon connecteur (but / so / because).', template: 'I was late ___ the bus broke down.', answer: 'because', hint: 'cause → because', explanation: '"I was late because the bus broke down." — because introduit la cause.' },
+  { id: 'con02', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Choisissez le bon connecteur (but / so / because).', template: 'It was raining, ___ we stayed home.', answer: 'so', hint: 'conséquence → so', explanation: '"It was raining, so we stayed home." — so indique la conséquence.' },
+  { id: 'con03', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Choisissez le bon connecteur (although / however / therefore).', template: '___ it was expensive, she bought it.', answer: 'Although', hint: 'contraste en début de phrase → although', explanation: '"Although it was expensive, she bought it." — although = bien que (contraste).' },
+  { id: 'con04', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Choisissez le bon connecteur.', template: 'I was very tired. ___, I finished my homework.', answer: 'However', hint: 'contraste avec nouvelle phrase → however', explanation: '"However, I finished my homework." — however = cependant (début de nouvelle phrase).' },
+  { id: 'con05', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'Although she was tired, but she worked.', answer: 'Although she was tired, she worked.', hint: 'Pas de "but" après "although"', explanation: '"Although" et "but" ne s\'utilisent pas ensemble. Choisir l\'un ou l\'autre.' },
+  { id: 'con06', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Il a beaucoup étudié. Par conséquent, il a réussi.', answer: 'He studied very hard. Therefore, he passed.', alternatives: ['He studied hard. Therefore, he passed the exam.'], hint: 'par conséquent = therefore', explanation: '"Therefore" indique la conséquence logique (registre soutenu).' },
+  { id: 'con07', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Même s\'il a plu, nous avons profité du voyage.', answer: 'Even though it rained, we enjoyed the trip.', alternatives: ['Although it rained, we enjoyed the trip.'], hint: 'même si = even though / although', explanation: '"Even though" est plus fort qu\'"although" pour exprimer le contraste.' },
+  { id: 'con08', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez avec moreover ou furthermore.', template: 'The hotel is clean. ___, it is affordable.', answer: 'Moreover', alternatives: ['Furthermore'], hint: 'addition dans un registre soutenu', explanation: '"Moreover" ou "Furthermore" ajoutent une information supplémentaire (registre soutenu).' },
+  { id: 'con09', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['cold', 'Since', 'outside', 'coats', 'put', 'on', 'our', 'was', 'it', ',', 'we'], answer: 'Since it was cold outside, we put on our coats.', hint: 'since = comme / puisque (cause)', explanation: '"Since it was cold outside, we put on our coats." — since = puisque (cause).' },
+  { id: 'con10', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'En plus de l\'anglais, elle parle aussi espagnol.', answer: 'In addition to English, she also speaks Spanish.', hint: 'en plus de = in addition to', explanation: '"In addition to English, she also speaks Spanish." — in addition to = en plus de.' },
 ];
 
 // ─── Tense Chooser ───────────────────────────────────────────────────────────
 exercises.tenseChooser = [
-  { id: 'tc01', type: 'fill-blank', level: 'B1', instruction: 'Choisissez le temps correct (Past Simple ou Present Perfect).', template: 'I ___ (eat) already.', answer: 'have already eaten', hint: 'already → Present Perfect', explanation: '"I have already eaten." — already est un indicateur du Present Perfect.' },
-  { id: 'tc02', type: 'fill-blank', level: 'B1', instruction: 'Choisissez le temps correct.', template: 'She ___ (born) in 2005.', answer: 'was born', hint: 'in 2005 = moment précis → Past Simple', explanation: '"She was born in 2005." — in + année passée = Past Simple.' },
-  { id: 'tc03', type: 'fill-blank', level: 'B1', instruction: 'Choisissez le temps correct.', template: 'He ___ (live) here since 2020.', answer: 'has lived', hint: 'since → Present Perfect', explanation: '"He has lived here since 2020." — since = indicateur du Present Perfect.' },
-  { id: 'tc04', type: 'error-correct', level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'I have seen him yesterday.', answer: 'I saw him yesterday.', hint: 'yesterday → Past Simple', explanation: '"I saw him yesterday." — yesterday est un indicateur du Past Simple.' },
-  { id: 'tc05', type: 'fill-blank', level: 'B1', instruction: 'Complétez avec le bon temps.', template: 'We ___ (go) to the beach last summer.', answer: 'went', hint: 'last summer → Past Simple', explanation: '"We went to the beach last summer." — last summer = Past Simple.' },
-  { id: 'tc06', type: 'fill-blank', level: 'B1', instruction: 'Complétez avec le bon temps.', template: 'Have you finished your homework ___?', answer: 'yet', hint: 'Present Perfect négatif/question → yet', explanation: '"Have you finished your homework yet?" — yet est un indicateur du Present Perfect en question.' },
-  { id: 'tc07', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Elle vient juste d\'arriver à la maison.', answer: 'She has just arrived home.', hint: 'vient juste de = has just + participe passé', explanation: '"She has just arrived home." — just est un indicateur du Present Perfect.' },
-  { id: 'tc08', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Nous étudions l\'anglais depuis trois ans.', answer: 'We have studied English for three years.', hint: 'depuis + durée = Present Perfect + for', explanation: '"We have studied English for three years." — for + durée = Present Perfect.' },
-  { id: 'tc09', type: 'word-order', level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['will', 'She', 'you', 'call', 'tomorrow', 'morning'], answer: 'She will call you tomorrow morning.', hint: 'tomorrow → futur (will)', explanation: '"She will call you tomorrow morning." — tomorrow = indicateur du futur.' },
-  { id: 'tc10', type: 'error-correct', level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'I know him since 5 years.', answer: 'I have known him for 5 years.', hint: 'for + durée → Present Perfect', explanation: '"I have known him for 5 years." — for + durée = Present Perfect.' },
+  { id: 'tc01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Choisissez le temps correct (Past Simple ou Present Perfect).', template: 'I ___ (eat) already.', answer: 'have already eaten', hint: 'already → Present Perfect', explanation: '"I have already eaten." — already est un indicateur du Present Perfect.' },
+  { id: 'tc02', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Choisissez le temps correct.', template: 'She ___ (born) in 2005.', answer: 'was born', hint: 'in 2005 = moment précis → Past Simple', explanation: '"She was born in 2005." — in + année passée = Past Simple.' },
+  { id: 'tc03', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Choisissez le temps correct.', template: 'He ___ (live) here since 2020.', answer: 'has lived', hint: 'since → Present Perfect', explanation: '"He has lived here since 2020." — since = indicateur du Present Perfect.' },
+  { id: 'tc04', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'I have seen him yesterday.', answer: 'I saw him yesterday.', hint: 'yesterday → Past Simple', explanation: '"I saw him yesterday." — yesterday est un indicateur du Past Simple.' },
+  { id: 'tc05', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez avec le bon temps.', template: 'We ___ (go) to the beach last summer.', answer: 'went', hint: 'last summer → Past Simple', explanation: '"We went to the beach last summer." — last summer = Past Simple.' },
+  { id: 'tc06', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez avec le bon temps.', template: 'Have you finished your homework ___?', answer: 'yet', hint: 'Present Perfect négatif/question → yet', explanation: '"Have you finished your homework yet?" — yet est un indicateur du Present Perfect en question.' },
+  { id: 'tc07', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Elle vient juste d\'arriver à la maison.', answer: 'She has just arrived home.', hint: 'vient juste de = has just + participe passé', explanation: '"She has just arrived home." — just est un indicateur du Present Perfect.' },
+  { id: 'tc08', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Nous étudions l\'anglais depuis trois ans.', answer: 'We have studied English for three years.', hint: 'depuis + durée = Present Perfect + for', explanation: '"We have studied English for three years." — for + durée = Present Perfect.' },
+  { id: 'tc09', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['will', 'She', 'you', 'call', 'tomorrow', 'morning'], answer: 'She will call you tomorrow morning.', hint: 'tomorrow → futur (will)', explanation: '"She will call you tomorrow morning." — tomorrow = indicateur du futur.' },
+  { id: 'tc10', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'I know him since 5 years.', answer: 'I have known him for 5 years.', hint: 'for + durée → Present Perfect', explanation: '"I have known him for 5 years." — for + durée = Present Perfect.' },
 ];
 
 // ─── Phrasal Verbs ───────────────────────────────────────────────────────────
 exercises.phrasalVerbs = [
-  { id: 'pv01', type: 'fill-blank', level: 'B1', instruction: 'Complétez avec la bonne particule.', template: 'I get ___ at six every morning.', answer: 'up', hint: 'get up = se lever', explanation: '"I get up at six every morning." — get up = se lever.' },
-  { id: 'pv02', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: "Ne t'avoue pas vaincu, continue d'essayer !", answer: "Don't give up, keep trying!", alternatives: ["Don't give up! Keep trying!"], hint: 'give up = abandonner', explanation: '"Don\'t give up, keep trying!" — give up = abandonner.' },
-  { id: 'pv03', type: 'fill-blank', level: 'B1', instruction: 'Complétez le phrasal verb.', template: "I'm looking ___ my keys.", answer: 'for', hint: 'look for = chercher', explanation: '"I\'m looking for my keys." — look for = chercher.' },
-  { id: 'pv04', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Éteins la télé avant de te coucher.', answer: 'Turn off the TV before bed.', alternatives: ['Turn the TV off before bed.'], hint: 'turn off = éteindre (séparable)', explanation: '"Turn off the TV before bed." — turn off = éteindre. Séparable : "Turn it off" aussi.' },
-  { id: 'pv05', type: 'error-correct', level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'Turn off it.', answer: 'Turn it off.', hint: 'pronom → entre verbe et particule', explanation: '"Turn it off." — avec un pronom, la particule vient APRÈS le pronom.' },
-  { id: 'pv06', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'La voiture est tombée en panne sur l\'autoroute.', answer: 'The car broke down on the highway.', alternatives: ['The car broke down on the motorway.'], hint: 'break down = tomber en panne', explanation: '"The car broke down on the highway." — break down = tomber en panne.' },
-  { id: 'pv07', type: 'fill-blank', level: 'B1', instruction: 'Complétez avec la bonne particule.', template: 'We ran ___ of milk this morning.', answer: 'out', hint: 'run out of = manquer de', explanation: '"We ran out of milk this morning." — run out of = manquer de / ne plus avoir.' },
-  { id: 'pv08', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: 'Elle s\'occupe de son petit frère.', answer: 'She looks after her little brother.', hint: 'look after = s\'occuper de (inséparable)', explanation: '"She looks after her little brother." — look after est inséparable.' },
-  { id: 'pv09', type: 'word-order', level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['out', 'I', 'need', 'find', 'to', 'the', 'truth'], answer: 'I need to find out the truth.', hint: 'find out = découvrir', explanation: '"I need to find out the truth." — find out = découvrir / apprendre.' },
-  { id: 'pv10', type: 'translate', level: 'B1', instruction: 'Traduisez en anglais.', french: "Ne remets pas tes devoirs à demain.", answer: "Don't put off your homework until tomorrow.", alternatives: ["Don't put your homework off until tomorrow."], hint: 'put off = remettre à plus tard (séparable)', explanation: '"Don\'t put off your homework until tomorrow." — put off = remettre à plus tard.' },
+  { id: 'pv01', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez avec la bonne particule.', template: 'I get ___ at six every morning.', answer: 'up', hint: 'get up = se lever', explanation: '"I get up at six every morning." — get up = se lever.' },
+  { id: 'pv02', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: "Ne t'avoue pas vaincu, continue d'essayer !", answer: "Don't give up, keep trying!", alternatives: ["Don't give up! Keep trying!"], hint: 'give up = abandonner', explanation: '"Don\'t give up, keep trying!" — give up = abandonner.' },
+  { id: 'pv03', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez le phrasal verb.', template: "I'm looking ___ my keys.", answer: 'for', hint: 'look for = chercher', explanation: '"I\'m looking for my keys." — look for = chercher.' },
+  { id: 'pv04', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Éteins la télé avant de te coucher.', answer: 'Turn off the TV before bed.', alternatives: ['Turn the TV off before bed.'], hint: 'turn off = éteindre (séparable)', explanation: '"Turn off the TV before bed." — turn off = éteindre. Séparable : "Turn it off" aussi.' },
+  { id: 'pv05', type: 'error-correct', diffLevel: 3, level: 'B1', instruction: "Corrigez l'erreur.", sentence: 'Turn off it.', answer: 'Turn it off.', hint: 'pronom → entre verbe et particule', explanation: '"Turn it off." — avec un pronom, la particule vient APRÈS le pronom.' },
+  { id: 'pv06', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'La voiture est tombée en panne sur l\'autoroute.', answer: 'The car broke down on the highway.', alternatives: ['The car broke down on the motorway.'], hint: 'break down = tomber en panne', explanation: '"The car broke down on the highway." — break down = tomber en panne.' },
+  { id: 'pv07', type: 'fill-blank', diffLevel: 3, level: 'B1', instruction: 'Complétez avec la bonne particule.', template: 'We ran ___ of milk this morning.', answer: 'out', hint: 'run out of = manquer de', explanation: '"We ran out of milk this morning." — run out of = manquer de / ne plus avoir.' },
+  { id: 'pv08', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: 'Elle s\'occupe de son petit frère.', answer: 'She looks after her little brother.', hint: 'look after = s\'occuper de (inséparable)', explanation: '"She looks after her little brother." — look after est inséparable.' },
+  { id: 'pv09', type: 'word-order', diffLevel: 3, level: 'B1', instruction: 'Mettez dans le bon ordre.', words: ['out', 'I', 'need', 'find', 'to', 'the', 'truth'], answer: 'I need to find out the truth.', hint: 'find out = découvrir', explanation: '"I need to find out the truth." — find out = découvrir / apprendre.' },
+  { id: 'pv10', type: 'translate', diffLevel: 3, level: 'B1', instruction: 'Traduisez en anglais.', french: "Ne remets pas tes devoirs à demain.", answer: "Don't put off your homework until tomorrow.", alternatives: ["Don't put your homework off until tomorrow."], hint: 'put off = remettre à plus tard (séparable)', explanation: '"Don\'t put off your homework until tomorrow." — put off = remettre à plus tard.' },
 ];
+
+
+// ─── NEW LEVEL EXERCISES (diffLevel 1 / 2 / 3) ──────────────────────────────
+
+// ─── ARTICLES ───────────────────────────────────────────────────────────────
+exercises.articles.push(
+  // Level 1 (+10)
+  {id:'art_1_01',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ elephant never forgets.',options:['a','an','the','—'],answer:'an',hint:'elephant → voyelle',explanation:'"An" devant les sons vocaliques.'},
+  {id:'art_1_02',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'She is ___ doctor.',options:['a','an','the','—'],answer:'a',hint:'doctor → consonne',explanation:'"A" devant les consonnes.'},
+  {id:'art_1_03',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ moon is beautiful tonight.',options:['a','an','the','—'],answer:'The',hint:'unique → the',explanation:'"The" pour les objets uniques.'},
+  {id:'art_1_04',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'I drink ___ water every day.',options:['a','an','the','—'],answer:'—',hint:'water non-dénombrable au général',explanation:'Pas d\'article avec les non-dénombrables au sens général.'},
+  {id:'art_1_05',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'He plays ___ guitar.',options:['a','an','the','—'],answer:'the',hint:'instruments → the',explanation:'"Play the guitar/piano" toujours avec "the".'},
+  {id:'art_1_06',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'She is ___ honest woman.',options:['a','an','the','—'],answer:'an',hint:'honest : h muet → son /ɒ/',explanation:'"An honest" car le h est muet.'},
+  {id:'art_1_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec a, an ou the.',template:'I saw ___ old man near the market.',answer:'an',hint:'old → son vocalique',explanation:'"An old" — "old" commence par /əʊ/.'},
+  {id:'art_1_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec a, an ou the.',template:'Close ___ door, it is cold.',answer:'the',hint:'porte spécifique → the',explanation:'"The door" = porte spécifique connue des deux.'},
+  {id:'art_1_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec a, an ou the.',template:'___ Nile is the longest river in Africa.',answer:'The',hint:'fleuves → the',explanation:'"The Nile" — on met "the" devant les noms de fleuves.'},
+  {id:'art_1_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec a, an ou the.',template:'She reads ___ book every night.',answer:'a',hint:'première mention → a',explanation:'"A book" = première mention générale.'},
+  {id:'art_1_11',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['an','is','He','engineer'],answer:'He is an engineer.',hint:'an + engineer (voyelle)',explanation:'"An engineer" — voyelle /ɛ/.'},
+  {id:'art_1_12',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['a','She','bought','new','dress'],answer:'She bought a new dress.',hint:'a + dress',explanation:'"A new dress" — première mention.'},
+  {id:'art_1_13',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['the','in','school','is','library','The'],answer:'The library is in the school.',hint:'library et school = spécifiques',explanation:'"The library" et "the school" = institutions spécifiques.'},
+  {id:'art_1_14',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['at','They','the','play','beach'],answer:'They play at the beach.',hint:'the beach = lieu spécifique',explanation:'"The beach" = lieu identifié.'},
+  // Level 2 (+14)
+  {id:'art_2_01',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:"C'est une idée intéressante.",answer:'It is an interesting idea.',alternatives:["It's an interesting idea."],hint:'interesting → voyelle → an',explanation:'"An interesting idea".'},
+  {id:'art_2_02',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Le soleil se lève à six heures.',answer:'The sun rises at six.',alternatives:['The sun rises at 6 am.'],hint:'Le soleil → The sun',explanation:'"The sun" — objet unique.'},
+  {id:'art_2_03',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:"J'achète du riz au marché.",answer:'I buy rice at the market.',hint:'du riz → rice (sans article)',explanation:'"Rice" au sens général = sans article.'},
+  {id:'art_2_04',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Il joue du piano chaque soir.',answer:'He plays the piano every evening.',hint:'instruments → the',explanation:'"Play the piano".'},
+  {id:'art_2_05',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:"Elle est infirmière à l'hôpital.",answer:'She is a nurse at the hospital.',hint:'nurse → a ; hospital → the',explanation:'"A nurse" (métier, consonne). "The hospital" (institution).'},
+  {id:'art_2_06',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'She has a cat and an umbrella.',answer:'She has a cat and an umbrella.',hint:'cat → a ; umbrella → an',explanation:'"A cat" et "an umbrella".'},
+  {id:'art_2_07',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'The children are playing in the garden.',answer:'The children are playing in the garden.',hint:'the children, the garden',explanation:'Références spécifiques.'},
+  {id:'art_2_08',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'I need a pen and an eraser.',answer:'I need a pen and an eraser.',hint:'pen → a ; eraser → an',explanation:'"A pen" et "an eraser".'},
+  {id:'art_2_09',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'He is the best student in the class.',answer:'He is the best student in the class.',hint:'superlatif → the',explanation:'"The best" = superlatif.'},
+  {id:'art_2_10',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'I live near an old church.',answer:'I live near an old church.',hint:'old → son vocalique → an',explanation:'"An old church".'},
+  {id:'art_2_11',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['the','is','She','in','kitchen'],answer:'She is in the kitchen.',hint:'the kitchen',explanation:'"The kitchen" = pièce spécifique.'},
+  {id:'art_2_12',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['a','is','There','market','near','here'],answer:'There is a market near here.',hint:'a market = première mention',explanation:'"A market" = non spécifié.'},
+  {id:'art_2_13',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['the','best','is','He','student','class','in','the'],answer:'He is the best student in the class.',hint:'superlatif → the',explanation:'"The best student".'},
+  {id:'art_2_14',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['an','went','She','to','interview'],answer:'She went to an interview.',hint:'interview → an',explanation:'"An interview" — voyelle /ɪ/.'},
+  {id:'art_2_15',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['the','to','go','They','school','every','day'],answer:'They go to school every day.',hint:'school = institution',explanation:'"Go to school" sans article = expression idiomatique.'},
+  // Level 3 (+13)
+  {id:'art_3_01',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'an',example:'I have an orange in my bag.',hint:'"an" devant son vocalique',explanation:'"An" + voyelle : an apple, an egg, an hour.'},
+  {id:'art_3_02',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'the',example:'The sun is very hot today.',hint:'"the" pour quelque chose de spécifique',explanation:'"The" = article défini.'},
+  {id:'art_3_03',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'a',example:'I saw a dog in the street.',hint:'"a" devant consonne',explanation:'"A" = article indéfini, consonne.'},
+  {id:'art_3_04',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'the best',example:'She is the best teacher in the school.',hint:'superlatif → the',explanation:'"The best/most/tallest" — superlatifs.'},
+  {id:'art_3_05',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'He is a honest man.',answer:'He is an honest man.',hint:'Honest : h muet',explanation:'"An honest" — le h est muet.'},
+  {id:'art_3_06',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'She plays a piano very well.',answer:'She plays the piano very well.',hint:'instruments → the',explanation:'"Play the piano".'},
+  {id:'art_3_07',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'I drink the milk every morning.',answer:'I drink milk every morning.',hint:'milk au sens général',explanation:'Non-dénombrable au sens général = sans article.'},
+  {id:'art_3_08',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'She is best student in the class.',answer:'She is the best student in the class.',hint:'superlatif → the best',explanation:'"The best" = superlatif.'},
+  {id:'art_3_09',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'She is an excellent doctor.',answer:'Elle est une excellente médecin.',alternatives:['Elle est un excellent médecin.'],hint:'an excellent → une excellente',explanation:'"An excellent" → "une excellente".'},
+  {id:'art_3_10',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'The children love the beach.',answer:'Les enfants adorent la plage.',hint:'The = les/la',explanation:'"The children" = "les enfants".'},
+  {id:'art_3_11',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'I need a doctor urgently.',answer:"J'ai besoin d'un médecin d'urgence.",hint:'a doctor = un médecin',explanation:'"A doctor" = "un médecin".'},
+  {id:'art_3_12',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'He plays the guitar and sings.',answer:'Il joue de la guitare et chante.',hint:'play the guitar = jouer de la guitare',explanation:'"Play the guitar" = "jouer de la guitare".'},
+  {id:'art_3_13',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'I saw a dog and an elephant at the zoo.',question:'Quel article est utilisé avec elephant ?',answer:'an',alternatives:['An'],hint:'elephant → voyelle',explanation:'"An elephant" — voyelle /ɛ/.'},
+  {id:'art_3_14',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'The sun is shining and the sky is blue.',question:'Pourquoi utilise-t-on "the" avec sun et sky ?',answer:'They are unique objects.',alternatives:['They are unique.','Sun and sky are unique.'],hint:'Objets uniques → the',explanation:'"The sun" et "the sky" sont uniques.'},
+  {id:'art_3_15',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'She is a teacher and her husband is an engineer.',question:'Quel est le métier du mari ?',answer:'He is an engineer.',alternatives:['an engineer','engineer'],hint:'Écoutez le deuxième métier',explanation:'"An engineer" — voyelle /ɛ/.'}
+);
+
+// ─── PLURALS ─────────────────────────────────────────────────────────────────
+exercises.plurals.push(
+  // Level 1 (+10)
+  {id:'pl_1_01',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon pluriel.',question:'One child → two ___',options:['childs','children','childrens','child'],answer:'children',hint:'Irrégulier',explanation:'"Children" est le pluriel irrégulier de "child".'},
+  {id:'pl_1_02',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon pluriel.',question:'One city → many ___',options:['citys','cities','cityes','city'],answer:'cities',hint:'consonne + y → ies',explanation:'"City" → retire y, ajoute -ies → "cities".'},
+  {id:'pl_1_03',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon pluriel.',question:'One knife → two ___',options:['knifes','knives','knifes','knife'],answer:'knives',hint:'f/fe → ves',explanation:'"Knife" → "knives" (f → ves).'},
+  {id:'pl_1_04',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon pluriel.',question:'One tooth → many ___',options:['tooths','teeths','teeth','tooth'],answer:'teeth',hint:'Irrégulier',explanation:'"Tooth" → "teeth" (irrégulier).'},
+  {id:'pl_1_05',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon pluriel.',question:'One sheep → two ___',options:['sheeps','sheepes','sheep','sheeps'],answer:'sheep',hint:'Invariable',explanation:'"Sheep" → "sheep" (invariable).'},
+  {id:'pl_1_06',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon pluriel.',question:'One box → three ___',options:['boxs','boxes','boxies','box'],answer:'boxes',hint:'-s, -x, -ch, -sh → +es',explanation:'"Box" → "boxes" (finit en -x → +es).'},
+  {id:'pl_1_07',type:'fill-blank',diffLevel:1,instruction:'Donnez le pluriel.',template:'One man → two ___',answer:'men',hint:'Irrégulier',explanation:'"Man" → "men" (irrégulier).'},
+  {id:'pl_1_08',type:'fill-blank',diffLevel:1,instruction:'Donnez le pluriel.',template:'One woman → three ___',answer:'women',hint:'Irrégulier',explanation:'"Woman" → "women" (irrégulier).'},
+  {id:'pl_1_09',type:'fill-blank',diffLevel:1,instruction:'Donnez le pluriel.',template:'One leaf → five ___',answer:'leaves',hint:'f → ves',explanation:'"Leaf" → "leaves" (f → ves).'},
+  {id:'pl_1_10',type:'fill-blank',diffLevel:1,instruction:'Donnez le pluriel.',template:'One tomato → many ___',answer:'tomatoes',hint:'-o → +es',explanation:'"Tomato" → "tomatoes" (-o → +es).'},
+  {id:'pl_1_11',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['The','are','children','happy'],answer:'The children are happy.',hint:'children = pluriel de child',explanation:'"The children are" — "children" est pluriel → "are".'},
+  {id:'pl_1_12',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['have','I','three','brothers'],answer:'I have three brothers.',hint:'brother → brothers',explanation:'"Brothers" = pluriel régulier de "brother".'},
+  {id:'pl_1_13',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['are','in','the','Mice','house'],answer:'Mice are in the house.',hint:'mouse → mice',explanation:'"Mouse" → "mice" (irrégulier).'},
+  {id:'pl_1_14',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['two','She','has','knives'],answer:'She has two knives.',hint:'knife → knives',explanation:'"Knife" → "knives" (f → ves).'},
+  // Level 2 (+14)
+  {id:'pl_2_01',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Il y a beaucoup de gens dans la rue.',answer:'There are many people in the street.',alternatives:['There are a lot of people in the street.'],hint:'people = pluriel de person',explanation:'"People" est déjà pluriel.'},
+  {id:'pl_2_02',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Les femmes travaillent à l\'hôpital.',answer:'The women work at the hospital.',hint:'woman → women',explanation:'"Women" = pluriel de "woman".'},
+  {id:'pl_2_03',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'J\'ai trois dents abîmées.',answer:'I have three damaged teeth.',alternatives:['I have three broken teeth.'],hint:'dent → tooth → teeth',explanation:'"Tooth" → "teeth" (irrégulier).'},
+  {id:'pl_2_04',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Les souris mangent le fromage.',answer:'The mice eat the cheese.',hint:'mouse → mice',explanation:'"Mouse" → "mice" (irrégulier).'},
+  {id:'pl_2_05',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Il y a cinq poissons dans le bassin.',answer:'There are five fish in the pond.',alternatives:['There are five fishes in the pond.'],hint:'fish peut rester invariable',explanation:'"Fish" reste souvent invariable, mais "fishes" est aussi accepté.'},
+  {id:'pl_2_06',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'The children are playing outside.',answer:'The children are playing outside.',hint:'children = pluriel',explanation:'"Children" = pluriel de "child".'},
+  {id:'pl_2_07',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'I see two geese on the lake.',answer:'I see two geese on the lake.',hint:'goose → geese',explanation:'"Goose" → "geese" (irrégulier).'},
+  {id:'pl_2_08',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'Her teeth are very white.',answer:'Her teeth are very white.',hint:'tooth → teeth',explanation:'"Teeth" = pluriel de "tooth".'},
+  {id:'pl_2_09',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'The men are waiting outside.',answer:'The men are waiting outside.',hint:'man → men',explanation:'"Men" = pluriel de "man".'},
+  {id:'pl_2_10',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'She has five sheep on her farm.',answer:'She has five sheep on her farm.',hint:'sheep = invariable',explanation:'"Sheep" = invariable.'},
+  {id:'pl_2_11',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['are','The','in','oxen','the','field'],answer:'The oxen are in the field.',hint:'ox → oxen',explanation:'"Ox" → "oxen" (irrégulier ancien).'},
+  {id:'pl_2_12',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['have','many','We','responsibilities'],answer:'We have many responsibilities.',hint:'responsibility → responsibilities',explanation:'"Responsibility" → "responsibilities" (-y → -ies).'},
+  {id:'pl_2_13',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['The','beautiful','are','butterflies'],answer:'The butterflies are beautiful.',hint:'butterfly → butterflies',explanation:'"Butterfly" → "butterflies" (-y → -ies).'},
+  {id:'pl_2_14',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['gave','three','She','sandwiches','me'],answer:'She gave me three sandwiches.',hint:'sandwich → sandwiches',explanation:'"Sandwich" → "sandwiches" (-ch → +es).'},
+  {id:'pl_2_15',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['lives','in','A','the','deer','forest'],answer:'A deer lives in the forest.',hint:'deer = invariable',explanation:'"Deer" = invariable.'},
+  // Level 3 (+13)
+  {id:'pl_3_01',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'children',example:'The children are playing in the garden.',hint:'Pluriel irrégulier de child',explanation:'"Children" = pluriel de "child".'},
+  {id:'pl_3_02',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'teeth',example:'I brush my teeth every morning.',hint:'Pluriel de tooth',explanation:'"Teeth" = pluriel de "tooth".'},
+  {id:'pl_3_03',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'women',example:'The women are very kind.',hint:'Pluriel de woman',explanation:'"Women" = pluriel de "woman".'},
+  {id:'pl_3_04',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'leaves',example:'The leaves are falling from the trees.',hint:'leaf → leaves',explanation:'"Leaf" → "leaves" (f → ves).'},
+  {id:'pl_3_05',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'He has two childs at school.',answer:'He has two children at school.',hint:'Pluriel irrégulier de child',explanation:'"Child" → "children".'},
+  {id:'pl_3_06',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'I see three sheeps in the field.',answer:'I see three sheep in the field.',hint:'sheep = invariable',explanation:'"Sheep" ne change pas au pluriel.'},
+  {id:'pl_3_07',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'She has beautiful tooths.',answer:'She has beautiful teeth.',hint:'Pluriel irrégulier de tooth',explanation:'"Tooth" → "teeth".'},
+  {id:'pl_3_08',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'There are five womans in the room.',answer:'There are five women in the room.',hint:'Pluriel irrégulier de woman',explanation:'"Woman" → "women".'},
+  {id:'pl_3_09',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'The mice ran away quickly.',answer:'Les souris se sont enfuies rapidement.',alternatives:['Les souris ont vite disparu.'],hint:'mice = les souris',explanation:'"Mice" = pluriel de "mouse" = "souris".'},
+  {id:'pl_3_10',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'The children played all day.',answer:'Les enfants ont joué toute la journée.',hint:'children = les enfants',explanation:'"Children" = "les enfants".'},
+  {id:'pl_3_11',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'She has two cats and three dogs.',answer:'Elle a deux chats et trois chiens.',hint:'cats = chats, dogs = chiens',explanation:'Pluriels réguliers : cats, dogs.'},
+  {id:'pl_3_12',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'The leaves are orange and red in autumn.',answer:'Les feuilles sont orange et rouges en automne.',hint:'leaves = les feuilles',explanation:'"Leaves" = pluriel de "leaf" = "feuilles".'},
+  {id:'pl_3_13',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'There are three children and two women in the park.',question:'Combien de personnes y a-t-il en tout ?',answer:'Five.',alternatives:['5.','Five people.'],hint:'3 + 2 = ?',explanation:'Three children + two women = five people.'},
+  {id:'pl_3_14',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'I see two geese and one deer near the river.',question:'Quel animal apparaît une seule fois ?',answer:'A deer.',alternatives:['deer','The deer'],hint:'Écoutez les quantités',explanation:'"One deer" = singulier.'},
+  {id:'pl_3_15',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'The men and women work together in the office.',question:'Quel est le pluriel de man utilisé ici ?',answer:'men',alternatives:['Men'],hint:'man → ?',explanation:'"Men" = pluriel irrégulier de "man".'}
+);
+
+// ─── THERE IS / ARE ──────────────────────────────────────────────────────────
+exercises.therebeis.push(
+  // Level 1 (+11)
+  {id:'tbi_1_01',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ a book on the table.',options:['There is','There are','There has','There have'],answer:'There is',hint:'a book = singulier',explanation:'"There is" + singulier.'},
+  {id:'tbi_1_02',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ three students in the classroom.',options:['There is','There are','There was','There have'],answer:'There are',hint:'three students = pluriel',explanation:'"There are" + pluriel.'},
+  {id:'tbi_1_03',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ any milk in the fridge?',options:['Is there','Are there','Has there','Have there'],answer:'Is there',hint:'milk = non-dénombrable → is',explanation:'"Is there any milk?" — milk est non-dénombrable.'},
+  {id:'tbi_1_04',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ many people at the party last night.',options:['There were','There was','There are','There is'],answer:'There were',hint:'last night = passé + pluriel',explanation:'"There were" = pluriel passé.'},
+  {id:'tbi_1_05',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ no sugar left.',options:["There isn't","There aren't",'There was not','There not'],answer:"There isn't",hint:'sugar = non-dénombrable → is',explanation:'"There isn\'t any sugar" — non-dénombrable.'},
+  {id:'tbi_1_06',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ an elephant in the zoo.',options:['There is','There are','There be','There has'],answer:'There is',hint:'an elephant = singulier',explanation:'"There is an elephant" — singulier.'},
+  {id:'tbi_1_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec there is/are.',template:'___ a hospital near the school.',answer:'There is',hint:'hospital = singulier',explanation:'"There is a hospital" — singulier.'},
+  {id:'tbi_1_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec there is/are.',template:'___ many birds in the trees.',answer:'There are',hint:'many birds = pluriel',explanation:'"There are many birds" — pluriel.'},
+  {id:'tbi_1_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec there is/are.',template:'___ no water in the glass.',answer:"There isn't",alternatives:['There is no'],hint:'water = non-dénombrable → is',explanation:'"There isn\'t any water" ou "There is no water".'},
+  {id:'tbi_1_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec there is/are.',template:'___ a fly in my soup!',answer:'There is',hint:'a fly = singulier',explanation:'"There is a fly" — singulier.'},
+  {id:'tbi_1_11',type:'fill-blank',diffLevel:1,instruction:'Complétez avec there is/are.',template:'___ five chairs around the table.',answer:'There are',hint:'five chairs = pluriel',explanation:'"There are five chairs" — pluriel.'},
+  {id:'tbi_1_12',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['a','is','There','pharmacy','here','near'],answer:'There is a pharmacy near here.',hint:'There is + singulier',explanation:'"There is a pharmacy" — singulier.'},
+  {id:'tbi_1_13',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['Are','questions','there','any','?'],answer:'Are there any questions?',hint:'Question : Are there...?',explanation:'Question : "Are there any questions?"'},
+  {id:'tbi_1_14',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['were','at','There','people','market','many','the'],answer:'There were many people at the market.',hint:'passé pluriel → were',explanation:'"There were" = passé pluriel.'},
+  // Level 2 (+12)
+  {id:'tbi_2_01',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:"Il y a un chien dans le jardin.",answer:'There is a dog in the garden.',alternatives:["There's a dog in the garden."],hint:'un chien = a dog (singulier)',explanation:'"There is a dog" — singulier.'},
+  {id:'tbi_2_02',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Il y a beaucoup de gens dans la rue.',answer:'There are many people in the street.',alternatives:['There are a lot of people in the street.'],hint:'beaucoup de gens = many people (pluriel)',explanation:'"There are many people" — pluriel.'},
+  {id:'tbi_2_03',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:"Y a-t-il une école ici ?",answer:'Is there a school here?',hint:'Question singulier : Is there...?',explanation:'"Is there a school?" — question singulier.'},
+  {id:'tbi_2_04',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:"Il n'y a pas de lait dans le frigo.",answer:"There isn't any milk in the fridge.",alternatives:['There is no milk in the fridge.'],hint:'pas de lait → no milk / not any milk',explanation:'"There isn\'t any milk" ou "There is no milk".'},
+  {id:'tbi_2_05',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:"Il y avait cinq voitures dans la rue.",answer:'There were five cars in the street.',hint:'passé pluriel → were',explanation:'"There were five cars" — passé pluriel.'},
+  {id:'tbi_2_06',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'There is a cat on the roof.',answer:'There is a cat on the roof.',hint:'a cat = singulier → is',explanation:'"There is a cat".'},
+  {id:'tbi_2_07',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'There are three books on the table.',answer:'There are three books on the table.',hint:'three books = pluriel → are',explanation:'"There are three books".'},
+  {id:'tbi_2_08',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'Is there a market near here?',answer:'Is there a market near here?',hint:'Question → Is there...?',explanation:'Question singulier.'},
+  {id:'tbi_2_09',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'There were many animals in the forest.',answer:'There were many animals in the forest.',hint:'passé pluriel → were',explanation:'"There were many animals".'},
+  {id:'tbi_2_10',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:"There isn't any sugar in the kitchen.",answer:"There isn't any sugar in the kitchen.",hint:'sugar non-dénombrable → is',explanation:'"There isn\'t any sugar".'},
+  {id:'tbi_2_11',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['many','Are','shops','there','here','near','?'],answer:'Are there many shops near here?',hint:'Question pluriel',explanation:'"Are there many shops?" — pluriel.'},
+  {id:'tbi_2_12',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['a','was','There','problem','yesterday'],answer:'There was a problem yesterday.',hint:'passé singulier → was',explanation:'"There was a problem" — passé singulier.'},
+  {id:'tbi_2_13',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['any','there','Are','questions','?'],answer:'Are there any questions?',hint:'Questions → Are there...?',explanation:'"Are there any questions?"'},
+  {id:'tbi_2_14',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['no','There','the','is','bus','today'],answer:'There is no bus today.',hint:'There is no = il n\'y a pas de',explanation:'"There is no bus" = "There isn\'t a bus".'},
+  {id:'tbi_2_15',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['a','There','in','is','garden','bee','the'],answer:'There is a bee in the garden.',hint:'a bee = singulier',explanation:'"There is a bee" — singulier.'},
+  // Level 3 (+14)
+  {id:'tbi_3_01',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'there is',example:'There is a beautiful lake near our village.',hint:'"There is" + singulier',explanation:'"There is" exprime l\'existence d\'un objet singulier.'},
+  {id:'tbi_3_02',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'there are',example:'There are many students in the classroom.',hint:'"There are" + pluriel',explanation:'"There are" exprime l\'existence de plusieurs objets.'},
+  {id:'tbi_3_03',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'there were',example:'There were many people at the festival.',hint:'"There were" = passé pluriel',explanation:'"There were" = passé de "there are".'},
+  {id:'tbi_3_04',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:"there isn't",example:"There isn't any milk in the fridge.",hint:'"There isn\'t" = négatif singulier',explanation:'"There isn\'t" = "there is not".'},
+  {id:'tbi_3_05',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'There are a dog in the garden.',answer:'There is a dog in the garden.',hint:'a dog = singulier → is',explanation:'"A dog" = singulier → "there is".'},
+  {id:'tbi_3_06',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'Is there many people here?',answer:'Are there many people here?',hint:'many people = pluriel → are',explanation:'"Many people" = pluriel → "Are there...?"'},
+  {id:'tbi_3_07',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'There were a problem yesterday.',answer:'There was a problem yesterday.',hint:'a problem = singulier → was',explanation:'"A problem" = singulier → "there was".'},
+  {id:'tbi_3_08',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:"There isn't any books left.",answer:"There aren't any books left.",hint:'books = pluriel → aren\'t',explanation:'"Books" = pluriel → "there aren\'t".'},
+  {id:'tbi_3_09',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'There is a market every Sunday.',answer:'Il y a un marché tous les dimanches.',hint:'There is = il y a',explanation:'"There is" = "il y a" (singulier).'},
+  {id:'tbi_3_10',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'There are many birds in Madagascar.',answer:'Il y a beaucoup d\'oiseaux à Madagascar.',hint:'There are = il y a',explanation:'"There are" = "il y a" (pluriel).'},
+  {id:'tbi_3_11',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:"There isn't any water in the glass.",answer:"Il n'y a pas d'eau dans le verre.",hint:"There isn't = il n'y a pas",explanation:'"There isn\'t" = "il n\'y a pas".'},
+  {id:'tbi_3_12',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'Were there many students at the ceremony?',answer:'Y avait-il beaucoup d\'étudiants à la cérémonie ?',hint:'Were there...? = Y avait-il ?',explanation:'"Were there...?" = "Y avait-il...?" (passé).'},
+  {id:'tbi_3_13',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'There are two cats and one dog in the house.',question:'Combien d\'animaux y a-t-il en tout ?',answer:'Three.',alternatives:['3.','Three animals.'],hint:'2 + 1 = ?',explanation:'Two cats + one dog = three animals.'},
+  {id:'tbi_3_14',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'There is no school today because of the rain.',question:'Y a-t-il école aujourd\'hui ?',answer:'No, there is no school today.',alternatives:['No.','No school today.'],hint:'Écoutez la négation',explanation:'"There is no school" = pas d\'école.'},
+  {id:'tbi_3_15',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'There were five people at the meeting yesterday.',question:'Quand a eu lieu la réunion ?',answer:'Yesterday.',alternatives:['Last night.','Yesterday morning.'],hint:'Écoutez l\'adverbe de temps',explanation:'"Yesterday" = hier.'}
+);
+
+// ─── PREPOSITIONS ─────────────────────────────────────────────────────────────
+exercises.prepositions.push(
+  // Level 1 (+11)
+  {id:'prep_1_01',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne préposition.',question:'I wake up ___ 6 o\'clock.',options:['in','on','at','by'],answer:'at',hint:'heure précise → at',explanation:'"At" pour les heures précises.'},
+  {id:'prep_1_02',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne préposition.',question:'School starts ___ Monday.',options:['in','on','at','by'],answer:'on',hint:'jours → on',explanation:'"On" pour les jours de la semaine.'},
+  {id:'prep_1_03',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne préposition.',question:'My birthday is ___ June.',options:['in','on','at','by'],answer:'in',hint:'mois → in',explanation:'"In" pour les mois et les années.'},
+  {id:'prep_1_04',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne préposition.',question:'The keys are ___ the table.',options:['in','on','at','under'],answer:'on',hint:'sur la surface → on',explanation:'"On" pour une surface.'},
+  {id:'prep_1_05',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne préposition.',question:'We go to church ___ Sunday mornings.',options:['in','on','at','by'],answer:'on',hint:'jour + moment → on',explanation:'"On Sunday mornings" = les matins du dimanche.'},
+  {id:'prep_1_06',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne préposition.',question:'She was born ___ 1998.',options:['in','on','at','by'],answer:'in',hint:'année → in',explanation:'"In 1998" — années avec "in".'},
+  {id:'prep_1_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec in, on ou at.',template:'The cat is ___ the box.',answer:'in',hint:'à l\'intérieur → in',explanation:'"In" = à l\'intérieur.'},
+  {id:'prep_1_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec in, on ou at.',template:'We meet ___ noon.',answer:'at',hint:'noon = moment précis → at',explanation:'"At noon" — moment précis.'},
+  {id:'prep_1_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec in, on ou at.',template:'She was born ___ a Sunday.',answer:'on',hint:'jour → on',explanation:'"On a Sunday" — jour.'},
+  {id:'prep_1_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec in, on ou at.',template:'I read ___ the evening.',answer:'in',hint:'in the morning/afternoon/evening',explanation:'"In the evening" — parties de la journée (sauf night).'},
+  {id:'prep_1_11',type:'fill-blank',diffLevel:1,instruction:'Complétez avec in, on ou at.',template:'The shop is ___ the corner.',answer:'on',hint:'on the corner = au coin',explanation:'"On the corner" — expression fixe.'},
+  {id:'prep_1_12',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['at','I','school','am','noon','at'],answer:'I am at school at noon.',hint:'at school, at noon',explanation:'"At school" (lieu) + "at noon" (heure).'},
+  {id:'prep_1_13',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['on','She','her','the','birthday','July','is','in','3rd'],answer:'Her birthday is on July 3rd.',hint:'date précise → on',explanation:'"On July 3rd" — date précise.'},
+  {id:'prep_1_14',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['The','book','on','is','table','the'],answer:'The book is on the table.',hint:'on = sur la surface',explanation:'"On the table" = sur la table.'},
+  {id:'prep_1_15',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['in','was','born','1992','I'],answer:'I was born in 1992.',hint:'année → in',explanation:'"In 1992" — année.'},
+  // Level 2 (+13)
+  {id:'prep_2_01',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Je suis né(e) le 15 août.',answer:'I was born on August 15th.',alternatives:['I was born on the 15th of August.'],hint:'date précise → on',explanation:'"On August 15th" — date précise.'},
+  {id:'prep_2_02',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Elle habite à Antananarivo depuis 2010.',answer:'She has lived in Antananarivo since 2010.',alternatives:['She has been in Antananarivo since 2010.'],hint:'depuis → since + date précise',explanation:'"Since" = depuis un moment précis.'},
+  {id:'prep_2_03',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Le bus part à 7h30 le matin.',answer:'The bus leaves at 7:30 in the morning.',alternatives:['The bus departs at 7:30 am.'],hint:'heure → at ; matin → in the morning',explanation:'"At 7:30 in the morning".'},
+  {id:'prep_2_04',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Il y a un marché tous les vendredis.',answer:'There is a market every Friday.',alternatives:['There is a market on Fridays.'],hint:'le vendredi → every Friday / on Fridays',explanation:'"Every Friday" ou "on Fridays".'},
+  {id:'prep_2_05',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Nous nous retrouvons devant l\'école.',answer:'We meet in front of the school.',hint:'devant → in front of',explanation:'"In front of" = devant.'},
+  {id:'prep_2_06',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'The meeting is on Friday at three.',answer:'The meeting is on Friday at three.',hint:'on Friday, at three',explanation:'"On Friday" (jour) + "at three" (heure).'},
+  {id:'prep_2_07',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'I was born in the morning in summer.',answer:'I was born in the morning in summer.',hint:'in the morning, in summer',explanation:'"In the morning" + "in summer".'},
+  {id:'prep_2_08',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'She lives near the market on Main Street.',answer:'She lives near the market on Main Street.',hint:'near, on',explanation:'"Near" = près de. "On Main Street".'},
+  {id:'prep_2_09',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'I go to work by bus every morning.',answer:'I go to work by bus every morning.',hint:'by bus = en bus',explanation:'"By bus" = en bus.'},
+  {id:'prep_2_10',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'The library is between the school and the park.',answer:'The library is between the school and the park.',hint:'between = entre',explanation:'"Between A and B" = entre A et B.'},
+  {id:'prep_2_11',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['at','They','the','arrive','airport','at','noon'],answer:'They arrive at the airport at noon.',hint:'at the airport (lieu), at noon (heure)',explanation:'"At the airport" + "at noon".'},
+  {id:'prep_2_12',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['on','I','walk','Sunday','mornings','to','church'],answer:'I walk to church on Sunday mornings.',hint:'on Sunday mornings',explanation:'"On Sunday mornings" — jour + partie du jour.'},
+  {id:'prep_2_13',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['in','was','born','She','summer','in','1995'],answer:'She was born in summer in 1995.',hint:'in summer, in 1995',explanation:'"In summer" + "in 1995".'},
+  {id:'prep_2_14',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['behind','The','garden','is','the','house'],answer:'The garden is behind the house.',hint:'behind = derrière',explanation:'"Behind" = derrière.'},
+  {id:'prep_2_15',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['on','He','floor','lives','the','second'],answer:'He lives on the second floor.',hint:'on the second floor',explanation:'"On the second floor" — étages avec "on".'},
+  // Level 3 (+13)
+  {id:'prep_3_01',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'at',example:'I arrive at school at eight in the morning.',hint:'"at" pour heure ou lieu précis',explanation:'"At" = heure précise / lieu précis.'},
+  {id:'prep_3_02',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'in front of',example:'I always wait in front of the school.',hint:'"in front of" = devant',explanation:'"In front of" = devant.'},
+  {id:'prep_3_03',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'between',example:'The post office is between the bank and the park.',hint:'"between" = entre deux choses',explanation:'"Between A and B" = entre A et B.'},
+  {id:'prep_3_04',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'by',example:'I go to school by bicycle.',hint:'"by" + moyen de transport',explanation:'"By bus/car/train" = en bus/voiture/train.'},
+  {id:'prep_3_05',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'The party is in the night.',answer:'The party is at night.',hint:'at night (exception)',explanation:'"At night" — exception. Mais : "in the morning/evening".'},
+  {id:'prep_3_06',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'I go to school in 7 am.',answer:'I go to school at 7 am.',hint:'heure précise → at',explanation:'"At 7 am" — heure précise.'},
+  {id:'prep_3_07',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'She lives on Madagascar.',answer:'She lives in Madagascar.',hint:'pays → in',explanation:'"In Madagascar" — on dit "in" pour les pays.'},
+  {id:'prep_3_08',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'We meet on the afternoon.',answer:'We meet in the afternoon.',hint:'in the afternoon',explanation:'"In the afternoon" — pas "on".'},
+  {id:'prep_3_09',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'She was born on the 3rd of May.',answer:'Elle est née le 3 mai.',hint:'on the 3rd of May = le 3 mai',explanation:'"On the 3rd of May" = "le 3 mai".'},
+  {id:'prep_3_10',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'The school is in front of the church.',answer:"L'école est en face de l'église.",alternatives:["L'école est devant l'église."],hint:'in front of = en face de / devant',explanation:'"In front of" = "devant" ou "en face de".'},
+  {id:'prep_3_11',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'I will arrive at noon on Saturday.',answer:'J\'arriverai à midi samedi.',alternatives:["J'arriverai le samedi à midi."],hint:'at noon = à midi, on Saturday = samedi',explanation:'"At noon on Saturday".'},
+  {id:'prep_3_12',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'The book is between the pen and the eraser.',answer:'Le livre est entre le stylo et la gomme.',hint:'between = entre',explanation:'"Between" = "entre".'},
+  {id:'prep_3_13',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'I go to school by bus on weekdays.',question:'Comment va-t-il à l\'école ?',answer:'By bus.',alternatives:['He goes by bus.','On the bus.'],hint:'Écoutez le moyen de transport',explanation:'"By bus" = en bus.'},
+  {id:'prep_3_14',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'The market is open on Fridays and Saturdays.',question:'Quand le marché est-il ouvert ?',answer:'On Fridays and Saturdays.',alternatives:['Friday and Saturday.','On Friday and Saturday.'],hint:'Écoutez les jours',explanation:'"On Fridays and Saturdays".'},
+  {id:'prep_3_15',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'She lives near the lake between two mountains.',question:'Où habite-t-elle ?',answer:'Near the lake, between two mountains.',alternatives:['Between two mountains.','Near a lake.'],hint:'Écoutez les prépositions de lieu',explanation:'"Near the lake between two mountains".'}
+);
+
+// ─── QUESTIONS ───────────────────────────────────────────────────────────────
+exercises.questions.push(
+  // Level 1 (+12)
+  {id:'q_1_01',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon mot interrogatif.',question:'___ do you live?',options:['What','Where','When','Who'],answer:'Where',hint:'pour un lieu',explanation:'"Where" = où.'},
+  {id:'q_1_02',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon mot interrogatif.',question:'___ is your name?',options:['What','Where','When','Who'],answer:'What',hint:'pour une chose',explanation:'"What" = quoi/quel.'},
+  {id:'q_1_03',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon mot interrogatif.',question:'___ is she?',options:['What','Where','When','Who'],answer:'Who',hint:'pour une personne',explanation:'"Who" = qui.'},
+  {id:'q_1_04',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon mot interrogatif.',question:'___ do you go to school?',options:['What','Where','When','Who'],answer:'When',hint:'pour un moment',explanation:'"When" = quand.'},
+  {id:'q_1_05',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ do you like coffee?',options:['What','Where','Why','Who'],answer:'Why',hint:'pour une raison',explanation:'"Why" = pourquoi.'},
+  {id:'q_1_06',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ old are you?',options:['What','How','Who','Why'],answer:'How',hint:'"How" + adjectif',explanation:'"How old" = quel âge.'},
+  {id:'q_1_07',type:'fill-blank',diffLevel:1,instruction:'Complétez la question.',template:'___ do you come from?',answer:'Where',hint:'lieu d\'origine',explanation:'"Where do you come from?" = D\'où viens-tu?'},
+  {id:'q_1_08',type:'fill-blank',diffLevel:1,instruction:'Complétez la question.',template:'___ many students are in your class?',answer:'How',hint:'"How many" + dénombrable',explanation:'"How many" pour compter des objets dénombrables.'},
+  {id:'q_1_09',type:'fill-blank',diffLevel:1,instruction:'Complétez la question.',template:'___ do you prefer, tea or coffee?',answer:'What',hint:'choix entre deux choses',explanation:'"What do you prefer?" = Que préfères-tu?'},
+  {id:'q_1_10',type:'fill-blank',diffLevel:1,instruction:'Complétez la question.',template:'___ is your teacher\'s name?',answer:'What',hint:'pour un nom',explanation:'"What is your teacher\'s name?" = Quel est le nom de ton prof?'},
+  {id:'q_1_11',type:'fill-blank',diffLevel:1,instruction:'Complétez la question.',template:'___ is your birthday?',answer:'When',hint:'pour une date',explanation:'"When is your birthday?" = C\'est quand ton anniversaire?'},
+  {id:'q_1_12',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['you','do','live','Where','?'],answer:'Where do you live?',hint:'Where + do + sujet + verbe',explanation:'"Where do you live?" — mot interrogatif + auxiliaire + sujet + verbe.'},
+  {id:'q_1_13',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['old','are','How','you','?'],answer:'How old are you?',hint:'"How old" + are + you',explanation:'"How old are you?" — question sur l\'âge.'},
+  {id:'q_1_14',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['your','What','name','is','?'],answer:'What is your name?',hint:'What + is + sujet',explanation:'"What is your name?"'},
+  {id:'q_1_15',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['do','Why','late','come','you','?'],answer:'Why do you come late?',hint:'Why + do + sujet + verbe',explanation:'"Why do you come late?" — raison.'},
+  // Level 2 (+11)
+  {id:'q_2_01',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Combien ça coûte ?',answer:'How much does it cost?',alternatives:['How much is it?'],hint:'"How much" pour un prix',explanation:'"How much" = combien (non-dénombrable / prix).'},
+  {id:'q_2_02',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Pourquoi est-ce qu\'elle est en retard ?',answer:"Why is she late?",hint:'Why + auxiliaire + sujet',explanation:'"Why is she late?" — question directe.'},
+  {id:'q_2_03',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Quand est-ce que le bus part ?',answer:'When does the bus leave?',alternatives:['When does the bus depart?'],hint:'"When does" + sujet + verbe',explanation:'"When does the bus leave?"'},
+  {id:'q_2_04',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Qui a pris mon livre ?',answer:'Who took my book?',hint:'Who + verbe (pas d\'auxiliaire avec who sujet)',explanation:'"Who took my book?" — "who" est le sujet → pas de "did".'},
+  {id:'q_2_05',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Comment s\'appelle ton professeur ?',answer:"What is your teacher's name?",alternatives:['What is the name of your teacher?'],hint:'What is...name?',explanation:'"What is your teacher\'s name?"'},
+  {id:'q_2_06',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'Where do you come from?',answer:'Where do you come from?',hint:'Where + do + sujet',explanation:'"Where do you come from?" = D\'où viens-tu?'},
+  {id:'q_2_07',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'How many brothers do you have?',answer:'How many brothers do you have?',hint:'"How many" + pluriel',explanation:'"How many brothers do you have?"'},
+  {id:'q_2_08',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:"Why didn't you come to school yesterday?",answer:"Why didn't you come to school yesterday?",hint:'Why + didn\'t + sujet',explanation:'"Why didn\'t you come?" — négatif passé.'},
+  {id:'q_2_09',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'What time does the train arrive?',answer:'What time does the train arrive?',hint:'"What time does" + sujet',explanation:'"What time does the train arrive?"'},
+  {id:'q_2_10',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'Which book do you prefer?',answer:'Which book do you prefer?',hint:'Which = lequel',explanation:'"Which" = lequel (choix limité).'},
+  {id:'q_2_11',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['does','what','do','she','?'],answer:'What does she do?',hint:'What + does + sujet + infinitif',explanation:'"What does she do?" — profession/activité.'},
+  {id:'q_2_12',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['did','you','go','Where','yesterday','?'],answer:'Where did you go yesterday?',hint:'Where + did + sujet + infinitif',explanation:'"Where did you go yesterday?" — passé.'},
+  {id:'q_2_13',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['does','cost','much','How','it','?'],answer:'How much does it cost?',hint:'"How much does" + sujet',explanation:'"How much does it cost?"'},
+  {id:'q_2_14',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['is','Who','your','teacher','favourite','?'],answer:'Who is your favourite teacher?',hint:'Who + is',explanation:'"Who is your favourite teacher?"'},
+  {id:'q_2_15',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['take','does','long','it','How','to','walk','school','to','?'],answer:'How long does it take to walk to school?',hint:'"How long does it take..."',explanation:'"How long does it take to...?" — durée.'},
+  // Level 3 (+14)
+  {id:'q_3_01',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'why',example:'Why do you like English?',hint:'"Why" = pourquoi',explanation:'"Why" introduit une question sur la raison.'},
+  {id:'q_3_02',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'how many',example:'How many students are in your class?',hint:'"How many" + dénombrable',explanation:'"How many" pour les noms dénombrables.'},
+  {id:'q_3_03',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'whose',example:'Whose book is this?',hint:'"Whose" = à qui',explanation:'"Whose" = à qui (possession).'},
+  {id:'q_3_04',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'which',example:'Which colour do you prefer?',hint:'"Which" = lequel (choix limité)',explanation:'"Which" = lequel (choix limité).'},
+  {id:'q_3_05',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'What she does for work?',answer:'What does she do for work?',hint:'does avant le sujet',explanation:'"What does she do?" — auxiliaire avant le sujet.'},
+  {id:'q_3_06',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'Where you live?',answer:'Where do you live?',hint:'auxiliaire do requis',explanation:'"Where do you live?" — "do" requis avec les verbes ordinaires.'},
+  {id:'q_3_07',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'Who did came to the party?',answer:'Who came to the party?',hint:'"Who" sujet → pas d\'auxiliaire',explanation:'"Who came?" — "who" est sujet → pas de "did".'},
+  {id:'q_3_08',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'How much books do you have?',answer:'How many books do you have?',hint:'books = dénombrable → how many',explanation:'"How many" (dénombrable). "How much" (non-dénombrable).'},
+  {id:'q_3_09',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'What time does the school start?',answer:'À quelle heure commence l\'école ?',hint:'What time = à quelle heure',explanation:'"What time" = "à quelle heure".'},
+  {id:'q_3_10',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'How long have you been waiting?',answer:'Depuis combien de temps attends-tu ?',alternatives:['Depuis quand attends-tu ?'],hint:'How long = depuis combien de temps',explanation:'"How long have you been...?" = "Depuis combien de temps...?"'},
+  {id:'q_3_11',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'Who told you that?',answer:'Qui t\'a dit ça ?',hint:'Who = qui',explanation:'"Who told you that?" = "Qui t\'a dit ça?"'},
+  {id:'q_3_12',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'Which way should I go?',answer:'Par quel chemin dois-je aller ?',alternatives:['Quel chemin dois-je prendre ?'],hint:'which way = par quel chemin',explanation:'"Which way" = "par quel chemin/quelle direction".'},
+  {id:'q_3_13',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'Where do you come from? I come from Madagascar.',question:'D\'où vient la personne ?',answer:'From Madagascar.',alternatives:['Madagascar.','She comes from Madagascar.'],hint:'Écoutez la réponse',explanation:'"I come from Madagascar."'},
+  {id:'q_3_14',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'How many languages do you speak? I speak three languages.',question:'Combien de langues parle-t-il ?',answer:'Three.',alternatives:['Three languages.','He speaks three.'],hint:'Écoutez le nombre',explanation:'"I speak three languages."'},
+  {id:'q_3_15',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'Why are you late? Because the bus was delayed.',question:'Pourquoi est-il en retard ?',answer:'Because the bus was delayed.',alternatives:['The bus was late.','The bus was delayed.'],hint:'Écoutez la raison',explanation:'"Because the bus was delayed."'}
+);
+
+// ─── MODALS ──────────────────────────────────────────────────────────────────
+exercises.modals.push(
+  // Level 1 (+15)
+  {id:'mod_1_01',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon modal.',question:'She ___ swim very well.',options:['can','must','should','have'],answer:'can',hint:'capacité → can',explanation:'"Can" = capacité.'},
+  {id:'mod_1_02',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon modal.',question:'You ___ eat more vegetables.',options:['can','must','should','will'],answer:'should',hint:'conseil → should',explanation:'"Should" = conseil.'},
+  {id:'mod_1_03',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon modal.',question:'You ___ wear a seatbelt. It\'s the law.',options:['can','must','should','might'],answer:'must',hint:'obligation forte → must',explanation:'"Must" = obligation forte.'},
+  {id:'mod_1_04',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon modal.',question:'It ___ rain tomorrow. The sky is cloudy.',options:['must','should','might','can'],answer:'might',hint:'possibilité incertaine → might',explanation:'"Might" = possibilité incertaine.'},
+  {id:'mod_1_05',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon modal.',question:'___ you help me, please?',options:['Can','Must','Should','Might'],answer:'Can',hint:'demande polie → can',explanation:'"Can you help me?" = demande polie.'},
+  {id:'mod_1_06',type:'multiple-choice',diffLevel:1,instruction:'Choisissez le bon modal.',question:'You ___ enter — it\'s private.',options:['must','can\'t','should','might'],answer:"can't",hint:'interdiction → can\'t',explanation:'"Can\'t" = interdiction.'},
+  {id:'mod_1_07',type:'fill-blank',diffLevel:1,instruction:"Complétez avec can ou can't.",template:'He ___ drive yet — he is only 15.',answer:"can't",hint:'15 ans → trop jeune',explanation:'"Can\'t drive" — trop jeune.'},
+  {id:'mod_1_08',type:'fill-blank',diffLevel:1,instruction:"Complétez avec should ou shouldn't.",template:'You ___ stay up too late. You have school tomorrow.',answer:"shouldn't",hint:'mauvais conseil → shouldn\'t',explanation:'"Shouldn\'t" = ne devrait pas (conseil négatif).'},
+  {id:'mod_1_09',type:'fill-blank',diffLevel:1,instruction:"Complétez avec must ou mustn't.",template:'You ___ touch that wire — it is dangerous.',answer:"mustn't",hint:'danger → mustn\'t',explanation:'"Mustn\'t" = interdiction absolue (danger).'},
+  {id:'mod_1_10',type:'fill-blank',diffLevel:1,instruction:"Complétez avec will ou would.",template:'___ you like some tea?',answer:'Would',hint:'offre polie → would',explanation:'"Would you like...?" = offre polie.'},
+  {id:'mod_1_11',type:'fill-blank',diffLevel:1,instruction:"Complétez avec may ou might.",template:'She ___ be at the market — I\'m not sure.',answer:'might',alternatives:['may'],hint:'incertitude → might/may',explanation:'"Might/may" = peut-être.'},
+  {id:'mod_1_12',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['can','She','English','speak'],answer:'She can speak English.',hint:'can + infinitif (sans to)',explanation:'"Can" + infinitif.'},
+  {id:'mod_1_13',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['should','more','You','exercise'],answer:'You should exercise more.',hint:'should + infinitif',explanation:'"Should" + infinitif.'},
+  {id:'mod_1_14',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['here','must','You','on','be','time'],answer:'You must be here on time.',hint:'must + infinitif',explanation:'"Must" + infinitif.'},
+  {id:'mod_1_15',type:'word-order',diffLevel:1,instruction:'Mettez dans le bon ordre.',words:['help','Could','please','you','me','?'],answer:'Could you help me please?',hint:'Could = can poli',explanation:'"Could you...?" = demande polie.'},
+  // Level 2 (+11)
+  {id:'mod_2_01',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Elle sait parler trois langues.',answer:'She can speak three languages.',alternatives:['She is able to speak three languages.'],hint:'savoir → can',explanation:'"Can" = savoir/pouvoir.'},
+  {id:'mod_2_02',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Tu ne devrais pas manger autant de sucre.',answer:"You shouldn't eat so much sugar.",alternatives:["You should not eat so much sugar."],hint:'conseil négatif → shouldn\'t',explanation:'"Shouldn\'t" = ne devrait pas.'},
+  {id:'mod_2_03',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Il doit finir ses devoirs avant dîner.',answer:'He must finish his homework before dinner.',alternatives:['He has to finish his homework before dinner.'],hint:'obligation → must / have to',explanation:'"Must/have to" = obligation.'},
+  {id:'mod_2_04',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Puis-je aller aux toilettes ?',answer:'May I go to the toilet?',alternatives:['Can I go to the toilet?'],hint:'permission → may/can',explanation:'"May I...?" = permission (formel).'},
+  {id:'mod_2_05',type:'translate',diffLevel:2,instruction:'Traduisez en anglais.',french:'Il se pourrait qu\'il pleuve ce soir.',answer:'It might rain this evening.',alternatives:['It may rain this evening.'],hint:'possibilité → might/may',explanation:'"Might/may" = possibilité.'},
+  {id:'mod_2_06',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'You should drink more water every day.',answer:'You should drink more water every day.',hint:'should + infinitif',explanation:'"Should drink" = conseil.'},
+  {id:'mod_2_07',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'Can you close the window please?',answer:'Can you close the window please?',hint:'Can = capacité/demande',explanation:'"Can you...?" = demande polie.'},
+  {id:'mod_2_08',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'You must not smoke inside the building.',answer:'You must not smoke inside the building.',hint:'must not = interdiction',explanation:'"Must not" = interdiction.'},
+  {id:'mod_2_09',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'She might come to the party tonight.',answer:'She might come to the party tonight.',hint:'might = peut-être',explanation:'"Might come" = possibilité.'},
+  {id:'mod_2_10',type:'listening',diffLevel:2,instruction:'Écoutez et écrivez ce que vous entendez.',audio:'Would you like some coffee or tea?',answer:'Would you like some coffee or tea?',hint:'Would = offre polie',explanation:'"Would you like...?" = offre polie.'},
+  {id:'mod_2_11',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['could','you','the','door','Could','open','?'],answer:'Could you open the door?',hint:'Could = can poli',explanation:'"Could you open...?" = demande polie.'},
+  {id:'mod_2_12',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['must','passport','You','your','carry'],answer:'You must carry your passport.',hint:'must + infinitif',explanation:'"Must carry" = obligation.'},
+  {id:'mod_2_13',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['might','late','be','She'],answer:'She might be late.',hint:'might + infinitif',explanation:'"Might be" = possibilité.'},
+  {id:'mod_2_14',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['not','You','here','mustn\'t','smoke'],answer:"You mustn't smoke here.",hint:"mustn't + infinitif",explanation:'"Mustn\'t smoke" = interdiction.'},
+  {id:'mod_2_15',type:'word-order',diffLevel:2,instruction:'Mettez dans le bon ordre.',words:['can','you','fast','How','run','?'],answer:'How fast can you run?',hint:'How + modal + sujet + infinitif',explanation:'"How fast can you run?"'},
+  // Level 3 (+11)
+  {id:'mod_3_01',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'should',example:'You should study every evening.',hint:'"should" = conseil',explanation:'"Should" = conseil / recommandation.'},
+  {id:'mod_3_02',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'might',example:'It might snow tomorrow.',hint:'"might" = possibilité incertaine',explanation:'"Might" = peut-être.'},
+  {id:'mod_3_03',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'must',example:'You must arrive on time.',hint:'"must" = obligation forte',explanation:'"Must" = obligation.'},
+  {id:'mod_3_04',type:'free-production',diffLevel:3,instruction:'Écris une phrase avec le mot donné.',keyword:'could',example:'Could you pass me the salt?',hint:'"could" = demande polie ou capacité passée',explanation:'"Could" = polie ou passé de "can".'},
+  {id:'mod_3_05',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'She can to sing very well.',answer:'She can sing very well.',hint:'modal → pas de "to"',explanation:'Après les modaux : infinitif SANS "to".'},
+  {id:'mod_3_06',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'You must to wear a seatbelt.',answer:'You must wear a seatbelt.',hint:'must → pas de "to"',explanation:'"Must wear" — pas de "to" après les modaux.'},
+  {id:'mod_3_07',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'He musts leave now.',answer:'He must leave now.',hint:'modaux invariables — jamais de -s',explanation:'"Must" = invariable.'},
+  {id:'mod_3_08',type:'error-correct',diffLevel:3,instruction:"Corrigez l'erreur.",sentence:'Should I to bring anything?',answer:'Should I bring anything?',hint:'should → pas de "to"',explanation:'"Should I bring?" — pas de "to".'},
+  {id:'mod_3_09',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'You should see a doctor.',answer:'Tu devrais voir un médecin.',hint:'should = devrais',explanation:'"Should" = "devrait/devrais".'},
+  {id:'mod_3_10',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'She can speak English and French.',answer:'Elle parle (sait parler) anglais et français.',hint:'can speak = sait parler',explanation:'"Can speak" = "sait parler".'},
+  {id:'mod_3_11',type:'translate-fr',diffLevel:3,instruction:'Traduisez en français.',english:'You must not enter without permission.',answer:'Tu ne dois pas entrer sans permission.',hint:'must not = ne doit pas',explanation:'"Must not" = interdiction.'},
+  {id:'mod_3_12',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'You should eat vegetables and you must drink water.',question:'Quel modal exprime une obligation ?',answer:'must',alternatives:['Must.'],hint:'conseil vs obligation',explanation:'"Should" = conseil. "Must" = obligation.'},
+  {id:'mod_3_13',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'Can you ride a bicycle? Yes, I can.',question:'La personne peut-elle faire du vélo ?',answer:'Yes, she can.',alternatives:['Yes.','Yes, he can.'],hint:'Écoutez la réponse',explanation:'"Yes, I can" = oui, je peux.'},
+  {id:'mod_3_14',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:'It might rain this afternoon so you should take an umbrella.',question:'Que conseille-t-on de prendre ?',answer:'An umbrella.',alternatives:['umbrella','A umbrella.'],hint:'Écoutez la recommandation',explanation:'"Take an umbrella" = prendre un parapluie.'},
+  {id:'mod_3_15',type:'listening-comp',diffLevel:3,instruction:'Écoutez et répondez à la question.',audio:"You mustn't use your phone in class.",question:'Que ne peut-on pas faire en classe ?',answer:'Use a phone.',alternatives:['Use your phone.','Use the phone.'],hint:'Écoutez l\'interdiction',explanation:'"Mustn\'t use your phone in class".'}
+);
 
 export function getAllExercises() {
   return Object.values(exercises).flat();
