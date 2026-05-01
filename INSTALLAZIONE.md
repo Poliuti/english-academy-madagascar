@@ -1,74 +1,83 @@
-# 📚 Guide d'installation — English Academy Madagascar
+# 📚 Guida installazione — English Academy Madagascar
 
-## Prérequis
+## Requisiti
 
-- Windows 10 ou 11
-- Python 3.x installé ([python.org](https://www.python.org/downloads/))
-- Connexion internet pour l'installation initiale
-
----
-
-## Étape 1 : Télécharger et installer Ollama
-
-1. Aller sur → **https://ollama.com/download**
-2. Cliquer sur **"Download for Windows"**
-3. Double-cliquer sur le fichier téléchargé et l'installer normalement
+- Windows 10 o 11
+- Connessione internet **solo durante l'installazione** (poi funziona offline)
 
 ---
 
-## Étape 2 : Configuration initiale *(une seule fois)*
+## Installazione (una volta sola per PC)
 
-Double-cliquer sur **`setup_premier_demarrage.bat`**
+### Passo 1 — Installa Python
 
-Ce script va automatiquement :
-- ✅ Configurer les permissions nécessaires (CORS)
-- ✅ Télécharger le modèle IA **llama3.2:3b** (~2 Go)
+1. Vai su → **https://www.python.org/downloads/**
+2. Clicca **"Download Python"**
+3. Durante l'installazione spunta obbligatoriamente **"Add Python to PATH"**
+4. Completa l'installazione
 
-⏳ *Attendre **5 à 10 minutes** selon la vitesse de connexion*
+### Passo 2 — Installa Ollama
+
+1. Vai su → **https://ollama.com/download**
+2. Clicca **"Download for Windows"**
+3. Installa normalmente (doppio clic sul file scaricato)
+
+### Passo 3 — Installa l'app
+
+1. Copia la cartella **`english-academy-madagascar`** sul PC (chiavetta USB o download)
+2. Apri la cartella
+3. Fai doppio clic su **`installa.bat`**
+
+Lo script fa tutto in automatico:
+- ✅ Controlla Python e Ollama
+- ✅ Scarica il modello AI **llama3.2:3b** (~2 GB) — *richiede ~10 minuti*
+- ✅ Configura l'avvio automatico all'accensione del PC
+- ✅ Crea un collegamento **"English Academy"** sul Desktop
 
 ---
 
-## Étape 3 : Utilisation quotidienne
+## Utilizzo quotidiano
 
-Double-cliquer sur **`avvia.bat`** à chaque démarrage.
+**Non serve fare nulla.** L'app parte automaticamente all'accensione del PC.
 
-L'application s'ouvre automatiquement dans le navigateur.
+Se il browser non si apre da solo, clicca il collegamento **"English Academy"** sul Desktop.
 
 ---
 
-## ✅ Fonctionne sans internet après l'installation
+## Funziona senza internet?
 
-Une fois configuré, tout fonctionne hors ligne :
+✅ **Sì, completamente offline** dopo l'installazione.
 
-| Fonctionnalité | Hors ligne |
+| Funzionalità | Offline |
 |---|---|
-| Cours de grammaire (Théorie) | ✅ |
-| Boky fampianarana (bilingue FR/MG) | ✅ |
-| Exercices interactifs | ✅ |
-| Synthèse vocale (audio) | ✅ |
-| Tutor IA (Ollama) | ✅ |
+| Grammatica, teoria, lezioni | ✅ |
+| Esercizi interattivi | ✅ |
+| Audio e pronuncia | ✅ |
+| Vocabolario con flashcard | ✅ |
+| Tutor IA (chatbot) | ✅ |
 
 ---
 
-## ❓ Problèmes fréquents
+## Problemi frequenti
 
-| Problème | Solution |
+| Problema | Soluzione |
 |---|---|
-| "Ollama hors ligne" | Patienter quelques secondes — la page se reconnecte automatiquement |
-| "Modèle non trouvé" | Ouvrir un terminal et lancer : `ollama pull llama3.2:3b` |
-| Page blanche | Vérifier que Python est installé : `python --version` dans un terminal |
-| Ollama ne démarre pas | Relancer `avvia.bat` en tant qu'administrateur |
+| Il Tutor IA mostra "disponibile solo in locale" | Aspetta 10 secondi dopo l'accensione, poi ricarica la pagina |
+| Pagina bianca | Clicca di nuovo su "English Academy" sul Desktop |
+| "Modello non trovato" | Apri un terminale e lancia: `ollama pull llama3.2:3b` |
+| installa.bat dà errori | Fai clic destro → **Esegui come amministratore** |
 
 ---
 
-## 📁 Structure des fichiers
+## Struttura cartella
 
 ```
 english-academy-madagascar/
-├── avvia.bat                    ← Lancer chaque jour
-├── setup_premier_demarrage.bat  ← Lancer UNE seule fois
-├── INSTALLAZIONE.md             ← Ce guide
+├── installa.bat          ← Esegui UNA SOLA VOLTA per configurare
+├── avvia.bat             ← Avvio manuale (di solito non serve)
+├── avvia_silent.vbs      ← Avvio silenzioso (usato in automatico)
+├── INSTALLAZIONE.md      ← Questa guida
 ├── index.html
-├── public/audio/                ← Fichiers audio (synthèse vocale)
-└── src/                         ← Code source de l'application
+├── public/audio/         ← File audio
+└── src/                  ← Codice sorgente
 ```
