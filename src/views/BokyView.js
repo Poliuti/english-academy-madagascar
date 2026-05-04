@@ -231,8 +231,8 @@ function renderChapter(chapter, l) {
               <tbody>
                 ${s.rows.map(row => `
                   <tr>
-                    <td class="boky-en">${escHtml(row.en)}</td>
-                    <td class="boky-tr ${row.tr.includes('[?]') ? 'boky-uncertain' : ''}">${escHtml(row.tr)}</td>
+                    <td class="boky-en">${row.en}</td>
+                    <td class="boky-tr ${row.tr.includes('[?]') ? 'boky-uncertain' : ''}">${row.tr}</td>
                     <td class="boky-tts-cell">
                       <button class="tts-btn" data-text="${escHtml(stripTags(row.tts || row.en))}" title="Écouter">▶</button>
                     </td>
@@ -248,7 +248,7 @@ function renderChapter(chapter, l) {
         <div class="boky-errors">
           <h3>${l === 'fr' ? '⚠️ Erreurs fréquentes' : '⚠️ Hadisoana mahazatra'}</h3>
           <ul>
-            ${data.commonErrors.map(e => `<li>${escHtml(e)}</li>`).join('')}
+            ${data.commonErrors.map(e => `<li>${e}</li>`).join('')}
           </ul>
         </div>
       ` : ''}
@@ -257,7 +257,7 @@ function renderChapter(chapter, l) {
         <div class="boky-tips">
           <h3>${l === 'fr' ? '💡 Points importants' : '💡 Torohevitra'}</h3>
           <ul>
-            ${data.tips.map(t => `<li class="${t.includes('[?]') ? 'boky-uncertain' : ''}">${escHtml(t)}</li>`).join('')}
+            ${data.tips.map(t => `<li class="${t.includes('[?]') ? 'boky-uncertain' : ''}">${t}</li>`).join('')}
           </ul>
         </div>
       ` : ''}
@@ -266,7 +266,7 @@ function renderChapter(chapter, l) {
         <div class="boky-summary">
           <h3>${l === 'fr' ? '📌 En bref' : '📌 Andao ho tohizana'}</h3>
           <ul>
-            ${data.summary.map(s => `<li>${escHtml(s)}</li>`).join('')}
+            ${data.summary.map(s => `<li>${s}</li>`).join('')}
           </ul>
         </div>
       ` : ''}
