@@ -13,6 +13,9 @@ export function renderTheory(topicId) {
   let currentMalgasyId = malgasyManual[0]?.id || '';
 
   function render() {
+    // Preserve sidebar scroll position across re-renders
+    const savedSidebarScroll = container.querySelector('.theory-sidebar')?.scrollTop ?? 0;
+
     container.innerHTML = `
       <div class="theory-layout">
         <!-- Sidebar -->
@@ -54,6 +57,10 @@ export function renderTheory(topicId) {
         </main>
       </div>
     `;
+
+    // Restore sidebar scroll (main content always resets to top)
+    const sidebar = container.querySelector('.theory-sidebar');
+    if (sidebar && savedSidebarScroll > 0) sidebar.scrollTop = savedSidebarScroll;
 
     bindEvents();
   }

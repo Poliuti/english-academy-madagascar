@@ -240,7 +240,10 @@ function renderExerciseCard(container, state, profile) {
 
 function renderQuestion(ex) {
   if (ex.type === 'fill-blank') {
-    return `<div class="ex-question">${escHtml(ex.template).replace('___', '<span class="blank">___</span>')}</div>`;
+    // Show verb hint in parentheses if provided: ___ (go)
+    const hint = ex.verbHint ? `<span class="verb-hint">(${escHtml(ex.verbHint)})</span>` : '';
+    const blanked = escHtml(ex.template).replace('___', `<span class="blank">___</span>${hint}`);
+    return `<div class="ex-question">${blanked}</div>`;
   }
   if (ex.type === 'translate') {
     return `<div class="ex-question translate-q"><span class="flag">🇫🇷</span> ${escHtml(ex.french)}</div>`;
@@ -490,7 +493,8 @@ function showFeedback(container, correct, ex, rawAnswer, xp) {
   feedbackBox.classList.remove('hidden', 'correct', 'incorrect');
   feedbackBox.classList.add(correct ? 'correct' : 'incorrect');
 
-  const correctAnswer = ex.answer;
+  // Gather all accepted answers for display
+  const allAccepted = [ex.answer, ...(ex.acceptedAnswers || []), ...(ex.alternatives || [])];
 
   feedbackBox.innerHTML = correct
     ? `
@@ -508,7 +512,8 @@ function showFeedback(container, correct, ex, rawAnswer, xp) {
       </div>
       <div class="feedback-answer">
         <span class="your-answer">Toi : <em>${escHtml(rawAnswer)}</em></span>
-        <span class="correct-answer">✓ Correct : <strong>${escHtml(correctAnswer)}</strong></span>
+        <span class="correct-answer">✓ Correct : <strong>${escHtml(ex.answer)}</strong></span>
+        ${allAccepted.length > 1 ? `<span class="also-accepted">Aussi accepté : ${allAccepted.slice(1).map(a => `<em>${escHtml(a)}</em>`).join(', ')}</span>` : ''}
       </div>
       ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
     `;
@@ -677,7 +682,7 @@ function checkAnswer(raw, ex) {
     .trim()
     .replace(/[.!?,;:]/g, '')   // strip punctuation
     .replace(/\s+/g, ' ')
-    .trim()                      // ← trim AFTER punctuation removal (fixes "word ." trailing space)
+    .trim()
     // contraction expansions (both directions)
     .replace(/won't/g,    'will not')
     .replace(/will not/g, "won't")
@@ -719,6 +724,9 @@ function checkAnswer(raw, ex) {
     .replace(/i'd/g,      'i would')
     .replace(/i'll/g,     'i will');
 
+  // Strip optional articles for article-flexibility ("the dinner" ≈ "dinner")
+  const stripArticles = s => s.replace(/\b(the|a|an)\b\s*/g, '').replace(/\s+/g, ' ').trim();
+
   // Free production: correct if the keyword appears and answer is ≥ 4 words
   if (ex.type === 'free-production') {
     const words = raw.trim().split(/\s+/);
@@ -730,11 +738,16 @@ function checkAnswer(raw, ex) {
 
   if (ans === correct) return true;
 
-  // Check official alternatives
+  // Check acceptedAnswers list (explicit multi-answer support)
+  if (ex.acceptedAnswers?.some(a => normalize(a) === ans)) return true;
+
+  // Check legacy alternatives array
   if (ex.alternatives?.some(alt => normalize(alt) === ans)) return true;
 
-  // Check synonym substitution: replace each synonym in the correct answer
-  // and check if it matches the user's answer
+  // Article-flexible comparison: ignore a/an/the differences
+  if (stripArticles(ans) === stripArticles(correct) && stripArticles(ans).length > 0) return true;
+
+  // Check synonym substitution
   for (const [a, b] of SYNONYMS) {
     const re = new RegExp('\\b' + a + '\\b', 'g');
     if (normalize(correct.replace(re, b)) === ans) return true;

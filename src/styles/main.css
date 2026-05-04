@@ -472,7 +472,11 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .feedback-answer { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; font-size: .9rem; }
 .your-answer { color: var(--error); }
 .correct-answer { color: var(--success); }
+.also-accepted { color: var(--text-muted); font-size: .82rem; }
+.also-accepted em { font-style: normal; font-weight: 600; }
 .feedback-explanation { font-size: .85rem; color: var(--text-muted); border-top: 1px solid rgba(0,0,0,.08); padding-top: 8px; margin-top: 4px; }
+/* Verb hint shown next to blank: ___ (go) */
+.verb-hint { font-size: .85rem; color: var(--primary); font-weight: 600; margin-left: 4px; opacity: .8; }
 
 @keyframes slideIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
