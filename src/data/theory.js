@@ -2092,6 +2092,122 @@ export function getTheoryById(id) {
   },
 
 
+
+  relativeClauses: {
+    id: 'relativeClauses',
+    title: 'Les Propositions Relatives',
+    icon: '🔗',
+    level: 'A2–B1',
+    subtitle: 'Who, which, that, whose, where, when',
+    malgasyNote: 'Fehezanteny mampifandray: izay, izay nanapaka, ny toerana...',
+    sections: [
+      {
+        title: '🧍 Who — pour les personnes',
+        content: '<strong>Who</strong> remplace un nom de personne dans la proposition relative',
+        examples: [
+          { en: 'The man <strong>who</strong> called you is my uncle.', fr: 'L\'homme qui t\'a appelé est mon oncle.' },
+          { en: 'The students <strong>who</strong> study hard succeed.', fr: 'Les étudiants qui travaillent dur réussissent.' },
+          { en: 'She is the teacher <strong>who</strong> helped me most.', fr: 'C\'est la professeure qui m\'a le plus aidé.' },
+        ]
+      },
+      {
+        title: '🪑 Which — pour les choses et animaux',
+        content: '<strong>Which</strong> remplace un nom de chose ou d\'animal',
+        examples: [
+          { en: 'The book <strong>which</strong> I read was amazing.', fr: 'Le livre que j\'ai lu était incroyable.' },
+          { en: 'The car <strong>which</strong> broke down is being repaired.', fr: 'La voiture qui est tombée en panne est en réparation.' },
+          { en: 'This is the film <strong>which</strong> won the Oscar.', fr: 'C\'est le film qui a gagné l\'Oscar.' },
+        ]
+      },
+      {
+        title: '🔄 That — universel (personnes + choses)',
+        content: '<strong>That</strong> peut remplacer "who" ou "which" dans les propositions relatives définissantes (restrictives)',
+        examples: [
+          { en: 'The man <strong>that</strong> called you is my uncle.', fr: '(= who) L\'homme qui t\'a appelé...' },
+          { en: 'The book <strong>that</strong> I read was amazing.', fr: '(= which) Le livre que j\'ai lu...' },
+          { en: '⚠️ "That" ne peut pas remplacer "which" dans les relatives non-restrictives.', fr: 'Londres, which is the capital, is beautiful. (pas "that")' },
+        ]
+      },
+      {
+        title: '🏠 Whose / Where / When',
+        content: '<strong>Whose</strong> = dont (possession) | <strong>Where</strong> = où | <strong>When</strong> = quand/où',
+        examples: [
+          { en: 'The student <strong>whose</strong> bag was stolen came to see me.', fr: 'L\'étudiant dont le sac a été volé est venu me voir.' },
+          { en: 'That\'s the school <strong>where</strong> I studied.', fr: 'C\'est l\'école où j\'ai étudié.' },
+          { en: 'I remember the day <strong>when</strong> we first met.', fr: 'Je me souviens du jour où nous nous sommes rencontrés.' },
+        ]
+      },
+      {
+        title: '⚠️ Relative définissante vs non-définissante',
+        content: '<strong>Définissante</strong> (pas de virgule) : identifie le nom. <strong>Non-définissante</strong> (avec virgule) : ajoute une info',
+        examples: [
+          { en: 'The man <strong>who</strong> stole the bag was caught. (qui? → identifie)', fr: 'L\'homme qui a volé le sac a été attrapé.' },
+          { en: 'My brother, <strong>who</strong> lives in Paris, is a doctor. (info supplémentaire)', fr: 'Mon frère, qui vit à Paris, est médecin.' },
+          { en: '⚠️ Non-définissante → jamais "that", toujours "who/which"', fr: 'Mon frère, that... (incorrect !)' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Who → personnes | Which → choses/animaux | That → personnes + choses (restrictives)',
+      '🔑 Whose → possession ("dont") | Where → lieu | When → moment',
+      '💡 "That" n\'est JAMAIS utilisé dans une relative non-définissante (avec virgules)',
+      '⚠️ Le pronom relatif peut être omis quand il est objet : "The book I read" = "The book that I read"',
+    ]
+  },
+
+  goingTo: {
+    id: 'goingTo',
+    title: 'Futur avec Going To',
+    icon: '🚀',
+    level: 'A2',
+    subtitle: 'Plans, intentions et prédictions basées sur des indices',
+    malgasyNote: 'Zavatra hokasaina na efa voalamina ho avy',
+    sections: [
+      {
+        title: '✅ Forme affirmative',
+        content: 'Sujet + <strong>am/is/are going to</strong> + verbe infinitif',
+        examples: [
+          { en: 'I <strong>am going to</strong> visit my family this weekend.', fr: 'Je vais rendre visite à ma famille ce week-end.' },
+          { en: 'She <strong>is going to</strong> study medicine.', fr: 'Elle va étudier la médecine.' },
+          { en: 'They <strong>are going to</strong> build a new school.', fr: 'Ils vont construire une nouvelle école.' },
+        ]
+      },
+      {
+        title: '❌ Forme négative',
+        content: 'Sujet + <strong>am/is/are not going to</strong> + verbe infinitif',
+        examples: [
+          { en: 'I <strong>\'m not going to</strong> eat meat anymore.', fr: 'Je ne vais plus manger de viande.' },
+          { en: 'He <strong>isn\'t going to</strong> come to the party.', fr: 'Il ne va pas venir à la fête.' },
+        ]
+      },
+      {
+        title: '❓ Forme interrogative',
+        content: '<strong>Am/Is/Are</strong> + sujet + <strong>going to</strong> + verbe ?',
+        examples: [
+          { en: '<strong>Are</strong> you <strong>going to</strong> apply for the job?', fr: 'Est-ce que tu vas postuler pour le poste ?' },
+          { en: '<strong>Is</strong> she <strong>going to</strong> move abroad?', fr: 'Est-ce qu\'elle va partir à l\'étranger ?' },
+        ]
+      },
+      {
+        title: '🆚 Going to vs Will',
+        content: 'Deux futurs, deux usages différents',
+        examples: [
+          { en: 'I <strong>\'m going to</strong> study tonight. (plan déjà décidé)', fr: 'Je vais étudier ce soir. (décision déjà prise)' },
+          { en: 'I <strong>\'ll</strong> help you if you want. (décision spontanée)', fr: 'Je t\'aiderai si tu veux. (décision au moment où on parle)' },
+          { en: 'Look at those clouds — it <strong>\'s going to</strong> rain! (preuve visible)', fr: 'Regardez ces nuages — il va pleuvoir !' },
+          { en: 'I think it <strong>will</strong> rain tomorrow. (prédiction sans preuve)', fr: 'Je pense qu\'il pleuvra demain.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Going to = plan décidé à l\'avance ou prédiction avec preuve visible',
+      '🔑 Will = décision spontanée ou prédiction sans preuve',
+      '💡 Formes contractées : I\'m going to / She\'s going to / We\'re going to',
+      '⚠️ "Gonna" = forme parlée très familière de "going to" (à éviter à l\'écrit)',
+    ]
+  },
+
+
 export const theoryTopics = [
   // ── A1 ───────────────────────────────────────────────────────────
   { id: 'pronouns',          label: 'Pronoms',                        icon: '👥',   level: 'A1' },
@@ -2139,6 +2255,9 @@ export const theoryTopics = [
   { id: 'sinceFor',      label: 'Since & For',                        icon: '⏳',   level: 'B1' },
   { id: 'usedTo',        label: 'Used to',                            icon: '🔙',   level: 'B1' },
   { id: 'verbsOfState',  label: 'Verbes + Gérondif / Infinitif',      icon: '🎯',   level: 'B1' },
+
+  { id: 'relativeClauses', label: 'Propositions Relatives',         icon: '🔗',   level: 'A2–B1' },
+  { id: 'goingTo',         label: 'Futur avec Going To',            icon: '🚀',   level: 'A2' },
 ];
 
 export const vocabTopics = [
@@ -2730,6 +2849,84 @@ export const malgasyManual = [
       'Stop + -ing = mitsahatra: He stopped smoking (najanony ny fisotro sigara)',
       'Stop + infinitif = mijanona mba hanao: He stopped to smoke (nijanonan\'izy mba hisotro sigara)',
       'Remember + -ing = mahatsiaro nataony | Remember + infinitif = mahatsiaro hataony',
+    ],
+  },
+
+
+
+  {
+    id: 'mg_relativeClauses',
+    grammarRef: 'relativeClauses',
+    title: 'Relative Clauses',
+    titleMg: 'Fehezanteny Mampifandray',
+    icon: '🔗',
+    level: 'A2–B1',
+    explanation: 'Ny fehezanteny mampifandray (relative clauses) dia ampiasaina hanazavana na hamarihana ny anarana teo aloha. Ny pronoms relatifs: who (olona), which (zavatra), that (olona na zavatra), whose (fananana), where (toerana).',
+    rows: [
+      {
+        label: 'Who (olona)',
+        structure: 'nom (olona) + who + verbe',
+        example_en: 'The teacher who helped me is kind.',
+        example_mg: 'Ny mpampianatra izay nanampy ahy dia tsara fanahy.',
+        note: '"izay" ny malagasy = who/which/that',
+      },
+      {
+        label: 'Which (zavatra)',
+        structure: 'nom (zavatra) + which + verbe/sujet+verbe',
+        example_en: 'The book which I read was interesting.',
+        example_mg: 'Ny boky izay namakiako dia nahafinaritra.',
+        note: '"izay namakiako" = that I read',
+      },
+      {
+        label: 'Whose (fananana)',
+        structure: 'nom + whose + nom (fananana)',
+        example_en: 'The student whose bag was stolen...',
+        example_mg: 'Ny mpianatra izay nangalarina ny entany...',
+        note: '"izay nangalarina ny entany" = whose bag was stolen',
+      },
+    ],
+    tipsMg: [
+      '"izay" ny malagasy = who, which, that amin\'ny anglisy',
+      'Who → olona | which → zavatra | that → roa azo',
+      'Whose → fananana ("ny ... izay")',
+    ],
+  },
+
+  {
+    id: 'mg_goingTo',
+    grammarRef: 'goingTo',
+    title: 'Going To',
+    titleMg: 'Futur amin\'ny Going To',
+    icon: '🚀',
+    level: 'A2',
+    explanation: 'Ny "going to" dia ampiasaina hilazana ny drafitra na fikasana efa voalamina. Ny malagasy dia tsy manana temps ho an\'ny ho avy avy hatrany, fa ampiasaina "hoe" na "ho" alohan\'ny matoanteny.',
+    rows: [
+      {
+        label: 'Fomba fanaovana (+)',
+        structure: 'am/is/are + going to + verbe',
+        example_en: 'I am going to study tonight.',
+        example_mg: 'Hianatra aho anio alina.',
+        note: '"ho" + matoanteny ny malagasy',
+      },
+      {
+        label: 'Fandavana (−)',
+        structure: 'am/is/are + not going to + verbe',
+        example_en: "She isn't going to come.",
+        example_mg: 'Tsy ho avy izy.',
+        note: '"tsy ho" = not going to',
+      },
+      {
+        label: 'Going to vs Will',
+        structure: 'going to = drafitra | will = fanapahan-kevitra ara-dalana',
+        example_en: "I'm going to visit Paris. (plan) / I'll help you. (spontaneous)",
+        example_mg: 'Hitsidika an\'i Paris aho. / Hanampy anao aho.',
+        note: 'going to = voalamina | will = amin\'izao fotoana izao',
+      },
+    ],
+    tipsMg: [
+      '"Going to" = fikasana efa voalamina talohan\'ny fotoana resahina',
+      '"Will" = fanapahan-kevitra raisina amin\'izao fotoana izao na faminaniana tsotra',
+      'Fampiasana ny "gonna" amin\'ny teny fitenenana: "I\'m gonna go" = I\'m going to go',
     ],
   },
 

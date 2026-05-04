@@ -178,6 +178,8 @@ export function renderTheory(topicId) {
           sinceFor:             'sinceFor',
           usedTo:               'usedTo',
           verbsOfState:         'verbsOfState',
+          relativeClauses:      'relativeClauses',
+          goingTo:              'goingTo',
         };
         const ex = topicMap[effectiveTopic];
         if (ex) {
@@ -384,6 +386,9 @@ const GRAMMAR_TO_BOKY = {
   phrasalVerbs:         'phrasalVerbs',
   // B2
   futurePerfect:        'futurePerfect',
+  // B1-B2
+  relativeClauses:      'relativeClauses',
+  goingTo:              'goingTo',
 };
 
 function renderGrammar(topicId) {
