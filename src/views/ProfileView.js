@@ -8,10 +8,19 @@ export function renderProfileSelector() {
 
   container.innerHTML = `
     <div class="profile-header">
-      <div class="app-logo">🇬🇧</div>
-      <h1 class="app-title">English Academy</h1>
-      <p class="app-subtitle">Apprends l'anglais, un pas à la fois !</p>
-      <p class="app-subtitle-mg">Mianara anglisy, dingana iray amin'ny fotoana!</p>
+      <div class="app-logo-wrap">
+        <span class="app-logo-flag">🇲🇬</span>
+        <span class="app-logo-x">×</span>
+        <span class="app-logo-flag">🇬🇧</span>
+      </div>
+      <h1 class="app-title">English Academy<br><span class="app-title-mg">Madagascar</span></h1>
+      <p class="app-subtitle">✨ Parle anglais avec confiance — gratuitement, hors ligne, à ton rythme !</p>
+      <p class="app-subtitle-mg">🇲🇬 Mianara anglisy maimaimpoana, tsy mila internet, araka ny fihevitreo!</p>
+      <div class="app-stats-row">
+        <span class="app-stat-chip">📚 32 chapitres</span>
+        <span class="app-stat-chip">🎧 1900+ audios</span>
+        <span class="app-stat-chip">🤖 Tutor IA</span>
+      </div>
     </div>
 
     <div class="profile-body">
@@ -39,6 +48,20 @@ export function renderProfileSelector() {
         <div class="modal-actions">
           <button class="btn-secondary" id="btn-cancel">Annuler</button>
           <button class="btn-primary" id="btn-create">Créer !</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="assessment-choice-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-box">
+        <div class="choice-header">🎉</div>
+        <h3>Bienvenue, <span class="choice-name"></span> !</h3>
+        <p>Veux-tu faire un rapide test de niveau pour personnaliser ton parcours ?</p>
+        <p class="modal-sub">🇲🇬 <em>Hanao fitsapana haingana ve ianao?</em></p>
+        <div class="modal-actions choice-actions">
+          <button class="btn-secondary" id="btn-skip-assessment">⏭️ Passer</button>
+          <button class="btn-primary" id="btn-do-assessment">🎯 Faire le test</button>
         </div>
       </div>
     </div>
@@ -141,6 +164,19 @@ function bindEvents(container) {
   container.querySelector('#new-profile-modal .modal-backdrop').addEventListener('click', () => {
     container.querySelector('#new-profile-modal').classList.add('hidden');
   });
+
+  // Assessment choice: do test
+  container.querySelector('#btn-do-assessment').addEventListener('click', () => {
+    location.hash = '#exercise?topic=assessment&mode=assessment';
+  });
+  // Assessment choice: skip → go directly to dashboard
+  container.querySelector('#btn-skip-assessment').addEventListener('click', () => {
+    location.hash = '#dashboard';
+  });
+  // Assessment choice modal backdrop
+  container.querySelector('#assessment-choice-modal .modal-backdrop').addEventListener('click', () => {
+    location.hash = '#dashboard';
+  });
 }
 
 function doCreate(container) {
@@ -152,7 +188,12 @@ function doCreate(container) {
     return;
   }
   createProfile(name);
-  location.hash = '#assessment';
+  // Hide new-profile modal, show assessment-choice modal
+  container.querySelector('#new-profile-modal').classList.add('hidden');
+  input.value = '';
+  const choiceModal = container.querySelector('#assessment-choice-modal');
+  choiceModal.querySelector('.choice-name').textContent = name;
+  choiceModal.classList.remove('hidden');
 }
 
 function showDeleteConfirm(container, profileId) {

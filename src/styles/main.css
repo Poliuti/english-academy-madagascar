@@ -148,10 +148,20 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   text-align: center;
   padding: 40px 16px 24px;
 }
-.app-logo { font-size: 3.5rem; margin-bottom: 8px; }
-.app-title { font-size: 2rem; font-weight: 900; color: var(--primary-dark); }
-.app-subtitle { color: var(--text-muted); font-size: 1rem; }
-.app-subtitle-mg { color: var(--text-light); font-size: .85rem; font-style: italic; margin-top: 2px; }
+/* ── Welcome screen (ProfileView) ─────────────────── */
+.app-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 2.6rem; margin-bottom: 10px; }
+.app-logo-flag { filter: drop-shadow(0 2px 4px rgba(0,0,0,.15)); }
+.app-logo-x { font-size: 1.2rem; color: var(--text-muted); font-weight: 300; }
+.app-title { font-size: 1.9rem; font-weight: 900; color: var(--primary-dark); line-height: 1.15; }
+.app-title-mg { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+.app-subtitle { color: var(--text-muted); font-size: .95rem; margin-top: 8px; }
+.app-subtitle-mg { color: var(--text-light); font-size: .82rem; font-style: italic; margin-top: 4px; }
+.app-stats-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+.app-stat-chip { background: var(--primary); color: #fff; border-radius: 20px; padding: 4px 12px; font-size: .8rem; font-weight: 700; }
+/* assessment choice modal */
+.choice-header { font-size: 2.5rem; text-align: center; margin-bottom: 4px; }
+.choice-actions { justify-content: center; gap: 12px; }
+.modal-sub { font-size: .82rem; color: var(--text-muted); margin-top: 4px; }
 
 .profile-body { flex: 1; }
 .section-title { font-size: 1.1rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 16px; }
