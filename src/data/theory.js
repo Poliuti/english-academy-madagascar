@@ -2208,19 +2208,13 @@ export function getTheoryById(id) {
 }
 
 export const theoryTopics = [
-  // ── A1 ───────────────────────────────────────────────────────────
   { id: 'pronouns',          label: 'Pronoms',                        icon: '👥',   level: 'A1' },
   { id: 'toBe',              label: 'To Be (am/is/are/was)',          icon: '🔵',   level: 'A1' },
   { id: 'articles',          label: 'Articles (a/an/the)',            icon: '🔤',   level: 'A1' },
   { id: 'plurals',           label: 'Pluriels',                       icon: '🔢',   level: 'A1' },
   { id: 'therebeis',         label: 'There is / are',                 icon: '📌',   level: 'A1' },
-  // ── A1–A2 ────────────────────────────────────────────────────────
   { id: 'prepositions',      label: 'Prépositions',                   icon: '📍',   level: 'A1–A2' },
   { id: 'questions',         label: 'Questions (Wh-)',                icon: '❓',   level: 'A1–A2' },
-  // ── A2 ───────────────────────────────────────────────────────────
-  { id: 'presentSimple',     label: 'Present Simple',                 icon: '📖',   level: 'A2' },
-  { id: 'presentContinuous', label: 'Present Continuous',             icon: '🔄',   level: 'A2' },
-  { id: 'interrogative',     label: 'Questions (Yes/No & Wh-)',       icon: '❓',   level: 'A2' },
   { id: 'imperatives',       label: 'L\'Impératif',                   icon: '📢',   level: 'A2' },
   { id: 'someAny',           label: 'Some, Any & No',                 icon: '🔢',   level: 'A2' },
   { id: 'comparatives',      label: 'Comparatifs & Superlatifs',      icon: '⚖️',   level: 'A2' },
@@ -2264,6 +2258,9 @@ export const vocabTopics = [
   { id: 'family', label: 'La Famille', icon: '👨‍👩‍👧' },
   { id: 'body', label: 'Le Corps', icon: '💪' },
   { id: 'time', label: 'L\'Heure et le Temps', icon: '⏰' },
+  { id: 'presentSimple',     label: 'Present Simple',                 icon: '📖',   level: 'A2' },
+  { id: 'presentContinuous', label: 'Present Continuous',             icon: '🔄',   level: 'A2' },
+  { id: 'interrogative',     label: 'Questions (Yes/No & Wh-)',       icon: '❓',   level: 'A2' },
 ];
 
 // ─── BOKY FAMPIANARANA — Malagasy Grammar Manual ─────────────────────────────

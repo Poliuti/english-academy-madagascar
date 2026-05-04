@@ -536,6 +536,12 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .theory-page { min-height: 100vh; }
 .theory-layout { display: flex; min-height: 100vh; }
 
+/* Mobile bar for theory — hidden on desktop, shown on mobile via media query */
+.theory-mobilebar { display: none; }
+
+/* Close button inside sidebar — hidden on desktop */
+.btn-sidebar-close { display: none; }
+
 .theory-sidebar {
   width: 240px; flex-shrink: 0;
   background: var(--card);
@@ -774,7 +780,45 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 /* ─── RESPONSIVE ────────────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
   .theory-sidebar { display: none; }
-  .vocab-sidebar { display: none; }
+  .vocab-sidebar  { display: none; }
+
+  /* Theory sidebar overlay on mobile */
+  .theory-sidebar.mobile-open {
+    display: flex !important;
+    position: fixed;
+    top: 0; left: 0;
+    width: 82vw; max-width: 300px;
+    height: 100vh;
+    z-index: 300;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    animation: slideInLeft .22s ease;
+  }
+
+  /* Show mobile TOC button in theory topbar */
+  .theory-topbar .btn-mobile-toc,
+  .theory-mobilebar .btn-mobile-toc {
+    display: inline-flex;
+    align-items: center; gap: 5px;
+    padding: 7px 12px;
+    background: var(--primary); color: #fff;
+    border: none; border-radius: var(--radius-sm);
+    font-weight: 800; font-size: .85rem;
+    cursor: pointer; white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+  }
+
+  /* Theory mobile bar */
+  .theory-mobilebar {
+    display: flex;
+    align-items: center; gap: 10px;
+    padding: 10px 16px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+  }
+  .theory-mobilebar .btn-back { flex-shrink: 0; }
+  .theory-main { padding: 16px !important; }
   .dash-header { padding: 14px 14px 18px; }
   .profiles-grid { grid-template-columns: repeat(2, 1fr); }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -926,11 +970,71 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .boky-reveal-btn:hover { background: #16A34A; }
 .boky-answer { margin-left: 8px; font-weight: 700; color: #15803D; }
 
+/* Mobile TOC button — shown only on small screens */
+.btn-mobile-toc {
+  display: none;
+}
+
+/* Sidebar backdrop (mobile only) */
+.sidebar-backdrop {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 299;
+  cursor: pointer;
+}
+.sidebar-backdrop.active { display: block; }
+
 /* Responsive */
 @media (max-width: 640px) {
+  /* Hide sidebar by default on mobile */
   .boky-sidebar { display: none; }
   .boky-content { padding: 16px; }
-  .boky-topbar { padding: 10px 16px; }
+  .boky-topbar { padding: 10px 16px; gap: 8px; }
+
+  /* Show mobile TOC button in topbar */
+  .btn-mobile-toc {
+    display: inline-flex;
+    align-items: center; gap: 5px;
+    padding: 7px 12px;
+    background: var(--primary); color: #fff;
+    border: none; border-radius: var(--radius-sm);
+    font-weight: 800; font-size: .85rem;
+    cursor: pointer; white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+  }
+  .btn-mobile-toc:hover { background: var(--primary-dark); }
+
+  /* Sidebar as left-side overlay */
+  .boky-sidebar.mobile-open {
+    display: flex !important;
+    position: fixed;
+    top: 0; left: 0;
+    width: 82vw; max-width: 300px;
+    height: 100vh;
+    z-index: 300;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    animation: slideInLeft .22s ease;
+  }
+
+  /* Close button inside sidebar on mobile */
+  .btn-sidebar-close {
+    display: inline-flex;
+    align-items: center; gap: 5px;
+    padding: 6px 10px;
+    background: var(--bg); color: var(--text-muted);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    font-size: .8rem; font-weight: 700;
+    cursor: pointer; margin-bottom: 4px; align-self: flex-end;
+  }
+}
+
+/* Slide-in animation */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
 }
 
 /* ─── TUTOR PAGE (Ollama chatbot) ───────────────────────────────────────────── */

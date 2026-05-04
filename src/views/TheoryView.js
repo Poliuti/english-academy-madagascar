@@ -17,9 +17,13 @@ export function renderTheory(topicId) {
     const savedSidebarScroll = container.querySelector('.theory-sidebar')?.scrollTop ?? 0;
 
     container.innerHTML = `
+      <!-- Mobile sidebar backdrop -->
+      <div class="sidebar-backdrop" id="theory-backdrop"></div>
+
       <div class="theory-layout">
         <!-- Sidebar -->
-        <aside class="theory-sidebar">
+        <aside class="theory-sidebar" id="theory-sidebar">
+          <button class="btn-sidebar-close" id="btn-sidebar-close">✕ Fermer</button>
           <button class="btn-back sidebar-back" id="btn-back">← Retour</button>
           <h3 class="sidebar-title">📚 Grammaire</h3>
           <nav class="sidebar-nav">
@@ -45,6 +49,11 @@ export function renderTheory(topicId) {
 
         <!-- Main content -->
         <main class="theory-main">
+          <!-- Mobile navigation bar (visible only on small screens) -->
+          <div class="theory-mobilebar">
+            <button class="btn-back" id="btn-back-mobile">← Retour</button>
+            <button class="btn-mobile-toc" id="btn-mobile-toc">☰ Chapitres</button>
+          </div>
           ${isVocab ? renderVocabNav(currentVocab) : ''}
           ${isMalgasy ? renderMalgasyNav(currentMalgasyId) : ''}
           <div id="theory-content">
@@ -58,17 +67,58 @@ export function renderTheory(topicId) {
       </div>
     `;
 
-    // Restore sidebar scroll (main content always resets to top)
+    // Restore sidebar scroll, then ensure active item is visible
     const sidebar = container.querySelector('.theory-sidebar');
-    if (sidebar && savedSidebarScroll > 0) sidebar.scrollTop = savedSidebarScroll;
+    if (sidebar) {
+      sidebar.scrollTop = savedSidebarScroll;
+      // If active item is outside view, scroll it into view
+      const activeItem = sidebar.querySelector('.sidebar-item.active');
+      if (activeItem) {
+        requestAnimationFrame(() => {
+          const sTop = sidebar.scrollTop;
+          const sH   = sidebar.clientHeight;
+          const iTop = activeItem.offsetTop;
+          const iH   = activeItem.offsetHeight;
+          if (iTop < sTop || iTop + iH > sTop + sH) {
+            activeItem.scrollIntoView({ block: 'nearest' });
+          }
+        });
+      }
+    }
 
     bindEvents();
   }
 
+  function openTheorySidebar() {
+    const sidebar  = container.querySelector('#theory-sidebar');
+    const backdrop = container.querySelector('#theory-backdrop');
+    if (sidebar)  sidebar.classList.add('mobile-open');
+    if (backdrop) backdrop.classList.add('active');
+  }
+
+  function closeTheorySidebar() {
+    const sidebar  = container.querySelector('#theory-sidebar');
+    const backdrop = container.querySelector('#theory-backdrop');
+    if (sidebar)  sidebar.classList.remove('mobile-open');
+    if (backdrop) backdrop.classList.remove('active');
+  }
+
   function bindEvents() {
-    container.querySelector('#btn-back').addEventListener('click', () => {
+    container.querySelector('#btn-back')?.addEventListener('click', () => {
       location.hash = '#dashboard';
     });
+    container.querySelector('#btn-back-mobile')?.addEventListener('click', () => {
+      location.hash = '#dashboard';
+    });
+
+    // Mobile TOC button
+    container.querySelector('#btn-mobile-toc')?.addEventListener('click', openTheorySidebar);
+
+    // Close sidebar button
+    container.querySelector('#btn-sidebar-close')?.addEventListener('click', closeTheorySidebar);
+
+    // Backdrop click closes sidebar
+    container.querySelector('#theory-backdrop')?.addEventListener('click', closeTheorySidebar);
 
     container.querySelectorAll('.sidebar-item:not([data-malgasy])').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -80,6 +130,7 @@ export function renderTheory(topicId) {
           isVocab = false;
           currentTopic = btn.dataset.topic;
         }
+        closeTheorySidebar();
         render();
       });
     });
@@ -89,6 +140,7 @@ export function renderTheory(topicId) {
       mgBtn.addEventListener('click', () => {
         isMalgasy = true;
         isVocab = false;
+        closeTheorySidebar();
         render();
       });
     }

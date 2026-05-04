@@ -13,12 +13,19 @@ export function renderBoky(chapterId) {
     : bokyChapters[0].id;
 
   function render() {
+    // Preserve sidebar scroll position across re-renders
+    const savedSidebarScroll = container.querySelector('.boky-sidebar')?.scrollTop ?? 0;
+
     const chapter = bokyChapters.find(c => c.id === currentId);
     container.innerHTML = `
+      <!-- Mobile sidebar backdrop -->
+      <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
       <div class="boky-layout">
 
         <!-- Sidebar / Table des matières -->
-        <aside class="boky-sidebar">
+        <aside class="boky-sidebar" id="boky-sidebar">
+          <button class="btn-sidebar-close" id="btn-sidebar-close">✕ Fermer</button>
           <button class="btn-back boky-back" id="btn-back">← Retour</button>
           <h3 class="boky-sidebar-title">📗 Boky fampianarana</h3>
           <nav class="boky-toc">
@@ -39,6 +46,7 @@ export function renderBoky(chapterId) {
         <main class="boky-main">
           <!-- Top bar with language toggle -->
           <div class="boky-topbar">
+            <button class="btn-mobile-toc" id="btn-mobile-toc">☰ Chapitres</button>
             <div class="boky-breadcrumb">
               ${chapter.icon} <strong>${chapter.title}</strong>
               <span class="boky-level-badge">${chapter.level}</span>
@@ -59,7 +67,39 @@ export function renderBoky(chapterId) {
       </div>
     `;
 
+    // Restore sidebar scroll, then ensure active item is visible
+    const sidebar = container.querySelector('.boky-sidebar');
+    if (sidebar) {
+      sidebar.scrollTop = savedSidebarScroll;
+      const activeItem = sidebar.querySelector('.boky-toc-item.active');
+      if (activeItem) {
+        requestAnimationFrame(() => {
+          const sTop = sidebar.scrollTop;
+          const sH   = sidebar.clientHeight;
+          const iTop = activeItem.offsetTop;
+          const iH   = activeItem.offsetHeight;
+          if (iTop < sTop || iTop + iH > sTop + sH) {
+            activeItem.scrollIntoView({ block: 'nearest' });
+          }
+        });
+      }
+    }
+
     bindEvents();
+  }
+
+  function openMobileSidebar() {
+    const sidebar  = container.querySelector('#boky-sidebar');
+    const backdrop = container.querySelector('#sidebar-backdrop');
+    if (sidebar)  sidebar.classList.add('mobile-open');
+    if (backdrop) backdrop.classList.add('active');
+  }
+
+  function closeMobileSidebar() {
+    const sidebar  = container.querySelector('#boky-sidebar');
+    const backdrop = container.querySelector('#sidebar-backdrop');
+    if (sidebar)  sidebar.classList.remove('mobile-open');
+    if (backdrop) backdrop.classList.remove('active');
   }
 
   function bindEvents() {
@@ -67,9 +107,22 @@ export function renderBoky(chapterId) {
       location.hash = '#dashboard';
     });
 
+    // Mobile TOC button
+    const mobileTocBtn = container.querySelector('#btn-mobile-toc');
+    if (mobileTocBtn) mobileTocBtn.addEventListener('click', openMobileSidebar);
+
+    // Close sidebar button
+    const closeBtn = container.querySelector('#btn-sidebar-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeMobileSidebar);
+
+    // Backdrop click closes sidebar
+    const backdrop = container.querySelector('#sidebar-backdrop');
+    if (backdrop) backdrop.addEventListener('click', closeMobileSidebar);
+
     container.querySelectorAll('.boky-toc-item').forEach(btn => {
       btn.addEventListener('click', () => {
         currentId = btn.dataset.id;
+        closeMobileSidebar();
         render();
         container.querySelector('.boky-main').scrollTop = 0;
       });
