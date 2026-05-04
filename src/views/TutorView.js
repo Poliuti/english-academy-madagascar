@@ -1,7 +1,11 @@
-// TutorView.js — Chatbot anglais via Ollama local (llama3.2:3b)
+// TutorView.js
+// • localhost  → Ollama (llama3.2:3b local)
+// • Vercel     → /api/chat proxy → Groq (llama-3.1-8b-instant, free)
 
 const OLLAMA_URL   = 'http://localhost:11434/api/chat';
 const OLLAMA_MODEL = 'llama3.2:3b';
+const GROQ_PROXY   = '/api/chat';   // Vercel serverless function
+
 const SYSTEM_PROMPT = `You are an English language tutor for beginner and intermediate students from Madagascar. You ONLY answer questions about English grammar, vocabulary, verb tenses, pronunciation and usage.
 If the question is not related to learning English, respond: "Je peux uniquement aider avec l'apprentissage de l'anglais." (or in Malagasy: "Ny fanampiana ahy dia ny fiteny anglisy ihany.")
 Always answer in the same language the student uses (French or Malagasy), but always show English examples with translations.
@@ -11,9 +15,11 @@ export function renderTutor() {
   const container = document.createElement('div');
   container.className = 'tutor-page';
 
-  // Session message history (for context)
-  const history = [];
-  let isLoading = false;
+  const history  = [];
+  let isLoading  = false;
+
+  // Detect environment
+  const _isHttps = location.protocol === 'https:';
 
   container.innerHTML = `
     <div class="tutor-layout">
@@ -23,7 +29,7 @@ export function renderTutor() {
           <span class="tutor-header-icon">🤖</span>
           <div>
             <div class="tutor-title">Tutor anglais</div>
-            <div class="tutor-subtitle" id="tutor-status">Connexion à Ollama...</div>
+            <div class="tutor-subtitle" id="tutor-status">Vérification connexion…</div>
           </div>
         </div>
         <button class="tutor-clear-btn" id="btn-clear" title="Effacer la conversation">🗑️</button>
@@ -41,7 +47,7 @@ export function renderTutor() {
             <button class="tutor-suggestion" data-q="Explique-moi le Past Simple avec des exemples.">Past Simple</button>
             <button class="tutor-suggestion" data-q="Inona ny fahasamihafan'ny 'have' sy 'has' ?">Have vs Has (MG)</button>
             <button class="tutor-suggestion" data-q="Comment poser une question en anglais ?">Poser une question</button>
-            <button class="tutor-suggestion" data-q="Quels sont les articles en anglais ?">Les articles</button>
+            <button class="tutor-suggestion" data-q="Quelle est la différence entre 'going to' et 'will' ?">Going to vs Will</button>
           </div>
         </div>
       </div>
@@ -51,62 +57,98 @@ export function renderTutor() {
           <textarea
             id="tutor-input"
             class="tutor-input"
-            placeholder="Écris ta question en français ou malagasy... (ex: Comment utiliser 'will' ?)"
+            placeholder="Écris ta question en français ou malagasy… (ex: Comment utiliser 'will' ?)"
             rows="1"
           ></textarea>
           <button class="tutor-send-btn" id="btn-send" title="Envoyer">
             <span>➤</span>
           </button>
         </div>
-        <div class="tutor-info">
-          Propulsé par <strong>Ollama</strong> (llama3.2:3b) · Local · Sans données partagées
+        <div class="tutor-info" id="tutor-info">
+          Vérification…
         </div>
       </div>
     </div>
   `;
 
-  const messagesEl  = container.querySelector('#tutor-messages');
-  const inputEl     = container.querySelector('#tutor-input');
-  const sendBtn     = container.querySelector('#btn-send');
-  const statusEl    = container.querySelector('#tutor-status');
+  const messagesEl = container.querySelector('#tutor-messages');
+  const inputEl    = container.querySelector('#tutor-input');
+  const sendBtn    = container.querySelector('#btn-send');
+  const statusEl   = container.querySelector('#tutor-status');
+  const infoEl     = container.querySelector('#tutor-info');
 
-  // ─── Connectivity check (with auto-retry) ─────────────────────────────────
+  // ── Mode selection ──────────────────────────────────────────────────────────
+  // 'groq'   → use Vercel /api/chat proxy (Groq cloud)
+  // 'ollama' → use local Ollama
+  // 'none'   → neither available
+  let _mode = 'none';
   let _ollamaRetry = null;
 
-  // HTTPS pages (Vercel) cannot reach http://localhost — browser blocks it
-  // as "Mixed Content". The tutor only works via avvia.bat (localhost:3000).
-  const _isHttps = location.protocol === 'https:';
-
   if (_isHttps) {
-    setStatus('offline',
-      '🔐 Tutor IA disponible uniquement en local (avvia.bat → localhost:3000)');
+    // Vercel deployment → probe /api/chat
+    checkGroq();
   } else {
+    // localhost → try Ollama
     checkOllama();
+  }
+
+  async function checkGroq() {
+    try {
+      // Light probe: send minimal request to check if endpoint + key are set up
+      const res = await fetch(GROQ_PROXY, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: [{ role: 'user', content: 'ping' }] }),
+        signal: AbortSignal.timeout(8000),
+      });
+      if (res.status === 503) {
+        // Endpoint exists but GROQ_API_KEY not set in Vercel
+        setStatus('warn', '⚠️ Clé Groq non configurée');
+        setInfo('Ajoutez <strong>GROQ_API_KEY</strong> dans les variables d\'environnement Vercel.');
+        _mode = 'none';
+      } else {
+        // Key configured and working (even a 400/422 means the endpoint reached Groq)
+        _mode = 'groq';
+        setStatus('online', '🟢 Tutor IA en ligne (Groq)');
+        setInfo('Propulsé par <strong>Groq</strong> (llama-3.1-8b-instant) · Cloud · Gratuit');
+      }
+    } catch {
+      setStatus('offline', '🔴 Tutor IA non disponible (réseau ?)');
+      setInfo('Vérifie ta connexion internet.');
+      _mode = 'none';
+    }
   }
 
   async function checkOllama() {
     clearTimeout(_ollamaRetry);
     try {
       const res = await fetch('http://localhost:11434/api/tags', {
-        signal: AbortSignal.timeout(3000)
+        signal: AbortSignal.timeout(3000),
       });
       if (res.ok) {
         const data = await res.json();
-        const models = (data.models || []).map(m => m.name);
+        const models   = (data.models || []).map(m => m.name);
         const hasModel = models.some(m => m.startsWith('llama3.2'));
         if (hasModel) {
+          _mode = 'ollama';
           setStatus('online', '🟢 Ollama connecté');
-          // connected — stop retrying
+          setInfo('Propulsé par <strong>Ollama</strong> (llama3.2:3b) · Local · Hors ligne');
         } else {
-          setStatus('warn', `⚠️ Modèle ${OLLAMA_MODEL} non trouvé — lance: ollama pull llama3.2:3b`);
+          setStatus('warn', `⚠️ Modèle ${OLLAMA_MODEL} non trouvé`);
+          setInfo('Commande : <code>ollama pull llama3.2:3b</code>');
+          _mode = 'none';
           _ollamaRetry = setTimeout(checkOllama, 5000);
         }
       } else {
         setStatus('offline', '🔴 Ollama hors ligne — reconnexion dans 5 s…');
+        setInfo('Lance <strong>avvia.bat</strong> pour démarrer Ollama.');
+        _mode = 'none';
         _ollamaRetry = setTimeout(checkOllama, 5000);
       }
     } catch {
       setStatus('offline', '🔴 Ollama hors ligne — reconnexion dans 5 s…');
+      setInfo('Lance <strong>avvia.bat</strong> pour démarrer Ollama.');
+      _mode = 'none';
       _ollamaRetry = setTimeout(checkOllama, 5000);
     }
   }
@@ -115,9 +157,13 @@ export function renderTutor() {
     statusEl.textContent = text;
     statusEl.className = `tutor-subtitle tutor-status-${state}`;
   }
+  function setInfo(html) {
+    infoEl.innerHTML = html;
+  }
 
-  // ─── Events ────────────────────────────────────────────────────────────────
+  // ── Events ──────────────────────────────────────────────────────────────────
   container.querySelector('#btn-back').addEventListener('click', () => {
+    clearTimeout(_ollamaRetry);
     location.hash = '#dashboard';
   });
 
@@ -136,7 +182,6 @@ export function renderTutor() {
     }
   });
 
-  // Auto-resize textarea
   inputEl.addEventListener('input', () => {
     inputEl.style.height = 'auto';
     inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
@@ -149,18 +194,28 @@ export function renderTutor() {
     });
   });
 
-  // ─── Send & receive ────────────────────────────────────────────────────────
+  // ── Send & receive ──────────────────────────────────────────────────────────
   async function sendMessage() {
     const text = inputEl.value.trim();
     if (!text || isLoading) return;
 
-    // Hide welcome block
+    if (_mode === 'none') {
+      const welcome = messagesEl.querySelector('.tutor-welcome');
+      if (welcome) welcome.remove();
+      appendError(
+        _isHttps
+          ? '⚠️ Le Tutor IA n\'est pas encore configuré.<br>Ajoutez <strong>GROQ_API_KEY</strong> dans les variables d\'environnement Vercel.'
+          : '⚠️ Ollama n\'est pas lancé.<br>Démarrez <strong>avvia.bat</strong> sur ce PC.'
+      );
+      return;
+    }
+
     const welcome = messagesEl.querySelector('.tutor-welcome');
     if (welcome) welcome.remove();
 
     inputEl.value = '';
     inputEl.style.height = 'auto';
-    isLoading = true;
+    isLoading  = true;
     sendBtn.disabled = true;
 
     appendMessage('user', text);
@@ -169,16 +224,21 @@ export function renderTutor() {
     const thinkingEl = appendThinking();
 
     try {
-      const reply = await callOllama(text);
+      let reply;
+      if (_mode === 'groq')   reply = await callGroq();
+      if (_mode === 'ollama') reply = await callOllama();
+
       thinkingEl.remove();
       appendMessage('assistant', reply);
       history.push({ role: 'assistant', content: reply });
+
     } catch (err) {
       thinkingEl.remove();
-      if (_isHttps) {
-        appendError('🔐 Le Tutor IA fonctionne uniquement en local.<br><br>Lance <strong>avvia.bat</strong> sur ton PC et ouvre <strong>http://localhost:3000</strong>');
-      } else if (err.name === 'AbortError' || err.message?.includes('fetch')) {
-        appendError('⚠️ Ollama ne répond pas. Assure-toi qu\'Ollama est lancé sur ce PC.\n\nCommande : <code>ollama serve</code>');
+      if (_mode === 'ollama' && (err.name === 'AbortError' || err.message?.includes('fetch'))) {
+        _mode = 'none';
+        setStatus('offline', '🔴 Ollama hors ligne');
+        _ollamaRetry = setTimeout(checkOllama, 5000);
+        appendError('⚠️ Ollama ne répond plus. Lance <strong>avvia.bat</strong> et réessaie.');
       } else {
         appendError(`Erreur : ${err.message}`);
       }
@@ -189,34 +249,46 @@ export function renderTutor() {
     }
   }
 
-  async function callOllama(userText) {
-    const messages = [
+  function buildMessages() {
+    return [
       { role: 'system', content: SYSTEM_PROMPT },
-      // Keep last 8 exchanges for context (avoid blowing token limit)
-      ...history.slice(-16),
+      ...history.slice(-16),  // last 8 exchanges for context
     ];
+  }
 
+  async function callGroq() {
+    const res = await fetch(GROQ_PROXY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: buildMessages() }),
+      signal: AbortSignal.timeout(30000),
+    });
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      throw new Error(d.error || `HTTP ${res.status}`);
+    }
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content || '(réponse vide)';
+  }
+
+  async function callOllama() {
     const res = await fetch(OLLAMA_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: OLLAMA_MODEL,
-        messages,
+        messages: buildMessages(),
         stream: false,
-        options: { temperature: 0.4, num_predict: 512 }
+        options: { temperature: 0.4, num_predict: 512 },
       }),
-      signal: AbortSignal.timeout(60000)
+      signal: AbortSignal.timeout(60000),
     });
-
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status} — ${res.statusText}`);
-    }
-
+    if (!res.ok) throw new Error(`HTTP ${res.status} — ${res.statusText}`);
     const data = await res.json();
     return data.message?.content || '(réponse vide)';
   }
 
-  // ─── DOM helpers ──────────────────────────────────────────────────────────
+  // ── DOM helpers ─────────────────────────────────────────────────────────────
   function appendMessage(role, text) {
     const div = document.createElement('div');
     div.className = `tutor-msg tutor-msg-${role}`;
@@ -256,7 +328,6 @@ export function renderTutor() {
   }
 
   function appendWelcome() {
-    // Re-insert welcome block after clear
     const div = document.createElement('div');
     div.className = 'tutor-welcome';
     div.innerHTML = `
@@ -267,13 +338,12 @@ export function renderTutor() {
     messagesEl.appendChild(div);
   }
 
-  // Format markdown-like reply: **bold**, \`code\`, newlines
   function formatReply(text) {
     return text
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.+?)\*/g, '<em>$1</em>')
-      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*(.+?)\*/g,     '<em>$1</em>')
+      .replace(/`([^`]+)`/g,     '<code>$1</code>')
       .replace(/\n/g, '<br>');
   }
 

@@ -1849,13 +1849,7 @@ export const theory = {
         { en: 'evening', fr: 'soir', mg: 'hariva', example: 'We eat dinner in the evening.' },
       ]
     },
-  }
-};
-
-export function getTheoryById(id) {
-  return theory[id] || null;
-}
-
+  },
 
   sinceFor: {
     id: 'sinceFor',
@@ -2207,6 +2201,11 @@ export function getTheoryById(id) {
     ]
   },
 
+};
+
+export function getTheoryById(id) {
+  return theory[id] || null;
+}
 
 export const theoryTopics = [
   // ── A1 ───────────────────────────────────────────────────────────

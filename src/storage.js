@@ -1,3 +1,5 @@
+import { schedulePush, pushProfile, deleteCloudProfile } from './supabase.js';
+
 const STORE_KEY = 'english_academy';
 
 function load() {
@@ -29,12 +31,13 @@ export function setActiveProfile(profileId) {
   save(data);
 }
 
-export function createProfile(name) {
+export function createProfile(name, cloudPin = null) {
   const data = load();
   const id = `profile_${Date.now()}`;
   const profile = {
     id,
     name,
+    cloudPin: cloudPin || null,  // 4-digit string or null (local only)
     createdAt: Date.now(),
     lastActive: Date.now(),
     xp: 0,
@@ -49,16 +52,44 @@ export function createProfile(name) {
   data.profiles.push(profile);
   data.activeProfileId = id;
   save(data);
+  // Immediately push to cloud if PIN provided
+  if (cloudPin) pushProfile(profile).catch(() => {});
   return profile;
+}
+
+/** Attach a cloud PIN to an existing local profile and push it immediately. */
+export function setProfileCloudPin(profileId, pin) {
+  return updateProfile(profileId, p => {
+    p.cloudPin = pin;
+    return p;
+  });
+}
+
+/** Import a cloud profile into localStorage (restore on new device). */
+export function importProfile(cloudProfile) {
+  const data = load();
+  // Avoid duplicates (same id)
+  const exists = data.profiles.some(p => p.id === cloudProfile.id);
+  if (exists) {
+    // Update in place (cloud is newer)
+    const idx = data.profiles.findIndex(p => p.id === cloudProfile.id);
+    data.profiles[idx] = cloudProfile;
+  } else {
+    data.profiles.push(cloudProfile);
+  }
+  save(data);
 }
 
 export function deleteProfile(profileId) {
   const data = load();
+  const profile = data.profiles.find(p => p.id === profileId);
   data.profiles = data.profiles.filter(p => p.id !== profileId);
   if (data.activeProfileId === profileId) {
     data.activeProfileId = data.profiles[0]?.id || null;
   }
   save(data);
+  // Remove from cloud if it was synced
+  if (profile?.cloudPin) deleteCloudProfile(profileId).catch(() => {});
 }
 
 // ─── PROFILE UPDATES ─────────────────────────────────────────────────────────
@@ -69,6 +100,8 @@ function updateProfile(profileId, updater) {
   if (idx === -1) return;
   data.profiles[idx] = updater(data.profiles[idx]);
   save(data);
+  // Cloud sync: debounced push if profile has a PIN
+  schedulePush(data.profiles[idx]);
   return data.profiles[idx];
 }
 
