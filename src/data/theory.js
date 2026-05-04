@@ -1856,6 +1856,242 @@ export function getTheoryById(id) {
   return theory[id] || null;
 }
 
+
+  sinceFor: {
+    id: 'sinceFor',
+    title: 'Since & For',
+    icon: '⏳',
+    level: 'B1',
+    subtitle: 'Exprimer la durée et le point de départ',
+    malgasyNote: 'Manazava ny faharetan\'ny zavatra sy ny fotoana nanombohan\'ny',
+    sections: [
+      {
+        title: '📍 Since — point de départ précis',
+        content: '<strong>Since</strong> + moment précis (date, événement). La durée a commencé à ce moment.',
+        examples: [
+          { en: 'I have lived here <strong>since 2015</strong>.', fr: 'J\'habite ici depuis 2015.' },
+          { en: 'She has been working <strong>since Monday</strong>.', fr: 'Elle travaille depuis lundi.' },
+          { en: 'We haven\'t spoken <strong>since the argument</strong>.', fr: 'Nous ne nous sommes pas parlé depuis la dispute.' },
+        ]
+      },
+      {
+        title: '⏱️ For — durée (période)',
+        content: '<strong>For</strong> + durée (nombre de jours, mois, années, heures...)',
+        examples: [
+          { en: 'I have lived here <strong>for five years</strong>.', fr: 'J\'habite ici depuis cinq ans.' },
+          { en: 'She has been waiting <strong>for two hours</strong>.', fr: 'Elle attend depuis deux heures.' },
+          { en: 'He studied English <strong>for ten years</strong>.', fr: 'Il a étudié l\'anglais pendant dix ans.' },
+        ]
+      },
+      {
+        title: '🔗 Avec quel temps ?',
+        content: '<strong>Present Perfect</strong> pour la durée jusqu\'au présent. <strong>Past Perfect</strong> pour la durée avant un moment passé.',
+        examples: [
+          { en: 'I <strong>have known</strong> her for three years. (jusqu\'à maintenant)', fr: 'Je la connais depuis trois ans.' },
+          { en: 'He <strong>had worked</strong> there for 20 years before retiring.', fr: 'Il avait travaillé là-bas pendant 20 ans avant de partir à la retraite.' },
+        ]
+      },
+      {
+        title: '⚠️ Erreurs courantes',
+        content: 'Confusions fréquentes à éviter',
+        examples: [
+          { en: '❌ I live here since 5 years.', fr: '→ Wrong: "since" + durée est incorrect' },
+          { en: '✅ I have lived here for 5 years. / since 2019.', fr: 'Correct !' },
+          { en: '❌ I haven\'t seen her since three weeks.', fr: '→ "since" + point précis, pas durée' },
+          { en: '✅ I haven\'t seen her for three weeks.', fr: 'Correct !' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Since + moment précis : since 2010, since Monday, since she left',
+      '🔑 For + durée : for 5 years, for a long time, for two months',
+      '💡 Question : How long have you...? → réponse avec "for" ou "since"',
+      '⚠️ "For" peut aussi s\'utiliser avec le Past Simple (action terminée) : He worked there for 10 years.',
+    ]
+  },
+
+  usedTo: {
+    id: 'usedTo',
+    title: 'Used to',
+    icon: '🔙',
+    level: 'B1',
+    subtitle: 'Les habitudes et états passés qui n\'existent plus',
+    malgasyNote: 'Ny zava-mahazatra tamin\'ny lasa izay tsy misy intsony',
+    sections: [
+      {
+        title: '✅ Forme affirmative',
+        content: 'Sujet + <strong>used to</strong> + verbe infinitif',
+        examples: [
+          { en: 'I <strong>used to</strong> walk to school.', fr: 'J\'allais à l\'école à pied (avant, plus maintenant).' },
+          { en: 'She <strong>used to</strong> love dancing.', fr: 'Elle aimait danser (avant).' },
+          { en: 'They <strong>used to</strong> live in the countryside.', fr: 'Ils habitaient à la campagne (avant).' },
+        ]
+      },
+      {
+        title: '❌ Forme négative',
+        content: 'Sujet + <strong>didn\'t use to</strong> + verbe infinitif',
+        examples: [
+          { en: 'I <strong>didn\'t use to</strong> like vegetables.', fr: 'Je n\'aimais pas les légumes (avant).' },
+          { en: 'He <strong>didn\'t use to</strong> work this hard.', fr: 'Il ne travaillait pas autant (avant).' },
+        ]
+      },
+      {
+        title: '❓ Forme interrogative',
+        content: '<strong>Did</strong> + sujet + <strong>use to</strong> + verbe ?',
+        examples: [
+          { en: '<strong>Did</strong> you <strong>use to</strong> play football?', fr: 'Est-ce que tu jouais au football (avant) ?' },
+          { en: '<strong>Did</strong> she <strong>use to</strong> live here?', fr: 'Est-ce qu\'elle habitait ici (avant) ?' },
+        ]
+      },
+      {
+        title: '⚠️ Ne pas confondre avec "be/get used to"',
+        content: '<strong>Be/Get used to</strong> + gérondif = être/s\'habituer à (présent)',
+        examples: [
+          { en: 'I <strong>am used to</strong> waking up early. (j\'en ai l\'habitude)', fr: 'J\'ai l\'habitude de me lever tôt.' },
+          { en: 'She is <strong>getting used to</strong> the cold weather.', fr: 'Elle s\'habitue au temps froid.' },
+          { en: '⚠️ "used to work" ≠ "used to working"', fr: 'Habitude passée ≠ être habitué à' },
+        ]
+      },
+      {
+        title: '🔄 Would pour les habitudes passées',
+        content: '<strong>Would</strong> peut remplacer "used to" pour les habitudes (pas les états)',
+        examples: [
+          { en: 'We <strong>would</strong> go to the beach every summer.', fr: 'Nous allions à la plage chaque été.' },
+          { en: '✅ She used to be shy. (état → "used to" only)', fr: 'Elle était timide (avant).' },
+          { en: '❌ She would be shy. (wrong for states)', fr: 'Incorrect pour les états.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Used to = habitude OU état passé qui n\'existe plus',
+      '🔑 Would = habitude passée SEULEMENT (pas les états)',
+      '⚠️ "Be used to + -ing" = être habitué à (présent)',
+      '💡 Pas de "used to" au présent : on dit "usually" → I usually walk to work.',
+    ]
+  },
+
+  verbsOfState: {
+    id: 'verbsOfState',
+    title: 'Verbes + Gérondif ou Infinitif',
+    icon: '🎯',
+    level: 'B1',
+    subtitle: 'Like, love, hate, enjoy, prefer — gérondif ou infinitif ?',
+    malgasyNote: 'Matoanteny + -ing na + infinitif',
+    sections: [
+      {
+        title: '✅ Verbes suivis du gérondif SEULEMENT',
+        content: 'Ces verbes exigent toujours le gérondif (-ing)',
+        examples: [
+          { en: 'I <strong>enjoy</strong> reading books.', fr: 'J\'aime lire des livres.' },
+          { en: 'She <strong>doesn\'t mind</strong> waiting.', fr: 'Ça ne la dérange pas d\'attendre.' },
+          { en: 'He <strong>keeps</strong> talking during class.', fr: 'Il n\'arrête pas de parler en classe.' },
+          { en: 'They <strong>finished</strong> eating and left.', fr: 'Ils ont fini de manger et sont partis.' },
+          { en: 'I <strong>avoid</strong> driving at night.', fr: 'J\'évite de conduire la nuit.' },
+        ]
+      },
+      {
+        title: '✅ Verbes suivis de l\'infinitif SEULEMENT',
+        content: 'Ces verbes exigent toujours l\'infinitif (to + verbe)',
+        examples: [
+          { en: 'She <strong>wants</strong> to learn English.', fr: 'Elle veut apprendre l\'anglais.' },
+          { en: 'He <strong>decided</strong> to leave early.', fr: 'Il a décidé de partir tôt.' },
+          { en: 'They <strong>hope</strong> to visit Paris.', fr: 'Ils espèrent visiter Paris.' },
+          { en: 'I <strong>need</strong> to study more.', fr: 'J\'ai besoin d\'étudier plus.' },
+        ]
+      },
+      {
+        title: '🔄 Verbes suivis des DEUX (sens identique)',
+        content: 'Like, love, hate, prefer → gérondif ou infinitif, même sens',
+        examples: [
+          { en: 'I <strong>like swimming</strong>. = I <strong>like to swim</strong>.', fr: 'J\'aime nager.' },
+          { en: 'She <strong>loves cooking</strong>. = She <strong>loves to cook</strong>.', fr: 'Elle aime cuisiner.' },
+          { en: 'He <strong>hates waiting</strong>. = He <strong>hates to wait</strong>.', fr: 'Il déteste attendre.' },
+        ]
+      },
+      {
+        title: '⚠️ Stop + gérondif vs infinitif (sens différent !)',
+        content: 'Le sens change selon la forme utilisée',
+        examples: [
+          { en: 'He <strong>stopped smoking</strong>. (arrêter de fumer)', fr: 'Il a arrêté de fumer.' },
+          { en: 'He <strong>stopped to smoke</strong>. (s\'arrêter pour fumer)', fr: 'Il s\'est arrêté pour fumer.' },
+          { en: 'She <strong>remembered calling</strong> him. (se souvenir d\'avoir appelé)', fr: 'Elle se souvient de lui avoir téléphoné.' },
+          { en: 'She <strong>remembered to call</strong> him. (se souvenir de devoir appeler)', fr: 'Elle a pensé à lui téléphoner.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 enjoy, mind, avoid, finish, keep → toujours + -ing',
+      '🔑 want, need, decide, hope, plan → toujours + infinitif',
+      '🔄 like, love, hate, prefer → -ing ou infinitif (même sens)',
+      '⚠️ stop, try, remember, forget → sens DIFFÉRENT selon -ing ou infinitif',
+    ]
+  },
+
+  adjectives: {
+    id: 'adjectives',
+    title: 'Les Adjectifs',
+    icon: '✨',
+    level: 'A1–A2',
+    subtitle: 'Qualifier les personnes et les choses',
+    malgasyNote: 'Teny mpamaritra anarana',
+    sections: [
+      {
+        title: '📌 Position de l\'adjectif',
+        content: 'En anglais, l\'adjectif se place <strong>avant</strong> le nom (≠ français)',
+        examples: [
+          { en: 'a <strong>beautiful</strong> house (≠ une maison belle)', fr: 'une belle maison' },
+          { en: 'a <strong>tall</strong> student', fr: 'un grand étudiant' },
+          { en: 'She is <strong>happy</strong>. (après "be")', fr: 'Elle est heureuse.' },
+        ]
+      },
+      {
+        title: '👆 Adjectifs démonstratifs',
+        content: 'Indiquent la proximité ou l\'éloignement',
+        examples: [
+          { en: '<strong>This</strong> book (ce livre-ci — proche, singulier)', fr: 'ce livre-ci' },
+          { en: '<strong>That</strong> house (cette maison-là — loin, singulier)', fr: 'cette maison-là' },
+          { en: '<strong>These</strong> shoes (ces chaussures-ci — proche, pluriel)', fr: 'ces chaussures-ci' },
+          { en: '<strong>Those</strong> trees (ces arbres-là — loin, pluriel)', fr: 'ces arbres-là' },
+        ]
+      },
+      {
+        title: '📋 Ordre des adjectifs multiples',
+        content: 'Quand il y a plusieurs adjectifs : opinion → taille → âge → forme → couleur → origine → matière',
+        examples: [
+          { en: 'a <strong>beautiful big old round green French</strong> vase', fr: 'un beau grand vieux vase rond vert français' },
+          { en: 'a <strong>lovely small</strong> dog', fr: 'un joli petit chien' },
+          { en: 'a <strong>tall young</strong> man', fr: 'un grand jeune homme' },
+        ]
+      },
+      {
+        title: '⚡ Adjectifs courants à mémoriser',
+        content: 'Adjectifs essentiels avec leur contraire',
+        examples: [
+          { en: 'big ↔ small | tall ↔ short | young ↔ old', fr: 'grand ↔ petit | grand ↔ court | jeune ↔ vieux' },
+          { en: 'happy ↔ sad | hot ↔ cold | fast ↔ slow', fr: 'heureux ↔ triste | chaud ↔ froid | rapide ↔ lent' },
+          { en: 'easy ↔ difficult | cheap ↔ expensive | clean ↔ dirty', fr: 'facile ↔ difficile | bon marché ↔ cher | propre ↔ sale' },
+        ]
+      },
+      {
+        title: '🔄 Adjectif ≠ Adverbe',
+        content: 'L\'adjectif qualifie un nom, l\'adverbe qualifie un verbe',
+        examples: [
+          { en: 'She is a <strong>quick</strong> runner. (adjectif → runner)', fr: 'C\'est une coureuse rapide.' },
+          { en: 'She runs <strong>quickly</strong>. (adverbe → runs)', fr: 'Elle court rapidement.' },
+          { en: 'He is <strong>careful</strong>. (adjectif après "be")', fr: 'Il est prudent.' },
+          { en: 'He drives <strong>carefully</strong>. (adverbe)', fr: 'Il conduit prudemment.' },
+        ]
+      },
+    ],
+    tips: [
+      '🔑 Adjectifs en anglais : invariables (pas de -s au pluriel)',
+      '🔑 Toujours avant le nom : a red car (pas a car red)',
+      '⚠️ Démonstratifs : this/that (singulier) — these/those (pluriel)',
+      '💡 Ordre : "a lovely little old rectangular green French silver whittling knife"',
+    ]
+  },
+
+
 export const theoryTopics = [
   // ── A1 ───────────────────────────────────────────────────────────
   { id: 'pronouns',          label: 'Pronoms',                        icon: '👥',   level: 'A1' },
@@ -1896,6 +2132,13 @@ export const theoryTopics = [
   { id: 'phrasalVerbs',      label: 'Phrasal Verbs essentiels',       icon: '💡',   level: 'B1–B2' },
   // ── B2 ───────────────────────────────────────────────────────────
   { id: 'futurePerfect',     label: 'Future Perfect',                 icon: '✅🚀',  level: 'B2' },
+
+  // ── A1–A2 (new) ──────────────────────────────────────────────────────────
+  { id: 'adjectives',    label: 'Les Adjectifs',                      icon: '✨',   level: 'A1–A2' },
+  // ── B1 (new) ─────────────────────────────────────────────────────────────
+  { id: 'sinceFor',      label: 'Since & For',                        icon: '⏳',   level: 'B1' },
+  { id: 'usedTo',        label: 'Used to',                            icon: '🔙',   level: 'B1' },
+  { id: 'verbsOfState',  label: 'Verbes + Gérondif / Infinitif',      icon: '🎯',   level: 'B1' },
 ];
 
 export const vocabTopics = [
@@ -2336,6 +2579,160 @@ export const malgasyManual = [
       'Present Perfect: I have eaten rice today (ankehitriny mbola mitohy)',
     ],
   },
+
+
+  {
+    id: 'mg_adjectives',
+    grammarRef: 'adjectives',
+    title: 'Adjectives',
+    titleMg: 'Teny Mpamaritra',
+    icon: '✨',
+    level: 'A1–A2',
+    explanation: 'Ny teny mpamaritra (adjectives) dia mamaritra ny anarana. Amin\'ny teny anglisy, ny teny mpamaritra dia apetraka ALOHAN\'ny anarana (tsy toy ny teny frantsay). Ny teny malagasy kosa dia matetika mametraka ny mpamaritra AORIAN\'ny anarana.',
+    rows: [
+      {
+        label: 'Toerana (Position)',
+        structure: 'adjectif + nom',
+        example_en: 'a beautiful house',
+        example_mg: 'trano tsara',
+        note: 'Anglisy: adjective ALOHAN\'ny noun | Malagasy: aorian\'ny noun matetika',
+      },
+      {
+        label: 'Démonstratifs (Mampiseho)',
+        structure: 'this/that (sg) | these/those (pl)',
+        example_en: 'this book / those trees',
+        example_mg: 'ity boky ity / ireny hazo ireny',
+        note: 'this/these = akaiky | that/those = lavitra',
+      },
+      {
+        label: 'Mifanohitra (Opposés)',
+        structure: 'big ↔ small | happy ↔ sad',
+        example_en: 'big house / small house',
+        example_mg: 'trano lehibe / trano kely',
+        note: 'Ny adjectives dia tsy miova ho an\'ny pluriel amin\'ny anglisy',
+      },
+    ],
+    tipsMg: [
+      'Amin\'ny anglisy ny mpamaritra dia tsy manova endrika (tsy misy -s)',
+      'Filaharan\'ny mpamaritra maro: hevitra → haben\'ny → taona → endrika → loko → niaviana → zavatra',
+      'Aorian\'ny "be": She is happy (adjective aorian\'ny be)',
+    ],
+  },
+
+  {
+    id: 'mg_sinceFor',
+    grammarRef: 'sinceFor',
+    title: 'Since & For',
+    titleMg: 'Since sy For',
+    icon: '⏳',
+    level: 'B1',
+    explanation: 'Ny "since" sy "for" dia ampiasaina miaraka amin\'ny Present Perfect na Past Perfect hanazavana ny faharetan\'ny zavatra. "Since" = nanomboka rahoviana | "For" = nandritra ny fotoana maharitra.',
+    rows: [
+      {
+        label: 'Since (nanomboka)',
+        structure: 'since + fotoana manokana',
+        example_en: 'I have lived here since 2015.',
+        example_mg: 'Monina eto aho nanomboka ny 2015.',
+        note: 'since + taona, andro, fotoana manokana',
+      },
+      {
+        label: 'For (nandritra)',
+        structure: 'for + faharetan\'ny fotoana',
+        example_en: 'I have lived here for five years.',
+        example_mg: 'Monina eto aho nandritra ny dimy taona.',
+        note: 'for + isa + fotoana (hours, days, years)',
+      },
+      {
+        label: 'Fanontaniana (Question)',
+        structure: 'How long have you...?',
+        example_en: 'How long have you studied English?',
+        example_mg: 'Hatriniry no nianarànao anglisy?',
+        note: '"How long" + Present Perfect → valiny: for / since',
+      },
+    ],
+    tipsMg: [
+      'Since = nanomboka fotoana iray manokana (2015, Monday, last year)',
+      'For = nandritra ny fotoana iray (5 years, two months, a long time)',
+      'Tsy maintsy ampiasaina miaraka amin\'ny Present Perfect na Past Perfect',
+    ],
+  },
+
+  {
+    id: 'mg_usedTo',
+    grammarRef: 'usedTo',
+    title: 'Used to',
+    titleMg: 'Used to — Fomba Lasa',
+    icon: '🔙',
+    level: 'B1',
+    explanation: 'Ny "used to" dia ampiasaina hilazana ny fomba na toe-javatra tamin\'ny lasa izay tsy misy intsony ankehitriny. Ny malagasy dia mahazo mampiasa "fahiny" na "taloha" hilazana izany.',
+    rows: [
+      {
+        label: 'Fomba fanaovana (+)',
+        structure: 'sujet + used to + verbe',
+        example_en: 'I used to walk to school.',
+        example_mg: 'Nandeha tongotra ho any an-tsekoly aho fahiny.',
+        note: 'Fomba na toe-javatra tamin\'ny lasa, tsy misy intsony',
+      },
+      {
+        label: 'Fandavana (−)',
+        structure: 'sujet + didn\'t use to + verbe',
+        example_en: 'I didn\'t use to like vegetables.',
+        example_mg: 'Tsy tia legioma aho fahiny.',
+        note: 'didn\'t use to (tsy "used")',
+      },
+      {
+        label: 'Fanontaniana (?)',
+        structure: 'Did + sujet + use to + verbe?',
+        example_en: 'Did you use to play football?',
+        example_mg: 'Nilalao baolina-kitra ve ianao fahiny?',
+        note: 'use to (tsy "used") aorian\'ny "did"',
+      },
+    ],
+    tipsMg: [
+      'Used to ≠ be used to: "I used to swim" (lasa) ≠ "I am used to swimming" (zatra)',
+      'Would koa azo ampiasaina ho an\'ny fomba lasa, fa tsy ho an\'ny toe-javatra (state)',
+      'Tsy misy "use to" amin\'ny ankehitriny — ampiasao "usually"',
+    ],
+  },
+
+  {
+    id: 'mg_verbsOfState',
+    grammarRef: 'verbsOfState',
+    title: 'Verbes + -ing / Infinitif',
+    titleMg: 'Matoanteny + -ing na Infinitif',
+    icon: '🎯',
+    level: 'B1',
+    explanation: 'Ny matoanteny sasany dia mahazo miaraka amin\'ny gérondif (-ing) ihany, ny hafa dia miaraka amin\'ny infinitif (to + verbe), ary ny hafa kosa dia miaraka amin\'ny roa. Ilaina ny mahafantatra izay manaraka izay.',
+    rows: [
+      {
+        label: '-ing ihany',
+        structure: 'enjoy/mind/avoid/finish + -ing',
+        example_en: 'I enjoy reading. / She avoids driving.',
+        example_mg: 'Tia mamaky aho. / Menatra mitaingina fiara izy.',
+        note: 'enjoy, mind, avoid, finish, keep, consider → -ing ihany',
+      },
+      {
+        label: 'Infinitif ihany',
+        structure: 'want/need/decide/hope + to + verbe',
+        example_en: 'She wants to leave. / He decided to stay.',
+        example_mg: 'Te-handeha izy. / Nifidy ny hitoetra izy.',
+        note: 'want, need, decide, hope, plan, promise → infinitif ihany',
+      },
+      {
+        label: 'Roa azo (sens mitovy)',
+        structure: 'like/love/hate/prefer + -ing NA infinitif',
+        example_en: 'I like swimming. = I like to swim.',
+        example_mg: 'Tia milomano aho.',
+        note: 'like, love, hate, prefer → roa azo, sens mitovy',
+      },
+    ],
+    tipsMg: [
+      'Stop + -ing = mitsahatra: He stopped smoking (najanony ny fisotro sigara)',
+      'Stop + infinitif = mijanona mba hanao: He stopped to smoke (nijanonan\'izy mba hisotro sigara)',
+      'Remember + -ing = mahatsiaro nataony | Remember + infinitif = mahatsiaro hataony',
+    ],
+  },
+
 
 ];
 

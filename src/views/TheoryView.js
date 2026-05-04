@@ -174,6 +174,10 @@ export function renderTheory(topicId) {
           phrasalVerbs:         'phrasalVerbs',
           // grammar B2
           futurePerfect:        'futurePerfect',
+          // new sections (adjectives already mapped above as vocabulary)
+          sinceFor:             'sinceFor',
+          usedTo:               'usedTo',
+          verbsOfState:         'verbsOfState',
         };
         const ex = topicMap[effectiveTopic];
         if (ex) {
