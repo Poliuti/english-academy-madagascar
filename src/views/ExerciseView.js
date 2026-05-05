@@ -680,6 +680,9 @@ const SYNONYMS = [
 function checkAnswer(raw, ex) {
   const normalize = s => s.toLowerCase()
     .trim()
+    // Ligature normalisation: œ/æ ↔ oe/ae
+    .replace(/œ/g, 'oe').replace(/Œ/g, 'oe')
+    .replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
     .replace(/[.!?,;:]/g, '')   // strip punctuation
     .replace(/\s+/g, ' ')
     .trim()

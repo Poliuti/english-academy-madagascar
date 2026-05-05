@@ -299,7 +299,9 @@ function renderTurns(dialogue, state) {
 }
 
 function checkAnswer(user, correct, alternatives) {
-  const normalize = s => s.toLowerCase().trim().replace(/[.!?,]/g, '').replace(/\s+/g, ' ');
+  const normalize = s => s.toLowerCase().trim()
+    .replace(/œ/g, 'oe').replace(/Œ/g, 'oe').replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
+    .replace(/[.!?,]/g, '').replace(/\s+/g, ' ');
   const n = normalize(user);
   if (n === normalize(correct)) return true;
   if (alternatives) {

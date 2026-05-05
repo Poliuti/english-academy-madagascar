@@ -22,6 +22,9 @@ function escHtml(s) {
 
 function normalise(s) {
   return (s || '').toLowerCase().trim()
+    // Ligature normalisation: œ/æ ↔ oe/ae (both directions collapse to oe/ae)
+    .replace(/œ/g, 'oe').replace(/Œ/g, 'oe')
+    .replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
     .replace(/[.,!?;:'"]/g, '')
     .replace(/\s+/g, ' ');
 }
