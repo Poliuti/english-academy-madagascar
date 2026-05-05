@@ -59,6 +59,20 @@ Le chatbot fonctionne **entièrement en local** — aucune donnée envoyée sur 
 | Ollama | https://ollama.com/download |
 | Modèle | `ollama pull llama3.2:3b` (via setup.bat) |
 
+---
+
+## Variables d'environnement (production / Vercel)
+
+| Nom (case-sensitive) | Où | Utilisée par |
+|----------------------|-----|--------------|
+| `GROQ_API_KEY` | Vercel → Project Settings → Environment Variables | `api/chat.js` (proxy serverless du Tutor IA en ligne) |
+
+**Notes :**
+- Le nom **doit être exactement** `GROQ_API_KEY` (les variables Vercel sont sensibles à la casse).
+- **Pas de préfixe `VITE_`** : la clé est lue côté serveur dans la fonction serverless (`process.env.GROQ_API_KEY`), jamais exposée au navigateur.
+- Cocher *Production* + *Preview* lors de l'ajout sur Vercel, puis redéployer.
+- En local, le Tutor IA utilise Ollama (offline) : aucune variable d'environnement requise.
+
 **Pour utiliser depuis d'autres appareils sur le même réseau :**
 1. Démarre Ollama avec : `set OLLAMA_HOST=0.0.0.0 && ollama serve`
 2. Dans l'app → Tutor → ⚙️ changer l'adresse vers l'IP du PC (ex: `192.168.1.X:11434`)
