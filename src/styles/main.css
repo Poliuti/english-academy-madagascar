@@ -688,6 +688,8 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .vocab-layout { display: flex; min-height: 100vh; }
 .vocab-sidebar { width: 240px; min-width: 200px; background: var(--card); border-right: 1px solid var(--border); padding: 16px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
 .vocab-main { flex: 1; padding: 24px; overflow-y: auto; }
+/* Mobile bar — hidden on desktop */
+.vocab-mobilebar { display: none; }
 .vocab-search { width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font); font-size: .9rem; }
 .vocab-search:focus { outline: 2px solid var(--primary); border-color: transparent; }
 .vocab-content { max-width: 900px; }
@@ -781,6 +783,28 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 @media (max-width: 600px) {
   .theory-sidebar { display: none; }
   .vocab-sidebar  { display: none; }
+
+  /* Vocab sidebar overlay on mobile */
+  .vocab-sidebar.mobile-open {
+    display: flex !important;
+    position: fixed;
+    top: 0; left: 0;
+    width: 82vw; max-width: 300px;
+    height: 100vh;
+    z-index: 300;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    animation: slideInLeft .22s ease;
+  }
+  .vocab-mobilebar {
+    display: flex;
+    align-items: center; gap: 10px;
+    padding: 10px 16px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+  }
+  .vocab-mobilebar .btn-back { flex-shrink: 0; }
+  .vocab-main { padding: 14px !important; }
 
   /* Theory sidebar overlay on mobile */
   .theory-sidebar.mobile-open {

@@ -59,8 +59,12 @@ export function renderVocabulary(categoryId) {
   function render() {
     const inGame = flashMode || matchMode;
     container.innerHTML = `
+      <!-- Mobile sidebar backdrop -->
+      <div class="sidebar-backdrop" id="vocab-backdrop"></div>
+
       <div class="vocab-layout">
-        <aside class="vocab-sidebar">
+        <aside class="vocab-sidebar" id="vocab-sidebar">
+          <button class="btn-sidebar-close" id="btn-sidebar-close">✕ Fermer</button>
           <button class="btn-back sidebar-back" id="btn-back">← Retour</button>
           <h3 class="sidebar-title">📚 Vocabulaire</h3>
           ${inGame ? '' : `<input type="text" class="vocab-search" id="vocab-search" placeholder="🔎 Rechercher..." value="${escHtml(search)}" />`}
@@ -75,6 +79,11 @@ export function renderVocabulary(categoryId) {
           </nav>
         </aside>
         <main class="vocab-main">
+          <!-- Mobile bar (hidden on desktop) -->
+          <div class="vocab-mobilebar">
+            <button class="btn-back" id="btn-back-mobile">← Retour</button>
+            <button class="btn-mobile-toc" id="btn-mobile-toc">☰ Catégories</button>
+          </div>
           ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : renderCategory(current, search)}
         </main>
       </div>
@@ -163,12 +172,29 @@ export function renderVocabulary(categoryId) {
     `;
   }
 
+  function openVocabSidebar() {
+    container.querySelector('#vocab-sidebar')?.classList.add('mobile-open');
+    container.querySelector('#vocab-backdrop')?.classList.add('active');
+  }
+  function closeVocabSidebar() {
+    container.querySelector('#vocab-sidebar')?.classList.remove('mobile-open');
+    container.querySelector('#vocab-backdrop')?.classList.remove('active');
+  }
+
   function bindEvents() {
     container.querySelector('#btn-back').addEventListener('click', () => {
       if (flashMode) { stopFlash(); return; }
       if (matchMode) { stopMatch(); return; }
       location.hash = '#dashboard';
     });
+    container.querySelector('#btn-back-mobile')?.addEventListener('click', () => {
+      if (flashMode) { stopFlash(); return; }
+      if (matchMode) { stopMatch(); return; }
+      location.hash = '#dashboard';
+    });
+    container.querySelector('#btn-mobile-toc')?.addEventListener('click', openVocabSidebar);
+    container.querySelector('#btn-sidebar-close')?.addEventListener('click', closeVocabSidebar);
+    container.querySelector('#vocab-backdrop')?.addEventListener('click', closeVocabSidebar);
 
     container.querySelectorAll('.sidebar-item').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -176,6 +202,7 @@ export function renderVocabulary(categoryId) {
         search = '';
         flashMode = false;
         matchMode = false;
+        closeVocabSidebar();
         render();
       });
     });
