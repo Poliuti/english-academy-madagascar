@@ -6,7 +6,7 @@ import { TOPICS, getTopicById } from '../data/topics.js';
 import { calculateNextReview, qualityFromResult, sortByPriority } from '../sm2.js';
 import { speak, stop, isSupported } from '../tts.js';
 
-const SESSION_SIZE = 8;
+const SESSION_SIZE = 12;
 const LEVEL_LABELS = { 1: '🌱 Débutant', 2: '📈 Intermédiaire', 3: '🚀 Avancé' };
 
 // ─── Malagasy instruction translations ───────────────────────────────────────

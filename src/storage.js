@@ -182,11 +182,11 @@ export function setProfileLevel(profileId, level) {
 function getTopicExerciseCount(topicId) {
   // Default count — keeps storage.js free of data dependency
   const counts = {
-    routine: 8, family: 8, school: 8, body: 8, time: 8,
-    verbs: 8, timeAdverbs: 8, presentSimple: 8,
-    presentContinuous: 8, pastSimple: 8, futureSimple: 8,
+    routine: 12, family: 12, school: 12, body: 12, time: 12,
+    verbs: 12, timeAdverbs: 12, presentSimple: 12,
+    presentContinuous: 12, pastSimple: 12, futureSimple: 12,
   };
-  return counts[topicId] || 8;
+  return counts[topicId] || 12;
 }
 
 export function computeLevel(xp) {
