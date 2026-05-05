@@ -495,6 +495,8 @@ export function renderCompetitive() {
 
     container.innerHTML = `
       <div class="comp-page">
+        <button class="btn-back comp-back comp-quit-btn" id="btn-quit-game">← Quitter la partie</button>
+
         <div class="comp-scoreboard">
           ${players.map((pl, i) => `
             <div class="comp-score-card ${i === currentPlayer ? 'current' : ''}">
@@ -615,6 +617,23 @@ export function renderCompetitive() {
   }
 
   function bindPlayingEvents() {
+    const quitBtn = container.querySelector('#btn-quit-game');
+    if (quitBtn) {
+      quitBtn.addEventListener('click', () => {
+        const ok = confirm('Quitter la partie en cours ? Les scores seront perdus.');
+        if (!ok) return;
+        clearTimer();
+        // Reset state and go back to setup (player names persist)
+        players = [];
+        currentEx = null;
+        questionIndex = 0;
+        answered = false;
+        lastCorrect = null;
+        phase = 'setup';
+        render();
+      });
+    }
+
     const submitBtn = container.querySelector('#btn-submit');
     const input = container.querySelector('#comp-answer');
 

@@ -1591,8 +1591,11 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .comp-home:hover { border-color: var(--primary); }
 
 /* ── Dashboard competitive button ──────────────────────────────────────── */
-.quick-btn-competitive { background: linear-gradient(135deg, #F59E0B, #EF4444); color: #fff; border: none; }
+.quick-btn-competitive { background: linear-gradient(135deg, #F59E0B, #EF4444); color: #fff; border: none; grid-column: span 2; justify-content: center; }
 .quick-btn-competitive:hover { background: linear-gradient(135deg, #D97706, #DC2626); color: #fff; }
+
+/* ── Quit-game button (during play) ────────────────────────────────────── */
+.comp-quit-btn { align-self: flex-start; margin-bottom: 4px; }
 
 @media (max-width: 480px) {
   .comp-setup-card, .comp-game-card, .comp-end-card { padding: 18px 14px; }
