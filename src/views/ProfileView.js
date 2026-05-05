@@ -12,17 +12,13 @@ export function renderProfileSelector() {
 
   container.innerHTML = `
     <div class="profile-header">
-      <div class="app-logo-wrap">
-        <span class="app-logo-flag">🇲🇬</span>
-        <span class="app-logo-x">×</span>
-        <span class="app-logo-flag">🇬🇧</span>
-      </div>
       <h1 class="app-title">English Academy<br><span class="app-title-mg">Madagascar</span></h1>
       <p class="app-subtitle">✨ Parle anglais avec confiance — gratuitement, hors ligne, à ton rythme !</p>
       <p class="app-subtitle-mg">🇲🇬 Mianara anglisy maimaimpoana, tsy mila internet, araka ny fihevitreo!</p>
       <div class="app-stats-row">
-        <span class="app-stat-chip">📚 32 chapitres</span>
-        <span class="app-stat-chip">🎧 1900+ audios</span>
+        <span class="app-stat-chip">📖 39 chapitres</span>
+        <span class="app-stat-chip">🎧 2100+ audios</span>
+        <span class="app-stat-chip">💬 370 mots</span>
         <span class="app-stat-chip">🤖 Tutor IA</span>
       </div>
     </div>
