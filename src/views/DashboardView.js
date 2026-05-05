@@ -1,5 +1,6 @@
 import { getActiveProfile, getLevelTitle, getTopicCompletionPercent, getLevelScore, isLevelUnlocked } from '../storage.js';
 import { TOPICS, isTopicUnlocked } from '../data/topics.js';
+import { ENABLE_COMPETITIVE_MODE } from '../config.js';
 
 export function renderDashboard() {
   const profile = getActiveProfile();
@@ -62,6 +63,11 @@ export function renderDashboard() {
           <span class="quick-icon">🤖</span>
           <span>Tutor IA</span>
         </button>
+        ${ENABLE_COMPETITIVE_MODE ? `
+        <button class="quick-btn quick-btn-competitive" id="btn-competitive">
+          <span class="quick-icon">🏆</span>
+          <span>Défi amis</span>
+        </button>` : ''}
       </div>
 
       <!-- Assessment Banner -->
@@ -106,6 +112,11 @@ export function renderDashboard() {
   container.querySelector('#btn-tutor').addEventListener('click', () => {
     location.hash = '#tutor';
   });
+  if (ENABLE_COMPETITIVE_MODE) {
+    container.querySelector('#btn-competitive')?.addEventListener('click', () => {
+      location.hash = '#competitive';
+    });
+  }
 
   // Topic card clicks
   container.querySelectorAll('.topic-card[data-topic]').forEach(card => {

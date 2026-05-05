@@ -26,3 +26,10 @@
 
 export const SUPABASE_URL = '';   // ex: 'https://abcdefgh.supabase.co'
 export const SUPABASE_KEY = '';   // clé "anon public" (safe à exposer côté client)
+
+// ─── FEATURE FLAGS ────────────────────────────────────────────────────────────
+// Imposta su TRUE per abilitare la modalità competitiva multiplayer,
+// FALSE per nasconderla completamente dall'interfaccia.
+// Una sola riga da cambiare per abilitare o disabilitare tutto.
+export const ENABLE_COMPETITIVE_MODE = true;
+// ─────────────────────────────────────────────────────────────────────────────

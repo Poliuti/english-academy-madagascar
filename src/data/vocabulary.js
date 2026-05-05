@@ -17,6 +17,7 @@ export const VOCAB_CATEGORIES = [
   { id: 'pronouns',    label: 'Pronoms',             icon: '👤', level: 'A1' },
   { id: 'connectors',    label: 'Mots de liaison',          icon: '🔗', level: 'A2' },
   { id: 'presentations', label: 'Présentations',             icon: '🎤', level: 'A1–A2' },
+  { id: 'activities',    label: 'Routine & Activités',       icon: '🎯', level: 'A1–A2' },
 ];
 
 export const VOCABULARY = {
@@ -413,6 +414,40 @@ export const VOCABULARY = {
     { en: 'I would like to add',      fr: 'J\'aimerais ajouter',        mg: 'Te-hanampy koa aho',     example: 'I would like to add one more thing.' },
     { en: 'For example',              fr: 'Par exemple',                 mg: 'Ohatra',                  example: 'For example, in my village we speak Malagasy.' },
     { en: 'In my opinion',            fr: 'À mon avis',                  mg: 'Araka ny hevitro',       example: 'In my opinion, English is very useful.' },
+  ],
+
+  // ─── ACTIVITIES (Routine & Activités) ───────────────────────────────────────
+  activities: [
+    // Daily routine actions
+    { en: 'wake up',            fr: 'se réveiller',              mg: 'mifohaza',                  example: 'I wake up at six every morning.' },
+    { en: 'get dressed',        fr: "s'habiller",                mg: 'miakanjo',                  example: 'She gets dressed quickly.' },
+    { en: 'have breakfast',     fr: 'prendre le petit-déjeuner', mg: 'misakafo maraina',           example: 'We have breakfast at seven.' },
+    { en: 'go to school',       fr: "aller à l'école",           mg: 'mankany an-tsekoly',         example: 'The children go to school on foot.' },
+    { en: 'do homework',        fr: 'faire les devoirs',         mg: 'manao lesona',               example: 'She does her homework every evening.' },
+    { en: 'have lunch',         fr: 'déjeuner',                  mg: 'misakafo antoandro',         example: 'We have lunch at noon.' },
+    { en: 'go to bed',          fr: 'se coucher',                mg: 'mandria',                    example: 'I go to bed at ten.' },
+    { en: 'take a shower',      fr: 'prendre une douche',        mg: 'mandro',                     example: 'He takes a shower every morning.' },
+    { en: 'brush your teeth',   fr: 'se brosser les dents',      mg: 'mitsedry nify',              example: 'Brush your teeth twice a day.' },
+    { en: 'come home',          fr: 'rentrer à la maison',       mg: 'miverina an-trano',          example: 'I come home at five in the afternoon.' },
+    // Hobbies & leisure
+    { en: 'listen to music',    fr: 'écouter de la musique',     mg: 'mihaino mozika',             example: 'I listen to music every evening.' },
+    { en: 'play football',      fr: 'jouer au football',         mg: 'milalao baolina',            example: 'We play football on Saturdays.' },
+    { en: 'read a book',        fr: 'lire un livre',             mg: 'mamaky boky',                example: 'He reads a book before bed.' },
+    { en: 'watch TV',           fr: 'regarder la télévision',    mg: 'mijery fahitalavitra',       example: 'They watch TV after dinner.' },
+    { en: 'draw',               fr: 'dessiner',                  mg: 'manao sary',                 example: 'She loves to draw animals.' },
+    { en: 'sing',               fr: 'chanter',                   mg: 'mihira',                     example: 'He sings in the school choir.' },
+    { en: 'dance',              fr: 'danser',                    mg: 'mandihy',                    example: 'We dance at the school party.' },
+    { en: 'cook',               fr: 'cuisiner',                  mg: 'mahandro sakafo',            example: 'My mother cooks delicious food.' },
+    { en: 'swim',               fr: 'nager',                     mg: 'milomano',                   example: 'I swim in the river on weekends.' },
+    { en: 'ride a bike',        fr: 'faire du vélo',             mg: 'mitaingin-jiro',              example: 'She rides her bike to school.' },
+    { en: 'play guitar',        fr: 'jouer de la guitare',       mg: 'mitendry gitara',            example: 'He plays guitar very well.' },
+    { en: 'take photos',        fr: 'prendre des photos',        mg: 'maka sary',                  example: 'She takes photos of nature.' },
+    { en: 'write',              fr: 'écrire',                    mg: 'manoratra',                  example: 'I write in my diary every day.' },
+    { en: 'paint',              fr: 'peindre',                   mg: 'manao hosodoko',             example: 'He paints beautiful pictures.' },
+    { en: 'play basketball',    fr: 'jouer au basketball',       mg: 'milalao kitra',              example: 'The boys play basketball after school.' },
+    { en: 'watch a film',       fr: 'regarder un film',          mg: 'mijery sarimihetsika',       example: 'We watch a film every Friday night.' },
+    { en: 'chat with friends',  fr: 'discuter avec des amis',    mg: 'miresaka amin-ny namana',    example: 'I chat with my friends online.' },
+    { en: 'go for a walk',      fr: 'faire une promenade',       mg: 'mimandroso',                 example: 'We go for a walk in the morning.' },
   ],
 
 };

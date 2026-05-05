@@ -6,6 +6,7 @@ import { renderVocabulary } from './views/VocabularyView.js';
 import { renderDialogueList, renderDialogue } from './views/DialogueViewV2.js';
 import { renderBoky } from './views/BokyView.js';
 import { renderTutor } from './views/TutorView.js';
+import { renderCompetitive } from './views/CompetitiveView.js';
 import { getActiveProfile } from './storage.js';
 
 const app = document.getElementById('app');
@@ -59,6 +60,9 @@ function router() {
       break;
     case 'tutor':
       view = renderTutor();
+      break;
+    case 'competitive':
+      view = renderCompetitive();
       break;
     default:
       view = profile ? renderDashboard() : renderProfileSelector();
