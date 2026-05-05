@@ -46,10 +46,45 @@ function getAllVocabEntries(catId = null) {
   return out;
 }
 
-// Build vocab pool. If level <= 2 → produce MCQ shape (with 4 options).
-// Level 3 → keep open-text answer.
+// ── Validity filter: drop exercises that would render as broken UI ─────────
+// (e.g. free-production with missing keyword, or types we don't render)
+function isExerciseValid(ex) {
+  if (!ex || !ex.type) return false;
+  // Reject any exercise without a renderable question payload
+  if (ex.type === 'fill-blank')     return !!ex.template && !!ex.answer;
+  if (ex.type === 'translate')      return !!ex.french && !!ex.answer;
+  if (ex.type === 'error-correct')  return !!ex.sentence && !!ex.answer;
+  if (ex.type === 'word-order')     return Array.isArray(ex.words) && ex.words.length > 0 && !!ex.answer;
+  if (ex.type === 'listening')      return !!ex.audio && !!ex.answer;
+  // Anything else (free-production, multiple-choice, etc.) is rejected from
+  // competitive mode — the renderers don't support them safely.
+  return false;
+}
+
+// ── Level-appropriate type filter (TASK 1) ──────────────────────────────────
+// L1 (Débutant)        → only fill-blank with SINGLE-WORD answer (rendered as MCQ)
+// L2 (Intermédiaire)   → only fill-blank, any answer (rendered as MCQ)
+// L3 (Supérieur)       → fill-blank, translate, listening, error-correct, word-order (text)
+function isGrammarAllowedForLevel(ex, difficulty) {
+  if (!isExerciseValid(ex)) return false;
+  if (difficulty === 1) {
+    if (ex.type !== 'fill-blank') return false;
+    // Single-word answer (no spaces)
+    return typeof ex.answer === 'string' && !/\s/.test(ex.answer.trim());
+  }
+  if (difficulty === 2) {
+    return ex.type === 'fill-blank';
+  }
+  // L3
+  return ['fill-blank', 'translate', 'listening', 'error-correct', 'word-order'].includes(ex.type);
+}
+
+// Build vocab pool.
+//   L1 → MCQ with 4 options
+//   L2 → text input (single word translation) — vocab entries are always single words
+//   L3 → text input
 function buildVocabPool(catId, difficulty) {
-  const all = getAllVocabEntries(catId);
+  const all = getAllVocabEntries(catId).filter(w => w.en && w.fr);
   const allFr = all.map(w => w.fr);
   const pool = all.map(w => {
     const base = {
@@ -59,19 +94,20 @@ function buildVocabPool(catId, difficulty) {
       fr: w.fr,
       category: w.category,
     };
-    if (difficulty <= 2) {
-      // Build MCQ: 1 correct + 3 distractors (other FR translations)
+    if (difficulty === 1) {
+      // L1 → MCQ
       const distractors = shuffle(allFr.filter(fr => fr !== w.fr)).slice(0, 3);
+      while (distractors.length < 3) distractors.push('—');
       const options = shuffle([w.fr, ...distractors]);
       return { ...base, mode: 'mcq', options, correct: w.fr };
     }
+    // L2 + L3 → text input (single-word translation)
     return { ...base, mode: 'text' };
   });
   return shuffle(pool);
 }
 
-// Build grammar pool. Level <= 2 → MCQ (correct answer + 3 distractors from
-// other exercises in same topic/level). Level 3 → text input.
+// Build grammar pool with strict per-level type filtering.
 function buildGrammarPool(topicId, difficulty) {
   const topicIds = topicId ? [topicId] : TOPICS.map(t => t.id);
   const collected = [];
@@ -80,19 +116,20 @@ function buildGrammarPool(topicId, difficulty) {
       ? getExercisesByLevel(tid, difficulty)
       : getExercisesByTopic(tid);
     if (exs && exs.length) {
-      for (const ex of exs) collected.push({ ...ex, _topic: tid });
+      for (const ex of exs) {
+        if (isGrammarAllowedForLevel(ex, difficulty)) {
+          collected.push({ ...ex, _topic: tid });
+        }
+      }
     }
   }
 
-  // Pool of answers (for distractor generation)
-  const allAnswers = collected
-    .map(e => e.answer)
-    .filter(Boolean);
+  // Pool of answers (for distractor generation in MCQ levels)
+  const allAnswers = collected.map(e => e.answer).filter(Boolean);
 
   const pool = collected.map(ex => {
     if (difficulty <= 2 && ex.answer) {
       const distractors = shuffle(allAnswers.filter(a => a !== ex.answer)).slice(0, 3);
-      // If we couldn't find 3 unique distractors, pad with simple fillers
       while (distractors.length < 3) distractors.push('—');
       const options = shuffle([ex.answer, ...distractors]);
       return { ...ex, mode: 'mcq', options, correct: ex.answer };
@@ -276,9 +313,11 @@ export function renderCompetitive() {
               <button class="comp-opt ${difficulty===3?'active':''}" data-diff="3">🚀 Avancé</button>
             </div>
             <p class="comp-diff-note">
-              ${difficulty < 3
-                ? '🔘 Niveaux 1-2 : <strong>questions à choix multiple</strong>'
-                : '✍️ Niveau Avancé : <strong>réponse à écrire</strong> (texte libre)'}
+              ${difficulty === 1
+                ? '🔘 <strong>Débutant</strong> : choix multiple + complétion d\'un mot'
+                : difficulty === 2
+                ? '🔘 <strong>Intermédiaire</strong> : choix multiple + complétion + traduction d\'un mot'
+                : '✍️ <strong>Supérieur</strong> : traduction de phrases courtes + complétion + écoute'}
             </p>
           </div>
 
