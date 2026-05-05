@@ -93,28 +93,51 @@ export function renderTutor() {
   }
 
   async function checkGroq() {
+    // Step 1: GET diagnostic probe — checks endpoint + key presence without calling Groq
     try {
-      // Light probe: send minimal request to check if endpoint + key are set up
+      const probe = await fetch(GROQ_PROXY, {
+        method: 'GET',
+        signal: AbortSignal.timeout(5000),
+      });
+
+      if (probe.status === 404) {
+        setStatus('offline', '🔴 Endpoint /api/chat introuvable');
+        setInfo('La fonction serverless n\'est pas déployée. Vérifie que <code>api/chat.js</code> est présent et redéploie.');
+        _mode = 'none';
+        return;
+      }
+
+      const probeData = await probe.json().catch(() => ({}));
+      console.log('[Tutor] /api/chat probe:', probeData);
+
+      if (!probeData.groqKeyPresent) {
+        setStatus('warn', '⚠️ Clé Groq non configurée');
+        setInfo('Ajoutez <strong>GROQ_API_KEY</strong> dans Vercel → Settings → Environment Variables, puis redéployez.');
+        _mode = 'none';
+        return;
+      }
+
+      // Step 2: real ping to Groq via the proxy
       const res = await fetch(GROQ_PROXY, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: [{ role: 'user', content: 'ping' }] }),
-        signal: AbortSignal.timeout(8000),
+        signal: AbortSignal.timeout(10000),
       });
-      if (res.status === 503) {
-        // Endpoint exists but GROQ_API_KEY not set in Vercel
-        setStatus('warn', '⚠️ Clé Groq non configurée');
-        setInfo('Ajoutez <strong>GROQ_API_KEY</strong> dans les variables d\'environnement Vercel.');
-        _mode = 'none';
-      } else {
-        // Key configured and working (even a 400/422 means the endpoint reached Groq)
+
+      if (res.ok) {
         _mode = 'groq';
         setStatus('online', '🟢 Tutor IA en ligne (Groq)');
         setInfo('Propulsé par <strong>Groq</strong> (llama-3.1-8b-instant) · Cloud · Gratuit');
+      } else {
+        const errBody = await res.json().catch(() => ({}));
+        setStatus('warn', `⚠️ Groq erreur ${res.status}`);
+        setInfo(`Erreur serveur : <code>${(errBody.error || 'unknown').toString().substring(0, 120)}</code>`);
+        _mode = 'none';
       }
-    } catch {
+    } catch (e) {
       setStatus('offline', '🔴 Tutor IA non disponible (réseau ?)');
-      setInfo('Vérifie ta connexion internet.');
+      setInfo(`Vérifie ta connexion internet. <code>${(e.message || '').substring(0, 80)}</code>`);
       _mode = 'none';
     }
   }
