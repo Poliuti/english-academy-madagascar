@@ -3,10 +3,6 @@
 // ⚠️ Les traductions malagasy marquées sont incertaines — à vérifier.
 
 export const bokyChapters = [
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PRONOUNS — A1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'pronouns',
     title: 'Pronoms — Pronouns',
@@ -154,10 +150,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // TOBE — A1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'toBe',
     title: 'To Be — être',
@@ -330,10 +322,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // ARTICLES — A1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'articles',
     title: 'Articles (a / an / the)',
@@ -459,10 +447,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PLURALS — A1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'plurals',
     title: 'Les Pluriels',
@@ -557,10 +541,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // THEREBEIS — A1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'therebeis',
     title: 'There is / There are — Il y a',
@@ -711,11 +691,189 @@ export const bokyChapters = [
         { q: 'Lasa: "cinema here (before)"', a: 'There was a cinema here.', hint: 'was = lasa tokana' },
       ],
     }
-  },,
-
-  // ══════════════════════════════════════════════════════════════════════
-  // ADJECTIVES — A1–A2
-  // ══════════════════════════════════════════════════════════════════════
+  },
+  {
+    id: 'questions',
+    title: 'Questions (Wh-)',
+    icon: '❓',
+    level: 'A1–A2',
+    fr: {
+      intro: 'Les questions en anglais utilisent soit l\'inversion sujet/auxiliaire (yes/no), soit un mot interrogatif (Wh- question).',
+      sections: [
+        {
+          title: 'Questions Yes/No',
+          content: 'Auxiliaire (do/does/did/is/are/was/were/will/can...) + sujet + verbe ?',
+          rows: [
+            { en: 'Do you speak English?', tr: 'Est-ce que tu parles anglais ?' },
+            { en: 'Is she a teacher?', tr: 'Est-ce qu\'elle est professeure ?' },
+            { en: 'Did you eat lunch?', tr: 'As-tu mangé à midi ?' },
+            { en: 'Can he swim?', tr: 'Est-ce qu\'il sait nager ?' },
+          ]
+        },
+        {
+          title: 'Questions Wh-',
+          content: 'Mot interrogatif + auxiliaire + sujet + verbe ?',
+          rows: [
+            { en: 'What is your name?', tr: 'Comment t\'appelles-tu ?' },
+            { en: 'Where do you live?', tr: 'Où habites-tu ?' },
+            { en: 'When did she arrive?', tr: 'Quand est-elle arrivée ?' },
+            { en: 'Why are you late?', tr: 'Pourquoi es-tu en retard ?' },
+            { en: 'How many students are there?', tr: 'Combien d\'élèves y a-t-il ?' },
+            { en: 'Who told you that?', tr: 'Qui te l\'a dit ?' },
+          ]
+        },
+      ],
+      tips: [
+        'What = quoi/quel | Where = où | When = quand | Who = qui | Why = pourquoi | How = comment',
+        'How many + nom dénombrable | How much + nom indénombrable',
+        'Whose = à qui : Whose bag is this?',
+      ],
+      summary: [
+        'Yes/No : auxiliaire + sujet + verbe ?',
+        'Wh- : mot interrogatif + auxiliaire + sujet + verbe ?',
+        'What/Where/When/Who/Why/How — les 6 essentiels',
+        'How many (dénombrable) / How much (indénombrable)',
+        'Jamais de "do" si le mot interrogatif EST le sujet : Who lives here? (pas Who does live)',
+      ],
+      quickExercises: [
+        { q: 'Make Wh-question for: "She lives in Tana."', a: 'Where does she live?', hint: 'where + does + sujet + infinitif' },
+        { q: 'Make question: "They arrived at noon."', a: 'When did they arrive?', hint: 'when + did + sujet + infinitif' },
+        { q: 'How many or how much? "___ students are there?"', a: 'How many', hint: 'students = dénombrable' },
+        { q: 'Correct: "Where does she lives?"', a: 'Where does she live?', hint: 'does + infinitif (sans -s)' },
+      ],
+    },
+    mg: {
+      intro: 'Ny fanontaniana amin\'ny anglisy dia mampiasa ny fiovaovan\'ny sujet/auxiliaire (eny/tsia), na teny manontany (Wh-).',
+      sections: [
+        {
+          title: 'Fanontaniana Eny/Tsia',
+          content: 'Auxiliaire + sujet + verbe ?',
+          rows: [
+            { en: 'Do you speak English?', tr: 'Miteny anglisy ve ianao?' },
+            { en: 'Is she a teacher?', tr: 'Mpampianatra ve izy?' },
+            { en: 'Did you eat lunch?', tr: 'Nihinana ny antoandro ve ianao?' },
+            { en: 'Can he swim?', tr: 'Afaka milomano ve izy?' },
+          ]
+        },
+        {
+          title: 'Fanontaniana Wh-',
+          content: 'Teny manontany + auxiliaire + sujet + verbe ?',
+          rows: [
+            { en: 'What is your name?', tr: 'Iza no anaranao?' },
+            { en: 'Where do you live?', tr: 'Aiza no monina ianao?' },
+            { en: 'When did she arrive?', tr: 'Oviana no tonga izy?' },
+            { en: 'Why are you late?', tr: 'Nahoana ianao no tara?' },
+            { en: 'How many students are there?', tr: 'Firy ny mpianatra?' },
+            { en: 'Who told you that?', tr: 'Iza no nilaza izany taminao?' },
+          ]
+        },
+      ],
+      tips: [
+        'What=inona/iza | Where=aiza | When=oviana | Who=iza | Why=nahoana | How=ahoana',
+        'How many + azo isaina | How much + tsy azo isaina',
+        '"ve" amin\'ny malagasy = marqueur interrogatif',
+      ],
+      summary: [
+        'Eny/Tsia : auxiliaire + sujet + verbe ?',
+        'Wh- : teny manontany + auxiliaire + sujet + verbe ?',
+        'What/Where/When/Who/Why/How — fototra 6',
+        'How many (azo isaina) / How much (tsy azo isaina)',
+      ],
+      quickExercises: [
+        { q: 'Ataovy fanontaniana: "She lives in Tana."', a: 'Where does she live?', hint: 'where + does + infinitif' },
+        { q: 'Ataovy fanontaniana: "They arrived at noon."', a: 'When did they arrive?', hint: 'when + did + infinitif' },
+        { q: 'How many na how much? "___ mpianatra misy?"', a: 'How many', hint: 'mpianatra = azo isaina' },
+        { q: 'Mety sa tsia? "Where does she lives?"', a: 'Diso → Where does she live?', hint: 'does + infinitif tsy misy -s' },
+      ],
+    }
+  },
+  {
+    id: 'interrogative',
+    title: 'Questions — Interrogative',
+    icon: '❓',
+    level: 'A2',
+    fr: {
+      intro: "Former des questions en anglais est différent du français : on utilise des <strong>auxiliaires</strong> (Do/Does/Did, is/are/was/were, will, can…) et on <strong>inverse</strong> leur position avec le sujet. Maîtriser les questions est indispensable pour communiquer.",
+      sections: [
+        {
+          title: 'Questions Yes/No — Do / Does (Present Simple)',
+          content: '<strong>Do</strong> + I/you/we/they · <strong>Does</strong> + he/she/it → verbe à l\'infinitif',
+          rows: [
+            { en: 'Do you speak English?', tr: 'Est-ce que tu parles anglais ?' },
+            { en: 'Does she live in Tana?', tr: 'Est-ce qu\'elle habite à Tana ?' },
+            { en: 'Do they have a car?', tr: 'Est-ce qu\'ils ont une voiture ?' },
+          ]
+        },
+        {
+          title: 'Questions Yes/No — Did (Past Simple)',
+          content: '<strong>Did</strong> + tous les sujets → verbe à l\'infinitif (pas de -ed !)',
+          rows: [
+            { en: 'Did you eat this morning?', tr: 'Est-ce que tu as mangé ce matin ?' },
+            { en: 'Did she pass the exam?', tr: 'Est-ce qu\'elle a réussi l\'examen ?' },
+            { en: 'Did they understand?', tr: 'Est-ce qu\'ils ont compris ?' },
+          ]
+        },
+        {
+          title: 'Questions avec Be + Modaux',
+          content: 'Inverser directement — pas besoin de Do/Did',
+          rows: [
+            { en: 'Are you a student?', tr: 'Es-tu étudiant ?' },
+            { en: 'Was he at home?', tr: 'Était-il à la maison ?' },
+            { en: 'Can you help me?', tr: 'Peux-tu m\'aider ?' },
+            { en: 'Will she come tomorrow?', tr: 'Est-ce qu\'elle viendra demain ?' },
+          ]
+        },
+        {
+          title: 'Questions Wh- (What/Where/When/Who/Why/How)',
+          content: 'Mot interrogatif + auxiliaire + sujet + verbe infinitif',
+          rows: [
+            { en: 'Where do you live?', tr: 'Où habites-tu ?' },
+            { en: 'What does she eat?', tr: 'Qu\'est-ce qu\'elle mange ?' },
+            { en: 'Why did they leave?', tr: 'Pourquoi sont-ils partis ?' },
+            { en: 'How many books do you have?', tr: 'Combien de livres as-tu ?' },
+            { en: 'Who is your teacher?', tr: 'Qui est ton professeur ?' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "Does she speaks?" → ✅ "Does she speak?" (infinitif après Does)',
+        '❌ "What you did?" → ✅ "What did you do?" (Did obligatoire + infinitif)',
+        '❌ "Where she lives?" → ✅ "Where does she live?" (Do/Does obligatoire)',
+        '❌ "Why he was late?" → ✅ "Why was he late?" (be → inverser directement)',
+      ],
+      tips: [
+        '🔑 Do/Does pour le Present Simple · Did pour le Past Simple',
+        '⚠️ Après Do/Does/Did → verbe INFINITIF (sans -s, sans -ed)',
+        '💡 Be et modaux : pas besoin de Do — on inverse directement',
+      ],
+      summary: ['Yes/No : Do/Does/Did + sujet + infinitif ?', 'Be : Is/Are/Was/Were + sujet ?', 'Wh- : mot interrogatif + auxiliaire + sujet + infinitif ?'],
+    },
+    mg: {
+      intro: "Ny fanontaniana amin\'ny teny anglisy dia mampiasa <strong>auxiliaires</strong> (Do/Does/Did, is/are…). Amin\'ny teny malagasy, matetika ampiana \"ve\" aorian\'ny matoanteny na ny lohalahateny.",
+      sections: [
+        {
+          title: 'Fanontaniana Do/Does (Present Simple)',
+          content: '<strong>Do</strong> + I/you/we/they · <strong>Does</strong> + he/she/it → matoanteny infinitif',
+          rows: [
+            { en: 'Do you speak English?', tr: 'Miteny anglisy ve ianao?' },
+            { en: 'Does she live in Tana?', tr: 'Monina any Tana ve izy?' },
+          ]
+        },
+        {
+          title: 'Fanontaniana Wh-',
+          content: 'Teny manontaniana + auxiliaire + sujet + matoanteny',
+          rows: [
+            { en: 'Where do you live?', tr: 'Aiza no mipetraka ianao?' },
+            { en: 'What does she eat?', tr: 'Inona no haniny izy?' },
+            { en: 'Why did they leave?', tr: 'Nahoana izy no lasa?' },
+          ]
+        },
+      ],
+      commonErrors: ['❌ "Does she speaks?" → ✅ "Does she speak?"', '❌ "What you did?" → ✅ "What did you do?"'],
+      tips: ['Do/Does → Present Simple · Did → Past Simple', 'Aorian\'ny Do/Does/Did → matoanteny infinitif foana'],
+      summary: ['Do/Does + sujet + infinitif?', 'Did + sujet + infinitif?', 'Wh- + aux + sujet + infinitif?'],
+    },
+  },
   {
     id: 'adjectives',
     title: 'Les Adjectifs — Adjectives',
@@ -846,10 +1004,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // POSSESSIVES — A2
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'possessives',
     title: 'Possessives — Possessifs',
@@ -965,10 +1119,6 @@ export const bokyChapters = [
       ]
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PREPOSITIONS — A1–A2
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'prepositions',
     title: 'Prepositions — Prépositions',
@@ -1050,109 +1200,218 @@ export const bokyChapters = [
       summary: ['at = ora sy toerana mazava', 'on = ambonin\'ny & andro/daty', 'in = ao anaty & volana/taona'],
     },
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // QUESTIONS — A1–A2
-  // ══════════════════════════════════════════════════════════════════════
   {
-    id: 'questions',
-    title: 'Questions (Wh-)',
-    icon: '❓',
-    level: 'A1–A2',
+    id: 'countableUncountable',
+    title: 'Countable & Uncountable Nouns',
+    icon: '🧮',
+    level: 'A2–B1',
     fr: {
-      intro: 'Les questions en anglais utilisent soit l\'inversion sujet/auxiliaire (yes/no), soit un mot interrogatif (Wh- question).',
+      intro: "En anglais, les noms se divisent en <strong>countable</strong> (dénombrables, qu\'on peut compter) et <strong>uncountable</strong> (indénombrables, qu\'on ne peut pas compter). Ce choix détermine quel quantificateur utiliser : much, many, a lot of, a few, a little.",
       sections: [
         {
-          title: 'Questions Yes/No',
-          content: 'Auxiliaire (do/does/did/is/are/was/were/will/can...) + sujet + verbe ?',
+          title: 'Dénombrables (Countable nouns)',
+          content: 'Ont un singulier et un pluriel. Peuvent être précédés de a/an.',
           rows: [
-            { en: 'Do you speak English?', tr: 'Est-ce que tu parles anglais ?' },
-            { en: 'Is she a teacher?', tr: 'Est-ce qu\'elle est professeure ?' },
-            { en: 'Did you eat lunch?', tr: 'As-tu mangé à midi ?' },
-            { en: 'Can he swim?', tr: 'Est-ce qu\'il sait nager ?' },
+            { en: 'one apple, two apples, three books', tr: 'une pomme, deux pommes, trois livres' },
+            { en: 'How many oranges do you have?', tr: 'Combien d\'oranges as-tu ?' },
+            { en: 'I have a few coins in my pocket.', tr: 'J\'ai quelques pièces dans ma poche.' },
+            { en: 'There are many students in the class.', tr: 'Il y a beaucoup d\'étudiants dans la classe.' },
           ]
         },
         {
-          title: 'Questions Wh-',
-          content: 'Mot interrogatif + auxiliaire + sujet + verbe ?',
+          title: 'Indénombrables (Uncountable nouns)',
+          content: 'Pas de pluriel. Pas de a/an. Verbe toujours singulier.',
           rows: [
-            { en: 'What is your name?', tr: 'Comment t\'appelles-tu ?' },
-            { en: 'Where do you live?', tr: 'Où habites-tu ?' },
-            { en: 'When did she arrive?', tr: 'Quand est-elle arrivée ?' },
-            { en: 'Why are you late?', tr: 'Pourquoi es-tu en retard ?' },
-            { en: 'How many students are there?', tr: 'Combien d\'élèves y a-t-il ?' },
-            { en: 'Who told you that?', tr: 'Qui te l\'a dit ?' },
+            { en: 'water, milk, rice, bread, sugar, money, air', tr: 'eau, lait, riz, pain, sucre, argent, air' },
+            { en: 'information, advice, furniture, news, luggage', tr: 'information, conseil, meubles, nouvelles, bagages' },
+            { en: 'How much water do you drink every day?', tr: 'Combien d\'eau bois-tu chaque jour ?' },
+            { en: 'The information is correct.', tr: 'L\'information est correcte. (pas "informations")' },
+          ]
+        },
+        {
+          title: 'Much / Many / A lot of',
+          content: 'much + uncountable · many + countable · a lot of + les deux',
+          rows: [
+            { en: 'I don\'t have much time today.', tr: 'Je n\'ai pas beaucoup de temps aujourd\'hui.' },
+            { en: 'She has a lot of friends at school.', tr: 'Elle a beaucoup d\'amis à l\'école.' },
+            { en: 'He drinks a lot of water every day.', tr: 'Il boit beaucoup d\'eau chaque jour.' },
+            { en: 'Do you have much homework tonight?', tr: 'Tu as beaucoup de devoirs ce soir ?' },
+          ]
+        },
+        {
+          title: 'A few / A little',
+          content: 'a few + countable · a little + uncountable (sens positif)',
+          rows: [
+            { en: 'I have a few friends in this city.', tr: 'J\'ai quelques amis dans cette ville.' },
+            { en: 'She speaks a little French.', tr: 'Elle parle un peu français.' },
+            { en: 'Wait a few minutes, please.', tr: 'Attends quelques minutes, s\'il te plaît.' },
+            { en: 'Add a little sugar to the tea.', tr: 'Ajoute un peu de sucre dans le thé.' },
           ]
         },
       ],
+      commonErrors: [
+        '"I have many informations." ✗ → "I have a lot of information." ✓',
+        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓',
+        '"She has much friends." ✗ → "She has many friends." ✓',
+        '"I have few money." ✗ → "I have little money." ✓',
+      ],
       tips: [
-        'What = quoi/quel | Where = où | When = quand | Who = qui | Why = pourquoi | How = comment',
-        'How many + nom dénombrable | How much + nom indénombrable',
-        'Whose = à qui : Whose bag is this?',
+        '"advice", "information", "furniture", "news", "luggage" → toujours uncountable !',
+        'Few (sans "a") = peu de (presque rien) · a few = quelques (positif)',
+        'Little (sans "a") = peu de (négatif) · a little = un peu (positif)',
       ],
       summary: [
-        'Yes/No : auxiliaire + sujet + verbe ?',
-        'Wh- : mot interrogatif + auxiliaire + sujet + verbe ?',
-        'What/Where/When/Who/Why/How — les 6 essentiels',
-        'How many (dénombrable) / How much (indénombrable)',
-        'Jamais de "do" si le mot interrogatif EST le sujet : Who lives here? (pas Who does live)',
-      ],
-      quickExercises: [
-        { q: 'Make Wh-question for: "She lives in Tana."', a: 'Where does she live?', hint: 'where + does + sujet + infinitif' },
-        { q: 'Make question: "They arrived at noon."', a: 'When did they arrive?', hint: 'when + did + sujet + infinitif' },
-        { q: 'How many or how much? "___ students are there?"', a: 'How many', hint: 'students = dénombrable' },
-        { q: 'Correct: "Where does she lives?"', a: 'Where does she live?', hint: 'does + infinitif (sans -s)' },
-      ],
+        'Countable → a/an, pluriel, many, a few',
+        'Uncountable → pas de a/an, pas de pluriel, much, a little',
+        'A lot of → universel (les deux, surtout en affirmatif)',
+      ]
     },
     mg: {
-      intro: 'Ny fanontaniana amin\'ny anglisy dia mampiasa ny fiovaovan\'ny sujet/auxiliaire (eny/tsia), na teny manontany (Wh-).',
+      intro: "Amin\'ny anglisy, ny noun dia mizara ho <strong>countable</strong> (azo isaina) sy <strong>uncountable</strong> (tsy azo isaina). Io no mametra ny fampiasana much, many, a lot of, a few, a little.",
       sections: [
         {
-          title: 'Fanontaniana Eny/Tsia',
-          content: 'Auxiliaire + sujet + verbe ?',
+          title: 'Countable (azo isaina)',
+          content: 'Misy endrika tokana sy endrika maro. Azo asiana a/an eo aloha.',
           rows: [
-            { en: 'Do you speak English?', tr: 'Miteny anglisy ve ianao?' },
-            { en: 'Is she a teacher?', tr: 'Mpampianatra ve izy?' },
-            { en: 'Did you eat lunch?', tr: 'Nihinana ny antoandro ve ianao?' },
-            { en: 'Can he swim?', tr: 'Afaka milomano ve izy?' },
+            { en: 'one apple, two apples, three books', tr: 'paoma iray, paoma roa, boky telo' },
+            { en: 'How many oranges do you have?', tr: 'Ôranjy firy no anananao?' },
+            { en: 'I have a few coins in my pocket.', tr: 'Manana vola vitsivitsy ao am-paosy aho.' },
           ]
         },
         {
-          title: 'Fanontaniana Wh-',
-          content: 'Teny manontany + auxiliaire + sujet + verbe ?',
+          title: 'Uncountable (tsy azo isaina)',
+          content: 'Tsy misy endrika maro. Tsy misy a/an. Matoanteny amin\'ny tokana foana.',
           rows: [
-            { en: 'What is your name?', tr: 'Iza no anaranao?' },
-            { en: 'Where do you live?', tr: 'Aiza no monina ianao?' },
-            { en: 'When did she arrive?', tr: 'Oviana no tonga izy?' },
-            { en: 'Why are you late?', tr: 'Nahoana ianao no tara?' },
-            { en: 'How many students are there?', tr: 'Firy ny mpianatra?' },
-            { en: 'Who told you that?', tr: 'Iza no nilaza izany taminao?' },
+            { en: 'water, milk, rice, bread, sugar, money', tr: 'rano, ronono, vary, mofo, siramamy, vola' },
+            { en: 'information, advice, furniture, news', tr: 'vaovao, torohevitra, firavaka, vaovao madinidinika' },
+            { en: 'How much water do you drink every day?', tr: 'Rano ohatrinona no sotrohinao isan\'andro?' },
+          ]
+        },
+        {
+          title: 'Much / Many / A lot of',
+          content: 'much + uncountable · many + countable · a lot of = izy roa',
+          rows: [
+            { en: 'I don\'t have much time today.', tr: 'Tsy manana fotoana be aho anio.' },
+            { en: 'She has a lot of friends at school.', tr: 'Manana namana maro izy any an-tsekoly.' },
+            { en: 'He drinks a lot of water every day.', tr: 'Misotro rano be izy isan\'andro.' },
+          ]
+        },
+        {
+          title: 'A few / A little',
+          content: 'a few + countable · a little + uncountable',
+          rows: [
+            { en: 'I have a few friends in this city.', tr: 'Manana namana vitsivitsy aho ato an-tanàna.' },
+            { en: 'She speaks a little French.', tr: 'Mahay teny frantsay kely izy.' },
+            { en: 'Add a little sugar to the tea.', tr: 'Ampio siramamy kely ao amin\'ny dite.' },
           ]
         },
       ],
+      commonErrors: [
+        '"I have many informations." ✗ → "I have a lot of information." ✓',
+        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓',
+      ],
       tips: [
-        'What=inona/iza | Where=aiza | When=oviana | Who=iza | Why=nahoana | How=ahoana',
-        'How many + azo isaina | How much + tsy azo isaina',
-        '"ve" amin\'ny malagasy = marqueur interrogatif',
+        '"advice", "information", "furniture", "news" — uncountable foana ireo!',
+        'A few / a little = kely nefa misy (positif) · few / little = tena kely be (négatif)',
       ],
       summary: [
-        'Eny/Tsia : auxiliaire + sujet + verbe ?',
-        'Wh- : teny manontany + auxiliaire + sujet + verbe ?',
-        'What/Where/When/Who/Why/How — fototra 6',
-        'How many (azo isaina) / How much (tsy azo isaina)',
-      ],
-      quickExercises: [
-        { q: 'Ataovy fanontaniana: "She lives in Tana."', a: 'Where does she live?', hint: 'where + does + infinitif' },
-        { q: 'Ataovy fanontaniana: "They arrived at noon."', a: 'When did they arrive?', hint: 'when + did + infinitif' },
-        { q: 'How many na how much? "___ mpianatra misy?"', a: 'How many', hint: 'mpianatra = azo isaina' },
-        { q: 'Mety sa tsia? "Where does she lives?"', a: 'Diso → Where does she live?', hint: 'does + infinitif tsy misy -s' },
-      ],
+        'Countable → a/an, endrika maro, many, a few',
+        'Uncountable → tsy misy a/an, tsy misy endrika maro, much, a little',
+        'A lot of → azo ampiasaina amin\'ny izy roa',
+      ]
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // IMPERATIVES — A1–A2
-  // ══════════════════════════════════════════════════════════════════════
+  {
+    id: 'someAny',
+    title: 'Some, Any & No',
+    icon: '🔢',
+    level: 'A2',
+    fr: {
+      intro: "<strong>Some</strong>, <strong>any</strong> et <strong>no</strong> expriment une quantité indéfinie. Leur choix dépend du type de phrase : affirmative, négative ou interrogative. Ce point est très différent du français.",
+      sections: [
+        {
+          title: 'Some — phrases affirmatives',
+          content: '"Quelques" / "du, de la, des" dans les phrases positives',
+          rows: [
+            { en: 'I have some water.', tr: 'J\'ai de l\'eau.' },
+            { en: 'There are some books on the table.', tr: 'Il y a des livres sur la table.' },
+            { en: 'Would you like some tea?', tr: 'Voulez-vous du thé ? (offre polie → some)' },
+          ]
+        },
+        {
+          title: 'Any — questions et négatives',
+          content: '"Du/de la/des" dans les questions et "de" après une négation',
+          rows: [
+            { en: 'Do you have any money?', tr: 'Est-ce que tu as de l\'argent ?' },
+            { en: 'I don\'t have any friends here.', tr: 'Je n\'ai pas d\'amis ici.' },
+            { en: 'Is there any milk in the fridge?', tr: 'Il y a du lait dans le frigo ?' },
+          ]
+        },
+        {
+          title: 'No — quantité zéro',
+          content: '"Aucun(e)" = Not any, mais plus direct et plus fort',
+          rows: [
+            { en: 'I have no money.', tr: 'Je n\'ai pas d\'argent. (= I don\'t have any)' },
+            { en: 'There is no time.', tr: 'Il n\'y a pas de temps.' },
+            { en: 'She has no brothers.', tr: 'Elle n\'a pas de frères.' },
+          ]
+        },
+        {
+          title: 'Composés : something / anything / nothing / someone / anyone',
+          content: 'Some- (affirmatif) · Any- (question/négatif) · No- (zéro)',
+          rows: [
+            { en: 'I want something to eat.', tr: 'Je veux quelque chose à manger.' },
+            { en: 'Do you need anything?', tr: 'As-tu besoin de quelque chose ?' },
+            { en: 'There is nothing in the bag.', tr: 'Il n\'y a rien dans le sac.' },
+            { en: 'Someone is at the door.', tr: 'Il y a quelqu\'un à la porte.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I don\'t have some money" → ✅ "I don\'t have any money" (négatif → any)',
+        '❌ "There isn\'t nothing" → ✅ "There is nothing" ou "There isn\'t anything" (pas de double négation)',
+        '❌ "Do you have some time?" → ✅ "Do you have any time?" (question neutre → any)',
+      ],
+      tips: [
+        '🔑 SOME : affirmatif | ANY : question & négatif | NO : zéro',
+        '💡 Some dans une question = offre polie : "Would you like some coffee?"',
+        '🧩 Composés : some/any/no + body · one · thing · where',
+      ],
+      summary: ['some → affirmatif', 'any → question / négatif', 'no → quantité zéro', 'Composés : something / anything / nothing / someone / anyone / nowhere'],
+    },
+    mg: {
+      intro: "Ny <strong>some</strong>, <strong>any</strong> ary <strong>no</strong> dia milaza habetsahana tsy mazava tsara. Ny safidiny miankina amin\'ny karazana fehezanteny (fanambara, fandavana, fanontaniana).",
+      sections: [
+        {
+          title: 'Some — fehezanteny fanambara',
+          content: '"Zavatra kely" amin\'ny fehezanteny tsara',
+          rows: [
+            { en: 'I have some water.', tr: 'Manana rano kely aho.' },
+            { en: 'There are some books on the table.', tr: 'Misy boky kely eo ambonin\'ny latabatra.' },
+          ]
+        },
+        {
+          title: 'Any — fanontaniana sy fandavana',
+          content: '"Inona na inona" amin\'ny fanontaniana sy fandavana',
+          rows: [
+            { en: 'Do you have any money?', tr: 'Manana vola ve ianao?' },
+            { en: 'I don\'t have any friends here.', tr: 'Tsy manana namana eto aho.' },
+          ]
+        },
+        {
+          title: 'No — vola aotra',
+          content: '"Tsy misy" = zero',
+          rows: [
+            { en: 'I have no money.', tr: 'Tsy manana vola aho.' },
+            { en: 'There is nothing in the bag.', tr: 'Tsy misy na inona ao anaty kitapom-boky.' },
+          ]
+        },
+      ],
+      commonErrors: ['❌ "I don\'t have some" → ✅ "I don\'t have any"', '❌ "There isn\'t nothing" → ✅ "There is nothing"'],
+      tips: ['some → fanambara | any → fanontaniana/fandavana | no → aotra', 'Composés : something / anything / nothing'],
+      summary: ['some → fanambara', 'any → fanontaniana / fandavana', 'no → aotra (zéro)'],
+    },
+  },
   {
     id: 'imperatives',
     title: 'Imperative — L\'Impératif',
@@ -1245,10 +1504,359 @@ export const bokyChapters = [
       summary: ['Affirmatif : matoanteny fotsiny', 'Négatif : Don\'t + matoanteny', 'Soso-kevitra : Let\'s + matoanteny'],
     },
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PRESENTSIMPLE — A2
-  // ══════════════════════════════════════════════════════════════════════
+  {
+    id: 'adverbs',
+    title: 'Adverbs — Adverbes',
+    icon: '⚡',
+    level: 'A2',
+    fr: {
+      intro: "Les <strong>adverbes de fréquence</strong> indiquent à quelle fréquence une action se produit (always → never). Les <strong>adverbes de manière</strong> décrivent comment une action est effectuée (quickly, carefully). Leur position dans la phrase est essentielle.",
+      sections: [
+        {
+          title: 'Adverbes de fréquence (100% → 0%)',
+          content: 'Se placent avant le verbe principal, mais après "to be".',
+          rows: [
+            { en: 'I always brush my teeth in the morning.', tr: 'Je me brosse toujours les dents le matin. (100%)' },
+            { en: 'She usually wakes up at six.', tr: 'Elle se réveille généralement à 6h. (80%)' },
+            { en: 'We often eat rice for dinner.', tr: 'Nous mangeons souvent du riz le soir. (60%)' },
+            { en: 'He sometimes watches TV after school.', tr: 'Il regarde parfois la télé après l\'école. (40%)' },
+            { en: 'They rarely go to the cinema.', tr: 'Ils vont rarement au cinéma. (20%)' },
+            { en: 'I never drink alcohol.', tr: 'Je ne bois jamais d\'alcool. (0%)' },
+          ]
+        },
+        {
+          title: 'Position avec "to be"',
+          content: 'Après "to be", l\'adverbe de fréquence se place après le verbe.',
+          rows: [
+            { en: 'He is always late.', tr: 'Il est toujours en retard.' },
+            { en: 'They are usually tired after school.', tr: 'Ils sont généralement fatigués après l\'école.' },
+            { en: 'She is never rude.', tr: 'Elle n\'est jamais impolie.' },
+          ]
+        },
+        {
+          title: 'Adverbes de manière (adjectif + -ly)',
+          content: 'Se placent après le verbe ou l\'objet direct.',
+          rows: [
+            { en: 'She speaks English quickly.', tr: 'Elle parle anglais rapidement.' },
+            { en: 'He drives very carefully.', tr: 'Il conduit très prudemment.' },
+            { en: 'The team played badly last night.', tr: 'L\'équipe a très mal joué hier soir.' },
+            { en: 'She sings beautifully at every concert.', tr: 'Elle chante magnifiquement à chaque concert.' },
+          ]
+        },
+        {
+          title: 'Adverbes irréguliers (pas de -ly)',
+          content: 'Formes à mémoriser.',
+          rows: [
+            { en: 'She plays the piano very well.', tr: 'Elle joue très bien du piano. (good → well)' },
+            { en: 'He runs very fast.', tr: 'Il court très vite. (fast → fast)' },
+            { en: 'She works really hard every day.', tr: 'Elle travaille vraiment dur chaque jour. (hard → hard)' },
+            { en: 'He arrived late to the meeting.', tr: 'Il est arrivé en retard à la réunion. (late → late)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"She sings beautiful." ✗ → "She sings beautifully." ✓',
+        '"He plays good the guitar." ✗ → "He plays the guitar well." ✓',
+        '"I sometimes am late." ✗ → "I am sometimes late." ✓ (après to be)',
+      ],
+      tips: [
+        'Ordre en fin de phrase : MANIÈRE → LIEU → TEMPS (She sang beautifully in the park yesterday)',
+        '"hardly" ≠ "hard" : hardly = à peine / hard = fort ou dur',
+        '"lately" ≠ "late" : lately = récemment / late = en retard',
+      ],
+      summary: [
+        'Fréquence : avant le verbe principal / après to be',
+        'Manière : adjectif + -ly, après le verbe ou l\'objet',
+        'Irréguliers à retenir : good → well, fast → fast, hard → hard',
+      ]
+    },
+    mg: {
+      intro: "Ny <strong>adverbe de fréquence</strong> dia milaza ny matetika isaterahan\'ny asa (always → never). Ny <strong>adverbe de manière</strong> dia milaza ny fomba fanao (quickly, carefully). Ny toerana ao amin\'ny fehezanteny dia lehibe.",
+      sections: [
+        {
+          title: 'Adverbe de fréquence (100% → 0%)',
+          content: 'Eo alohan\'ny matoanteny lehibe, nefa aorian\'ny to be.',
+          rows: [
+            { en: 'I always brush my teeth in the morning.', tr: 'Mandrakariva manasa nify aho maraina.' },
+            { en: 'She usually wakes up at six.', tr: 'Matetika mifohaza amin\'ny enina izy.' },
+            { en: 'We often eat rice for dinner.', tr: 'Matetika mihinana vary amin\'ny alina izahay.' },
+            { en: 'I never drink alcohol.', tr: 'Tsy mba misotro toaka aho.' },
+          ]
+        },
+        {
+          title: 'Toerana aorian\'ny "to be"',
+          content: 'Aorian\'ny to be, ny adverbe dia apetraka aorian\'ny matoanteny.',
+          rows: [
+            { en: 'He is always late.', tr: 'Mandrakariva diso fotoana izy.' },
+            { en: 'She is never rude.', tr: 'Tsy mba manevateva izy.' },
+          ]
+        },
+        {
+          title: 'Adverbe de manière (adjectif + -ly)',
+          content: 'Apetraka aorian\'ny matoanteny na ny objet.',
+          rows: [
+            { en: 'She speaks English quickly.', tr: 'Haingana ny fitenenany anglisy.' },
+            { en: 'He drives very carefully.', tr: 'Mitandrina be izy rehefa mitondra fiara.' },
+            { en: 'She plays the piano very well.', tr: 'Mahay manao piano tsara izy. (good → well)' },
+            { en: 'He runs very fast.', tr: 'Mihazakazaka haingana be izy. (fast → fast)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"She sings beautiful." ✗ → "She sings beautifully." ✓',
+        '"He plays good." ✗ → "He plays well." ✓',
+      ],
+      tips: [
+        'Manetrika: MANIÈRE → LIEU → FOTOANA (beautifully in the park yesterday)',
+        '"hardly" = saika tsy (à peine) ≠ "hard" = mafy / mafy be',
+      ],
+      summary: [
+        'Fréquence: eo alohan\'ny matoanteny / aorian\'ny to be',
+        'Manière: adjectif + -ly, aorian\'ny matoanteny',
+        'Tsy ara-dalàna: good → well, fast → fast, hard → hard',
+      ]
+    }
+  },
+  {
+    id: 'comparatives',
+    title: 'Comparatives & Superlatives',
+    icon: '⚖️',
+    level: 'A2',
+    fr: {
+      intro: "En anglais, les <strong>comparatifs</strong> et <strong>superlatifs</strong> fonctionnent différemment selon la longueur de l\'adjectif. La règle est simple et régulière pour la plupart des adjectifs.",
+      sections: [
+        {
+          title: 'Comparatif d\'infériorité et supériorité',
+          content: 'Adjectif court (1 syllabe) + <strong>-er than</strong> · Adjectif long (2+ syllabes) : <strong>more … than</strong>',
+          rows: [
+            { en: 'She is taller than her brother.', tr: 'Elle est plus grande que son frère. (tall → taller)' },
+            { en: 'This film is more interesting than the last one.', tr: 'Ce film est plus intéressant que le dernier. (more + long adj)' },
+            { en: 'Running is easier than swimming.', tr: 'Courir est plus facile que nager.' },
+            { en: 'My bag is heavier than yours.', tr: 'Mon sac est plus lourd que le tien. (heavy → heavier)' },
+          ]
+        },
+        {
+          title: 'Superlatif',
+          content: 'Adjectif court : <strong>the … -est</strong> · Adjectif long : <strong>the most …</strong>',
+          rows: [
+            { en: 'He is the fastest runner in the school.', tr: 'Il est le coureur le plus rapide de l\'école.' },
+            { en: 'This is the most beautiful place I\'ve seen.', tr: 'C\'est l\'endroit le plus beau que j\'aie vu.' },
+            { en: 'January is the coldest month.', tr: 'Janvier est le mois le plus froid.' },
+          ]
+        },
+        {
+          title: 'Égalité : as … as',
+          content: 'Pour dire que deux choses sont égales',
+          rows: [
+            { en: 'My car is as fast as yours.', tr: 'Ma voiture est aussi rapide que la tienne.' },
+            { en: 'She is as tall as her mother.', tr: 'Elle est aussi grande que sa mère.' },
+          ]
+        },
+        {
+          title: 'Irréguliers importants',
+          content: 'good / bad / far ont des comparatifs et superlatifs irréguliers',
+          rows: [
+            { en: 'good → better → the best', tr: 'bon → meilleur → le meilleur' },
+            { en: 'bad → worse → the worst', tr: 'mauvais → pire → le pire' },
+            { en: 'far → farther/further → the farthest/furthest', tr: 'loin → plus loin → le plus loin' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "more tall than" → ✅ "taller than" (adj court → -er)',
+        '❌ "the most fast" → ✅ "the fastest" (adj court → -est)',
+        '❌ "more better" → ✅ "better" (irrégulier)',
+        '❌ "the most good" → ✅ "the best" (irrégulier)',
+      ],
+      tips: [
+        '📏 1 syllabe → -er/-est : tall/taller/tallest',
+        '📏 2+ syllabes → more/most : beautiful / more beautiful / most beautiful',
+        '⚠️ Doublement de la consonne finale : big/bigger, hot/hotter, fat/fatter',
+        '⚠️ -y → -ier/-iest : happy/happier/happiest · easy/easier/easiest',
+      ],
+      summary: ['Court (-er/-est) : tall/taller/tallest', 'Long (more/most) : beautiful/more beautiful/most beautiful', 'Égalité : as … as', 'Irréguliers : good/better/best · bad/worse/worst'],
+    },
+    mg: {
+      intro: "Ny <strong>comparatif</strong> sy <strong>superlative</strong> dia mampiasa endrika hafa arakaraky ny halavan\'ny adjectif. Tsotra ny fitsipika.",
+      sections: [
+        {
+          title: 'Comparatif (mitovy na tsy mitovy)',
+          content: 'Adjectif fohy + -er than · Adjectif lava : more … than',
+          rows: [
+            { en: 'She is taller than her brother.', tr: 'Lehibe kokoa izy noho ny rahalahiny.' },
+            { en: 'This film is more interesting than the last one.', tr: 'Ny sarimihetsika ity dia maro lamintsasa kokoa noho ny farany.' },
+          ]
+        },
+        {
+          title: 'Superlative',
+          content: 'Adjectif fohy : the … -est · Adjectif lava : the most …',
+          rows: [
+            { en: 'He is the fastest runner in the school.', tr: 'Izy no manerinerina indrindra ao an-tsekoly.' },
+            { en: 'This is the most beautiful place.', tr: 'Ity no toerana tsara indrindra.' },
+          ]
+        },
+        {
+          title: 'Irréguliers',
+          content: 'Ireo teny tsy manaraka fitsipika',
+          rows: [
+            { en: 'good → better → the best', tr: 'tsara → tsara kokoa → tsara indrindra' },
+            { en: 'bad → worse → the worst', tr: 'ratsy → ratsy kokoa → ratsy indrindra' },
+          ]
+        },
+      ],
+      commonErrors: ['❌ "more tall" → ✅ "taller"', '❌ "more better" → ✅ "better"'],
+      tips: ['Fohy (1 syllabe) → -er/-est', 'Lava (2+ syllabe) → more/most', 'Irréguliers : good/better/best · bad/worse/worst'],
+      summary: ['Fohy → -er than / the -est', 'Lava → more … than / the most …', 'Mitovy : as … as'],
+    },
+  },
+  {
+    id: 'modals',
+    title: 'Verbes Modaux',
+    icon: '🛠️',
+    level: 'A2',
+    fr: {
+      intro: 'Les verbes modaux (can, could, must, should, may, might, would) expriment la capacité, l\'obligation, la permission ou la possibilité. Ils sont suivis d\'un verbe à l\'infinitif sans <em>to</em>.',
+      sections: [
+        {
+          title: 'Can / Can\'t — capacité et permission',
+          content: '',
+          rows: [
+            { en: 'I can swim.', tr: 'Je sais nager. / Je peux nager.' },
+            { en: 'Can I use your phone?', tr: 'Est-ce que je peux utiliser ton téléphone ?' },
+            { en: 'She can\'t drive yet.', tr: 'Elle ne sait pas encore conduire.' },
+          ]
+        },
+        {
+          title: 'Must / Have to — obligation',
+          content: '<strong>Must</strong> : obligation interne (je me l\'impose). <strong>Have to</strong> : obligation externe (règle, loi).',
+          rows: [
+            { en: 'You must study harder.', tr: 'Tu dois travailler plus dur.' },
+            { en: 'I have to wear a uniform at school.', tr: 'Je dois porter un uniforme à l\'école.' },
+            { en: 'You mustn\'t be late.', tr: 'Tu ne dois pas être en retard.' },
+          ]
+        },
+        {
+          title: 'Should / Shouldn\'t — conseil',
+          content: '',
+          rows: [
+            { en: 'You should eat breakfast every day.', tr: 'Tu devrais manger le petit-déjeuner tous les jours.' },
+            { en: 'You shouldn\'t sleep late.', tr: 'Tu ne devrais pas dormir tard.' },
+          ]
+        },
+        {
+          title: 'May / Might — possibilité',
+          content: '<strong>May</strong> : assez probable. <strong>Might</strong> : moins probable.',
+          rows: [
+            { en: 'It may rain this afternoon.', tr: 'Il se peut qu\'il pleuve cet après-midi.' },
+            { en: 'She might come later.', tr: 'Elle viendra peut-être plus tard.' },
+          ]
+        },
+        {
+          title: 'Would — politesse et condition',
+          content: '',
+          rows: [
+            { en: 'Would you like some tea?', tr: 'Voulez-vous du thé ?' },
+            { en: 'I would like to travel to Europe.', tr: 'J\'aimerais voyager en Europe.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "She cans swim" → ✅ "She CAN swim" (modaux = jamais de -s)',
+        '❌ "You must to study" → ✅ "You must study" (pas de "to" après les modaux)',
+        '❌ "He should goes" → ✅ "He should go" (infinitif sans -s après modal)',
+        '❌ "Can you to help me?" → ✅ "Can you help me?"',
+        '❌ "I would like go" → ✅ "I would like TO go" (would like est une exception → to + inf)',
+      ],
+      tips: [
+        'Les modaux ne prennent jamais de -s avec he/she/it',
+        'Toujours suivis de l\'infinitif sans to (sauf ought to, have to)',
+        'can → could (passé) ; will → would ; may → might',
+      ],
+      summary: [
+        'can = capacité/permission ; must = obligation forte ; should = conseil',
+        'may/might = possibilité ; would = politesse/conditionnel',
+        'JAMAIS de -s avec he/she/it : she can (pas she cans)',
+        'JAMAIS "to" après le modal (sauf have to, ought to)',
+        'Exception : would like + to + infinitif',
+      ],
+      quickExercises: [
+        { q: 'Correct: "She cans speak English."', a: 'She can speak English.', hint: 'modals never take -s' },
+        { q: 'Correct: "You must to study."', a: 'You must study.', hint: 'no "to" after modal' },
+        { q: 'Fill: You ___ eat more vegetables. (conseil)', a: 'should', hint: 'advice → should' },
+        { q: 'Fill: It ___ rain later. (possibility)', a: 'may / might', hint: 'possibility' },
+        { q: 'Correct: "He should goes home."', a: 'He should go home.', hint: 'modal + infinitif' },
+      ],
+    },
+    mg: {
+      intro: 'Ny verbe manampy (can, must, should, may, might, would) dia fampisehoana ny fahafahana, ny tsy maintsy, ny tsara atao, na ny mety mitranga. Ampiasaina foana miaraka amin\'ny infinitif tsy misy "to".',
+      sections: [
+        {
+          title: 'Can / Can\'t — fahafahana sy fanomezan-dalana',
+          content: '',
+          rows: [
+            { en: 'I can swim.', tr: 'Afaka milomano aho.' },
+            { en: 'Can I use your phone?', tr: 'Afaka mampiasa ny finaonanao ve aho?' },
+            { en: 'She can\'t drive yet.', tr: 'Tsy afaka mampiasa fiara izy mbola.' },
+          ]
+        },
+        {
+          title: 'Must / Have to — tsy maintsy',
+          content: '',
+          rows: [
+            { en: 'You must study harder.', tr: 'Tsy maintsy mianatra mafy kokoa ianao.' },
+            { en: 'I have to wear a uniform.', tr: 'Tsy maintsy manao akanjo iray mitovy aho.' },
+            { en: 'You mustn\'t be late.', tr: 'Tsy tokony hatara ianao.' },
+          ]
+        },
+        {
+          title: 'Should / Shouldn\'t — tsara raha atao',
+          content: '',
+          rows: [
+            { en: 'You should eat breakfast every day.', tr: 'Tokony hihinana sakafo maraina isan\'andro ianao.' },
+            { en: 'You shouldn\'t sleep late.', tr: 'Tsy tokony hatory hariva ianao.' },
+          ]
+        },
+        {
+          title: 'May / Might — mety mitranga',
+          content: '',
+          rows: [
+            { en: 'It may rain this afternoon.', tr: 'Mety handatsaka ny orana tolakandro.' },
+            { en: 'She might come later.', tr: 'Mety ho avy izy avy eo.' },
+          ]
+        },
+        {
+          title: 'Would — fandraharahana sy toky',
+          content: '',
+          rows: [
+            { en: 'Would you like some tea?', tr: 'Te-misotro dite ve ianao?' },
+            { en: 'I would like to travel to Europe.', tr: 'Te-handeha any Eropa aho.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "She cans swim" → ✅ "She can swim" (modal = tsy misy -s)',
+        '❌ "You must to study" → ✅ "You must study" (tsy "to" aorian\'ny modal)',
+        '❌ "He should goes" → ✅ "He should go" (infinitif foana)',
+      ],
+      tips: [
+        'Ny modal verbs dia tsy manova endrika (tsy +s amin\'ny he/she/it)',
+        'Tsy ampiasaina "to" aorian\'ny modal (afa-tsy have to, ought to)',
+        'can → could (lasa); will → would; may → might',
+      ],
+      summary: [
+        'can = afaka; must = tsy maintsy; should = tokony',
+        'may/might = mety; would = fandraharahana/conditionnelle',
+        'TSY misy -s amin\'ny he/she/it : she can (tsy she cans)',
+        'TSY "to" aorian\'ny modal (afa-tsy have to)',
+      ],
+      quickExercises: [
+        { q: 'Mety sa tsia? "She cans swim."', a: 'Diso → She can swim.', hint: 'tsy misy -s amin\'ny modal' },
+        { q: 'Mety sa tsia? "You must to study."', a: 'Diso → You must study.', hint: 'tsy "to" aorian\'ny modal' },
+        { q: 'Fenoy: You ___ eat more vegetables. (tsara)', a: 'should', hint: 'tsara raha atao = should' },
+        { q: 'Fenoy: He ___ help me. (mety)', a: 'may / might', hint: 'mety mitranga' },
+      ],
+    }
+  },
   {
     id: 'presentSimple',
     title: 'Present Simple',
@@ -1384,10 +1992,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PRESENTCONTINUOUS — A2
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'presentContinuous',
     title: 'Present Continuous',
@@ -1490,10 +2094,390 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // IRREGULARVERBS — A2
-  // ══════════════════════════════════════════════════════════════════════
+  {
+    id: 'goingTo',
+    title: 'Going to — Futur planifié',
+    icon: '🎯',
+    level: 'A2',
+    fr: {
+      intro: "<strong>Be going to</strong> exprime un futur déjà décidé : un plan ou une intention formée <em>avant</em> le moment où on parle, ou bien une prédiction basée sur une preuve visible. C'est différent de <em>will</em> qui exprime une décision spontanée.",
+      sections: [
+        {
+          title: '📐 Formation : be going to + infinitif',
+          content: '<strong>Sujet + am/is/are + going to + verbe base</strong>. Pour le négatif : am/is/are + not + going to. Pour la question : Am/Is/Are + sujet + going to + verbe ?',
+          rows: [
+            { en: 'I <strong>am going to</strong> study tonight.', tr: "Je vais étudier ce soir. (décision déjà prise)" },
+            { en: 'She <strong>is going to</strong> travel to France.', tr: 'Elle va voyager en France.' },
+            { en: 'We <strong>are going to</strong> build a new house.', tr: 'Nous allons construire une nouvelle maison.' },
+            { en: 'He <strong>is not going to</strong> accept the offer.', tr: "Il ne va pas accepter l'offre." },
+            { en: '<strong>Are</strong> they <strong>going to</strong> move abroad?', tr: 'Vont-ils s\'installer à l\'étranger ?' },
+          ]
+        },
+        {
+          title: '📅 Usage 1 : Plans et intentions décidés à l\'avance',
+          content: 'Utilisez <em>going to</em> quand la décision a été prise <strong>avant</strong> le moment où vous parlez. C\'est un plan, pas une décision spontanée.',
+          rows: [
+            { en: "I decided last night. I'm going to apply for that scholarship.", tr: "J'ai décidé hier soir. Je vais postuler pour cette bourse." },
+            { en: "She's going to study medicine. She's been preparing for years.", tr: 'Elle va étudier la médecine. Elle se prépare depuis des années.' },
+            { en: "We're going to visit my family this weekend.", tr: 'Nous allons rendre visite à ma famille ce week-end.' },
+            { en: "They're not going to eat meat anymore.", tr: 'Ils ne vont plus manger de viande.' },
+          ]
+        },
+        {
+          title: '🌩️ Usage 2 : Prédictions avec preuve visible',
+          content: 'Utilisez <em>going to</em> quand vous observez quelque chose maintenant qui vous permet de prévoir ce qui va se passer.',
+          rows: [
+            { en: "Look at those dark clouds — it's going to rain!", tr: 'Regardez ces nuages noirs — il va pleuvoir !' },
+            { en: "Careful! You're going to drop those glasses!", tr: 'Attention ! Tu vas faire tomber ces verres !' },
+            { en: "He's eating so fast — he's going to choke.", tr: 'Il mange si vite — il va s\'étouffer.' },
+            { en: "That car is going too fast — it's going to crash.", tr: 'Cette voiture va trop vite — elle va avoir un accident.' },
+          ]
+        },
+        {
+          title: '⚖️ Going to vs Will : la différence essentielle',
+          content: '<strong>Going to</strong> = décision prise avant / preuve visible. <strong>Will</strong> = décision spontanée au moment où on parle / prédiction sans preuve concrète.',
+          rows: [
+            { en: "A: I need help! B: I'll help you! (decision now)", tr: "A: J'ai besoin d'aide ! B: Je vais t'aider ! (décision spontanée → will)" },
+            { en: "A: What are your plans? B: I'm going to study English.", tr: "A: Quels sont tes plans ? B: Je vais étudier l'anglais. (plan décidé → going to)" },
+            { en: "I think it will rain tomorrow. (opinion, no proof)", tr: 'Je pense qu\'il pleuvra demain. (opinion, pas de preuve → will)' },
+            { en: "Look at those clouds — it's going to rain! (proof visible)", tr: 'Regardez ces nuages — il va pleuvoir ! (preuve visible → going to)' },
+          ]
+        },
+        {
+          title: '🔄 Going to vs Present Continuous pour le futur',
+          content: 'Le présent continu peut aussi exprimer un futur, mais seulement pour des <strong>arrangements déjà fixés</strong> (rendez-vous, réservations). <em>Going to</em> exprime les intentions plus générales.',
+          rows: [
+            { en: "I'm meeting Sarah tomorrow at 3pm. (appointment made)", tr: "Je rencontre Sarah demain à 15h. (rendez-vous fixé → present continuous)" },
+            { en: "I'm going to visit my grandmother sometime next week.", tr: "Je vais rendre visite à ma grand-mère la semaine prochaine. (intention → going to)" },
+            { en: "We're flying to Paris on Monday. (tickets bought)", tr: "Nous volons vers Paris lundi. (billet réservé → present continuous)" },
+          ]
+        },
+      ],
+      commonErrors: [
+        "❌ \"I going to study\" → ✅ \"I AM going to study\" (be obligatoire)",
+        "❌ \"I'm gonna to study\" → ✅ \"I'm going to study\" (gonna est familier et sans 'to')",
+        "❌ \"Will you going to...?\" → ✅ \"Are you going to...?\" (question avec be)",
+        "❌ \"Look — it will rain!\" (avec preuve visible) → ✅ \"it's going to rain!\"",
+        "❌ \"I'm going to help you!\" (décision spontanée) → ✅ \"I'll help you!\"",
+      ],
+      tips: [
+        "🔑 Be going to = plan décidé à l'avance OU prédiction avec preuve visible",
+        "🔑 Will = décision spontanée OU prédiction sans preuve (opinion, croyance)",
+        "💡 Formes contractées naturelles : I'm going to / she's going to / we're going to",
+        "💡 \"Gonna\" = forme orale très familière — évitez à l'écrit",
+        "⚠️ N'oubliez jamais le verbe BE : I AM / She IS / They ARE going to...",
+      ],
+      summary: [
+        'Formation : be (am/is/are) + going to + verbe base',
+        'Usage 1 : plans et intentions décidés avant le moment de parler',
+        'Usage 2 : prédictions basées sur une preuve visible maintenant',
+        'vs will : will = spontané / sans preuve | going to = planifié / preuve visible',
+      ],
+    },
+    mg: {
+      intro: "<strong>Be going to</strong> dia ampiasaina hilazana ny zavatra efa voatokana ataonao amin'ny ho avy — drafitry ny saina na fiheverana miorina amin'ny porofo hita maso. Tsy mitovy amin'ny <em>will</em> izay entina milaza fanapahan-kevitra tampoka.",
+      sections: [
+        {
+          title: '📐 Fomba : be going to + veribe base',
+          content: '<strong>Sujet + am/is/are + going to + veribe</strong>. Fandavana : not + going to. Fanontaniana : am/is/are + sujet + going to?',
+          rows: [
+            { en: "I'm going to study tonight.", tr: 'Hianatra aho this evening. (fanapahan-kevitra efa vita)' },
+            { en: "She's going to travel to France.", tr: 'Handeha any Frantsa izy.' },
+            { en: "Are they going to move abroad?", tr: 'Handeha any ivelany ve izy ireo?' },
+          ]
+        },
+        {
+          title: '📅 Fampiasana 1 : Drafitra sy fikasana',
+          content: 'Ampiasao <em>going to</em> raha efa voatokana ny fanapahan-kevitra talohan\'ny fitenenana.',
+          rows: [
+            { en: "I'm going to apply for that scholarship.", tr: 'Hangataka ilay kamboty fianarambola aho.' },
+            { en: "We're going to visit our family this weekend.", tr: 'Hitsidika ny fianakaviany izahay weekend ity.' },
+          ]
+        },
+        {
+          title: '🌩️ Fampiasana 2 : Faminaniana miainga amin\'ny porofo',
+          content: 'Ampiasao <em>going to</em> raha misy porofo hita maso mampiseho ny ho avy.',
+          rows: [
+            { en: "Look at those clouds — it's going to rain!", tr: 'Jereo ireny rahona ireny — ho ranonorana!' },
+            { en: "Careful! You're going to drop those glasses!", tr: 'Tandremo! Ho latsaka ireny fitaratra ireny!' },
+          ]
+        },
+        {
+          title: '⚖️ Going to vs Will',
+          content: '<strong>Going to</strong> = drafitra efa vita / porofo hita maso. <strong>Will</strong> = fanapahan-kevitra tampoka / hevitra fotsiny.',
+          rows: [
+            { en: "I'll help you! (spontaneous decision)", tr: 'Hanampy anao aho! (tampoka → will)' },
+            { en: "I'm going to study English. (planned)", tr: 'Hianatra anglisy aho. (efa drafitra → going to)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        "❌ \"I going to study\" → ✅ \"I AM going to study\" (tsy maintsy misy be)",
+        "❌ \"Will you going to...?\" → ✅ \"Are you going to...?\"",
+        "❌ Hita porofo + will → ✅ hita porofo + going to",
+      ],
+      tips: [
+        '🔑 Going to = drafitra na porofo hita maso',
+        '🔑 Will = fanapahan-kevitra tampoka na hevitra tsotra',
+        '⚠️ Tsy maintsy misy be (am/is/are) alohan\'ny going to',
+      ],
+      summary: [
+        'Fomba : be (am/is/are) + going to + veribe',
+        'Fampiasana : drafitra efa vita, faminaniana miainga amin\'ny porofo',
+        'vs will : going to = drafitra/porofo | will = tampoka/hevitra',
+      ],
+    }
+  },
+  {
+    id: 'futureSimple',
+    title: 'Future Simple',
+    icon: '🚀',
+    level: 'A2–B1',
+    fr: {
+      intro: 'Le Future Simple avec <strong>will</strong> exprime une décision spontanée, une promesse ou une prédiction. <strong>Be going to</strong> exprime une intention préparée.',
+      sections: [
+        {
+          title: 'Will + verbe',
+          content: 'Sujet + <strong>will</strong> + verbe infinitif. Même forme pour tous les sujets.',
+          rows: [
+            { en: 'I will help you.', tr: 'Je t\'aiderai.' },
+            { en: 'She will pass her exam.', tr: 'Elle réussira son examen.' },
+            { en: 'It will rain tomorrow.', tr: 'Il va pleuvoir demain.' },
+          ]
+        },
+        {
+          title: 'Won\'t (négatif) et Will...? (interrogatif)',
+          content: '',
+          rows: [
+            { en: 'I won\'t forget you.', tr: 'Je ne t\'oublierai pas.' },
+            { en: 'Will you come to the party?', tr: 'Est-ce que tu viendras à la fête ?' },
+          ]
+        },
+        {
+          title: 'Be going to',
+          content: 'Pour les intentions planifiées ou les prédictions basées sur des signes visibles.',
+          rows: [
+            { en: 'I am going to study medicine.', tr: 'Je vais étudier la médecine.' },
+            { en: 'Look at those clouds — it\'s going to rain!', tr: 'Regarde ces nuages — il va pleuvoir !' },
+          ]
+        },
+      ],
+      tips: [
+        'will = décision spontanée / promesse / prédiction générale',
+        'be going to = intention déjà décidée / preuve visible',
+        'Signal words : tomorrow, next week/year, in the future, soon',
+      ],
+      summary: [
+        'will + infinitif (même forme pour tous les sujets)',
+        'Négatif : won\'t + infinitif',
+        'Question : Will + sujet + infinitif ?',
+        'will = décision spontanée, promesse, prédiction',
+        'be going to = intention planifiée, preuve visible',
+      ],
+      quickExercises: [
+        { q: 'Complete: She ___ (pass) her exam.', a: 'will pass', hint: 'will + infinitif' },
+        { q: 'Correct: "He will goes to school."', a: 'He will go to school.', hint: 'will + infinitif sans -s' },
+        { q: 'Negative: "I will help you."', a: 'I won\'t help you.', hint: 'will → won\'t' },
+        { q: 'will or be going to? "Look at those clouds — ___"', a: 'it\'s going to rain!', hint: 'visible proof → be going to' },
+      ],
+    },
+    mg: {
+      intro: 'Ny Future Simple (<strong>will</strong> + verbe) dia ampiasaina ho an\'ny fanapahan-kevitra vetivety, toky, na fanambarana ho avy. Ny <strong>be going to</strong> dia ho an\'ny fikasana efa nokendry.',
+      sections: [
+        {
+          title: 'Will + verbe',
+          content: 'Sujet + <strong>will</strong> + infinitif. Mitovy ho an\'ny olon-drehetra.',
+          rows: [
+            { en: 'I will help you.', tr: 'Hanampy anao aho.' },
+            { en: 'She will pass her exam.', tr: 'Hahajoro ny fanadinany izy.' },
+            { en: 'It will rain tomorrow.', tr: 'Handatsaka ny orana rahampitso.' },
+          ]
+        },
+        {
+          title: 'Won\'t (fandavana) sy Will...? (fanontaniana)',
+          content: '',
+          rows: [
+            { en: 'I won\'t forget you.', tr: 'Tsy hanadino anao aho.' },
+            { en: 'Will you come to the party?', tr: 'Ho avy amin\'ny fety ve ianao?' },
+          ]
+        },
+        {
+          title: 'Be going to',
+          content: 'Fikasana efa nokendry na faminaniana mifototra amin\'ny porofo hita.',
+          rows: [
+            { en: 'I am going to study medicine.', tr: 'Hianatra fanafody aho.' },
+            { en: 'It\'s going to rain!', tr: 'Handatsaka ny orana!' },
+          ]
+        },
+      ],
+      tips: [
+        'will = fanapahan-kevitra vetivety / toky',
+        'be going to = fikasana efa nokendry / porofo hita',
+        'Fotoana ho avy : tomorrow (rahampitso), next week (herinandro ho avy)',
+      ],
+      summary: [
+        'will + infinitif (mitovy ho an\'ny olon-drehetra)',
+        'Fandavana : won\'t + infinitif',
+        'Fanontaniana : Will + sujet + infinitif ?',
+        'will = fanapahan-kevitra vetivety; be going to = fikasana efa nokendry',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: She ___ (help) you tomorrow.', a: 'will help', hint: 'will + infinitif' },
+        { q: 'Ataovy fandavana: "I will come."', a: 'I won\'t come.', hint: 'will → won\'t' },
+        { q: 'will na be going to? Misy rahona be — ___', a: 'It\'s going to rain.', hint: 'porofo hita → be going to' },
+      ],
+    }
+  },
+  {
+    id: 'verbsOfState',
+    title: 'Verbes d\'état & Gérondif / Infinitif',
+    icon: '🎭',
+    level: 'B1',
+    fr: {
+      intro: "Certains verbes en anglais expriment un <strong>état mental ou physique</strong>, pas une action en cours. Ces <em>stative verbs</em> ne s'utilisent normalement <em>pas</em> avec les temps continus (progressifs). Par ailleurs, de nombreux verbes peuvent être suivis d'un <strong>gérondif</strong> ou d'un <strong>infinitif</strong> — le choix dépend du verbe.",
+      sections: [
+        {
+          title: '🧠 Verbes d\'état : jamais (ou rarement) au continu',
+          content: 'Ces verbes décrivent des états stables (pensées, sentiments, perceptions, possession) et ne s\'utilisent pas au présent continu. On dit "I know", pas "I am knowing".',
+          rows: [
+            { en: 'I <strong>know</strong> the answer. ✅ / I am knowing ❌', tr: 'Je connais la réponse.' },
+            { en: 'She <strong>believes</strong> in hard work. ✅', tr: 'Elle croit au travail acharné.' },
+            { en: 'He <strong>wants</strong> a new job. ✅ / He is wanting ❌', tr: 'Il veut un nouveau travail.' },
+            { en: 'They <strong>own</strong> a house. ✅ / They are owning ❌', tr: 'Ils possèdent une maison.' },
+            { en: 'I <strong>love</strong> music. ✅ / I am loving ❌ (en général)', tr: "J'aime la musique." },
+          ]
+        },
+        {
+          title: '📋 Catégories de verbes d\'état',
+          content: 'Il existe 5 catégories principales. Mémorisez les plus courants de chaque groupe.',
+          rows: [
+            { en: 'Mental states: know, believe, understand, remember, forget, think (opinion), mean', tr: 'États mentaux : savoir, croire, comprendre, se souvenir, oublier' },
+            { en: 'Emotions/preferences: love, like, hate, dislike, prefer, want, need, wish', tr: 'Émotions/préférences : aimer, préférer, vouloir, avoir besoin' },
+            { en: 'Senses: see, hear, smell, taste, feel (perception involontaire)', tr: 'Sens : voir, entendre, sentir, goûter (perception involontaire)' },
+            { en: 'Possession: have, own, belong, contain, include', tr: 'Possession : avoir, posséder, appartenir, contenir' },
+            { en: 'Appearance/existence: seem, appear, look (adjective), be, exist', tr: 'Apparence/existence : sembler, paraître, être, exister' },
+          ]
+        },
+        {
+          title: '⚡ Exceptions : sens différents (action vs état)',
+          content: 'Attention : certains verbes d\'état peuvent s\'utiliser au continu, mais avec un sens <strong>différent</strong> (action au lieu d\'état).',
+          rows: [
+            { en: 'I <strong>think</strong> he\'s right. (opinion → état) / I\'m <strong>thinking</strong> about it. (action mentale)', tr: "Je pense qu'il a raison. / Je réfléchis. (deux sens différents !)" },
+            { en: 'I <strong>have</strong> a car. (possession) / I\'m <strong>having</strong> lunch. (action = manger)', tr: "J'ai une voiture. / Je déjeune." },
+            { en: 'She <strong>looks</strong> tired. (état) / She\'s <strong>looking</strong> for her keys. (action)', tr: "Elle a l'air fatiguée. / Elle cherche ses clés." },
+            { en: 'It <strong>smells</strong> good. (perception) / I\'m <strong>smelling</strong> the flowers. (action délibérée)', tr: 'Ça sent bon. / Je sens les fleurs.' },
+            { en: "I'm <strong>loving</strong> this holiday! (informal/emphatic, now OK in modern English)", tr: 'Je kiffe vraiment ces vacances ! (usage moderne acceptable)' },
+          ]
+        },
+        {
+          title: '➕ Verbes + Gérondif (V-ing)',
+          content: "Ces verbes sont <strong>toujours</strong> suivis d'un gérondif (ING), jamais d'un infinitif : enjoy, finish, avoid, mind, suggest, recommend, imagine, consider, keep, stop, deny, admit, miss.",
+          rows: [
+            { en: 'I enjoy <strong>swimming</strong>. (pas "to swim")', tr: "J'aime nager." },
+            { en: 'She finished <strong>writing</strong> the essay.', tr: "Elle a fini d'écrire l'essai." },
+            { en: 'He avoided <strong>making</strong> eye contact.', tr: "Il a évité de croiser les regards." },
+            { en: 'Do you mind <strong>opening</strong> the window?', tr: "Ça te dérange d'ouvrir la fenêtre ?" },
+            { en: 'They suggested <strong>taking</strong> a break.', tr: "Ils ont suggéré de faire une pause." },
+          ]
+        },
+        {
+          title: '🔛 Verbes + Infinitif (to + verbe)',
+          content: "Ces verbes sont suivis d'un infinitif : want, decide, hope, plan, promise, refuse, agree, manage, afford, expect, need, offer, choose, try (attempt), learn, fail.",
+          rows: [
+            { en: 'She wants <strong>to study</strong> abroad.', tr: "Elle veut étudier à l'étranger." },
+            { en: 'He decided <strong>to leave</strong> early.', tr: "Il a décidé de partir tôt." },
+            { en: 'They managed <strong>to finish</strong> on time.', tr: "Ils ont réussi à finir à temps." },
+            { en: "I can't afford <strong>to buy</strong> a new phone.", tr: "Je n'ai pas les moyens d'acheter un nouveau téléphone." },
+            { en: 'She refused <strong>to answer</strong>.', tr: "Elle a refusé de répondre." },
+          ]
+        },
+        {
+          title: '↔️ Verbes + Gérondif OU Infinitif (sens différents)',
+          content: "Certains verbes acceptent les deux, mais parfois avec un sens différent : <strong>stop, remember, forget, try, regret</strong>.",
+          rows: [
+            { en: 'I stopped <strong>smoking</strong>. / I stopped <strong>to smoke</strong>.', tr: "J'ai arrêté de fumer. / Je me suis arrêté pour fumer. (deux sens!)" },
+            { en: 'Remember <strong>to lock</strong> the door! (reminder for future)', tr: "N'oublie pas de fermer la porte ! (rappel pour le futur)" },
+            { en: 'I remember <strong>locking</strong> the door. (memory of past action)', tr: "Je me souviens d'avoir fermé la porte. (souvenir)" },
+            { en: 'She tried <strong>to open</strong> the jar. (attempt) / Try <strong>adding</strong> more salt. (experiment)', tr: "Elle a essayé d'ouvrir le pot. / Essaie d'ajouter du sel." },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I am knowing the answer" → ✅ "I know the answer" (stative verb)',
+        '❌ "She is believing it" → ✅ "She believes it"',
+        '❌ "I enjoy to swim" → ✅ "I enjoy swimming" (enjoy + ING)',
+        '❌ "She avoided to look" → ✅ "She avoided looking" (avoid + ING)',
+        '❌ "I want going" → ✅ "I want to go" (want + INF)',
+      ],
+      tips: [
+        '🔑 Stative verbs (know, believe, love, own, seem...) → pas de forme continue en général',
+        '🔑 Enjoy, avoid, finish, mind, keep, miss, suggest → toujours + ING',
+        '🔑 Want, decide, hope, refuse, manage, afford → toujours + infinitif',
+        '💡 Stop/remember/forget + ING (action passée) vs + INF (futur/but)',
+        '⚠️ Certains verbes ont deux sens : "I have a car" (état) vs "I\'m having lunch" (action)',
+      ],
+      summary: [
+        'Stative verbs : jamais (ou rarement) au continu — know, believe, want, love, own...',
+        'Verbes + ING : enjoy, avoid, finish, mind, suggest, keep, miss...',
+        'Verbes + INF : want, decide, hope, promise, refuse, manage, afford...',
+        'Stop/remember/forget : + ING = action passée | + INF = but/futur',
+      ],
+    },
+    mg: {
+      intro: "Ny <strong>verbes d'état</strong> dia matoanteny maneho toetry ny saina na vatan'olona, tsy hetsika. Ireny matoanteny ireny dia tsy ampiasaina amin'ny temps continus amin'ny ankamaroany.",
+      sections: [
+        {
+          title: '🧠 Matoanteny toetra : tsy ampiasaina amin\'ny continu',
+          content: 'Know, believe, understand, want, love, have (fanana), seem... — tsy lazaina amin\'ny forme continue.',
+          rows: [
+            { en: 'I know the answer. ✅ / I am knowing ❌', tr: 'Fantatro ny valiny.' },
+            { en: 'She wants a new job. ✅ / She is wanting ❌', tr: 'Mitady asa vaovao izy.' },
+            { en: 'They own a house. ✅ / They are owning ❌', tr: 'Manana trano izy ireo.' },
+          ]
+        },
+        {
+          title: '➕ Matoanteny + ING',
+          content: 'Ireto matoanteny ireto dia tsy maintsy followed by ING : enjoy, avoid, finish, mind, suggest, keep, miss.',
+          rows: [
+            { en: "I enjoy swimming.", tr: 'Tiako ny filomanosana.' },
+            { en: "She finished writing.", tr: 'Vita ny nanoratany.' },
+            { en: "He avoided making eye contact.", tr: 'Nisoroka ny nandredreka maso izy.' },
+          ]
+        },
+        {
+          title: '🔛 Matoanteny + Infinitif',
+          content: 'Want, decide, hope, refuse, manage, afford... — followed by infinitif.',
+          rows: [
+            { en: "She wants to study abroad.", tr: 'Te hianatra any ivelany izy.' },
+            { en: "He decided to leave early.", tr: 'Nanapa-kevitra niala maraina izy.' },
+          ]
+        },
+        {
+          title: '↔️ Matoanteny misy hevitr\'isa roa',
+          content: 'Stop, remember, forget + ING (hetsika lasa) vs + INF (tanjon\'ny ho avy).',
+          rows: [
+            { en: 'I stopped smoking. (hetsika nijanona)', tr: 'Nijanona nisotro sigara aho.' },
+            { en: 'I stopped to smoke. (najanona mba hisotro sigara)', tr: 'Najanona aho mba hisotro sigara.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I am knowing" → ✅ "I know"',
+        '❌ "I enjoy to swim" → ✅ "I enjoy swimming"',
+        '❌ "I want going" → ✅ "I want to go"',
+      ],
+      tips: [
+        '🔑 Know, believe, want, love, own... → tsy continu',
+        '🔑 Enjoy, avoid, finish... → + ING foana',
+        '🔑 Want, decide, hope... → + infinitif foana',
+      ],
+      summary: [
+        'Matoanteny toetra : tsy continu — know, believe, want, love, own...',
+        '+ ING : enjoy, avoid, finish, mind, suggest...',
+        '+ INF : want, decide, hope, refuse, manage...',
+      ],
+    }
+  },
   {
     id: 'irregularVerbs',
     title: 'Verbes irréguliers',
@@ -1671,10 +2655,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PASTSIMPLE — A2
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'pastSimple',
     title: 'Past Simple',
@@ -1808,1462 +2788,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // FUTURESIMPLE — A2
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'futureSimple',
-    title: 'Future Simple',
-    icon: '🚀',
-    level: 'A2–B1',
-    fr: {
-      intro: 'Le Future Simple avec <strong>will</strong> exprime une décision spontanée, une promesse ou une prédiction. <strong>Be going to</strong> exprime une intention préparée.',
-      sections: [
-        {
-          title: 'Will + verbe',
-          content: 'Sujet + <strong>will</strong> + verbe infinitif. Même forme pour tous les sujets.',
-          rows: [
-            { en: 'I will help you.', tr: 'Je t\'aiderai.' },
-            { en: 'She will pass her exam.', tr: 'Elle réussira son examen.' },
-            { en: 'It will rain tomorrow.', tr: 'Il va pleuvoir demain.' },
-          ]
-        },
-        {
-          title: 'Won\'t (négatif) et Will...? (interrogatif)',
-          content: '',
-          rows: [
-            { en: 'I won\'t forget you.', tr: 'Je ne t\'oublierai pas.' },
-            { en: 'Will you come to the party?', tr: 'Est-ce que tu viendras à la fête ?' },
-          ]
-        },
-        {
-          title: 'Be going to',
-          content: 'Pour les intentions planifiées ou les prédictions basées sur des signes visibles.',
-          rows: [
-            { en: 'I am going to study medicine.', tr: 'Je vais étudier la médecine.' },
-            { en: 'Look at those clouds — it\'s going to rain!', tr: 'Regarde ces nuages — il va pleuvoir !' },
-          ]
-        },
-      ],
-      tips: [
-        'will = décision spontanée / promesse / prédiction générale',
-        'be going to = intention déjà décidée / preuve visible',
-        'Signal words : tomorrow, next week/year, in the future, soon',
-      ],
-      summary: [
-        'will + infinitif (même forme pour tous les sujets)',
-        'Négatif : won\'t + infinitif',
-        'Question : Will + sujet + infinitif ?',
-        'will = décision spontanée, promesse, prédiction',
-        'be going to = intention planifiée, preuve visible',
-      ],
-      quickExercises: [
-        { q: 'Complete: She ___ (pass) her exam.', a: 'will pass', hint: 'will + infinitif' },
-        { q: 'Correct: "He will goes to school."', a: 'He will go to school.', hint: 'will + infinitif sans -s' },
-        { q: 'Negative: "I will help you."', a: 'I won\'t help you.', hint: 'will → won\'t' },
-        { q: 'will or be going to? "Look at those clouds — ___"', a: 'it\'s going to rain!', hint: 'visible proof → be going to' },
-      ],
-    },
-    mg: {
-      intro: 'Ny Future Simple (<strong>will</strong> + verbe) dia ampiasaina ho an\'ny fanapahan-kevitra vetivety, toky, na fanambarana ho avy. Ny <strong>be going to</strong> dia ho an\'ny fikasana efa nokendry.',
-      sections: [
-        {
-          title: 'Will + verbe',
-          content: 'Sujet + <strong>will</strong> + infinitif. Mitovy ho an\'ny olon-drehetra.',
-          rows: [
-            { en: 'I will help you.', tr: 'Hanampy anao aho.' },
-            { en: 'She will pass her exam.', tr: 'Hahajoro ny fanadinany izy.' },
-            { en: 'It will rain tomorrow.', tr: 'Handatsaka ny orana rahampitso.' },
-          ]
-        },
-        {
-          title: 'Won\'t (fandavana) sy Will...? (fanontaniana)',
-          content: '',
-          rows: [
-            { en: 'I won\'t forget you.', tr: 'Tsy hanadino anao aho.' },
-            { en: 'Will you come to the party?', tr: 'Ho avy amin\'ny fety ve ianao?' },
-          ]
-        },
-        {
-          title: 'Be going to',
-          content: 'Fikasana efa nokendry na faminaniana mifototra amin\'ny porofo hita.',
-          rows: [
-            { en: 'I am going to study medicine.', tr: 'Hianatra fanafody aho.' },
-            { en: 'It\'s going to rain!', tr: 'Handatsaka ny orana!' },
-          ]
-        },
-      ],
-      tips: [
-        'will = fanapahan-kevitra vetivety / toky',
-        'be going to = fikasana efa nokendry / porofo hita',
-        'Fotoana ho avy : tomorrow (rahampitso), next week (herinandro ho avy)',
-      ],
-      summary: [
-        'will + infinitif (mitovy ho an\'ny olon-drehetra)',
-        'Fandavana : won\'t + infinitif',
-        'Fanontaniana : Will + sujet + infinitif ?',
-        'will = fanapahan-kevitra vetivety; be going to = fikasana efa nokendry',
-      ],
-      quickExercises: [
-        { q: 'Fenoy: She ___ (help) you tomorrow.', a: 'will help', hint: 'will + infinitif' },
-        { q: 'Ataovy fandavana: "I will come."', a: 'I won\'t come.', hint: 'will → won\'t' },
-        { q: 'will na be going to? Misy rahona be — ___', a: 'It\'s going to rain.', hint: 'porofo hita → be going to' },
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // GOINGTO — A2
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'goingTo',
-    title: 'Going to — Futur planifié',
-    icon: '🎯',
-    level: 'A2',
-    fr: {
-      intro: "<strong>Be going to</strong> exprime un futur déjà décidé : un plan ou une intention formée <em>avant</em> le moment où on parle, ou bien une prédiction basée sur une preuve visible. C'est différent de <em>will</em> qui exprime une décision spontanée.",
-      sections: [
-        {
-          title: '📐 Formation : be going to + infinitif',
-          content: '<strong>Sujet + am/is/are + going to + verbe base</strong>. Pour le négatif : am/is/are + not + going to. Pour la question : Am/Is/Are + sujet + going to + verbe ?',
-          rows: [
-            { en: 'I <strong>am going to</strong> study tonight.', tr: "Je vais étudier ce soir. (décision déjà prise)" },
-            { en: 'She <strong>is going to</strong> travel to France.', tr: 'Elle va voyager en France.' },
-            { en: 'We <strong>are going to</strong> build a new house.', tr: 'Nous allons construire une nouvelle maison.' },
-            { en: 'He <strong>is not going to</strong> accept the offer.', tr: "Il ne va pas accepter l'offre." },
-            { en: '<strong>Are</strong> they <strong>going to</strong> move abroad?', tr: 'Vont-ils s\'installer à l\'étranger ?' },
-          ]
-        },
-        {
-          title: '📅 Usage 1 : Plans et intentions décidés à l\'avance',
-          content: 'Utilisez <em>going to</em> quand la décision a été prise <strong>avant</strong> le moment où vous parlez. C\'est un plan, pas une décision spontanée.',
-          rows: [
-            { en: "I decided last night. I'm going to apply for that scholarship.", tr: "J'ai décidé hier soir. Je vais postuler pour cette bourse." },
-            { en: "She's going to study medicine. She's been preparing for years.", tr: 'Elle va étudier la médecine. Elle se prépare depuis des années.' },
-            { en: "We're going to visit my family this weekend.", tr: 'Nous allons rendre visite à ma famille ce week-end.' },
-            { en: "They're not going to eat meat anymore.", tr: 'Ils ne vont plus manger de viande.' },
-          ]
-        },
-        {
-          title: '🌩️ Usage 2 : Prédictions avec preuve visible',
-          content: 'Utilisez <em>going to</em> quand vous observez quelque chose maintenant qui vous permet de prévoir ce qui va se passer.',
-          rows: [
-            { en: "Look at those dark clouds — it's going to rain!", tr: 'Regardez ces nuages noirs — il va pleuvoir !' },
-            { en: "Careful! You're going to drop those glasses!", tr: 'Attention ! Tu vas faire tomber ces verres !' },
-            { en: "He's eating so fast — he's going to choke.", tr: 'Il mange si vite — il va s\'étouffer.' },
-            { en: "That car is going too fast — it's going to crash.", tr: 'Cette voiture va trop vite — elle va avoir un accident.' },
-          ]
-        },
-        {
-          title: '⚖️ Going to vs Will : la différence essentielle',
-          content: '<strong>Going to</strong> = décision prise avant / preuve visible. <strong>Will</strong> = décision spontanée au moment où on parle / prédiction sans preuve concrète.',
-          rows: [
-            { en: "A: I need help! B: I'll help you! (decision now)", tr: "A: J'ai besoin d'aide ! B: Je vais t'aider ! (décision spontanée → will)" },
-            { en: "A: What are your plans? B: I'm going to study English.", tr: "A: Quels sont tes plans ? B: Je vais étudier l'anglais. (plan décidé → going to)" },
-            { en: "I think it will rain tomorrow. (opinion, no proof)", tr: 'Je pense qu\'il pleuvra demain. (opinion, pas de preuve → will)' },
-            { en: "Look at those clouds — it's going to rain! (proof visible)", tr: 'Regardez ces nuages — il va pleuvoir ! (preuve visible → going to)' },
-          ]
-        },
-        {
-          title: '🔄 Going to vs Present Continuous pour le futur',
-          content: 'Le présent continu peut aussi exprimer un futur, mais seulement pour des <strong>arrangements déjà fixés</strong> (rendez-vous, réservations). <em>Going to</em> exprime les intentions plus générales.',
-          rows: [
-            { en: "I'm meeting Sarah tomorrow at 3pm. (appointment made)", tr: "Je rencontre Sarah demain à 15h. (rendez-vous fixé → present continuous)" },
-            { en: "I'm going to visit my grandmother sometime next week.", tr: "Je vais rendre visite à ma grand-mère la semaine prochaine. (intention → going to)" },
-            { en: "We're flying to Paris on Monday. (tickets bought)", tr: "Nous volons vers Paris lundi. (billet réservé → present continuous)" },
-          ]
-        },
-      ],
-      commonErrors: [
-        "❌ \"I going to study\" → ✅ \"I AM going to study\" (be obligatoire)",
-        "❌ \"I'm gonna to study\" → ✅ \"I'm going to study\" (gonna est familier et sans 'to')",
-        "❌ \"Will you going to...?\" → ✅ \"Are you going to...?\" (question avec be)",
-        "❌ \"Look — it will rain!\" (avec preuve visible) → ✅ \"it's going to rain!\"",
-        "❌ \"I'm going to help you!\" (décision spontanée) → ✅ \"I'll help you!\"",
-      ],
-      tips: [
-        "🔑 Be going to = plan décidé à l'avance OU prédiction avec preuve visible",
-        "🔑 Will = décision spontanée OU prédiction sans preuve (opinion, croyance)",
-        "💡 Formes contractées naturelles : I'm going to / she's going to / we're going to",
-        "💡 \"Gonna\" = forme orale très familière — évitez à l'écrit",
-        "⚠️ N'oubliez jamais le verbe BE : I AM / She IS / They ARE going to...",
-      ],
-      summary: [
-        'Formation : be (am/is/are) + going to + verbe base',
-        'Usage 1 : plans et intentions décidés avant le moment de parler',
-        'Usage 2 : prédictions basées sur une preuve visible maintenant',
-        'vs will : will = spontané / sans preuve | going to = planifié / preuve visible',
-      ],
-    },
-    mg: {
-      intro: "<strong>Be going to</strong> dia ampiasaina hilazana ny zavatra efa voatokana ataonao amin'ny ho avy — drafitry ny saina na fiheverana miorina amin'ny porofo hita maso. Tsy mitovy amin'ny <em>will</em> izay entina milaza fanapahan-kevitra tampoka.",
-      sections: [
-        {
-          title: '📐 Fomba : be going to + veribe base',
-          content: '<strong>Sujet + am/is/are + going to + veribe</strong>. Fandavana : not + going to. Fanontaniana : am/is/are + sujet + going to?',
-          rows: [
-            { en: "I'm going to study tonight.", tr: 'Hianatra aho this evening. (fanapahan-kevitra efa vita)' },
-            { en: "She's going to travel to France.", tr: 'Handeha any Frantsa izy.' },
-            { en: "Are they going to move abroad?", tr: 'Handeha any ivelany ve izy ireo?' },
-          ]
-        },
-        {
-          title: '📅 Fampiasana 1 : Drafitra sy fikasana',
-          content: 'Ampiasao <em>going to</em> raha efa voatokana ny fanapahan-kevitra talohan\'ny fitenenana.',
-          rows: [
-            { en: "I'm going to apply for that scholarship.", tr: 'Hangataka ilay kamboty fianarambola aho.' },
-            { en: "We're going to visit our family this weekend.", tr: 'Hitsidika ny fianakaviany izahay weekend ity.' },
-          ]
-        },
-        {
-          title: '🌩️ Fampiasana 2 : Faminaniana miainga amin\'ny porofo',
-          content: 'Ampiasao <em>going to</em> raha misy porofo hita maso mampiseho ny ho avy.',
-          rows: [
-            { en: "Look at those clouds — it's going to rain!", tr: 'Jereo ireny rahona ireny — ho ranonorana!' },
-            { en: "Careful! You're going to drop those glasses!", tr: 'Tandremo! Ho latsaka ireny fitaratra ireny!' },
-          ]
-        },
-        {
-          title: '⚖️ Going to vs Will',
-          content: '<strong>Going to</strong> = drafitra efa vita / porofo hita maso. <strong>Will</strong> = fanapahan-kevitra tampoka / hevitra fotsiny.',
-          rows: [
-            { en: "I'll help you! (spontaneous decision)", tr: 'Hanampy anao aho! (tampoka → will)' },
-            { en: "I'm going to study English. (planned)", tr: 'Hianatra anglisy aho. (efa drafitra → going to)' },
-          ]
-        },
-      ],
-      commonErrors: [
-        "❌ \"I going to study\" → ✅ \"I AM going to study\" (tsy maintsy misy be)",
-        "❌ \"Will you going to...?\" → ✅ \"Are you going to...?\"",
-        "❌ Hita porofo + will → ✅ hita porofo + going to",
-      ],
-      tips: [
-        '🔑 Going to = drafitra na porofo hita maso',
-        '🔑 Will = fanapahan-kevitra tampoka na hevitra tsotra',
-        '⚠️ Tsy maintsy misy be (am/is/are) alohan\'ny going to',
-      ],
-      summary: [
-        'Fomba : be (am/is/are) + going to + veribe',
-        'Fampiasana : drafitra efa vita, faminaniana miainga amin\'ny porofo',
-        'vs will : going to = drafitra/porofo | will = tampoka/hevitra',
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // COMPARATIVES — A2
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'comparatives',
-    title: 'Comparatives & Superlatives',
-    icon: '⚖️',
-    level: 'A2',
-    fr: {
-      intro: "En anglais, les <strong>comparatifs</strong> et <strong>superlatifs</strong> fonctionnent différemment selon la longueur de l\'adjectif. La règle est simple et régulière pour la plupart des adjectifs.",
-      sections: [
-        {
-          title: 'Comparatif d\'infériorité et supériorité',
-          content: 'Adjectif court (1 syllabe) + <strong>-er than</strong> · Adjectif long (2+ syllabes) : <strong>more … than</strong>',
-          rows: [
-            { en: 'She is taller than her brother.', tr: 'Elle est plus grande que son frère. (tall → taller)' },
-            { en: 'This film is more interesting than the last one.', tr: 'Ce film est plus intéressant que le dernier. (more + long adj)' },
-            { en: 'Running is easier than swimming.', tr: 'Courir est plus facile que nager.' },
-            { en: 'My bag is heavier than yours.', tr: 'Mon sac est plus lourd que le tien. (heavy → heavier)' },
-          ]
-        },
-        {
-          title: 'Superlatif',
-          content: 'Adjectif court : <strong>the … -est</strong> · Adjectif long : <strong>the most …</strong>',
-          rows: [
-            { en: 'He is the fastest runner in the school.', tr: 'Il est le coureur le plus rapide de l\'école.' },
-            { en: 'This is the most beautiful place I\'ve seen.', tr: 'C\'est l\'endroit le plus beau que j\'aie vu.' },
-            { en: 'January is the coldest month.', tr: 'Janvier est le mois le plus froid.' },
-          ]
-        },
-        {
-          title: 'Égalité : as … as',
-          content: 'Pour dire que deux choses sont égales',
-          rows: [
-            { en: 'My car is as fast as yours.', tr: 'Ma voiture est aussi rapide que la tienne.' },
-            { en: 'She is as tall as her mother.', tr: 'Elle est aussi grande que sa mère.' },
-          ]
-        },
-        {
-          title: 'Irréguliers importants',
-          content: 'good / bad / far ont des comparatifs et superlatifs irréguliers',
-          rows: [
-            { en: 'good → better → the best', tr: 'bon → meilleur → le meilleur' },
-            { en: 'bad → worse → the worst', tr: 'mauvais → pire → le pire' },
-            { en: 'far → farther/further → the farthest/furthest', tr: 'loin → plus loin → le plus loin' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "more tall than" → ✅ "taller than" (adj court → -er)',
-        '❌ "the most fast" → ✅ "the fastest" (adj court → -est)',
-        '❌ "more better" → ✅ "better" (irrégulier)',
-        '❌ "the most good" → ✅ "the best" (irrégulier)',
-      ],
-      tips: [
-        '📏 1 syllabe → -er/-est : tall/taller/tallest',
-        '📏 2+ syllabes → more/most : beautiful / more beautiful / most beautiful',
-        '⚠️ Doublement de la consonne finale : big/bigger, hot/hotter, fat/fatter',
-        '⚠️ -y → -ier/-iest : happy/happier/happiest · easy/easier/easiest',
-      ],
-      summary: ['Court (-er/-est) : tall/taller/tallest', 'Long (more/most) : beautiful/more beautiful/most beautiful', 'Égalité : as … as', 'Irréguliers : good/better/best · bad/worse/worst'],
-    },
-    mg: {
-      intro: "Ny <strong>comparatif</strong> sy <strong>superlative</strong> dia mampiasa endrika hafa arakaraky ny halavan\'ny adjectif. Tsotra ny fitsipika.",
-      sections: [
-        {
-          title: 'Comparatif (mitovy na tsy mitovy)',
-          content: 'Adjectif fohy + -er than · Adjectif lava : more … than',
-          rows: [
-            { en: 'She is taller than her brother.', tr: 'Lehibe kokoa izy noho ny rahalahiny.' },
-            { en: 'This film is more interesting than the last one.', tr: 'Ny sarimihetsika ity dia maro lamintsasa kokoa noho ny farany.' },
-          ]
-        },
-        {
-          title: 'Superlative',
-          content: 'Adjectif fohy : the … -est · Adjectif lava : the most …',
-          rows: [
-            { en: 'He is the fastest runner in the school.', tr: 'Izy no manerinerina indrindra ao an-tsekoly.' },
-            { en: 'This is the most beautiful place.', tr: 'Ity no toerana tsara indrindra.' },
-          ]
-        },
-        {
-          title: 'Irréguliers',
-          content: 'Ireo teny tsy manaraka fitsipika',
-          rows: [
-            { en: 'good → better → the best', tr: 'tsara → tsara kokoa → tsara indrindra' },
-            { en: 'bad → worse → the worst', tr: 'ratsy → ratsy kokoa → ratsy indrindra' },
-          ]
-        },
-      ],
-      commonErrors: ['❌ "more tall" → ✅ "taller"', '❌ "more better" → ✅ "better"'],
-      tips: ['Fohy (1 syllabe) → -er/-est', 'Lava (2+ syllabe) → more/most', 'Irréguliers : good/better/best · bad/worse/worst'],
-      summary: ['Fohy → -er than / the -est', 'Lava → more … than / the most …', 'Mitovy : as … as'],
-    },
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // SOMEANY — A2
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'someAny',
-    title: 'Some, Any & No',
-    icon: '🔢',
-    level: 'A2',
-    fr: {
-      intro: "<strong>Some</strong>, <strong>any</strong> et <strong>no</strong> expriment une quantité indéfinie. Leur choix dépend du type de phrase : affirmative, négative ou interrogative. Ce point est très différent du français.",
-      sections: [
-        {
-          title: 'Some — phrases affirmatives',
-          content: '"Quelques" / "du, de la, des" dans les phrases positives',
-          rows: [
-            { en: 'I have some water.', tr: 'J\'ai de l\'eau.' },
-            { en: 'There are some books on the table.', tr: 'Il y a des livres sur la table.' },
-            { en: 'Would you like some tea?', tr: 'Voulez-vous du thé ? (offre polie → some)' },
-          ]
-        },
-        {
-          title: 'Any — questions et négatives',
-          content: '"Du/de la/des" dans les questions et "de" après une négation',
-          rows: [
-            { en: 'Do you have any money?', tr: 'Est-ce que tu as de l\'argent ?' },
-            { en: 'I don\'t have any friends here.', tr: 'Je n\'ai pas d\'amis ici.' },
-            { en: 'Is there any milk in the fridge?', tr: 'Il y a du lait dans le frigo ?' },
-          ]
-        },
-        {
-          title: 'No — quantité zéro',
-          content: '"Aucun(e)" = Not any, mais plus direct et plus fort',
-          rows: [
-            { en: 'I have no money.', tr: 'Je n\'ai pas d\'argent. (= I don\'t have any)' },
-            { en: 'There is no time.', tr: 'Il n\'y a pas de temps.' },
-            { en: 'She has no brothers.', tr: 'Elle n\'a pas de frères.' },
-          ]
-        },
-        {
-          title: 'Composés : something / anything / nothing / someone / anyone',
-          content: 'Some- (affirmatif) · Any- (question/négatif) · No- (zéro)',
-          rows: [
-            { en: 'I want something to eat.', tr: 'Je veux quelque chose à manger.' },
-            { en: 'Do you need anything?', tr: 'As-tu besoin de quelque chose ?' },
-            { en: 'There is nothing in the bag.', tr: 'Il n\'y a rien dans le sac.' },
-            { en: 'Someone is at the door.', tr: 'Il y a quelqu\'un à la porte.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I don\'t have some money" → ✅ "I don\'t have any money" (négatif → any)',
-        '❌ "There isn\'t nothing" → ✅ "There is nothing" ou "There isn\'t anything" (pas de double négation)',
-        '❌ "Do you have some time?" → ✅ "Do you have any time?" (question neutre → any)',
-      ],
-      tips: [
-        '🔑 SOME : affirmatif | ANY : question & négatif | NO : zéro',
-        '💡 Some dans une question = offre polie : "Would you like some coffee?"',
-        '🧩 Composés : some/any/no + body · one · thing · where',
-      ],
-      summary: ['some → affirmatif', 'any → question / négatif', 'no → quantité zéro', 'Composés : something / anything / nothing / someone / anyone / nowhere'],
-    },
-    mg: {
-      intro: "Ny <strong>some</strong>, <strong>any</strong> ary <strong>no</strong> dia milaza habetsahana tsy mazava tsara. Ny safidiny miankina amin\'ny karazana fehezanteny (fanambara, fandavana, fanontaniana).",
-      sections: [
-        {
-          title: 'Some — fehezanteny fanambara',
-          content: '"Zavatra kely" amin\'ny fehezanteny tsara',
-          rows: [
-            { en: 'I have some water.', tr: 'Manana rano kely aho.' },
-            { en: 'There are some books on the table.', tr: 'Misy boky kely eo ambonin\'ny latabatra.' },
-          ]
-        },
-        {
-          title: 'Any — fanontaniana sy fandavana',
-          content: '"Inona na inona" amin\'ny fanontaniana sy fandavana',
-          rows: [
-            { en: 'Do you have any money?', tr: 'Manana vola ve ianao?' },
-            { en: 'I don\'t have any friends here.', tr: 'Tsy manana namana eto aho.' },
-          ]
-        },
-        {
-          title: 'No — vola aotra',
-          content: '"Tsy misy" = zero',
-          rows: [
-            { en: 'I have no money.', tr: 'Tsy manana vola aho.' },
-            { en: 'There is nothing in the bag.', tr: 'Tsy misy na inona ao anaty kitapom-boky.' },
-          ]
-        },
-      ],
-      commonErrors: ['❌ "I don\'t have some" → ✅ "I don\'t have any"', '❌ "There isn\'t nothing" → ✅ "There is nothing"'],
-      tips: ['some → fanambara | any → fanontaniana/fandavana | no → aotra', 'Composés : something / anything / nothing'],
-      summary: ['some → fanambara', 'any → fanontaniana / fandavana', 'no → aotra (zéro)'],
-    },
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // COUNTABLEUNCOUNTABLE — A2–B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'countableUncountable',
-    title: 'Countable & Uncountable Nouns',
-    icon: '🧮',
-    level: 'A2–B1',
-    fr: {
-      intro: "En anglais, les noms se divisent en <strong>countable</strong> (dénombrables, qu\'on peut compter) et <strong>uncountable</strong> (indénombrables, qu\'on ne peut pas compter). Ce choix détermine quel quantificateur utiliser : much, many, a lot of, a few, a little.",
-      sections: [
-        {
-          title: 'Dénombrables (Countable nouns)',
-          content: 'Ont un singulier et un pluriel. Peuvent être précédés de a/an.',
-          rows: [
-            { en: 'one apple, two apples, three books', tr: 'une pomme, deux pommes, trois livres' },
-            { en: 'How many oranges do you have?', tr: 'Combien d\'oranges as-tu ?' },
-            { en: 'I have a few coins in my pocket.', tr: 'J\'ai quelques pièces dans ma poche.' },
-            { en: 'There are many students in the class.', tr: 'Il y a beaucoup d\'étudiants dans la classe.' },
-          ]
-        },
-        {
-          title: 'Indénombrables (Uncountable nouns)',
-          content: 'Pas de pluriel. Pas de a/an. Verbe toujours singulier.',
-          rows: [
-            { en: 'water, milk, rice, bread, sugar, money, air', tr: 'eau, lait, riz, pain, sucre, argent, air' },
-            { en: 'information, advice, furniture, news, luggage', tr: 'information, conseil, meubles, nouvelles, bagages' },
-            { en: 'How much water do you drink every day?', tr: 'Combien d\'eau bois-tu chaque jour ?' },
-            { en: 'The information is correct.', tr: 'L\'information est correcte. (pas "informations")' },
-          ]
-        },
-        {
-          title: 'Much / Many / A lot of',
-          content: 'much + uncountable · many + countable · a lot of + les deux',
-          rows: [
-            { en: 'I don\'t have much time today.', tr: 'Je n\'ai pas beaucoup de temps aujourd\'hui.' },
-            { en: 'She has a lot of friends at school.', tr: 'Elle a beaucoup d\'amis à l\'école.' },
-            { en: 'He drinks a lot of water every day.', tr: 'Il boit beaucoup d\'eau chaque jour.' },
-            { en: 'Do you have much homework tonight?', tr: 'Tu as beaucoup de devoirs ce soir ?' },
-          ]
-        },
-        {
-          title: 'A few / A little',
-          content: 'a few + countable · a little + uncountable (sens positif)',
-          rows: [
-            { en: 'I have a few friends in this city.', tr: 'J\'ai quelques amis dans cette ville.' },
-            { en: 'She speaks a little French.', tr: 'Elle parle un peu français.' },
-            { en: 'Wait a few minutes, please.', tr: 'Attends quelques minutes, s\'il te plaît.' },
-            { en: 'Add a little sugar to the tea.', tr: 'Ajoute un peu de sucre dans le thé.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"I have many informations." ✗ → "I have a lot of information." ✓',
-        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓',
-        '"She has much friends." ✗ → "She has many friends." ✓',
-        '"I have few money." ✗ → "I have little money." ✓',
-      ],
-      tips: [
-        '"advice", "information", "furniture", "news", "luggage" → toujours uncountable !',
-        'Few (sans "a") = peu de (presque rien) · a few = quelques (positif)',
-        'Little (sans "a") = peu de (négatif) · a little = un peu (positif)',
-      ],
-      summary: [
-        'Countable → a/an, pluriel, many, a few',
-        'Uncountable → pas de a/an, pas de pluriel, much, a little',
-        'A lot of → universel (les deux, surtout en affirmatif)',
-      ]
-    },
-    mg: {
-      intro: "Amin\'ny anglisy, ny noun dia mizara ho <strong>countable</strong> (azo isaina) sy <strong>uncountable</strong> (tsy azo isaina). Io no mametra ny fampiasana much, many, a lot of, a few, a little.",
-      sections: [
-        {
-          title: 'Countable (azo isaina)',
-          content: 'Misy endrika tokana sy endrika maro. Azo asiana a/an eo aloha.',
-          rows: [
-            { en: 'one apple, two apples, three books', tr: 'paoma iray, paoma roa, boky telo' },
-            { en: 'How many oranges do you have?', tr: 'Ôranjy firy no anananao?' },
-            { en: 'I have a few coins in my pocket.', tr: 'Manana vola vitsivitsy ao am-paosy aho.' },
-          ]
-        },
-        {
-          title: 'Uncountable (tsy azo isaina)',
-          content: 'Tsy misy endrika maro. Tsy misy a/an. Matoanteny amin\'ny tokana foana.',
-          rows: [
-            { en: 'water, milk, rice, bread, sugar, money', tr: 'rano, ronono, vary, mofo, siramamy, vola' },
-            { en: 'information, advice, furniture, news', tr: 'vaovao, torohevitra, firavaka, vaovao madinidinika' },
-            { en: 'How much water do you drink every day?', tr: 'Rano ohatrinona no sotrohinao isan\'andro?' },
-          ]
-        },
-        {
-          title: 'Much / Many / A lot of',
-          content: 'much + uncountable · many + countable · a lot of = izy roa',
-          rows: [
-            { en: 'I don\'t have much time today.', tr: 'Tsy manana fotoana be aho anio.' },
-            { en: 'She has a lot of friends at school.', tr: 'Manana namana maro izy any an-tsekoly.' },
-            { en: 'He drinks a lot of water every day.', tr: 'Misotro rano be izy isan\'andro.' },
-          ]
-        },
-        {
-          title: 'A few / A little',
-          content: 'a few + countable · a little + uncountable',
-          rows: [
-            { en: 'I have a few friends in this city.', tr: 'Manana namana vitsivitsy aho ato an-tanàna.' },
-            { en: 'She speaks a little French.', tr: 'Mahay teny frantsay kely izy.' },
-            { en: 'Add a little sugar to the tea.', tr: 'Ampio siramamy kely ao amin\'ny dite.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"I have many informations." ✗ → "I have a lot of information." ✓',
-        '"Can I have an advice?" ✗ → "Can I have some advice?" ✓',
-      ],
-      tips: [
-        '"advice", "information", "furniture", "news" — uncountable foana ireo!',
-        'A few / a little = kely nefa misy (positif) · few / little = tena kely be (négatif)',
-      ],
-      summary: [
-        'Countable → a/an, endrika maro, many, a few',
-        'Uncountable → tsy misy a/an, tsy misy endrika maro, much, a little',
-        'A lot of → azo ampiasaina amin\'ny izy roa',
-      ]
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // ADVERBS — A2
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'adverbs',
-    title: 'Adverbs — Adverbes',
-    icon: '⚡',
-    level: 'A2',
-    fr: {
-      intro: "Les <strong>adverbes de fréquence</strong> indiquent à quelle fréquence une action se produit (always → never). Les <strong>adverbes de manière</strong> décrivent comment une action est effectuée (quickly, carefully). Leur position dans la phrase est essentielle.",
-      sections: [
-        {
-          title: 'Adverbes de fréquence (100% → 0%)',
-          content: 'Se placent avant le verbe principal, mais après "to be".',
-          rows: [
-            { en: 'I always brush my teeth in the morning.', tr: 'Je me brosse toujours les dents le matin. (100%)' },
-            { en: 'She usually wakes up at six.', tr: 'Elle se réveille généralement à 6h. (80%)' },
-            { en: 'We often eat rice for dinner.', tr: 'Nous mangeons souvent du riz le soir. (60%)' },
-            { en: 'He sometimes watches TV after school.', tr: 'Il regarde parfois la télé après l\'école. (40%)' },
-            { en: 'They rarely go to the cinema.', tr: 'Ils vont rarement au cinéma. (20%)' },
-            { en: 'I never drink alcohol.', tr: 'Je ne bois jamais d\'alcool. (0%)' },
-          ]
-        },
-        {
-          title: 'Position avec "to be"',
-          content: 'Après "to be", l\'adverbe de fréquence se place après le verbe.',
-          rows: [
-            { en: 'He is always late.', tr: 'Il est toujours en retard.' },
-            { en: 'They are usually tired after school.', tr: 'Ils sont généralement fatigués après l\'école.' },
-            { en: 'She is never rude.', tr: 'Elle n\'est jamais impolie.' },
-          ]
-        },
-        {
-          title: 'Adverbes de manière (adjectif + -ly)',
-          content: 'Se placent après le verbe ou l\'objet direct.',
-          rows: [
-            { en: 'She speaks English quickly.', tr: 'Elle parle anglais rapidement.' },
-            { en: 'He drives very carefully.', tr: 'Il conduit très prudemment.' },
-            { en: 'The team played badly last night.', tr: 'L\'équipe a très mal joué hier soir.' },
-            { en: 'She sings beautifully at every concert.', tr: 'Elle chante magnifiquement à chaque concert.' },
-          ]
-        },
-        {
-          title: 'Adverbes irréguliers (pas de -ly)',
-          content: 'Formes à mémoriser.',
-          rows: [
-            { en: 'She plays the piano very well.', tr: 'Elle joue très bien du piano. (good → well)' },
-            { en: 'He runs very fast.', tr: 'Il court très vite. (fast → fast)' },
-            { en: 'She works really hard every day.', tr: 'Elle travaille vraiment dur chaque jour. (hard → hard)' },
-            { en: 'He arrived late to the meeting.', tr: 'Il est arrivé en retard à la réunion. (late → late)' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"She sings beautiful." ✗ → "She sings beautifully." ✓',
-        '"He plays good the guitar." ✗ → "He plays the guitar well." ✓',
-        '"I sometimes am late." ✗ → "I am sometimes late." ✓ (après to be)',
-      ],
-      tips: [
-        'Ordre en fin de phrase : MANIÈRE → LIEU → TEMPS (She sang beautifully in the park yesterday)',
-        '"hardly" ≠ "hard" : hardly = à peine / hard = fort ou dur',
-        '"lately" ≠ "late" : lately = récemment / late = en retard',
-      ],
-      summary: [
-        'Fréquence : avant le verbe principal / après to be',
-        'Manière : adjectif + -ly, après le verbe ou l\'objet',
-        'Irréguliers à retenir : good → well, fast → fast, hard → hard',
-      ]
-    },
-    mg: {
-      intro: "Ny <strong>adverbe de fréquence</strong> dia milaza ny matetika isaterahan\'ny asa (always → never). Ny <strong>adverbe de manière</strong> dia milaza ny fomba fanao (quickly, carefully). Ny toerana ao amin\'ny fehezanteny dia lehibe.",
-      sections: [
-        {
-          title: 'Adverbe de fréquence (100% → 0%)',
-          content: 'Eo alohan\'ny matoanteny lehibe, nefa aorian\'ny to be.',
-          rows: [
-            { en: 'I always brush my teeth in the morning.', tr: 'Mandrakariva manasa nify aho maraina.' },
-            { en: 'She usually wakes up at six.', tr: 'Matetika mifohaza amin\'ny enina izy.' },
-            { en: 'We often eat rice for dinner.', tr: 'Matetika mihinana vary amin\'ny alina izahay.' },
-            { en: 'I never drink alcohol.', tr: 'Tsy mba misotro toaka aho.' },
-          ]
-        },
-        {
-          title: 'Toerana aorian\'ny "to be"',
-          content: 'Aorian\'ny to be, ny adverbe dia apetraka aorian\'ny matoanteny.',
-          rows: [
-            { en: 'He is always late.', tr: 'Mandrakariva diso fotoana izy.' },
-            { en: 'She is never rude.', tr: 'Tsy mba manevateva izy.' },
-          ]
-        },
-        {
-          title: 'Adverbe de manière (adjectif + -ly)',
-          content: 'Apetraka aorian\'ny matoanteny na ny objet.',
-          rows: [
-            { en: 'She speaks English quickly.', tr: 'Haingana ny fitenenany anglisy.' },
-            { en: 'He drives very carefully.', tr: 'Mitandrina be izy rehefa mitondra fiara.' },
-            { en: 'She plays the piano very well.', tr: 'Mahay manao piano tsara izy. (good → well)' },
-            { en: 'He runs very fast.', tr: 'Mihazakazaka haingana be izy. (fast → fast)' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"She sings beautiful." ✗ → "She sings beautifully." ✓',
-        '"He plays good." ✗ → "He plays well." ✓',
-      ],
-      tips: [
-        'Manetrika: MANIÈRE → LIEU → FOTOANA (beautifully in the park yesterday)',
-        '"hardly" = saika tsy (à peine) ≠ "hard" = mafy / mafy be',
-      ],
-      summary: [
-        'Fréquence: eo alohan\'ny matoanteny / aorian\'ny to be',
-        'Manière: adjectif + -ly, aorian\'ny matoanteny',
-        'Tsy ara-dalàna: good → well, fast → fast, hard → hard',
-      ]
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // MODALS — A2
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'modals',
-    title: 'Verbes Modaux',
-    icon: '🛠️',
-    level: 'A2',
-    fr: {
-      intro: 'Les verbes modaux (can, could, must, should, may, might, would) expriment la capacité, l\'obligation, la permission ou la possibilité. Ils sont suivis d\'un verbe à l\'infinitif sans <em>to</em>.',
-      sections: [
-        {
-          title: 'Can / Can\'t — capacité et permission',
-          content: '',
-          rows: [
-            { en: 'I can swim.', tr: 'Je sais nager. / Je peux nager.' },
-            { en: 'Can I use your phone?', tr: 'Est-ce que je peux utiliser ton téléphone ?' },
-            { en: 'She can\'t drive yet.', tr: 'Elle ne sait pas encore conduire.' },
-          ]
-        },
-        {
-          title: 'Must / Have to — obligation',
-          content: '<strong>Must</strong> : obligation interne (je me l\'impose). <strong>Have to</strong> : obligation externe (règle, loi).',
-          rows: [
-            { en: 'You must study harder.', tr: 'Tu dois travailler plus dur.' },
-            { en: 'I have to wear a uniform at school.', tr: 'Je dois porter un uniforme à l\'école.' },
-            { en: 'You mustn\'t be late.', tr: 'Tu ne dois pas être en retard.' },
-          ]
-        },
-        {
-          title: 'Should / Shouldn\'t — conseil',
-          content: '',
-          rows: [
-            { en: 'You should eat breakfast every day.', tr: 'Tu devrais manger le petit-déjeuner tous les jours.' },
-            { en: 'You shouldn\'t sleep late.', tr: 'Tu ne devrais pas dormir tard.' },
-          ]
-        },
-        {
-          title: 'May / Might — possibilité',
-          content: '<strong>May</strong> : assez probable. <strong>Might</strong> : moins probable.',
-          rows: [
-            { en: 'It may rain this afternoon.', tr: 'Il se peut qu\'il pleuve cet après-midi.' },
-            { en: 'She might come later.', tr: 'Elle viendra peut-être plus tard.' },
-          ]
-        },
-        {
-          title: 'Would — politesse et condition',
-          content: '',
-          rows: [
-            { en: 'Would you like some tea?', tr: 'Voulez-vous du thé ?' },
-            { en: 'I would like to travel to Europe.', tr: 'J\'aimerais voyager en Europe.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "She cans swim" → ✅ "She CAN swim" (modaux = jamais de -s)',
-        '❌ "You must to study" → ✅ "You must study" (pas de "to" après les modaux)',
-        '❌ "He should goes" → ✅ "He should go" (infinitif sans -s après modal)',
-        '❌ "Can you to help me?" → ✅ "Can you help me?"',
-        '❌ "I would like go" → ✅ "I would like TO go" (would like est une exception → to + inf)',
-      ],
-      tips: [
-        'Les modaux ne prennent jamais de -s avec he/she/it',
-        'Toujours suivis de l\'infinitif sans to (sauf ought to, have to)',
-        'can → could (passé) ; will → would ; may → might',
-      ],
-      summary: [
-        'can = capacité/permission ; must = obligation forte ; should = conseil',
-        'may/might = possibilité ; would = politesse/conditionnel',
-        'JAMAIS de -s avec he/she/it : she can (pas she cans)',
-        'JAMAIS "to" après le modal (sauf have to, ought to)',
-        'Exception : would like + to + infinitif',
-      ],
-      quickExercises: [
-        { q: 'Correct: "She cans speak English."', a: 'She can speak English.', hint: 'modals never take -s' },
-        { q: 'Correct: "You must to study."', a: 'You must study.', hint: 'no "to" after modal' },
-        { q: 'Fill: You ___ eat more vegetables. (conseil)', a: 'should', hint: 'advice → should' },
-        { q: 'Fill: It ___ rain later. (possibility)', a: 'may / might', hint: 'possibility' },
-        { q: 'Correct: "He should goes home."', a: 'He should go home.', hint: 'modal + infinitif' },
-      ],
-    },
-    mg: {
-      intro: 'Ny verbe manampy (can, must, should, may, might, would) dia fampisehoana ny fahafahana, ny tsy maintsy, ny tsara atao, na ny mety mitranga. Ampiasaina foana miaraka amin\'ny infinitif tsy misy "to".',
-      sections: [
-        {
-          title: 'Can / Can\'t — fahafahana sy fanomezan-dalana',
-          content: '',
-          rows: [
-            { en: 'I can swim.', tr: 'Afaka milomano aho.' },
-            { en: 'Can I use your phone?', tr: 'Afaka mampiasa ny finaonanao ve aho?' },
-            { en: 'She can\'t drive yet.', tr: 'Tsy afaka mampiasa fiara izy mbola.' },
-          ]
-        },
-        {
-          title: 'Must / Have to — tsy maintsy',
-          content: '',
-          rows: [
-            { en: 'You must study harder.', tr: 'Tsy maintsy mianatra mafy kokoa ianao.' },
-            { en: 'I have to wear a uniform.', tr: 'Tsy maintsy manao akanjo iray mitovy aho.' },
-            { en: 'You mustn\'t be late.', tr: 'Tsy tokony hatara ianao.' },
-          ]
-        },
-        {
-          title: 'Should / Shouldn\'t — tsara raha atao',
-          content: '',
-          rows: [
-            { en: 'You should eat breakfast every day.', tr: 'Tokony hihinana sakafo maraina isan\'andro ianao.' },
-            { en: 'You shouldn\'t sleep late.', tr: 'Tsy tokony hatory hariva ianao.' },
-          ]
-        },
-        {
-          title: 'May / Might — mety mitranga',
-          content: '',
-          rows: [
-            { en: 'It may rain this afternoon.', tr: 'Mety handatsaka ny orana tolakandro.' },
-            { en: 'She might come later.', tr: 'Mety ho avy izy avy eo.' },
-          ]
-        },
-        {
-          title: 'Would — fandraharahana sy toky',
-          content: '',
-          rows: [
-            { en: 'Would you like some tea?', tr: 'Te-misotro dite ve ianao?' },
-            { en: 'I would like to travel to Europe.', tr: 'Te-handeha any Eropa aho.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "She cans swim" → ✅ "She can swim" (modal = tsy misy -s)',
-        '❌ "You must to study" → ✅ "You must study" (tsy "to" aorian\'ny modal)',
-        '❌ "He should goes" → ✅ "He should go" (infinitif foana)',
-      ],
-      tips: [
-        'Ny modal verbs dia tsy manova endrika (tsy +s amin\'ny he/she/it)',
-        'Tsy ampiasaina "to" aorian\'ny modal (afa-tsy have to, ought to)',
-        'can → could (lasa); will → would; may → might',
-      ],
-      summary: [
-        'can = afaka; must = tsy maintsy; should = tokony',
-        'may/might = mety; would = fandraharahana/conditionnelle',
-        'TSY misy -s amin\'ny he/she/it : she can (tsy she cans)',
-        'TSY "to" aorian\'ny modal (afa-tsy have to)',
-      ],
-      quickExercises: [
-        { q: 'Mety sa tsia? "She cans swim."', a: 'Diso → She can swim.', hint: 'tsy misy -s amin\'ny modal' },
-        { q: 'Mety sa tsia? "You must to study."', a: 'Diso → You must study.', hint: 'tsy "to" aorian\'ny modal' },
-        { q: 'Fenoy: You ___ eat more vegetables. (tsara)', a: 'should', hint: 'tsara raha atao = should' },
-        { q: 'Fenoy: He ___ help me. (mety)', a: 'may / might', hint: 'mety mitranga' },
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // INTERROGATIVE — A2
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'interrogative',
-    title: 'Questions — Interrogative',
-    icon: '❓',
-    level: 'A2',
-    fr: {
-      intro: "Former des questions en anglais est différent du français : on utilise des <strong>auxiliaires</strong> (Do/Does/Did, is/are/was/were, will, can…) et on <strong>inverse</strong> leur position avec le sujet. Maîtriser les questions est indispensable pour communiquer.",
-      sections: [
-        {
-          title: 'Questions Yes/No — Do / Does (Present Simple)',
-          content: '<strong>Do</strong> + I/you/we/they · <strong>Does</strong> + he/she/it → verbe à l\'infinitif',
-          rows: [
-            { en: 'Do you speak English?', tr: 'Est-ce que tu parles anglais ?' },
-            { en: 'Does she live in Tana?', tr: 'Est-ce qu\'elle habite à Tana ?' },
-            { en: 'Do they have a car?', tr: 'Est-ce qu\'ils ont une voiture ?' },
-          ]
-        },
-        {
-          title: 'Questions Yes/No — Did (Past Simple)',
-          content: '<strong>Did</strong> + tous les sujets → verbe à l\'infinitif (pas de -ed !)',
-          rows: [
-            { en: 'Did you eat this morning?', tr: 'Est-ce que tu as mangé ce matin ?' },
-            { en: 'Did she pass the exam?', tr: 'Est-ce qu\'elle a réussi l\'examen ?' },
-            { en: 'Did they understand?', tr: 'Est-ce qu\'ils ont compris ?' },
-          ]
-        },
-        {
-          title: 'Questions avec Be + Modaux',
-          content: 'Inverser directement — pas besoin de Do/Did',
-          rows: [
-            { en: 'Are you a student?', tr: 'Es-tu étudiant ?' },
-            { en: 'Was he at home?', tr: 'Était-il à la maison ?' },
-            { en: 'Can you help me?', tr: 'Peux-tu m\'aider ?' },
-            { en: 'Will she come tomorrow?', tr: 'Est-ce qu\'elle viendra demain ?' },
-          ]
-        },
-        {
-          title: 'Questions Wh- (What/Where/When/Who/Why/How)',
-          content: 'Mot interrogatif + auxiliaire + sujet + verbe infinitif',
-          rows: [
-            { en: 'Where do you live?', tr: 'Où habites-tu ?' },
-            { en: 'What does she eat?', tr: 'Qu\'est-ce qu\'elle mange ?' },
-            { en: 'Why did they leave?', tr: 'Pourquoi sont-ils partis ?' },
-            { en: 'How many books do you have?', tr: 'Combien de livres as-tu ?' },
-            { en: 'Who is your teacher?', tr: 'Qui est ton professeur ?' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "Does she speaks?" → ✅ "Does she speak?" (infinitif après Does)',
-        '❌ "What you did?" → ✅ "What did you do?" (Did obligatoire + infinitif)',
-        '❌ "Where she lives?" → ✅ "Where does she live?" (Do/Does obligatoire)',
-        '❌ "Why he was late?" → ✅ "Why was he late?" (be → inverser directement)',
-      ],
-      tips: [
-        '🔑 Do/Does pour le Present Simple · Did pour le Past Simple',
-        '⚠️ Après Do/Does/Did → verbe INFINITIF (sans -s, sans -ed)',
-        '💡 Be et modaux : pas besoin de Do — on inverse directement',
-      ],
-      summary: ['Yes/No : Do/Does/Did + sujet + infinitif ?', 'Be : Is/Are/Was/Were + sujet ?', 'Wh- : mot interrogatif + auxiliaire + sujet + infinitif ?'],
-    },
-    mg: {
-      intro: "Ny fanontaniana amin\'ny teny anglisy dia mampiasa <strong>auxiliaires</strong> (Do/Does/Did, is/are…). Amin\'ny teny malagasy, matetika ampiana \"ve\" aorian\'ny matoanteny na ny lohalahateny.",
-      sections: [
-        {
-          title: 'Fanontaniana Do/Does (Present Simple)',
-          content: '<strong>Do</strong> + I/you/we/they · <strong>Does</strong> + he/she/it → matoanteny infinitif',
-          rows: [
-            { en: 'Do you speak English?', tr: 'Miteny anglisy ve ianao?' },
-            { en: 'Does she live in Tana?', tr: 'Monina any Tana ve izy?' },
-          ]
-        },
-        {
-          title: 'Fanontaniana Wh-',
-          content: 'Teny manontaniana + auxiliaire + sujet + matoanteny',
-          rows: [
-            { en: 'Where do you live?', tr: 'Aiza no mipetraka ianao?' },
-            { en: 'What does she eat?', tr: 'Inona no haniny izy?' },
-            { en: 'Why did they leave?', tr: 'Nahoana izy no lasa?' },
-          ]
-        },
-      ],
-      commonErrors: ['❌ "Does she speaks?" → ✅ "Does she speak?"', '❌ "What you did?" → ✅ "What did you do?"'],
-      tips: ['Do/Does → Present Simple · Did → Past Simple', 'Aorian\'ny Do/Does/Did → matoanteny infinitif foana'],
-      summary: ['Do/Does + sujet + infinitif?', 'Did + sujet + infinitif?', 'Wh- + aux + sujet + infinitif?'],
-    },
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PRESENTPERFECT — A2–B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'presentPerfect',
-    title: 'Present Perfect',
-    icon: '🔗',
-    level: 'B1',
-    fr: {
-      intro: 'Le Present Perfect (<strong>have/has + participe passé</strong>) relie le passé au présent. On ne précise pas <em>quand</em> l\'action a eu lieu.',
-      sections: [
-        {
-          title: 'Formation et usage général',
-          content: 'Sujet + <strong>have/has</strong> + participe passé.',
-          rows: [
-            { en: 'I have visited Paris.', tr: 'J\'ai visité Paris (dans ma vie).' },
-            { en: 'She has finished her homework.', tr: 'Elle a fini ses devoirs.' },
-            { en: 'They have never eaten sushi.', tr: 'Ils n\'ont jamais mangé de sushi.' },
-          ]
-        },
-        {
-          title: 'Already / Yet / Just',
-          content: '<strong>already</strong> (déjà, affirmatif) ; <strong>yet</strong> (encore/déjà, négatif/question) ; <strong>just</strong> (juste/venir de).',
-          rows: [
-            { en: 'I have already eaten.', tr: 'J\'ai déjà mangé.' },
-            { en: 'Have you finished yet?', tr: 'As-tu fini ?' },
-            { en: 'She has just arrived.', tr: 'Elle vient d\'arriver.' },
-          ]
-        },
-        {
-          title: 'Ever / Never / For / Since',
-          content: '',
-          rows: [
-            { en: 'Have you ever been to London?', tr: 'Es-tu déjà allé(e) à Londres ?' },
-            { en: 'I have never seen snow.', tr: 'Je n\'ai jamais vu la neige.' },
-            { en: 'I have lived here for 5 years.', tr: 'J\'habite ici depuis 5 ans.' },
-            { en: 'She has worked here since 2020.', tr: 'Elle travaille ici depuis 2020.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I have seen him yesterday" → ✅ "I SAW him yesterday" (yesterday = moment précis → Past Simple)',
-        '❌ "She has went to Paris" → ✅ "She has GONE to Paris" (go → gone, pas went)',
-        '❌ "I have lived here since 5 years" → ✅ "...for 5 years" (durée → for)',
-        '❌ "Have you ever went?" → ✅ "Have you ever BEEN?" (participe passé obligatoire)',
-        '❌ "I have already ate" → ✅ "I have already EATEN"',
-      ],
-      tips: [
-        'Present Perfect ≠ Past Simple : PP = pas de moment précis ; PS = moment précis',
-        'I have eaten today (today pas encore fini) / I ate at noon (moment précis)',
-        'for = durée (for 3 years) ; since = point de départ (since 2020)',
-      ],
-      summary: [
-        'Forme : have/has + participe passé',
-        'Usage : expériences de vie, résultats récents, durée avec for/since',
-        'already (affirmatif) / yet (négatif+question) / just (il vient de)',
-        'ever (déjà?) / never (jamais)',
-        'for = durée (3 years) ; since = début (2020)',
-      ],
-      quickExercises: [
-        { q: 'Correct: "I have seen him yesterday."', a: 'I saw him yesterday.', hint: 'yesterday = moment précis → Past Simple' },
-        { q: 'Complete: She ___ (just/arrive).', a: 'has just arrived', hint: 'has + just + pp' },
-        { q: 'for or since? "I\'ve lived here ___ 2019."', a: 'since 2019', hint: 'point de départ = since' },
-        { q: 'Complete: Have you ever ___ (be) to Paris?', a: 'been', hint: 'go → gone, be → been' },
-        { q: 'Correct: "She has went home."', a: 'She has gone home.', hint: 'go → gone (pp irrégulier)' },
-      ],
-    },
-    mg: {
-      intro: 'Ny Present Perfect (<strong>have/has + participe passé</strong>) dia mampifandray ny lasa sy ny ankehitriny. Tsy lazaina ny fotoana manokana nanaovana ilay asa.',
-      sections: [
-        {
-          title: 'Fomba fanaovana sy fampiasana',
-          content: 'Sujet + <strong>have/has</strong> + participe passé.',
-          rows: [
-            { en: 'I have visited Paris.', tr: 'Efa nitsidika any Paris aho (tamin\'ny fiainako).' },
-            { en: 'She has finished her homework.', tr: 'Efa vita ny devoa ataony.' },
-            { en: 'They have never eaten sushi.', tr: 'Tsy mba nihinana sushi izy ireo.' },
-          ]
-        },
-        {
-          title: 'Already / Yet / Just',
-          content: '',
-          rows: [
-            { en: 'I have already eaten.', tr: 'Efa nihinana aho.' },
-            { en: 'Have you finished yet?', tr: 'Vita sahady ve ianao?' },
-            { en: 'She has just arrived.', tr: 'Vao tonga izy.' },
-          ]
-        },
-        {
-          title: 'Ever / Never / For / Since',
-          content: '',
-          rows: [
-            { en: 'Have you ever been to London?', tr: 'Nitsidika any Londona ve ianao?' },
-            { en: 'I have never seen snow.', tr: 'Tsy mba nahita oram-panala aho.' },
-            { en: 'I have lived here for 5 years.', tr: 'Monina eto aho hatramin\'ny 5 taona lasa.' },
-            { en: 'She has worked here since 2020.', tr: 'Niasa eto izy hatramin\'ny 2020.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I have seen him omaly" → ✅ "I SAW him omaly" (fotoana voafaritra → Past Simple)',
-        '❌ "She has went" → ✅ "She has GONE" (go → gone)',
-        '❌ "...since 5 years" → ✅ "...for 5 years" (faharetan\'ny = for)',
-      ],
-      tips: [
-        'Present Perfect ≠ Past Simple : PP = tsy voafaritra; PS = voafaritra',
-        'for = faharetan\'ny fotoana (for 3 years); since = fiandohan\'ny fotoana (since 2020)',
-        '"ever" ampiasaina amin\'ny fanontaniana; "never" amin\'ny fandavana',
-      ],
-      summary: [
-        'Endrika : have/has + participe passé',
-        'Ampiasaina : traikefa (tsy voafaritra), vokatra vao vita, for/since',
-        'already (efa) / yet (tsara? amin\'ny fanontaniana) / just (vao)',
-        'for = faharetan\'ny fotoana; since = fiandohana',
-      ],
-      quickExercises: [
-        { q: 'Mety sa tsia? "I have seen him omaly."', a: 'Diso → I saw him yesterday. (Past Simple)', hint: 'fotoana voafaritra → Past Simple' },
-        { q: 'Fenoy: She ___ (just/arrive).', a: 'has just arrived', hint: 'has + just + pp' },
-        { q: 'for na since? "...since ___ 2019"', a: 'since 2019', hint: 'fiandohana = since' },
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // SINCEFOR — B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'sinceFor',
-    title: 'Since & For — Durée et point de départ',
-    icon: '⏳',
-    level: 'B1',
-    fr: {
-      intro: "<strong>Since</strong> et <strong>for</strong> s'utilisent avec le <em>present perfect</em> pour exprimer la durée. <strong>Since</strong> indique le <em>point de départ</em> d'une action, <strong>for</strong> indique la <em>durée totale</em>. C'est l'un des points les plus importants du niveau B1.",
-      sections: [
-        {
-          title: '📍 Since — depuis quand ? (point de départ)',
-          content: '<strong>Since + moment précis</strong> : une date, une heure, un événement. L\'action a commencé à ce moment et continue jusqu\'au présent. <em>Obligatoirement avec un temps parfait.</em>',
-          rows: [
-            { en: 'I have lived here <strong>since 2015</strong>.', tr: "J'habite ici depuis 2015." },
-            { en: 'She has been studying <strong>since 8 o\'clock</strong>.', tr: "Elle étudie depuis 8 heures." },
-            { en: 'We have been friends <strong>since primary school</strong>.', tr: "Nous sommes amis depuis l'école primaire." },
-            { en: 'He hasn\'t eaten <strong>since yesterday morning</strong>.', tr: "Il n'a pas mangé depuis hier matin." },
-            { en: 'Things have changed <strong>since the new teacher arrived</strong>.', tr: "Les choses ont changé depuis l'arrivée du nouveau professeur." },
-          ]
-        },
-        {
-          title: '⏱️ For — combien de temps ? (durée)',
-          content: '<strong>For + durée</strong> : un nombre d\'heures, de jours, de mois, d\'années... On mesure la longueur de la période, pas son point de départ.',
-          rows: [
-            { en: 'I have lived here <strong>for five years</strong>.', tr: "J'habite ici depuis cinq ans (= pendant cinq ans)." },
-            { en: 'She has been waiting <strong>for two hours</strong>.', tr: "Elle attend depuis deux heures." },
-            { en: 'He has been ill <strong>for a long time</strong>.', tr: "Il est malade depuis longtemps." },
-            { en: 'They have known each other <strong>for decades</strong>.', tr: "Ils se connaissent depuis des décennies." },
-            { en: 'I haven\'t seen her <strong>for three months</strong>.', tr: "Je ne l'ai pas vue depuis trois mois." },
-          ]
-        },
-        {
-          title: '🔍 Since vs For : le test pour ne plus confondre',
-          content: 'Demandez-vous : est-ce un <strong>point dans le temps</strong> (→ since) ou une <strong>période / durée mesurée</strong> (→ for) ?',
-          rows: [
-            { en: 'since Monday (un jour précis = point)', tr: 'depuis lundi → since' },
-            { en: 'for three days (nombre de jours = durée)', tr: 'depuis trois jours → for' },
-            { en: 'since the accident (événement = point)', tr: "depuis l'accident → since" },
-            { en: 'for a long time (durée indéfinie)', tr: 'depuis longtemps → for' },
-            { en: 'since I was a child (moment passé = point)', tr: "depuis que j'étais enfant → since" },
-          ]
-        },
-        {
-          title: '❓ How long have you...?',
-          content: 'Pour demander la durée, utilisez <strong>How long + present perfect</strong>. La réponse utilise <em>since</em> ou <em>for</em>.',
-          rows: [
-            { en: 'How long have you been here? — Since March. / For six months.', tr: 'Depuis combien de temps es-tu là ? — Depuis mars. / Depuis six mois.' },
-            { en: 'How long have they been married? — For thirty years.', tr: 'Depuis combien de temps sont-ils mariés ? — Depuis trente ans.' },
-            { en: 'How long has she known him? — Since they were at university.', tr: 'Depuis combien de temps le connaît-elle ? — Depuis l\'université.' },
-          ]
-        },
-        {
-          title: '🔙 Ago — il y a... (point dans le passé)',
-          content: '<strong>Ago</strong> est différent de <em>since/for</em> : il indique quand quelque chose s\'est passé, pas depuis combien de temps ça dure. Utilisé avec le <strong>past simple</strong> (pas le present perfect).',
-          rows: [
-            { en: 'I moved here <strong>five years ago</strong>. (past simple)', tr: "Je me suis installé ici il y a cinq ans." },
-            { en: 'She left <strong>two hours ago</strong>.', tr: "Elle est partie il y a deux heures." },
-            { en: 'Compare: I moved here 5 years ago. / I have lived here for 5 years.', tr: "Je me suis installé il y a 5 ans. / J'habite ici depuis 5 ans." },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I live here since 2015" → ✅ "I HAVE LIVED here since 2015" (present perfect obligatoire)',
-        '❌ "since five years" → ✅ "for five years" (durée → for)',
-        '❌ "for Monday" → ✅ "since Monday" (point de départ → since)',
-        '❌ "I came here since two years" → ✅ "I came here two years AGO"',
-        '❌ "How long do you wait?" → ✅ "How long HAVE you BEEN waiting?"',
-      ],
-      tips: [
-        '🔑 Since + POINT DE DÉPART (date, événement, moment)',
-        '🔑 For + DURÉE (nombre d\'heures/jours/ans/longtemps)',
-        '💡 Since et for → toujours avec present perfect (ou past perfect)',
-        '💡 Ago → toujours avec past simple, pas de present perfect',
-        '⚠️ "Since" peut aussi être suivi d\'une proposition : "since she arrived", "since I was young"',
-      ],
-      summary: [
-        'Since + point de départ précis (2015, Monday, last year, childhood...)',
-        'For + durée totale (five years, two hours, a long time)',
-        'How long + present perfect → réponse avec since ou for',
-        'Ago ≠ since/for : ago = il y a... (avec past simple, pas present perfect)',
-      ],
-    },
-    mg: {
-      intro: "<strong>Since</strong> sy <strong>for</strong> dia ampiasaina miaraka amin'ny present perfect hilazana ny faharetan'ny zavatra. <strong>Since</strong> = fotoana nanombohan'ny (aiza no nanombohany) / <strong>for</strong> = halavan'ny fotoana (efa ahodinkodina).",
-      sections: [
-        {
-          title: '📍 Since — nanomboka rahoviana?',
-          content: '<strong>Since + fotoana voafaritra</strong> : daty, ora, zava-nitranga. Nanomboka tamin\'io fotoana io ka hatramin\'izao.',
-          rows: [
-            { en: 'I have lived here since 2015.', tr: 'Monina eto aho hatry ny 2015.' },
-            { en: "She hasn't eaten since yesterday morning.", tr: 'Tsy nisakafo izy hatry ny omaly maraina.' },
-            { en: 'We have been friends since primary school.', tr: 'Namana izahay hatry ny sekoly fototra.' },
-          ]
-        },
-        {
-          title: '⏱️ For — halavan\'ny fotoana',
-          content: '<strong>For + halava</strong> : andro, herinandro, taona... Refesina ny halavan\'ny fotoana, tsy ny toerana nanombohany.',
-          rows: [
-            { en: 'I have lived here for five years.', tr: 'Monina eto aho nandritra ny dimy taona.' },
-            { en: "He has been ill for a long time.", tr: 'Narary izy nandritra ny fotoana ela.' },
-            { en: "She has been waiting for two hours.", tr: 'Niandry izy nandritra ny ora roa.' },
-          ]
-        },
-        {
-          title: '❓ How long have you...?',
-          content: 'Fanontaniana momba ny halavan\'ny fotoana : <strong>How long + present perfect</strong>.',
-          rows: [
-            { en: 'How long have you been here? — Since March. / For six months.', tr: 'Nandritra ny fotoana hoatrinona no teto ianao? — Hatry ny Martsa. / Nandritra ny enim-bolana.' },
-          ]
-        },
-        {
-          title: '🔙 Ago — taloha... (past simple)',
-          content: '<strong>Ago</strong> = nilaza ny fotoana nisian\'ny zavatra taloha. Ampiasaina miaraka amin\'ny past simple (tsy present perfect).',
-          rows: [
-            { en: 'I moved here five years ago.', tr: 'Nifindra monina eto aho dimy taona lasa izay.' },
-            { en: 'She left two hours ago.', tr: 'Niala izy ora roa lasa izay.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I live here since 2015" → ✅ "I HAVE LIVED here since 2015"',
-        '❌ "since five years" → ✅ "for five years"',
-        '❌ "for Monday" → ✅ "since Monday"',
-      ],
-      tips: [
-        '🔑 Since + fotoana voafaritra | For + halavan\'ny fotoana',
-        '💡 Since sy for → present perfect foana',
-        '💡 Ago → past simple foana',
-      ],
-      summary: [
-        'Since + fotoana voafaritra (2015, Alatsinainy, fahazazana...)',
-        'For + halavan\'ny fotoana (dimy taona, ora roa, ela)',
-        'Ago ≠ since/for : ago = past simple',
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PASTCONTINUOUS — B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'pastContinuous',
-    title: 'Past Continuous',
-    icon: '⏸️',
-    level: 'B1',
-    fr: {
-      intro: 'Le Past Continuous (<strong>was/were + verbe-ing</strong>) décrit une action qui était en cours dans le passé, souvent interrompue par une autre action.',
-      sections: [
-        {
-          title: 'Formation',
-          content: 'I/He/She/It + <strong>was</strong> + verbe-ing. We/You/They + <strong>were</strong> + verbe-ing.',
-          rows: [
-            { en: 'I was sleeping when the phone rang.', tr: 'Je dormais quand le téléphone a sonné.' },
-            { en: 'She was studying all evening.', tr: 'Elle étudiait toute la soirée.' },
-            { en: 'They were playing when it started to rain.', tr: 'Ils jouaient quand il a commencé à pleuvoir.' },
-          ]
-        },
-        {
-          title: 'Past Continuous + Past Simple (while / when)',
-          content: '<strong>While</strong> + Past Continuous : action en cours. <strong>When</strong> + Past Simple : interruption.',
-          rows: [
-            { en: 'While I was cooking, the light went out.', tr: 'Pendant que je cuisinais, la lumière s\'est éteinte.' },
-            { en: 'When she arrived, we were eating.', tr: 'Quand elle est arrivée, nous mangions.' },
-          ]
-        },
-      ],
-      tips: [
-        'was (I/he/she/it) ; were (we/you/they)',
-        'Deux actions passées simultanées → while + Past Continuous / Past Continuous',
-        'Action longue (PC) interrompue par action courte (PS)',
-      ],
-      summary: [
-        'Forme : was/were + verbe-ing',
-        'was = I/he/she/it ; were = we/you/they',
-        'while + PC = action en cours ; when + PS = interruption',
-        'PC (action longue) + PS (action courte qui interrompt)',
-      ],
-      quickExercises: [
-        { q: 'Complete: I ___ (sleep) when the phone rang.', a: 'was sleeping', hint: 'I → was + -ing' },
-        { q: 'was or were? "They ___ playing."', a: 'were', hint: 'they → were' },
-        { q: 'Complete: While she ___ (cook), he arrived.', a: 'was cooking', hint: 'while + PC' },
-        { q: 'Correct: "I were studying."', a: 'I was studying.', hint: 'I → was (not were)' },
-      ],
-    },
-    mg: {
-      intro: 'Ny Past Continuous (<strong>was/were + verbe-ing</strong>) dia fampisehoana ny asa nitohy tamin\'ny lasa, matetika voaraotry ny asa hafa.',
-      sections: [
-        {
-          title: 'Fomba fanaovana',
-          content: 'I/He/She/It + <strong>was</strong> + verbe-ing. We/You/They + <strong>were</strong> + verbe-ing.',
-          rows: [
-            { en: 'I was sleeping when the phone rang.', tr: 'Natory aho fony niantso ny finaonan\'i.' },
-            { en: 'She was studying all evening.', tr: 'Nianatra hariva manontolo izy.' },
-            { en: 'They were playing when it rained.', tr: 'Nilalao izy ireo fony nilatsaka ny orana.' },
-          ]
-        },
-        {
-          title: 'Past Continuous + Past Simple (while / when)',
-          content: '',
-          rows: [
-            { en: 'While I was cooking, the light went out.', tr: 'Raha nanao sakafo aho, dia niala ny jiro.' },
-            { en: 'When she arrived, we were eating.', tr: 'Fony tonga izy, nihinana izahay.' },
-          ]
-        },
-      ],
-      tips: [
-        'was (I/he/she/it) ; were (we/you/they)',
-        'while + Past Continuous = asa nitohy',
-        'when + Past Simple = asa nanapaka ny asa nitohy',
-      ],
-      summary: [
-        'Endrika : was/were + verbe-ing',
-        'was = I/he/she/it ; were = we/you/they',
-        'while + PC = asa nitohy; when + PS = asa nanapaka',
-      ],
-      quickExercises: [
-        { q: 'Fenoy: I ___ (sleep) fony niantso ny finaonan\'i.', a: 'was sleeping', hint: 'I → was + -ing' },
-        { q: 'was na were? "They ___ playing."', a: 'were', hint: 'they → were' },
-        { q: 'Fenoy: While she ___ (cook), tonga izy.', a: 'was cooking', hint: 'while + PC' },
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // FUTURECONTINUOUS — A2–B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'futureContinuous',
-    title: 'Future Continuous',
-    icon: '🔮',
-    level: 'B1',
-    fr: {
-      intro: "Le <strong>Future Continuous</strong> (<em>will be + -ing</em>) décrit une action qui sera <strong>en cours</strong> à un moment futur. Il donne l'idée d'une action qui aura commencé et ne sera pas encore terminée.",
-      sections: [
-        {
-          title: 'Forme affirmative',
-          content: 'Sujet + <strong>will be</strong> + verbe-<strong>ing</strong>',
-          rows: [
-            { en: 'I will be studying at 8pm.', tr: 'J\'étudierai (en train d\'étudier) à 20h.' },
-            { en: 'She will be sleeping when you arrive.', tr: 'Elle sera en train de dormir quand tu arriveras.' },
-            { en: 'They will be travelling all week.', tr: 'Ils seront en train de voyager toute la semaine.' },
-          ]
-        },
-        {
-          title: 'Forme négative',
-          content: 'Sujet + <strong>won\'t be</strong> + verbe-<strong>ing</strong>',
-          rows: [
-            { en: 'I won\'t be working tomorrow.', tr: 'Je ne serai pas en train de travailler demain.' },
-            { en: 'She won\'t be waiting for us.', tr: 'Elle ne sera pas en train de nous attendre.' },
-          ]
-        },
-        {
-          title: 'Forme interrogative',
-          content: '<strong>Will</strong> + sujet + <strong>be</strong> + verbe-<strong>ing</strong> ?',
-          rows: [
-            { en: 'Will you be joining us for dinner?', tr: 'Seras-tu en train de dîner avec nous ?' },
-            { en: 'Will she be studying when I call?', tr: 'Sera-t-elle en train d\'étudier quand j\'appelle ?' },
-          ]
-        },
-        {
-          title: 'Quand l\'utiliser ?',
-          content: 'Action en cours à un moment précis du futur · Action interrompue par une autre · Demande polie sur les plans de quelqu\'un',
-          rows: [
-            { en: 'At 9am tomorrow, I will be having breakfast.', tr: 'Demain à 9h, je serai en train de prendre mon petit-déjeuner.' },
-            { en: 'Will you be using the car this evening?', tr: 'Est-ce que tu utiliseras la voiture ce soir ? (demande polie)' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I will studying" → ✅ "I will be studying" (be obligatoire)',
-        '❌ "I will be study" → ✅ "I will be studying" (-ing obligatoire)',
-      ],
-      tips: [
-        '🔑 Structure : will be + -ing',
-        '💡 Contraste : "I will write the report" (simple) vs "I will be writing the report all day" (en cours)',
-        '🙏 Demande polie : "Will you be needing the computer?" = moins direct que "Will you need it?"',
-      ],
-      summary: ['Affirmatif : will be + -ing', 'Négatif : won\'t be + -ing', 'Interrogatif : Will + sujet + be + -ing ?', 'Usage : action en cours à un moment futur précis'],
-    },
-    mg: {
-      intro: "Ny <strong>Future Continuous</strong> (will be + -ing) dia milaza hetsika izay <strong>ho eo am-pandehanana</strong> amin\'ny fotoana iray ho avy.",
-      sections: [
-        {
-          title: 'Endrika fanambara',
-          content: 'Sujet + <strong>will be</strong> + matoanteny-<strong>ing</strong>',
-          rows: [
-            { en: 'I will be studying at 8pm.', tr: 'Eo am-pianakaviana aho amin\'ny 8 ora hariva.' },
-            { en: 'She will be sleeping when you arrive.', tr: 'Ho eo am-patory izy rehefa tonga ianao.' },
-          ]
-        },
-        {
-          title: 'Endrika fandavana sy fanontaniana',
-          content: 'Négatif : won\'t be + -ing · Fanontaniana : Will + sujet + be + -ing?',
-          rows: [
-            { en: "I won't be working tomorrow.", tr: 'Tsy ho eo am-panao asa aho rahampitso.' },
-            { en: 'Will you be joining us for dinner?', tr: 'Ho hiara-misakafo aminay ve ianao?' },
-          ]
-        },
-      ],
-      commonErrors: ['❌ "I will studying" → ✅ "I will be studying"'],
-      tips: ['will be + -ing foana', 'Milaza hetsika ho eo am-pandehanana amin\'ny fotoana iray'],
-      summary: ['will be + -ing (fanambara)', 'won\'t be + -ing (fandavana)', 'Will + sujet + be + -ing? (fanontaniana)'],
-    },
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // TIMEMARKERS — B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'timeMarkers',
-    title: 'Time Markers — Indicateurs de Temps',
-    icon: '⏱️',
-    level: 'B1',
-    fr: {
-      intro: "Les <strong>indicateurs de temps</strong> sont des mots qui signalent automatiquement quel temps verbal utiliser. Les apprendre est le moyen le plus rapide de maîtriser le choix des temps en anglais.",
-      sections: [
-        {
-          title: 'Past Simple — actions passées terminées',
-          content: 'Mots clés : <strong>yesterday, ago, last, in</strong> (année passée), <strong>when</strong> (ponctuel)',
-          rows: [
-            { en: 'I saw him yesterday.', tr: 'Je l\'ai vu hier.' },
-            { en: 'She left two hours ago.', tr: 'Elle est partie il y a deux heures.' },
-            { en: 'We met last summer.', tr: 'Nous nous sommes rencontrés l\'été dernier.' },
-            { en: 'He was born in 1990.', tr: 'Il est né en 1990.' },
-          ]
-        },
-        {
-          title: 'Present Perfect — lien avec le présent',
-          content: 'Mots clés : <strong>already, yet, just, since, for, ever, never, recently</strong>',
-          rows: [
-            { en: 'I have already eaten.', tr: 'J\'ai déjà mangé.' },
-            { en: 'She hasn\'t arrived yet.', tr: 'Elle n\'est pas encore arrivée.' },
-            { en: 'He has just called.', tr: 'Il vient juste d\'appeler.' },
-            { en: 'They have lived here since 2010.', tr: 'Ils habitent ici depuis 2010.' },
-            { en: 'I have worked here for five years.', tr: 'Je travaille ici depuis cinq ans.' },
-          ]
-        },
-        {
-          title: 'Present Simple — habitudes, vérités',
-          content: 'Mots clés : <strong>always, usually, often, sometimes, rarely, never, every</strong>',
-          rows: [
-            { en: 'She always wakes up early.', tr: 'Elle se lève toujours tôt.' },
-            { en: 'I usually have lunch at noon.', tr: 'Je déjeune généralement à midi.' },
-            { en: 'They never eat meat.', tr: 'Ils ne mangent jamais de viande.' },
-          ]
-        },
-        {
-          title: 'Future — actions à venir',
-          content: 'Mots clés : <strong>tomorrow, next, soon, in</strong> (futur), <strong>tonight, later</strong>',
-          rows: [
-            { en: 'I will call you tomorrow.', tr: 'Je t\'appellerai demain.' },
-            { en: 'She is going to travel next week.', tr: 'Elle va voyager la semaine prochaine.' },
-            { en: 'The match starts soon.', tr: 'Le match commence bientôt.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I have seen him yesterday" → ✅ "I saw him yesterday" (yesterday → Past Simple)',
-        '❌ "She already ate" → ✅ "She has already eaten" (already → Present Perfect)',
-        '❌ "I know him since 5 years" → ✅ "I have known him for 5 years" (for → Present Perfect)',
-      ],
-      tips: [
-        '📅 yesterday/ago/last → Past Simple',
-        '🔗 already/yet/just/since/for → Present Perfect',
-        '🔄 always/usually/every → Present Simple',
-        '🚀 tomorrow/next/soon → Future (will ou going to)',
-      ],
-      summary: ['Past Simple : yesterday / ago / last / when', 'Present Perfect : already / yet / just / since / for', 'Present Simple : always / usually / every', 'Future : tomorrow / next / soon'],
-    },
-    mg: {
-      intro: "Ny <strong>indicateurs de temps</strong> dia teny izay milaza avy hatrany ny temps verbal tokony ampiasaina. Tsotra ny fitsipika.",
-      sections: [
-        {
-          title: 'Past Simple — hetsika vita',
-          content: 'Teny fototra : yesterday, ago, last, when',
-          rows: [
-            { en: 'I saw him yesterday.', tr: 'Nahita azy aho omaly.' },
-            { en: 'She left two hours ago.', tr: 'Lasa izy roa ora lasa izay.' },
-          ]
-        },
-        {
-          title: 'Present Perfect — mifandray amin\'ny ankehitriny',
-          content: 'Teny fototra : already, yet, just, since, for',
-          rows: [
-            { en: 'I have already eaten.', tr: 'Efa nihinana aho.' },
-            { en: 'She hasn\'t arrived yet.', tr: 'Tsy tonga mbola izy.' },
-          ]
-        },
-        {
-          title: 'Present Simple — zava-mahazatra',
-          content: 'Teny fototra : always, usually, often, never, every',
-          rows: [
-            { en: 'She always wakes up early.', tr: 'Mifohaza marobe foana izy.' },
-          ]
-        },
-        {
-          title: 'Future — hetsika ho avy',
-          content: 'Teny fototra : tomorrow, next, soon, tonight',
-          rows: [
-            { en: 'I will call you tomorrow.', tr: 'Hantsaina ianao aho rahampitso.' },
-          ]
-        },
-      ],
-      commonErrors: ['❌ "I have seen him yesterday" → ✅ "I saw him yesterday"', '❌ "already ate" → ✅ "has already eaten"'],
-      tips: ['yesterday/ago/last → Past Simple', 'already/yet/just/since/for → Present Perfect', 'always/every → Present Simple', 'tomorrow/next/soon → Future'],
-      summary: ['Past Simple : yesterday / ago / last', 'Present Perfect : already / yet / just / since / for', 'Future : tomorrow / next / soon'],
-    },
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // RELATIVECLAUSES — A2–B1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'relativeClauses',
     title: 'Propositions relatives — Relative Clauses',
@@ -3407,10 +2931,788 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PASTPERFECT — B1
-  // ══════════════════════════════════════════════════════════════════════
+  {
+    id: 'connectors',
+    title: 'Connectors & Conjunctions — Connecteurs',
+    icon: '🔗',
+    level: 'B1',
+    fr: {
+      intro: "Les connecteurs et conjonctions permettent de relier des idées, d\'exprimer des causes, des contrastes ou des ajouts. Ils sont indispensables pour écrire et parler de façon fluide et structurée.",
+      sections: [
+        {
+          title: 'Coordination (and, but, or, so)',
+          content: 'Relient deux éléments ou propositions de même niveau.',
+          rows: [
+            { en: 'I like tea and coffee.', tr: 'J\'aime le thé et le café.' },
+            { en: 'She is tired but she keeps working hard.', tr: 'Elle est fatiguée mais elle continue à travailler.' },
+            { en: 'You can stay or leave now.', tr: 'Tu peux rester ou partir maintenant.' },
+            { en: 'It was raining, so we stayed home.', tr: 'Il pleuvait, donc nous sommes restés à la maison.' },
+          ]
+        },
+        {
+          title: 'Cause & Résultat (because, since, therefore)',
+          content: 'because / since → la cause · therefore / as a result → la conséquence',
+          rows: [
+            { en: 'I was late because the bus broke down.', tr: 'J\'étais en retard parce que le bus est tombé en panne.' },
+            { en: 'Since it was cold outside, we put on our coats.', tr: 'Comme il faisait froid dehors, nous avons mis nos manteaux.' },
+            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Il a beaucoup étudié. Par conséquent, il a réussi.' },
+          ]
+        },
+        {
+          title: 'Contraste (although, however, nevertheless)',
+          content: 'although + proposition · however / nevertheless en début de phrase (+ virgule)',
+          rows: [
+            { en: 'Although it was expensive, she bought it.', tr: 'Bien que ce soit cher, elle l\'a acheté.' },
+            { en: 'I was very tired. However, I finished my homework.', tr: 'J\'étais très fatigué. Cependant, j\'ai fini mes devoirs.' },
+            { en: 'The plan was risky. Nevertheless, they all agreed.', tr: 'Le plan était risqué. Néanmoins, ils ont tous accepté.' },
+            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Même s\'il a plu, nous avons profité du voyage.' },
+          ]
+        },
+        {
+          title: 'Addition (moreover, furthermore, in addition)',
+          content: 'Ajoutent une information. Registre soutenu (surtout à l\'écrit).',
+          rows: [
+            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'L\'hôtel est propre. De plus, il est abordable.' },
+            { en: 'Furthermore, the location is excellent.', tr: 'En outre, l\'emplacement est excellent.' },
+            { en: 'In addition to English, she also speaks Spanish.', tr: 'En plus de l\'anglais, elle parle aussi espagnol.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"Although she was tired, but she worked." ✗ → "Although she was tired, she worked." ✓ (pas de "but" après "although")',
+        '"Because I was tired, so I slept." ✗ → "Because I was tired, I slept." ✓',
+        '"However she was tired, she worked." ✗ → "Although she was tired, she worked." ✓ (however ≠ although)',
+      ],
+      tips: [
+        '"So" = conséquence · "because" = cause',
+        '"Although" + proposition complète des deux côtés ; jamais suivi de "but"',
+        '"However" = début de nouvelle phrase ou après un point-virgule (registre soutenu)',
+      ],
+      summary: [
+        'and / but / or / so → coordination simple',
+        'because / since → cause ; therefore → conséquence',
+        'although / even though → contraste (+ proposition) ; however → contraste (+ phrase)',
+      ]
+    },
+    mg: {
+      intro: "Ny connector sy conjonction dia teny mampifandray hevitra roa na misea. Ilaina indrindra amin\'ny soratra sy ny resaka voalamina.",
+      sections: [
+        {
+          title: 'Coordination (and, but, or, so)',
+          content: 'Mampifandray element na proposition amin\'ny ambaratonga mitovy.',
+          rows: [
+            { en: 'I like tea and coffee.', tr: 'Tia dite sy kafe aho.' },
+            { en: 'She is tired but she keeps working hard.', tr: 'Vizana izy nefa mitohy miasa.' },
+            { en: 'It was raining, so we stayed home.', tr: 'Nisy orana, koa nijanona tao an-trano izahay.' },
+          ]
+        },
+        {
+          title: 'Antony sy Vokatr\'izany (because, since, therefore)',
+          content: 'because / since → ny antony · therefore → ny vokatr\'izany',
+          rows: [
+            { en: 'I was late because the bus broke down.', tr: 'Diso fotoana aho satria very ny bus.' },
+            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Nahery fianarana izy. Koa amin\'izany, nahita fandaharam-potoana izy.' },
+          ]
+        },
+        {
+          title: 'Fanoherana (although, however, nevertheless)',
+          content: 'although + proposition · however / nevertheless eo am-piandohan\'ny fehezanteny',
+          rows: [
+            { en: 'Although it was expensive, she bought it.', tr: 'Na dia lafo aza, novidiny ihany.' },
+            { en: 'I was very tired. However, I finished my homework.', tr: 'Vizana be aho. Kanefa, vita ny asako.' },
+            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Na dia nisy orana aza, nanana fialam-boly tsara izahay.' },
+          ]
+        },
+        {
+          title: 'Fanampiana (moreover, furthermore, in addition)',
+          content: 'Manampy vaovao. Fampiasana amin\'ny ssoratra indrindra.',
+          rows: [
+            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'Madio ny hotely. Ho fanampin\'izany, mora ny vidiny.' },
+            { en: 'In addition to English, she also speaks Spanish.', tr: 'Ho fanampin\'ny anglisy, mahay espaniola koa izy.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"Although...but..." ✗ → "Although..." fotsiny ✓ (tsy mampifandray "but" aorian\'ny "although")',
+        '"Because...so..." ✗ → "Because..." fotsiny ✓',
+      ],
+      tips: [
+        '"So" = vokatr\'izany · "because" = antony',
+        '"Although" + fehezanteny feno roa lafiny; tsy misy "but" aorian\'ny',
+      ],
+      summary: [
+        'and / but / or / so → fampifandraisana tsotra',
+        'because / since → antony ; therefore → vokatr\'izany',
+        'although → fanoherana (+ fehezanteny) ; however → fanoherana (+ fehezanteny vaovao)',
+      ]
+    }
+  },
+  {
+    id: 'pastContinuous',
+    title: 'Past Continuous',
+    icon: '⏸️',
+    level: 'B1',
+    fr: {
+      intro: 'Le Past Continuous (<strong>was/were + verbe-ing</strong>) décrit une action qui était en cours dans le passé, souvent interrompue par une autre action.',
+      sections: [
+        {
+          title: 'Formation',
+          content: 'I/He/She/It + <strong>was</strong> + verbe-ing. We/You/They + <strong>were</strong> + verbe-ing.',
+          rows: [
+            { en: 'I was sleeping when the phone rang.', tr: 'Je dormais quand le téléphone a sonné.' },
+            { en: 'She was studying all evening.', tr: 'Elle étudiait toute la soirée.' },
+            { en: 'They were playing when it started to rain.', tr: 'Ils jouaient quand il a commencé à pleuvoir.' },
+          ]
+        },
+        {
+          title: 'Past Continuous + Past Simple (while / when)',
+          content: '<strong>While</strong> + Past Continuous : action en cours. <strong>When</strong> + Past Simple : interruption.',
+          rows: [
+            { en: 'While I was cooking, the light went out.', tr: 'Pendant que je cuisinais, la lumière s\'est éteinte.' },
+            { en: 'When she arrived, we were eating.', tr: 'Quand elle est arrivée, nous mangions.' },
+          ]
+        },
+      ],
+      tips: [
+        'was (I/he/she/it) ; were (we/you/they)',
+        'Deux actions passées simultanées → while + Past Continuous / Past Continuous',
+        'Action longue (PC) interrompue par action courte (PS)',
+      ],
+      summary: [
+        'Forme : was/were + verbe-ing',
+        'was = I/he/she/it ; were = we/you/they',
+        'while + PC = action en cours ; when + PS = interruption',
+        'PC (action longue) + PS (action courte qui interrompt)',
+      ],
+      quickExercises: [
+        { q: 'Complete: I ___ (sleep) when the phone rang.', a: 'was sleeping', hint: 'I → was + -ing' },
+        { q: 'was or were? "They ___ playing."', a: 'were', hint: 'they → were' },
+        { q: 'Complete: While she ___ (cook), he arrived.', a: 'was cooking', hint: 'while + PC' },
+        { q: 'Correct: "I were studying."', a: 'I was studying.', hint: 'I → was (not were)' },
+      ],
+    },
+    mg: {
+      intro: 'Ny Past Continuous (<strong>was/were + verbe-ing</strong>) dia fampisehoana ny asa nitohy tamin\'ny lasa, matetika voaraotry ny asa hafa.',
+      sections: [
+        {
+          title: 'Fomba fanaovana',
+          content: 'I/He/She/It + <strong>was</strong> + verbe-ing. We/You/They + <strong>were</strong> + verbe-ing.',
+          rows: [
+            { en: 'I was sleeping when the phone rang.', tr: 'Natory aho fony niantso ny finaonan\'i.' },
+            { en: 'She was studying all evening.', tr: 'Nianatra hariva manontolo izy.' },
+            { en: 'They were playing when it rained.', tr: 'Nilalao izy ireo fony nilatsaka ny orana.' },
+          ]
+        },
+        {
+          title: 'Past Continuous + Past Simple (while / when)',
+          content: '',
+          rows: [
+            { en: 'While I was cooking, the light went out.', tr: 'Raha nanao sakafo aho, dia niala ny jiro.' },
+            { en: 'When she arrived, we were eating.', tr: 'Fony tonga izy, nihinana izahay.' },
+          ]
+        },
+      ],
+      tips: [
+        'was (I/he/she/it) ; were (we/you/they)',
+        'while + Past Continuous = asa nitohy',
+        'when + Past Simple = asa nanapaka ny asa nitohy',
+      ],
+      summary: [
+        'Endrika : was/were + verbe-ing',
+        'was = I/he/she/it ; were = we/you/they',
+        'while + PC = asa nitohy; when + PS = asa nanapaka',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: I ___ (sleep) fony niantso ny finaonan\'i.', a: 'was sleeping', hint: 'I → was + -ing' },
+        { q: 'was na were? "They ___ playing."', a: 'were', hint: 'they → were' },
+        { q: 'Fenoy: While she ___ (cook), tonga izy.', a: 'was cooking', hint: 'while + PC' },
+      ],
+    }
+  },
+  {
+    id: 'usedTo',
+    title: 'Used to — Habitudes passées',
+    icon: '🔙',
+    level: 'B1',
+    fr: {
+      intro: "<strong>Used to + infinitif</strong> décrit des habitudes ou des états passés qui <em>n'existent plus</em> aujourd'hui. C'est une structure typique du B1 qui permet de parler du passé de manière nuancée, en insistant sur le contraste avec le présent.",
+      sections: [
+        {
+          title: '📐 Formation : used to + infinitif',
+          content: '<strong>Sujet + used to + verbe base</strong>. Affirmatif : "used to". Négatif : "didn\'t use to" (pas "didn\'t used to"). Question : "Did + sujet + use to + verbe ?" (pas "used to").',
+          rows: [
+            { en: 'I <strong>used to</strong> play football every day.', tr: 'Je jouais au football tous les jours. (habitude passée, plus maintenant)' },
+            { en: 'She <strong>used to</strong> live in Antananarivo.', tr: 'Elle vivait à Antananarivo. (état passé)' },
+            { en: 'I <strong>didn\'t use to</strong> like vegetables.', tr: "Je n'aimais pas les légumes. (mais maintenant oui)" },
+            { en: '<strong>Did</strong> you <strong>use to</strong> play an instrument?', tr: 'Est-ce que tu jouais d\'un instrument ?' },
+            { en: 'There <strong>used to be</strong> a cinema here.', tr: "Il y avait un cinéma ici. (il n'y en a plus)" },
+          ]
+        },
+        {
+          title: '🎯 Quand utiliser used to',
+          content: 'Utilisez <em>used to</em> pour : (1) des habitudes régulières dans le passé qui ont cessé, (2) des états passés permanents qui n\'existent plus, (3) insister sur le contraste avec la situation actuelle.',
+          rows: [
+            { en: 'I used to smoke, but I stopped ten years ago.', tr: 'Je fumais, mais j\'ai arrêté il y a dix ans.' },
+            { en: 'We used to go to the beach every summer.', tr: "Nous allions à la plage chaque été." },
+            { en: 'This area used to be a forest.', tr: 'Cette zone était une forêt. (maintenant c\'est urbanisé)' },
+            { en: 'She didn\'t use to speak English well, but now she\'s fluent.', tr: 'Elle ne parlait pas bien anglais, mais maintenant elle est courante.' },
+          ]
+        },
+        {
+          title: '🔄 Would pour les habitudes passées',
+          content: '<strong>Would + infinitif</strong> peut aussi exprimer des habitudes passées répétées (mais pas des états). Plus formel, surtout à l\'écrit.',
+          rows: [
+            { en: "Every summer, we would go to the beach. (habit, formal)", tr: "Chaque été, nous allions à la plage. (habitude répétée → would OK)" },
+            { en: 'This area would be a forest. ❌ (state, not habit)', tr: 'État → on ne peut pas utiliser would ici (seulement used to)' },
+            { en: 'My grandfather would tell stories every night.', tr: 'Mon grand-père racontait des histoires chaque soir.' },
+          ]
+        },
+        {
+          title: '⚠️ Attention : be/get used to (ne pas confondre !)',
+          content: "<strong>Be used to</strong> = être habitué à (présent, pas passé) · <strong>Get used to</strong> = s'habituer à (processus). Ces deux structures sont suivies d'un <em>nom ou gérondif</em>, pas d'un infinitif.",
+          rows: [
+            { en: 'I am <strong>used to</strong> waking up early. (= I\'m accustomed)', tr: "Je suis habitué à me lever tôt. (état actuel)" },
+            { en: 'She is <strong>getting used to</strong> the new schedule.', tr: "Elle s'habitue au nouvel horaire. (processus en cours)" },
+            { en: 'I <strong>used to</strong> wake up early. (= past habit)', tr: "Je me levais tôt autrefois. (habitude passée)" },
+            { en: 'Be careful: used to + INF (past) vs be used to + ING (present)', tr: 'used to + infinitif (passé) ≠ be used to + gérondif (présent)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        "❌ \"I didn't used to\" → ✅ \"I didn't USE TO\" (après did, on revient à la forme base)",
+        "❌ \"Did you used to...?\" → ✅ \"Did you USE TO...?\"",
+        "❌ \"I used to going\" → ✅ \"I used to GO\" (infinitif sans TO après used to... wait: used to + INF)",
+        "❌ \"I am used to wake up\" → ✅ \"I am used to WAKING up\" (be used to + gérondif)",
+        "❌ Utiliser used to pour le présent → used to = UNIQUEMENT pour le passé",
+      ],
+      tips: [
+        '🔑 Used to + INF = habitude/état PASSÉ qui n\'existe plus',
+        '🔑 Be used to + ING = être habitué à (présent)',
+        '🔑 Get used to + ING = s\'habituer à (processus)',
+        '💡 Would peut remplacer used to pour les habitudes (mais PAS les états)',
+        '⚠️ Négatif/question : "did + use to" (pas "used to") — la forme change !',
+      ],
+      summary: [
+        'Used to + INF : habitudes ou états passés qui n\'existent plus',
+        'Négatif : didn\'t use to | Question : Did...use to?',
+        'Would + INF : habitudes répétées passées (formel, pas les états)',
+        'Be used to + ING : être habitué à | Get used to + ING : s\'habituer à',
+      ],
+    },
+    mg: {
+      intro: "<strong>Used to + infinitif</strong> dia ampiasaina hilazana ny fandavanana sy ny toetry ny zavatra taloha izay <em>tsy misy intsony ankehitriny</em>. Tena mahasoa amin'ny fitantarana ny lasa amin'ny fomba mazava.",
+      sections: [
+        {
+          title: '📐 Fomba : used to + veribe',
+          content: '<strong>Sujet + used to + veribe</strong>. Fandavana : didn\'t use to. Fanontaniana : Did... use to?',
+          rows: [
+            { en: 'I used to play football every day.', tr: 'Nitana baolina kely andro aman\'alina aho taloha.' },
+            { en: 'She used to live in Antananarivo.', tr: 'Nonina tany Antananarivo izy taloha.' },
+            { en: "I didn't use to like vegetables.", tr: 'Tsy tia legioma aho taloha.' },
+            { en: 'Did you use to play an instrument?', tr: 'Nitana zava-maneno ve ianao taloha?' },
+          ]
+        },
+        {
+          title: '⚠️ Aza diso: be/get used to',
+          content: '<strong>Be used to + ING</strong> = zatra amin\'ny (ankehitriny). <strong>Get used to + ING</strong> = miezaka zatra. Tsy mitovy amin\'ny used to + INF.',
+          rows: [
+            { en: 'I am used to waking up early.', tr: 'Zatra mifoha maraina aho. (ankehitriny)' },
+            { en: "She's getting used to the new schedule.", tr: 'Miezaka zatra ny fandaharam-potoana vaovao izy.' },
+            { en: 'Compare: I used to wake up early. (past habit)', tr: 'Nifoha maraina aho taloha. (fandavanana lasa)' },
+          ]
+        },
+      ],
+      commonErrors: [
+        "❌ \"I didn't used to\" → ✅ \"I didn't USE TO\"",
+        "❌ \"I am used to wake up\" → ✅ \"I am used to WAKING up\"",
+      ],
+      tips: [
+        '🔑 Used to + INF = fandavanana lasa tsy misy intsony',
+        '🔑 Be used to + ING = zatra amin\'ny (ankehitriny)',
+        '⚠️ Fandavana : didn\'t use to (tsy "didn\'t used to")',
+      ],
+      summary: [
+        'Used to + INF : fandavanana na toetry ny zavatra lasa',
+        'Fandavana : didn\'t use to | Fanontaniana : Did...use to?',
+        'Be used to + ING : zatra | Get used to + ING : miezaka zatra',
+      ],
+    }
+  },
+  {
+    id: 'presentPerfect',
+    title: 'Present Perfect',
+    icon: '🔗',
+    level: 'B1',
+    fr: {
+      intro: 'Le Present Perfect (<strong>have/has + participe passé</strong>) relie le passé au présent. On ne précise pas <em>quand</em> l\'action a eu lieu.',
+      sections: [
+        {
+          title: 'Formation et usage général',
+          content: 'Sujet + <strong>have/has</strong> + participe passé.',
+          rows: [
+            { en: 'I have visited Paris.', tr: 'J\'ai visité Paris (dans ma vie).' },
+            { en: 'She has finished her homework.', tr: 'Elle a fini ses devoirs.' },
+            { en: 'They have never eaten sushi.', tr: 'Ils n\'ont jamais mangé de sushi.' },
+          ]
+        },
+        {
+          title: 'Already / Yet / Just',
+          content: '<strong>already</strong> (déjà, affirmatif) ; <strong>yet</strong> (encore/déjà, négatif/question) ; <strong>just</strong> (juste/venir de).',
+          rows: [
+            { en: 'I have already eaten.', tr: 'J\'ai déjà mangé.' },
+            { en: 'Have you finished yet?', tr: 'As-tu fini ?' },
+            { en: 'She has just arrived.', tr: 'Elle vient d\'arriver.' },
+          ]
+        },
+        {
+          title: 'Ever / Never / For / Since',
+          content: '',
+          rows: [
+            { en: 'Have you ever been to London?', tr: 'Es-tu déjà allé(e) à Londres ?' },
+            { en: 'I have never seen snow.', tr: 'Je n\'ai jamais vu la neige.' },
+            { en: 'I have lived here for 5 years.', tr: 'J\'habite ici depuis 5 ans.' },
+            { en: 'She has worked here since 2020.', tr: 'Elle travaille ici depuis 2020.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I have seen him yesterday" → ✅ "I SAW him yesterday" (yesterday = moment précis → Past Simple)',
+        '❌ "She has went to Paris" → ✅ "She has GONE to Paris" (go → gone, pas went)',
+        '❌ "I have lived here since 5 years" → ✅ "...for 5 years" (durée → for)',
+        '❌ "Have you ever went?" → ✅ "Have you ever BEEN?" (participe passé obligatoire)',
+        '❌ "I have already ate" → ✅ "I have already EATEN"',
+      ],
+      tips: [
+        'Present Perfect ≠ Past Simple : PP = pas de moment précis ; PS = moment précis',
+        'I have eaten today (today pas encore fini) / I ate at noon (moment précis)',
+        'for = durée (for 3 years) ; since = point de départ (since 2020)',
+      ],
+      summary: [
+        'Forme : have/has + participe passé',
+        'Usage : expériences de vie, résultats récents, durée avec for/since',
+        'already (affirmatif) / yet (négatif+question) / just (il vient de)',
+        'ever (déjà?) / never (jamais)',
+        'for = durée (3 years) ; since = début (2020)',
+      ],
+      quickExercises: [
+        { q: 'Correct: "I have seen him yesterday."', a: 'I saw him yesterday.', hint: 'yesterday = moment précis → Past Simple' },
+        { q: 'Complete: She ___ (just/arrive).', a: 'has just arrived', hint: 'has + just + pp' },
+        { q: 'for or since? "I\'ve lived here ___ 2019."', a: 'since 2019', hint: 'point de départ = since' },
+        { q: 'Complete: Have you ever ___ (be) to Paris?', a: 'been', hint: 'go → gone, be → been' },
+        { q: 'Correct: "She has went home."', a: 'She has gone home.', hint: 'go → gone (pp irrégulier)' },
+      ],
+    },
+    mg: {
+      intro: 'Ny Present Perfect (<strong>have/has + participe passé</strong>) dia mampifandray ny lasa sy ny ankehitriny. Tsy lazaina ny fotoana manokana nanaovana ilay asa.',
+      sections: [
+        {
+          title: 'Fomba fanaovana sy fampiasana',
+          content: 'Sujet + <strong>have/has</strong> + participe passé.',
+          rows: [
+            { en: 'I have visited Paris.', tr: 'Efa nitsidika any Paris aho (tamin\'ny fiainako).' },
+            { en: 'She has finished her homework.', tr: 'Efa vita ny devoa ataony.' },
+            { en: 'They have never eaten sushi.', tr: 'Tsy mba nihinana sushi izy ireo.' },
+          ]
+        },
+        {
+          title: 'Already / Yet / Just',
+          content: '',
+          rows: [
+            { en: 'I have already eaten.', tr: 'Efa nihinana aho.' },
+            { en: 'Have you finished yet?', tr: 'Vita sahady ve ianao?' },
+            { en: 'She has just arrived.', tr: 'Vao tonga izy.' },
+          ]
+        },
+        {
+          title: 'Ever / Never / For / Since',
+          content: '',
+          rows: [
+            { en: 'Have you ever been to London?', tr: 'Nitsidika any Londona ve ianao?' },
+            { en: 'I have never seen snow.', tr: 'Tsy mba nahita oram-panala aho.' },
+            { en: 'I have lived here for 5 years.', tr: 'Monina eto aho hatramin\'ny 5 taona lasa.' },
+            { en: 'She has worked here since 2020.', tr: 'Niasa eto izy hatramin\'ny 2020.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I have seen him omaly" → ✅ "I SAW him omaly" (fotoana voafaritra → Past Simple)',
+        '❌ "She has went" → ✅ "She has GONE" (go → gone)',
+        '❌ "...since 5 years" → ✅ "...for 5 years" (faharetan\'ny = for)',
+      ],
+      tips: [
+        'Present Perfect ≠ Past Simple : PP = tsy voafaritra; PS = voafaritra',
+        'for = faharetan\'ny fotoana (for 3 years); since = fiandohan\'ny fotoana (since 2020)',
+        '"ever" ampiasaina amin\'ny fanontaniana; "never" amin\'ny fandavana',
+      ],
+      summary: [
+        'Endrika : have/has + participe passé',
+        'Ampiasaina : traikefa (tsy voafaritra), vokatra vao vita, for/since',
+        'already (efa) / yet (tsara? amin\'ny fanontaniana) / just (vao)',
+        'for = faharetan\'ny fotoana; since = fiandohana',
+      ],
+      quickExercises: [
+        { q: 'Mety sa tsia? "I have seen him omaly."', a: 'Diso → I saw him yesterday. (Past Simple)', hint: 'fotoana voafaritra → Past Simple' },
+        { q: 'Fenoy: She ___ (just/arrive).', a: 'has just arrived', hint: 'has + just + pp' },
+        { q: 'for na since? "...since ___ 2019"', a: 'since 2019', hint: 'fiandohana = since' },
+      ],
+    }
+  },
+  {
+    id: 'sinceFor',
+    title: 'Since & For — Durée et point de départ',
+    icon: '⏳',
+    level: 'B1',
+    fr: {
+      intro: "<strong>Since</strong> et <strong>for</strong> s'utilisent avec le <em>present perfect</em> pour exprimer la durée. <strong>Since</strong> indique le <em>point de départ</em> d'une action, <strong>for</strong> indique la <em>durée totale</em>. C'est l'un des points les plus importants du niveau B1.",
+      sections: [
+        {
+          title: '📍 Since — depuis quand ? (point de départ)',
+          content: '<strong>Since + moment précis</strong> : une date, une heure, un événement. L\'action a commencé à ce moment et continue jusqu\'au présent. <em>Obligatoirement avec un temps parfait.</em>',
+          rows: [
+            { en: 'I have lived here <strong>since 2015</strong>.', tr: "J'habite ici depuis 2015." },
+            { en: 'She has been studying <strong>since 8 o\'clock</strong>.', tr: "Elle étudie depuis 8 heures." },
+            { en: 'We have been friends <strong>since primary school</strong>.', tr: "Nous sommes amis depuis l'école primaire." },
+            { en: 'He hasn\'t eaten <strong>since yesterday morning</strong>.', tr: "Il n'a pas mangé depuis hier matin." },
+            { en: 'Things have changed <strong>since the new teacher arrived</strong>.', tr: "Les choses ont changé depuis l'arrivée du nouveau professeur." },
+          ]
+        },
+        {
+          title: '⏱️ For — combien de temps ? (durée)',
+          content: '<strong>For + durée</strong> : un nombre d\'heures, de jours, de mois, d\'années... On mesure la longueur de la période, pas son point de départ.',
+          rows: [
+            { en: 'I have lived here <strong>for five years</strong>.', tr: "J'habite ici depuis cinq ans (= pendant cinq ans)." },
+            { en: 'She has been waiting <strong>for two hours</strong>.', tr: "Elle attend depuis deux heures." },
+            { en: 'He has been ill <strong>for a long time</strong>.', tr: "Il est malade depuis longtemps." },
+            { en: 'They have known each other <strong>for decades</strong>.', tr: "Ils se connaissent depuis des décennies." },
+            { en: 'I haven\'t seen her <strong>for three months</strong>.', tr: "Je ne l'ai pas vue depuis trois mois." },
+          ]
+        },
+        {
+          title: '🔍 Since vs For : le test pour ne plus confondre',
+          content: 'Demandez-vous : est-ce un <strong>point dans le temps</strong> (→ since) ou une <strong>période / durée mesurée</strong> (→ for) ?',
+          rows: [
+            { en: 'since Monday (un jour précis = point)', tr: 'depuis lundi → since' },
+            { en: 'for three days (nombre de jours = durée)', tr: 'depuis trois jours → for' },
+            { en: 'since the accident (événement = point)', tr: "depuis l'accident → since" },
+            { en: 'for a long time (durée indéfinie)', tr: 'depuis longtemps → for' },
+            { en: 'since I was a child (moment passé = point)', tr: "depuis que j'étais enfant → since" },
+          ]
+        },
+        {
+          title: '❓ How long have you...?',
+          content: 'Pour demander la durée, utilisez <strong>How long + present perfect</strong>. La réponse utilise <em>since</em> ou <em>for</em>.',
+          rows: [
+            { en: 'How long have you been here? — Since March. / For six months.', tr: 'Depuis combien de temps es-tu là ? — Depuis mars. / Depuis six mois.' },
+            { en: 'How long have they been married? — For thirty years.', tr: 'Depuis combien de temps sont-ils mariés ? — Depuis trente ans.' },
+            { en: 'How long has she known him? — Since they were at university.', tr: 'Depuis combien de temps le connaît-elle ? — Depuis l\'université.' },
+          ]
+        },
+        {
+          title: '🔙 Ago — il y a... (point dans le passé)',
+          content: '<strong>Ago</strong> est différent de <em>since/for</em> : il indique quand quelque chose s\'est passé, pas depuis combien de temps ça dure. Utilisé avec le <strong>past simple</strong> (pas le present perfect).',
+          rows: [
+            { en: 'I moved here <strong>five years ago</strong>. (past simple)', tr: "Je me suis installé ici il y a cinq ans." },
+            { en: 'She left <strong>two hours ago</strong>.', tr: "Elle est partie il y a deux heures." },
+            { en: 'Compare: I moved here 5 years ago. / I have lived here for 5 years.', tr: "Je me suis installé il y a 5 ans. / J'habite ici depuis 5 ans." },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I live here since 2015" → ✅ "I HAVE LIVED here since 2015" (present perfect obligatoire)',
+        '❌ "since five years" → ✅ "for five years" (durée → for)',
+        '❌ "for Monday" → ✅ "since Monday" (point de départ → since)',
+        '❌ "I came here since two years" → ✅ "I came here two years AGO"',
+        '❌ "How long do you wait?" → ✅ "How long HAVE you BEEN waiting?"',
+      ],
+      tips: [
+        '🔑 Since + POINT DE DÉPART (date, événement, moment)',
+        '🔑 For + DURÉE (nombre d\'heures/jours/ans/longtemps)',
+        '💡 Since et for → toujours avec present perfect (ou past perfect)',
+        '💡 Ago → toujours avec past simple, pas de present perfect',
+        '⚠️ "Since" peut aussi être suivi d\'une proposition : "since she arrived", "since I was young"',
+      ],
+      summary: [
+        'Since + point de départ précis (2015, Monday, last year, childhood...)',
+        'For + durée totale (five years, two hours, a long time)',
+        'How long + present perfect → réponse avec since ou for',
+        'Ago ≠ since/for : ago = il y a... (avec past simple, pas present perfect)',
+      ],
+    },
+    mg: {
+      intro: "<strong>Since</strong> sy <strong>for</strong> dia ampiasaina miaraka amin'ny present perfect hilazana ny faharetan'ny zavatra. <strong>Since</strong> = fotoana nanombohan'ny (aiza no nanombohany) / <strong>for</strong> = halavan'ny fotoana (efa ahodinkodina).",
+      sections: [
+        {
+          title: '📍 Since — nanomboka rahoviana?',
+          content: '<strong>Since + fotoana voafaritra</strong> : daty, ora, zava-nitranga. Nanomboka tamin\'io fotoana io ka hatramin\'izao.',
+          rows: [
+            { en: 'I have lived here since 2015.', tr: 'Monina eto aho hatry ny 2015.' },
+            { en: "She hasn't eaten since yesterday morning.", tr: 'Tsy nisakafo izy hatry ny omaly maraina.' },
+            { en: 'We have been friends since primary school.', tr: 'Namana izahay hatry ny sekoly fototra.' },
+          ]
+        },
+        {
+          title: '⏱️ For — halavan\'ny fotoana',
+          content: '<strong>For + halava</strong> : andro, herinandro, taona... Refesina ny halavan\'ny fotoana, tsy ny toerana nanombohany.',
+          rows: [
+            { en: 'I have lived here for five years.', tr: 'Monina eto aho nandritra ny dimy taona.' },
+            { en: "He has been ill for a long time.", tr: 'Narary izy nandritra ny fotoana ela.' },
+            { en: "She has been waiting for two hours.", tr: 'Niandry izy nandritra ny ora roa.' },
+          ]
+        },
+        {
+          title: '❓ How long have you...?',
+          content: 'Fanontaniana momba ny halavan\'ny fotoana : <strong>How long + present perfect</strong>.',
+          rows: [
+            { en: 'How long have you been here? — Since March. / For six months.', tr: 'Nandritra ny fotoana hoatrinona no teto ianao? — Hatry ny Martsa. / Nandritra ny enim-bolana.' },
+          ]
+        },
+        {
+          title: '🔙 Ago — taloha... (past simple)',
+          content: '<strong>Ago</strong> = nilaza ny fotoana nisian\'ny zavatra taloha. Ampiasaina miaraka amin\'ny past simple (tsy present perfect).',
+          rows: [
+            { en: 'I moved here five years ago.', tr: 'Nifindra monina eto aho dimy taona lasa izay.' },
+            { en: 'She left two hours ago.', tr: 'Niala izy ora roa lasa izay.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I live here since 2015" → ✅ "I HAVE LIVED here since 2015"',
+        '❌ "since five years" → ✅ "for five years"',
+        '❌ "for Monday" → ✅ "since Monday"',
+      ],
+      tips: [
+        '🔑 Since + fotoana voafaritra | For + halavan\'ny fotoana',
+        '💡 Since sy for → present perfect foana',
+        '💡 Ago → past simple foana',
+      ],
+      summary: [
+        'Since + fotoana voafaritra (2015, Alatsinainy, fahazazana...)',
+        'For + halavan\'ny fotoana (dimy taona, ora roa, ela)',
+        'Ago ≠ since/for : ago = past simple',
+      ],
+    }
+  },
+  {
+    id: 'timeMarkers',
+    title: 'Time Markers — Indicateurs de Temps',
+    icon: '⏱️',
+    level: 'B1',
+    fr: {
+      intro: "Les <strong>indicateurs de temps</strong> sont des mots qui signalent automatiquement quel temps verbal utiliser. Les apprendre est le moyen le plus rapide de maîtriser le choix des temps en anglais.",
+      sections: [
+        {
+          title: 'Past Simple — actions passées terminées',
+          content: 'Mots clés : <strong>yesterday, ago, last, in</strong> (année passée), <strong>when</strong> (ponctuel)',
+          rows: [
+            { en: 'I saw him yesterday.', tr: 'Je l\'ai vu hier.' },
+            { en: 'She left two hours ago.', tr: 'Elle est partie il y a deux heures.' },
+            { en: 'We met last summer.', tr: 'Nous nous sommes rencontrés l\'été dernier.' },
+            { en: 'He was born in 1990.', tr: 'Il est né en 1990.' },
+          ]
+        },
+        {
+          title: 'Present Perfect — lien avec le présent',
+          content: 'Mots clés : <strong>already, yet, just, since, for, ever, never, recently</strong>',
+          rows: [
+            { en: 'I have already eaten.', tr: 'J\'ai déjà mangé.' },
+            { en: 'She hasn\'t arrived yet.', tr: 'Elle n\'est pas encore arrivée.' },
+            { en: 'He has just called.', tr: 'Il vient juste d\'appeler.' },
+            { en: 'They have lived here since 2010.', tr: 'Ils habitent ici depuis 2010.' },
+            { en: 'I have worked here for five years.', tr: 'Je travaille ici depuis cinq ans.' },
+          ]
+        },
+        {
+          title: 'Present Simple — habitudes, vérités',
+          content: 'Mots clés : <strong>always, usually, often, sometimes, rarely, never, every</strong>',
+          rows: [
+            { en: 'She always wakes up early.', tr: 'Elle se lève toujours tôt.' },
+            { en: 'I usually have lunch at noon.', tr: 'Je déjeune généralement à midi.' },
+            { en: 'They never eat meat.', tr: 'Ils ne mangent jamais de viande.' },
+          ]
+        },
+        {
+          title: 'Future — actions à venir',
+          content: 'Mots clés : <strong>tomorrow, next, soon, in</strong> (futur), <strong>tonight, later</strong>',
+          rows: [
+            { en: 'I will call you tomorrow.', tr: 'Je t\'appellerai demain.' },
+            { en: 'She is going to travel next week.', tr: 'Elle va voyager la semaine prochaine.' },
+            { en: 'The match starts soon.', tr: 'Le match commence bientôt.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '❌ "I have seen him yesterday" → ✅ "I saw him yesterday" (yesterday → Past Simple)',
+        '❌ "She already ate" → ✅ "She has already eaten" (already → Present Perfect)',
+        '❌ "I know him since 5 years" → ✅ "I have known him for 5 years" (for → Present Perfect)',
+      ],
+      tips: [
+        '📅 yesterday/ago/last → Past Simple',
+        '🔗 already/yet/just/since/for → Present Perfect',
+        '🔄 always/usually/every → Present Simple',
+        '🚀 tomorrow/next/soon → Future (will ou going to)',
+      ],
+      summary: ['Past Simple : yesterday / ago / last / when', 'Present Perfect : already / yet / just / since / for', 'Present Simple : always / usually / every', 'Future : tomorrow / next / soon'],
+    },
+    mg: {
+      intro: "Ny <strong>indicateurs de temps</strong> dia teny izay milaza avy hatrany ny temps verbal tokony ampiasaina. Tsotra ny fitsipika.",
+      sections: [
+        {
+          title: 'Past Simple — hetsika vita',
+          content: 'Teny fototra : yesterday, ago, last, when',
+          rows: [
+            { en: 'I saw him yesterday.', tr: 'Nahita azy aho omaly.' },
+            { en: 'She left two hours ago.', tr: 'Lasa izy roa ora lasa izay.' },
+          ]
+        },
+        {
+          title: 'Present Perfect — mifandray amin\'ny ankehitriny',
+          content: 'Teny fototra : already, yet, just, since, for',
+          rows: [
+            { en: 'I have already eaten.', tr: 'Efa nihinana aho.' },
+            { en: 'She hasn\'t arrived yet.', tr: 'Tsy tonga mbola izy.' },
+          ]
+        },
+        {
+          title: 'Present Simple — zava-mahazatra',
+          content: 'Teny fototra : always, usually, often, never, every',
+          rows: [
+            { en: 'She always wakes up early.', tr: 'Mifohaza marobe foana izy.' },
+          ]
+        },
+        {
+          title: 'Future — hetsika ho avy',
+          content: 'Teny fototra : tomorrow, next, soon, tonight',
+          rows: [
+            { en: 'I will call you tomorrow.', tr: 'Hantsaina ianao aho rahampitso.' },
+          ]
+        },
+      ],
+      commonErrors: ['❌ "I have seen him yesterday" → ✅ "I saw him yesterday"', '❌ "already ate" → ✅ "has already eaten"'],
+      tips: ['yesterday/ago/last → Past Simple', 'already/yet/just/since/for → Present Perfect', 'always/every → Present Simple', 'tomorrow/next/soon → Future'],
+      summary: ['Past Simple : yesterday / ago / last', 'Present Perfect : already / yet / just / since / for', 'Future : tomorrow / next / soon'],
+    },
+  },
+  {
+    id: 'tenseChooser',
+    title: 'Choosing the Right Tense — Choisir le bon temps',
+    icon: '🎯',
+    level: 'B1',
+    fr: {
+      intro: "Choisir le bon temps verbal est souvent difficile. Les <strong>indicateurs temporels</strong> (time markers) sont la clé : chaque groupe de mots signaux est associé à un temps précis. Maîtriser ces associations te permettra d\'utiliser les temps automatiquement.",
+      sections: [
+        {
+          title: 'Past Simple — indicateurs',
+          content: 'yesterday · ago · last… · in + année · when I was…',
+          rows: [
+            { en: 'I met her yesterday at the market.', tr: 'Je l\'ai rencontrée hier au marché.' },
+            { en: 'He left two hours ago.', tr: 'Il est parti il y a deux heures.' },
+            { en: 'We went to the beach last summer.', tr: 'Nous sommes allés à la plage l\'été dernier.' },
+            { en: 'She was born in 2005.', tr: 'Elle est née en 2005.' },
+          ]
+        },
+        {
+          title: 'Present Perfect — indicateurs',
+          content: 'already · yet · just · since · for · ever · never · recently · so far',
+          rows: [
+            { en: 'I have already eaten lunch.', tr: 'J\'ai déjà déjeuné.' },
+            { en: 'Have you finished your homework yet?', tr: 'Tu as déjà fini tes devoirs ?' },
+            { en: 'She has just arrived home.', tr: 'Elle vient juste d\'arriver à la maison.' },
+            { en: 'He has lived here since 2020.', tr: 'Il habite ici depuis 2020.' },
+            { en: 'We have studied English for three years.', tr: 'Nous étudions l\'anglais depuis trois ans.' },
+          ]
+        },
+        {
+          title: 'Present Simple — indicateurs',
+          content: 'every day/week · always · usually · often · never · on Mondays',
+          rows: [
+            { en: 'I go to school every day.', tr: 'Je vais à l\'école tous les jours.' },
+            { en: 'She always drinks coffee in the morning.', tr: 'Elle boit toujours du café le matin.' },
+            { en: 'They play football on Sundays.', tr: 'Ils jouent au foot le dimanche.' },
+          ]
+        },
+        {
+          title: 'Future (will / going to) — indicateurs',
+          content: 'tomorrow · next… · soon · in + durée future',
+          rows: [
+            { en: 'She will call you tomorrow morning.', tr: 'Elle t\'appellera demain matin.' },
+            { en: 'We are going to travel next month.', tr: 'Nous allons voyager le mois prochain.' },
+            { en: 'He will be back in two days.', tr: 'Il sera de retour dans deux jours.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple)',
+        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect)',
+        '"I know him since 5 years." ✗ → "I have known him for 5 years." ✓ (for + durée = PP)',
+      ],
+      tips: [
+        '"since" + moment précis (since 2020, since Monday) · "for" + durée (for 3 years)',
+        'Moment précis et terminé → Past Simple · Lien avec le présent → Present Perfect',
+        '"ago" = il y a (passé) · "in 2 days" = dans 2 jours (futur)',
+      ],
+      summary: [
+        'yesterday / ago / last / in 2005 → Past Simple',
+        'already / yet / just / since / for → Present Perfect',
+        'every day / always / usually → Present Simple',
+        'tomorrow / next / soon / in 2 days → Future',
+      ]
+    },
+    mg: {
+      intro: "Ny fisaraham-potoana amin\'ny anglisy dia misy indicators (teny famantarana) manokana. Ireo teny ireo no mametra ny temps ampiasaina.",
+      sections: [
+        {
+          title: 'Past Simple — indicators',
+          content: 'yesterday · ago · last… · in + taona · when I was…',
+          rows: [
+            { en: 'I met her yesterday at the market.', tr: 'Nahita azy aho omaly teny an-tsena.' },
+            { en: 'He left two hours ago.', tr: 'Nandeha izy efatra ora lasa izay.' },
+            { en: 'We went to the beach last summer.', tr: 'Nankany an-dranomasina izahay ny lohataona lasa.' },
+          ]
+        },
+        {
+          title: 'Present Perfect — indicators',
+          content: 'already · yet · just · since · for · ever · never · recently',
+          rows: [
+            { en: 'I have already eaten lunch.', tr: 'Efa nisakafo atoandro aho.' },
+            { en: 'Have you finished your homework yet?', tr: 'Vita ny asanao ve?' },
+            { en: 'She has just arrived home.', tr: 'Vao tonga an-trano izy.' },
+            { en: 'He has lived here since 2020.', tr: 'Monina eto izy hatramin\'ny 2020.' },
+            { en: 'We have studied English for three years.', tr: 'Nandalina anglisy izahay mandritra ny telo taona.' },
+          ]
+        },
+        {
+          title: 'Present Simple — indicators',
+          content: 'every day · always · usually · often · never · on Sundays',
+          rows: [
+            { en: 'I go to school every day.', tr: 'Mankany sekoly aho isan\'andro.' },
+            { en: 'She always drinks coffee in the morning.', tr: 'Mandrakariva misotro kafe maraina izy.' },
+          ]
+        },
+        {
+          title: 'Future — indicators',
+          content: 'tomorrow · next… · soon · in + fotoana ho avy',
+          rows: [
+            { en: 'She will call you tomorrow morning.', tr: 'Hiantso anao izy rahampitso maraina.' },
+            { en: 'We are going to travel next month.', tr: 'Handeha dia izahay ny volana ho avy.' },
+          ]
+        },
+      ],
+      commonErrors: [
+        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple)',
+        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect)',
+      ],
+      tips: [
+        '"since" + fotoana manokana (since 2020) · "for" + faharetan\'ny fotoana (for 3 years)',
+        'Fotoana mifarana = Past Simple · Mifandray amin\'ny ankehitriny = Present Perfect',
+      ],
+      summary: [
+        'yesterday / ago / last / in 2005 → Past Simple',
+        'already / yet / just / since / for → Present Perfect',
+        'every day / always / usually → Present Simple',
+        'tomorrow / next / soon → Future',
+      ]
+    }
+  },
   {
     id: 'pastPerfect',
     title: 'Past Perfect',
@@ -3493,80 +3795,84 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // FUTUREPERFECT — B1
-  // ══════════════════════════════════════════════════════════════════════
   {
-    id: 'futurePerfect',
-    title: 'Future Perfect',
-    icon: '✅🚀',
-    level: 'B2',
+    id: 'futureContinuous',
+    title: 'Future Continuous',
+    icon: '🔮',
+    level: 'B1',
     fr: {
-      intro: 'Le Future Perfect (<strong>will have + participe passé</strong>) exprime une action qui sera terminée avant un moment précis dans le futur.',
+      intro: "Le <strong>Future Continuous</strong> (<em>will be + -ing</em>) décrit une action qui sera <strong>en cours</strong> à un moment futur. Il donne l'idée d'une action qui aura commencé et ne sera pas encore terminée.",
       sections: [
         {
-          title: 'Formation et usage',
-          content: 'Sujet + <strong>will have</strong> + participe passé.',
+          title: 'Forme affirmative',
+          content: 'Sujet + <strong>will be</strong> + verbe-<strong>ing</strong>',
           rows: [
-            { en: 'By 2030, I will have finished university.', tr: 'D\'ici 2030, j\'aurai terminé l\'université.' },
-            { en: 'She will have cooked dinner by the time you arrive.', tr: 'Elle aura cuisiné le dîner quand tu arriveras.' },
-            { en: 'Will you have finished the report by Friday?', tr: 'Auras-tu fini le rapport d\'ici vendredi ?' },
+            { en: 'I will be studying at 8pm.', tr: 'J\'étudierai (en train d\'étudier) à 20h.' },
+            { en: 'She will be sleeping when you arrive.', tr: 'Elle sera en train de dormir quand tu arriveras.' },
+            { en: 'They will be travelling all week.', tr: 'Ils seront en train de voyager toute la semaine.' },
+          ]
+        },
+        {
+          title: 'Forme négative',
+          content: 'Sujet + <strong>won\'t be</strong> + verbe-<strong>ing</strong>',
+          rows: [
+            { en: 'I won\'t be working tomorrow.', tr: 'Je ne serai pas en train de travailler demain.' },
+            { en: 'She won\'t be waiting for us.', tr: 'Elle ne sera pas en train de nous attendre.' },
+          ]
+        },
+        {
+          title: 'Forme interrogative',
+          content: '<strong>Will</strong> + sujet + <strong>be</strong> + verbe-<strong>ing</strong> ?',
+          rows: [
+            { en: 'Will you be joining us for dinner?', tr: 'Seras-tu en train de dîner avec nous ?' },
+            { en: 'Will she be studying when I call?', tr: 'Sera-t-elle en train d\'étudier quand j\'appelle ?' },
+          ]
+        },
+        {
+          title: 'Quand l\'utiliser ?',
+          content: 'Action en cours à un moment précis du futur · Action interrompue par une autre · Demande polie sur les plans de quelqu\'un',
+          rows: [
+            { en: 'At 9am tomorrow, I will be having breakfast.', tr: 'Demain à 9h, je serai en train de prendre mon petit-déjeuner.' },
+            { en: 'Will you be using the car this evening?', tr: 'Est-ce que tu utiliseras la voiture ce soir ? (demande polie)' },
           ]
         },
       ],
+      commonErrors: [
+        '❌ "I will studying" → ✅ "I will be studying" (be obligatoire)',
+        '❌ "I will be study" → ✅ "I will be studying" (-ing obligatoire)',
+      ],
       tips: [
-        'Signal words : by (then/tomorrow/2030), before, by the time',
-        'Négatif : won\'t have + participe passé',
-        'Moins fréquent que les autres temps, mais important en B2',
+        '🔑 Structure : will be + -ing',
+        '💡 Contraste : "I will write the report" (simple) vs "I will be writing the report all day" (en cours)',
+        '🙏 Demande polie : "Will you be needing the computer?" = moins direct que "Will you need it?"',
       ],
-      summary: [
-        'Forme : will have + participe passé',
-        'Usage : action terminée avant un moment futur précis',
-        'Signal words : by (then/Friday/2030), by the time',
-        'Négatif : won\'t have + pp',
-      ],
-      quickExercises: [
-        { q: 'Complete: By 2030, she ___ (finish) university.', a: 'will have finished', hint: 'will have + pp' },
-        { q: 'Negative: "I will have saved money." → I ___', a: 'won\'t have saved money.', hint: 'will → won\'t' },
-        { q: 'Correct: "By then, I will finish my work."', a: 'By then, I will have finished my work.', hint: '"by" + futur = Future Perfect' },
-      ],
+      summary: ['Affirmatif : will be + -ing', 'Négatif : won\'t be + -ing', 'Interrogatif : Will + sujet + be + -ing ?', 'Usage : action en cours à un moment futur précis'],
     },
     mg: {
-      intro: 'Ny Future Perfect (<strong>will have + participe passé</strong>) dia fampisehoana ny asa hvita tanteraka mialoha ny fotoana voafaritra amin\'ny ho avy.',
+      intro: "Ny <strong>Future Continuous</strong> (will be + -ing) dia milaza hetsika izay <strong>ho eo am-pandehanana</strong> amin\'ny fotoana iray ho avy.",
       sections: [
         {
-          title: 'Fomba fanaovana sy fampiasana',
-          content: 'Sujet + <strong>will have</strong> + participe passé.',
+          title: 'Endrika fanambara',
+          content: 'Sujet + <strong>will be</strong> + matoanteny-<strong>ing</strong>',
           rows: [
-            { en: 'By 2030, I will have finished university.', tr: 'Amin\'ny 2030, efa vita ny fianarako any amin\'ny oniversite.' },
-            { en: 'She will have cooked dinner by the time you arrive.', tr: 'Efa vita ny sakafo hariva fony tonga ianao.' },
-            { en: 'Will you have finished the report by Friday?', tr: 'Vita ny tatitra alohan\'ny Zoma ve?' },
+            { en: 'I will be studying at 8pm.', tr: 'Eo am-pianakaviana aho amin\'ny 8 ora hariva.' },
+            { en: 'She will be sleeping when you arrive.', tr: 'Ho eo am-patory izy rehefa tonga ianao.' },
+          ]
+        },
+        {
+          title: 'Endrika fandavana sy fanontaniana',
+          content: 'Négatif : won\'t be + -ing · Fanontaniana : Will + sujet + be + -ing?',
+          rows: [
+            { en: "I won't be working tomorrow.", tr: 'Tsy ho eo am-panao asa aho rahampitso.' },
+            { en: 'Will you be joining us for dinner?', tr: 'Ho hiara-misakafo aminay ve ianao?' },
           ]
         },
       ],
-      tips: [
-        'Teny mampitandremana : by (then/tomorrow/2030), before, by the time',
-        'Fandavana : won\'t have + participe passé',
-        'Tsy matetika ampiasaina, fa ilaina amin\'ny B2',
-      ],
-      summary: [
-        'Endrika : will have + participe passé',
-        'Ampiasaina : asa vita mialoha ny fotoana ho avy voafaritra',
-        'Teny mampitandremana : by (then/2030/Friday), by the time',
-        'Fandavana : won\'t have + pp',
-      ],
-      quickExercises: [
-        { q: 'Fenoy: By 2030, she ___ (finish) ny fianarany.', a: 'will have finished', hint: 'will have + pp' },
-        { q: 'Fandavana: "I will have saved money." → I ___', a: 'won\'t have saved money.', hint: 'will → won\'t' },
-        { q: 'Mety sa tsia? "By then, I will finish my work."', a: 'Diso → I will have finished my work.', hint: '"by" → Future Perfect' },
-      ],
-    }
+      commonErrors: ['❌ "I will studying" → ✅ "I will be studying"'],
+      tips: ['will be + -ing foana', 'Milaza hetsika ho eo am-pandehanana amin\'ny fotoana iray'],
+      summary: ['will be + -ing (fanambara)', 'won\'t be + -ing (fandavana)', 'Will + sujet + be + -ing? (fanontaniana)'],
+    },
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PASSIVEVOICE — B1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'passiveVoice',
     title: 'Voix Passive',
@@ -3657,10 +3963,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // CONDITIONALS — B1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'conditionals',
     title: 'Conditionnels (if)',
@@ -3787,402 +4089,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // USEDTO — B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'usedTo',
-    title: 'Used to — Habitudes passées',
-    icon: '🔙',
-    level: 'B1',
-    fr: {
-      intro: "<strong>Used to + infinitif</strong> décrit des habitudes ou des états passés qui <em>n'existent plus</em> aujourd'hui. C'est une structure typique du B1 qui permet de parler du passé de manière nuancée, en insistant sur le contraste avec le présent.",
-      sections: [
-        {
-          title: '📐 Formation : used to + infinitif',
-          content: '<strong>Sujet + used to + verbe base</strong>. Affirmatif : "used to". Négatif : "didn\'t use to" (pas "didn\'t used to"). Question : "Did + sujet + use to + verbe ?" (pas "used to").',
-          rows: [
-            { en: 'I <strong>used to</strong> play football every day.', tr: 'Je jouais au football tous les jours. (habitude passée, plus maintenant)' },
-            { en: 'She <strong>used to</strong> live in Antananarivo.', tr: 'Elle vivait à Antananarivo. (état passé)' },
-            { en: 'I <strong>didn\'t use to</strong> like vegetables.', tr: "Je n'aimais pas les légumes. (mais maintenant oui)" },
-            { en: '<strong>Did</strong> you <strong>use to</strong> play an instrument?', tr: 'Est-ce que tu jouais d\'un instrument ?' },
-            { en: 'There <strong>used to be</strong> a cinema here.', tr: "Il y avait un cinéma ici. (il n'y en a plus)" },
-          ]
-        },
-        {
-          title: '🎯 Quand utiliser used to',
-          content: 'Utilisez <em>used to</em> pour : (1) des habitudes régulières dans le passé qui ont cessé, (2) des états passés permanents qui n\'existent plus, (3) insister sur le contraste avec la situation actuelle.',
-          rows: [
-            { en: 'I used to smoke, but I stopped ten years ago.', tr: 'Je fumais, mais j\'ai arrêté il y a dix ans.' },
-            { en: 'We used to go to the beach every summer.', tr: "Nous allions à la plage chaque été." },
-            { en: 'This area used to be a forest.', tr: 'Cette zone était une forêt. (maintenant c\'est urbanisé)' },
-            { en: 'She didn\'t use to speak English well, but now she\'s fluent.', tr: 'Elle ne parlait pas bien anglais, mais maintenant elle est courante.' },
-          ]
-        },
-        {
-          title: '🔄 Would pour les habitudes passées',
-          content: '<strong>Would + infinitif</strong> peut aussi exprimer des habitudes passées répétées (mais pas des états). Plus formel, surtout à l\'écrit.',
-          rows: [
-            { en: "Every summer, we would go to the beach. (habit, formal)", tr: "Chaque été, nous allions à la plage. (habitude répétée → would OK)" },
-            { en: 'This area would be a forest. ❌ (state, not habit)', tr: 'État → on ne peut pas utiliser would ici (seulement used to)' },
-            { en: 'My grandfather would tell stories every night.', tr: 'Mon grand-père racontait des histoires chaque soir.' },
-          ]
-        },
-        {
-          title: '⚠️ Attention : be/get used to (ne pas confondre !)',
-          content: "<strong>Be used to</strong> = être habitué à (présent, pas passé) · <strong>Get used to</strong> = s'habituer à (processus). Ces deux structures sont suivies d'un <em>nom ou gérondif</em>, pas d'un infinitif.",
-          rows: [
-            { en: 'I am <strong>used to</strong> waking up early. (= I\'m accustomed)', tr: "Je suis habitué à me lever tôt. (état actuel)" },
-            { en: 'She is <strong>getting used to</strong> the new schedule.', tr: "Elle s'habitue au nouvel horaire. (processus en cours)" },
-            { en: 'I <strong>used to</strong> wake up early. (= past habit)', tr: "Je me levais tôt autrefois. (habitude passée)" },
-            { en: 'Be careful: used to + INF (past) vs be used to + ING (present)', tr: 'used to + infinitif (passé) ≠ be used to + gérondif (présent)' },
-          ]
-        },
-      ],
-      commonErrors: [
-        "❌ \"I didn't used to\" → ✅ \"I didn't USE TO\" (après did, on revient à la forme base)",
-        "❌ \"Did you used to...?\" → ✅ \"Did you USE TO...?\"",
-        "❌ \"I used to going\" → ✅ \"I used to GO\" (infinitif sans TO après used to... wait: used to + INF)",
-        "❌ \"I am used to wake up\" → ✅ \"I am used to WAKING up\" (be used to + gérondif)",
-        "❌ Utiliser used to pour le présent → used to = UNIQUEMENT pour le passé",
-      ],
-      tips: [
-        '🔑 Used to + INF = habitude/état PASSÉ qui n\'existe plus',
-        '🔑 Be used to + ING = être habitué à (présent)',
-        '🔑 Get used to + ING = s\'habituer à (processus)',
-        '💡 Would peut remplacer used to pour les habitudes (mais PAS les états)',
-        '⚠️ Négatif/question : "did + use to" (pas "used to") — la forme change !',
-      ],
-      summary: [
-        'Used to + INF : habitudes ou états passés qui n\'existent plus',
-        'Négatif : didn\'t use to | Question : Did...use to?',
-        'Would + INF : habitudes répétées passées (formel, pas les états)',
-        'Be used to + ING : être habitué à | Get used to + ING : s\'habituer à',
-      ],
-    },
-    mg: {
-      intro: "<strong>Used to + infinitif</strong> dia ampiasaina hilazana ny fandavanana sy ny toetry ny zavatra taloha izay <em>tsy misy intsony ankehitriny</em>. Tena mahasoa amin'ny fitantarana ny lasa amin'ny fomba mazava.",
-      sections: [
-        {
-          title: '📐 Fomba : used to + veribe',
-          content: '<strong>Sujet + used to + veribe</strong>. Fandavana : didn\'t use to. Fanontaniana : Did... use to?',
-          rows: [
-            { en: 'I used to play football every day.', tr: 'Nitana baolina kely andro aman\'alina aho taloha.' },
-            { en: 'She used to live in Antananarivo.', tr: 'Nonina tany Antananarivo izy taloha.' },
-            { en: "I didn't use to like vegetables.", tr: 'Tsy tia legioma aho taloha.' },
-            { en: 'Did you use to play an instrument?', tr: 'Nitana zava-maneno ve ianao taloha?' },
-          ]
-        },
-        {
-          title: '⚠️ Aza diso: be/get used to',
-          content: '<strong>Be used to + ING</strong> = zatra amin\'ny (ankehitriny). <strong>Get used to + ING</strong> = miezaka zatra. Tsy mitovy amin\'ny used to + INF.',
-          rows: [
-            { en: 'I am used to waking up early.', tr: 'Zatra mifoha maraina aho. (ankehitriny)' },
-            { en: "She's getting used to the new schedule.", tr: 'Miezaka zatra ny fandaharam-potoana vaovao izy.' },
-            { en: 'Compare: I used to wake up early. (past habit)', tr: 'Nifoha maraina aho taloha. (fandavanana lasa)' },
-          ]
-        },
-      ],
-      commonErrors: [
-        "❌ \"I didn't used to\" → ✅ \"I didn't USE TO\"",
-        "❌ \"I am used to wake up\" → ✅ \"I am used to WAKING up\"",
-      ],
-      tips: [
-        '🔑 Used to + INF = fandavanana lasa tsy misy intsony',
-        '🔑 Be used to + ING = zatra amin\'ny (ankehitriny)',
-        '⚠️ Fandavana : didn\'t use to (tsy "didn\'t used to")',
-      ],
-      summary: [
-        'Used to + INF : fandavanana na toetry ny zavatra lasa',
-        'Fandavana : didn\'t use to | Fanontaniana : Did...use to?',
-        'Be used to + ING : zatra | Get used to + ING : miezaka zatra',
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // VERBSOFSTATE — B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'verbsOfState',
-    title: 'Verbes d\'état & Gérondif / Infinitif',
-    icon: '🎭',
-    level: 'B1',
-    fr: {
-      intro: "Certains verbes en anglais expriment un <strong>état mental ou physique</strong>, pas une action en cours. Ces <em>stative verbs</em> ne s'utilisent normalement <em>pas</em> avec les temps continus (progressifs). Par ailleurs, de nombreux verbes peuvent être suivis d'un <strong>gérondif</strong> ou d'un <strong>infinitif</strong> — le choix dépend du verbe.",
-      sections: [
-        {
-          title: '🧠 Verbes d\'état : jamais (ou rarement) au continu',
-          content: 'Ces verbes décrivent des états stables (pensées, sentiments, perceptions, possession) et ne s\'utilisent pas au présent continu. On dit "I know", pas "I am knowing".',
-          rows: [
-            { en: 'I <strong>know</strong> the answer. ✅ / I am knowing ❌', tr: 'Je connais la réponse.' },
-            { en: 'She <strong>believes</strong> in hard work. ✅', tr: 'Elle croit au travail acharné.' },
-            { en: 'He <strong>wants</strong> a new job. ✅ / He is wanting ❌', tr: 'Il veut un nouveau travail.' },
-            { en: 'They <strong>own</strong> a house. ✅ / They are owning ❌', tr: 'Ils possèdent une maison.' },
-            { en: 'I <strong>love</strong> music. ✅ / I am loving ❌ (en général)', tr: "J'aime la musique." },
-          ]
-        },
-        {
-          title: '📋 Catégories de verbes d\'état',
-          content: 'Il existe 5 catégories principales. Mémorisez les plus courants de chaque groupe.',
-          rows: [
-            { en: 'Mental states: know, believe, understand, remember, forget, think (opinion), mean', tr: 'États mentaux : savoir, croire, comprendre, se souvenir, oublier' },
-            { en: 'Emotions/preferences: love, like, hate, dislike, prefer, want, need, wish', tr: 'Émotions/préférences : aimer, préférer, vouloir, avoir besoin' },
-            { en: 'Senses: see, hear, smell, taste, feel (perception involontaire)', tr: 'Sens : voir, entendre, sentir, goûter (perception involontaire)' },
-            { en: 'Possession: have, own, belong, contain, include', tr: 'Possession : avoir, posséder, appartenir, contenir' },
-            { en: 'Appearance/existence: seem, appear, look (adjective), be, exist', tr: 'Apparence/existence : sembler, paraître, être, exister' },
-          ]
-        },
-        {
-          title: '⚡ Exceptions : sens différents (action vs état)',
-          content: 'Attention : certains verbes d\'état peuvent s\'utiliser au continu, mais avec un sens <strong>différent</strong> (action au lieu d\'état).',
-          rows: [
-            { en: 'I <strong>think</strong> he\'s right. (opinion → état) / I\'m <strong>thinking</strong> about it. (action mentale)', tr: "Je pense qu'il a raison. / Je réfléchis. (deux sens différents !)" },
-            { en: 'I <strong>have</strong> a car. (possession) / I\'m <strong>having</strong> lunch. (action = manger)', tr: "J'ai une voiture. / Je déjeune." },
-            { en: 'She <strong>looks</strong> tired. (état) / She\'s <strong>looking</strong> for her keys. (action)', tr: "Elle a l'air fatiguée. / Elle cherche ses clés." },
-            { en: 'It <strong>smells</strong> good. (perception) / I\'m <strong>smelling</strong> the flowers. (action délibérée)', tr: 'Ça sent bon. / Je sens les fleurs.' },
-            { en: "I'm <strong>loving</strong> this holiday! (informal/emphatic, now OK in modern English)", tr: 'Je kiffe vraiment ces vacances ! (usage moderne acceptable)' },
-          ]
-        },
-        {
-          title: '➕ Verbes + Gérondif (V-ing)',
-          content: "Ces verbes sont <strong>toujours</strong> suivis d'un gérondif (ING), jamais d'un infinitif : enjoy, finish, avoid, mind, suggest, recommend, imagine, consider, keep, stop, deny, admit, miss.",
-          rows: [
-            { en: 'I enjoy <strong>swimming</strong>. (pas "to swim")', tr: "J'aime nager." },
-            { en: 'She finished <strong>writing</strong> the essay.', tr: "Elle a fini d'écrire l'essai." },
-            { en: 'He avoided <strong>making</strong> eye contact.', tr: "Il a évité de croiser les regards." },
-            { en: 'Do you mind <strong>opening</strong> the window?', tr: "Ça te dérange d'ouvrir la fenêtre ?" },
-            { en: 'They suggested <strong>taking</strong> a break.', tr: "Ils ont suggéré de faire une pause." },
-          ]
-        },
-        {
-          title: '🔛 Verbes + Infinitif (to + verbe)',
-          content: "Ces verbes sont suivis d'un infinitif : want, decide, hope, plan, promise, refuse, agree, manage, afford, expect, need, offer, choose, try (attempt), learn, fail.",
-          rows: [
-            { en: 'She wants <strong>to study</strong> abroad.', tr: "Elle veut étudier à l'étranger." },
-            { en: 'He decided <strong>to leave</strong> early.', tr: "Il a décidé de partir tôt." },
-            { en: 'They managed <strong>to finish</strong> on time.', tr: "Ils ont réussi à finir à temps." },
-            { en: "I can't afford <strong>to buy</strong> a new phone.", tr: "Je n'ai pas les moyens d'acheter un nouveau téléphone." },
-            { en: 'She refused <strong>to answer</strong>.', tr: "Elle a refusé de répondre." },
-          ]
-        },
-        {
-          title: '↔️ Verbes + Gérondif OU Infinitif (sens différents)',
-          content: "Certains verbes acceptent les deux, mais parfois avec un sens différent : <strong>stop, remember, forget, try, regret</strong>.",
-          rows: [
-            { en: 'I stopped <strong>smoking</strong>. / I stopped <strong>to smoke</strong>.', tr: "J'ai arrêté de fumer. / Je me suis arrêté pour fumer. (deux sens!)" },
-            { en: 'Remember <strong>to lock</strong> the door! (reminder for future)', tr: "N'oublie pas de fermer la porte ! (rappel pour le futur)" },
-            { en: 'I remember <strong>locking</strong> the door. (memory of past action)', tr: "Je me souviens d'avoir fermé la porte. (souvenir)" },
-            { en: 'She tried <strong>to open</strong> the jar. (attempt) / Try <strong>adding</strong> more salt. (experiment)', tr: "Elle a essayé d'ouvrir le pot. / Essaie d'ajouter du sel." },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I am knowing the answer" → ✅ "I know the answer" (stative verb)',
-        '❌ "She is believing it" → ✅ "She believes it"',
-        '❌ "I enjoy to swim" → ✅ "I enjoy swimming" (enjoy + ING)',
-        '❌ "She avoided to look" → ✅ "She avoided looking" (avoid + ING)',
-        '❌ "I want going" → ✅ "I want to go" (want + INF)',
-      ],
-      tips: [
-        '🔑 Stative verbs (know, believe, love, own, seem...) → pas de forme continue en général',
-        '🔑 Enjoy, avoid, finish, mind, keep, miss, suggest → toujours + ING',
-        '🔑 Want, decide, hope, refuse, manage, afford → toujours + infinitif',
-        '💡 Stop/remember/forget + ING (action passée) vs + INF (futur/but)',
-        '⚠️ Certains verbes ont deux sens : "I have a car" (état) vs "I\'m having lunch" (action)',
-      ],
-      summary: [
-        'Stative verbs : jamais (ou rarement) au continu — know, believe, want, love, own...',
-        'Verbes + ING : enjoy, avoid, finish, mind, suggest, keep, miss...',
-        'Verbes + INF : want, decide, hope, promise, refuse, manage, afford...',
-        'Stop/remember/forget : + ING = action passée | + INF = but/futur',
-      ],
-    },
-    mg: {
-      intro: "Ny <strong>verbes d'état</strong> dia matoanteny maneho toetry ny saina na vatan'olona, tsy hetsika. Ireny matoanteny ireny dia tsy ampiasaina amin'ny temps continus amin'ny ankamaroany.",
-      sections: [
-        {
-          title: '🧠 Matoanteny toetra : tsy ampiasaina amin\'ny continu',
-          content: 'Know, believe, understand, want, love, have (fanana), seem... — tsy lazaina amin\'ny forme continue.',
-          rows: [
-            { en: 'I know the answer. ✅ / I am knowing ❌', tr: 'Fantatro ny valiny.' },
-            { en: 'She wants a new job. ✅ / She is wanting ❌', tr: 'Mitady asa vaovao izy.' },
-            { en: 'They own a house. ✅ / They are owning ❌', tr: 'Manana trano izy ireo.' },
-          ]
-        },
-        {
-          title: '➕ Matoanteny + ING',
-          content: 'Ireto matoanteny ireto dia tsy maintsy followed by ING : enjoy, avoid, finish, mind, suggest, keep, miss.',
-          rows: [
-            { en: "I enjoy swimming.", tr: 'Tiako ny filomanosana.' },
-            { en: "She finished writing.", tr: 'Vita ny nanoratany.' },
-            { en: "He avoided making eye contact.", tr: 'Nisoroka ny nandredreka maso izy.' },
-          ]
-        },
-        {
-          title: '🔛 Matoanteny + Infinitif',
-          content: 'Want, decide, hope, refuse, manage, afford... — followed by infinitif.',
-          rows: [
-            { en: "She wants to study abroad.", tr: 'Te hianatra any ivelany izy.' },
-            { en: "He decided to leave early.", tr: 'Nanapa-kevitra niala maraina izy.' },
-          ]
-        },
-        {
-          title: '↔️ Matoanteny misy hevitr\'isa roa',
-          content: 'Stop, remember, forget + ING (hetsika lasa) vs + INF (tanjon\'ny ho avy).',
-          rows: [
-            { en: 'I stopped smoking. (hetsika nijanona)', tr: 'Nijanona nisotro sigara aho.' },
-            { en: 'I stopped to smoke. (najanona mba hisotro sigara)', tr: 'Najanona aho mba hisotro sigara.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '❌ "I am knowing" → ✅ "I know"',
-        '❌ "I enjoy to swim" → ✅ "I enjoy swimming"',
-        '❌ "I want going" → ✅ "I want to go"',
-      ],
-      tips: [
-        '🔑 Know, believe, want, love, own... → tsy continu',
-        '🔑 Enjoy, avoid, finish... → + ING foana',
-        '🔑 Want, decide, hope... → + infinitif foana',
-      ],
-      summary: [
-        'Matoanteny toetra : tsy continu — know, believe, want, love, own...',
-        '+ ING : enjoy, avoid, finish, mind, suggest...',
-        '+ INF : want, decide, hope, refuse, manage...',
-      ],
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // TENSECHOOSER — B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'tenseChooser',
-    title: 'Choosing the Right Tense — Choisir le bon temps',
-    icon: '🎯',
-    level: 'B1',
-    fr: {
-      intro: "Choisir le bon temps verbal est souvent difficile. Les <strong>indicateurs temporels</strong> (time markers) sont la clé : chaque groupe de mots signaux est associé à un temps précis. Maîtriser ces associations te permettra d\'utiliser les temps automatiquement.",
-      sections: [
-        {
-          title: 'Past Simple — indicateurs',
-          content: 'yesterday · ago · last… · in + année · when I was…',
-          rows: [
-            { en: 'I met her yesterday at the market.', tr: 'Je l\'ai rencontrée hier au marché.' },
-            { en: 'He left two hours ago.', tr: 'Il est parti il y a deux heures.' },
-            { en: 'We went to the beach last summer.', tr: 'Nous sommes allés à la plage l\'été dernier.' },
-            { en: 'She was born in 2005.', tr: 'Elle est née en 2005.' },
-          ]
-        },
-        {
-          title: 'Present Perfect — indicateurs',
-          content: 'already · yet · just · since · for · ever · never · recently · so far',
-          rows: [
-            { en: 'I have already eaten lunch.', tr: 'J\'ai déjà déjeuné.' },
-            { en: 'Have you finished your homework yet?', tr: 'Tu as déjà fini tes devoirs ?' },
-            { en: 'She has just arrived home.', tr: 'Elle vient juste d\'arriver à la maison.' },
-            { en: 'He has lived here since 2020.', tr: 'Il habite ici depuis 2020.' },
-            { en: 'We have studied English for three years.', tr: 'Nous étudions l\'anglais depuis trois ans.' },
-          ]
-        },
-        {
-          title: 'Present Simple — indicateurs',
-          content: 'every day/week · always · usually · often · never · on Mondays',
-          rows: [
-            { en: 'I go to school every day.', tr: 'Je vais à l\'école tous les jours.' },
-            { en: 'She always drinks coffee in the morning.', tr: 'Elle boit toujours du café le matin.' },
-            { en: 'They play football on Sundays.', tr: 'Ils jouent au foot le dimanche.' },
-          ]
-        },
-        {
-          title: 'Future (will / going to) — indicateurs',
-          content: 'tomorrow · next… · soon · in + durée future',
-          rows: [
-            { en: 'She will call you tomorrow morning.', tr: 'Elle t\'appellera demain matin.' },
-            { en: 'We are going to travel next month.', tr: 'Nous allons voyager le mois prochain.' },
-            { en: 'He will be back in two days.', tr: 'Il sera de retour dans deux jours.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple)',
-        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect)',
-        '"I know him since 5 years." ✗ → "I have known him for 5 years." ✓ (for + durée = PP)',
-      ],
-      tips: [
-        '"since" + moment précis (since 2020, since Monday) · "for" + durée (for 3 years)',
-        'Moment précis et terminé → Past Simple · Lien avec le présent → Present Perfect',
-        '"ago" = il y a (passé) · "in 2 days" = dans 2 jours (futur)',
-      ],
-      summary: [
-        'yesterday / ago / last / in 2005 → Past Simple',
-        'already / yet / just / since / for → Present Perfect',
-        'every day / always / usually → Present Simple',
-        'tomorrow / next / soon / in 2 days → Future',
-      ]
-    },
-    mg: {
-      intro: "Ny fisaraham-potoana amin\'ny anglisy dia misy indicators (teny famantarana) manokana. Ireo teny ireo no mametra ny temps ampiasaina.",
-      sections: [
-        {
-          title: 'Past Simple — indicators',
-          content: 'yesterday · ago · last… · in + taona · when I was…',
-          rows: [
-            { en: 'I met her yesterday at the market.', tr: 'Nahita azy aho omaly teny an-tsena.' },
-            { en: 'He left two hours ago.', tr: 'Nandeha izy efatra ora lasa izay.' },
-            { en: 'We went to the beach last summer.', tr: 'Nankany an-dranomasina izahay ny lohataona lasa.' },
-          ]
-        },
-        {
-          title: 'Present Perfect — indicators',
-          content: 'already · yet · just · since · for · ever · never · recently',
-          rows: [
-            { en: 'I have already eaten lunch.', tr: 'Efa nisakafo atoandro aho.' },
-            { en: 'Have you finished your homework yet?', tr: 'Vita ny asanao ve?' },
-            { en: 'She has just arrived home.', tr: 'Vao tonga an-trano izy.' },
-            { en: 'He has lived here since 2020.', tr: 'Monina eto izy hatramin\'ny 2020.' },
-            { en: 'We have studied English for three years.', tr: 'Nandalina anglisy izahay mandritra ny telo taona.' },
-          ]
-        },
-        {
-          title: 'Present Simple — indicators',
-          content: 'every day · always · usually · often · never · on Sundays',
-          rows: [
-            { en: 'I go to school every day.', tr: 'Mankany sekoly aho isan\'andro.' },
-            { en: 'She always drinks coffee in the morning.', tr: 'Mandrakariva misotro kafe maraina izy.' },
-          ]
-        },
-        {
-          title: 'Future — indicators',
-          content: 'tomorrow · next… · soon · in + fotoana ho avy',
-          rows: [
-            { en: 'She will call you tomorrow morning.', tr: 'Hiantso anao izy rahampitso maraina.' },
-            { en: 'We are going to travel next month.', tr: 'Handeha dia izahay ny volana ho avy.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"I have seen him yesterday." ✗ → "I saw him yesterday." ✓ (yesterday = Past Simple)',
-        '"I already ate." ✗ → "I have already eaten." ✓ (already = Present Perfect)',
-      ],
-      tips: [
-        '"since" + fotoana manokana (since 2020) · "for" + faharetan\'ny fotoana (for 3 years)',
-        'Fotoana mifarana = Past Simple · Mifandray amin\'ny ankehitriny = Present Perfect',
-      ],
-      summary: [
-        'yesterday / ago / last / in 2005 → Past Simple',
-        'already / yet / just / since / for → Present Perfect',
-        'every day / always / usually → Present Simple',
-        'tomorrow / next / soon → Future',
-      ]
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // REPORTEDSPEECH — B1
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'reportedSpeech',
     title: 'Discours Indirect',
@@ -4289,130 +4195,6 @@ export const bokyChapters = [
       ],
     }
   },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // CONNECTORS — B1
-  // ══════════════════════════════════════════════════════════════════════
-  {
-    id: 'connectors',
-    title: 'Connectors & Conjunctions — Connecteurs',
-    icon: '🔗',
-    level: 'B1',
-    fr: {
-      intro: "Les connecteurs et conjonctions permettent de relier des idées, d\'exprimer des causes, des contrastes ou des ajouts. Ils sont indispensables pour écrire et parler de façon fluide et structurée.",
-      sections: [
-        {
-          title: 'Coordination (and, but, or, so)',
-          content: 'Relient deux éléments ou propositions de même niveau.',
-          rows: [
-            { en: 'I like tea and coffee.', tr: 'J\'aime le thé et le café.' },
-            { en: 'She is tired but she keeps working hard.', tr: 'Elle est fatiguée mais elle continue à travailler.' },
-            { en: 'You can stay or leave now.', tr: 'Tu peux rester ou partir maintenant.' },
-            { en: 'It was raining, so we stayed home.', tr: 'Il pleuvait, donc nous sommes restés à la maison.' },
-          ]
-        },
-        {
-          title: 'Cause & Résultat (because, since, therefore)',
-          content: 'because / since → la cause · therefore / as a result → la conséquence',
-          rows: [
-            { en: 'I was late because the bus broke down.', tr: 'J\'étais en retard parce que le bus est tombé en panne.' },
-            { en: 'Since it was cold outside, we put on our coats.', tr: 'Comme il faisait froid dehors, nous avons mis nos manteaux.' },
-            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Il a beaucoup étudié. Par conséquent, il a réussi.' },
-          ]
-        },
-        {
-          title: 'Contraste (although, however, nevertheless)',
-          content: 'although + proposition · however / nevertheless en début de phrase (+ virgule)',
-          rows: [
-            { en: 'Although it was expensive, she bought it.', tr: 'Bien que ce soit cher, elle l\'a acheté.' },
-            { en: 'I was very tired. However, I finished my homework.', tr: 'J\'étais très fatigué. Cependant, j\'ai fini mes devoirs.' },
-            { en: 'The plan was risky. Nevertheless, they all agreed.', tr: 'Le plan était risqué. Néanmoins, ils ont tous accepté.' },
-            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Même s\'il a plu, nous avons profité du voyage.' },
-          ]
-        },
-        {
-          title: 'Addition (moreover, furthermore, in addition)',
-          content: 'Ajoutent une information. Registre soutenu (surtout à l\'écrit).',
-          rows: [
-            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'L\'hôtel est propre. De plus, il est abordable.' },
-            { en: 'Furthermore, the location is excellent.', tr: 'En outre, l\'emplacement est excellent.' },
-            { en: 'In addition to English, she also speaks Spanish.', tr: 'En plus de l\'anglais, elle parle aussi espagnol.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"Although she was tired, but she worked." ✗ → "Although she was tired, she worked." ✓ (pas de "but" après "although")',
-        '"Because I was tired, so I slept." ✗ → "Because I was tired, I slept." ✓',
-        '"However she was tired, she worked." ✗ → "Although she was tired, she worked." ✓ (however ≠ although)',
-      ],
-      tips: [
-        '"So" = conséquence · "because" = cause',
-        '"Although" + proposition complète des deux côtés ; jamais suivi de "but"',
-        '"However" = début de nouvelle phrase ou après un point-virgule (registre soutenu)',
-      ],
-      summary: [
-        'and / but / or / so → coordination simple',
-        'because / since → cause ; therefore → conséquence',
-        'although / even though → contraste (+ proposition) ; however → contraste (+ phrase)',
-      ]
-    },
-    mg: {
-      intro: "Ny connector sy conjonction dia teny mampifandray hevitra roa na misea. Ilaina indrindra amin\'ny soratra sy ny resaka voalamina.",
-      sections: [
-        {
-          title: 'Coordination (and, but, or, so)',
-          content: 'Mampifandray element na proposition amin\'ny ambaratonga mitovy.',
-          rows: [
-            { en: 'I like tea and coffee.', tr: 'Tia dite sy kafe aho.' },
-            { en: 'She is tired but she keeps working hard.', tr: 'Vizana izy nefa mitohy miasa.' },
-            { en: 'It was raining, so we stayed home.', tr: 'Nisy orana, koa nijanona tao an-trano izahay.' },
-          ]
-        },
-        {
-          title: 'Antony sy Vokatr\'izany (because, since, therefore)',
-          content: 'because / since → ny antony · therefore → ny vokatr\'izany',
-          rows: [
-            { en: 'I was late because the bus broke down.', tr: 'Diso fotoana aho satria very ny bus.' },
-            { en: 'He studied very hard. Therefore, he passed the exam.', tr: 'Nahery fianarana izy. Koa amin\'izany, nahita fandaharam-potoana izy.' },
-          ]
-        },
-        {
-          title: 'Fanoherana (although, however, nevertheless)',
-          content: 'although + proposition · however / nevertheless eo am-piandohan\'ny fehezanteny',
-          rows: [
-            { en: 'Although it was expensive, she bought it.', tr: 'Na dia lafo aza, novidiny ihany.' },
-            { en: 'I was very tired. However, I finished my homework.', tr: 'Vizana be aho. Kanefa, vita ny asako.' },
-            { en: 'Even though it rained, we enjoyed the trip.', tr: 'Na dia nisy orana aza, nanana fialam-boly tsara izahay.' },
-          ]
-        },
-        {
-          title: 'Fanampiana (moreover, furthermore, in addition)',
-          content: 'Manampy vaovao. Fampiasana amin\'ny ssoratra indrindra.',
-          rows: [
-            { en: 'The hotel is clean. Moreover, it is very affordable.', tr: 'Madio ny hotely. Ho fanampin\'izany, mora ny vidiny.' },
-            { en: 'In addition to English, she also speaks Spanish.', tr: 'Ho fanampin\'ny anglisy, mahay espaniola koa izy.' },
-          ]
-        },
-      ],
-      commonErrors: [
-        '"Although...but..." ✗ → "Although..." fotsiny ✓ (tsy mampifandray "but" aorian\'ny "although")',
-        '"Because...so..." ✗ → "Because..." fotsiny ✓',
-      ],
-      tips: [
-        '"So" = vokatr\'izany · "because" = antony',
-        '"Although" + fehezanteny feno roa lafiny; tsy misy "but" aorian\'ny',
-      ],
-      summary: [
-        'and / but / or / so → fampifandraisana tsotra',
-        'because / since → antony ; therefore → vokatr\'izany',
-        'although → fanoherana (+ fehezanteny) ; however → fanoherana (+ fehezanteny vaovao)',
-      ]
-    }
-  },
-
-  // ══════════════════════════════════════════════════════════════════════
-  // PHRASALVERBS — B1–B2
-  // ══════════════════════════════════════════════════════════════════════
   {
     id: 'phrasalVerbs',
     title: 'Phrasal Verbs — Verbes à particule',
@@ -4533,52 +4315,74 @@ export const bokyChapters = [
       ]
     }
   },
-
+  {
+    id: 'futurePerfect',
+    title: 'Future Perfect',
+    icon: '✅🚀',
+    level: 'B2',
+    fr: {
+      intro: 'Le Future Perfect (<strong>will have + participe passé</strong>) exprime une action qui sera terminée avant un moment précis dans le futur.',
+      sections: [
+        {
+          title: 'Formation et usage',
+          content: 'Sujet + <strong>will have</strong> + participe passé.',
+          rows: [
+            { en: 'By 2030, I will have finished university.', tr: 'D\'ici 2030, j\'aurai terminé l\'université.' },
+            { en: 'She will have cooked dinner by the time you arrive.', tr: 'Elle aura cuisiné le dîner quand tu arriveras.' },
+            { en: 'Will you have finished the report by Friday?', tr: 'Auras-tu fini le rapport d\'ici vendredi ?' },
+          ]
+        },
+      ],
+      tips: [
+        'Signal words : by (then/tomorrow/2030), before, by the time',
+        'Négatif : won\'t have + participe passé',
+        'Moins fréquent que les autres temps, mais important en B2',
+      ],
+      summary: [
+        'Forme : will have + participe passé',
+        'Usage : action terminée avant un moment futur précis',
+        'Signal words : by (then/Friday/2030), by the time',
+        'Négatif : won\'t have + pp',
+      ],
+      quickExercises: [
+        { q: 'Complete: By 2030, she ___ (finish) university.', a: 'will have finished', hint: 'will have + pp' },
+        { q: 'Negative: "I will have saved money." → I ___', a: 'won\'t have saved money.', hint: 'will → won\'t' },
+        { q: 'Correct: "By then, I will finish my work."', a: 'By then, I will have finished my work.', hint: '"by" + futur = Future Perfect' },
+      ],
+    },
+    mg: {
+      intro: 'Ny Future Perfect (<strong>will have + participe passé</strong>) dia fampisehoana ny asa hvita tanteraka mialoha ny fotoana voafaritra amin\'ny ho avy.',
+      sections: [
+        {
+          title: 'Fomba fanaovana sy fampiasana',
+          content: 'Sujet + <strong>will have</strong> + participe passé.',
+          rows: [
+            { en: 'By 2030, I will have finished university.', tr: 'Amin\'ny 2030, efa vita ny fianarako any amin\'ny oniversite.' },
+            { en: 'She will have cooked dinner by the time you arrive.', tr: 'Efa vita ny sakafo hariva fony tonga ianao.' },
+            { en: 'Will you have finished the report by Friday?', tr: 'Vita ny tatitra alohan\'ny Zoma ve?' },
+          ]
+        },
+      ],
+      tips: [
+        'Teny mampitandremana : by (then/tomorrow/2030), before, by the time',
+        'Fandavana : won\'t have + participe passé',
+        'Tsy matetika ampiasaina, fa ilaina amin\'ny B2',
+      ],
+      summary: [
+        'Endrika : will have + participe passé',
+        'Ampiasaina : asa vita mialoha ny fotoana ho avy voafaritra',
+        'Teny mampitandremana : by (then/2030/Friday), by the time',
+        'Fandavana : won\'t have + pp',
+      ],
+      quickExercises: [
+        { q: 'Fenoy: By 2030, she ___ (finish) ny fianarany.', a: 'will have finished', hint: 'will have + pp' },
+        { q: 'Fandavana: "I will have saved money." → I ___', a: 'won\'t have saved money.', hint: 'will → won\'t' },
+        { q: 'Mety sa tsia? "By then, I will finish my work."', a: 'Diso → I will have finished my work.', hint: '"by" → Future Perfect' },
+      ],
+    }
+  },
 ];
 
-// ─── Natural textbook progression order ──────────────────────────────────────
-// (Cambridge / Oxford English Grammar in Use style)
-const _CHAPTER_ORDER = [
-  'pronouns',              // A1 — subject/object pronouns first
-  'toBe',                  // A1 — most basic verb
-  'articles',              // A1 — a / an / the
-  'plurals',               // A1 — singular → plural
-  'therebeis',             // A1 — there is / there are
-  'prepositions',          // A1–A2 — in/on/at/to/from
-  'questions',             // A1–A2 — question words
-  'presentSimple',         // A2 — first main tense
-  'presentContinuous',     // A2 — contrast with present simple
-  'interrogative',         // A2 — Yes/No & Wh- questions
-  'imperatives',           // A2 — commands & suggestions
-  'someAny',               // A2 — some / any / no
-  'comparatives',          // A2 — taller / more interesting / best
-  'irregularVerbs',        // A2 — needed for past simple
-  'modals',                // A2 — can / should / must
-  'possessives',           // A2 — my/mine, your/yours…
-  'adverbs',               // A2 — always, quickly, well
-  'pastSimple',            // A2–B1 — past tense
-  'futureSimple',          // A2–B1 — will / going to
-  'countableUncountable',  // A2–B1 — much/many/a lot of
-  'presentPerfect',        // B1 — have / has + p.p.
-  'pastContinuous',        // B1 — was/were + -ing
-  'futureContinuous',      // B1 — will be + -ing
-  'pastPerfect',           // B1 — had + p.p.
-  'timeMarkers',           // B1 — yesterday/ago → already/yet/just
-  'passiveVoice',          // B1 — is done / was done
-  'connectors',            // B1 — and/but/because/although/however
-  'tenseChooser',          // B1 — choosing the right tense
-  'conditionals',          // B1–B2 — if clauses
-  'reportedSpeech',        // B1–B2 — he said that…
-  'phrasalVerbs',          // B1–B2 — get up / give up / look for
-  'futurePerfect',         // B2 — will have done
-];
-bokyChapters.sort((a, b) => {
-  const ai = _CHAPTER_ORDER.indexOf(a.id);
-  const bi = _CHAPTER_ORDER.indexOf(b.id);
-  return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
-});
-
-// ─── Chapter index for sidebar ───────────────────────────────────────────────
 export const bokyIndex = bokyChapters.map(c => ({
   id: c.id,
   title: c.title,
