@@ -2207,60 +2207,59 @@ export function getTheoryById(id) {
   return theory[id] || null;
 }
 
+// ── Ordered to match Boky chapter sequence (A1 → B2) ────────────────────────
 export const theoryTopics = [
-  { id: 'pronouns',          label: 'Pronoms',                        icon: '👥',   level: 'A1' },
-  { id: 'toBe',              label: 'To Be (am/is/are/was)',          icon: '🔵',   level: 'A1' },
-  { id: 'articles',          label: 'Articles (a/an/the)',            icon: '🔤',   level: 'A1' },
-  { id: 'plurals',           label: 'Pluriels',                       icon: '🔢',   level: 'A1' },
-  { id: 'therebeis',         label: 'There is / are',                 icon: '📌',   level: 'A1' },
-  { id: 'prepositions',      label: 'Prépositions',                   icon: '📍',   level: 'A1–A2' },
-  { id: 'questions',         label: 'Questions (Wh-)',                icon: '❓',   level: 'A1–A2' },
-  { id: 'imperatives',       label: 'L\'Impératif',                   icon: '📢',   level: 'A2' },
-  { id: 'someAny',           label: 'Some, Any & No',                 icon: '🔢',   level: 'A2' },
-  { id: 'comparatives',      label: 'Comparatifs & Superlatifs',      icon: '⚖️',   level: 'A2' },
-  { id: 'irregularVerbs',    label: 'Verbes Irréguliers',             icon: '📋',   level: 'A2' },
-  { id: 'modals',            label: 'Modaux (can/must/would…)',       icon: '🛠️',   level: 'A2' },
-  { id: 'possessives',       label: 'Adjectifs & Pronoms Possessifs', icon: '🏷️',   level: 'A2' },
-  { id: 'adverbs',           label: 'Adverbes (fréquence & manière)', icon: '⚡',   level: 'A2' },
-  // ── A2–B1 ────────────────────────────────────────────────────────
-  { id: 'pastSimple',        label: 'Past Simple',                    icon: '⏮️',   level: 'A2–B1' },
-  { id: 'futureSimple',      label: 'Future Simple',                  icon: '🚀',   level: 'A2–B1' },
-  { id: 'countableUncountable', label: 'Dénombrables & Indénombrables', icon: '🧮', level: 'A2–B1' },
-  // ── B1 ───────────────────────────────────────────────────────────
-  { id: 'presentPerfect',    label: 'Present Perfect',                icon: '🔗',   level: 'B1' },
-  { id: 'pastContinuous',    label: 'Past Continuous',                icon: '⏸️',   level: 'B1' },
-  { id: 'futureContinuous',  label: 'Future Continuous',              icon: '🔮',   level: 'B1' },
-  { id: 'pastPerfect',       label: 'Past Perfect',                   icon: '⏮️⏮️', level: 'B1' },
-  { id: 'timeMarkers',       label: 'Indicateurs de temps',           icon: '⏱️',   level: 'B1' },
-  { id: 'passiveVoice',      label: 'Voix Passive',                   icon: '🔄',   level: 'B1' },
-  { id: 'connectors',        label: 'Connecteurs & Conjonctions',     icon: '🔗',   level: 'B1' },
-  { id: 'tenseChooser',      label: 'Choisir le bon temps',           icon: '🎯',   level: 'B1' },
-  // ── B1–B2 ────────────────────────────────────────────────────────
-  { id: 'conditionals',      label: 'Conditionnels (if)',             icon: '🔀',   level: 'B1–B2' },
-  { id: 'reportedSpeech',    label: 'Discours Indirect',              icon: '💬',   level: 'B1–B2' },
-  { id: 'phrasalVerbs',      label: 'Phrasal Verbs essentiels',       icon: '💡',   level: 'B1–B2' },
-  // ── B2 ───────────────────────────────────────────────────────────
-  { id: 'futurePerfect',     label: 'Future Perfect',                 icon: '✅🚀',  level: 'B2' },
-
-  // ── A1–A2 (new) ──────────────────────────────────────────────────────────
-  { id: 'adjectives',    label: 'Les Adjectifs',                      icon: '✨',   level: 'A1–A2' },
-  // ── B1 (new) ─────────────────────────────────────────────────────────────
-  { id: 'sinceFor',      label: 'Since & For',                        icon: '⏳',   level: 'B1' },
-  { id: 'usedTo',        label: 'Used to',                            icon: '🔙',   level: 'B1' },
-  { id: 'verbsOfState',  label: 'Verbes + Gérondif / Infinitif',      icon: '🎯',   level: 'B1' },
-
-  { id: 'relativeClauses', label: 'Propositions Relatives',         icon: '🔗',   level: 'A2–B1' },
-  { id: 'goingTo',         label: 'Futur avec Going To',            icon: '🚀',   level: 'A2' },
+  // ── Bloc 1 : Fondations A1 ──────────────────────────────────────────────────
+  { id: 'pronouns',             label: 'Pronoms',                        icon: '👥',   level: 'A1' },
+  { id: 'toBe',                 label: 'To Be (am/is/are/was)',          icon: '🔵',   level: 'A1' },
+  { id: 'articles',             label: 'Articles (a/an/the)',            icon: '🔤',   level: 'A1' },
+  { id: 'plurals',              label: 'Pluriels',                       icon: '🔢',   level: 'A1' },
+  { id: 'therebeis',            label: 'There is / are',                 icon: '📌',   level: 'A1' },
+  { id: 'questions',            label: 'Questions (Wh-)',                icon: '❓',   level: 'A1–A2' },
+  { id: 'interrogative',        label: 'Questions (Yes/No & Wh-)',       icon: '🔍',   level: 'A2' },
+  // ── Bloc 2 : Décrire & Quantifier A1–A2 ────────────────────────────────────
+  { id: 'adjectives',           label: 'Les Adjectifs',                  icon: '✨',   level: 'A1–A2' },
+  { id: 'possessives',          label: 'Adjectifs & Pronoms Possessifs', icon: '🏷️',   level: 'A2' },
+  { id: 'prepositions',         label: 'Prépositions',                   icon: '📍',   level: 'A1–A2' },
+  { id: 'countableUncountable', label: 'Dénombrables & Indénombrables',  icon: '🧮',   level: 'A2–B1' },
+  { id: 'someAny',              label: 'Some, Any & No',                 icon: '🔢',   level: 'A2' },
+  { id: 'imperatives',          label: "L'Impératif",                    icon: '📢',   level: 'A2' },
+  // ── Bloc 3 : Actions dans le Temps A2 ──────────────────────────────────────
+  { id: 'adverbs',              label: 'Adverbes (fréquence & manière)', icon: '⚡',   level: 'A2' },
+  { id: 'comparatives',         label: 'Comparatifs & Superlatifs',      icon: '⚖️',   level: 'A2' },
+  { id: 'modals',               label: 'Modaux (can/must/would…)',       icon: '🛠️',   level: 'A2' },
+  { id: 'presentSimple',        label: 'Present Simple',                 icon: '📖',   level: 'A2' },
+  { id: 'presentContinuous',    label: 'Present Continuous',             icon: '🔄',   level: 'A2' },
+  { id: 'goingTo',              label: 'Futur avec Going To',            icon: '🚀',   level: 'A2' },
+  { id: 'futureSimple',         label: 'Future Simple (Will)',           icon: '🚀',   level: 'A2–B1' },
+  { id: 'verbsOfState',         label: 'Verbes + Gérondif / Infinitif', icon: '🎯',   level: 'B1' },
+  // ── Bloc 4 : Le Passé A2–B1 ────────────────────────────────────────────────
+  { id: 'irregularVerbs',       label: 'Verbes Irréguliers',             icon: '📋',   level: 'A2' },
+  { id: 'pastSimple',           label: 'Past Simple',                    icon: '⏮️',   level: 'A2–B1' },
+  { id: 'relativeClauses',      label: 'Propositions Relatives',         icon: '🔗',   level: 'A2–B1' },
+  { id: 'connectors',           label: 'Connecteurs & Conjonctions',     icon: '🔗',   level: 'B1' },
+  // ── Bloc 5 : Intermédiaire B1 ───────────────────────────────────────────────
+  { id: 'pastContinuous',       label: 'Past Continuous',                icon: '⏸️',   level: 'B1' },
+  { id: 'usedTo',               label: 'Used to',                        icon: '🔙',   level: 'B1' },
+  { id: 'presentPerfect',       label: 'Present Perfect',                icon: '🔗',   level: 'B1' },
+  { id: 'sinceFor',             label: 'Since & For',                    icon: '⏳',   level: 'B1' },
+  { id: 'timeMarkers',          label: 'Indicateurs de temps',           icon: '⏱️',   level: 'B1' },
+  { id: 'tenseChooser',         label: 'Choisir le bon temps',           icon: '🎯',   level: 'B1' },
+  // ── Bloc 6 : Structures Avancées B1–B2 ─────────────────────────────────────
+  { id: 'pastPerfect',          label: 'Past Perfect',                   icon: '⏮️⏮️', level: 'B1' },
+  { id: 'futureContinuous',     label: 'Future Continuous',              icon: '🔮',   level: 'B1' },
+  { id: 'passiveVoice',         label: 'Voix Passive',                   icon: '🔄',   level: 'B1' },
+  { id: 'conditionals',         label: 'Conditionnels (if)',             icon: '🔀',   level: 'B1–B2' },
+  { id: 'reportedSpeech',       label: 'Discours Indirect',              icon: '💬',   level: 'B1–B2' },
+  { id: 'phrasalVerbs',         label: 'Phrasal Verbs essentiels',       icon: '💡',   level: 'B1–B2' },
+  { id: 'futurePerfect',        label: 'Future Perfect',                 icon: '✅🚀',  level: 'B2' },
 ];
 
 export const vocabTopics = [
   { id: 'routine', label: 'Routine Quotidienne', icon: '🌅' },
-  { id: 'family', label: 'La Famille', icon: '👨‍👩‍👧' },
-  { id: 'body', label: 'Le Corps', icon: '💪' },
-  { id: 'time', label: 'L\'Heure et le Temps', icon: '⏰' },
-  { id: 'presentSimple',     label: 'Present Simple',                 icon: '📖',   level: 'A2' },
-  { id: 'presentContinuous', label: 'Present Continuous',             icon: '🔄',   level: 'A2' },
-  { id: 'interrogative',     label: 'Questions (Yes/No & Wh-)',       icon: '❓',   level: 'A2' },
+  { id: 'family',  label: 'La Famille',           icon: '👨‍👩‍👧' },
+  { id: 'body',    label: 'Le Corps',              icon: '💪' },
+  { id: 'time',    label: "L'Heure et le Temps",  icon: '⏰' },
 ];
 
 // ─── BOKY FAMPIANARANA — Malagasy Grammar Manual ─────────────────────────────
