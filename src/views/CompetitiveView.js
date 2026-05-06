@@ -1,6 +1,5 @@
-import { getExercisesByTopic, getExercisesByLevel } from '../data/exercises.js';
+import { getExercisesByTopic, getExercisesByLevel, GRAMMAR_TOPICS } from '../data/exercises.js';
 import { VOCABULARY, VOCAB_CATEGORIES } from '../data/vocabulary.js';
-import { TOPICS } from '../data/topics.js';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // HELPERS
@@ -109,7 +108,8 @@ function buildVocabPool(catId, difficulty) {
 
 // Build grammar pool with strict per-level type filtering.
 function buildGrammarPool(topicId, difficulty) {
-  const topicIds = topicId ? [topicId] : TOPICS.map(t => t.id);
+  // AUDIT 2: use ALL exercise topics (not just the 16 curriculum topics)
+  const topicIds = topicId ? [topicId] : Object.keys(GRAMMAR_TOPICS);
   const collected = [];
   for (const tid of topicIds) {
     const exs = getExercisesByLevel
@@ -235,7 +235,9 @@ export function renderCompetitive() {
   }
 
   function renderSetup() {
-    const grammarTopicsList = TOPICS.map(t => `<option value="${t.id}" ${grammarTopic===t.id?'selected':''}>${escHtml(t.label)}</option>`).join('');
+    const grammarTopicsList = Object.entries(GRAMMAR_TOPICS)
+      .map(([id, t]) => `<option value="${id}" ${grammarTopic===id?'selected':''}>${t.icon || ''} ${escHtml(t.label)}</option>`)
+      .join('');
     const vocabThemesList   = VOCAB_CATEGORIES.map(c => `<option value="${c.id}" ${vocabTheme===c.id?'selected':''}>${c.icon || ''} ${escHtml(c.label)}</option>`).join('');
 
     container.innerHTML = `

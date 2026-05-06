@@ -9,6 +9,14 @@ export const exercises = {
 
   // ─── ROUTINE ────────────────────────────────────────────────────────────────
   routine: [
+  // __ L1 audit additions __
+  {id:'r_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme du verbe.',template:'She ___ at 7am every day.',answer:'wakes',hint:'wake + she → wakes.',explanation:'She wakes up every day.'},
+  {id:'r_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme du verbe.',template:'He ___ his teeth every morning.',answer:'brushes',hint:'brush + he → brushes.',explanation:'He brushes his teeth.'},
+  {id:'r_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme du verbe.',template:'I ___ to work by bus.',answer:'go',hint:'go avec I → go.',explanation:'I go to work by bus.'},
+  {id:'r_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme du verbe.',template:'She ___ home at 6pm.',answer:'arrives',hint:'arrive + she → arrives.',explanation:'She arrives home at 6pm.'},
+  {id:'r_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme du verbe.',template:'They ___ breakfast every morning.',answer:'eat',hint:'eat avec they → eat.',explanation:'They eat breakfast.'},
+  {id:'r_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme du verbe.',template:'He ___ at 10pm every night.',answer:'sleeps',hint:'sleep + he → sleeps.',explanation:'He sleeps at 10pm.'},
+
     {
       id: 'r01', type: 'fill-blank', diffLevel: 1, level: 'A1',
       instruction: 'Complétez avec la bonne forme du verbe.',
@@ -368,6 +376,14 @@ export const exercises = {
 
   // ─── BODY ───────────────────────────────────────────────────────────────────
   body: [
+  // __ L1 audit additions __
+  {id:'b_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon mot.',template:'She hurt her ___ when she fell.',answer:'arm',hint:'Le bras = arm.',explanation:'She hurt her arm.'},
+  {id:'b_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon mot.',template:'His ___ hurts. He has a headache.',answer:'head',hint:'La tete = head.',explanation:'His head hurts.'},
+  {id:'b_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon mot.',template:'She writes with her right ___.',answer:'hand',hint:'La main = hand.',explanation:'She writes with her right hand.'},
+  {id:'b_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon mot.',template:'He kicked the ball with his ___.',answer:'foot',hint:'Le pied = foot.',explanation:'He kicked with his foot.'},
+  {id:'b_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon mot.',template:'She has long, dark ___.',answer:'hair',hint:'Les cheveux = hair.',explanation:'She has long dark hair.'},
+  {id:'b_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon mot.',template:'She bends her ___ when she runs.',answer:'knee',hint:'Le genou = knee.',explanation:'She bends her knee.'},
+
     {
       id: 'b01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
@@ -607,6 +623,14 @@ export const exercises = {
 
   // ─── VERBS ───────────────────────────────────────────────────────────────────
   verbs: [
+  // __ L1 audit additions __
+  {id:'v_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'She ___ to school every day.',answer:'goes',hint:'go + she -> goes.',explanation:'She goes to school.'},
+  {id:'v_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'I ___ English at school.',answer:'speak',hint:'speak avec I -> speak.',alternatives:['learn','study'],explanation:'I speak English.'},
+  {id:'v_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'He ___ in a big house.',answer:'lives',hint:'live + he -> lives.',explanation:'He lives in a big house.'},
+  {id:'v_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'They ___ football every weekend.',answer:'play',hint:'play avec they -> play.',explanation:'They play football.'},
+  {id:'v_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'He ___ a book every night.',answer:'reads',hint:'read + he -> reads.',explanation:'He reads a book every night.'},
+  {id:'v_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'She ___ her mother very much.',answer:'loves',hint:'love + she -> loves.',explanation:'She loves her mother.'},
+
     {
       id: 'v01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais.',
@@ -726,6 +750,14 @@ export const exercises = {
 
   // ─── TIME ADVERBS ────────────────────────────────────────────────────────────
   timeAdverbs: [
+  // __ L1 audit additions __
+  {id:'ta_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon adverbe.',template:'She ___ eats breakfast. She never skips it.',answer:'always',hint:'always = tout le temps (100%).',explanation:'She always eats breakfast.'},
+  {id:'ta_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon adverbe.',template:'He ___ comes late. Maybe once a year.',answer:'rarely',hint:'rarely = rarement.',alternatives:['seldom','never'],explanation:'He rarely comes late.'},
+  {id:'ta_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon adverbe.',template:'She ___ goes to the cinema. About once a week.',answer:'often',hint:'often = souvent.',alternatives:['sometimes'],explanation:'She often goes to the cinema.'},
+  {id:'ta_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon adverbe.',template:'I ___ eat meat. I am a vegetarian.',answer:'never',hint:'never = jamais.',explanation:'I never eat meat.'},
+  {id:'ta_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon adverbe.',template:'He is ___ late. About half the time.',answer:'sometimes',hint:'sometimes = parfois.',explanation:'He is sometimes late.'},
+  {id:'ta_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon adverbe.',template:'She ___ calls her grandmother on Sundays.',answer:'usually',hint:'usually = generalement.',alternatives:['often','always'],explanation:'She usually calls her grandmother.'},
+
     {
       id: 'ta01', type: 'translate', diffLevel: 2, level: 'A2',
       instruction: 'Traduisez en anglais.',
@@ -1325,6 +1357,14 @@ export const exercises = {
 
   // ─── NUMBERS ─────────────────────────────────────────────────────────────────
   numbers: [
+  // __ L1 audit additions __
+  {id:'n_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon nombre en lettres.',template:'Two plus three equals ___.',answer:'five',hint:'2+3=5=five.',explanation:'Five = cinq.'},
+  {id:'n_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon nombre en lettres.',template:'Ten minus four equals ___.',answer:'six',hint:'10-4=6=six.',explanation:'Six = six.'},
+  {id:'n_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon nombre en lettres.',template:'Two times five equals ___.',answer:'ten',hint:'2x5=10=ten.',explanation:'Ten = dix.'},
+  {id:'n_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon chiffre en lettres.',template:'There are ___ days in a week.',answer:'seven',hint:'7 jours dans une semaine.',explanation:'Seven = sept.'},
+  {id:'n_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon chiffre en lettres.',template:'A year has ___ months.',answer:'twelve',hint:'12 mois dans une annee.',explanation:'Twelve = douze.'},
+  {id:'n_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon chiffre en lettres.',template:'I have ___ sisters: one older and one younger.',answer:'two',hint:'un + un = deux.',explanation:'Two = deux.'},
+
     {
       id: 'n01', type: 'translate', diffLevel: 2, level: 'A1',
       instruction: 'Traduisez en anglais (écrivez le nombre en lettres).',
@@ -2123,6 +2163,18 @@ exercises.plurals.push(
 
 // ─── THERE IS / ARE ──────────────────────────────────────────────────────────
 exercises.therebeis.push(
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'tbi_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ a cat on the mat.',answer:'is',hint:'a cat = singulier.',explanation:'"There is a cat."'},
+  {id:'tbi_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ three students in the room.',answer:'are',hint:'three students = pluriel.',explanation:'"There are three students."'},
+  {id:'tbi_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ a dog in the garden.',answer:'is',hint:'a dog = singulier.',explanation:'"There is a dog."'},
+  {id:'tbi_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ two chairs near the table.',answer:'are',hint:'two chairs = pluriel.',explanation:'"There are two chairs."'},
+  {id:'tbi_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ a school near my house.',answer:'is',hint:'a school = singulier.',explanation:'"There is a school."'},
+  {id:'tbi_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ many trees in the forest.',answer:'are',hint:'many trees = pluriel.',explanation:'"There are many trees."'},
+  {id:'tbi_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ a problem with the computer.',answer:'is',hint:'a problem = singulier.',explanation:'"There is a problem."'},
+  {id:'tbi_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ five apples in the basket.',answer:'are',hint:'five apples = pluriel.',explanation:'"There are five apples."'},
+  {id:'tbi_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ a hospital in this town.',answer:'is',hint:'a hospital = singulier.',explanation:'"There is a hospital."'},
+  {id:'tbi_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is ou are.',template:'There ___ some flowers on the table.',answer:'are',hint:'some flowers = pluriel.',explanation:'"There are some flowers."'},
+
   // Level 1 (+11)
   {id:'tbi_1_01',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ a book on the table.',options:['There is','There are','There has','There have'],answer:'There is',hint:'a book = singulier',explanation:'"There is" + singulier.'},
   {id:'tbi_1_02',type:'multiple-choice',diffLevel:1,instruction:'Choisissez la bonne réponse.',question:'___ three students in the classroom.',options:['There is','There are','There was','There have'],answer:'There are',hint:'three students = pluriel',explanation:'"There are" + pluriel.'},
@@ -3476,6 +3528,17 @@ exercises.comparatives.push(
 
 // ── comparatives L3 (12) ─────────────────────────────────────
 exercises.comparatives.push(
+
+  // ── L1 single-word fill-blank (added by audit) ──
+  {id:'comp_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'She is ___ than her brother.',answer:'taller',hint:'"tall" → taller (comparative).',explanation:'"Taller" = plus grand(e).'},
+  {id:'comp_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'This film is ___ than the last one.',answer:'better',hint:'"good" → better (irregular).',explanation:'"Better" = meilleur.'},
+  {id:'comp_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'He runs ___ than me.',answer:'faster',hint:'"fast" → faster (comparative).',explanation:'"Faster" = plus vite.'},
+  {id:'comp_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'She is the ___ student in the class.',answer:'smartest',hint:'"smart" → smartest (superlative).',explanation:'"Smartest" = la plus intelligente.'},
+  {id:'comp_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'This city is ___ than the village.',answer:'bigger',hint:'"big" → bigger (double consonant).',explanation:'"Bigger" = plus grand.'},
+  {id:'comp_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'Today is ___ than yesterday.',answer:'hotter',hint:'"hot" → hotter.',explanation:'"Hotter" = plus chaud.'},
+  {id:'comp_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'She is the ___ singer I know.',answer:'best',hint:'"good" → best (superlative irregulier).',explanation:'"Best" = la meilleure.'},
+  {id:'comp_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le comparatif ou superlatif.',template:'This road is ___ than the highway.',answer:'shorter',hint:'"short" → shorter.',explanation:'"Shorter" = plus court.'},
+
   {id:'comp_3_12',type:'free-production',diffLevel:3,
    instruction:'Écris une phrase avec le mot donné.',
    keyword:'the more',
@@ -3527,6 +3590,14 @@ exercises.connectors.push(
 
 // ── conditionals L3 (08-12) ──────────────────────────────────
 exercises.conditionals.push(
+  // __ L1 audit additions __
+  {id:'cond_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme.',template:'If it rains, I ___ my umbrella.',answer:'will',hint:'Type 1: if + present, will + base.',explanation:'I will take my umbrella.'},
+  {id:'cond_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme.',template:'If she studies, she ___ the exam.',answer:'will',hint:'Type 1: will + base.',explanation:'She will pass the exam.'},
+  {id:'cond_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme.',template:'If I had money, I ___ a car.',answer:'would',hint:'Type 2: if + past, would + base.',explanation:'I would buy a car.'},
+  {id:'cond_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme.',template:'If you ___ harder, you would succeed.',answer:'tried',hint:'Type 2: if + past simple.',explanation:'If you tried harder, you would succeed.'},
+  {id:'cond_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme.',template:'If it ___ tomorrow, we will cancel.',answer:'rains',hint:'Type 1: if + present simple.',explanation:'If it rains tomorrow...'},
+  {id:'cond_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec la bonne forme.',template:'If she ___ early, she will catch the bus.',answer:'leaves',hint:'leave + she -> leaves.',explanation:'If she leaves early...'},
+
   {id:'cond_3_08',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'If I would know the answer, I would tell you.',
@@ -3568,6 +3639,15 @@ exercises.countableUncountable.push(
 
 // ── countableUncountable L3 (10-12) ──────────────────────────
 exercises.countableUncountable.push(
+  // __ L1 audit additions __
+  {id:'cu_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec much ou many.',template:'How ___ students are in the class?',answer:'many',hint:'students = denombrables -> many.',explanation:'How many students? - denombrables.'},
+  {id:'cu_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec much ou many.',template:'How ___ water do you drink every day?',answer:'much',hint:'water = indenombrable -> much.',explanation:'How much water? - indenombrables.'},
+  {id:'cu_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec much ou many.',template:'How ___ books did you read last year?',answer:'many',hint:'books = denombrables -> many.',explanation:'How many books? - denombrables.'},
+  {id:'cu_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec much ou many.',template:'How ___ time do we have?',answer:'much',hint:'time = indenombrable -> much.',explanation:'How much time? - indenombrable.'},
+  {id:'cu_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec much ou many.',template:'How ___ people live in your town?',answer:'many',hint:'people = pluriel -> many.',explanation:'How many people? - many.'},
+  {id:'cu_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec much ou many.',template:'How ___ coffee do you drink a day?',answer:'much',hint:'coffee = indenombrable -> much.',explanation:'How much coffee? - much.'},
+  {id:'cu_sw_07',type:'fill-blank',diffLevel:1,instruction:'Completez avec much ou many.',template:'How ___ children does she have?',answer:'many',hint:'children = denombrables -> many.',explanation:'How many children? - many.'},
+
   {id:'cu_3_10',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'She gave me a very useful advice.',
@@ -3587,6 +3667,18 @@ exercises.countableUncountable.push(
 
 // ── futureContinuous L3 (08-12) ──────────────────────────────
 exercises.futureContinuous.push(
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'fc_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'I will be ___ at 8pm tonight.',answer:'sleeping',hint:'"sleep" → sleeping.',explanation:'"I will be sleeping."'},
+  {id:'fc_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'She will be ___ all day tomorrow.',answer:'working',hint:'"work" → working.',explanation:'"She will be working."'},
+  {id:'fc_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'They will be ___ football this time tomorrow.',answer:'playing',hint:'"play" → playing.',explanation:'"They will be playing football."'},
+  {id:'fc_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'He will be ___ TV when you arrive.',answer:'watching',hint:'"watch" → watching.',explanation:'"He will be watching TV."'},
+  {id:'fc_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'I will be ___ for you at the station.',answer:'waiting',hint:'"wait" → waiting.',explanation:'"I will be waiting for you."'},
+  {id:'fc_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'We will be ___ English next year.',answer:'studying',hint:'"study" → studying.',alternatives:['learning'],explanation:'"We will be studying English."'},
+  {id:'fc_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'It will be ___ when we arrive.',answer:'raining',hint:'"rain" → raining.',explanation:'"It will be raining."'},
+  {id:'fc_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'She will be ___ dinner when you get home.',answer:'cooking',hint:'"cook" → cooking.',alternatives:['making'],explanation:'"She will be cooking dinner."'},
+  {id:'fc_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'They will be ___ their exams this time next week.',answer:'taking',hint:'"take" → taking.',explanation:'"They will be taking their exams."'},
+  {id:'fc_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'He will be ___ a letter when you call.',answer:'writing',hint:'"write" → writing.',explanation:'"He will be writing a letter."'},
+
   {id:'fc_3_08',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'At 8pm tonight I will be watch the game.',
@@ -3619,6 +3711,18 @@ exercises.futureContinuous.push(
 
 // ── futurePerfect L3 (08-12) ─────────────────────────────────
 exercises.futurePerfect.push(
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'fp_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'By Monday, I will have ___ my homework.',answer:'finished',hint:'"finish" → finished.',explanation:'"I will have finished my homework."'},
+  {id:'fp_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'She will have ___ by the time you arrive.',answer:'left',hint:'"leave" → left.',explanation:'"She will have left."'},
+  {id:'fp_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'They will have ___ the book by Friday.',answer:'read',hint:'"read" → read.',explanation:'"They will have read the book."'},
+  {id:'fp_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'He will have ___ the work by noon.',answer:'done',hint:'"do" → done.',explanation:'"He will have done the work."'},
+  {id:'fp_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'We will have ___ dinner before the film starts.',answer:'eaten',hint:'"eat" → eaten.',explanation:'"We will have eaten dinner."'},
+  {id:'fp_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'She will have ___ all her money by then.',answer:'spent',hint:'"spend" → spent.',explanation:'"She will have spent all her money."'},
+  {id:'fp_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'They will have ___ home before midnight.',answer:'arrived',hint:'"arrive" → arrived.',explanation:'"They will have arrived home."'},
+  {id:'fp_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'I will have ___ this book by tomorrow.',answer:'written',hint:'"write" → written.',explanation:'"I will have written this book."'},
+  {id:'fp_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'He will have ___ three cups of coffee by lunchtime.',answer:'drunk',hint:'"drink" → drunk.',alternatives:['had'],explanation:'"He will have drunk three cups of coffee."'},
+  {id:'fp_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'We will have ___ 100 lessons by the end of the year.',answer:'completed',hint:'"complete" → completed.',alternatives:['finished'],explanation:'"We will have completed 100 lessons."'},
+
   {id:'fp_3_08',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'By next year, she will finish her degree.',
@@ -3665,6 +3769,14 @@ exercises.futureSimple.push(
 
 // ── imperatives L2 (08-12) ───────────────────────────────────
 exercises.imperatives.push(
+  // __ L1 audit additions __
+  {id:'imp_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon imperatif.',template:'___ quiet, please!',answer:'Be',hint:'Be quiet = soyez tranquilles.',explanation:'Be quiet! = imperatif de be.'},
+  {id:'imp_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon imperatif.',template:'___ your hands before eating.',answer:'Wash',hint:'Wash = laver.',explanation:'Wash your hands!'},
+  {id:'imp_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon imperatif.',template:'___ to me carefully.',answer:'Listen',hint:'Listen = ecouter.',explanation:'Listen to me!'},
+  {id:'imp_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon imperatif.',template:'___ your book to page 10.',answer:'Open',hint:'Open = ouvrir.',explanation:'Open your book!'},
+  {id:'imp_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon imperatif.',template:'___ late for class.',answer:'Never',hint:'Never be = ne jamais etre.',explanation:'Never be late for class!'},
+  {id:'imp_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon imperatif.',template:'___ running in the corridor!',answer:'Stop',hint:'Stop = arreter.',explanation:'Stop running! = Arretez de courir!'},
+
   {id:'imp_2_08',type:'translate',diffLevel:2,
    instruction:'Traduisez en anglais.',
    french:"N'oublie pas d'apporter ton passeport.",
@@ -3761,6 +3873,18 @@ exercises.irregularVerbs.push(
 
 // ── pastContinuous L3 (08-12) ────────────────────────────────
 exercises.pastContinuous.push(
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'pc_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'She was ___ a book when I arrived.',answer:'reading',hint:'"read" → reading.',explanation:'"She was reading."'},
+  {id:'pc_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'They were ___ football in the park.',answer:'playing',hint:'"play" → playing.',explanation:'"They were playing football."'},
+  {id:'pc_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'He was ___ TV all evening.',answer:'watching',hint:'"watch" → watching.',explanation:'"He was watching TV."'},
+  {id:'pc_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'I was ___ a letter to my sister.',answer:'writing',hint:'"write" → writing.',explanation:'"I was writing a letter."'},
+  {id:'pc_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'It was ___ when we left the house.',answer:'raining',hint:'"rain" → raining.',explanation:'"It was raining."'},
+  {id:'pc_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'She was ___ to music in her room.',answer:'listening',hint:'"listen" → listening.',explanation:'"She was listening to music."'},
+  {id:'pc_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'We were ___ dinner at 7pm.',answer:'eating',hint:'"eat" → eating.',explanation:'"We were eating dinner."'},
+  {id:'pc_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'The baby was ___ peacefully.',answer:'sleeping',hint:'"sleep" → sleeping.',explanation:'"The baby was sleeping."'},
+  {id:'pc_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'He was ___ in the garden when it started to rain.',answer:'working',hint:'"work" → working.',explanation:'"He was working in the garden."'},
+  {id:'pc_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'They were ___ for the bus when I saw them.',answer:'waiting',hint:'"wait" → waiting.',explanation:'"They were waiting for the bus."'},
+
   {id:'pc_3_08',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'While I was cooked dinner, the phone rang.',
@@ -3792,6 +3916,18 @@ exercises.pastContinuous.push(
 
 // ── phrasalVerbs L3 (06-12) ──────────────────────────────────
 exercises.phrasalVerbs.push(
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'phv_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'Please turn ___ the TV before you go to bed.',answer:'off',hint:'"turn off" = éteindre.',explanation:'"Turn off" = to switch off.'},
+  {id:'phv_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'She gave ___ her old clothes to charity.',answer:'away',hint:'"give away" = to donate',explanation:'"Give away" = to donate.'},
+  {id:'phv_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'Pick ___ your toys before dinner!',answer:'up',hint:'"pick up" = ramasser.',explanation:'"Pick up" = to collect.'},
+  {id:'phv_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'She gave ___ smoking last year.',answer:'up',hint:'"give up" = arrêter.',explanation:'"Give up" = to stop doing something.'},
+  {id:'phv_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'He turned ___ our offer.',answer:'down',hint:'"turn down" = refuser.',explanation:'"Turn down" = to refuse.'},
+  {id:'phv_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'Look ___ for cars when you cross the road.',answer:'out',hint:'"look out" = faire attention.',explanation:'"Look out!" = Be careful!'},
+  {id:'phv_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'I need to look ___ this word in the dictionary.',answer:'up',hint:'"look up" = chercher.',explanation:'"Look up" = to search for information.'},
+  {id:'phv_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'The fire went ___ after the rain.',answer:'out',hint:'"go out" = to go out / stop burning',explanation:'"Go out" = to stop burning.'},
+  {id:'phv_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'Can you turn ___ the music? It is too quiet.',answer:'up',hint:'"turn up" = monter le son.',explanation:'"Turn up" = to increase the volume.'},
+  {id:'phv_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne particule.',template:'She came ___ with a great idea.',answer:'up',hint:'"come up with" = trouver une idée.',explanation:'"Come up with" = to think of an idea.'},
+
   {id:'phv_3_06',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'She gave up to smoke after ten years.',
@@ -3896,6 +4032,18 @@ exercises.presentPerfect.push(
 
 // ── pastPerfect L3 (08-12) ───────────────────────────────────
 exercises.pastPerfect.push(
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'ppt_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'She had already ___ before I arrived.',answer:'left',hint:'"leave" → left.',explanation:'"She had already left."'},
+  {id:'ppt_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'They had ___ that film before.',answer:'seen',hint:'"see" → seen.',explanation:'"They had seen the film."'},
+  {id:'ppt_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'I had already ___ by the time he called.',answer:'eaten',hint:'"eat" → eaten.',explanation:'"I had already eaten."'},
+  {id:'ppt_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'She had never ___ sushi before.',answer:'tried',hint:'"try" → tried.',explanation:'"She had never tried sushi."'},
+  {id:'ppt_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'They had ___ home before the storm started.',answer:'gone',hint:'"go" → gone.',explanation:'"They had gone home."'},
+  {id:'ppt_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'I had never ___ him before that day.',answer:'met',hint:'"meet" → met.',explanation:'"I had never met him."'},
+  {id:'ppt_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'She had already ___ the letter.',answer:'read',hint:'"read" → read.',explanation:'"She had already read the letter."'},
+  {id:'ppt_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'He had ___ his homework before dinner.',answer:'done',hint:'"do" → done.',explanation:'"He had done his homework."'},
+  {id:'ppt_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'They had ___ together for ten years.',answer:'worked',hint:'"work" → worked.',explanation:'"They had worked together."'},
+  {id:'ppt_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon participe passé.',template:'She had ___ the door before leaving.',answer:'closed',hint:'"close" → closed.',explanation:'"She had closed the door."'},
+
   {id:'ppt_3_08',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'After she has finished eating, she went to bed.',
@@ -3927,6 +4075,18 @@ exercises.pastPerfect.push(
 
 // ── presentContinuous L2 (10-12) ─────────────────────────────
 exercises.presentContinuous.push(
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'prc_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'I am ___ breakfast right now.',answer:'eating',hint:'"eat" → eating.',explanation:'"I am eating breakfast."'},
+  {id:'prc_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'She is ___ to music.',answer:'listening',hint:'"listen" → listening.',explanation:'"She is listening to music."'},
+  {id:'prc_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'They are ___ football in the park.',answer:'playing',hint:'"play" → playing.',explanation:'"They are playing football."'},
+  {id:'prc_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'He is ___ his homework.',answer:'doing',hint:'"do" → doing.',explanation:'"He is doing his homework."'},
+  {id:'prc_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'She is ___ a book in the garden.',answer:'reading',hint:'"read" → reading.',explanation:'"She is reading a book."'},
+  {id:'prc_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'It is ___ outside. Take your umbrella!',answer:'raining',hint:'"rain" → raining.',explanation:'"It is raining."'},
+  {id:'prc_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'I am ___ a letter to my friend.',answer:'writing',hint:'"write" → writing.',explanation:'"I am writing a letter."'},
+  {id:'prc_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'The dog is ___ in the sun.',answer:'sleeping',hint:'"sleep" → sleeping.',explanation:'"The dog is sleeping."'},
+  {id:'prc_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'We are ___ English at school.',answer:'learning',hint:'"learn" → learning.',alternatives:['studying'],explanation:'"We are learning English."'},
+  {id:'prc_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le verbe -ing manquant.',template:'She is ___ to school right now.',answer:'walking',hint:'"walk" → walking.',alternatives:['going'],explanation:'"She is walking to school."'},
+
   {id:'prc_2_10',type:'translate',diffLevel:2,
    instruction:'Traduisez en anglais.',
    french:"Pourquoi est-ce qu'il crie comme ça ?",
@@ -4065,6 +4225,17 @@ exercises.someAny.push(
 
 // ── tenseChooser L3 (06-12) ──────────────────────────────────
 exercises.tenseChooser.push(
+
+  // ── L1 single-word fill-blank (added by audit) ──
+  {id:'tc_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'She ___ to school every day.',answer:'goes',hint:'"go" + she/he/it → goes (Present Simple).',explanation:'"She goes" = Present Simple, habitude.'},
+  {id:'tc_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'He ___ sleeping right now.',answer:'is',hint:'Right now → Present Continuous: is/am/are + -ing.',explanation:'"He is sleeping" = Present Continuous.'},
+  {id:'tc_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'They ___ finished their homework already.',answer:'have',hint:'"already" → Present Perfect: have/has + past participle.',explanation:'"They have finished" = Present Perfect.'},
+  {id:'tc_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'She ___ to Paris last year.',answer:'went',hint:'"Last year" → Past Simple.',explanation:'"She went" = Past Simple irregulier de "go".'},
+  {id:'tc_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'I will ___ you tomorrow.',answer:'call',hint:'"will" + base verbale.',explanation:'"I will call" = Future Simple.'},
+  {id:'tc_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'He always ___ late for class.',answer:'arrives',hint:'"always" → Present Simple. He → -s.',explanation:'"He arrives" = Present Simple.'},
+  {id:'tc_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'She ___ cooking when I arrived.',answer:'was',hint:'Quand je suis arrivé(e) → Past Continuous: was/were.',explanation:'"She was cooking" = Past Continuous.'},
+  {id:'tc_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec la bonne forme du verbe.',template:'He has never ___ sushi.',answer:'eaten',hint:'"has" + past participle → Present Perfect.',explanation:'"He has never eaten" = Present Perfect.'},
+
   {id:'tc_3_06',type:'error-correct',diffLevel:3,
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'By the time she gets home, he will already leave.',
@@ -4340,6 +4511,18 @@ exercises.sinceFor = [
 ];
 
 exercises.usedTo = [
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'ut_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'She ___ to live in Paris.',answer:'used',hint:'Affirmation → used to.',explanation:'"She used to live in Paris."'},
+  {id:'ut_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'Did you ___ to play football?',answer:'use',hint:'Après "did" → base verbale: use (sans -d).',explanation:'"Did you use to play?"'},
+  {id:'ut_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'He ___ to wake up very early.',answer:'used',hint:'Affirmation → used to.',explanation:'"He used to wake up early."'},
+  {id:'ut_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'They ___ to walk to school every day.',answer:'used',hint:'Affirmation → used to.',explanation:'"They used to walk to school."'},
+  {id:'ut_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'I ___ to love swimming as a child.',answer:'used',hint:'Affirmation → used to.',explanation:'"I used to love swimming."'},
+  {id:'ut_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'She ___ to be very shy.',answer:'used',hint:'Affirmation → used to.',explanation:'"She used to be very shy."'},
+  {id:'ut_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'Did he ___ to live here?',answer:'use',hint:'Après "did" → base verbale: use.',explanation:'"Did he use to live here?"'},
+  {id:'ut_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'We ___ to eat together every Sunday.',answer:'used',hint:'Affirmation → used to.',explanation:'"We used to eat together."'},
+  {id:'ut_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'She did not ___ to like vegetables.',answer:'use',hint:'Après "did not" → base verbale: use.',explanation:'"She did not use to like vegetables."'},
+  {id:'ut_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec used ou use.',template:'He ___ to play the piano every evening.',answer:'used',hint:'Affirmation → used to.',explanation:'"He used to play the piano."'},
+
   // L1 — 12 exercises
   {id:'ut_1_01',type:'multiple-choice',diffLevel:1,
    instruction:'Choisissez la bonne réponse.',
@@ -4538,6 +4721,14 @@ exercises.usedTo = [
 ];
 
 exercises.verbsOfState = [
+  // __ L1 audit additions __
+  {id:'vs_sw_01',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'I ___ this song. It is beautiful.',answer:'love',hint:'love = verbe d etat, pas de continuous.',explanation:'I love this song.'},
+  {id:'vs_sw_02',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'She ___ a big house in the city.',answer:'owns',hint:'own = posseder.',explanation:'She owns a big house.'},
+  {id:'vs_sw_03',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'He ___ the answer to every question.',answer:'knows',hint:'know = savoir.',explanation:'He knows the answer.'},
+  {id:'vs_sw_04',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'This cake ___ delicious!',answer:'tastes',hint:'taste = avoir un gout.',explanation:'This cake tastes delicious!'},
+  {id:'vs_sw_05',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'She ___ three languages fluently.',answer:'speaks',hint:'speak + she -> speaks.',explanation:'She speaks three languages.'},
+  {id:'vs_sw_06',type:'fill-blank',diffLevel:1,instruction:'Completez avec le bon verbe.',template:'I ___ tired after work.',answer:'feel',hint:'feel = se sentir.',alternatives:['am'],explanation:'I feel tired.'},
+
   // L1 — 12 exercises
   {id:'vs_1_01',type:'multiple-choice',diffLevel:1,
    instruction:'Choisissez la bonne réponse.',
@@ -5130,6 +5321,18 @@ exercises.relativeClauses = [
 ];
 
 exercises.goingTo = [
+  // ── L1 single-word fill-blank (audit) ──
+  {id:'gt_sw_01',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is, am ou are.',template:'She ___ going to cook dinner tonight.',answer:'is',hint:'She = singulier → is.',explanation:'"She is going to cook dinner."'},
+  {id:'gt_sw_02',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is, am ou are.',template:'They ___ going to study this weekend.',answer:'are',hint:'They = pluriel → are.',explanation:'"They are going to study."'},
+  {id:'gt_sw_03',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is, am ou are.',template:'I ___ going to help you with that.',answer:'am',hint:'I → am.',explanation:'"I am going to help you."'},
+  {id:'gt_sw_04',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is, am ou are.',template:'He ___ going to call you later.',answer:'is',hint:'He = singulier → is.',explanation:'"He is going to call you."'},
+  {id:'gt_sw_05',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is, am ou are.',template:'We ___ going to win this match.',answer:'are',hint:'We = pluriel → are.',explanation:'"We are going to win."'},
+  {id:'gt_sw_06',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is, am ou are.',template:'It ___ going to rain this afternoon.',answer:'is',hint:'It → is.',explanation:'"It is going to rain."'},
+  {id:'gt_sw_07',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon verbe (infinitif).',template:'I am going to ___ my family this weekend.',answer:'visit',hint:'"going to" + base verbale.',explanation:'"I am going to visit my family."'},
+  {id:'gt_sw_08',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon verbe (infinitif).',template:'She is going to ___ English at university.',answer:'study',hint:'"going to" + base verbale.',explanation:'"She is going to study English."'},
+  {id:'gt_sw_09',type:'fill-blank',diffLevel:1,instruction:'Complétez avec le bon verbe (infinitif).',template:'They are going to ___ football tomorrow.',answer:'play',hint:'"going to" + base verbale.',explanation:'"They are going to play football."'},
+  {id:'gt_sw_10',type:'fill-blank',diffLevel:1,instruction:'Complétez avec is, am ou are.',template:'You ___ going to love this film!',answer:'are',hint:'You → are.',explanation:'"You are going to love this film."'},
+
   // L1 — 12 exercises
   {id:'gt_1_01',type:'multiple-choice',diffLevel:1,
    instruction:'Choisissez la bonne réponse.',
@@ -5325,6 +5528,59 @@ exercises.goingTo = [
    answer:"I'm going to visit Paris next summer.",
    hint:'"going to" + base verb (pas "to + base verb")',explanation:'"Going to" est déjà suivi directement du base verb, sans "to" en plus.'},
 ];
+
+
+// ─── ALL GRAMMAR TOPICS (for competitive mode dropdown) ──────────────────────
+export const GRAMMAR_TOPICS = {
+  routine:               { label: 'Routine Quotidienne',          icon: '\u{1F305}' },
+  family:                { label: 'La Famille',                   icon: '\u{1F46A}' },
+  school:                { label: "L'\u00e9cole",                icon: '\u{1F3EB}' },
+  body:                  { label: 'Le Corps',                     icon: '\u{1F4AA}' },
+  time:                  { label: "L'Heure & Le Temps",           icon: '\u23f0' },
+  food:                  { label: 'La Nourriture',                icon: '\u{1F34E}' },
+  colors:                { label: 'Les Couleurs',                 icon: '\u{1F3A8}' },
+  numbers:               { label: 'Les Nombres',                  icon: '\u{1F522}' },
+  adjectives:            { label: 'Les Adjectifs',                icon: '\u2728' },
+  pronouns:              { label: 'Les Pronoms',                  icon: '\u{1F465}' },
+  verbs:                 { label: 'Verbes Principaux',            icon: '\u26a1' },
+  timeAdverbs:           { label: 'Adverbes de Temps',            icon: '\u{1F4C5}' },
+  toBe:                  { label: 'Le Verbe To Be',               icon: '\u{1F524}' },
+  articles:              { label: 'Les Articles (a/an/the)',       icon: '\u{1F4DD}' },
+  plurals:               { label: 'Les Pluriels',                 icon: '\u{1F522}' },
+  therebeis:             { label: 'There is / There are',         icon: '\u{1F4CD}' },
+  prepositions:          { label: 'Les Pr\u00e9positions',       icon: '\u{1F4CC}' },
+  someAny:               { label: 'Some & Any',                   icon: '\u{1F522}' },
+  possessives:           { label: 'Les Possessifs',               icon: '\u{1F511}' },
+  imperatives:           { label: "L'Imp\u00e9ratif",           icon: '\u{1F4E3}' },
+  questions:             { label: 'Les Questions',                icon: '\u2753' },
+  interrogative:         { label: 'Formes Interrogatives',        icon: '\u{1F50D}' },
+  presentSimple:         { label: 'Present Simple',               icon: '\u{1F4D6}' },
+  presentContinuous:     { label: 'Present Continuous',           icon: '\u{1F504}' },
+  pastSimple:            { label: 'Past Simple',                  icon: '\u23ee\ufe0f' },
+  pastContinuous:        { label: 'Past Continuous',              icon: '\u23ea' },
+  presentPerfect:        { label: 'Present Perfect',              icon: '\u2705' },
+  pastPerfect:           { label: 'Past Perfect',                 icon: '\u{1F570}\ufe0f' },
+  futureSimple:          { label: 'Future Simple',                icon: '\u{1F680}' },
+  goingTo:               { label: 'Going to',                     icon: '\u27a1\ufe0f' },
+  futureContinuous:      { label: 'Future Continuous',            icon: '\u23e9' },
+  futurePerfect:         { label: 'Future Perfect',               icon: '\u{1F3C1}' },
+  modals:                { label: 'Les Modaux (can/must/should)',  icon: '\u{1F3AF}' },
+  conditionals:          { label: 'Les Conditionnels',            icon: '\u{1F500}' },
+  irregularVerbs:        { label: 'Verbes Irr\u00e9guliers',     icon: '\u2699\ufe0f' },
+  comparatives:          { label: 'Comparatifs & Superlatifs',    icon: '\u{1F4C8}' },
+  adverbs:               { label: 'Les Adverbes',                 icon: '\u{1F4CA}' },
+  countableUncountable:  { label: 'D\u00e9nombrable & Ind\u00e9nombrable', icon: '\u2696\ufe0f' },
+  connectors:            { label: 'Les Connecteurs',              icon: '\u{1F517}' },
+  tenseChooser:          { label: 'Choix des Temps',              icon: '\u{1F3B2}' },
+  phrasalVerbs:          { label: 'Verbes \u00e0 Particule',     icon: '\u{1F527}' },
+  passiveVoice:          { label: 'La Voix Passive',              icon: '\u{1F503}' },
+  reportedSpeech:        { label: 'Le Discours Rapport\u00e9',   icon: '\u{1F4AC}' },
+  timeMarkers:           { label: 'Marqueurs de Temps',           icon: '\u{1F550}' },
+  relativeClauses:       { label: 'Les Relatives (who/which)',    icon: '\u{1F9E9}' },
+  sinceFor:              { label: 'Since & For',                  icon: '\u23f1\ufe0f' },
+  usedTo:                { label: 'Used to',                      icon: '\u{1F4AD}' },
+  verbsOfState:          { label: "Verbes d'\u00c9tat",          icon: '\u{1F9E0}' },
+};
 
 export function getAllExercises() {
   return Object.values(exercises).flat();
