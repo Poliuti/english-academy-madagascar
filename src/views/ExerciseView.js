@@ -149,7 +149,7 @@ function renderLevelPicker(container, topicId, mode, profile) {
             <button class="level-card ${unlocked ? '' : 'level-card-locked'}" data-lv="${lv}" ${unlocked ? '' : 'disabled'}>
               <div class="level-card-icon">${unlocked ? (lv === 1 ? '🌱' : lv === 2 ? '📈' : '🚀') : '🔒'}</div>
               <div class="level-card-label">${LEVEL_LABELS[lv]}</div>
-              <div class="level-card-count">${pool.length} exercice${pool.length !== 1 ? 's' : ''}</div>
+              <div class="level-card-count">${Math.min(pool.length, SESSION_SIZE)} exercice${Math.min(pool.length, SESSION_SIZE) !== 1 ? 's' : ''}</div>
               ${score > 0 ? `<div class="level-card-score">${score}% ✓</div>` : ''}
               ${score >= 80 ? `<div class="level-card-badge">⭐ Maîtrisé</div>` : ''}
               ${!unlocked && lv > 1 ? `<div class="level-card-lock-msg">Obtiens 80% au niveau ${lv-1}</div>` : ''}

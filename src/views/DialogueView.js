@@ -299,9 +299,36 @@ function renderTurns(dialogue, state) {
 }
 
 function checkAnswer(user, correct, alternatives) {
-  const normalize = s => s.toLowerCase().trim()
+  // Expand common contractions so "I'm" matches "I am", "I'll" matches "I will" etc.
+  const expand = s => s
+    .replace(/\bI'm\b/gi,       'I am')
+    .replace(/\bI'll\b/gi,      'I will')
+    .replace(/\bI've\b/gi,      'I have')
+    .replace(/\bI'd\b/gi,       'I would')
+    .replace(/\byou're\b/gi,    'you are')
+    .replace(/\byou'll\b/gi,    'you will')
+    .replace(/\byou've\b/gi,    'you have')
+    .replace(/\bhe's\b/gi,      'he is')
+    .replace(/\bshe's\b/gi,     'she is')
+    .replace(/\bit's\b/gi,      'it is')
+    .replace(/\bwe're\b/gi,     'we are')
+    .replace(/\bwe'll\b/gi,     'we will')
+    .replace(/\bthey're\b/gi,   'they are')
+    .replace(/\bthey'll\b/gi,   'they will')
+    .replace(/\bthere's\b/gi,   'there is')
+    .replace(/\bwon't\b/gi,     'will not')
+    .replace(/\bcan't\b/gi,     'cannot')
+    .replace(/\bdon't\b/gi,     'do not')
+    .replace(/\bdoesn't\b/gi,   'does not')
+    .replace(/\bisn't\b/gi,     'is not')
+    .replace(/\baren't\b/gi,    'are not')
+    .replace(/\bwasn't\b/gi,    'was not')
+    .replace(/\bweren't\b/gi,   'were not')
+    .replace(/\bthat's\b/gi,    'that is')
+    .replace(/\bname's\b/gi,    'name is');
+  const normalize = s => expand(s).toLowerCase().trim()
     .replace(/œ/g, 'oe').replace(/Œ/g, 'oe').replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
-    .replace(/[.!?,]/g, '').replace(/\s+/g, ' ');
+    .replace(/[.!?,;:]/g, '').replace(/\s+/g, ' ').trim();
   const n = normalize(user);
   if (n === normalize(correct)) return true;
   if (alternatives) {
