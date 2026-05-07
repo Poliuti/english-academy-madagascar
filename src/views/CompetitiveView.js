@@ -1,5 +1,6 @@
 import { getExercisesByTopic, getExercisesByLevel, GRAMMAR_TOPICS } from '../data/exercises.js';
 import { VOCABULARY, VOCAB_CATEGORIES } from '../data/vocabulary.js';
+import { speak } from '../tts.js';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // HELPERS
@@ -144,7 +145,31 @@ function buildGrammarPool(topicId, difficulty) {
     }
     return { ...ex, mode: 'text' };
   });
+
+  // For L3: guarantee ~1 listening exercise every 4 questions by interleaving
+  // types rather than leaving it to pure chance (otherwise 29% of 10-Q games
+  // contain zero listening questions).
+  if (difficulty === 3) {
+    return interleavedPool(shuffle(pool));
+  }
   return shuffle(pool);
+}
+
+/**
+ * Reorder pool so listening exercises are spread evenly throughout.
+ * Guarantees ~1 listening per 4 non-listening questions.
+ */
+function interleavedPool(pool) {
+  const listening = pool.filter(e => e.type === 'listening');
+  const other     = pool.filter(e => e.type !== 'listening');
+  const result = [];
+  let li = 0, oi = 0;
+  while (oi < other.length || li < listening.length) {
+    // Insert 3 non-listening, then 1 listening (25% ratio)
+    for (let k = 0; k < 3 && oi < other.length; k++) result.push(other[oi++]);
+    if (li < listening.length) result.push(listening[li++]);
+  }
+  return result;
 }
 
 // Mixed pool (60% grammar / 40% vocab)
@@ -563,16 +588,35 @@ export function renderCompetitive() {
 
   function renderGrammarQuestion(ex) {
     let questionText = '';
-    if (ex.type === 'fill-blank')         questionText = escHtml(ex.template || '');
-    else if (ex.type === 'translate')     questionText = escHtml(ex.french || '');
-    else if (ex.type === 'error-correct') questionText = `Corrigez : <em>${escHtml(ex.sentence)}</em>`;
-    else if (ex.type === 'word-order')    questionText = `Remettez dans l'ordre : <em>${escHtml((ex.words||[]).join(' / '))}</em>`;
-    else if (ex.type === 'listening')     questionText = `🔊 Audio : <em>${escHtml(ex.audio || '')}</em>`;
-    else                                  questionText = escHtml(ex.instruction || '');
+    let instruction = escHtml(ex.instruction || '');
+
+    if (ex.type === 'fill-blank') {
+      questionText = escHtml(ex.template || '');
+    } else if (ex.type === 'translate') {
+      questionText = escHtml(ex.french || '');
+    } else if (ex.type === 'error-correct') {
+      questionText = `Corrigez la phrase : <em>${escHtml(ex.sentence)}</em>`;
+    } else if (ex.type === 'word-order') {
+      questionText = `<em>${escHtml(shuffle([...(ex.words||[])]).join(' / '))}</em>`;
+      instruction = 'Remettez les mots dans le bon ordre.';
+    } else if (ex.type === 'listening') {
+      // NEVER show the audio text — render a play button only
+      questionText = `
+        <div class="comp-listen-wrap">
+          <button class="comp-listen-btn" id="comp-listen-btn" data-audio="${escHtml(ex.audio || '')}">
+            🔊 Écouter
+          </button>
+          <div class="comp-listen-note">Appuyez pour écouter, puis écrivez ce que vous entendez.</div>
+        </div>
+      `;
+      instruction = 'Écoutez et écrivez la phrase en anglais.';
+    } else {
+      questionText = escHtml(ex.instruction || '');
+    }
 
     return `
       <div class="comp-grammar-q">
-        <div class="comp-q-type">${escHtml(ex.instruction || '')}</div>
+        <div class="comp-q-type">${instruction}</div>
         <div class="comp-q-text">${questionText}</div>
       </div>
     `;
@@ -648,6 +692,21 @@ export function renderCompetitive() {
         lastCorrect = null;
         phase = 'setup';
         render();
+      });
+    }
+
+    // Listening play button
+    const listenBtn = container.querySelector('#comp-listen-btn');
+    if (listenBtn) {
+      listenBtn.addEventListener('click', () => {
+        if (listenBtn.dataset.playing) return;
+        listenBtn.dataset.playing = '1';
+        listenBtn.disabled = true;
+        listenBtn.textContent = '🔊 ...';
+        speak(listenBtn.dataset.audio, {
+          onEnd:  () => { delete listenBtn.dataset.playing; listenBtn.disabled = false; listenBtn.textContent = '🔊 Écouter'; },
+          onError: () => { delete listenBtn.dataset.playing; listenBtn.disabled = false; listenBtn.textContent = '🔊 Écouter'; },
+        });
       });
     }
 
