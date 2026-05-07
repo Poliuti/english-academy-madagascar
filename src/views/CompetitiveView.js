@@ -79,12 +79,13 @@ function isGrammarAllowedForLevel(ex, difficulty) {
 }
 
 // Build vocab pool.
-//   L1 → MCQ with 4 options
-//   L2 → text input (single word translation) — vocab entries are always single words
-//   L3 → text input
+//   L1 → EN→FR MCQ with 4 options (choose French translation)
+//   L2 → EN→FR text input (type the French word)
+//   L3 → FR→EN text input (harder: must produce the English word from memory)
 function buildVocabPool(catId, difficulty) {
   const all = getAllVocabEntries(catId).filter(w => w.en && w.fr);
   const allFr = all.map(w => w.fr);
+  const allEn = all.map(w => w.en);
   const pool = all.map(w => {
     const base = {
       id: `vocab_${w.catId}_${w.en}`,
@@ -94,14 +95,21 @@ function buildVocabPool(catId, difficulty) {
       category: w.category,
     };
     if (difficulty === 1) {
-      // L1 → MCQ
+      // L1 → EN→FR MCQ (choose the correct French word)
       const distractors = shuffle(allFr.filter(fr => fr !== w.fr)).slice(0, 3);
       while (distractors.length < 3) distractors.push('—');
       const options = shuffle([w.fr, ...distractors]);
-      return { ...base, mode: 'mcq', options, correct: w.fr };
+      return { ...base, mode: 'mcq', direction: 'en-to-fr', options, correct: w.fr };
     }
-    // L2 + L3 → text input (single-word translation)
-    return { ...base, mode: 'text' };
+    if (difficulty === 2) {
+      // L2 → EN→FR text input (type the French translation)
+      return { ...base, mode: 'text', direction: 'en-to-fr' };
+    }
+    // L3 → FR→EN text input (harder: must recall and type the English word)
+    const distractors = shuffle(allEn.filter(en => en !== w.en)).slice(0, 3);
+    while (distractors.length < 3) distractors.push('—');
+    const options = shuffle([w.en, ...distractors]);
+    return { ...base, mode: 'text', direction: 'fr-to-en' };
   });
   return shuffle(pool);
 }
@@ -316,10 +324,10 @@ export function renderCompetitive() {
             </div>
             <p class="comp-diff-note">
               ${difficulty === 1
-                ? '🔘 <strong>Débutant</strong> : choix multiple + complétion d\'un mot'
+                ? '🔘 <strong>Débutant</strong> — Grammaire : choix multiple (fill-in). Vocabulaire : <em>anglais → français</em> choix multiple.'
                 : difficulty === 2
-                ? '🔘 <strong>Intermédiaire</strong> : choix multiple + complétion + traduction d\'un mot'
-                : '✍️ <strong>Supérieur</strong> : traduction de phrases courtes + complétion + écoute'}
+                ? '🔘 <strong>Intermédiaire</strong> — Grammaire : choix multiple (fill-in). Vocabulaire : <em>anglais → français</em> saisie libre.'
+                : '✍️ <strong>Avancé</strong> — Grammaire : traduction de phrases + complétion + écoute + correction. Vocabulaire : <em>français → anglais</em> saisie libre.'}
             </p>
           </div>
 
@@ -530,7 +538,7 @@ export function renderCompetitive() {
           <div class="comp-answer-area" id="answer-area">
             ${answered
               ? renderAnswerResult(ex)
-              : (isMcq ? renderMcqInput(ex) : renderTextInput(isVocab))}
+              : (isMcq ? renderMcqInput(ex) : renderTextInput(ex))}
           </div>
         </div>
       </div>
@@ -543,10 +551,12 @@ export function renderCompetitive() {
   // CRITICAL TASK 2: NO solution leak — never show ex.fr or ex.answer here.
 
   function renderVocabQuestion(ex) {
+    const isFrToEn = ex.direction === 'fr-to-en';
     return `
       <div class="comp-vocab-q">
-        <div class="comp-q-label">Traduisez ce mot :</div>
-        <div class="comp-q-word">${escHtml(ex.en)}</div>
+        <div class="comp-q-label">${isFrToEn ? 'Traduisez en anglais :' : 'Traduisez en français :'}</div>
+        <div class="comp-q-word">${escHtml(isFrToEn ? ex.fr : ex.en)}</div>
+        ${isFrToEn ? '<div class="comp-q-hint">🇬🇧 Donnez le mot anglais</div>' : ''}
       </div>
     `;
   }
@@ -570,13 +580,18 @@ export function renderCompetitive() {
 
   // ── Answer input renderers ────────────────────────────────────────────────
 
-  function renderTextInput(isVocab) {
+  function renderTextInput(ex) {
+    const isVocab = ex.type === 'vocab-match';
+    const isFrToEn = ex.direction === 'fr-to-en';
+    const placeholder = isVocab
+      ? (isFrToEn ? 'Tapez le mot anglais...' : 'Tapez le mot français...')
+      : 'Votre réponse...';
     return `
       <input
         class="comp-answer-input"
         id="comp-answer"
         type="text"
-        placeholder="${isVocab ? 'Tapez le mot français...' : 'Votre réponse...'}"
+        placeholder="${placeholder}"
         autocomplete="off"
         autofocus
       />
