@@ -17,6 +17,32 @@ function loadMap() {
 // Pre-load map as soon as module is imported
 loadMap();
 
+// ─── cleanForTts ─────────────────────────────────────────────────────────────
+/**
+ * Strip or replace characters/symbols that TTS engines pronounce literally
+ * (arrows, emoji checkmarks, HTML tags, zero-article marker Ø, etc.)
+ */
+function cleanForTts(text) {
+  return (text || '')
+    // Strip HTML tags (e.g. <strong>, <em>)
+    .replace(/<[^>]+>/g, ' ')
+    // → (right arrow): used as "X → Y" transformations; read as a pause
+    .replace(/\s*→\s*/g, ', ')
+    // — (em dash): dialogue separator; just pause
+    .replace(/\s*—\s*/g, ', ')
+    // · (middle dot): list separator
+    .replace(/\s*·\s*/g, ', ')
+    // ✅ / ❌: visual-only correctness markers
+    .replace(/[✅❌]/g, '')
+    // Ø: zero-article linguistic symbol — silent
+    .replace(/Ø\s*/g, '')
+    // ° degree symbol — keep the number, TTS handles "100 C" fine
+    // Collapse multiple commas/spaces left by replacements
+    .replace(/,\s*,+/g, ',')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
 // ─── normalize ────────────────────────────────────────────────────────────────
 function normalize(text) {
   return (text || '').toLowerCase().trim();
@@ -85,14 +111,15 @@ function speakFallback(text, onEnd) {
  */
 export function speak(text, { onEnd = null, onError = null } = {}) {
   stop(); // ensure only one audio at a time across WAV + Web Speech API
-  const key = normalize(text);
+  const clean = cleanForTts(text);
+  const key = normalize(clean);
 
   loadMap().then(() => {
     const path = audioMap[key];
     if (path) {
-      playMP3(path, text, onEnd, onError);
+      playMP3(path, clean, onEnd, onError);
     } else {
-      speakFallback(text, onEnd);
+      speakFallback(clean, onEnd);
     }
   });
 }
