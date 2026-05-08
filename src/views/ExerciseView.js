@@ -777,6 +777,38 @@ const SYNONYMS = [
   ['cookie',         'biscuit'],
   ['lorry',          'truck'],
   ['truck',          'lorry'],
+  // ── Family formal ↔ informal ─────────────────────────────────────────────
+  ['grandmother',    'grandma'],
+  ['grandma',        'grandmother'],
+  ['grandfather',    'grandpa'],
+  ['grandpa',        'grandfather'],
+  ['father',         'dad'],
+  ['dad',            'father'],
+  ['mother',         'mum'],
+  ['mum',            'mother'],
+  ['mother',         'mom'],
+  ['mom',            'mother'],
+  // ── Common adjective synonyms ────────────────────────────────────────────
+  ['kind',           'nice'],
+  ['nice',           'kind'],
+  ['thin',           'slim'],
+  ['slim',           'thin'],
+  ['elderly',        'old'],
+  // ── Food/meal synonyms ───────────────────────────────────────────────────
+  ['dinner',         'supper'],
+  ['supper',         'dinner'],
+  // ── Routine phrasal verbs (multi-word, supported by \b regex) ────────────
+  // Each conjugated form needs its own pair (SYNONYMS does exact word matching)
+  ['wake up',           'get up'],
+  ['get up',            'wake up'],
+  ['go to bed',         'go to sleep'],
+  ['go to sleep',       'go to bed'],
+  ['goes to bed',       'goes to sleep'],
+  ['goes to sleep',     'goes to bed'],
+  ['went to bed',       'went to sleep'],
+  ['went to sleep',     'went to bed'],
+  ['going to bed',      'going to sleep'],
+  ['going to sleep',    'going to bed'],
 ];
 
 function checkAnswer(raw, ex) {
