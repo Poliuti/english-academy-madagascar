@@ -22,6 +22,23 @@ export function renderVocabulary(categoryId) {
   let matchMoves = 0;
   const MATCH_SIZE = 6;
 
+  // Quiz state
+  let quizMode = false;
+  let quizDeck = [];
+  let quizIndex = 0;
+  let quizScore = 0;
+  let quizAnswered = false;
+  let quizChoice = null;        // index (0–3) of the chosen option
+  let quizCurrentOptions = [];  // [{fr, isCorrect}] for current question
+  // Spell state
+  let spellMode = false;
+  let spellDeck = [];
+  let spellIndex = 0;
+  let spellScore = 0;
+  let spellAnswered = false;
+  let spellCorrect = false;
+  let spellTyped = '';
+
   function startFlash() {
     const words = VOCABULARY[current] || [];
     flashDeck = [...words].sort(() => Math.random() - 0.5);
@@ -56,8 +73,52 @@ export function renderVocabulary(categoryId) {
     render();
   }
 
+  function genQuizOptions(idx) {
+    const word = quizDeck[idx];
+    const allWords = VOCABULARY[current] || [];
+    const wrong = allWords
+      .filter(w => w.en !== word.en)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+    quizCurrentOptions = [
+      { fr: word.fr, isCorrect: true },
+      ...wrong.map(w => ({ fr: w.fr, isCorrect: false })),
+    ].sort(() => Math.random() - 0.5);
+  }
+
+  function startQuiz() {
+    const words = VOCABULARY[current] || [];
+    quizDeck = [...words].sort(() => Math.random() - 0.5);
+    quizIndex = 0; quizScore = 0;
+    quizAnswered = false; quizChoice = null;
+    quizMode = true; flashMode = false; matchMode = false; spellMode = false;
+    if (quizDeck.length > 0) genQuizOptions(0);
+    render();
+  }
+
+  function stopQuiz() {
+    quizMode = false; render();
+  }
+
+  function normSpell(s) {
+    return (s || '').toLowerCase().trim().replace(/[.!?,;:]$/, '');
+  }
+
+  function startSpell() {
+    const words = VOCABULARY[current] || [];
+    spellDeck = [...words].sort(() => Math.random() - 0.5);
+    spellIndex = 0; spellScore = 0;
+    spellAnswered = false; spellCorrect = false; spellTyped = '';
+    spellMode = true; flashMode = false; matchMode = false; quizMode = false;
+    render();
+  }
+
+  function stopSpell() {
+    spellMode = false; render();
+  }
+
   function render() {
-    const inGame = flashMode || matchMode;
+    const inGame = flashMode || matchMode || quizMode || spellMode;
     container.innerHTML = `
       <!-- Mobile sidebar backdrop -->
       <div class="sidebar-backdrop" id="vocab-backdrop"></div>
@@ -84,7 +145,7 @@ export function renderVocabulary(categoryId) {
             <button class="btn-back" id="btn-back-mobile">← Retour</button>
             <button class="btn-mobile-toc" id="btn-mobile-toc">☰ Catégories</button>
           </div>
-          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : renderCategory(current, search)}
+          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : quizMode ? renderQuizUI() : spellMode ? renderSpellUI() : renderCategory(current, search)}
         </main>
       </div>
     `;
@@ -185,11 +246,15 @@ export function renderVocabulary(categoryId) {
     container.querySelector('#btn-back').addEventListener('click', () => {
       if (flashMode) { stopFlash(); return; }
       if (matchMode) { stopMatch(); return; }
+      if (quizMode)  { stopQuiz();  return; }
+      if (spellMode) { stopSpell(); return; }
       location.hash = '#dashboard';
     });
     container.querySelector('#btn-back-mobile')?.addEventListener('click', () => {
       if (flashMode) { stopFlash(); return; }
       if (matchMode) { stopMatch(); return; }
+      if (quizMode)  { stopQuiz();  return; }
+      if (spellMode) { stopSpell(); return; }
       location.hash = '#dashboard';
     });
     container.querySelector('#btn-mobile-toc')?.addEventListener('click', openVocabSidebar);
@@ -200,8 +265,7 @@ export function renderVocabulary(categoryId) {
       btn.addEventListener('click', () => {
         current = btn.dataset.cat;
         search = '';
-        flashMode = false;
-        matchMode = false;
+        flashMode = false; matchMode = false; quizMode = false; spellMode = false;
         closeVocabSidebar();
         render();
       });
@@ -247,7 +311,54 @@ export function renderVocabulary(categoryId) {
       return;
     }
 
-    if (!flashMode) {
+    if (quizMode) {
+      const stopBtn = container.querySelector('#btn-quiz-stop');
+      if (stopBtn) stopBtn.addEventListener('click', stopQuiz);
+      const retryBtn = container.querySelector('#btn-quiz-retry');
+      if (retryBtn) retryBtn.addEventListener('click', startQuiz);
+      container.querySelectorAll('.quiz-option').forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          if (quizAnswered) return;
+          quizAnswered = true;
+          quizChoice = i;
+          if (quizCurrentOptions[i]?.isCorrect) quizScore++;
+          render();
+        });
+      });
+      const nextBtn = container.querySelector('#btn-quiz-next');
+      if (nextBtn) nextBtn.addEventListener('click', () => {
+        quizIndex++;
+        quizAnswered = false; quizChoice = null;
+        if (quizIndex < quizDeck.length) genQuizOptions(quizIndex);
+        render();
+      });
+    } else if (spellMode) {
+      const stopBtn = container.querySelector('#btn-spell-stop');
+      if (stopBtn) stopBtn.addEventListener('click', stopSpell);
+      const retryBtn = container.querySelector('#btn-spell-retry');
+      if (retryBtn) retryBtn.addEventListener('click', startSpell);
+      if (spellAnswered) {
+        const nextBtn = container.querySelector('#btn-spell-next');
+        if (nextBtn) nextBtn.addEventListener('click', () => {
+          spellIndex++;
+          spellAnswered = false; spellCorrect = false; spellTyped = '';
+          render();
+          setTimeout(() => container.querySelector('#spell-input')?.focus(), 30);
+        });
+      } else {
+        const form = container.querySelector('#spell-form');
+        if (form) form.addEventListener('submit', e => {
+          e.preventDefault();
+          const inp = container.querySelector('#spell-input');
+          spellTyped = (inp?.value || '').trim();
+          spellCorrect = normSpell(spellTyped) === normSpell(spellDeck[spellIndex]?.en || '');
+          if (spellCorrect) spellScore++;
+          spellAnswered = true;
+          render();
+        });
+        setTimeout(() => container.querySelector('#spell-input')?.focus(), 30);
+      }
+    } else if (!flashMode) {
       const searchInput = container.querySelector('#vocab-search');
       if (searchInput) {
         searchInput.addEventListener('input', e => {
@@ -257,10 +368,14 @@ export function renderVocabulary(categoryId) {
           bindTts();
           bindFlashStart();
           bindMatchStart();
+          bindQuizStart();
+          bindSpellStart();
         });
       }
       bindFlashStart();
       bindMatchStart();
+      bindQuizStart();
+      bindSpellStart();
     } else {
       // Flash mode events
       const stopBtn = container.querySelector('#btn-flash-stop');
@@ -375,6 +490,147 @@ export function renderVocabulary(categoryId) {
     `;
   }
 
+  function renderQuizUI() {
+    if (quizDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.</div>';
+
+    if (quizIndex >= quizDeck.length) {
+      const pct = Math.round((quizScore / quizDeck.length) * 100);
+      return `
+        <div class="flash-summary">
+          <div class="flash-summary-icon">${pct === 100 ? '🏆' : pct >= 60 ? '🎉' : '💪'}</div>
+          <h2 class="flash-summary-title">Quiz terminé !</h2>
+          <div class="flash-summary-stats">
+            <div class="flash-stat flash-stat-known">
+              <div class="flash-stat-num">${quizScore}</div>
+              <div class="flash-stat-label">✅ Bonnes réponses</div>
+            </div>
+            <div class="flash-stat flash-stat-review">
+              <div class="flash-stat-num">${quizDeck.length - quizScore}</div>
+              <div class="flash-stat-label">❌ Erreurs</div>
+            </div>
+          </div>
+          <button class="btn-primary flash-retry-btn" id="btn-quiz-retry">🔄 Rejouer</button>
+          <button class="btn-secondary flash-stop-btn" id="btn-quiz-stop">← Retour à la liste</button>
+        </div>
+      `;
+    }
+
+    const w = quizDeck[quizIndex];
+    const total = quizDeck.length;
+    const progressPct = Math.round((quizIndex / total) * 100);
+
+    return `
+      <div class="quiz-wrap">
+        <div class="flash-topbar">
+          <span class="flash-counter">${quizIndex + 1} / ${total}</span>
+          <div class="flash-progress-track">
+            <div class="flash-progress-fill" style="width:${progressPct}%"></div>
+          </div>
+          <button class="flash-stop-x" id="btn-quiz-stop" title="Arrêter">✕</button>
+        </div>
+        <div class="quiz-question-card">
+          <div class="quiz-word">${escHtml(w.en)}</div>
+          <button class="tts-btn quiz-tts" data-text="${escHtml(w.en)}" title="Écouter">🔊</button>
+          <div class="quiz-prompt">Quelle est la traduction ?</div>
+        </div>
+        <div class="quiz-options">
+          ${quizCurrentOptions.map((opt, i) => {
+            let cls = 'quiz-option';
+            if (quizAnswered) {
+              if (opt.isCorrect) cls += ' quiz-opt-correct';
+              else if (i === quizChoice) cls += ' quiz-opt-wrong';
+            }
+            return `<button class="${cls}" data-idx="${i}" ${quizAnswered ? 'disabled' : ''}>
+              ${escHtml(opt.fr)}
+            </button>`;
+          }).join('')}
+        </div>
+        ${quizAnswered ? `
+          <div class="quiz-feedback ${quizCurrentOptions[quizChoice]?.isCorrect ? 'quiz-fb-ok' : 'quiz-fb-err'}">
+            ${quizCurrentOptions[quizChoice]?.isCorrect
+              ? '✅ Correct !'
+              : `❌ La bonne réponse : <strong>${escHtml(w.fr)}</strong>`}
+          </div>
+          <button class="btn-primary quiz-next-btn" id="btn-quiz-next">
+            ${quizIndex + 1 < total ? 'Question suivante →' : 'Voir les résultats 🏁'}
+          </button>
+        ` : ''}
+      </div>
+    `;
+  }
+
+  function renderSpellUI() {
+    if (spellDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.</div>';
+
+    if (spellIndex >= spellDeck.length) {
+      const pct = Math.round((spellScore / spellDeck.length) * 100);
+      return `
+        <div class="flash-summary">
+          <div class="flash-summary-icon">${pct === 100 ? '🏆' : pct >= 60 ? '🎉' : '💪'}</div>
+          <h2 class="flash-summary-title">Dictée terminée !</h2>
+          <div class="flash-summary-stats">
+            <div class="flash-stat flash-stat-known">
+              <div class="flash-stat-num">${spellScore}</div>
+              <div class="flash-stat-label">✅ Bien écrits</div>
+            </div>
+            <div class="flash-stat flash-stat-review">
+              <div class="flash-stat-num">${spellDeck.length - spellScore}</div>
+              <div class="flash-stat-label">❌ À corriger</div>
+            </div>
+          </div>
+          <button class="btn-primary flash-retry-btn" id="btn-spell-retry">🔄 Recommencer</button>
+          <button class="btn-secondary flash-stop-btn" id="btn-spell-stop">← Retour à la liste</button>
+        </div>
+      `;
+    }
+
+    const w = spellDeck[spellIndex];
+    const total = spellDeck.length;
+    const progressPct = Math.round((spellIndex / total) * 100);
+    const exGap = (w.example || '').replace(
+      new RegExp('\\b' + w.en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi'),
+      '___'
+    );
+
+    return `
+      <div class="spell-wrap">
+        <div class="flash-topbar">
+          <span class="flash-counter">${spellIndex + 1} / ${total}</span>
+          <div class="flash-progress-track">
+            <div class="flash-progress-fill" style="width:${progressPct}%"></div>
+          </div>
+          <button class="flash-stop-x" id="btn-spell-stop" title="Arrêter">✕</button>
+        </div>
+        <div class="spell-question-card">
+          <div class="spell-fr">🇫🇷 ${escHtml(w.fr)}</div>
+          ${w.mg ? `<div class="spell-mg">🇲🇬 ${escHtml(w.mg)}</div>` : ''}
+          <div class="spell-hint"><em>${escHtml(exGap)}</em></div>
+        </div>
+        <form id="spell-form" class="spell-form" autocomplete="off">
+          <input id="spell-input" class="spell-input" type="text"
+            placeholder="Écrivez le mot en anglais…"
+            value="${spellAnswered ? escHtml(spellTyped) : ''}"
+            ${spellAnswered ? 'disabled' : ''}
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          ${!spellAnswered
+            ? `<button type="submit" class="btn-primary spell-submit-btn">Vérifier ✓</button>`
+            : `<button type="button" class="btn-secondary spell-submit-btn" id="btn-spell-next">
+                ${spellIndex + 1 < total ? 'Suivant →' : 'Voir les résultats 🏁'}
+               </button>`
+          }
+        </form>
+        ${spellAnswered ? `
+          <div class="quiz-feedback ${spellCorrect ? 'quiz-fb-ok' : 'quiz-fb-err'}">
+            ${spellCorrect
+              ? '✅ Correct !'
+              : `❌ La bonne réponse : <strong>${escHtml(w.en)}</strong>`}
+            <button class="tts-btn spell-tts" data-text="${escHtml(w.en)}" title="Écouter">🔊</button>
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }
+
   function bindFlashStart() {
     const btn = container.querySelector('#btn-flash-start');
     if (btn) btn.addEventListener('click', startFlash);
@@ -383,6 +639,16 @@ export function renderVocabulary(categoryId) {
   function bindMatchStart() {
     const btn = container.querySelector('#btn-match-start');
     if (btn) btn.addEventListener('click', startMatch);
+  }
+
+  function bindQuizStart() {
+    const btn = container.querySelector('#btn-quiz-start');
+    if (btn) btn.addEventListener('click', startQuiz);
+  }
+
+  function bindSpellStart() {
+    const btn = container.querySelector('#btn-spell-start');
+    if (btn) btn.addEventListener('click', startSpell);
   }
 
   function bindTts() {
@@ -427,6 +693,8 @@ function renderCategory(catId, search) {
           <div class="vocab-game-btns">
             <button class="btn-primary flash-start-btn" id="btn-flash-start" title="Mode Flashcards">🃏 Flashcards</button>
             <button class="btn-secondary match-start-btn" id="btn-match-start" title="Jeu de mémorisation">🔀 Match</button>
+            <button class="btn-secondary quiz-start-btn" id="btn-quiz-start" title="Quiz QCM">🧠 Quiz</button>
+            <button class="btn-secondary spell-start-btn" id="btn-spell-start" title="Écrire le mot">✏️ Écrire</button>
           </div>
         ` : ''}
       </div>
