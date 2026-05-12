@@ -809,6 +809,45 @@ const SYNONYMS = [
   ['went to sleep',     'went to bed'],
   ['going to bed',      'going to sleep'],
   ['going to sleep',    'going to bed'],
+  // ── Missing British/American spelling variants ────────────────────────────
+  ['grey',              'gray'],
+  ['gray',              'grey'],
+  ['apologise',         'apologize'],
+  ['apologize',         'apologise'],
+  ['apologised',        'apologized'],
+  ['apologized',        'apologised'],
+  ['apologising',       'apologizing'],
+  ['apologizing',       'apologising'],
+  ['neighbours',        'neighbors'],
+  ['neighbors',         'neighbours'],
+  ['realised',          'realized'],
+  ['realized',          'realised'],
+  ['recognised',        'recognized'],
+  ['recognized',        'recognised'],
+  ['practised',         'practiced'],
+  ['practiced',         'practised'],
+  ['centres',           'centers'],
+  ['centers',           'centres'],
+  ['programmes',        'programs'],
+  ['programs',          'programmes'],
+  ['honours',           'honors'],
+  ['honors',            'honours'],
+  ['behaviours',        'behaviors'],
+  ['behaviors',         'behaviours'],
+  // ── Missing synonym directions ───────────────────────────────────────────
+  ['exhausted',         'tired'],    // tired→exhausted already exists
+  ['complete',          'finish'],
+  ['finish',            'complete'],
+  // ── Quantity synonyms ────────────────────────────────────────────────────
+  ['a lot of',          'lots of'],
+  ['lots of',           'a lot of'],
+  // ── Difficulty (one direction: 'hard→difficult' omitted to avoid "works hard" → "works difficult") ──
+  ['difficult',         'hard'],
+  // ── Adjective synonyms ───────────────────────────────────────────────────
+  ['clever',            'smart'],
+  ['smart',             'clever'],
+  ['clever',            'intelligent'],
+  ['intelligent',       'clever'],
 ];
 
 function checkAnswer(raw, ex) {
@@ -859,7 +898,26 @@ function checkAnswer(raw, ex) {
     .replace(/you're/g,   'you are')
     .replace(/i've/g,     'i have')
     .replace(/i'd/g,      'i would')
-    .replace(/i'll/g,     'i will');
+    .replace(/i'll/g,     'i will')
+    // Additional contractions (unambiguous)
+    .replace(/they've/g,  'they have')
+    .replace(/we've/g,    'we have')
+    .replace(/you've/g,   'you have')
+    .replace(/she'll/g,   'she will')
+    .replace(/he'll/g,    'he will')
+    .replace(/they'll/g,  'they will')
+    .replace(/we'll/g,    'we will')
+    .replace(/you'll/g,   'you will')
+    .replace(/she'd/g,    'she would')
+    .replace(/he'd/g,     'he would')
+    .replace(/they'd/g,   'they would')
+    .replace(/we'd/g,     'we would')
+    .replace(/you'd/g,    'you would')
+    .replace(/there's/g,  'there is')
+    .replace(/that's/g,   'that is')
+    .replace(/who's/g,    'who is')
+    .replace(/what's/g,   'what is')
+    .replace(/here's/g,   'here is');
 
   // Strip optional articles for article-flexibility ("the dinner" ≈ "dinner")
   const stripArticles = s => s.replace(/\b(the|a|an)\b\s*/g, '').replace(/\s+/g, ' ').trim();
@@ -890,6 +948,20 @@ function checkAnswer(raw, ex) {
     if (normalize(correct.replace(re, b)) === ans) return true;
     if (normalize(ans.replace(re, b)) === correct) return true;
   }
+
+  // Present Perfect contraction: 's = has (not is)
+  // "She's finished" → normalize → "she is finished", but correct is "she has finished"
+  const tryHas = s => s
+    .replace(/\bshe is\b/g,   'she has')
+    .replace(/\bhe is\b/g,    'he has')
+    .replace(/\bit is\b/g,    'it has')
+    .replace(/\bthey are\b/g, 'they have')
+    .replace(/\bwe are\b/g,   'we have')
+    .replace(/\byou are\b/g,  'you have')
+    .replace(/\bi am\b/g,     'i have');
+  if (tryHas(ans) === correct) return true;
+  if (tryHas(correct) === ans) return true;
+  if (ex.acceptedAnswers?.some(a => tryHas(normalize(a)) === tryHas(ans))) return true;
 
   return false;
 }
