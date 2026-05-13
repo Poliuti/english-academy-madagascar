@@ -25,6 +25,7 @@ export function renderDashboard() {
       <div class="dash-header-right">
         <div class="stat-badge">🔥 ${profile.streak || 0}</div>
         <div class="stat-badge xp-badge">⭐ ${profile.xp || 0} XP</div>
+        <button class="btn-icon-only btn-stats-nav" id="btn-stats" title="Mes statistiques">📊</button>
       </div>
     </header>
 
@@ -93,6 +94,9 @@ export function renderDashboard() {
 
   container.querySelector('#btn-profiles').addEventListener('click', () => {
     location.hash = '#profiles';
+  });
+  container.querySelector('#btn-stats').addEventListener('click', () => {
+    location.hash = '#stats';
   });
   container.querySelector('#btn-assessment').addEventListener('click', () => {
     location.hash = '#exercise?topic=assessment&mode=assessment';

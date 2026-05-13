@@ -7,6 +7,7 @@ import { renderDialogueList, renderDialogue } from './views/DialogueViewV2.js';
 import { renderBoky } from './views/BokyView.js';
 import { renderTutor } from './views/TutorView.js';
 import { renderCompetitive } from './views/CompetitiveView.js';
+import { renderStats } from './views/StatsView.js';
 import { getActiveProfile } from './storage.js';
 
 const app = document.getElementById('app');
@@ -63,6 +64,9 @@ function router() {
       break;
     case 'competitive':
       view = renderCompetitive();
+      break;
+    case 'stats':
+      view = renderStats();
       break;
     default:
       view = profile ? renderDashboard() : renderProfileSelector();

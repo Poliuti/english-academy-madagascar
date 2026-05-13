@@ -1881,3 +1881,201 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   padding: 1px 7px; font-size: .8rem; font-weight: 800;
 }
 .btn-review-start:hover .review-due-count { background: #fff; color: #E53935; }
+
+/* ─── STATISTICS VIEW ────────────────────────────────────────────────────────── */
+
+.stats-page {
+  max-width: 640px; margin: 0 auto; padding-bottom: 60px;
+  font-family: var(--font);
+}
+
+/* Header */
+.stats-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 16px 8px; position: sticky; top: 0;
+  background: var(--bg); z-index: 10;
+  border-bottom: 1px solid var(--border);
+}
+.stats-title { font-size: 1.2rem; font-weight: 800; margin: 0; }
+
+/* Dashboard stats button */
+.btn-stats-nav { font-size: 1.1rem; }
+
+/* Content wrapper */
+.stats-content {
+  padding: 16px; display: flex; flex-direction: column; gap: 16px;
+}
+
+/* ── KPI cards ── */
+.stats-kpi-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+}
+.stats-kpi-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 6px;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  text-align: center; box-shadow: var(--shadow-sm);
+}
+.kpi-icon  { font-size: 1.35rem; line-height: 1; }
+.kpi-value { font-size: 1.05rem; font-weight: 800; color: var(--text); line-height: 1.1; }
+.kpi-label { font-size: .62rem; color: var(--text-muted); line-height: 1.2; }
+
+/* ── Section base ── */
+.stats-section {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.stats-section-title {
+  font-size: .95rem; font-weight: 800; margin: 0 0 14px; color: var(--text);
+}
+
+/* ── Level progress rows ── */
+.stats-level-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+}
+.stats-level-row:last-child { margin-bottom: 0; }
+.stats-level-badge {
+  background: var(--primary); color: #fff;
+  border-radius: 6px; padding: 3px 9px;
+  font-size: .75rem; font-weight: 800; min-width: 32px; text-align: center;
+}
+.stats-level-bar-wrap { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.stats-level-bar {
+  height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;
+}
+.stats-level-fill {
+  height: 100%; background: #4CAF50; border-radius: 4px; transition: width .5s;
+}
+.stats-level-label { font-size: .7rem; color: var(--text-muted); }
+.stats-level-pct { font-size: .88rem; font-weight: 800; min-width: 38px; text-align: right; }
+
+/* ── Grammar SM-2 badges ── */
+.stats-sm2-row { display: flex; gap: 8px; }
+.stats-sm2-badge {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  border-radius: var(--radius-sm); padding: 10px 6px;
+  border: 1.5px solid; gap: 2px;
+}
+.sm2-num { font-size: 1.4rem; font-weight: 800; line-height: 1; }
+.sm2-lbl { font-size: .68rem; font-weight: 500; }
+.sm2-due   { background: #FFEBEE; border-color: #FFCDD2; color: #C62828; }
+.sm2-known { background: #E8F5E9; border-color: #C8E6C9; color: #2E7D32; }
+.sm2-seen  { background: #FFF8E1; border-color: #FFE082; color: #E65100; }
+
+/* ── Vocabulary segmented bar ── */
+.stats-vocab-overview { margin-bottom: 14px; }
+.stats-vocab-seg {
+  display: flex; height: 10px; border-radius: 6px;
+  background: var(--border); overflow: hidden; margin-bottom: 8px;
+}
+.seg-known { background: #4CAF50; }
+.seg-prog  { background: #FF9800; }
+
+.stats-vocab-legend {
+  display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .75rem;
+}
+.vleg { font-weight: 600; }
+.vleg-known { color: #2E7D32; }
+.vleg-prog  { color: #E65100; }
+.vleg-due   { color: #C62828; }
+.vleg-new   { color: var(--text-muted); }
+
+/* ── Vocabulary category grid ── */
+.stats-cat-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.stats-cat-card {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; background: var(--bg);
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.stats-cat-icon { font-size: 1.1rem; flex-shrink: 0; }
+.stats-cat-info { flex: 1; min-width: 0; }
+.stats-cat-name {
+  font-size: .72rem; font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.stats-cat-bar {
+  display: flex; height: 4px; background: var(--border);
+  border-radius: 2px; overflow: hidden; margin: 3px 0;
+}
+.stats-cat-fill-known { background: #4CAF50; }
+.stats-cat-fill-soon  { background: #FF9800; }
+.stats-cat-fill-due   { background: #E53935; }
+.stats-cat-nums { font-size: .65rem; color: var(--text-muted); }
+.cat-due-dot    { color: #C62828; font-weight: 700; }
+
+/* ── Topic accuracy table ── */
+.stats-topic-table { display: flex; flex-direction: column; gap: 7px; }
+.stats-topic-row   { display: flex; align-items: center; gap: 8px; }
+.stats-topic-icon  { font-size: .9rem; flex-shrink: 0; width: 20px; text-align: center; }
+.stats-topic-name  {
+  flex: 1; font-size: .78rem; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.stats-topic-bar-wrap { width: 72px; flex-shrink: 0; }
+.stats-topic-bar {
+  height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;
+}
+.stats-topic-fill { height: 100%; border-radius: 3px; transition: width .4s; }
+.fill-good { background: #4CAF50; }
+.fill-ok   { background: #FF9800; }
+.fill-low  { background: #E53935; }
+.stats-topic-pct { font-size: .75rem; font-weight: 800; min-width: 36px; text-align: right; }
+.pct-good { color: #2E7D32; }
+.pct-ok   { color: #E65100; }
+.pct-low  { color: #C62828; }
+
+/* ── Session history ── */
+.stats-sessions { display: flex; flex-direction: column; gap: 6px; }
+.stats-session-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; background: var(--bg);
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.session-date  { min-width: 46px; flex-shrink: 0; }
+.session-day   { font-size: .75rem; font-weight: 700; }
+.session-time  { font-size: .65rem; color: var(--text-muted); }
+.session-topic {
+  flex: 1; font-size: .76rem; color: var(--text); min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.session-right { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+.session-emoji { font-size: .85rem; }
+.session-pct   { font-size: .8rem; font-weight: 800; }
+.score-good    { color: #2E7D32; }
+.score-ok      { color: #E65100; }
+.score-low     { color: #C62828; }
+.session-score-detail { font-size: .68rem; color: var(--text-muted); }
+.session-xp    { font-size: .72rem; color: var(--text-muted); white-space: nowrap; }
+
+/* ── Empty state ── */
+.stats-empty {
+  text-align: center; padding: 32px 16px; display: flex;
+  flex-direction: column; align-items: center; gap: 10px;
+}
+.stats-empty-icon { font-size: 2.5rem; }
+.stats-empty-msg  { font-size: .9rem; color: var(--text-muted); max-width: 280px; line-height: 1.5; }
+
+/* ── Account info ── */
+.stats-account-section { padding: 12px 16px; }
+.stats-account-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0; border-bottom: 1px solid var(--border); font-size: .85rem;
+}
+.stats-account-row:last-child { border-bottom: none; padding-bottom: 0; }
+.account-label { color: var(--text-muted); }
+.account-value { font-weight: 700; color: var(--text); }
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .stats-kpi-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats-cat-grid { grid-template-columns: 1fr; }
+  .stats-topic-bar-wrap { width: 55px; }
+  .session-score-detail { display: none; }
+}
+@media (max-width: 360px) {
+  .stats-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-value { font-size: .95rem; }
+}
