@@ -89,10 +89,13 @@ export function renderDashboard() {
         <span class="assessment-arrow">›</span>
       </div>
 
-      <!-- Legend -->
-      <div class="legend-section">
-        <h2 class="section-title legend-title">📌 Guide des sections</h2>
-        <div class="legend-grid">
+      <!-- Legend (collapsible) -->
+      <div class="legend-section" id="legend-section">
+        <button class="legend-toggle" id="legend-toggle" aria-expanded="false">
+          <span>📌 Guide des sections</span>
+          <span class="legend-toggle-arrow">▾</span>
+        </button>
+        <div class="legend-grid" id="legend-grid" hidden>
           <div class="legend-item">
             <span class="legend-icon">🇲🇬</span>
             <div>
@@ -212,6 +215,28 @@ export function renderDashboard() {
       location.hash = '#competitive';
     });
   }
+
+  // Legend toggle
+  container.querySelector('#legend-toggle').addEventListener('click', () => {
+    const grid = container.querySelector('#legend-grid');
+    const btn  = container.querySelector('#legend-toggle');
+    const open = !grid.hidden;
+    grid.hidden = open;
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.querySelector('.legend-toggle-arrow').textContent = open ? '▾' : '▴';
+    try { localStorage.setItem('ea_legend_open', open ? '0' : '1'); } catch (_) {}
+  });
+
+  // Restore legend state from last visit
+  try {
+    if (localStorage.getItem('ea_legend_open') === '1') {
+      const grid = container.querySelector('#legend-grid');
+      const btn  = container.querySelector('#legend-toggle');
+      grid.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.querySelector('.legend-toggle-arrow').textContent = '▴';
+    }
+  } catch (_) {}
 
   // Topic card clicks
   container.querySelectorAll('.topic-card[data-topic]').forEach(card => {

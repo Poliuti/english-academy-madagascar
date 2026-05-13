@@ -1699,167 +1699,203 @@ export const exercises = {
 };
 
 // ─── LEVEL ASSESSMENT EXERCISES ─────────────────────────────────────────────
-// All MCQ (type: 'mcq') — 4 choices, correct: index of correct option
+// All type: 'multiple-choice' — 4 choices per question
 // 20 questions: A1×5, A2×6, B1×6, B1+×3
-// After completion, ExerciseView computes per-level accuracy → sets profile.level
+// 'answer' = options[correct] — used by ExerciseView checkAnswer()
+// After completion, ExerciseView computes per-band accuracy → sets profile.level
 export const assessmentExercises = [
 
-  // ── A1 ── (grammar basics, verb to be, present simple, numbers/vocab)
+  // ── A1 ── (verb to be, present simple, basic vocabulary, there is/are)
   {
-    id: 'as01', type: 'mcq', level: 'A1',
+    id: 'as01', type: 'multiple-choice', level: 'A1',
+    instruction: 'Choisissez la bonne réponse.',
     question: 'Choose the correct form: "I ___ a student."',
     options: ['am', 'is', 'are', 'be'],
-    correct: 0,
+    correct: 0, answer: 'am',
+    hint: '"I" + to be = ?',
     explanation: '"I" + to be = am. (he/she/it → is, you/we/they → are)'
   },
   {
-    id: 'as02', type: 'mcq', level: 'A1',
+    id: 'as02', type: 'multiple-choice', level: 'A1',
+    instruction: 'Choisissez la bonne réponse.',
     question: 'Choose the correct sentence.',
     options: ['She have a dog.', 'She has a dog.', 'She is have a dog.', 'She having a dog.'],
-    correct: 1,
+    correct: 1, answer: 'She has a dog.',
+    hint: 'he/she/it → add -s to the verb',
     explanation: 'With he/she/it in Present Simple, add -s/-es: "has" (not "have").'
   },
   {
-    id: 'as03', type: 'mcq', level: 'A1',
+    id: 'as03', type: 'multiple-choice', level: 'A1',
+    instruction: 'Choisissez la traduction correcte.',
     question: 'What does "tired" mean?',
     options: ['fatigué / vizaka', 'heureux / faly', 'rapide / haingana', 'grand / lehibe'],
-    correct: 0,
-    explanation: '"Tired" = fatigué(e). "I am tired after school."'
+    correct: 0, answer: 'fatigué / vizaka',
+    hint: 'Think of "I am tired after a long walk."',
+    explanation: '"Tired" = fatigué(e) / vizaka. "I am tired after school."'
   },
   {
-    id: 'as04', type: 'mcq', level: 'A1',
+    id: 'as04', type: 'multiple-choice', level: 'A1',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"There ___ two cats in the garden." Which word is correct?',
     options: ['is', 'are', 'am', 'be'],
-    correct: 1,
+    correct: 1, answer: 'are',
+    hint: '"Two cats" = plural → there ___?',
     explanation: '"There are" with plural nouns. "There is" with singular: there is a cat.'
   },
   {
-    id: 'as05', type: 'mcq', level: 'A1',
+    id: 'as05', type: 'multiple-choice', level: 'A1',
+    instruction: 'Choisissez la bonne réponse.',
     question: 'Which question is correct?',
     options: ['Where you live?', 'Where do you live?', 'Where are you live?', 'Where lives you?'],
-    correct: 1,
-    explanation: 'Yes/no questions and wh-questions need "do/does" in Present Simple.'
+    correct: 1, answer: 'Where do you live?',
+    hint: 'Wh-question + do/does + subject + verb',
+    explanation: 'Yes/no and wh-questions need "do/does" in Present Simple.'
   },
 
-  // ── A2 ── (past simple, present continuous, modals, articles, frequency)
+  // ── A2 ── (past simple, present continuous, modals, present perfect intro)
   {
-    id: 'as06', type: 'mcq', level: 'A2',
+    id: 'as06', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"Yesterday, I ___ my homework." Choose the correct form.',
     options: ['finish', 'finishing', 'finished', 'have finished'],
-    correct: 2,
+    correct: 2, answer: 'finished',
+    hint: '"Yesterday" = past → Past Simple',
     explanation: '"Yesterday" signals Past Simple. Regular verbs: finish → finished.'
   },
   {
-    id: 'as07', type: 'mcq', level: 'A2',
+    id: 'as07', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"Look! She ___ (run) in the park." Which form is correct?',
     options: ['runs', 'run', 'is running', 'was running'],
-    correct: 2,
+    correct: 2, answer: 'is running',
+    hint: '"Look!" = action happening right now',
     explanation: '"Look!" signals an action happening now → Present Continuous: is + verb-ing.'
   },
   {
-    id: 'as08', type: 'mcq', level: 'A2',
+    id: 'as08', type: 'multiple-choice', level: 'A2',
+    instruction: 'Trouvez la phrase incorrecte.',
     question: 'Which sentence has a mistake?',
-    options: [
-      'He doesn\'t like coffee.',
-      'She can to swim very well.',
-      'They went to the market.',
-      'I have two sisters.'
-    ],
-    correct: 1,
+    options: ["He doesn't like coffee.", 'She can to swim very well.', 'They went to the market.', 'I have two sisters.'],
+    correct: 1, answer: 'She can to swim very well.',
+    hint: 'What comes after a modal verb?',
     explanation: 'After modal verbs (can, must, should...) always use bare infinitive: "can swim", not "can to swim".'
   },
   {
-    id: 'as09', type: 'mcq', level: 'A2',
+    id: 'as09', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la traduction correcte.',
     question: 'What does "busy" mean?',
     options: ['occupé / misahirana', 'silencieux / mangina', 'propre / madio', 'lent / miadana'],
-    correct: 0,
+    correct: 0, answer: 'occupé / misahirana',
+    hint: 'Think: "I am busy, I have no time."',
     explanation: '"Busy" = occupé(e) / misahirana. "I am busy right now."'
   },
   {
-    id: 'as10', type: 'mcq', level: 'A2',
+    id: 'as10', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"I ___ never been to London." Which word is missing?',
     options: ['did', 'have', 'was', 'am'],
-    correct: 1,
+    correct: 1, answer: 'have',
+    hint: 'Present Perfect = have/has + past participle',
     explanation: '"Have never been" = Present Perfect. Structure: have/has + past participle.'
   },
   {
-    id: 'as11', type: 'mcq', level: 'A2',
+    id: 'as11', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne réponse.',
     question: 'Complete: "You ___ eat more vegetables. It\'s good for you."',
-    options: ['must not', 'should', 'can\'t', 'don\'t'],
-    correct: 1,
-    explanation: '"Should" gives advice (moins fort que "must"). "You should eat vegetables."'
+    options: ['must not', 'should', "can't", "don't"],
+    correct: 1, answer: 'should',
+    hint: 'This is advice, not a strict obligation.',
+    explanation: '"Should" gives advice (less strong than "must"). "You should eat vegetables."'
   },
 
-  // ── B1 ── (present perfect, conditionals, passive, reported speech, vocab)
+  // ── B1 ── (conditionals, passive, reported speech, perfect tenses, connectors)
   {
-    id: 'as12', type: 'mcq', level: 'B1',
+    id: 'as12', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"If I ___ more money, I would buy a new phone." Choose the correct form.',
     options: ['have', 'had', 'will have', 'would have'],
-    correct: 1,
+    correct: 1, answer: 'had',
+    hint: '2nd conditional: If + Past Simple, would + infinitive',
     explanation: 'Second conditional (hypothetical): If + Past Simple, would + bare infinitive.'
   },
   {
-    id: 'as13', type: 'mcq', level: 'B1',
+    id: 'as13', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"The book ___ written by a famous author." Which form is correct?',
     options: ['is', 'was', 'were', 'has'],
-    correct: 1,
+    correct: 1, answer: 'was',
+    hint: 'Passive voice in the past: was/were + past participle',
     explanation: 'Passive voice, past: was/were + past participle. "The book was written..."'
   },
   {
-    id: 'as14', type: 'mcq', level: 'B1',
-    question: 'She said: "I am tired." → In reported speech: She said that she ___ tired.',
+    id: 'as14', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: 'She said: "I am tired." → Reported speech: She said that she ___ tired.',
     options: ['is', 'was', 'were', 'be'],
-    correct: 1,
+    correct: 1, answer: 'was',
+    hint: 'Backshift: present "am" → past ___',
     explanation: 'Reported speech: present "am" → past "was" (backshift in time).'
   },
   {
-    id: 'as15', type: 'mcq', level: 'B1',
-    question: 'What does "although" mean in this sentence? "Although it was raining, we went out."',
-    options: ['parce que / satria', 'même si / na dia', 'alors / koa', 'avant / alohan\'ny'],
-    correct: 1,
+    id: 'as15', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"Although it was raining, we went out." What does "although" express?',
+    options: ['parce que / satria', 'même si / na dia', 'alors / koa', "avant / alohan'ny"],
+    correct: 1, answer: 'même si / na dia',
+    hint: '"Although" introduces a contrast between two facts.',
     explanation: '"Although" = même si / na dia — introduces a contrast/concession.'
   },
   {
-    id: 'as16', type: 'mcq', level: 'B1',
+    id: 'as16', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"She ___ for this company since 2018." Which tense fits?',
     options: ['works', 'worked', 'has been working', 'was working'],
-    correct: 2,
+    correct: 2, answer: 'has been working',
+    hint: '"Since 2018" = ongoing from a point in the past',
     explanation: '"Since 2018" with an ongoing situation → Present Perfect Continuous: has been working.'
   },
   {
-    id: 'as17', type: 'mcq', level: 'B1',
-    question: 'Read: "Despite the heavy traffic, Tom arrived on time." What does "despite" express?',
+    id: 'as17', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"Despite the heavy traffic, Tom arrived on time." What does "despite" express?',
     options: ['a reason', 'a contrast / obstacle', 'a result', 'a condition'],
-    correct: 1,
+    correct: 1, answer: 'a contrast / obstacle',
+    hint: '"Despite" introduces something that goes against the expected outcome.',
     explanation: '"Despite" (= malgré) expresses contrast — something happened in spite of an obstacle.'
   },
 
-  // ── B1+ ── (complex grammar, nuanced vocabulary, register awareness)
+  // ── B1+ ── (3rd conditional, formal register, advanced vocabulary)
   {
-    id: 'as18', type: 'mcq', level: 'B1+',
+    id: 'as18', type: 'multiple-choice', level: 'B1+',
+    instruction: 'Choisissez la bonne réponse.',
     question: '"Had I known about the problem, I ___ earlier." Complete correctly.',
     options: ['would have called', 'would call', 'will call', 'had called'],
-    correct: 0,
-    explanation: 'Third conditional (inverted form): Had + past perfect → would have + pp. Refers to a past hypothetical.'
+    correct: 0, answer: 'would have called',
+    hint: '3rd conditional: Had + pp → would have + pp',
+    explanation: 'Third conditional (inverted): Had + past perfect → would have + pp. Past hypothetical.'
   },
   {
-    id: 'as19', type: 'mcq', level: 'B1+',
-    question: 'Which sentence uses the correct register for a formal email?',
+    id: 'as19', type: 'multiple-choice', level: 'B1+',
+    instruction: 'Choisissez la phrase formelle correcte.',
+    question: 'Which sentence is appropriate for a formal email?',
     options: [
-      'Hey, just wanted to check if the report\'s done.',
+      "Hey, just wanted to check if the report's done.",
       'I am writing to enquire about the status of the report.',
       'So, is the report finished or what?',
       'Wondering bout the report, any update?'
     ],
-    correct: 1,
+    correct: 1, answer: 'I am writing to enquire about the status of the report.',
+    hint: 'Formal = full forms, polite phrasing, no slang',
     explanation: 'Formal writing uses full forms, polite phrasing, and no contractions or slang.'
   },
   {
-    id: 'as20', type: 'mcq', level: 'B1+',
-    question: '"The proposal was met with ___ from all stakeholders." Choose the best word.',
+    id: 'as20', type: 'multiple-choice', level: 'B1+',
+    instruction: 'Choisissez le mot correct.',
+    question: '"The proposal was met with ___ from all stakeholders." Choose the correct word.',
     options: ['approval', 'approvation', 'approbement', 'approvement'],
-    correct: 0,
-    explanation: '"Approval" is the correct noun. "Approbation" exists but is very formal; the others are not real words.'
+    correct: 0, answer: 'approval',
+    hint: 'Only one of these is a real English word.',
+    explanation: '"Approval" is the correct noun. The others are not standard English words.'
   },
 ];
 

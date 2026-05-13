@@ -649,9 +649,7 @@ function finishSession(container, state, profile) {
       <div class="results-breakdown">
         ${state.results.map((r, i) => {
           const ex = state.exercises[i];
-          const correctAns = ex.type === 'mcq'
-            ? escHtml(ex.options[ex.correct])
-            : escHtml(ex.answer || '');
+          const correctAns = escHtml(ex.answer || '');
           return `
             <div class="result-item ${r.correct ? 'ok' : 'err'}">
               <span class="result-icon">${r.correct ? '✅' : '❌'}</span>
@@ -1023,7 +1021,6 @@ function checkAnswer(raw, ex) {
 }
 
 function getShortQuestion(ex) {
-  if (ex.type === 'mcq') return (ex.question || '')?.substring(0, 50) + (ex.question?.length > 50 ? '…' : '');
   if (ex.type === 'translate') return `🇫🇷 ${ex.french?.substring(0, 40)}...`;
   if (ex.type === 'translate-fr') return `🇬🇧 ${ex.english?.substring(0, 40)}...`;
   if (ex.type === 'multiple-choice') return (ex.question || ex.template || '')?.substring(0, 40) + '...';
