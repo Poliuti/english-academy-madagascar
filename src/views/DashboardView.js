@@ -44,52 +44,7 @@ export function renderDashboard() {
         </div>
       </div>
 
-      <!-- Quick Actions -->
-      <div class="quick-actions">
-        <button class="quick-btn" id="btn-boky">
-          <span class="quick-icon">🇲🇬</span>
-          <span>Boky</span>
-        </button>
-        <button class="quick-btn" id="btn-theory">
-          <span class="quick-icon">📖</span>
-          <span>Grammaire</span>
-        </button>
-        <button class="quick-btn" id="btn-vocabulary">
-          <span class="quick-icon">📚</span>
-          <span>Vocabulaire</span>
-        </button>
-        <button class="quick-btn" id="btn-reading">
-          <span class="quick-icon">📰</span>
-          <span>Compréhension</span>
-        </button>
-        <button class="quick-btn" id="btn-dialogues">
-          <span class="quick-icon">💬</span>
-          <span>Dialogues</span>
-        </button>
-        <button class="quick-btn" id="btn-tutor">
-          <span class="quick-icon">🤖</span>
-          <span>Tutor IA</span>
-        </button>
-      </div>
-      ${ENABLE_COMPETITIVE_MODE ? `
-      <button class="quick-btn-competitive" id="btn-competitive">
-        <span class="quick-icon">🏆</span>
-        <span>Défi amis</span>
-      </button>` : ''}
-
-      <!-- Assessment Banner -->
-      <div class="assessment-banner" id="btn-assessment">
-        <div class="assessment-banner-left">
-          <span class="assessment-icon">🎯</span>
-          <div>
-            <div class="assessment-title">Test de niveau</div>
-            <div class="assessment-sub">Découvre ton niveau d'anglais</div>
-          </div>
-        </div>
-        <span class="assessment-arrow">›</span>
-      </div>
-
-      <!-- Legend (collapsible) -->
+      <!-- Legend (collapsible) — above quick actions -->
       <div class="legend-section" id="legend-section">
         <button class="legend-toggle" id="legend-toggle" aria-expanded="false">
           <span>📌 Guide des sections</span>
@@ -168,6 +123,51 @@ export function renderDashboard() {
             </div>
           </div>` : ''}
         </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <button class="quick-btn" id="btn-boky">
+          <span class="quick-icon">🇲🇬</span>
+          <span>Boky</span>
+        </button>
+        <button class="quick-btn" id="btn-theory">
+          <span class="quick-icon">📖</span>
+          <span>Grammaire</span>
+        </button>
+        <button class="quick-btn" id="btn-vocabulary">
+          <span class="quick-icon">📚</span>
+          <span>Vocabulaire</span>
+        </button>
+        <button class="quick-btn" id="btn-reading">
+          <span class="quick-icon">📰</span>
+          <span>Compréhension</span>
+        </button>
+        <button class="quick-btn" id="btn-dialogues">
+          <span class="quick-icon">💬</span>
+          <span>Dialogues</span>
+        </button>
+        <button class="quick-btn" id="btn-tutor">
+          <span class="quick-icon">🤖</span>
+          <span>Tutor IA</span>
+        </button>
+      </div>
+      ${ENABLE_COMPETITIVE_MODE ? `
+      <button class="quick-btn-competitive" id="btn-competitive">
+        <span class="quick-icon">🏆</span>
+        <span>Défi amis</span>
+      </button>` : ''}
+
+      <!-- Assessment Banner -->
+      <div class="assessment-banner" id="btn-assessment">
+        <div class="assessment-banner-left">
+          <span class="assessment-icon">🎯</span>
+          <div>
+            <div class="assessment-title">Test de niveau</div>
+            <div class="assessment-sub">Découvre ton niveau d'anglais</div>
+          </div>
+        </div>
+        <span class="assessment-arrow">›</span>
       </div>
 
       <!-- Learning Path -->

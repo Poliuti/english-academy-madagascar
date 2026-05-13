@@ -210,7 +210,7 @@ function renderExerciseCard(container, state, profile) {
 
     <div class="ex-body">
       <div class="ex-type-badge">${typeLabel(ex.type)}</div>
-      <div class="ex-level-badge level-${ex.level}">${ex.level}</div>
+      ${state.mode !== 'assessment' ? `<div class="ex-level-badge level-${ex.level}">${ex.level}</div>` : ''}
 
       <div class="ex-card">
         <p class="ex-instruction">${ex.instruction}</p>

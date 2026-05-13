@@ -1700,204 +1700,294 @@ export const exercises = {
 
 // ─── LEVEL ASSESSMENT EXERCISES ─────────────────────────────────────────────
 // All type: 'multiple-choice' — 4 choices per question
-// 20 questions: A1×5, A2×6, B1×6, B1+×3
+// 30 questions: A1×7, A2×9, B1×9, B1+×5
 // 'answer' = options[correct] — used by ExerciseView checkAnswer()
-// After completion, ExerciseView computes per-band accuracy → sets profile.level
+// Level badge hidden in assessment mode; progressive per-band scoring at the end.
 export const assessmentExercises = [
 
-  // ── A1 ── (verb to be, present simple, basic vocabulary, there is/are)
+  // ── A1 (7) ── verb to be, 3rd person, there is/are, articles, irregular, questions, vocab ──
   {
     id: 'as01', type: 'multiple-choice', level: 'A1',
     instruction: 'Choisissez la bonne réponse.',
-    question: 'Choose the correct form: "I ___ a student."',
+    question: '"I ___ a teacher." Choose the correct form.',
     options: ['am', 'is', 'are', 'be'],
     correct: 0, answer: 'am',
     hint: '"I" + to be = ?',
-    explanation: '"I" + to be = am. (he/she/it → is, you/we/they → are)'
+    explanation: '"I" + to be = am. (he/she/it → is; you/we/they → are)'
   },
   {
     id: 'as02', type: 'multiple-choice', level: 'A1',
     instruction: 'Choisissez la bonne réponse.',
-    question: 'Choose the correct sentence.',
-    options: ['She have a dog.', 'She has a dog.', 'She is have a dog.', 'She having a dog.'],
-    correct: 1, answer: 'She has a dog.',
-    hint: 'he/she/it → add -s to the verb',
-    explanation: 'With he/she/it in Present Simple, add -s/-es: "has" (not "have").'
+    question: '"She ___ coffee every morning." Choose the correct form.',
+    options: ['drink', 'drinks', 'is drink', 'drank'],
+    correct: 1, answer: 'drinks',
+    hint: 'he/she/it in Present Simple → add -s',
+    explanation: 'Present Simple, 3rd person singular: drink → drinks.'
   },
   {
     id: 'as03', type: 'multiple-choice', level: 'A1',
-    instruction: 'Choisissez la traduction correcte.',
-    question: 'What does "tired" mean?',
-    options: ['fatigué / vizaka', 'heureux / faly', 'rapide / haingana', 'grand / lehibe'],
-    correct: 0, answer: 'fatigué / vizaka',
-    hint: 'Think of "I am tired after a long walk."',
-    explanation: '"Tired" = fatigué(e) / vizaka. "I am tired after school."'
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"There ___ a pharmacy near here." Which is correct?',
+    options: ['is', 'are', 'am', 'were'],
+    correct: 0, answer: 'is',
+    hint: '"A pharmacy" = singular',
+    explanation: '"There is" + singular noun. "There are" + plural noun.'
   },
   {
     id: 'as04', type: 'multiple-choice', level: 'A1',
-    instruction: 'Choisissez la bonne réponse.',
-    question: '"There ___ two cats in the garden." Which word is correct?',
-    options: ['is', 'are', 'am', 'be'],
-    correct: 1, answer: 'are',
-    hint: '"Two cats" = plural → there ___?',
-    explanation: '"There are" with plural nouns. "There is" with singular: there is a cat.'
+    instruction: 'Choisissez le bon article.',
+    question: '"Would you like ___ orange?" Choose the correct article.',
+    options: ['a', 'an', 'the', 'some'],
+    correct: 1, answer: 'an',
+    hint: '"Orange" starts with a vowel sound.',
+    explanation: '"An" before vowel sounds: an orange, an apple, an umbrella.'
   },
   {
     id: 'as05', type: 'multiple-choice', level: 'A1',
+    instruction: 'Trouvez la phrase incorrecte.',
+    question: 'Which sentence is NOT correct?',
+    options: ['I have two children.', 'She goed to school yesterday.', 'He is my uncle.', 'We are friends.'],
+    correct: 1, answer: 'She goed to school yesterday.',
+    hint: '"Go" is an irregular verb.',
+    explanation: '"Go" is irregular: go → went. "Goed" does not exist.'
+  },
+  {
+    id: 'as06', type: 'multiple-choice', level: 'A1',
     instruction: 'Choisissez la bonne réponse.',
-    question: 'Which question is correct?',
-    options: ['Where you live?', 'Where do you live?', 'Where are you live?', 'Where lives you?'],
-    correct: 1, answer: 'Where do you live?',
-    hint: 'Wh-question + do/does + subject + verb',
-    explanation: 'Yes/no and wh-questions need "do/does" in Present Simple.'
+    question: '"How old ___ you?" Choose the correct form.',
+    options: ['is', 'are', 'do', 'am'],
+    correct: 1, answer: 'are',
+    hint: 'How old + to be → which form for "you"?',
+    explanation: '"How old are you?" — "are" with you/we/they.'
+  },
+  {
+    id: 'as07', type: 'multiple-choice', level: 'A1',
+    instruction: 'Choisissez la bonne traduction.',
+    question: 'What does "hungry" mean?',
+    options: ['fatigué / vizaka', 'qui a faim / noana', 'heureux / faly', 'en colère / tezitra'],
+    correct: 1, answer: 'qui a faim / noana',
+    hint: '"I am hungry — I want to eat!"',
+    explanation: '"Hungry" = qui a faim / noana.'
   },
 
-  // ── A2 ── (past simple, present continuous, modals, present perfect intro)
+  // ── A2 (9) ── past simple, present continuous, modals, comparatives, present perfect, prepositions ──
   {
-    id: 'as06', type: 'multiple-choice', level: 'A2',
+    id: 'as08', type: 'multiple-choice', level: 'A2',
     instruction: 'Choisissez la bonne réponse.',
     question: '"Yesterday, I ___ my homework." Choose the correct form.',
     options: ['finish', 'finishing', 'finished', 'have finished'],
     correct: 2, answer: 'finished',
-    hint: '"Yesterday" = past → Past Simple',
-    explanation: '"Yesterday" signals Past Simple. Regular verbs: finish → finished.'
-  },
-  {
-    id: 'as07', type: 'multiple-choice', level: 'A2',
-    instruction: 'Choisissez la bonne réponse.',
-    question: '"Look! She ___ (run) in the park." Which form is correct?',
-    options: ['runs', 'run', 'is running', 'was running'],
-    correct: 2, answer: 'is running',
-    hint: '"Look!" = action happening right now',
-    explanation: '"Look!" signals an action happening now → Present Continuous: is + verb-ing.'
-  },
-  {
-    id: 'as08', type: 'multiple-choice', level: 'A2',
-    instruction: 'Trouvez la phrase incorrecte.',
-    question: 'Which sentence has a mistake?',
-    options: ["He doesn't like coffee.", 'She can to swim very well.', 'They went to the market.', 'I have two sisters.'],
-    correct: 1, answer: 'She can to swim very well.',
-    hint: 'What comes after a modal verb?',
-    explanation: 'After modal verbs (can, must, should...) always use bare infinitive: "can swim", not "can to swim".'
+    hint: '"Yesterday" → Past Simple',
+    explanation: '"Yesterday" signals Past Simple. finish → finished (regular).'
   },
   {
     id: 'as09', type: 'multiple-choice', level: 'A2',
-    instruction: 'Choisissez la traduction correcte.',
-    question: 'What does "busy" mean?',
-    options: ['occupé / misahirana', 'silencieux / mangina', 'propre / madio', 'lent / miadana'],
-    correct: 0, answer: 'occupé / misahirana',
-    hint: 'Think: "I am busy, I have no time."',
-    explanation: '"Busy" = occupé(e) / misahirana. "I am busy right now."'
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"Look! The cat ___ in the sun." Which form is correct?',
+    options: ['sleep', 'sleeps', 'is sleeping', 'slept'],
+    correct: 2, answer: 'is sleeping',
+    hint: '"Look!" = action happening right now',
+    explanation: '"Look!" signals Present Continuous: is + verb-ing.'
   },
   {
     id: 'as10', type: 'multiple-choice', level: 'A2',
     instruction: 'Choisissez la bonne réponse.',
-    question: '"I ___ never been to London." Which word is missing?',
-    options: ['did', 'have', 'was', 'am'],
-    correct: 1, answer: 'have',
-    hint: 'Present Perfect = have/has + past participle',
-    explanation: '"Have never been" = Present Perfect. Structure: have/has + past participle.'
+    question: '"You ___ wear a seatbelt. It\'s the law." Which modal is correct?',
+    options: ['should', 'must', 'can', 'might'],
+    correct: 1, answer: 'must',
+    hint: 'Strong legal obligation → which modal?',
+    explanation: '"Must" = strong obligation. "Should" = advice (weaker).'
   },
   {
     id: 'as11', type: 'multiple-choice', level: 'A2',
+    instruction: 'Trouvez la phrase incorrecte.',
+    question: 'Which sentence has a mistake?',
+    options: ['She can drive.', 'He must to leave now.', 'They might be late.', 'You should rest.'],
+    correct: 1, answer: 'He must to leave now.',
+    hint: 'What comes after a modal verb?',
+    explanation: 'After modals (must, can, should…) use bare infinitive — never "to": "must leave".'
+  },
+  {
+    id: 'as12', type: 'multiple-choice', level: 'A2',
     instruction: 'Choisissez la bonne réponse.',
-    question: 'Complete: "You ___ eat more vegetables. It\'s good for you."',
-    options: ['must not', 'should', "can't", "don't"],
-    correct: 1, answer: 'should',
-    hint: 'This is advice, not a strict obligation.',
-    explanation: '"Should" gives advice (less strong than "must"). "You should eat vegetables."'
+    question: '"This road is ___ than the other one." Choose the correct comparative.',
+    options: ['more dangerous', 'dangerouser', 'most dangerous', 'the most dangerous'],
+    correct: 0, answer: 'more dangerous',
+    hint: 'Long adjectives (3+ syllables) → more + adjective',
+    explanation: 'Long adjectives → more + adjective: more dangerous, more beautiful.'
+  },
+  {
+    id: 'as13', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne préposition.',
+    question: '"I was born ___ 15th March." Which preposition is correct?',
+    options: ['at', 'on', 'in', 'by'],
+    correct: 1, answer: 'on',
+    hint: 'Specific dates → which preposition?',
+    explanation: '"On" for specific dates: on 15th March, on Monday, on my birthday.'
+  },
+  {
+    id: 'as14', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"She ___ never tried sushi before." Which word is missing?',
+    options: ['did', 'has', 'was', 'is'],
+    correct: 1, answer: 'has',
+    hint: '"Never" + life experience → which tense?',
+    explanation: 'Present Perfect: have/has + past participle. "Has never tried" = life experience.'
+  },
+  {
+    id: 'as15', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"I haven\'t spoken to her ___ last Tuesday." Which word fits?',
+    options: ['for', 'since', 'during', 'ago'],
+    correct: 1, answer: 'since',
+    hint: '"Last Tuesday" = a specific point in time',
+    explanation: '"Since" + point in time. "For" + duration (for three days).'
+  },
+  {
+    id: 'as16', type: 'multiple-choice', level: 'A2',
+    instruction: 'Choisissez la bonne traduction.',
+    question: 'What does "exhausted" mean?',
+    options: ['très fatigué / reraka', 'très occupé / misahirana', 'très heureux / faly', 'très en colère / tezitra'],
+    correct: 0, answer: 'très fatigué / reraka',
+    hint: 'Think of someone after running a marathon.',
+    explanation: '"Exhausted" = extrêmement fatigué / reraka tanteraka.'
   },
 
-  // ── B1 ── (conditionals, passive, reported speech, perfect tenses, connectors)
-  {
-    id: 'as12', type: 'multiple-choice', level: 'B1',
-    instruction: 'Choisissez la bonne réponse.',
-    question: '"If I ___ more money, I would buy a new phone." Choose the correct form.',
-    options: ['have', 'had', 'will have', 'would have'],
-    correct: 1, answer: 'had',
-    hint: '2nd conditional: If + Past Simple, would + infinitive',
-    explanation: 'Second conditional (hypothetical): If + Past Simple, would + bare infinitive.'
-  },
-  {
-    id: 'as13', type: 'multiple-choice', level: 'B1',
-    instruction: 'Choisissez la bonne réponse.',
-    question: '"The book ___ written by a famous author." Which form is correct?',
-    options: ['is', 'was', 'were', 'has'],
-    correct: 1, answer: 'was',
-    hint: 'Passive voice in the past: was/were + past participle',
-    explanation: 'Passive voice, past: was/were + past participle. "The book was written..."'
-  },
-  {
-    id: 'as14', type: 'multiple-choice', level: 'B1',
-    instruction: 'Choisissez la bonne réponse.',
-    question: 'She said: "I am tired." → Reported speech: She said that she ___ tired.',
-    options: ['is', 'was', 'were', 'be'],
-    correct: 1, answer: 'was',
-    hint: 'Backshift: present "am" → past ___',
-    explanation: 'Reported speech: present "am" → past "was" (backshift in time).'
-  },
-  {
-    id: 'as15', type: 'multiple-choice', level: 'B1',
-    instruction: 'Choisissez la bonne réponse.',
-    question: '"Although it was raining, we went out." What does "although" express?',
-    options: ['parce que / satria', 'même si / na dia', 'alors / koa', "avant / alohan'ny"],
-    correct: 1, answer: 'même si / na dia',
-    hint: '"Although" introduces a contrast between two facts.',
-    explanation: '"Although" = même si / na dia — introduces a contrast/concession.'
-  },
-  {
-    id: 'as16', type: 'multiple-choice', level: 'B1',
-    instruction: 'Choisissez la bonne réponse.',
-    question: '"She ___ for this company since 2018." Which tense fits?',
-    options: ['works', 'worked', 'has been working', 'was working'],
-    correct: 2, answer: 'has been working',
-    hint: '"Since 2018" = ongoing from a point in the past',
-    explanation: '"Since 2018" with an ongoing situation → Present Perfect Continuous: has been working.'
-  },
+  // ── B1 (9) ── 2nd conditional, passive, reported speech, relative clauses, connectors, modal perfect ──
   {
     id: 'as17', type: 'multiple-choice', level: 'B1',
     instruction: 'Choisissez la bonne réponse.',
-    question: '"Despite the heavy traffic, Tom arrived on time." What does "despite" express?',
-    options: ['a reason', 'a contrast / obstacle', 'a result', 'a condition'],
-    correct: 1, answer: 'a contrast / obstacle',
-    hint: '"Despite" introduces something that goes against the expected outcome.',
-    explanation: '"Despite" (= malgré) expresses contrast — something happened in spite of an obstacle.'
+    question: '"If she ___ harder, she would pass the exam." Which form is correct?',
+    options: ['studies', 'studied', 'would study', 'has studied'],
+    correct: 1, answer: 'studied',
+    hint: '2nd conditional: If + ___ Simple, would + infinitive',
+    explanation: 'Second conditional: If + Past Simple, would + bare infinitive. Hypothetical.'
+  },
+  {
+    id: 'as18', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"The letter ___ sent three days ago." Which form is correct?',
+    options: ['is', 'was', 'were', 'been'],
+    correct: 1, answer: 'was',
+    hint: 'Passive voice in the past: was/were + past participle',
+    explanation: 'Passive, past: was + pp (singular subject). "The letter was sent."'
+  },
+  {
+    id: 'as19', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: 'He said: "I will call you." → He said that he ___ call me.',
+    options: ['will', 'would', 'should', 'could'],
+    correct: 1, answer: 'would',
+    hint: 'Reported speech: "will" shifts to ___',
+    explanation: 'Backshift in reported speech: will → would, is → was, etc.'
+  },
+  {
+    id: 'as20', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"The man ___ lives next door is a doctor." Choose the correct relative pronoun.',
+    options: ['who', 'which', 'what', 'whose'],
+    correct: 0, answer: 'who',
+    hint: '"Man" is a person → which pronoun for people?',
+    explanation: '"Who" for people. "Which" for things. "Whose" for possession.'
+  },
+  {
+    id: 'as21', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"___ the heavy rain, the match continued." Which connector fits?',
+    options: ['Although', 'Despite', 'Because', 'Since'],
+    correct: 1, answer: 'Despite',
+    hint: '"Despite" or "although"? One is followed by a noun phrase.',
+    explanation: '"Despite" + noun/gerund. "Although" + full clause.'
+  },
+  {
+    id: 'as22', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"He was home all evening, so he ___ the accident." What is logical?',
+    options: ["can't have seen", "couldn't have seen", "mustn't have seen", "didn't see"],
+    correct: 1, answer: "couldn't have seen",
+    hint: 'Past impossibility → modal + have + pp',
+    explanation: '"Couldn\'t have seen" = past impossibility. He was home, so seeing it was impossible.'
+  },
+  {
+    id: 'as23', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"She ___ for this company since 2019." Which tense is correct? (She still works there.)',
+    options: ['works', 'worked', 'has been working', 'was working'],
+    correct: 2, answer: 'has been working',
+    hint: '"Since 2019" + ongoing action still true now',
+    explanation: 'Present Perfect Continuous: has been working = ongoing since a point in the past.'
+  },
+  {
+    id: 'as24', type: 'multiple-choice', level: 'B1',
+    instruction: 'Choisissez la bonne traduction.',
+    question: 'What does "reluctant" mean?',
+    options: ['enthousiaste / mazoto', 'peu disposé / tsy te-hanao', 'curieux / mahaliana', 'surpris / gaga'],
+    correct: 1, answer: 'peu disposé / tsy te-hanao',
+    hint: '"I was reluctant to speak in public."',
+    explanation: '"Reluctant" = peu disposé à faire qch / tsy te-hanao. Opposite of eager.'
+  },
+  {
+    id: 'as25', type: 'multiple-choice', level: 'B1',
+    instruction: 'Lisez et répondez.',
+    question: '"Despite finishing the project on time, the team received no praise. Several members began looking for new jobs." — What can we infer?',
+    options: ['The team was proud of their work.', 'The team felt undervalued.', 'Management was very satisfied.', 'The project was a failure.'],
+    correct: 1, answer: 'The team felt undervalued.',
+    hint: 'Why would people look for new jobs after working hard?',
+    explanation: 'No recognition despite success + people leaving → the team felt undervalued.'
   },
 
-  // ── B1+ ── (3rd conditional, formal register, advanced vocabulary)
+  // ── B1+ (5) ── inverted 3rd conditional, causative, formal register, discourse marker, advanced vocab ──
   {
-    id: 'as18', type: 'multiple-choice', level: 'B1+',
+    id: 'as26', type: 'multiple-choice', level: 'B1+',
     instruction: 'Choisissez la bonne réponse.',
-    question: '"Had I known about the problem, I ___ earlier." Complete correctly.',
-    options: ['would have called', 'would call', 'will call', 'had called'],
-    correct: 0, answer: 'would have called',
-    hint: '3rd conditional: Had + pp → would have + pp',
-    explanation: 'Third conditional (inverted): Had + past perfect → would have + pp. Past hypothetical.'
+    question: '"Had they arrived earlier, they ___ the first train." Complete correctly.',
+    options: ['would catch', 'would have caught', 'caught', 'have caught'],
+    correct: 1, answer: 'would have caught',
+    hint: '3rd conditional (inverted): Had + pp → would have + pp',
+    explanation: 'Inverted 3rd conditional: Had + past perfect → would have + past participle.'
   },
   {
-    id: 'as19', type: 'multiple-choice', level: 'B1+',
+    id: 'as27', type: 'multiple-choice', level: 'B1+',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"I ___ my car serviced at the garage every six months." Which verb fits?',
+    options: ['do', 'make', 'have', 'let'],
+    correct: 2, answer: 'have',
+    hint: 'Causative: ___ + object + past participle',
+    explanation: 'Causative "have": have + object + pp. "Have my car serviced" = arrange for it.'
+  },
+  {
+    id: 'as28', type: 'multiple-choice', level: 'B1+',
     instruction: 'Choisissez la phrase formelle correcte.',
     question: 'Which sentence is appropriate for a formal email?',
     options: [
-      "Hey, just wanted to check if the report's done.",
+      "Hey, just checking if the report's ready.",
       'I am writing to enquire about the status of the report.',
-      'So, is the report finished or what?',
-      'Wondering bout the report, any update?'
+      'So, is the report done or what?',
+      'Report done yet?'
     ],
     correct: 1, answer: 'I am writing to enquire about the status of the report.',
-    hint: 'Formal = full forms, polite phrasing, no slang',
-    explanation: 'Formal writing uses full forms, polite phrasing, and no contractions or slang.'
+    hint: 'Formal = full forms + polite phrasing + no slang',
+    explanation: 'Formal style: full verbs, no contractions, polite vocabulary ("enquire").'
   },
   {
-    id: 'as20', type: 'multiple-choice', level: 'B1+',
+    id: 'as29', type: 'multiple-choice', level: 'B1+',
+    instruction: 'Choisissez la bonne réponse.',
+    question: '"The new policy was well-received. ___, the board plans to extend it." Which discourse marker fits?',
+    options: ['However', 'Nevertheless', 'Therefore', 'Although'],
+    correct: 2, answer: 'Therefore',
+    hint: 'The second sentence is a consequence of the first.',
+    explanation: '"Therefore" = consequently, as a result. The board\'s plan follows from the success.'
+  },
+  {
+    id: 'as30', type: 'multiple-choice', level: 'B1+',
     instruction: 'Choisissez le mot correct.',
     question: '"The proposal was met with ___ from all stakeholders." Choose the correct word.',
     options: ['approval', 'approvation', 'approbement', 'approvement'],
     correct: 0, answer: 'approval',
-    hint: 'Only one of these is a real English word.',
+    hint: 'Only one of these is a standard English word.',
     explanation: '"Approval" is the correct noun. The others are not standard English words.'
   },
-];
+]
 
 // ─── ARTICLES ───────────────────────────────────────────────────────────────
 exercises.articles = [
