@@ -46,6 +46,10 @@ export function renderDashboard() {
 
       <!-- Quick Actions -->
       <div class="quick-actions">
+        <button class="quick-btn" id="btn-boky">
+          <span class="quick-icon">🇲🇬</span>
+          <span>Boky</span>
+        </button>
         <button class="quick-btn" id="btn-theory">
           <span class="quick-icon">📖</span>
           <span>Grammaire</span>
@@ -54,28 +58,24 @@ export function renderDashboard() {
           <span class="quick-icon">📚</span>
           <span>Vocabulaire</span>
         </button>
+        <button class="quick-btn" id="btn-reading">
+          <span class="quick-icon">📰</span>
+          <span>Lecture</span>
+        </button>
         <button class="quick-btn" id="btn-dialogues">
           <span class="quick-icon">💬</span>
           <span>Dialogues</span>
         </button>
-        <button class="quick-btn quick-btn-mg" id="btn-boky">
-          <span class="quick-icon">🇲🇬</span>
-          <span>Boky</span>
-        </button>
-        <button class="quick-btn quick-btn-reading" id="btn-reading">
-          <span class="quick-icon">📰</span>
-          <span>Lecture</span>
-        </button>
-        <button class="quick-btn quick-btn-tutor" id="btn-tutor">
+        <button class="quick-btn" id="btn-tutor">
           <span class="quick-icon">🤖</span>
           <span>Tutor IA</span>
         </button>
-        ${ENABLE_COMPETITIVE_MODE ? `
-        <button class="quick-btn quick-btn-competitive" id="btn-competitive">
-          <span class="quick-icon">🏆</span>
-          <span>Défi amis</span>
-        </button>` : ''}
       </div>
+      ${ENABLE_COMPETITIVE_MODE ? `
+      <button class="quick-btn-competitive" id="btn-competitive">
+        <span class="quick-icon">🏆</span>
+        <span>Défi amis</span>
+      </button>` : ''}
 
       <!-- Assessment Banner -->
       <div class="assessment-banner" id="btn-assessment">
@@ -87,6 +87,69 @@ export function renderDashboard() {
           </div>
         </div>
         <span class="assessment-arrow">›</span>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend-section">
+        <h2 class="section-title legend-title">📌 Guide des sections</h2>
+        <div class="legend-grid">
+          <div class="legend-item">
+            <span class="legend-icon">🇲🇬</span>
+            <div>
+              <div class="legend-name">Boky</div>
+              <div class="legend-desc">Manuel structuré en malgache pour apprendre l'anglais pas à pas.</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon">📖</span>
+            <div>
+              <div class="legend-name">Grammaire</div>
+              <div class="legend-desc">Leçons et exercices sur les règles essentielles de l'anglais.</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon">📚</span>
+            <div>
+              <div class="legend-name">Vocabulaire</div>
+              <div class="legend-desc">Flashcards avec répétition espacée (SM-2) pour mémoriser les mots.</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon">📰</span>
+            <div>
+              <div class="legend-name">Lecture</div>
+              <div class="legend-desc">Textes progressifs (A1→B1+) avec questions de compréhension.</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon">💬</span>
+            <div>
+              <div class="legend-name">Dialogues</div>
+              <div class="legend-desc">Conversations guidées pour pratiquer l'anglais du quotidien.</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon">🤖</span>
+            <div>
+              <div class="legend-name">Tutor IA</div>
+              <div class="legend-desc">Pratique libre avec un tuteur IA — pose des questions, converse.</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon">📍</span>
+            <div>
+              <div class="legend-name">Mon Parcours</div>
+              <div class="legend-desc">Exercices progressifs débloqués au fil de ta progression.</div>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon">📊</span>
+            <div>
+              <div class="legend-name">Statistiques</div>
+              <div class="legend-desc">Tes progrès : XP, précision, révisions, historique de sessions.</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Learning Path -->

@@ -699,18 +699,21 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .tts-btn.playing { background: var(--primary); color: #fff; }
 
 /* ─── QUICK ACTIONS GRID ────────────────────────────────────────────────────── */
-.quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
 .quick-btn { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; font-size: .95rem; font-weight: 700; color: var(--text); box-shadow: var(--shadow-sm); }
-.quick-btn:hover { border-color: var(--primary); background: var(--primary-light); }
-.quick-btn-mg { border-color: #2E7D32; color: #2E7D32; }
-.quick-btn-mg:hover { background: #E8F5E9; border-color: #1B5E20; }
-.quick-btn-reading { border-color: #0284C7; color: #0284C7; }
-.quick-btn-reading:hover { background: #E0F2FE; border-color: #0369A1; }
-.quick-btn-tutor { border-color: #7C3AED; color: #7C3AED; grid-column: span 2; justify-content: center; }
-.quick-btn-tutor:hover { background: #EDE9FE; border-color: #5B21B6; }
+.quick-btn:hover { border-color: var(--primary); background: var(--primary-light); transform: translateY(-1px); }
 .quick-btn.primary-btn { background: var(--primary); color: #fff; border-color: var(--primary-dark); }
 .quick-btn.primary-btn:hover { background: var(--primary-dark); }
 .quick-icon { font-size: 1.3rem; }
+
+/* ─── LEGEND SECTION ─────────────────────────────────────────────────────────── */
+.legend-section { margin-bottom: 24px; }
+.legend-title { margin-bottom: 12px; }
+.legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.legend-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; box-shadow: var(--shadow-sm); }
+.legend-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+.legend-name { font-weight: 800; font-size: .9rem; color: var(--text); margin-bottom: 2px; }
+.legend-desc { font-size: .78rem; color: var(--text-muted); line-height: 1.4; }
 
 /* ─── ASSESSMENT BANNER ─────────────────────────────────────────────────────── */
 .assessment-banner {
@@ -1593,8 +1596,17 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .comp-home:hover { border-color: var(--primary); }
 
 /* ── Dashboard competitive button ──────────────────────────────────────── */
-.quick-btn-competitive { background: linear-gradient(135deg, #F59E0B, #EF4444); color: #fff; border: none; grid-column: span 2; justify-content: center; }
-.quick-btn-competitive:hover { background: linear-gradient(135deg, #D97706, #DC2626); color: #fff; }
+.quick-btn-competitive {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; margin-bottom: 16px;
+  background: linear-gradient(135deg, #F59E0B, #EF4444);
+  color: #fff; border: none; border-radius: var(--radius);
+  padding: 16px 24px; font-size: 1.05rem; font-weight: 800;
+  font-family: var(--font); box-shadow: var(--shadow); cursor: pointer;
+  transition: all .15s;
+}
+.quick-btn-competitive:hover { background: linear-gradient(135deg, #D97706, #DC2626); transform: translateY(-1px); }
+.quick-btn-competitive .quick-icon { font-size: 1.4rem; }
 
 /* ── Quit-game button (during play) ────────────────────────────────────── */
 .comp-quit-btn { align-self: flex-start; margin-bottom: 4px; }
@@ -2163,10 +2175,6 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 /* ── Dashboard ── */
 [data-theme="dark"] .xp-bar-track       { background: #38322B; }
 [data-theme="dark"] .assessment-banner  { background: linear-gradient(135deg, #1E1A0E, #2A2210); border: 1px solid var(--border); }
-[data-theme="dark"] .quick-btn-mg       { border-color: #34D399; color: #34D399; }
-[data-theme="dark"] .quick-btn-mg:hover { background: #0D2B1E; border-color: #10B981; }
-[data-theme="dark"] .quick-btn-tutor    { border-color: #A78BFA; color: #A78BFA; }
-[data-theme="dark"] .quick-btn-tutor:hover { background: #2D1A4A; border-color: #7C3AED; }
 
 /* ── Level-unlock card gradient ── */
 [data-theme="dark"] .level-unlocked-header { background: linear-gradient(135deg, #1E1A10, #2A2215); }
@@ -2250,9 +2258,8 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
    READING COMPREHENSION
    ═══════════════════════════════════════════════════════════════════════════════ */
 
-/* ── Quick action button ── */
-[data-theme="dark"] .quick-btn-reading { border-color: #38BDF8; color: #38BDF8; }
-[data-theme="dark"] .quick-btn-reading:hover { background: #0C2D40; border-color: #0EA5E9; }
+/* ── Quick action / legend dark overrides ── */
+[data-theme="dark"] .legend-item { background: var(--card); border-color: var(--border); }
 
 /* ── List page ── */
 .reading-page { max-width: 720px; margin: 0 auto; padding-bottom: 60px; min-height: 100vh; }

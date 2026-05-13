@@ -149,6 +149,7 @@ function renderTextView(container, text) {
 
   // ── Render loop ────────────────────────────────────────────────────────────
   const render = () => {
+    tooltipWord = null; // reset on every full re-render
     container.innerHTML = `
       <div class="rd-view-header">
         <button class="btn-back" id="rd-back">‹</button>
@@ -202,16 +203,33 @@ function renderTextView(container, text) {
         span.addEventListener('click', e => {
           e.stopPropagation();
           const word = span.dataset.word;
+          const tt = container.querySelector('#rd-tooltip');
           if (word === tooltipWord) {
+            // Toggle off
             tooltipWord = null;
-            hideTooltip();
+            if (tt) tt.classList.add('hidden');
             return;
           }
           tooltipWord = word;
           const entry = glossary[word];
-          if (phase === 'questions') hintsUsed++;
-          showTooltip(container, span, word, entry, phase === 'questions');
-          render(); // re-render to update hint count if changed
+          const isQ = phase === 'questions';
+          if (isQ) {
+            hintsUsed++;
+            // Update hint badge in-place — no re-render
+            const hintsEl = container.querySelector('.rd-hints-used');
+            if (hintsEl) {
+              hintsEl.textContent = `💡 ${hintsUsed} aide${hintsUsed > 1 ? 's' : ''}`;
+            } else {
+              const metaRow = container.querySelector('.rd-q-meta');
+              if (metaRow) {
+                const badge = document.createElement('span');
+                badge.className = 'rd-hints-used';
+                badge.textContent = `💡 ${hintsUsed} aide${hintsUsed > 1 ? 's' : ''}`;
+                metaRow.appendChild(badge);
+              }
+            }
+          }
+          showTooltip(container, span, word, entry, isQ);
         });
       });
     }
@@ -549,9 +567,7 @@ function showTooltip(container, span, word, entry, isQuestion) {
   }
 }
 
-function hideTooltip() {
-  // will be cleared on next render
-}
+function hideTooltip() { /* no-op — handled inline */ }
 
 /** Keyword-based short answer verification */
 function checkShort(userInput, keywords) {
