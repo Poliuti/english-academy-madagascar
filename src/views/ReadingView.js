@@ -232,6 +232,21 @@ function renderTextView(container, text) {
           showTooltip(container, span, word, entry, isQ);
         });
       });
+
+      // ✕ close button resets tooltipWord (register only once on the container)
+      if (!container._tooltipClosedBound) {
+        container._tooltipClosedBound = true;
+        container.addEventListener('tooltip-closed', () => { tooltipWord = null; });
+      }
+
+      // Click anywhere in the text body (not on a word) dismisses the tooltip
+      container.querySelector('.rd-text-body')?.addEventListener('click', () => {
+        const tt = container.querySelector('#rd-tooltip');
+        if (tt && !tt.classList.contains('hidden')) {
+          tt.classList.add('hidden');
+          tooltipWord = null;
+        }
+      });
     }
 
     // ── Phase-specific bindings ──
@@ -552,19 +567,55 @@ function showTooltip(container, span, word, entry, isQuestion) {
   const tt = container.querySelector('#rd-tooltip');
   if (!tt) return;
   tt.innerHTML = `
+    <button class="rd-tt-close" title="Fermer">✕</button>
     <strong>${word}</strong><br>
     🇫🇷 ${escHtml(entry.fr)}<br>
     🇲🇬 ${escHtml(entry.mg)}
     ${isQuestion ? `<div class="rd-tt-hint">💡 aide comptabilisée</div>` : ''}
   `;
   tt.classList.remove('hidden');
-  // Position near the span
+
+  // Wire up the ✕ close button
+  tt.querySelector('.rd-tt-close').addEventListener('click', e => {
+    e.stopPropagation();
+    tt.classList.add('hidden');
+    // Reset tooltipWord by dispatching a synthetic reset via a custom event
+    container.dispatchEvent(new CustomEvent('tooltip-closed'));
+  });
+
+  // Position: try below the word first, flip above if it would cover the word
   const spanRect = span.getBoundingClientRect();
-  const bodyRect = container.querySelector('.rd-text-body')?.getBoundingClientRect();
-  if (bodyRect) {
-    tt.style.top  = (spanRect.bottom - bodyRect.top + 6) + 'px';
-    tt.style.left = Math.max(0, spanRect.left - bodyRect.left) + 'px';
+  const bodyEl   = container.querySelector('.rd-text-body');
+  const bodyRect = bodyEl?.getBoundingClientRect();
+  if (!bodyRect) return;
+
+  // Reset to measure actual tooltip height
+  tt.style.top  = '-9999px';
+  tt.style.left = '-9999px';
+  const ttH = tt.offsetHeight || 80;
+
+  const spaceBelow = bodyRect.bottom - spanRect.bottom;
+  const spaceAbove = spanRect.top - bodyRect.top;
+  let topPx;
+
+  if (spaceBelow >= ttH + 8) {
+    // Enough room below — normal position
+    topPx = spanRect.bottom - bodyRect.top + 6;
+  } else if (spaceAbove >= ttH + 8) {
+    // Flip above the word
+    topPx = spanRect.top - bodyRect.top - ttH - 6;
+  } else {
+    // Fallback: place below but ensure it doesn't cover the word
+    topPx = spanRect.bottom - bodyRect.top + 6;
   }
+
+  const leftPx = Math.min(
+    Math.max(0, spanRect.left - bodyRect.left),
+    bodyRect.width - (tt.offsetWidth || 180) - 4
+  );
+
+  tt.style.top  = topPx + 'px';
+  tt.style.left = leftPx + 'px';
 }
 
 function hideTooltip() { /* no-op — handled inline */ }

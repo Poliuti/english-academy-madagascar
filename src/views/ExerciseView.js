@@ -179,7 +179,8 @@ function renderLevelPicker(container, topicId, mode, profile) {
 function loadExercises(topicId, mode, profile, diffLevel) {
   let pool;
   if (mode === 'assessment') {
-    pool = [...assessmentExercises];
+    // Return ALL assessment questions – never apply SESSION_SIZE slice
+    return [...assessmentExercises];
   } else if (diffLevel) {
     pool = getExercisesByLevel(topicId, diffLevel);
   } else {
