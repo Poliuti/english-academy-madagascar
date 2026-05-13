@@ -8,6 +8,7 @@ import { renderBoky } from './views/BokyView.js';
 import { renderTutor } from './views/TutorView.js';
 import { renderCompetitive } from './views/CompetitiveView.js';
 import { renderStats } from './views/StatsView.js';
+import { initTheme } from './theme.js';
 import { getActiveProfile } from './storage.js';
 
 const app = document.getElementById('app');
@@ -77,6 +78,7 @@ function router() {
 
 window.addEventListener('hashchange', router);
 window.addEventListener('load', () => {
+  initTheme();
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(() => {});
   }

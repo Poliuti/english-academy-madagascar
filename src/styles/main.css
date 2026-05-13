@@ -2079,3 +2079,140 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   .stats-kpi-grid { grid-template-columns: repeat(2, 1fr); }
   .kpi-value { font-size: .95rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   DARK MODE  [data-theme="dark"]
+   All overrides are additive — no existing rules are modified.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  /* ── Core palette ── */
+  --bg:            #1A1612;
+  --card:          #242019;
+  --text:          #F2EDE4;
+  --text-muted:    #8A7E70;
+  --text-light:    #5C5045;
+  --border:        #38322B;
+
+  /* ── Primary (amber stays vibrant on dark) ── */
+  --primary:       #F59E0B;
+  --primary-dark:  #E08800;
+  --primary-light: #3D2E00;
+
+  /* ── Semantic colours ── */
+  --success:       #34D399;
+  --success-light: #0D2B1E;
+  --error:         #F87171;
+  --error-light:   #3B1010;
+  --info:          #60A5FA;
+  --info-light:    #1A2C4A;
+
+  /* ── Shadows (stronger on dark) ── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,.4);
+  --shadow:     0 4px 12px rgba(0,0,0,.5);
+  --shadow-lg:  0 8px 24px rgba(0,0,0,.6);
+}
+
+/* ── Base inputs ── */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea { background: #1F1A12; color: var(--text); }
+[data-theme="dark"] .modal-input     { background: #1F1A12; color: var(--text); }
+[data-theme="dark"] .answer-input    { background: var(--bg); color: var(--text); }
+[data-theme="dark"] .answer-input:focus    { background: #1F1A12; }
+[data-theme="dark"] .answer-input:disabled { background: #2A2318; color: var(--text-muted); }
+[data-theme="dark"] .tutor-input     { background: #1F1A12; color: var(--text); border-color: var(--border); }
+[data-theme="dark"] .tutor-input:focus { border-color: #7C3AED; }
+[data-theme="dark"] .spell-input     { background: #1F1A12; color: var(--text); }
+[data-theme="dark"] .pin-input       { background: #1F1A12; color: var(--text); }
+[data-theme="dark"] .comp-player-input,
+[data-theme="dark"] .comp-answer-input { background: #1F1A12; color: var(--text); }
+
+/* ── Buttons ── */
+[data-theme="dark"] .btn-secondary        { background: var(--card); }
+[data-theme="dark"] .btn-secondary:hover  { background: #2A2318; }
+[data-theme="dark"] .btn-back:hover       { background: #2A2318; }
+
+/* ── CEFR level badges ── */
+[data-theme="dark"] .level-A1  { background: #3A2C00; color: #FCD34D; }
+[data-theme="dark"] .level-A2  { background: #1A2940; color: #93C5FD; }
+[data-theme="dark"] .level-B1  { background: #0D2B1E; color: #6EE7B7; }
+[data-theme="dark"] .level-B1\+{ background: #2D1A4A; color: #C4B5FD; }
+
+/* ── Dashboard ── */
+[data-theme="dark"] .xp-bar-track       { background: #38322B; }
+[data-theme="dark"] .assessment-banner  { background: linear-gradient(135deg, #2A1B05, #3A2C00); }
+[data-theme="dark"] .quick-btn-mg       { border-color: #34D399; color: #34D399; }
+[data-theme="dark"] .quick-btn-mg:hover { background: #0D2B1E; border-color: #10B981; }
+[data-theme="dark"] .quick-btn-tutor    { border-color: #A78BFA; color: #A78BFA; }
+[data-theme="dark"] .quick-btn-tutor:hover { background: #2D1A4A; border-color: #7C3AED; }
+
+/* ── Learning path ── */
+[data-theme="dark"] .topic-progress-bar { background: #38322B; }
+[data-theme="dark"] .lv-dot-locked      { color: #3A3025; }
+[data-theme="dark"] .lv-dot-open        { color: #4A4035; }
+
+/* ── Exercise ── */
+[data-theme="dark"] .ex-type-badge      { background: #3A2C00; color: #FCD34D; }
+[data-theme="dark"] .level-card-badge   { background: #3A2C00; color: #FCD34D; }
+[data-theme="dark"] .wo-answer-area     { background: #1F1A12; }
+[data-theme="dark"] .hint-box           { background: #2A2505; border-color: #4A4000; }
+[data-theme="dark"] .hint-box *         { color: #FCD34D; }
+[data-theme="dark"] .btn-next:hover     { background: #1D4ED8; }
+
+/* ── Exercise results ── */
+[data-theme="dark"] .result-item.ok  { background: #0D2B1E; }
+[data-theme="dark"] .result-item.err { background: #3B1010; }
+
+/* ── Theory ── */
+[data-theme="dark"] .malgasy-note    { background: #0D2B1E; color: #6EE7B7; }
+[data-theme="dark"] .mg-col-mg       { color: #6EE7B7; }
+[data-theme="dark"] .mg-col-struct code { background: #2A2318; }
+[data-theme="dark"] .mg-tab.active   { background: #2A1B05; border-color: #E65100; color: #FB923C; }
+[data-theme="dark"] .mg-disclaimer   { background: #2A2505; border-left-color: #D97706; color: #FCD34D; }
+
+/* ── Boky ── */
+[data-theme="dark"] .boky-table tr:hover td { background: #2A2318; }
+[data-theme="dark"] .boky-summary    { background: linear-gradient(135deg, #1A2940, #1E305A); border-left-color: #3B82F6; }
+[data-theme="dark"] .boky-summary h3 { color: #93C5FD; }
+[data-theme="dark"] .boky-summary li { color: #60A5FA; }
+[data-theme="dark"] .boky-qexercises { background: #0D2B1E; border-left-color: #22C55E; }
+[data-theme="dark"] .boky-qexercises h3 { color: #34D399; }
+[data-theme="dark"] .boky-answer     { color: #34D399; }
+[data-theme="dark"] .boky-errors li  { color: #F87171; }
+[data-theme="dark"] .boky-uncertain  { color: #FB923C; }
+[data-theme="dark"] .boky-warning    { background: #2A2505; border-left-color: #FFC107; color: #FCD34D; }
+
+/* ── Tutor AI ── */
+[data-theme="dark"] .tutor-suggestion       { background: #2D1A4A; color: #C4B5FD; border-color: #7C3AED; }
+[data-theme="dark"] .tutor-suggestion:hover { background: #7C3AED; color: #fff; }
+
+/* ── Vocabulary flashcard ── */
+[data-theme="dark"] .flash-mg              { color: #6EE7B7; }
+[data-theme="dark"] .flash-btn-review      { background: #2A1B05; border-color: #B45309; color: #FCD34D; }
+[data-theme="dark"] .flash-btn-review:hover{ background: #B45309; color: #fff; }
+[data-theme="dark"] .flash-btn-known       { background: #0D2B1E; border-color: #065F46; color: #6EE7B7; }
+[data-theme="dark"] .flash-btn-known:hover { background: #065F46; color: #fff; }
+
+/* ── Vocabulary quiz ── */
+[data-theme="dark"] .quiz-opt-correct { border-color: #065F46 !important; background: #0D2B1E !important; color: #6EE7B7 !important; }
+[data-theme="dark"] .quiz-opt-wrong   { border-color: #7F1D1D !important; background: #3B1010 !important; color: #F87171 !important; }
+[data-theme="dark"] .quiz-fb-ok       { background: #0D2B1E; color: #6EE7B7; border-color: #065F46; }
+[data-theme="dark"] .quiz-fb-err      { background: #3B1010; color: #F87171; border-color: #7F1D1D; }
+[data-theme="dark"] .spell-mg         { color: #6EE7B7; }
+
+/* ── Vocabulary SM-2 (sidebar / review) ── */
+[data-theme="dark"] .btn-review-start  { background: #3B1010; border-color: #7F1D1D; color: #F87171; }
+[data-theme="dark"] .btn-review-start:hover { background: #7F1D1D; color: #fff; }
+[data-theme="dark"] .review-due-count  { background: #7F1D1D; }
+[data-theme="dark"] .btn-review-start:hover .review-due-count { background: #fff; color: #7F1D1D; }
+
+/* ── Dialogue ── */
+[data-theme="dark"] .dialogue-card.level-B1 .dialogue-level { background: #1A2940; color: #60A5FA; }
+
+/* ── Competitive ── */
+[data-theme="dark"] .comp-result.wrong { background: #2A2318; }
+
+/* ── Statistics — SM-2 badges ── */
+[data-theme="dark"] .sm2-due   { background: #3B1010; border-color: #7F1D1D; color: #F87171; }
+[data-theme="dark"] .sm2-known { background: #0D2B1E; border-color: #065F46; color: #6EE7B7; }
+[data-theme="dark"] .sm2-seen  { background: #2A2505; border-color: #4A4000; color: #FCD34D; }

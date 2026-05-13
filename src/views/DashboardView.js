@@ -1,6 +1,7 @@
 import { getActiveProfile, getLevelTitle, getTopicCompletionPercent, getLevelScore, isLevelUnlocked } from '../storage.js';
 import { TOPICS, isTopicUnlocked } from '../data/topics.js';
 import { ENABLE_COMPETITIVE_MODE } from '../config.js';
+import { toggleTheme, isDark } from '../theme.js';
 
 export function renderDashboard() {
   const profile = getActiveProfile();
@@ -26,6 +27,7 @@ export function renderDashboard() {
         <div class="stat-badge">🔥 ${profile.streak || 0}</div>
         <div class="stat-badge xp-badge">⭐ ${profile.xp || 0} XP</div>
         <button class="btn-icon-only btn-stats-nav" id="btn-stats" title="Mes statistiques">📊</button>
+        <button class="btn-icon-only" id="btn-theme" title="Changer de thème">${isDark() ? '☀️' : '🌙'}</button>
       </div>
     </header>
 
@@ -97,6 +99,10 @@ export function renderDashboard() {
   });
   container.querySelector('#btn-stats').addEventListener('click', () => {
     location.hash = '#stats';
+  });
+  container.querySelector('#btn-theme').addEventListener('click', function() {
+    const next = toggleTheme();
+    this.textContent = next === 'dark' ? '☀️' : '🌙';
   });
   container.querySelector('#btn-assessment').addEventListener('click', () => {
     location.hash = '#exercise?topic=assessment&mode=assessment';

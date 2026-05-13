@@ -2,6 +2,7 @@ import { getActiveProfile } from '../storage.js';
 import { TOPICS, getTopicById } from '../data/topics.js';
 import { VOCAB_CATEGORIES, VOCABULARY } from '../data/vocabulary.js';
 import { isDue } from '../sm2.js';
+import { toggleTheme, isDark } from '../theme.js';
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
@@ -16,6 +17,10 @@ export function renderStats() {
 
   container.querySelector('#btn-stats-back').addEventListener('click', () => {
     location.hash = '#dashboard';
+  });
+  container.querySelector('#btn-stats-theme').addEventListener('click', function() {
+    const next = toggleTheme();
+    this.textContent = next === 'dark' ? '☀️' : '🌙';
   });
 
   return container;
@@ -104,6 +109,7 @@ function buildHTML(profile, s) {
     <div class="stats-header">
       <button class="btn-icon-only" id="btn-stats-back" title="Retour">‹</button>
       <h1 class="stats-title">📊 Mes Statistiques</h1>
+      <button class="btn-icon-only btn-theme-stats" id="btn-stats-theme" title="Changer de thème" style="margin-left:auto">${isDark() ? '☀️' : '🌙'}</button>
     </div>
 
     <div class="stats-content">
