@@ -8,6 +8,7 @@ import { renderBoky } from './views/BokyView.js';
 import { renderTutor } from './views/TutorView.js';
 import { renderCompetitive } from './views/CompetitiveView.js';
 import { renderStats } from './views/StatsView.js';
+import { renderReading } from './views/ReadingView.js';
 import { initTheme } from './theme.js';
 import { getActiveProfile } from './storage.js';
 
@@ -68,6 +69,9 @@ function router() {
       break;
     case 'stats':
       view = renderStats();
+      break;
+    case 'reading':
+      view = renderReading(params.get('id'));
       break;
     default:
       view = profile ? renderDashboard() : renderProfileSelector();

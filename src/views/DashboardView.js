@@ -62,6 +62,10 @@ export function renderDashboard() {
           <span class="quick-icon">🇲🇬</span>
           <span>Boky</span>
         </button>
+        <button class="quick-btn quick-btn-reading" id="btn-reading">
+          <span class="quick-icon">📰</span>
+          <span>Lecture</span>
+        </button>
         <button class="quick-btn quick-btn-tutor" id="btn-tutor">
           <span class="quick-icon">🤖</span>
           <span>Tutor IA</span>
@@ -118,6 +122,9 @@ export function renderDashboard() {
   });
   container.querySelector('#btn-boky').addEventListener('click', () => {
     location.hash = '#boky';
+  });
+  container.querySelector('#btn-reading').addEventListener('click', () => {
+    location.hash = '#reading';
   });
   container.querySelector('#btn-tutor').addEventListener('click', () => {
     location.hash = '#tutor';
