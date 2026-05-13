@@ -564,8 +564,10 @@ function renderText(rawText, glossary) {
 }
 
 function showTooltip(container, span, word, entry, isQuestion) {
+  if (!entry) return; // guard: word not in glossary
   const tt = container.querySelector('#rd-tooltip');
   if (!tt) return;
+
   tt.innerHTML = `
     <button class="rd-tt-close" title="Fermer">✕</button>
     <strong>${word}</strong><br>
@@ -573,49 +575,46 @@ function showTooltip(container, span, word, entry, isQuestion) {
     🇲🇬 ${escHtml(entry.mg)}
     ${isQuestion ? `<div class="rd-tt-hint">💡 aide comptabilisée</div>` : ''}
   `;
+
+  // Use position:fixed so viewport coords work regardless of scroll
+  tt.style.position = 'fixed';
+  tt.style.top  = '-9999px';
+  tt.style.left = '-9999px';
   tt.classList.remove('hidden');
 
   // Wire up the ✕ close button
   tt.querySelector('.rd-tt-close').addEventListener('click', e => {
     e.stopPropagation();
     tt.classList.add('hidden');
-    // Reset tooltipWord by dispatching a synthetic reset via a custom event
     container.dispatchEvent(new CustomEvent('tooltip-closed'));
   });
 
-  // Position: try below the word first, flip above if it would cover the word
+  // Block clicks on the tooltip body from reaching the text (avoids accidental dismiss)
+  tt.onclick = e => e.stopPropagation();
+
+  // Measure tooltip size after making it visible
+  const ttH = tt.offsetHeight || 88;
+  const ttW = tt.offsetWidth  || 200;
+
+  // Viewport coords of the clicked word
   const spanRect = span.getBoundingClientRect();
-  const bodyEl   = container.querySelector('.rd-text-body');
-  const bodyRect = bodyEl?.getBoundingClientRect();
-  if (!bodyRect) return;
 
-  // Reset to measure actual tooltip height
-  tt.style.top  = '-9999px';
-  tt.style.left = '-9999px';
-  const ttH = tt.offsetHeight || 80;
-
-  const spaceBelow = bodyRect.bottom - spanRect.bottom;
-  const spaceAbove = spanRect.top - bodyRect.top;
-  let topPx;
-
-  if (spaceBelow >= ttH + 8) {
-    // Enough room below — normal position
-    topPx = spanRect.bottom - bodyRect.top + 6;
-  } else if (spaceAbove >= ttH + 8) {
-    // Flip above the word
-    topPx = spanRect.top - bodyRect.top - ttH - 6;
+  // Decide: below or above?
+  const spaceBelow = window.innerHeight - spanRect.bottom;
+  let topFixed;
+  if (spaceBelow >= ttH + 10) {
+    topFixed = spanRect.bottom + 6;        // normal: below the word
   } else {
-    // Fallback: place below but ensure it doesn't cover the word
-    topPx = spanRect.bottom - bodyRect.top + 6;
+    topFixed = spanRect.top - ttH - 6;    // flip: above the word
   }
+  // Clamp to viewport
+  topFixed = Math.max(4, Math.min(topFixed, window.innerHeight - ttH - 4));
 
-  const leftPx = Math.min(
-    Math.max(0, spanRect.left - bodyRect.left),
-    bodyRect.width - (tt.offsetWidth || 180) - 4
-  );
+  // Horizontal: start at word's left, keep within viewport
+  const leftFixed = Math.max(4, Math.min(spanRect.left, window.innerWidth - ttW - 8));
 
-  tt.style.top  = topPx + 'px';
-  tt.style.left = leftPx + 'px';
+  tt.style.top  = topFixed  + 'px';
+  tt.style.left = leftFixed + 'px';
 }
 
 function hideTooltip() { /* no-op — handled inline */ }

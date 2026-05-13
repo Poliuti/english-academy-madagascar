@@ -1080,4 +1080,190 @@ Perhaps the most effective solution is simply to make reading enjoyable rather t
     ],
   },
 
+  // ═══════════════════════════ NEW TEXTS ════════════════════════════════════
+
+  {
+    id: 'r_a1_05',
+    title: 'My House',
+    level: 'A1',
+    topic: 'home',
+    icon: '🏠',
+    wordCount: 92,
+    xpReward: 15,
+    text:
+`My name is Haja. I live in a house in Antananarivo. My house has two bedrooms, a kitchen, a bathroom, and a living room.
+
+The living room is my favourite room. It is big and comfortable. We have a sofa, a television, and a table. In the evening, my family watches TV together.
+
+My bedroom is small but nice. I have a bed, a desk, and a wardrobe. I do my homework at my desk every afternoon. There are pictures of animals on the walls.
+
+Our garden is not very big. We have some flowers and a small tree. My father works in the garden at weekends. He grows tomatoes and onions there.
+
+I feel happy in my house because my family is here.`,
+    glossary: {
+      'comfortable': { fr: 'confortable',  mg: 'mahafinaritra' },
+      'wardrobe':    { fr: 'armoire',      mg: 'armoera' },
+      'sofa':        { fr: 'canapé',       mg: 'seza lehibe' },
+    },
+    questions: [
+      { id: 'q1', type: 'mcq', question: 'How many bedrooms does Haja\'s house have?', options: ['One', 'Two', 'Three', 'Four'], correct: 1 },
+      { id: 'q2', type: 'mcq', question: 'What is Haja\'s favourite room?', options: ['The kitchen', 'The bedroom', 'The living room', 'The bathroom'], correct: 2 },
+      { id: 'q3', type: 'mcq', question: 'What does Haja do at the desk every afternoon?', options: ['Reads books', 'Does homework', 'Draws pictures', 'Watches TV'], correct: 1 },
+      { id: 'q4', type: 'mcq', question: 'What does Haja\'s father grow in the garden?', options: ['Flowers and fruit', 'Rice and beans', 'Tomatoes and onions', 'Potatoes and carrots'], correct: 2 },
+      { id: 'q5', type: 'tf', statement: 'Haja\'s bedroom is large.', correct: false },
+      { id: 'q6', type: 'tf', statement: 'The family watches TV together in the evening.', correct: true },
+      { id: 'q7', type: 'short', question: 'What is on the walls of Haja\'s bedroom?', keywords: ['animals', 'pictures', 'animal'], hint: 'Look at the bedroom description.' },
+    ],
+  },
+
+  {
+    id: 'r_a2_06',
+    title: 'A Trip to the Beach',
+    level: 'A2',
+    topic: 'leisure',
+    icon: '🏖️',
+    wordCount: 152,
+    xpReward: 20,
+    text:
+`Last summer, our family went on a trip to the beach. We drove for two hours to reach a small coastal town called Ifaty. It was the first time my little sister had seen the sea, and she was amazed.
+
+The beach was beautiful. The sand was white and the water was very clear and warm. We swam, played volleyball, and collected shells along the shore. My father hired a small boat and we sailed around the bay for an hour.
+
+We stayed in a guesthouse near the beach. The owner was very friendly and cooked us fresh fish every evening. It was the most delicious food I had ever tasted.
+
+On the last day, we visited a coral reef with a local guide. The colours of the fish and coral were incredible. My sister took photographs with a waterproof camera.
+
+When we came home, we were tired but very happy. I hope we can go back there next year.`,
+    glossary: {
+      'coastal':     { fr: 'côtier',        mg: 'amoron-dranomasina' },
+      'amazed':      { fr: 'émerveillée',   mg: 'talanjona' },
+      'shells':      { fr: 'coquillages',   mg: 'akora' },
+      'coral reef':  { fr: 'récif corallien', mg: 'coral' },
+      'guesthouse':  { fr: 'pension',       mg: 'trano fandraisana' },
+    },
+    questions: [
+      { id: 'q1', type: 'mcq', question: 'How long did the drive to Ifaty take?', options: ['One hour', 'Two hours', 'Three hours', 'Half an hour'], correct: 1 },
+      { id: 'q2', type: 'mcq', question: 'What did the father hire at the beach?', options: ['A surfboard', 'A bicycle', 'A small boat', 'A jet ski'], correct: 2 },
+      { id: 'q3', type: 'mcq', question: 'What did the guesthouse owner cook for them?', options: ['Rice and chicken', 'Fresh fish', 'Pasta', 'Grilled vegetables'], correct: 1 },
+      { id: 'q4', type: 'mcq', question: 'What did they visit on the last day?', options: ['A market', 'A waterfall', 'A coral reef', 'A national park'], correct: 2 },
+      { id: 'q5', type: 'tf', statement: 'It was the narrator\'s first time seeing the sea.', correct: false },
+      { id: 'q6', type: 'tf', statement: 'The narrator hopes to return to the beach next year.', correct: true },
+      { id: 'q7', type: 'short', question: 'What did the children collect along the shore?', keywords: ['shells', 'shell'], hint: 'Look at what they did on the beach.' },
+    ],
+  },
+
+  {
+    id: 'r_b1_05',
+    title: 'Social Media and Teenagers',
+    level: 'B1',
+    topic: 'technology',
+    icon: '📱',
+    wordCount: 218,
+    xpReward: 25,
+    text:
+`Social media platforms have become a central part of daily life for teenagers around the world. For many young people, spending several hours online each day is entirely normal. But what are the real effects of this digital habit?
+
+On one hand, social media offers genuine benefits. It allows teenagers to stay in contact with friends and family, share their interests, and discover new ideas. Young people can also use platforms to develop creative skills, build communities around shared passions, and even raise awareness about important social issues.
+
+However, research increasingly suggests that heavy social media use can have negative consequences for mental health. Studies have linked excessive screen time to higher levels of anxiety, depression, and loneliness — particularly among girls. One major problem is that users are constantly exposed to idealistic and often misleading images of other people's lives, which can damage self-esteem and create unrealistic expectations.
+
+Another concern is the issue of cyberbullying. Unlike traditional bullying, cyberbullying can happen at any time and in any place, making it extremely difficult for victims to escape. Many teenagers feel unable to ask adults for help because they are afraid of having their phones taken away.
+
+Experts generally agree that moderation is key. Using social media mindfully — setting time limits, choosing content carefully, and taking regular breaks — can help teenagers enjoy its benefits without suffering its negative effects.`,
+    glossary: {
+      'excessive':    { fr: 'excessif',     mg: 'be loatra' },
+      'idealistic':   { fr: 'idéalisé',     mg: 'tsy mety ho tranga' },
+      'self-esteem':  { fr: 'estime de soi', mg: 'fanajana tena' },
+      'cyberbullying':{ fr: 'cyberharcèlement', mg: 'fanenjehana an-tserasera' },
+      'moderation':   { fr: 'modération',   mg: 'fahendrena amin\'ny fampiasana' },
+    },
+    questions: [
+      { id: 'q1', type: 'mcq', question: 'Which group does research suggest is most affected by heavy social media use?', options: ['Boys', 'Girls', 'Adults', 'Teachers'], correct: 1 },
+      { id: 'q2', type: 'mcq', question: 'What is one benefit of social media mentioned in the text?', options: ['It replaces schools', 'It helps teenagers sleep better', 'It allows young people to build communities', 'It reduces screen time'], correct: 2 },
+      { id: 'q3', type: 'mcq', question: 'Why is cyberbullying particularly difficult to escape?', options: ['It is always anonymous', 'It can happen any time and anywhere', 'Adults never notice it', 'It only happens at school'], correct: 1 },
+      { id: 'q4', type: 'mcq', question: 'What do experts say is the key to healthy social media use?', options: ['Avoiding it completely', 'Only using it for school', 'Moderation and mindful use', 'Only using it with parents'], correct: 2 },
+      { id: 'q5', type: 'tf', statement: 'The text says social media has no positive uses for teenagers.', correct: false },
+      { id: 'q6', type: 'tf', statement: 'Some teenagers are afraid to report cyberbullying because they fear losing their phones.', correct: true },
+      { id: 'q7', type: 'short', question: 'Name one practical tip the text suggests for healthier social media use.', keywords: ['time limits', 'breaks', 'content', 'mindfully', 'limit', 'break'] },
+      { id: 'q8', type: 'selfcheck', question: 'Do you think social media is mainly positive or mainly negative for teenagers your age? Use ideas from the text to support your answer.', modelAnswer: 'Both views are valid. Positive: staying connected, creativity, awareness campaigns. Negative: anxiety, depression, cyberbullying, unrealistic comparisons. Strong answers discuss both sides and form a clear, justified opinion.' },
+    ],
+  },
+
+  {
+    id: 'r_b1_06',
+    title: 'Food Waste',
+    level: 'B1',
+    topic: 'environment',
+    icon: '🍱',
+    wordCount: 212,
+    xpReward: 25,
+    text:
+`Every year, approximately one third of all the food produced in the world is wasted. This amounts to around 1.3 billion tonnes of food thrown away annually — enough to feed every hungry person on Earth several times over. Food waste is not only a moral problem; it is also a serious environmental and economic one.
+
+When food is wasted, all the resources used to produce it are also wasted: the water, the land, the energy, and the labour. Furthermore, when food rots in landfill sites, it releases methane, a powerful greenhouse gas that contributes significantly to climate change.
+
+Food is wasted at every stage of the supply chain. In richer countries, much of the waste occurs at the consumer level. People buy more than they need, forget what is in their fridge, and throw away food that has passed its use-by date even when it is still perfectly safe to eat. In poorer countries, waste tends to occur earlier in the chain, due to inadequate storage facilities and poor transportation infrastructure.
+
+Several solutions have been proposed. Supermarkets can reduce waste by improving their stock management and donating unsold food to charities. Consumers can make a difference by planning meals carefully, buying only what they need, and learning to use leftovers creatively. Governments can introduce policies that reward businesses for reducing waste and penalise unnecessary disposal.
+
+Tackling food waste requires action at every level — from international policy to individual shopping habits.`,
+    glossary: {
+      'approximately': { fr: 'environ',      mg: 'tokony ho' },
+      'landfill':      { fr: 'décharge',     mg: 'toeran-drano fako' },
+      'methane':       { fr: 'méthane',      mg: 'gazy metana' },
+      'infrastructure':{ fr: 'infrastructure', mg: 'fotodrafitrasa' },
+      'leftovers':     { fr: 'restes',       mg: 'sisa sakafo' },
+    },
+    questions: [
+      { id: 'q1', type: 'mcq', question: 'How much of the world\'s food is wasted each year?', options: ['One fifth', 'One quarter', 'One third', 'One half'], correct: 2 },
+      { id: 'q2', type: 'mcq', question: 'What harmful gas does rotting food in landfills release?', options: ['Carbon dioxide', 'Nitrogen', 'Methane', 'Oxygen'], correct: 2 },
+      { id: 'q3', type: 'mcq', question: 'In richer countries, where does most food waste occur?', options: ['During farming', 'During transportation', 'At the consumer level', 'In factories'], correct: 2 },
+      { id: 'q4', type: 'mcq', question: 'What can supermarkets do to reduce food waste?', options: ['Increase prices', 'Reduce opening hours', 'Improve stock management and donate unsold food', 'Sell smaller portions only'], correct: 2 },
+      { id: 'q5', type: 'tf', statement: 'In poorer countries, food waste mainly happens when consumers throw food away.', correct: false },
+      { id: 'q6', type: 'tf', statement: 'Wasting food also wastes the water and energy used to produce it.', correct: true },
+      { id: 'q7', type: 'short', question: 'Name one thing individual consumers can do to reduce food waste.', keywords: ['plan', 'buy', 'leftovers', 'shopping', 'fridge', 'need'] },
+      { id: 'q8', type: 'selfcheck', question: 'The text says food waste "requires action at every level." What does this mean? Explain using examples from the text.', modelAnswer: 'It means that no single group can solve the problem alone. Governments must create policies; supermarkets must manage stock better and donate food; consumers must plan shopping and use leftovers. Each level of the supply chain plays a role, from production to the individual consumer.' },
+    ],
+  },
+
+  {
+    id: 'r_b1p_03',
+    title: 'The History of the Internet',
+    level: 'B1+',
+    topic: 'technology',
+    icon: '🌐',
+    wordCount: 295,
+    xpReward: 30,
+    text:
+`Few technologies have transformed human society as profoundly as the internet. What began as a small military research network in the United States in the 1960s has grown into a global infrastructure connecting billions of people and underpinning almost every aspect of modern life.
+
+The origins of the internet lie in ARPANET, a project funded by the US Department of Defense in 1969. Its initial purpose was to allow military researchers to share data between computers at different universities. The system was deliberately designed to be decentralised — meaning there was no single point of control — so that it could continue to function even if parts of it were destroyed in a nuclear attack.
+
+During the 1970s and 1980s, ARPANET expanded and the underlying protocols that govern internet communication were developed. However, it remained largely inaccessible to the general public. The real turning point came in 1991, when British scientist Tim Berners-Lee invented the World Wide Web — a system of interlinked documents that could be navigated using a browser. Suddenly, the internet became something that ordinary people could actually use.
+
+Throughout the 1990s, commercial internet service providers emerged, home connections became affordable, and websites multiplied rapidly. By 2000, the internet had already begun to transform commerce, communication, and entertainment on a global scale. The early twenty-first century brought further revolutions: social media, smartphones, cloud computing, and streaming services all built upon the internet's foundation.
+
+Today, the internet is so deeply woven into the fabric of daily life that it is difficult to imagine existing without it. Yet it remains a relatively young technology — barely fifty years old — and its full impact on society, politics, and human behaviour is still far from fully understood.
+
+Perhaps most remarkably, the network that was originally designed to withstand nuclear war now carries cat videos, online shopping, and live global conversations without interruption.`,
+    glossary: {
+      'underpinning':  { fr: 'sous-tendant',   mg: 'manohana' },
+      'decentralised': { fr: 'décentralisé',   mg: 'tsy ivon-toerana' },
+      'protocols':     { fr: 'protocoles',     mg: 'fitsipika fifandraisana' },
+      'interlinked':   { fr: 'interconnectés', mg: 'mifandray' },
+      'commerce':      { fr: 'commerce',       mg: 'varotra' },
+    },
+    questions: [
+      { id: 'q1', type: 'mcq', question: 'What was the original purpose of ARPANET?', options: ['To provide internet access to schools', 'To allow military researchers to share data', 'To create a commercial network', 'To connect ordinary people globally'], correct: 1 },
+      { id: 'q2', type: 'mcq', question: 'Why was the original network designed to be decentralised?', options: ['To make it cheaper', 'To allow more users', 'So it could survive a nuclear attack', 'To improve download speeds'], correct: 2 },
+      { id: 'q3', type: 'mcq', question: 'Who invented the World Wide Web?', options: ['Bill Gates', 'Steve Jobs', 'Tim Berners-Lee', 'Mark Zuckerberg'], correct: 2 },
+      { id: 'q4', type: 'mcq', question: 'When was the World Wide Web invented?', options: ['1969', '1983', '1991', '2000'], correct: 2 },
+      { id: 'q5', type: 'tf', statement: 'The internet was originally created as a commercial project.', correct: false },
+      { id: 'q6', type: 'tf', statement: 'The World Wide Web made the internet accessible to ordinary people.', correct: true },
+      { id: 'q7', type: 'short', question: 'Name one technology of the early 21st century that was built on the internet.', keywords: ['social media', 'smartphones', 'cloud', 'streaming', 'smartphone'] },
+      { id: 'q8', type: 'selfcheck', question: 'The text says the internet\'s "full impact on society, politics, and human behaviour is still far from fully understood." What do you think this means? Give examples to support your answer.', modelAnswer: 'It means we are still discovering how the internet is changing us. Examples could include: how social media affects mental health and democracy; how algorithms shape opinions; how online commerce has changed shopping habits; how remote communication is changing work. Strong answers will suggest specific areas still being debated or researched.' },
+      { id: 'q9', type: 'selfcheck', question: 'The text ends with a contrast between the internet\'s origins (military survival tool) and its uses today. What effect does this contrast create, and what point do you think the author is making?', modelAnswer: 'The contrast is ironic and humorous: a system built to survive nuclear war now handles trivial entertainment. The author\'s point is likely that technology develops in unpredictable ways, and that its eventual uses often far exceed — or differ entirely from — the original intentions of its creators.' },
+    ],
+  },
+
 ]; // end READING_TEXTS

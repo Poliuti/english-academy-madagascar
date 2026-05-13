@@ -2381,13 +2381,14 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 }
 .gloss-word:hover { background: var(--primary-light); border-radius: 3px; }
 
-/* Glossary tooltip */
+/* Glossary tooltip — position:fixed set by JS so viewport coords work with scroll */
 .rd-tooltip {
-  position: absolute; z-index: 50;
+  position: fixed; z-index: 200;
   background: var(--card); border: 1.5px solid var(--primary);
-  border-radius: var(--radius-sm); padding: 8px 12px 8px 12px;
+  border-radius: var(--radius-sm); padding: 8px 28px 8px 12px;
   font-size: .8rem; box-shadow: var(--shadow);
   max-width: 220px; line-height: 1.5;
+  pointer-events: auto;
 }
 .rd-tooltip.hidden { display: none; }
 .rd-tt-hint { font-size: .7rem; color: var(--text-muted); margin-top: 4px; font-style: italic; }
