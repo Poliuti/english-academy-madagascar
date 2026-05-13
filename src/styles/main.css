@@ -527,10 +527,29 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .result-item.ok { background: #F0FDF4; }
 .result-item.err { background: #FEF2F2; }
 .result-icon { flex-shrink: 0; }
-.result-q { flex: 1; color: var(--text); font-weight: 600; }
+.result-body { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.result-q { color: var(--text); font-weight: 600; }
 .result-ans { color: var(--success); font-weight: 700; }
+.result-expl { color: var(--text-muted); font-size: .78rem; font-style: italic; }
 
-.results-actions { display: flex; gap: 12px; justify-content: center; }
+.results-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+/* ─── ASSESSMENT RESULT BANNER ───────────────────────────────────────────────── */
+.assessment-result-banner {
+  background: linear-gradient(135deg, #FFFBEB, #FEF3C7);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.arb-level-row { display: flex; align-items: center; gap: 14px; }
+.arb-icon { font-size: 2.8rem; }
+.arb-label { font-size: .8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.arb-level { font-size: 1.5rem; font-weight: 900; color: var(--primary-dark); }
+.arb-desc { font-size: .9rem; color: var(--text); font-weight: 600; }
+.arb-score { font-size: .82rem; color: var(--text-muted); }
+[data-theme="dark"] .assessment-result-banner { background: linear-gradient(135deg, #2A2000, #1E1800); border-color: var(--primary); }
 
 /* ─── THEORY PAGE ───────────────────────────────────────────────────────────── */
 .theory-page { min-height: 100vh; }

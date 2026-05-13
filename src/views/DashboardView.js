@@ -60,7 +60,7 @@ export function renderDashboard() {
         </button>
         <button class="quick-btn" id="btn-reading">
           <span class="quick-icon">📰</span>
-          <span>Lecture</span>
+          <span>Compréhension</span>
         </button>
         <button class="quick-btn" id="btn-dialogues">
           <span class="quick-icon">💬</span>
@@ -117,7 +117,7 @@ export function renderDashboard() {
           <div class="legend-item">
             <span class="legend-icon">📰</span>
             <div>
-              <div class="legend-name">Lecture</div>
+              <div class="legend-name">Compréhension</div>
               <div class="legend-desc">Textes progressifs (A1→B1+) avec questions de compréhension.</div>
             </div>
           </div>
@@ -149,6 +149,21 @@ export function renderDashboard() {
               <div class="legend-desc">Tes progrès : XP, précision, révisions, historique de sessions.</div>
             </div>
           </div>
+          <div class="legend-item">
+            <span class="legend-icon">🎯</span>
+            <div>
+              <div class="legend-name">Test de niveau</div>
+              <div class="legend-desc">Évalue ton niveau CECR (A1→B1+) pour personnaliser ton parcours.</div>
+            </div>
+          </div>
+          ${ENABLE_COMPETITIVE_MODE ? `
+          <div class="legend-item">
+            <span class="legend-icon">🏆</span>
+            <div>
+              <div class="legend-name">Défi amis</div>
+              <div class="legend-desc">Affronte tes amis sur des exercices chronométrés et compare vos scores.</div>
+            </div>
+          </div>` : ''}
         </div>
       </div>
 

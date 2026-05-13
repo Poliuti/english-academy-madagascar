@@ -1,5 +1,5 @@
 import { getActiveProfile, addXP, updateStreak, saveTopicProgress, saveSM2, saveSession,
-         saveLevelProgress, getLevelScore, isLevelUnlocked } from '../storage.js';
+         saveLevelProgress, getLevelScore, isLevelUnlocked, setProfileLevel } from '../storage.js';
 import { getExercisesByTopic, getExercisesByLevel } from '../data/exercises.js';
 import { assessmentExercises } from '../data/exercises.js';
 import { TOPICS, getTopicById } from '../data/topics.js';
@@ -550,6 +550,29 @@ function finishSession(container, state, profile) {
   const percent = Math.round((correctCount / total) * 100);
   const xpTotal = state.results.reduce((s, r) => s + r.xp, 0);
 
+  // ── Assessment: compute CEFR level from per-band accuracy ─────────────────
+  let detectedLevel = null;
+  if (state.mode === 'assessment') {
+    const bands = ['A1', 'A2', 'B1', 'B1+'];
+    const bandStats = {};
+    state.exercises.forEach((ex, i) => {
+      const lv = ex.level || 'A1';
+      if (!bandStats[lv]) bandStats[lv] = { correct: 0, total: 0 };
+      bandStats[lv].total++;
+      if (state.results[i]?.correct) bandStats[lv].correct++;
+    });
+    // Highest band with ≥ 60% accuracy
+    detectedLevel = 'A1'; // default (even if A1 fails, they start at A1)
+    for (const band of bands) {
+      const s = bandStats[band];
+      if (s && s.total > 0 && (s.correct / s.total) >= 0.6) {
+        detectedLevel = band;
+      }
+    }
+    // Save detected level to profile
+    setProfileLevel(profile.id, detectedLevel);
+  }
+
   // Save progress
   saveTopicProgress(profile.id, state.topicId || 'assessment', total, correctCount);
   if (state.diffLevel) {
@@ -564,7 +587,7 @@ function finishSession(container, state, profile) {
     xp: xpTotal,
   });
 
-  // Check if next level just unlocked
+  // Check if next level just unlocked (non-assessment only)
   const freshProfile = getActiveProfile();
   const nextLv = state.diffLevel ? state.diffLevel + 1 : null;
   const nextUnlocked = nextLv && nextLv <= 3 && percent >= 80 && isLevelUnlocked(freshProfile, state.topicId, nextLv);
@@ -573,13 +596,37 @@ function finishSession(container, state, profile) {
   const msg   = percent >= 80 ? 'Excellent travail !' : percent >= 60 ? 'Bon travail !' : percent >= 40 ? 'Continue !' : 'Ne lâche pas !';
   const levelLabel = state.diffLevel ? LEVEL_LABELS[state.diffLevel] : null;
 
+  // Level descriptions for assessment result
+  const CEFR_DESC = {
+    'A1':  { icon: '🌱', label: 'Débutant',       desc: 'Tu maîtrises les bases. Commence par les leçons A1 !' },
+    'A2':  { icon: '📗', label: 'Élémentaire',     desc: 'Bon niveau de base. Les leçons A2 sont pour toi.' },
+    'B1':  { icon: '📘', label: 'Intermédiaire',   desc: 'Tu te débrouilles bien ! Continue vers B1+.' },
+    'B1+': { icon: '📙', label: 'Intermédiaire +', desc: 'Très bon niveau ! Vise les structures avancées.' },
+  };
+  const cefrInfo = detectedLevel ? CEFR_DESC[detectedLevel] : null;
+
   container.innerHTML = `
     <div class="results-page">
       <div class="results-header">
         <div class="results-emoji">${emoji}</div>
-        <h2>${msg}</h2>
+        <h2>${detectedLevel ? 'Test terminé !' : msg}</h2>
       </div>
 
+      ${detectedLevel ? `
+      <div class="assessment-result-banner">
+        <div class="arb-level-row">
+          <span class="arb-icon">${cefrInfo.icon}</span>
+          <div>
+            <div class="arb-label">Ton niveau détecté</div>
+            <div class="arb-level">${detectedLevel} — ${cefrInfo.label}</div>
+          </div>
+        </div>
+        <div class="arb-desc">${cefrInfo.desc}</div>
+        <div class="arb-score">${correctCount} / ${total} correctes (${percent}%)</div>
+      </div>
+      ` : ''}
+
+      ${!detectedLevel ? `
       <div class="results-score">
         <div class="score-circle" style="--pct:${percent}">
           <div class="score-inner">
@@ -589,6 +636,7 @@ function finishSession(container, state, profile) {
         </div>
         <div class="score-percent">${percent}% de réussite</div>
       </div>
+      ` : ''}
 
       ${xpTotal > 0 ? `<div class="results-xp">+${xpTotal} XP gagnés ⭐</div>` : ''}
       ${levelLabel ? `<div class="results-level-badge">${levelLabel}</div>` : ''}
@@ -601,20 +649,28 @@ function finishSession(container, state, profile) {
       <div class="results-breakdown">
         ${state.results.map((r, i) => {
           const ex = state.exercises[i];
+          const correctAns = ex.type === 'mcq'
+            ? escHtml(ex.options[ex.correct])
+            : escHtml(ex.answer || '');
           return `
             <div class="result-item ${r.correct ? 'ok' : 'err'}">
               <span class="result-icon">${r.correct ? '✅' : '❌'}</span>
-              <span class="result-q">${getShortQuestion(ex)}</span>
-              ${!r.correct ? `<span class="result-ans">→ ${escHtml(ex.answer)}</span>` : ''}
+              <div class="result-body">
+                <span class="result-q">${escHtml(getShortQuestion(ex))}</span>
+                ${!r.correct ? `<span class="result-ans">✓ ${correctAns}</span>` : ''}
+                ${!r.correct && ex.explanation ? `<span class="result-expl">${escHtml(ex.explanation)}</span>` : ''}
+              </div>
             </div>
           `;
         }).join('')}
       </div>
 
       <div class="results-actions">
+        ${detectedLevel ? `<button class="btn-primary" id="btn-dashboard">🏠 Aller au tableau de bord</button>` : ''}
         ${nextUnlocked ? `<button class="btn-primary results-next-lv" id="btn-next-lv">🚀 Niveau ${nextLv} →</button>` : ''}
-        <button class="btn-${nextUnlocked ? 'secondary' : 'primary'}" id="btn-again">🔄 Recommencer</button>
-        <button class="btn-secondary" id="btn-dashboard">🏠 Tableau de bord</button>
+        ${!detectedLevel ? `<button class="btn-${nextUnlocked ? 'secondary' : 'primary'}" id="btn-again">🔄 Recommencer</button>` : ''}
+        ${!detectedLevel ? `<button class="btn-secondary" id="btn-dashboard">🏠 Tableau de bord</button>` : ''}
+        ${detectedLevel ? `<button class="btn-secondary" id="btn-again">🔄 Refaire le test</button>` : ''}
         ${state.diffLevel ? `<button class="btn-secondary" id="btn-levels">📊 Niveaux</button>` : ''}
       </div>
     </div>
@@ -967,6 +1023,7 @@ function checkAnswer(raw, ex) {
 }
 
 function getShortQuestion(ex) {
+  if (ex.type === 'mcq') return (ex.question || '')?.substring(0, 50) + (ex.question?.length > 50 ? '…' : '');
   if (ex.type === 'translate') return `🇫🇷 ${ex.french?.substring(0, 40)}...`;
   if (ex.type === 'translate-fr') return `🇬🇧 ${ex.english?.substring(0, 40)}...`;
   if (ex.type === 'multiple-choice') return (ex.question || ex.template || '')?.substring(0, 40) + '...';
