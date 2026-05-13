@@ -161,6 +161,20 @@ export function getSM2(profileId, exerciseId) {
   return profile.sm2Items?.[exerciseId] || null;
 }
 
+export function saveVocabSM2(profileId, wordKey, sm2Data) {
+  return updateProfile(profileId, p => {
+    if (!p.vocabSM2) p.vocabSM2 = {};
+    p.vocabSM2[wordKey] = sm2Data;
+    return p;
+  });
+}
+
+export function getVocabSM2Map(profileId) {
+  const profile = getActiveProfile();
+  if (!profile || profile.id !== profileId) return {};
+  return profile.vocabSM2 || {};
+}
+
 export function saveSession(profileId, session) {
   return updateProfile(profileId, p => {
     if (!p.sessionHistory) p.sessionHistory = [];

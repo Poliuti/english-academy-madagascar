@@ -1830,3 +1830,54 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   .quiz-word { font-size: 1.5rem; }
   .spell-input { font-size: 1rem; }
 }
+
+/* ─── VOCABULARY: SM-2 Spaced Repetition ───────────────────────────────────── */
+
+/* Sidebar progress bar under category label */
+.sidebar-item-center { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+.sidebar-item-right  { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.sidebar-progress-bar {
+  height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; width: 100%;
+}
+.sidebar-progress-fill { height: 100%; background: #4CAF50; border-radius: 2px; transition: width .4s; }
+.sidebar-due-badge {
+  background: #E53935; color: #fff; border-radius: 10px;
+  padding: 1px 6px; font-size: .72rem; font-weight: 800; min-width: 18px; text-align: center;
+}
+
+/* SM-2 progress bar below game buttons */
+.vocab-sm2-bar {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 8px 0 4px;
+}
+.vocab-sm2-segments {
+  display: flex; height: 6px; border-radius: 4px;
+  background: var(--border); overflow: hidden; width: 100%;
+}
+.sm2-seg { height: 100%; transition: width .5s; }
+.sm2-seg-known { background: #4CAF50; }
+.sm2-seg-soon  { background: #FF9800; }
+.sm2-seg-due   { background: #E53935; }
+.vocab-sm2-label { font-size: .78rem; color: var(--text-light); font-weight: 600; }
+
+/* SM-2 status dot on vocab cards */
+.vocab-sm2-dot {
+  position: absolute; top: 6px; right: 8px;
+  font-size: .75rem; line-height: 1;
+}
+.vocab-card { position: relative; }
+
+/* Review button */
+.btn-review-start {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: var(--radius);
+  border: 2px solid #E53935; background: #FFEBEE;
+  color: #C62828; font-size: .9rem; font-weight: 700;
+  cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.btn-review-start:hover { background: #E53935; color: #fff; }
+.review-due-count {
+  background: #E53935; color: #fff; border-radius: 10px;
+  padding: 1px 7px; font-size: .8rem; font-weight: 800;
+}
+.btn-review-start:hover .review-due-count { background: #fff; color: #E53935; }

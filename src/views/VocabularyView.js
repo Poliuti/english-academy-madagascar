@@ -1,5 +1,8 @@
 import { VOCAB_CATEGORIES, VOCABULARY } from '../data/vocabulary.js';
 import { speak } from '../tts.js';
+import { getActiveProfile } from '../storage.js';
+import { saveVocabSM2, getVocabSM2Map } from '../storage.js';
+import { calculateNextReview, isDue } from '../sm2.js';
 
 export function renderVocabulary(categoryId) {
   const container = document.createElement('div');
@@ -39,21 +42,101 @@ export function renderVocabulary(categoryId) {
   let spellCorrect = false;
   let spellTyped = '';
 
+  // ── SM-2 Spaced Repetition ─────────────────────────────────────────────
+  // Load all vocab SM-2 data from profile once at init
+  const _initProfile = getActiveProfile();
+  let sm2Map = _initProfile ? getVocabSM2Map(_initProfile.id) : {};
+
+  // Word key: "catId:englishWord" — unique across all categories
+  function wKey(catId, word) { return catId + ':' + word.en; }
+
+  // Status of a word for current category
+  function wordStatus(catId, word) {
+    const item = sm2Map[wKey(catId, word)];
+    if (!item) return 'new';
+    if (isDue(item)) return 'due';
+    const days = Math.round((item.nextReview - Date.now()) / 86400000);
+    if (days <= 2) return 'soon';
+    return 'known';
+  }
+
+  // Save one word's SM-2 result (quality: 5=known, 1=review)
+  function saveWord(catId, word, quality) {
+    const key = wKey(catId, word);
+    const updated = calculateNextReview(sm2Map[key] || {}, quality);
+    sm2Map[key] = updated;
+    const profile = getActiveProfile();
+    if (profile) saveVocabSM2(profile.id, key, updated);
+  }
+
+  // Count due words for a category
+  function dueCount(catId) {
+    return (VOCABULARY[catId] || []).filter(w => {
+      const item = sm2Map[wKey(catId, w)];
+      return item && isDue(item);
+    }).length;
+  }
+
+  // Count seen (ever reviewed) words for a category
+  function seenCount(catId) {
+    return (VOCABULARY[catId] || []).filter(w => sm2Map[wKey(catId, w)]).length;
+  }
+
+  // Compute full SM-2 stats for a category
+  function computeSm2Stats(catId) {
+    const allWords = VOCABULARY[catId] || [];
+    let known = 0, soon = 0, due = 0, newCount = 0;
+    const statusMap = {};
+    allWords.forEach(w => {
+      const s = wordStatus(catId, w);
+      statusMap[w.en] = s;
+      if (s === 'known') known++;
+      else if (s === 'soon') soon++;
+      else if (s === 'due') due++;
+      else newCount++;
+    });
+    const total = allWords.length;
+    const seen = known + soon + due;
+    return {
+      total, seen, known, soon, due, new: newCount, statusMap,
+      pctKnown: total > 0 ? (known / total * 100).toFixed(1) : 0,
+      pctSoon:  total > 0 ? (soon  / total * 100).toFixed(1) : 0,
+      pctDue:   total > 0 ? (due   / total * 100).toFixed(1) : 0,
+    };
+  }
+
+  // Review mode: flashcard deck = only due words
+  let reviewMode = false;
+
+  function startReview() {
+    const words = VOCABULARY[current] || [];
+    const due = words.filter(w => {
+      const item = sm2Map[wKey(current, w)];
+      return item && isDue(item);
+    });
+    if (due.length === 0) return;
+    flashDeck = [...due].sort(() => Math.random() - 0.5);
+    flashIndex = 0; flashFlipped = false; flashKnown = []; flashReview = [];
+    reviewMode = true; flashMode = true;
+    matchMode = false; quizMode = false; spellMode = false;
+    render();
+  }
+
+  function stopReview() {
+    reviewMode = false; flashMode = false; render();
+  }
+
   function startFlash() {
     const words = VOCABULARY[current] || [];
     flashDeck = [...words].sort(() => Math.random() - 0.5);
-    flashIndex = 0;
-    flashFlipped = false;
-    flashKnown = [];
-    flashReview = [];
-    flashMode = true;
-    matchMode = false;
+    flashIndex = 0; flashFlipped = false; flashKnown = []; flashReview = [];
+    flashMode = true; reviewMode = false;
+    matchMode = false; quizMode = false; spellMode = false;
     render();
   }
 
   function stopFlash() {
-    flashMode = false;
-    render();
+    flashMode = false; reviewMode = false; render();
   }
 
   function startMatch() {
@@ -130,13 +213,23 @@ export function renderVocabulary(categoryId) {
           <h3 class="sidebar-title">📚 Vocabulaire</h3>
           ${inGame ? '' : `<input type="text" class="vocab-search" id="vocab-search" placeholder="🔎 Rechercher..." value="${escHtml(search)}" />`}
           <nav class="sidebar-nav">
-            ${VOCAB_CATEGORIES.map(c => `
+            ${VOCAB_CATEGORIES.map(c => {
+              const due = dueCount(c.id);
+              const seen = seenCount(c.id);
+              const total = (VOCABULARY[c.id] || []).length;
+              const pct = total > 0 ? Math.round((seen / total) * 100) : 0;
+              return `
               <button class="sidebar-item ${c.id === current && !inGame ? 'active' : ''}" data-cat="${c.id}">
                 <span>${c.icon}</span>
-                <span>${c.label}</span>
-                <span class="sidebar-level">${c.level}</span>
-              </button>
-            `).join('')}
+                <div class="sidebar-item-center">
+                  <span>${c.label}</span>
+                  ${pct > 0 ? `<div class="sidebar-progress-bar"><div class="sidebar-progress-fill" style="width:${pct}%"></div></div>` : ''}
+                </div>
+                <div class="sidebar-item-right">
+                  ${due > 0 ? `<span class="sidebar-due-badge">${due}</span>` : `<span class="sidebar-level">${c.level}</span>`}
+                </div>
+              </button>`;
+            }).join('')}
           </nav>
         </aside>
         <main class="vocab-main">
@@ -145,7 +238,7 @@ export function renderVocabulary(categoryId) {
             <button class="btn-back" id="btn-back-mobile">← Retour</button>
             <button class="btn-mobile-toc" id="btn-mobile-toc">☰ Catégories</button>
           </div>
-          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : quizMode ? renderQuizUI() : spellMode ? renderSpellUI() : renderCategory(current, search)}
+          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : quizMode ? renderQuizUI() : spellMode ? renderSpellUI() : renderCategory(current, search, computeSm2Stats(current))}
         </main>
       </div>
     `;
@@ -161,7 +254,7 @@ export function renderVocabulary(categoryId) {
       return `
         <div class="flash-summary">
           <div class="flash-summary-icon">🎉</div>
-          <h2 class="flash-summary-title">Session terminée !</h2>
+          <h2 class="flash-summary-title">${reviewMode ? 'Révision terminée !' : 'Session terminée !'}</h2>
           <div class="flash-summary-stats">
             <div class="flash-stat flash-stat-known">
               <div class="flash-stat-num">${flashKnown.length}</div>
@@ -189,7 +282,7 @@ export function renderVocabulary(categoryId) {
     return `
       <div class="flash-wrap">
         <div class="flash-topbar">
-          <span class="flash-counter">${flashIndex + 1} / ${total}</span>
+          <span class="flash-counter">${reviewMode ? '🔄' : '🃏'} ${flashIndex + 1} / ${total}</span>
           <div class="flash-progress-track">
             <div class="flash-progress-fill" style="width:${progressPct}%"></div>
           </div>
@@ -321,7 +414,9 @@ export function renderVocabulary(categoryId) {
           if (quizAnswered) return;
           quizAnswered = true;
           quizChoice = i;
-          if (quizCurrentOptions[i]?.isCorrect) quizScore++;
+          const correct = quizCurrentOptions[i]?.isCorrect;
+          if (correct) quizScore++;
+          saveWord(current, quizDeck[quizIndex], correct ? 5 : 1);
           render();
         });
       });
@@ -353,6 +448,7 @@ export function renderVocabulary(categoryId) {
           spellTyped = (inp?.value || '').trim();
           spellCorrect = normSpell(spellTyped) === normSpell(spellDeck[spellIndex]?.en || '');
           if (spellCorrect) spellScore++;
+          saveWord(current, spellDeck[spellIndex], spellCorrect ? 4 : 1);
           spellAnswered = true;
           render();
         });
@@ -364,18 +460,20 @@ export function renderVocabulary(categoryId) {
         searchInput.addEventListener('input', e => {
           search = e.target.value.trim().toLowerCase();
           const main = container.querySelector('.vocab-main');
-          if (main) main.innerHTML = renderCategory(current, search);
+          if (main) main.innerHTML = renderCategory(current, search, computeSm2Stats(current));
           bindTts();
           bindFlashStart();
           bindMatchStart();
           bindQuizStart();
           bindSpellStart();
+          bindReviewStart();
         });
       }
       bindFlashStart();
       bindMatchStart();
       bindQuizStart();
       bindSpellStart();
+      bindReviewStart();
     } else {
       // Flash mode events
       const stopBtn = container.querySelector('#btn-flash-stop');
@@ -404,9 +502,10 @@ export function renderVocabulary(categoryId) {
       const knownBtn = container.querySelector('#btn-known');
       if (knownBtn) {
         knownBtn.addEventListener('click', () => {
-          flashKnown.push(flashDeck[flashIndex]);
-          flashIndex++;
-          flashFlipped = false;
+          const w = flashDeck[flashIndex];
+          saveWord(current, w, 5);
+          flashKnown.push(w);
+          flashIndex++; flashFlipped = false;
           render();
         });
       }
@@ -414,9 +513,10 @@ export function renderVocabulary(categoryId) {
       const reviewBtn = container.querySelector('#btn-review');
       if (reviewBtn) {
         reviewBtn.addEventListener('click', () => {
-          flashReview.push(flashDeck[flashIndex]);
-          flashIndex++;
-          flashFlipped = false;
+          const w = flashDeck[flashIndex];
+          saveWord(current, w, 1);
+          flashReview.push(w);
+          flashIndex++; flashFlipped = false;
           render();
         });
       }
@@ -651,6 +751,11 @@ export function renderVocabulary(categoryId) {
     if (btn) btn.addEventListener('click', startSpell);
   }
 
+  function bindReviewStart() {
+    const btn = container.querySelector('#btn-review-start');
+    if (btn) btn.addEventListener('click', startReview);
+  }
+
   function bindTts() {
     container.querySelectorAll('.tts-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -670,7 +775,7 @@ export function renderVocabulary(categoryId) {
   return container;
 }
 
-function renderCategory(catId, search) {
+function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, soon:0, due:0, new:0, statusMap:{}, pctKnown:0, pctSoon:0, pctDue:0 }) {
   const cat = VOCAB_CATEGORIES.find(c => c.id === catId);
   let words = VOCABULARY[catId] || [];
 
@@ -695,16 +800,31 @@ function renderCategory(catId, search) {
             <button class="btn-secondary match-start-btn" id="btn-match-start" title="Jeu de mémorisation">🔀 Match</button>
             <button class="btn-secondary quiz-start-btn" id="btn-quiz-start" title="Quiz QCM">🧠 Quiz</button>
             <button class="btn-secondary spell-start-btn" id="btn-spell-start" title="Écrire le mot">✏️ Écrire</button>
+            ${sm2Stats.due > 0 ? `<button class="btn-review-start" id="btn-review-start" title="Révision du jour">🔄 Révision <span class="review-due-count">${sm2Stats.due}</span></button>` : ''}
           </div>
         ` : ''}
       </div>
+      ${sm2Stats.seen > 0 ? `
+        <div class="vocab-sm2-bar">
+          <div class="vocab-sm2-segments">
+            <div class="sm2-seg sm2-seg-known"  style="width:${sm2Stats.pctKnown}%"  title="${sm2Stats.known} mots maîtrisés"></div>
+            <div class="sm2-seg sm2-seg-soon"   style="width:${sm2Stats.pctSoon}%"   title="${sm2Stats.soon} mots bientôt"></div>
+            <div class="sm2-seg sm2-seg-due"    style="width:${sm2Stats.pctDue}%"    title="${sm2Stats.due} mots à réviser"></div>
+          </div>
+          <span class="vocab-sm2-label">${sm2Stats.seen}/${sm2Stats.total} vus · ${sm2Stats.due > 0 ? sm2Stats.due + ' à réviser' : sm2Stats.known > 0 ? sm2Stats.known + ' maîtrisés 🎉' : ''}</span>
+        </div>
+      ` : ''}
       ${words.length === 0 ? `
         <div class="vocab-empty">Aucun mot trouvé pour "${escHtml(search)}".</div>
       ` : `
         <div class="vocab-grid">
-          ${words.map(w => `
+          ${words.map(w => {
+            const st = sm2Stats.statusMap[w.en] || 'new';
+            const dot = { due: '🔴', soon: '🟡', known: '🟢' }[st] || '';
+            return `
             <div class="vocab-card">
               <div class="vocab-card-top">
+                ${dot ? `<span class="vocab-sm2-dot">${dot}</span>` : ''}
                 ${w.icon ? `<div class="vocab-icon">${w.icon}</div>` : ''}
                 <div class="vocab-en">
                   ${escHtml(w.en)}
@@ -718,7 +838,7 @@ function renderCategory(catId, search) {
                 <button class="tts-btn" data-text="${escHtml(w.example)}" title="Écouter l'exemple">▶</button>
               </div>
             </div>
-          `).join('')}
+            `; }).join('')}
         </div>
       `}
     </div>
