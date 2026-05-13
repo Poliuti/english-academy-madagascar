@@ -2094,10 +2094,10 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   --text-light:    #5C5045;
   --border:        #38322B;
 
-  /* ── Primary (amber stays vibrant on dark) ── */
-  --primary:       #F59E0B;
-  --primary-dark:  #E08800;
-  --primary-light: #3D2E00;
+  /* ── Primary (muted amber-gold for dark) ── */
+  --primary:       #C4820A;
+  --primary-dark:  #A36B08;
+  --primary-light: #2C1E00;
 
   /* ── Semantic colours ── */
   --success:       #34D399;
@@ -2138,13 +2138,40 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 [data-theme="dark"] .level-B1  { background: #0D2B1E; color: #6EE7B7; }
 [data-theme="dark"] .level-B1\+{ background: #2D1A4A; color: #C4B5FD; }
 
+/* ── Dashboard header — dark, no vivid orange ── */
+[data-theme="dark"] .dash-header {
+  background: linear-gradient(160deg, #1C1A14 0%, #221E14 100%);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+[data-theme="dark"] .stat-badge {
+  background: rgba(196, 130, 10, 0.12);
+  border: 1px solid rgba(196, 130, 10, 0.28);
+  color: #C4820A;
+  backdrop-filter: none;
+}
+[data-theme="dark"] .xp-badge { background: rgba(196, 130, 10, 0.18); }
+
+/* ── XP & progress bar gradients (tone down vivid orange endpoint) ── */
+[data-theme="dark"] .xp-bar-fill      { background: linear-gradient(90deg, var(--primary), #A36B08); }
+[data-theme="dark"] .ex-progress-fill { background: linear-gradient(90deg, var(--primary), #A36B08); }
+[data-theme="dark"] .quick-btn-competitive { background: linear-gradient(135deg, #A36B08, #B42020); }
+[data-theme="dark"] .quick-btn-competitive:hover { background: linear-gradient(135deg, #875808, #8B1717); }
+
 /* ── Dashboard ── */
 [data-theme="dark"] .xp-bar-track       { background: #38322B; }
-[data-theme="dark"] .assessment-banner  { background: linear-gradient(135deg, #2A1B05, #3A2C00); }
+[data-theme="dark"] .assessment-banner  { background: linear-gradient(135deg, #1E1A0E, #2A2210); border: 1px solid var(--border); }
 [data-theme="dark"] .quick-btn-mg       { border-color: #34D399; color: #34D399; }
 [data-theme="dark"] .quick-btn-mg:hover { background: #0D2B1E; border-color: #10B981; }
 [data-theme="dark"] .quick-btn-tutor    { border-color: #A78BFA; color: #A78BFA; }
 [data-theme="dark"] .quick-btn-tutor:hover { background: #2D1A4A; border-color: #7C3AED; }
+
+/* ── Level-unlock card gradient ── */
+[data-theme="dark"] .level-unlocked-header { background: linear-gradient(135deg, #1E1A10, #2A2215); }
+
+/* ── Flashcard stat numbers ── */
+[data-theme="dark"] .flash-stat-known .flash-stat-num { color: #34D399; }
+[data-theme="dark"] .flash-stat-review .flash-stat-num { color: #C4820A; }
 
 /* ── Learning path ── */
 [data-theme="dark"] .topic-progress-bar { background: #38322B; }
