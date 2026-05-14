@@ -2566,6 +2566,30 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 }
 
 /* ════════════════════════════════════════════════════════
+   Global Malagasy sub-labels (shared by Reading, Dialogue, Exercise)
+════════════════════════════════════════════════════════ */
+/* Reading phase MG instruction */
+.rd-phase-mg {
+  font-size: .78rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 6px 0 10px;
+}
+/* Reading question type MG sub-label */
+.rd-q-type-mg {
+  font-size: .68rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+/* Dialogue task MG sub-instruction */
+.task-mg {
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: -4px 0 8px;
+}
+
+/* ════════════════════════════════════════════════════════
    LECTURE MG (ComprehensionEcriteView)
 ════════════════════════════════════════════════════════ */
 .lecture-page { min-height: 100vh; background: var(--bg); }

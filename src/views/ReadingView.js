@@ -420,12 +420,20 @@ function renderReadingPhase(text) {
         <span>⭐ ${text.xpReward} XP</span>
         ${Object.keys(text.glossary || {}).length > 0 ? `<span class="rd-gloss-tip">💡 ${Object.keys(text.glossary).length} mots clés disponibles</span>` : ''}
       </div>
+      <p class="rd-phase-mg">🇲🇬 Vakio ny lahatsoratra, avy eo valio ny fanontaniana.</p>
       <button class="btn-primary rd-start-btn" id="rd-start-btn">
         J'ai lu le texte — Commencer les questions →
       </button>
     </div>
   `;
 }
+
+const RD_TYPE_MG = {
+  mcq:       'Safidio ny valiny mety',
+  tf:        'Marina sa diso ?',
+  short:     'Valio fohy',
+  selfcheck: 'Valio an-tsoratra, avy eo jereo',
+};
 
 function renderQuestion(q, idx, total, hints) {
   const progress = Math.round(((idx) / total) * 100);
@@ -438,6 +446,7 @@ function renderQuestion(q, idx, total, hints) {
         </div>
         <div class="rd-q-meta">
           <span class="rd-q-type">${typeLabel[q.type]}</span>
+          ${RD_TYPE_MG[q.type] ? `<span class="rd-q-type-mg">🇲🇬 ${RD_TYPE_MG[q.type]}</span>` : ''}
           <span class="rd-q-count">Question ${idx + 1} / ${total}</span>
           ${hints > 0 ? `<span class="rd-hints-used">💡 ${hints} aide${hints > 1 ? 's' : ''}</span>` : ''}
         </div>

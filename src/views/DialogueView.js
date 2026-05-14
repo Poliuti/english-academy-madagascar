@@ -126,6 +126,7 @@ export function renderDialogue(scenarioId) {
       actionsDiv.innerHTML = `
         <div class="dialogue-task">
           <p class="task-french">🇫🇷 ${escHtml(task.french || 'Choisissez la bonne réponse')}</p>
+          <p class="task-mg">🇲🇬 Safidio ny valiny mety</p>
           <div class="choice-list">
             ${task.options.map((opt, i) => `
               <button class="choice-btn" data-i="${i}">${escHtml(opt)}</button>
@@ -151,6 +152,7 @@ export function renderDialogue(scenarioId) {
       actionsDiv.innerHTML = `
         <div class="dialogue-task">
           ${task.french ? `<p class="task-french">🇫🇷 ${escHtml(task.french)}</p>` : ''}
+          <p class="task-mg">🇲🇬 Sorata ny valinteninao amin'ny teny anglisy</p>
           <input
             type="text"
             id="dialogue-input"
@@ -327,12 +329,20 @@ function checkAnswer(user, correct, alternatives) {
     .replace(/\bthat's\b/gi,    'that is')
     .replace(/\bname's\b/gi,    'name is');
   const normalize = s => expand(s).toLowerCase().trim()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')  // strip combining accents
     .replace(/œ/g, 'oe').replace(/Œ/g, 'oe').replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
     .replace(/[.!?,;:]/g, '').replace(/\s+/g, ' ').trim();
+  // Check slash variants (e.g., "Good morning/Good afternoon")
+  const checkSlash = field =>
+    field && field.includes('/') &&
+    String(field).split(/\s*\/\s*/).some(
+      v => normalize(v.replace(/\(.*?\)/g, '').trim()) === n
+    );
   const n = normalize(user);
   if (n === normalize(correct)) return true;
+  if (checkSlash(correct)) return true;
   if (alternatives) {
-    return alternatives.some(a => normalize(a) === n);
+    return alternatives.some(a => normalize(a) === n || checkSlash(a));
   }
   return false;
 }

@@ -908,6 +908,8 @@ const SYNONYMS = [
 function checkAnswer(raw, ex) {
   const normalize = s => s.toLowerCase()
     .trim()
+    // Strip combining diacritics (accents) — allows typing without accents
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
     // Ligature normalisation: œ/æ ↔ oe/ae
     .replace(/œ/g, 'oe').replace(/Œ/g, 'oe')
     .replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
@@ -988,11 +990,20 @@ function checkAnswer(raw, ex) {
 
   if (ans === correct) return true;
 
+  // Check slash variants (e.g., "heureux/heureuse" → accept "heureux" OR "heureuse")
+  const checkSlashVariants = (field) => {
+    if (!field || !field.includes('/')) return false;
+    return String(field).split(/\s*\/\s*/).some(
+      v => normalize(v.replace(/\(.*?\)/g, '').trim()) === ans
+    );
+  };
+  if (checkSlashVariants(ex.answer)) return true;
+
   // Check acceptedAnswers list (explicit multi-answer support)
-  if (ex.acceptedAnswers?.some(a => normalize(a) === ans)) return true;
+  if (ex.acceptedAnswers?.some(a => normalize(a) === ans || checkSlashVariants(a))) return true;
 
   // Check legacy alternatives array
-  if (ex.alternatives?.some(alt => normalize(alt) === ans)) return true;
+  if (ex.alternatives?.some(alt => normalize(alt) === ans || checkSlashVariants(alt))) return true;
 
   // Article-flexible comparison: ignore a/an/the differences
   if (stripArticles(ans) === stripArticles(correct) && stripArticles(ans).length > 0) return true;
