@@ -122,6 +122,7 @@ export const VOCABULARY = {
     { en: 'week',      fr: 'semaine',    mg: 'herinandro',   example: 'A week has seven days.' },
     { en: 'month',     fr: 'mois',       mg: 'volana',       example: 'There are twelve months in a year.' },
     { en: 'year',      fr: 'année',      mg: 'taona',        example: 'I am ten years old.' },
+    { en: 'hour',      fr: 'heure',      mg: 'ora',          example: 'The lesson lasts one hour.' },
   ],
 
   food: [
