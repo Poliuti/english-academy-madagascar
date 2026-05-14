@@ -361,6 +361,12 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 }
 .ex-instruction { font-weight: 700; color: var(--text-muted); margin-bottom: 4px; font-size: .95rem; }
 .ex-instruction-mg { font-size: .78rem; color: var(--text-light); font-style: italic; margin-bottom: 14px; }
+.ex-q-mg {
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 4px;
+}
 
 .ex-question { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
 .blank { background: var(--primary-light); padding: 2px 12px; border-radius: 6px; color: var(--primary-dark); letter-spacing: .05em; }

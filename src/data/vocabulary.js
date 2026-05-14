@@ -49,6 +49,11 @@ export const VOCABULARY = {
     { en: 'sleep',           fr: 'dormir',                mg: 'matory',                        example: 'Babies sleep a lot.' },
     { en: 'watch television',fr: 'regarder la télévision',mg: 'mijery fahitalavitra',          example: 'They watch television after dinner.' },
     { en: 'read a book',     fr: 'lire un livre',         mg: 'mamaky boky',                   example: 'He reads a book before bed.' },
+    { en: 'cook dinner',     fr: 'préparer le dîner',     mg: 'mahandro sakafo hariva',         example: 'I cook dinner for my family every evening.' },
+    { en: 'tidy up',         fr: 'ranger',                mg: 'mandamina',                      example: 'Please tidy up your room.' },
+    { en: 'go for a walk',   fr: 'faire une promenade',   mg: 'mimandroso',                     example: 'We go for a walk after dinner.' },
+    { en: 'water the plants',fr: 'arroser les plantes',   mg: 'manondrana zavamaniry [À VÉRIFIER]', example: 'She waters the plants every morning.' },
+    { en: 'set the table',   fr: 'mettre la table',       mg: 'manomana ny latabatra [À VÉRIFIER]', example: 'Can you set the table for dinner?' },
   ],
 
   family: [
@@ -68,6 +73,10 @@ export const VOCABULARY = {
     { en: 'husband',      fr: 'mari',           mg: 'vady (lahy)',   example: 'Her husband is a doctor.' },
     { en: 'wife',         fr: 'femme (épouse)', mg: 'vady (vavy)',   example: 'His wife is very kind.' },
     { en: 'family',       fr: 'famille',        mg: 'fianakaviana',  example: 'I love my family.' },
+    { en: 'nephew',       fr: 'neveu',          mg: 'zanak-olo-mirahalahiny [À VÉRIFIER]', example: 'My nephew is five years old.' },
+    { en: 'niece',        fr: 'nièce',          mg: 'zanak-olo-mirahalahiny vavy [À VÉRIFIER]', example: 'My niece loves dancing.' },
+    { en: 'stepfather',   fr: 'beau-père',      mg: 'ray nitaiza [À VÉRIFIER]',  example: 'My stepfather is very kind.' },
+    { en: 'twin',         fr: 'jumeau/jumelle', mg: 'kambana',       example: 'She has a twin brother.' },
   ],
 
   body: [
@@ -89,6 +98,8 @@ export const VOCABULARY = {
     { en: 'back',  fr: 'dos',        mg: 'lamosina',  example: 'He has a backache.' },
     { en: 'heart', fr: 'cœur',       mg: 'fo',        example: 'The doctor listens to my heart.' },
     { en: 'stomach',fr: 'ventre',    mg: 'kibo',      example: 'My stomach hurts.' },
+    { en: 'knee',   fr: 'genou',     mg: 'lohalika',  example: 'I hurt my knee playing football.' },
+    { en: 'shoulder',fr: 'épaule',   mg: 'soroka',    example: 'She has a sore shoulder.' },
   ],
 
   time: [
@@ -147,7 +158,16 @@ export const VOCABULARY = {
     { en: 'brown',  fr: 'marron',     mg: 'volontany',  example: 'His eyes are brown.' },
     { en: 'grey',   fr: 'gris',       mg: 'volomparasy',example: 'The elephant is grey.' },
     { en: 'pink',   fr: 'rose',       mg: 'mavokely',   example: 'She wears a pink dress.' },
-    { en: 'purple', fr: 'violet',     mg: 'volomparasy',example: 'The flower is purple.' },
+    { en: 'purple',    fr: 'violet',        mg: 'volomparasy',                   example: 'The flower is purple.' },
+    { en: 'light blue',fr: 'bleu clair',   mg: 'manga mazava',                  example: 'The sky is light blue in the morning.' },
+    { en: 'dark',      fr: 'foncé',        mg: 'maizina',                       example: 'He wore a dark blue shirt.' },
+    { en: 'bright',    fr: 'vif / éclatant',mg: 'mazava',                       example: 'She chose a bright yellow bag.' },
+    { en: 'gold',      fr: 'or / doré',    mg: 'volamena',                      example: 'The ring is made of gold.' },
+    { en: 'silver',    fr: 'argent / argenté', mg: 'volafotsy',                 example: 'The spoon is silver.' },
+    { en: 'beige',     fr: 'beige',        mg: 'volo-mena [À VÉRIFIER]',        example: 'The wall is painted beige.' },
+    { en: 'turquoise', fr: 'turquoise',    mg: 'manga-maitso [À VÉRIFIER]',     example: 'The sea looks turquoise.' },
+    { en: 'navy',      fr: 'bleu marine',  mg: 'manga kintana [À VÉRIFIER]',    example: 'He wears a navy jacket.' },
+    { en: 'cream',     fr: 'crème',        mg: 'fotsy mavo kely [À VÉRIFIER]',  example: 'The curtains are cream coloured.' },
   ],
 
   numbers: [
@@ -221,7 +241,9 @@ export const VOCABULARY = {
     { en: 'test',     fr: 'contrôle',   mg: 'fitsapana',   example: 'We have a test tomorrow.' },
     { en: 'question', fr: 'question',   mg: 'fanontaniana', example: 'I have a question for you.' },
     { en: 'answer',   fr: 'réponse',    mg: 'valiny',      example: 'What is the right answer?' },
-    { en: 'library',  fr: 'bibliothèque', mg: 'trano famakiam-boky', example: 'I study in the library.' },
+    { en: 'library',    fr: 'bibliothèque', mg: 'trano famakiam-boky', example: 'I study in the library.' },
+    { en: 'ruler',      fr: 'règle',        mg: 'fefika [À VÉRIFIER]', example: 'Draw a line with your ruler.' },
+    { en: 'dictionary', fr: 'dictionnaire', mg: 'rakibolana',          example: 'Use a dictionary to find new words.' },
   ],
 
   places: [
@@ -239,7 +261,12 @@ export const VOCABULARY = {
     { en: 'kitchen',  fr: 'cuisine',   mg: 'lakozia',     example: 'Mother is in the kitchen.' },
     { en: 'bedroom',  fr: 'chambre',   mg: 'efitra',      example: 'My bedroom is on the right.' },
     { en: 'bathroom', fr: 'salle de bain', mg: 'efitra fandroana', example: 'The bathroom is clean.' },
-    { en: 'garden',   fr: 'jardin',    mg: 'zaridaina',   example: 'Flowers grow in the garden.' },
+    { en: 'garden',      fr: 'jardin',          mg: 'zaridaina',                          example: 'Flowers grow in the garden.' },
+    { en: 'school',      fr: 'école',           mg: 'sekoly',                             example: 'The school is near my house.' },
+    { en: 'park',        fr: 'parc',            mg: 'paka',                               example: 'Children play in the park.' },
+    { en: 'restaurant',  fr: 'restaurant',      mg: 'hotely fisakafoanana [À VÉRIFIER]',  example: 'We had dinner at a nice restaurant.' },
+    { en: 'post office', fr: 'bureau de poste', mg: 'paositra',                           example: 'I sent a letter from the post office.' },
+    { en: 'bank',        fr: 'banque',          mg: 'banky',                              example: 'She works at the bank.' },
   ],
 
   professions: [
@@ -254,7 +281,15 @@ export const VOCABULARY = {
     { en: 'engineer', fr: 'ingénieur',  mg: 'injeniera',   example: 'She is studying to be an engineer.' },
     { en: 'student',  fr: 'étudiant(e)',mg: 'mpianatra',   example: 'I am a student.' },
     { en: 'shopkeeper',fr: 'commerçant',mg: 'mpivarotra',  example: 'The shopkeeper knows everyone.' },
-    { en: 'pastor',   fr: 'pasteur',    mg: 'pasitera',    example: 'The pastor speaks on Sunday.' },
+    { en: 'pastor',      fr: 'pasteur',         mg: 'pasitera',                          example: 'The pastor speaks on Sunday.' },
+    { en: 'lawyer',      fr: 'avocat(e)',       mg: 'mpisolovava',                       example: 'She is a lawyer in the city.' },
+    { en: 'mechanic',    fr: 'mécanicien(ne)',  mg: 'mpiompy [À VÉRIFIER] / mékanika',   example: 'The mechanic fixed my car.' },
+    { en: 'accountant',  fr: 'comptable',       mg: 'mpitantana vola [À VÉRIFIER]',      example: 'He works as an accountant.' },
+    { en: 'journalist',  fr: 'journaliste',     mg: 'mpanao gazety',                     example: 'She is a journalist for the radio.' },
+    { en: 'soldier',     fr: 'soldat',          mg: 'miaramila',                         example: 'His father is a soldier.' },
+    { en: 'musician',    fr: 'musicien(ne)',    mg: 'mpikanto',                          example: 'She is a talented musician.' },
+    { en: 'businessman', fr: 'homme d\'affaires', mg: 'mpitatitra [À VÉRIFIER]',         example: 'He is a successful businessman.' },
+    { en: 'builder',     fr: 'maçon / ouvrier', mg: 'mpandrafitra',                      example: 'The builder is working on our house.' },
   ],
 
   adjectives: [
@@ -365,7 +400,10 @@ export const VOCABULARY = {
     { en: 'this',  fr: 'ce/celui-ci', mg: 'ity', example: 'This is my sister.' },
     { en: 'that',  fr: 'ce/celui-là', mg: 'iny', example: 'That is not mine.' },
     { en: 'these', fr: 'ces/ceux-ci', mg: 'ireto', example: 'These apples are good.' },
-    { en: 'those', fr: 'ces/ceux-là', mg: 'ireny', example: 'Those children are playing.' },
+    { en: 'those',    fr: 'ces/ceux-là',  mg: 'ireny',                example: 'Those children are playing.' },
+    { en: 'someone',  fr: 'quelqu\'un',   mg: 'olona iray',           example: 'Someone is at the door.' },
+    { en: 'everyone', fr: 'tout le monde',mg: 'ny olona rehetra',     example: 'Everyone likes this song.' },
+    { en: 'nothing',  fr: 'rien',        mg: 'tsy misy na inona na inona', example: 'There is nothing in the box.' },
   ],
 
   connectors: [
@@ -384,7 +422,11 @@ export const VOCABULARY = {
     { en: 'then',     fr: 'puis/ensuite', mg: 'avy eo',      example: 'First wash your hands, then eat.' },
     { en: 'before',   fr: 'avant',        mg: 'alohan\'ny',  example: 'Wash your hands before eating.' },
     { en: 'after',    fr: 'après',        mg: 'aorian\'ny',  example: 'We play after school.' },
-    { en: 'if',       fr: 'si',           mg: 'raha',        example: 'If it rains, we stay home.' },
+    { en: 'if',       fr: 'si',           mg: 'raha',                example: 'If it rains, we stay home.' },
+    { en: 'however',  fr: 'cependant',    mg: 'kanefa',              example: 'It was cold; however, we went out.' },
+    { en: 'although', fr: 'bien que',     mg: 'na dia ... aza',      example: 'Although it was raining, she went to school.' },
+    { en: 'therefore',fr: 'donc / par conséquent', mg: 'koa izany', example: 'He studied hard; therefore, he passed the test.' },
+    { en: 'while',    fr: 'pendant que',  mg: 'raha',                example: 'She reads while she eats breakfast.' },
   ],
   presentations: [
     // ── Greetings formal ────────────────────────────────────────────────────
@@ -476,7 +518,12 @@ export const VOCABULARY = {
     { en: 'temperature',  fr: 'température',      mg: 'hafanana',           example: 'The temperature is thirty degrees.' },
     { en: 'season',       fr: 'saison',           mg: 'vanim-potoana',      example: 'There are four seasons in France.' },
     { en: 'climate',      fr: 'climat',           mg: 'toetrandro',         example: 'Madagascar has a tropical climate.' },
-    { en: 'weather',      fr: 'météo / temps',    mg: 'toetrandro',         example: 'What is the weather like today?' },
+    { en: 'weather',      fr: 'météo / temps',    mg: 'toetrandro',              example: 'What is the weather like today?' },
+    { en: 'thunder',      fr: 'tonnerre',         mg: 'kotro [À VÉRIFIER]',      example: 'I heard thunder during the storm.' },
+    { en: 'lightning',    fr: 'éclair',           mg: 'varatra',                 example: 'Lightning lit up the sky.' },
+    { en: 'humid',        fr: 'humide',           mg: 'mando',                   example: 'It is very humid in summer.' },
+    { en: 'dry',          fr: 'sec / sèche',      mg: 'maina',                   example: 'The dry season lasts for months.' },
+    { en: 'mild',         fr: 'doux / clément',   mg: 'mora [À VÉRIFIER]',       example: 'The weather is mild in spring.' },
   ],
 
   clothes: [
@@ -494,7 +541,12 @@ export const VOCABULARY = {
     { en: 'bag',          fr: 'sac',              mg: 'kitapo',             example: 'She carries a big bag.' },
     { en: 'T-shirt',      fr: 'T-shirt',          mg: 'tichirete',          example: 'I like this blue T-shirt.' },
     { en: 'uniform',      fr: 'uniforme',         mg: 'akanjo sekoly',      example: 'Students wear a school uniform.' },
-    { en: 'jumper',       fr: 'pull',             mg: 'sipa tanana',        example: 'It is cold — put on a jumper.' },
+    { en: 'jumper',       fr: 'pull',             mg: 'sipa tanana',                       example: 'It is cold — put on a jumper.' },
+    { en: 'belt',         fr: 'ceinture',         mg: 'fehin-kibo',                        example: 'He always wears a leather belt.' },
+    { en: 'gloves',       fr: 'gants',            mg: 'saokafo [À VÉRIFIER]',              example: 'She wears gloves in winter.' },
+    { en: 'swimsuit',     fr: 'maillot de bain',  mg: 'akanjo fitsindrona [À VÉRIFIER]',   example: 'Don\'t forget your swimsuit!' },
+    { en: 'tie',          fr: 'cravate',          mg: 'kravaty',                           example: 'He wears a tie to work.' },
+    { en: 'boots',        fr: 'bottes',           mg: 'booty [À VÉRIFIER]',                example: 'She wore boots in the rain.' },
   ],
 
   house: [
@@ -512,7 +564,12 @@ export const VOCABULARY = {
     { en: 'table',        fr: 'table',            mg: 'latabatra',          example: 'We eat at the table.' },
     { en: 'chair',        fr: 'chaise',           mg: 'seza',               example: 'Sit on the chair.' },
     { en: 'lamp',         fr: 'lampe',            mg: 'jiro',               example: 'Turn on the lamp — it is dark.' },
-    { en: 'fridge',       fr: 'réfrigérateur',    mg: 'frigo',              example: 'Put the milk in the fridge.' },
+    { en: 'fridge',       fr: 'réfrigérateur',    mg: 'frigo',                              example: 'Put the milk in the fridge.' },
+    { en: 'sofa',         fr: 'canapé',           mg: 'seza malalaka',                      example: 'We sit on the sofa to watch TV.' },
+    { en: 'shelf',        fr: 'étagère',          mg: 'efitra fitehirizana [À VÉRIFIER]',   example: 'The books are on the shelf.' },
+    { en: 'ceiling',      fr: 'plafond',          mg: 'sakafo ambony [À VÉRIFIER]',         example: 'The ceiling is very high.' },
+    { en: 'curtain',      fr: 'rideau',           mg: 'ridô',                               example: 'Close the curtains at night.' },
+    { en: 'sink',         fr: 'évier / lavabo',   mg: 'lavakely [À VÉRIFIER]',              example: 'Wash the dishes in the sink.' },
   ],
 
   emotions: [
@@ -530,7 +587,12 @@ export const VOCABULARY = {
     { en: 'calm',         fr: 'calme',            mg: 'tony',               example: 'Take a deep breath and be calm.' },
     { en: 'love',         fr: 'amour',            mg: 'fitiavana',          example: 'I love my family very much.' },
     { en: 'smile',        fr: 'sourire',          mg: 'fihomehy',           example: 'She has a beautiful smile.' },
-    { en: 'hope',         fr: 'espoir',           mg: 'fanantenana',        example: 'I hope to do well at school.' },
+    { en: 'hope',         fr: 'espoir',           mg: 'fanantenana',   example: 'I hope to do well at school.' },
+    { en: 'embarrassed',  fr: 'gêné/gênée',       mg: 'menatra',       example: 'I felt embarrassed in front of the class.' },
+    { en: 'jealous',      fr: 'jaloux/jalouse',   mg: 'mialona',       example: 'He is jealous of his brother.' },
+    { en: 'grateful',     fr: 'reconnaissant(e)', mg: 'misaotra',      example: 'I am grateful for your help.' },
+    { en: 'lonely',       fr: 'solitaire / seul(e)', mg: 'irery',      example: 'She feels lonely without her friends.' },
+    { en: 'confused',     fr: 'confus/confuse',   mg: 'very hevitra',  example: 'I am confused by this question.' },
   ],
 
   transport: [
@@ -545,7 +607,15 @@ export const VOCABULARY = {
     { en: 'on foot',      fr: 'à pied',           mg: 'an-tongotra',        example: 'I walk to school on foot.' },
     { en: 'station',      fr: 'gare',             mg: 'gara',               example: 'The train station is in the centre.' },
     { en: 'road',         fr: 'route',            mg: 'lalana',             example: 'The road is long and straight.' },
-    { en: 'ticket',       fr: 'billet',           mg: 'tapakila',           example: 'I bought a train ticket.' },
+    { en: 'ticket',       fr: 'billet',           mg: 'tapakila',                                example: 'I bought a train ticket.' },
+    { en: 'helicopter',   fr: 'hélicoptère',      mg: 'helikoptera [À VÉRIFIER]',                example: 'The helicopter flew over the village.' },
+    { en: 'ferry',        fr: 'ferry / bac',      mg: 'sambo kely [À VÉRIFIER]',                 example: 'We took the ferry to the island.' },
+    { en: 'tram',         fr: 'tramway',          mg: 'tramway [À VÉRIFIER]',                    example: 'The tram stops at the station.' },
+    { en: 'underground',  fr: 'métro',            mg: 'trains anaty tany [À VÉRIFIER]',          example: 'I take the underground to work.' },
+    { en: 'port',         fr: 'port',             mg: 'seranan-tsambo',                          example: 'The big ships arrive at the port.' },
+    { en: 'traffic',      fr: 'circulation',      mg: 'fifamoivozana',                           example: 'There is a lot of traffic in the morning.' },
+    { en: 'traffic jam',  fr: 'embouteillage',    mg: 'tafika [À VÉRIFIER]',                     example: 'We were stuck in a traffic jam for an hour.' },
+    { en: 'petrol station',fr: 'station-service', mg: 'toerana fividianana solika [À VÉRIFIER]', example: 'Stop at the petrol station for fuel.' },
   ],
 
   nature: [
@@ -564,6 +634,11 @@ export const VOCABULARY = {
     { en: 'island',       fr: 'île',              mg: 'nosy',               example: 'Madagascar is a big island.' },
     { en: 'beach',        fr: 'plage',            mg: 'amoron-dranomasina', example: 'We play on the beach.' },
     { en: 'rock',         fr: 'rocher',           mg: 'vatolampy',          example: 'The rocks are very old.' },
+    { en: 'waterfall',    fr: 'cascade',          mg: 'rano miantsatsaka',   example: 'The waterfall is beautiful.' },
+    { en: 'desert',       fr: 'désert',           mg: 'efikandro',          example: 'The desert is very dry and hot.' },
+    { en: 'cloud',        fr: 'nuage',            mg: 'rahona',             example: 'Dark clouds mean rain is coming.' },
+    { en: 'soil',         fr: 'sol / terre',      mg: 'tany',               example: 'The soil is good for growing rice.' },
+    { en: 'plant',        fr: 'plante',           mg: 'zavamaniry',         example: 'Water the plants every day.' },
   ],
 
   sports: [
@@ -579,7 +654,14 @@ export const VOCABULARY = {
     { en: 'match',        fr: 'match',            mg: 'lalao',              example: 'We won the match yesterday.' },
     { en: 'win',          fr: 'gagner',           mg: 'mandresy',           example: 'We always win!' },
     { en: 'lose',         fr: 'perdre',           mg: 'resy',               example: 'It is okay to lose sometimes.' },
-    { en: 'play',         fr: 'jouer',            mg: 'milalao',            example: 'Do you want to play?' },
+    { en: 'play',         fr: 'jouer',            mg: 'milalao',                        example: 'Do you want to play?' },
+    { en: 'boxing',       fr: 'boxe',             mg: 'boksy',                          example: 'He trains boxing twice a week.' },
+    { en: 'yoga',         fr: 'yoga',             mg: 'yoga [À VÉRIFIER]',              example: 'She does yoga every morning.' },
+    { en: 'gym',          fr: 'salle de sport',   mg: 'gymnasium [À VÉRIFIER]',         example: 'I go to the gym after work.' },
+    { en: 'race',         fr: 'course',           mg: 'hazakazaka',                     example: 'He won the race at school.' },
+    { en: 'championship', fr: 'championnat',      mg: 'fiadiana lehibe [À VÉRIFIER]',   example: 'Our team is in the championship.' },
+    { en: 'athlete',      fr: 'athlète',          mg: 'mpitaiza [À VÉRIFIER]',          example: 'She is a talented athlete.' },
+    { en: 'score',        fr: 'score / résultat', mg: 'tenim-panaovana [À VÉRIFIER]',   example: 'The score was two to one.' },
   ],
 
   health: [
@@ -597,7 +679,12 @@ export const VOCABULARY = {
     { en: 'exercise',     fr: 'exercice physique',mg: 'fanatanjahantena',   example: 'Regular exercise is good for your health.' },
     { en: 'diet',         fr: 'alimentation',     mg: 'sakafo',             example: 'A balanced diet keeps you healthy.' },
     { en: 'toothache',    fr: 'mal aux dents',    mg: 'aretin-nify',        example: 'I have a terrible toothache.' },
-    { en: 'pharmacy',     fr: 'pharmacie',        mg: 'trano fanafody',     example: 'Go to the pharmacy for medicine.' },
+    { en: 'pharmacy',     fr: 'pharmacie',        mg: 'trano fanafody',                  example: 'Go to the pharmacy for medicine.' },
+    { en: 'injection',    fr: 'piqûre',           mg: 'fanindroana [À VÉRIFIER]',        example: 'The nurse gave me an injection.' },
+    { en: 'bandage',      fr: 'bandage / pansement', mg: 'vendaisy [À VÉRIFIER]',        example: 'She put a bandage on the cut.' },
+    { en: 'allergy',      fr: 'allergie',         mg: 'alerzia [À VÉRIFIER]',            example: 'I have an allergy to nuts.' },
+    { en: 'appointment',  fr: 'rendez-vous',      mg: 'fotoam-pihaonana',                example: 'I have a doctor\'s appointment tomorrow.' },
+    { en: 'surgery',      fr: 'chirurgie',        mg: 'fandidiana',                      example: 'He needs surgery on his knee.' },
   ],
 
   shopping: [
@@ -612,7 +699,15 @@ export const VOCABULARY = {
     { en: 'pay',          fr: 'payer',            mg: 'mandoa vola',        example: 'I pay by card.' },
     { en: 'receipt',      fr: 'reçu',             mg: 'résisoa',            example: 'Do you have the receipt?' },
     { en: 'discount',     fr: 'réduction',        mg: 'vidiny mihena',      example: 'There is a discount on books today.' },
-    { en: 'queue',        fr: 'file d\'attente',  mg: 'filahariana',        example: 'The queue is very long.' },
+    { en: 'queue',        fr: 'file d\'attente',  mg: 'filahariana',                           example: 'The queue is very long.' },
+    { en: 'cash',         fr: 'espèces',          mg: 'vola madinika [À VÉRIFIER]',             example: 'Do you pay by cash or card?' },
+    { en: 'card',         fr: 'carte bancaire',   mg: 'karatra',                                example: 'I paid by card.' },
+    { en: 'supermarket',  fr: 'supermarché',      mg: 'fivarotana lehibe',                      example: 'We buy food at the supermarket.' },
+    { en: 'change',       fr: 'monnaie',          mg: 'fitodiam-bola [À VÉRIFIER]',             example: 'The shopkeeper gave me my change.' },
+    { en: 'bag',          fr: 'sac',              mg: 'kitapo',                                 example: 'Do you need a bag for your shopping?' },
+    { en: 'sale',         fr: 'soldes / promotion',mg: 'fivarotana midina vidiny [À VÉRIFIER]', example: 'Everything is cheaper during the sale.' },
+    { en: 'size',         fr: 'taille',           mg: 'haben\'akanjo [À VÉRIFIER]',             example: 'Do you have this in a larger size?' },
+    { en: 'customer',     fr: 'client(e)',        mg: 'mpividy',                                example: 'The customer paid at the counter.' },
   ],
 
   travel: [
@@ -627,7 +722,15 @@ export const VOCABULARY = {
     { en: 'destination',  fr: 'destination',      mg: 'tany halehana',      example: 'Our destination is Paris.' },
     { en: 'guide',        fr: 'guide',            mg: 'mpitari-dalana',     example: 'The guide speaks three languages.' },
     { en: 'visa',         fr: 'visa',             mg: 'viza',               example: 'You need a visa to enter the country.' },
-    { en: 'currency',     fr: 'devise / monnaie', mg: 'vola',               example: 'What is the local currency here?' },
+    { en: 'currency',      fr: 'devise / monnaie', mg: 'vola',                                  example: 'What is the local currency here?' },
+    { en: 'luggage',       fr: 'bagages',          mg: 'entana',                                example: 'My luggage is too heavy.' },
+    { en: 'boarding pass', fr: 'carte d\'embarquement', mg: 'tapakila fiondrana [À VÉRIFIER]',  example: 'Show your boarding pass at the gate.' },
+    { en: 'customs',       fr: 'douane',           mg: 'doany [À VÉRIFIER]',                    example: 'We passed through customs quickly.' },
+    { en: 'delay',         fr: 'retard',           mg: 'fahanginana [À VÉRIFIER]',              example: 'The flight has a two-hour delay.' },
+    { en: 'souvenir',      fr: 'souvenir',         mg: 'fanomezana [À VÉRIFIER]',               example: 'I bought a souvenir for my mother.' },
+    { en: 'adventure',     fr: 'aventure',         mg: 'fikarohana [À VÉRIFIER]',               example: 'Our trip was a real adventure.' },
+    { en: 'journey',       fr: 'trajet / voyage',  mg: 'dia',                                   example: 'The journey took three hours.' },
+    { en: 'check-in',      fr: 'enregistrement',   mg: 'fidirana hotely [À VÉRIFIER]',          example: 'Check-in opens two hours before the flight.' },
   ],
 
   technology: [
@@ -642,7 +745,15 @@ export const VOCABULARY = {
     { en: 'screen',       fr: 'écran',            mg: 'efijery',            example: 'The screen is broken.' },
     { en: 'battery',      fr: 'batterie',         mg: 'bateria',            example: 'My phone battery is dead.' },
     { en: 'download',     fr: 'télécharger',      mg: 'misitraka',          example: 'I want to download this song.' },
-    { en: 'password',     fr: 'mot de passe',     mg: 'teny miafina',       example: 'Never share your password.' },
+    { en: 'password',     fr: 'mot de passe',     mg: 'teny miafina',                          example: 'Never share your password.' },
+    { en: 'keyboard',     fr: 'clavier',          mg: 'klaviera',                               example: 'She types fast on the keyboard.' },
+    { en: 'mouse',        fr: 'souris (ordi)',     mg: 'mousina [À VÉRIFIER]',                   example: 'Click with the mouse to open the file.' },
+    { en: 'printer',      fr: 'imprimante',       mg: 'printera [À VÉRIFIER]',                  example: 'The printer is out of paper.' },
+    { en: 'wifi',         fr: 'wifi',             mg: 'wifi [À VÉRIFIER]',                      example: 'Is there wifi in this café?' },
+    { en: 'charger',      fr: 'chargeur',         mg: 'sarany [À VÉRIFIER]',                    example: 'I forgot my phone charger.' },
+    { en: 'social media', fr: 'réseaux sociaux',  mg: 'tambazotra sosialy [À VÉRIFIER]',        example: 'She spends too much time on social media.' },
+    { en: 'video call',   fr: 'appel vidéo',      mg: 'antso sary mihetsika [À VÉRIFIER]',      example: 'We had a video call with the family.' },
+    { en: 'software',     fr: 'logiciel',         mg: 'vokatra solosaina [À VÉRIFIER]',         example: 'This software helps you learn English.' },
   ],
 
 };

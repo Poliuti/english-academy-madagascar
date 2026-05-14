@@ -247,7 +247,10 @@ function renderQuestion(ex) {
     return `<div class="ex-question">${blanked}</div>`;
   }
   if (ex.type === 'translate') {
-    return `<div class="ex-question translate-q"><span class="flag">🇫🇷</span> ${escHtml(ex.french)}</div>`;
+    return `<div class="ex-question translate-q">
+    <span class="flag">🇫🇷</span> ${escHtml(ex.french)}
+    ${ex.mg ? `<div class="ex-q-mg">🇲🇬 ${escHtml(ex.mg)}</div>` : ''}
+  </div>`;
   }
   if (ex.type === 'word-order') {
     const shuffled = shuffle([...ex.words]);
