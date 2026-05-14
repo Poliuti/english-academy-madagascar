@@ -77,7 +77,7 @@ function renderList(container, initialFilter) {
         <div class="rd-level-filters">
           ${['all','A1','A2','B1','B1+','lecture'].map(lv => `
             <button class="rd-filter-btn ${activeLevel === lv ? 'active' : ''}" data-lv="${lv}">
-              ${lv === 'all' ? 'Tous' : lv === 'lecture' ? '🌿 MG' : lv}
+              ${lv === 'all' ? 'Tous' : lv === 'lecture' ? '🌿 Lecture' : lv}
             </button>
           `).join('')}
         </div>

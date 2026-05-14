@@ -76,7 +76,7 @@ export function renderDashboard() {
             <span class="legend-icon">📰</span>
             <div>
               <div class="legend-name">Compréhension</div>
-              <div class="legend-desc">Textes progressifs (A1→B1+) avec questions de compréhension.</div>
+              <div class="legend-desc">Textes progressifs (A1→B1+) avec questions. Onglet 🌿 Lecture : 10 textes A1 avec traduction malgache mot-à-mot.</div>
             </div>
           </div>
           <div class="legend-item">
@@ -91,13 +91,6 @@ export function renderDashboard() {
             <div>
               <div class="legend-name">Tutor IA</div>
               <div class="legend-desc">Pratique libre avec un tuteur IA — pose des questions, converse.</div>
-            </div>
-          </div>
-          <div class="legend-item">
-            <span class="legend-icon">🌿</span>
-            <div>
-              <div class="legend-name">Lecture MG</div>
-              <div class="legend-desc">10 textes A1 simples avec traduction malgache mot-à-mot (accessible via Compréhension → 🌿 MG).</div>
             </div>
           </div>
           <div class="legend-item">
@@ -158,10 +151,6 @@ export function renderDashboard() {
           <span class="quick-icon">🤖</span>
           <span>Tutor IA</span>
         </button>
-        <button class="quick-btn" id="btn-lecture">
-          <span class="quick-icon">🌿</span>
-          <span>Lecture MG</span>
-        </button>
       </div>
       ${ENABLE_COMPETITIVE_MODE ? `
       <button class="quick-btn-competitive" id="btn-competitive">
@@ -220,9 +209,6 @@ export function renderDashboard() {
   });
   container.querySelector('#btn-tutor').addEventListener('click', () => {
     location.hash = '#tutor';
-  });
-  container.querySelector('#btn-lecture').addEventListener('click', () => {
-    location.hash = '#reading?filter=lecture';
   });
   if (ENABLE_COMPETITIVE_MODE) {
     container.querySelector('#btn-competitive')?.addEventListener('click', () => {
