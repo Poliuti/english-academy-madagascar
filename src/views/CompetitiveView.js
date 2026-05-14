@@ -22,11 +22,26 @@ function escHtml(s) {
 
 function normalise(s) {
   return (s || '').toLowerCase().trim()
-    // Ligature normalisation: œ/æ ↔ oe/ae (both directions collapse to oe/ae)
-    .replace(/œ/g, 'oe').replace(/Œ/g, 'oe')
-    .replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
-    .replace(/[.,!?;:'"]/g, '')
+    .normalize('NFD').replace(/[̀-ͯ]/g, '') // é→e, à→a, ç→c, ê→e…
+    .replace(/œ/g, 'oe').replace(/Œ/g, 'oe') // œ/Œ
+    .replace(/æ/g, 'ae').replace(/Æ/g, 'ae') // æ/Æ
+    .replace(/[.,!?;:'"()\[\]]/g, '')
     .replace(/\s+/g, ' ');
+}
+
+// Accept any slash-separated variant (strips parenthetical notes like "(objet)")
+function checkVariants(field, norm) {
+  if (!field) return false;
+  return String(field).split(/\s*\/\s*/).some(v => normalise(v.replace(/\(.*?\)/g,'').trim()) === norm);
+}
+
+// Returns true when the French answer requires forced MCQ at difficulty ≤ 2
+function needsForcedMcq(fr) {
+  if (!fr) return false;
+  if (fr.includes('/'))                       return true;  // il/elle, J'aime / J'adore
+  if (/[éèêëàâùûîïôœçæ]/i.test(fr))         return true;  // se réveiller, déjeuner…
+  if (fr.trim().split(/\s+/).length > 3)     return true;  // se brosser les dents (4 words)
+  return false;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -103,7 +118,13 @@ function buildVocabPool(catId, difficulty) {
       return { ...base, mode: 'mcq', direction: 'en-to-fr', options, correct: w.fr };
     }
     if (difficulty === 2) {
-      // L2 → EN→FR text input (type the French translation)
+      // L2 → Force MCQ when answer has accents, slash variants, or >3 words
+      if (needsForcedMcq(w.fr)) {
+        const distractors = shuffle(allFr.filter(fr => fr !== w.fr)).slice(0, 3);
+        while (distractors.length < 3) distractors.push('—');
+        const options = shuffle([w.fr, ...distractors]);
+        return { ...base, mode: 'mcq', direction: 'en-to-fr', options, correct: w.fr };
+      }
       return { ...base, mode: 'text', direction: 'en-to-fr' };
     }
     // L3 → FR→EN text input (harder: must recall and type the English word)
@@ -195,11 +216,14 @@ function checkAnswerText(ex, userAnswer) {
   const norm = normalise(userAnswer);
   if (!norm) return false;
   if (ex.type === 'vocab-match') {
-    return norm === normalise(ex.en) || norm === normalise(ex.fr);
+    return checkVariants(ex.en, norm) || checkVariants(ex.fr, norm);
   }
-  if (ex.answer && normalise(ex.answer) === norm) return true;
+  if (ex.answer) {
+    if (normalise(ex.answer) === norm) return true;
+    if (checkVariants(ex.answer, norm)) return true;
+  }
   if (ex.acceptedAnswers?.some(a => normalise(a) === norm)) return true;
-  if (ex.alternatives?.some(a => normalise(a) === norm)) return true;
+  if (ex.alternatives?.some(a =>  normalise(a) === norm)) return true;
   return false;
 }
 
@@ -221,6 +245,38 @@ const ENCOURAGEMENTS = [
   "Quelle belle partie ! Vous progressez tous ! 🚀",
   "Félicitations à tous les joueurs ! ✨",
 ];
+
+// Malagasy instruction lookup for competitive mode (Task 2)
+const COMP_INSTR_MG = {
+  'Complétez avec la bonne forme du verbe.':    "Fenoy ny banga amin'ny endrika mety ny matoanteny.",
+  'Complétez avec la bonne forme négative.':    "Fenoy amin'ny fandavana mety.",
+  'Complétez avec la bonne préposition.':       "Fenoy amin'ny teny mampifandray mety.",
+  'Complétez avec le bon mot.':                 "Fenoy amin'ny teny mety.",
+  'Complétez avec a, an ou the.':               "Fenoy amin'ny a, an na the.",
+  'Complétez avec there is ou there are.':      "Fenoy amin'ny there is na there are.",
+  'Complétez avec le bon pronom sujet.':        "Fenoy amin'ny pronom sujet mety.",
+  'Complétez avec le bon adjectif possessif.':  "Fenoy amin'ny adjectif possessif mety.",
+  'Complétez avec le bon adverbe.':             "Fenoy amin'ny adverbe mety.",
+  'Complétez avec le comparatif correct.':      "Fenoy amin'ny comparatif mety.",
+  'Complétez avec in, on ou at.':               "Fenoy amin'ny in, on na at.",
+  "Complétez avec can ou can't.":              "Fenoy amin'ny can na can't.",
+  "Complétez avec 'will' + verbe.":            "Fenoy amin'ny will + matoanteny.",
+  'Complétez avec am, is ou are.':             "Fenoy amin'ny am, is na are.",
+  'Complétez avec was ou were.':               "Fenoy amin'ny was na were.",
+  'Complétez avec some ou any.':               "Fenoy amin'ny some na any.",
+  'Complétez avec Do ou Does.':               "Fenoy amin'ny Do na Does.",
+  'Complétez.':                                "Fenoy.",
+  'Choisissez la bonne réponse.':             "Safidio ny valiny mety.",
+  'Choisissez la bonne option.':              "Safidio ny safidy mety.",
+  'Traduisez en anglais.':                    "Adikao amin'ny teny anglisy.",
+  'Traduisez.':                               "Adikao amin'ny teny anglisy.",
+  "Trouvez et corrigez l'erreur dans la phrase.": "Tadiavo ny hadisoana ka amboary ny fehezanteny.",
+  "Corrigez l'erreur.":                       "Amboary ny hadisoana.",
+  'Corrigez la phrase.':                      "Amboary ny fehezanteny.",
+  "Corrigez.":                                "Amboary.",
+  'Mettez les mots dans le bon ordre.':       "Ataovy ny teny araka ny filaharan'ny mety.",
+  'Remettez les mots dans le bon ordre.':     "Ataovy ny teny araka ny filaharan'ny mety.",
+};
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MAIN VIEW
@@ -577,9 +633,14 @@ export function renderCompetitive() {
 
   function renderVocabQuestion(ex) {
     const isFrToEn = ex.direction === 'fr-to-en';
+    const frLabel = isFrToEn ? 'Traduisez en anglais :' : 'Traduisez en français :';
+    const mgLabel = isFrToEn ? "Adikao amin'ny teny anglisy :" : "Adikao amin'ny teny frantsay :";
     return `
       <div class="comp-vocab-q">
-        <div class="comp-q-label">${isFrToEn ? 'Traduisez en anglais :' : 'Traduisez en français :'}</div>
+        <div class="comp-q-label">
+          ${frLabel}
+          <div class="comp-q-label-mg">${mgLabel}</div>
+        </div>
         <div class="comp-q-word">${escHtml(isFrToEn ? ex.fr : ex.en)}</div>
         ${isFrToEn ? '<div class="comp-q-hint">🇬🇧 Donnez le mot anglais</div>' : ''}
       </div>
@@ -614,9 +675,13 @@ export function renderCompetitive() {
       questionText = escHtml(ex.instruction || '');
     }
 
+    const mgInstruction = COMP_INSTR_MG[ex.instruction] || '';
     return `
       <div class="comp-grammar-q">
-        <div class="comp-q-type">${instruction}</div>
+        <div class="comp-q-type">
+          ${instruction}
+          ${mgInstruction ? `<div class="comp-q-type-mg">${escHtml(mgInstruction)}</div>` : ''}
+        </div>
         <div class="comp-q-text">${questionText}</div>
       </div>
     `;

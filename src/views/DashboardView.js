@@ -94,6 +94,13 @@ export function renderDashboard() {
             </div>
           </div>
           <div class="legend-item">
+            <span class="legend-icon">🌿</span>
+            <div>
+              <div class="legend-name">Lecture MG</div>
+              <div class="legend-desc">5 textes A1 simples avec traduction malgache mot-à-mot.</div>
+            </div>
+          </div>
+          <div class="legend-item">
             <span class="legend-icon">📍</span>
             <div>
               <div class="legend-name">Mon Parcours</div>
@@ -150,6 +157,10 @@ export function renderDashboard() {
         <button class="quick-btn" id="btn-tutor">
           <span class="quick-icon">🤖</span>
           <span>Tutor IA</span>
+        </button>
+        <button class="quick-btn" id="btn-lecture">
+          <span class="quick-icon">🌿</span>
+          <span>Lecture MG</span>
         </button>
       </div>
       ${ENABLE_COMPETITIVE_MODE ? `
@@ -209,6 +220,9 @@ export function renderDashboard() {
   });
   container.querySelector('#btn-tutor').addEventListener('click', () => {
     location.hash = '#tutor';
+  });
+  container.querySelector('#btn-lecture').addEventListener('click', () => {
+    location.hash = '#lecture';
   });
   if (ENABLE_COMPETITIVE_MODE) {
     container.querySelector('#btn-competitive')?.addEventListener('click', () => {

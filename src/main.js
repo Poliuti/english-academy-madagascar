@@ -9,6 +9,7 @@ import { renderTutor } from './views/TutorView.js';
 import { renderCompetitive } from './views/CompetitiveView.js';
 import { renderStats } from './views/StatsView.js';
 import { renderReading } from './views/ReadingView.js';
+import { renderLecture } from './views/ComprehensionEcriteView.js';
 import { initTheme } from './theme.js';
 import { getActiveProfile } from './storage.js';
 
@@ -72,6 +73,9 @@ function router() {
       break;
     case 'reading':
       view = renderReading(params.get('id'));
+      break;
+    case 'lecture':
+      view = renderLecture();
       break;
     default:
       view = profile ? renderDashboard() : renderProfileSelector();
