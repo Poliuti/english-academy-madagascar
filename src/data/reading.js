@@ -33,10 +33,16 @@ My grandmother also lives with us. She is sixty-five years old. She cooks delici
 
 I love my family very much. We always eat dinner together and talk about our day.`,
     glossary: {
-      'secondary': { fr: 'secondaire', mg: 'ambaratonga faharoa' },
-      'nurse':     { fr: 'infirmière', mg: 'mpitsabo' },
-      'tired':     { fr: 'fatiguée',   mg: 'vizaka' },
-      'delicious': { fr: 'délicieux',  mg: 'matsiro' },
+      'secondary':   { fr: 'secondaire',      mg: 'ambaratonga faharoa' },
+      'nurse':       { fr: 'infirmière',       mg: 'mpitsabo' },
+      'tired':       { fr: 'fatiguée',         mg: 'vizaka' },
+      'delicious':   { fr: 'délicieux',        mg: 'matsiro' },
+      'mathematics': { fr: 'mathématiques',    mg: 'matematika' },
+      'hospital':    { fr: 'hôpital',          mg: 'hopitaly' },
+      'younger':     { fr: 'plus jeune',       mg: 'kely kokoa' },
+      'practises':   { fr: 'pratique',         mg: 'mianatra [À VÉRIFIER]' },
+      'cooking':     { fr: 'cuisine',          mg: 'sakafo [À VÉRIFIER]' },
+      'together':    { fr: 'ensemble',         mg: 'miaraka' },
     },
     questions: [
       {
@@ -99,9 +105,15 @@ At lunchtime, Tom eats with his friends in the canteen. They usually talk about 
 
 School finishes at four o'clock in the afternoon. Tom walks home with his sister. When he gets home, he does his homework before dinner. His parents are very strict about this rule.`,
     glossary: {
-      'canteen':  { fr: 'cantine',  mg: 'toerana fisakafoana' },
-      'strict':   { fr: 'strict',   mg: 'mafy fo' },
-      'clearly':  { fr: 'clairement', mg: 'mazava tsara' },
+      'canteen':   { fr: 'cantine',              mg: 'toerana fisakafoana' },
+      'strict':    { fr: 'strict',               mg: 'mafy fo' },
+      'clearly':   { fr: 'clairement',           mg: 'mazava tsara' },
+      'favourite': { fr: 'préféré',              mg: 'tiako indrindra' },
+      'explains':  { fr: 'explique',             mg: 'manazava' },
+      'lunchtime': { fr: "l'heure du déjeuner",  mg: 'fotoam-pisakafoana' },
+      'finishes':  { fr: 'termine',              mg: 'mifarana' },
+      'homework':  { fr: 'devoirs',              mg: 'asa an-trano' },
+      'parents':   { fr: 'parents',              mg: 'ray aman-dreny' },
     },
     questions: [
       {
@@ -164,8 +176,14 @@ After school, I arrive home at five o'clock. I help my mother cook dinner. We us
 
 In the evening, I do my homework and read a book. I love reading stories. I go to bed at nine o'clock. I need a lot of sleep because school starts early.`,
     glossary: {
-      'lessons':  { fr: 'cours',   mg: 'lesona' },
-      'arrive':   { fr: 'arriver', mg: 'tonga' },
+      'lessons':  { fr: 'cours',      mg: 'lesona' },
+      'arrive':   { fr: 'arriver',    mg: 'tonga' },
+      'routine':  { fr: 'routine',    mg: 'fomba amam-panao isan\'andro [À VÉRIFIER]' },
+      'shower':   { fr: 'douche',     mg: 'dobo [À VÉRIFIER]' },
+      'breakfast':{ fr: 'petit-déjeuner', mg: 'sakafo maraina' },
+      'usually':  { fr: 'd\'habitude', mg: 'matetika' },
+      'vegetables':{ fr: 'légumes',   mg: 'anana' },
+      'homework': { fr: 'devoirs',    mg: 'asa an-trano' },
     },
     questions: [
       {
@@ -226,10 +244,16 @@ Emma also has pets at home. She has a dog called Rex and two cats called Mimi an
 
 Emma wants to be a vet when she grows up. Every Saturday, she visits the local animal shelter and helps look after the animals there.`,
     glossary: {
-      'lemur':   { fr: 'lémurien', mg: 'maki' },
-      'shelter': { fr: 'refuge',   mg: 'toeram-pikarakarana biby' },
-      'vet':     { fr: 'vétérinaire', mg: 'dokotera biby' },
-      'playful': { fr: 'joueur',   mg: 'tia milalao' },
+      'lemur':   { fr: 'lémurien',     mg: 'maki' },
+      'shelter': { fr: 'refuge',       mg: 'toeram-pikarakarana biby' },
+      'vet':     { fr: 'vétérinaire',  mg: 'dokotera biby' },
+      'playful': { fr: 'joueur',       mg: 'tia milalao' },
+      'forest':  { fr: 'forêt',        mg: 'ala' },
+      'tails':   { fr: 'queues',       mg: 'rambo' },
+      'friendly':{ fr: 'sympa',        mg: 'tsara fanahy' },
+      'calmer':  { fr: 'plus calme',   mg: 'milamina kokoa [À VÉRIFIER]' },
+      'grows up':{ fr: 'grandit',      mg: 'mitombo [À VÉRIFIER]' },
+      'local':   { fr: 'local',        mg: 'ao an-toerana' },
     },
     questions: [
       {
@@ -294,11 +318,17 @@ Most of my neighbours are very friendly. There is an elderly man called Mr Berna
 
 I enjoy living here because everything is close and convenient. However, the streets can be very noisy during the day, especially near the market. I would also like more parks and green spaces for children to play in.`,
     glossary: {
-      'neighbourhood': { fr: 'quartier',    mg: 'manodidina' },
-      'pharmacy':      { fr: 'pharmacie',   mg: 'fivarotam-panafody' },
-      'borrow':        { fr: 'emprunter',   mg: 'samborena' },
-      'convenient':    { fr: 'pratique',    mg: 'mety tsara' },
-      'elderly':       { fr: 'âgé',         mg: 'anti-panahy' },
+      'neighbourhood': { fr: 'quartier',      mg: 'manodidina' },
+      'pharmacy':      { fr: 'pharmacie',     mg: 'fivarotam-panafody' },
+      'borrow':        { fr: 'emprunter',     mg: 'samborena' },
+      'convenient':    { fr: 'pratique',      mg: 'mety tsara' },
+      'elderly':       { fr: 'âgé',           mg: 'anti-panahy' },
+      'library':       { fr: 'bibliothèque',  mg: 'tranomboky' },
+      'peaceful':      { fr: 'paisible',      mg: 'milamina' },
+      'noisy':         { fr: 'bruyant',       mg: 'maresaka' },
+      'square':        { fr: 'place',         mg: 'kianjan-dehibe [À VÉRIFIER]' },
+      'magazines':     { fr: 'magazines',     mg: 'gazety [À VÉRIFIER]' },
+      'roses':         { fr: 'roses',         mg: 'rôzy [À VÉRIFIER]' },
     },
     questions: [
       {
@@ -363,11 +393,17 @@ At the end of the day, the teachers gave prizes to the winners. I received a sil
 
 I hope we have another Sports Day next year.`,
     glossary: {
-      'organised':    { fr: 'organisé',      mg: 'nandamina' },
-      'participated': { fr: 'participé',     mg: 'nandray anjara' },
-      'professional': { fr: 'professionnel', mg: 'matihanina' },
-      'certificate':  { fr: 'certificat',    mg: 'taratasy fanamarinana' },
-      'cheered':      { fr: 'acclamé',       mg: 'nampiakakaba' },
+      'organised':    { fr: 'organisé',         mg: 'nandamina' },
+      'participated': { fr: 'participé',        mg: 'nandray anjara' },
+      'professional': { fr: 'professionnel',    mg: 'matihanina' },
+      'certificate':  { fr: 'certificat',       mg: 'taratasy fanamarinana' },
+      'cheered':      { fr: 'acclamé',          mg: 'nampiakakaba' },
+      'nervous':      { fr: 'nerveux',          mg: 'tahotahy [À VÉRIFIER]' },
+      'race':         { fr: 'course',           mg: 'firotsahana hafainganam-pandeha [À VÉRIFIER]' },
+      'trained':      { fr: 'entraîné',         mg: 'nianatra' },
+      'medal':        { fr: 'médaille',         mg: 'mendaly [À VÉRIFIER]' },
+      'prizes':       { fr: 'prix',             mg: 'loka' },
+      'proud':        { fr: 'fiers',            mg: 'mirehareha' },
     },
     questions: [
       {
@@ -432,11 +468,17 @@ While her mother shops, Miriam sometimes helps carry the bags. She has learned t
 
 Afterwards, they always stop at a small café nearby. They drink fresh fruit juice and watch the busy street together. Miriam thinks the market is better than the supermarket because it is more fun and much friendlier.`,
     glossary: {
-      'household': { fr: 'ménager',  mg: 'an-trano' },
-      'stalls':    { fr: 'étals',    mg: 'fivarotana' },
-      'vendors':   { fr: 'vendeurs', mg: 'mpivarotra' },
-      'polite':    { fr: 'poli',     mg: 'manaja olona' },
+      'household': { fr: 'ménager',       mg: 'an-trano' },
+      'stalls':    { fr: 'étals',         mg: 'fivarotana' },
+      'vendors':   { fr: 'vendeurs',      mg: 'mpivarotra' },
+      'polite':    { fr: 'poli',          mg: 'manaja olona' },
       'treat':     { fr: 'petit plaisir', mg: 'valisoa kely' },
+      'fresh':     { fr: 'frais',         mg: 'vaovao' },
+      'cheaper':   { fr: 'moins cher',    mg: 'mora kokoa' },
+      'smell':     { fr: 'odeur',         mg: 'haodor [À VÉRIFIER]' },
+      'peanuts':   { fr: 'cacahuètes',    mg: 'voanjo' },
+      'greets':    { fr: 'salue',         mg: 'miarahaba' },
+      'afterwards':{ fr: 'ensuite',       mg: 'avy eo' },
     },
     questions: [
       {
@@ -499,11 +541,17 @@ We do many things together. At weekends, we often play video games or go cycling
 
 Kevin wants to study design at university. I think he will be very successful because he works very hard and never gives up. I am lucky to have such a good friend.`,
     glossary: {
-      'talented':  { fr: 'talentueux', mg: 'manana talenta' },
-      'displayed': { fr: 'exposé',     mg: 'nasehon\'ny' },
-      'cycling':   { fr: 'faire du vélo', mg: 'mitaingina bicycle' },
-      'design':    { fr: 'design',     mg: 'fanamboarana zavatra' },
-      'chilli':    { fr: 'piment',     mg: 'sakay' },
+      'talented':   { fr: 'talentueux',    mg: 'manana talenta' },
+      'displayed':  { fr: 'exposé',        mg: "nasehon'ny" },
+      'cycling':    { fr: 'faire du vélo', mg: 'mitaingina bicycle' },
+      'design':     { fr: 'design',        mg: 'fanamboarana zavatra' },
+      'chilli':     { fr: 'piment',        mg: 'sakay' },
+      'primary':    { fr: 'primaire',      mg: 'ambaratonga voalohany' },
+      'funny':      { fr: 'drôle',         mg: 'mahafinaritra' },
+      'amazing':    { fr: 'incroyable',    mg: 'mahatalanjona' },
+      'successful': { fr: 'qui réussit',   mg: 'mahomby' },
+      'university': { fr: 'université',    mg: 'oniversite' },
+      'weekends':   { fr: 'week-ends',     mg: "tamin'ny sabotsy sy alahady" },
     },
     questions: [
       {
@@ -566,11 +614,17 @@ The climate also varies greatly across the island. The east coast receives the m
 
 Understanding the seasons is very important for farmers, who plan their crops according to the rains. It is also essential for tourists who want to choose the best time to visit this beautiful island.`,
     glossary: {
-      'humid':      { fr: 'humide',    mg: 'mando' },
-      'cyclones':   { fr: 'cyclones',  mg: 'rivotra mahery' },
+      'humid':      { fr: 'humide',         mg: 'mando' },
+      'cyclones':   { fr: 'cyclones',       mg: 'rivotra mahery' },
       'highlands':  { fr: 'hauts plateaux', mg: 'tanety avo' },
-      'landscape':  { fr: 'paysage',   mg: 'endrik\'atao' },
-      'essential':  { fr: 'essentiel', mg: 'tena ilaina' },
+      'landscape':  { fr: 'paysage',        mg: "endrik'atao" },
+      'essential':  { fr: 'essentiel',      mg: 'tena ilaina' },
+      'seasons':    { fr: 'saisons',        mg: 'vanim-potoana' },
+      'rainy':      { fr: 'pluvieux',       mg: 'ranorano' },
+      'tourists':   { fr: 'touristes',      mg: 'mpizaha tany' },
+      'farmers':    { fr: 'agriculteurs',   mg: 'mpamokatra [À VÉRIFIER]' },
+      'crops':      { fr: 'cultures',       mg: 'vokatra [À VÉRIFIER]' },
+      'dangerous':  { fr: 'dangereux',      mg: 'mampidi-doza' },
     },
     questions: [
       {
@@ -637,11 +691,17 @@ In recent years, the rise of remote working has changed the situation significan
 
 Ultimately, the best choice depends on a person's age, job, family situation, and personal priorities. There is no single right answer.`,
     glossary: {
-      'venues':       { fr: 'lieux',         mg: 'toerana' },
-      'accessible':   { fr: 'accessible',    mg: 'azo atonina' },
-      'community':    { fr: 'communauté',    mg: 'fiarahamonina' },
-      'remote':       { fr: 'à distance',    mg: 'lavitra' },
-      'priorities':   { fr: 'priorités',     mg: 'andraikitra voalohany' },
+      'venues':       { fr: 'lieux',             mg: 'toerana' },
+      'accessible':   { fr: 'accessible',        mg: 'azo atonina' },
+      'community':    { fr: 'communauté',        mg: 'fiarahamonina' },
+      'remote':       { fr: 'à distance',        mg: 'lavitra' },
+      'priorities':   { fr: 'priorités',         mg: 'andraikitra voalohany' },
+      'advantages':   { fr: 'avantages',         mg: 'tombontsoa' },
+      'disadvantages':{ fr: 'inconvénients',     mg: 'lesoka [À VÉRIFIER]' },
+      'polluted':     { fr: 'pollué',            mg: 'voaloto' },
+      'countryside':  { fr: 'campagne',          mg: 'ambanivohitra' },
+      'belonging':    { fr: 'appartenance',      mg: 'fananana toerana [À VÉRIFIER]' },
+      'opportunity':  { fr: 'opportunité',       mg: 'fahafahana [À VÉRIFIER]' },
     },
     questions: [
       {
@@ -711,11 +771,17 @@ Access to technology presents another significant challenge. In wealthier countr
 
 Despite these challenges, most experts agree that technology, when used wisely and in a balanced way, has the potential to greatly improve educational outcomes for students everywhere.`,
     glossary: {
-      'transformed':  { fr: 'transformé',   mg: 'novaina tanteraka' },
-      'personalised': { fr: 'personnalisé', mg: 'nentina ho azy' },
-      'arithmetic':   { fr: 'arithmétique', mg: 'kaontana' },
-      'inequality':   { fr: 'inégalité',    mg: 'tsy fitoviana' },
-      'outcomes':     { fr: 'résultats',    mg: 'vokatra' },
+      'transformed':  { fr: 'transformé',      mg: 'novaina tanteraka' },
+      'personalised': { fr: 'personnalisé',    mg: 'nentina ho azy' },
+      'arithmetic':   { fr: 'arithmétique',    mg: 'kaontana' },
+      'inequality':   { fr: 'inégalité',       mg: 'tsy fitoviana' },
+      'outcomes':     { fr: 'résultats',       mg: 'vokatra' },
+      'devices':      { fr: 'appareils',       mg: 'fitaovana [À VÉRIFIER]' },
+      'engaged':      { fr: 'impliqué',        mg: 'tafiditra tsara [À VÉRIFIER]' },
+      'concern':      { fr: 'inquiétude',      mg: 'ahiahy' },
+      'dependent':    { fr: 'dépendant',       mg: 'miankina amin\' [À VÉRIFIER]' },
+      'wisely':       { fr: 'sagement',        mg: 'amim-pahendrena' },
+      'challenge':    { fr: 'défi',            mg: 'fanamby' },
     },
     questions: [
       {
@@ -786,10 +852,16 @@ On the positive side, travel broadens the mind considerably. Meeting people from
 The challenge for the future is to find ways to enjoy the benefits of international travel while reducing its negative environmental and social effects.`,
     glossary: {
       'dramatically':  { fr: 'de façon spectaculaire', mg: 'betsaka dia betsaka' },
-      'luxury':        { fr: 'luxe',           mg: 'harena lehibe' },
-      'overtourism':   { fr: 'surtourisme',    mg: 'fitangoranan\'ny mpizaha tany' },
-      'empathy':       { fr: 'empathie',       mg: 'fifankatiavana' },
-      'heritage':      { fr: 'patrimoine',     mg: 'lovam-pirazanana' },
+      'luxury':        { fr: 'luxe',                   mg: 'harena lehibe' },
+      'overtourism':   { fr: 'surtourisme',            mg: "fitangoranan'ny mpizaha tany" },
+      'empathy':       { fr: 'empathie',               mg: 'fifankatiavana' },
+      'heritage':      { fr: 'patrimoine',             mg: 'lovam-pirazanana' },
+      'passport':      { fr: 'passeport',              mg: 'pasipaoro' },
+      'abroad':        { fr: "à l'étranger",           mg: 'any ivelany' },
+      'budget':        { fr: 'bon marché',             mg: 'mora [À VÉRIFIER]' },
+      'booking':       { fr: 'réservation',            mg: 'fandaminana toerana [À VÉRIFIER]' },
+      'overcrowded':   { fr: 'surpeuplé',              mg: 'feno olona loatra [À VÉRIFIER]' },
+      'continent':     { fr: 'continent',              mg: 'kaontinanta' },
     },
     questions: [
       {
@@ -861,11 +933,17 @@ Each individual can also make a meaningful difference through everyday choices �
 
 Solving these problems will require international cooperation, political commitment, and a genuine change in how societies consume and produce.`,
     glossary: {
-      'deforestation': { fr: 'déforestation', mg: 'fanapotehana ala' },
-      'habitat':       { fr: 'habitat',       mg: 'toerana iainana' },
-      'contaminating': { fr: 'contaminant',   mg: 'mampitombo fahalotoana' },
-      'renewable':     { fr: 'renouvelable',  mg: 'azo havaozina' },
-      'sustainability':{ fr: 'durabilité',    mg: 'fiarovana ho avy' },
+      'deforestation': { fr: 'déforestation',  mg: 'fanapotehana ala' },
+      'habitat':       { fr: 'habitat',        mg: 'toerana iainana' },
+      'contaminating': { fr: 'contaminant',    mg: 'mampitombo fahalotoana' },
+      'renewable':     { fr: 'renouvelable',   mg: 'azo havaozina' },
+      'sustainability':{ fr: 'durabilité',     mg: 'fiarovana ho avy' },
+      'climate':       { fr: 'climat',         mg: 'toetr\'andro' },
+      'pollution':     { fr: 'pollution',      mg: 'fahalotoam-pirenena [À VÉRIFIER]' },
+      'plastic':       { fr: 'plastique',      mg: 'plastika' },
+      'temperature':   { fr: 'température',    mg: 'hafanana' },
+      'forests':       { fr: 'forêts',         mg: 'ala' },
+      'awareness':     { fr: 'sensibilisation',mg: 'fahalalana [À VÉRIFIER]' },
     },
     questions: [
       {
@@ -939,11 +1017,17 @@ Education systems around the world will need to adapt accordingly. Teaching stud
 
 The future of work is genuinely uncertain, but those who remain curious, adaptable, and committed to lifelong learning are best placed to thrive in whatever economic landscape emerges.`,
     glossary: {
-      'automation':    { fr: 'automatisation', mg: 'fanaovana ny asan\'olombelona amin\'ny milina' },
+      'automation':    { fr: 'automatisation', mg: "fanaovana ny asan'olombelona amin'ny milina" },
       'disruptive':    { fr: 'perturbateur',   mg: 'mampivily' },
       'replicate':     { fr: 'reproduire',     mg: 'mahavita mitovy' },
-      'adaptability':  { fr: 'adaptabilité',   mg: 'fahaizana mifanaraka amin\'ny toe-javatra' },
+      'adaptability':  { fr: 'adaptabilité',   mg: "fahaizana mifanaraka amin'ny toe-javatra" },
       'qualification': { fr: 'qualification',  mg: 'mari-pahaizana' },
+      'employment':    { fr: 'emploi',         mg: 'asa [À VÉRIFIER]' },
+      'creativity':    { fr: 'créativité',     mg: 'fahaiza-mamorona' },
+      'careers':       { fr: 'carrières',      mg: 'asana [À VÉRIFIER]' },
+      'artificial':    { fr: 'artificielle',   mg: 'artifisialy [À VÉRIFIER]' },
+      'intelligence':  { fr: 'intelligence',   mg: 'fahendrena' },
+      'effectively':   { fr: 'efficacement',   mg: 'tsara [À VÉRIFIER]' },
     },
     questions: [
       {
@@ -1020,11 +1104,17 @@ Libraries and schools have responded with creative initiatives to reignite enthu
 
 Perhaps the most effective solution is simply to make reading enjoyable rather than compulsory. Research consistently shows that when people choose what they read freely — following their own interests and curiosity — they are far more likely to develop a lasting and genuinely rewarding reading habit.`,
     glossary: {
-      'analytical':    { fr: 'analytique',   mg: 'mahay mamakafaka' },
-      'narrative':     { fr: 'récit',        mg: 'tantara' },
-      'perspectives':  { fr: 'points de vue', mg: 'fomba fijerika' },
-      'infrequently':  { fr: 'rarement',     mg: 'tsy matetika' },
-      'compulsory':    { fr: 'obligatoire',  mg: 'voatery' },
+      'analytical':    { fr: 'analytique',      mg: 'mahay mamakafaka' },
+      'narrative':     { fr: 'récit',           mg: 'tantara' },
+      'perspectives':  { fr: 'points de vue',   mg: 'fomba fijerika' },
+      'infrequently':  { fr: 'rarement',        mg: 'tsy matetika' },
+      'compulsory':    { fr: 'obligatoire',     mg: 'voatery' },
+      'vocabulary':    { fr: 'vocabulaire',     mg: 'teny [À VÉRIFIER]' },
+      'stress':        { fr: 'stress',          mg: 'alahelon-tsaina [À VÉRIFIER]' },
+      'declined':      { fr: 'a diminué',       mg: 'nihena' },
+      'habit':         { fr: 'habitude',        mg: 'fomba amam-panao' },
+      'enjoyable':     { fr: 'agréable',        mg: 'mahafinaritra' },
+      'concentrate':   { fr: 'se concentrer',   mg: 'mifantoka [À VÉRIFIER]' },
     },
     questions: [
       {
@@ -1104,6 +1194,13 @@ I feel happy in my house because my family is here.`,
       'comfortable': { fr: 'confortable',  mg: 'mahafinaritra' },
       'wardrobe':    { fr: 'armoire',      mg: 'armoera' },
       'sofa':        { fr: 'canapé',       mg: 'seza lehibe' },
+      'bedroom':     { fr: 'chambre',      mg: 'efitra fandriana' },
+      'kitchen':     { fr: 'cuisine',      mg: 'efitra fanomboana sakafo' },
+      'bathroom':    { fr: 'salle de bain', mg: 'efitra fanasana vatana' },
+      'garden':      { fr: 'jardin',       mg: 'saha [À VÉRIFIER]' },
+      'television':  { fr: 'télévision',   mg: 'fahitalavitra' },
+      'pictures':    { fr: 'images',       mg: 'sary' },
+      'tomatoes':    { fr: 'tomates',      mg: 'voatavia' },
     },
     questions: [
       { id: 'q1', type: 'mcq', question: 'How many bedrooms does Haja\'s house have?', options: ['One', 'Two', 'Three', 'Four'], correct: 1 },
@@ -1135,11 +1232,17 @@ On the last day, we visited a coral reef with a local guide. The colours of the 
 
 When we came home, we were tired but very happy. I hope we can go back there next year.`,
     glossary: {
-      'coastal':     { fr: 'côtier',        mg: 'amoron-dranomasina' },
-      'amazed':      { fr: 'émerveillée',   mg: 'talanjona' },
-      'shells':      { fr: 'coquillages',   mg: 'akora' },
-      'coral reef':  { fr: 'récif corallien', mg: 'coral' },
-      'guesthouse':  { fr: 'pension',       mg: 'trano fandraisana' },
+      'coastal':     { fr: 'côtier',            mg: 'amoron-dranomasina' },
+      'amazed':      { fr: 'émerveillée',       mg: 'talanjona' },
+      'shells':      { fr: 'coquillages',       mg: 'akora' },
+      'coral reef':  { fr: 'récif corallien',   mg: 'coral' },
+      'guesthouse':  { fr: 'pension',           mg: 'trano fandraisana' },
+      'beach':       { fr: 'plage',             mg: 'amoron-dranomasina' },
+      'swam':        { fr: 'a nagé',            mg: 'nilomano' },
+      'sailed':      { fr: 'a navigué',         mg: 'nandeha sambo [À VÉRIFIER]' },
+      'waterproof':  { fr: 'étanche',           mg: 'tsy midiran-drano [À VÉRIFIER]' },
+      'guide':       { fr: 'guide',             mg: 'mpitari-dalana' },
+      'incredible':  { fr: 'incroyable',        mg: 'mahatalanjona' },
     },
     questions: [
       { id: 'q1', type: 'mcq', question: 'How long did the drive to Ifaty take?', options: ['One hour', 'Two hours', 'Three hours', 'Half an hour'], correct: 1 },
@@ -1171,11 +1274,17 @@ Another concern is the issue of cyberbullying. Unlike traditional bullying, cybe
 
 Experts generally agree that moderation is key. Using social media mindfully — setting time limits, choosing content carefully, and taking regular breaks — can help teenagers enjoy its benefits without suffering its negative effects.`,
     glossary: {
-      'excessive':    { fr: 'excessif',     mg: 'be loatra' },
-      'idealistic':   { fr: 'idéalisé',     mg: 'tsy mety ho tranga' },
-      'self-esteem':  { fr: 'estime de soi', mg: 'fanajana tena' },
+      'excessive':    { fr: 'excessif',         mg: 'be loatra' },
+      'idealistic':   { fr: 'idéalisé',         mg: 'tsy mety ho tranga' },
+      'self-esteem':  { fr: 'estime de soi',    mg: 'fanajana tena' },
       'cyberbullying':{ fr: 'cyberharcèlement', mg: 'fanenjehana an-tserasera' },
-      'moderation':   { fr: 'modération',   mg: 'fahendrena amin\'ny fampiasana' },
+      'moderation':   { fr: 'modération',       mg: "fahendrena amin'ny fampiasana" },
+      'anxiety':      { fr: 'anxiété',          mg: 'ahiahy' },
+      'depression':   { fr: 'dépression',       mg: 'fahalemem-panahy [À VÉRIFIER]' },
+      'consequences': { fr: 'conséquences',     mg: 'vokatr\'izany' },
+      'platforms':    { fr: 'plateformes',      mg: 'rindranasa [À VÉRIFIER]' },
+      'teenagers':    { fr: 'adolescents',      mg: 'tanora' },
+      'mindfully':    { fr: 'de façon consciente', mg: 'am-pahendrena' },
     },
     questions: [
       { id: 'q1', type: 'mcq', question: 'Which group does research suggest is most affected by heavy social media use?', options: ['Boys', 'Girls', 'Adults', 'Teachers'], correct: 1 },
@@ -1208,11 +1317,17 @@ Several solutions have been proposed. Supermarkets can reduce waste by improving
 
 Tackling food waste requires action at every level — from international policy to individual shopping habits.`,
     glossary: {
-      'approximately': { fr: 'environ',      mg: 'tokony ho' },
-      'landfill':      { fr: 'décharge',     mg: 'toeran-drano fako' },
-      'methane':       { fr: 'méthane',      mg: 'gazy metana' },
-      'infrastructure':{ fr: 'infrastructure', mg: 'fotodrafitrasa' },
-      'leftovers':     { fr: 'restes',       mg: 'sisa sakafo' },
+      'approximately': { fr: 'environ',          mg: 'tokony ho' },
+      'landfill':      { fr: 'décharge',         mg: 'toeran-drano fako' },
+      'methane':       { fr: 'méthane',          mg: 'gazy metana' },
+      'infrastructure':{ fr: 'infrastructure',   mg: 'fotodrafitrasa' },
+      'leftovers':     { fr: 'restes',           mg: 'sisa sakafo' },
+      'wasted':        { fr: 'gaspillé',         mg: 'very foana' },
+      'resources':     { fr: 'ressources',       mg: 'harena [À VÉRIFIER]' },
+      'consumer':      { fr: 'consommateur',     mg: 'mpanjifa' },
+      'storage':       { fr: 'stockage',         mg: 'fitahirizana' },
+      'charities':     { fr: 'associations',     mg: 'fikambanana fanampiana [À VÉRIFIER]' },
+      'disposal':      { fr: 'élimination',      mg: 'fanapotehana [À VÉRIFIER]' },
     },
     questions: [
       { id: 'q1', type: 'mcq', question: 'How much of the world\'s food is wasted each year?', options: ['One fifth', 'One quarter', 'One third', 'One half'], correct: 2 },
@@ -1247,11 +1362,17 @@ Today, the internet is so deeply woven into the fabric of daily life that it is 
 
 Perhaps most remarkably, the network that was originally designed to withstand nuclear war now carries cat videos, online shopping, and live global conversations without interruption.`,
     glossary: {
-      'underpinning':  { fr: 'sous-tendant',   mg: 'manohana' },
-      'decentralised': { fr: 'décentralisé',   mg: 'tsy ivon-toerana' },
-      'protocols':     { fr: 'protocoles',     mg: 'fitsipika fifandraisana' },
-      'interlinked':   { fr: 'interconnectés', mg: 'mifandray' },
-      'commerce':      { fr: 'commerce',       mg: 'varotra' },
+      'underpinning':  { fr: 'sous-tendant',    mg: 'manohana' },
+      'decentralised': { fr: 'décentralisé',    mg: 'tsy ivon-toerana' },
+      'protocols':     { fr: 'protocoles',      mg: 'fitsipika fifandraisana' },
+      'interlinked':   { fr: 'interconnectés',  mg: 'mifandray' },
+      'commerce':      { fr: 'commerce',        mg: 'varotra' },
+      'network':       { fr: 'réseau',          mg: 'tambajotra' },
+      'browser':       { fr: 'navigateur',      mg: 'fitaovam-pijinjana [À VÉRIFIER]' },
+      'affordable':    { fr: 'abordable',       mg: 'mora vidiny' },
+      'streaming':     { fr: 'streaming',       mg: 'fijery rindranasa an-tsarimihetsika [À VÉRIFIER]' },
+      'invented':      { fr: 'inventé',         mg: 'noforonina' },
+      'global':        { fr: 'mondial',         mg: 'eran-tany' },
     },
     questions: [
       { id: 'q1', type: 'mcq', question: 'What was the original purpose of ARPANET?', options: ['To provide internet access to schools', 'To allow military researchers to share data', 'To create a commercial network', 'To connect ordinary people globally'], correct: 1 },

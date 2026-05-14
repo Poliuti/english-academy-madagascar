@@ -407,4 +407,390 @@ export const LECTURE_TEXTS = [
     ],
   },
 
+
+  {
+    id: 'lec_06',
+    title: 'At the Market',
+    icon: '🛒',
+    topic: 'shopping',
+    text: "Every Saturday, my mother goes to the market. She buys vegetables, fish and fruit. The market is big and colourful. I help her carry the bags. We buy rice and oil too. The market closes at noon.",
+    questions: [
+      { id: 'q1', question: 'When does her mother go to the market?', options: ['Monday', 'Wednesday', 'Saturday', 'Sunday'], correct: 2 },
+      { id: 'q2', question: 'What does her mother NOT buy?', options: ['Vegetables', 'Fish', 'Bread', 'Fruit'], correct: 2 },
+      { id: 'q3', question: 'What does the market look like?', options: ['Small and quiet', 'Big and colourful', 'Dark and dirty', 'Empty and cold'], correct: 1 },
+      { id: 'q4', question: 'What does the narrator do to help?', options: ['Pays the money', 'Carries the bags', 'Chooses the food', 'Talks to sellers'], correct: 1 },
+      { id: 'q5', question: 'When does the market close?', options: ['At ten', 'At eleven', 'At noon', 'At two'], correct: 2 },
+    ],
+    sentences: [
+      {
+        en: 'Every Saturday, my mother goes to the market.',
+        words: [
+          { en: 'Every Saturday', mg: 'Asabotsy tsirairay' },
+          { en: 'my', mg: 'ny' },
+          { en: 'mother', mg: 'reniko' },
+          { en: 'goes', mg: 'mandeha' },
+          { en: 'to the market', mg: 'any am-tsena' },
+        ],
+        mgFree: "Isan'ny Asabotsy, mandeha any am-tsena ny reniko.",
+      },
+      {
+        en: 'She buys vegetables, fish and fruit.',
+        words: [
+          { en: 'She', mg: 'Izy' },
+          { en: 'buys', mg: 'mividy' },
+          { en: 'vegetables', mg: 'anana' },
+          { en: 'fish', mg: 'trondro' },
+          { en: 'and', mg: 'sy' },
+          { en: 'fruit', mg: 'voankazo' },
+        ],
+        mgFree: 'Mividy anana, trondro ary voankazo izy.',
+      },
+      {
+        en: 'The market is big and colourful.',
+        words: [
+          { en: 'The market', mg: 'Ny tsena' },
+          { en: 'is', mg: 'dia' },
+          { en: 'big', mg: 'lehibe' },
+          { en: 'and', mg: 'ary' },
+          { en: 'colourful', mg: 'maro loko [À VÉRIFIER]' },
+        ],
+        mgFree: 'Lehibe sy maro loko ny tsena.',
+      },
+      {
+        en: 'I help her carry the bags.',
+        words: [
+          { en: 'I', mg: 'Aho' },
+          { en: 'help', mg: 'manampy' },
+          { en: 'her', mg: 'azy' },
+          { en: 'carry', mg: 'mitondra' },
+          { en: 'the bags', mg: 'ny kitapo' },
+        ],
+        mgFree: 'Manampy azy mitondra ny kitapo aho.',
+      },
+      {
+        en: 'We buy rice and oil too.',
+        words: [
+          { en: 'We', mg: 'Izahay' },
+          { en: 'buy', mg: 'mividy' },
+          { en: 'rice', mg: 'vary' },
+          { en: 'and', mg: 'sy' },
+          { en: 'oil', mg: 'menaka' },
+          { en: 'too', mg: 'koa' },
+        ],
+        mgFree: 'Mividy vary sy menaka koa izahay.',
+      },
+      {
+        en: 'The market closes at noon.',
+        words: [
+          { en: 'The market', mg: 'Ny tsena' },
+          { en: 'closes', mg: 'mikatona [À VÉRIFIER]' },
+          { en: 'at noon', mg: "amin'ny antoandro" },
+        ],
+        mgFree: "Mikatona amin'ny antoandro ny tsena.",
+      },
+    ],
+  },
+
+  {
+    id: 'lec_07',
+    title: 'My Village',
+    icon: '🏘️',
+    topic: 'places',
+    text: "I live in a small village near Fianarantsoa. There is one school and one church. My neighbours are very friendly. We have a small river behind our house. Children play there after school. I love my village.",
+    questions: [
+      { id: 'q1', question: 'Where is the village?', options: ['Near Antananarivo', 'Near Toamasina', 'Near Fianarantsoa', 'Near Mahajanga'], correct: 2 },
+      { id: 'q2', question: 'How many schools are in the village?', options: ['None', 'One', 'Two', 'Three'], correct: 1 },
+      { id: 'q3', question: 'What word describes the neighbours?', options: ['Strict', 'Friendly', 'Busy', 'Tired'], correct: 1 },
+      { id: 'q4', question: 'Where is the river?', options: ['In front of the house', 'Next to the school', 'Behind the house', 'Far from the village'], correct: 2 },
+      { id: 'q5', question: 'When do children play by the river?', options: ['Before school', 'During lunch', 'After school', 'In the morning'], correct: 2 },
+    ],
+    sentences: [
+      {
+        en: 'I live in a small village near Fianarantsoa.',
+        words: [
+          { en: 'I', mg: 'Aho' },
+          { en: 'live', mg: 'monina' },
+          { en: 'in a small', mg: 'tanana kely iray' },
+          { en: 'village', mg: 'tanana' },
+          { en: 'near', mg: "akaikin'" },
+          { en: 'Fianarantsoa', mg: 'Fianarantsoa' },
+        ],
+        mgFree: "Monina any tanana kely akaikin'i Fianarantsoa aho.",
+      },
+      {
+        en: 'There is one school and one church.',
+        words: [
+          { en: 'There is', mg: 'Misy' },
+          { en: 'one school', mg: 'sekoly iray' },
+          { en: 'and', mg: 'sy' },
+          { en: 'one church', mg: 'fiangonana iray' },
+        ],
+        mgFree: 'Misy sekoly iray sy fiangonana iray.',
+      },
+      {
+        en: 'My neighbours are very friendly.',
+        words: [
+          { en: 'My neighbours', mg: 'Ny tandriny [À VÉRIFIER]' },
+          { en: 'are', mg: 'dia' },
+          { en: 'very friendly', mg: 'tsara fanahy' },
+        ],
+        mgFree: 'Tsara fanahy ny tandriny.',
+      },
+      {
+        en: 'We have a small river behind our house.',
+        words: [
+          { en: 'We have', mg: 'Misy' },
+          { en: 'a small river', mg: 'renirano kely' },
+          { en: 'behind', mg: "ao aorianan'" },
+          { en: 'our house', mg: 'ny tranondray' },
+        ],
+        mgFree: "Misy renirano kely ao aorianan'ny tranondray.",
+      },
+      {
+        en: 'Children play there after school.',
+        words: [
+          { en: 'Children', mg: 'Ny ankizy' },
+          { en: 'play', mg: 'milalao' },
+          { en: 'there', mg: 'any' },
+          { en: 'after school', mg: "aorian'ny sekoly" },
+        ],
+        mgFree: "Milalao any ny ankizy aorian'ny sekoly.",
+      },
+      {
+        en: 'I love my village.',
+        words: [
+          { en: 'I', mg: 'Aho' },
+          { en: 'love', mg: 'tia' },
+          { en: 'my village', mg: 'ny tanânako' },
+        ],
+        mgFree: 'Tia ny tanânako aho.',
+      },
+    ],
+  },
+
+  {
+    id: 'lec_08',
+    title: 'The Weather Today',
+    icon: '☀️',
+    topic: 'weather',
+    text: "Today the weather is sunny and warm. The sky is blue and there are no clouds. The temperature is twenty-five degrees. We go outside to play in the garden. In the evening, it gets cooler. I love sunny days.",
+    questions: [
+      { id: 'q1', question: 'What is the weather like today?', options: ['Rainy and cold', 'Cloudy and windy', 'Sunny and warm', 'Foggy and grey'], correct: 2 },
+      { id: 'q2', question: 'What colour is the sky?', options: ['Grey', 'White', 'Blue', 'Orange'], correct: 2 },
+      { id: 'q3', question: 'What is the temperature?', options: ['Fifteen degrees', 'Twenty degrees', 'Twenty-five degrees', 'Thirty degrees'], correct: 2 },
+      { id: 'q4', question: 'Where do they go to play?', options: ['At school', 'At the market', 'In the garden', 'In the park'], correct: 2 },
+      { id: 'q5', question: 'When does it get cooler?', options: ['In the morning', 'At midday', 'In the afternoon', 'In the evening'], correct: 3 },
+    ],
+    sentences: [
+      {
+        en: 'Today the weather is sunny and warm.',
+        words: [
+          { en: 'Today', mg: 'Androany' },
+          { en: 'the weather', mg: 'ny toetrandro' },
+          { en: 'is', mg: 'dia' },
+          { en: 'sunny', mg: 'masoandro be' },
+          { en: 'and warm', mg: 'ary mafana kely' },
+        ],
+        mgFree: 'Androany dia masoandro be sy mafana kely ny toetrandro.',
+      },
+      {
+        en: 'The sky is blue and there are no clouds.',
+        words: [
+          { en: 'The sky', mg: 'Ny lanitra' },
+          { en: 'is blue', mg: 'manga' },
+          { en: 'and', mg: 'ary' },
+          { en: 'there are no clouds', mg: 'tsy misy rahona' },
+        ],
+        mgFree: 'Manga ny lanitra ary tsy misy rahona.',
+      },
+      {
+        en: 'The temperature is twenty-five degrees.',
+        words: [
+          { en: 'The temperature', mg: 'Ny hafanana [À VÉRIFIER]' },
+          { en: 'is', mg: 'dia' },
+          { en: 'twenty-five degrees', mg: 'dimy amby roapolo degre [À VÉRIFIER]' },
+        ],
+        mgFree: 'Dimy amby roapolo degre ny hafanana.',
+      },
+      {
+        en: 'We go outside to play in the garden.',
+        words: [
+          { en: 'We', mg: 'Izahay' },
+          { en: 'go outside', mg: 'mivoaka' },
+          { en: 'to play', mg: 'milalao' },
+          { en: 'in the garden', mg: 'ao am-parihy [À VÉRIFIER]' },
+        ],
+        mgFree: 'Mivoaka milalao ao am-parihy izahay.',
+      },
+      {
+        en: 'In the evening, it gets cooler.',
+        words: [
+          { en: 'In the evening', mg: "Amin'ny hariva" },
+          { en: 'it gets cooler', mg: 'mangatsiaka' },
+        ],
+        mgFree: "Mangatsiaka amin'ny hariva.",
+      },
+      {
+        en: 'I love sunny days.',
+        words: [
+          { en: 'I', mg: 'Aho' },
+          { en: 'love', mg: 'tia' },
+          { en: 'sunny days', mg: 'andro masoandro be' },
+        ],
+        mgFree: 'Tia andro masoandro be aho.',
+      },
+    ],
+  },
+
+  {
+    id: 'lec_09',
+    title: 'My Friend Haja',
+    icon: '👫',
+    topic: 'school',
+    text: "My best friend is called Haja. He is eleven years old. He lives near my house. We go to school together every morning. Haja is very funny and kind. He loves drawing and reading books.",
+    questions: [
+      { id: 'q1', question: "What is the friend's name?", options: ['Lova', 'Rina', 'Haja', 'Tina'], correct: 2 },
+      { id: 'q2', question: 'How old is Haja?', options: ['Ten', 'Eleven', 'Twelve', 'Thirteen'], correct: 1 },
+      { id: 'q3', question: "Where does Haja live?", options: ['Far from the narrator', "Near the narrator's house", 'In a different village', 'Near school'], correct: 1 },
+      { id: 'q4', question: 'How do they go to school?', options: ['By bus', 'Alone', 'Together', 'By bike'], correct: 2 },
+      { id: 'q5', question: 'What does Haja love doing?', options: ['Football and swimming', 'Drawing and reading', 'Singing and dancing', 'Cooking and shopping'], correct: 1 },
+    ],
+    sentences: [
+      {
+        en: 'My best friend is called Haja.',
+        words: [
+          { en: 'My', mg: 'Ny' },
+          { en: 'best friend', mg: 'sakaiza tsara indrindra' },
+          { en: 'is called', mg: 'atao hoe' },
+          { en: 'Haja', mg: 'Haja' },
+        ],
+        mgFree: "Haja no anaran'ny sakaizako tsara indrindra.",
+      },
+      {
+        en: 'He is eleven years old.',
+        words: [
+          { en: 'He', mg: 'Izy' },
+          { en: 'is', mg: 'dia' },
+          { en: 'eleven years old', mg: 'iraika ambin\'ny folo taona' },
+        ],
+        mgFree: "Iraika ambin'ny folo taona izy.",
+      },
+      {
+        en: 'He lives near my house.',
+        words: [
+          { en: 'He', mg: 'Izy' },
+          { en: 'lives', mg: 'monina' },
+          { en: 'near', mg: "akaikin'" },
+          { en: 'my house', mg: 'ny tranoko' },
+        ],
+        mgFree: "Monina akaikin'ny tranoko izy.",
+      },
+      {
+        en: 'We go to school together every morning.',
+        words: [
+          { en: 'We', mg: 'Izahay' },
+          { en: 'go to school', mg: 'mankany an-tsekoly' },
+          { en: 'together', mg: 'miaraka' },
+          { en: 'every morning', mg: "isan'andro maraina" },
+        ],
+        mgFree: "Mankany an-tsekoly miaraka izahay isan'andro maraina.",
+      },
+      {
+        en: 'Haja is very funny and kind.',
+        words: [
+          { en: 'Haja', mg: 'Haja' },
+          { en: 'is', mg: 'dia' },
+          { en: 'very funny', mg: 'mahafinaritra' },
+          { en: 'and kind', mg: 'sy tsara fanahy' },
+        ],
+        mgFree: 'Mahafinaritra sy tsara fanahy Haja.',
+      },
+      {
+        en: 'He loves drawing and reading books.',
+        words: [
+          { en: 'He', mg: 'Izy' },
+          { en: 'loves', mg: 'tia' },
+          { en: 'drawing', mg: 'manao sary' },
+          { en: 'and', mg: 'sy' },
+          { en: 'reading books', mg: 'mamaky boky' },
+        ],
+        mgFree: 'Tia manao sary sy mamaky boky izy.',
+      },
+    ],
+  },
+
+  {
+    id: 'lec_10',
+    title: 'Sports I Like',
+    icon: '⚽',
+    topic: 'sports',
+    text: "I like playing sports. My favourite sport is football. I play with my friends every Saturday. We have a good team. I also like swimming in the river. Sport keeps me healthy and happy.",
+    questions: [
+      { id: 'q1', question: "What is the narrator's favourite sport?", options: ['Swimming', 'Basketball', 'Football', 'Running'], correct: 2 },
+      { id: 'q2', question: 'When do they play football?', options: ['Every Sunday', 'Every Friday', 'Every Saturday', 'Every Monday'], correct: 2 },
+      { id: 'q3', question: 'Who does the narrator play with?', options: ['Alone', 'With family', 'With friends', 'With teachers'], correct: 2 },
+      { id: 'q4', question: 'Where does the narrator swim?', options: ['In the sea', 'In the pool', 'In the river', 'At school'], correct: 2 },
+      { id: 'q5', question: 'How does sport make the narrator feel?', options: ['Tired and bored', 'Healthy and happy', 'Sad and lonely', 'Busy and stressed'], correct: 1 },
+    ],
+    sentences: [
+      {
+        en: 'I like playing sports.',
+        words: [
+          { en: 'I', mg: 'Aho' },
+          { en: 'like', mg: 'tia' },
+          { en: 'playing', mg: 'milalao' },
+          { en: 'sports', mg: 'fanatanjahantena' },
+        ],
+        mgFree: 'Tia milalao fanatanjahantena aho.',
+      },
+      {
+        en: 'My favourite sport is football.',
+        words: [
+          { en: 'My favourite sport', mg: 'Ny fanatanjahantena tiako indrindra' },
+          { en: 'is', mg: 'dia' },
+          { en: 'football', mg: 'baolina kitra [À VÉRIFIER]' },
+        ],
+        mgFree: 'Baolina kitra no fanatanjahantena tiako indrindra.',
+      },
+      {
+        en: 'I play with my friends every Saturday.',
+        words: [
+          { en: 'I play', mg: 'Milalao aho' },
+          { en: 'with', mg: "niaraka amin'" },
+          { en: 'my friends', mg: 'ny sakaizako' },
+          { en: 'every Saturday', mg: "isan'ny Asabotsy" },
+        ],
+        mgFree: "Milalao aho niaraka amin'ny sakaizako isan'ny Asabotsy.",
+      },
+      {
+        en: 'We have a good team.',
+        words: [
+          { en: 'We have', mg: 'Manana' },
+          { en: 'a good', mg: 'tsara' },
+          { en: 'team', mg: 'ekipa' },
+        ],
+        mgFree: 'Manana ekipa tsara izahay.',
+      },
+      {
+        en: 'I also like swimming in the river.',
+        words: [
+          { en: 'I also like', mg: 'Tia koa aho' },
+          { en: 'swimming', mg: 'milomano' },
+          { en: 'in the river', mg: 'ao am-pony [À VÉRIFIER]' },
+        ],
+        mgFree: 'Tia koa milomano ao am-pony aho.',
+      },
+      {
+        en: 'Sport keeps me healthy and happy.',
+        words: [
+          { en: 'Sport', mg: 'Ny fanatanjahantena' },
+          { en: 'keeps me', mg: 'mahatazona ahy [À VÉRIFIER]' },
+          { en: 'healthy', mg: 'salama' },
+          { en: 'and happy', mg: 'sy faly' },
+        ],
+        mgFree: 'Ny fanatanjahantena dia mahatazona ahy ho salama sy faly.',
+      },
+    ],
+  },
+
 ];

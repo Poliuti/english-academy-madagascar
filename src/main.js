@@ -72,10 +72,10 @@ function router() {
       view = renderStats();
       break;
     case 'reading':
-      view = renderReading(params.get('id'));
+      view = renderReading(params.get('id'), params.get('filter'));
       break;
     case 'lecture':
-      view = renderLecture();
+      view = renderLecture(params.get('id'));
       break;
     default:
       view = profile ? renderDashboard() : renderProfileSelector();

@@ -2334,6 +2334,15 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .rd-card-icon { font-size: 1.4rem; }
 .rd-done-badge { margin-left: auto; font-size: .9rem; }
 
+.rd-lec-badge {
+  font-size: .65rem;
+  background: #D1FAE5;
+  color: #065F46;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-weight: 700;
+}
+
 .rd-level-badge {
   padding: 2px 8px; border-radius: 10px;
   font-size: .72rem; font-weight: 800;

@@ -8,6 +8,7 @@
 
 import { getActiveProfile, addXP, updateStreak } from '../storage.js';
 import { READING_TEXTS } from '../data/reading.js';
+import { LECTURE_TEXTS } from '../data/comprehension-ecrite.js';
 
 const LEVEL_COLOR = { A1: '#F59E0B', A2: '#3B82F6', B1: '#10B981', 'B1+': '#8B5CF6' };
 const LEVEL_BG    = { A1: '#FEF3C7', A2: '#DBEAFE', B1: '#D1FAE5', 'B1+': '#EDE9FE' };
@@ -33,7 +34,7 @@ function saveReadingResult(textId, score, total, xpEarned) {
 }
 
 // ─── Main entry ───────────────────────────────────────────────────────────────
-export function renderReading(textId) {
+export function renderReading(textId, initialFilter) {
   const profile = getActiveProfile();
   if (!profile) { location.hash = '#profiles'; return document.createElement('div'); }
 
@@ -43,9 +44,9 @@ export function renderReading(textId) {
   if (textId) {
     const text = READING_TEXTS.find(t => t.id === textId);
     if (text) renderTextView(container, text);
-    else renderList(container);
+    else renderList(container, initialFilter || 'all');
   } else {
-    renderList(container);
+    renderList(container, initialFilter || 'all');
   }
 
   return container;
@@ -54,15 +55,17 @@ export function renderReading(textId) {
 // ══════════════════════════════════════════════════════════════════════════════
 // LIST
 // ══════════════════════════════════════════════════════════════════════════════
-function renderList(container) {
+function renderList(container, initialFilter) {
   const readingMap = getReadingMap();
 
-  let activeLevel = 'all';
+  let activeLevel = initialFilter || 'all';
 
   const render = () => {
-    const filtered = activeLevel === 'all'
-      ? READING_TEXTS
-      : READING_TEXTS.filter(t => t.level === activeLevel);
+    const filtered = activeLevel === 'lecture'
+      ? null   // handled separately
+      : activeLevel === 'all'
+        ? READING_TEXTS
+        : READING_TEXTS.filter(t => t.level === activeLevel);
 
     container.innerHTML = `
       <div class="rd-list-header">
@@ -72,38 +75,54 @@ function renderList(container) {
 
       <div class="rd-list-content">
         <div class="rd-level-filters">
-          ${['all','A1','A2','B1','B1+'].map(lv => `
+          ${['all','A1','A2','B1','B1+','lecture'].map(lv => `
             <button class="rd-filter-btn ${activeLevel === lv ? 'active' : ''}" data-lv="${lv}">
-              ${lv === 'all' ? 'Tous' : lv}
+              ${lv === 'all' ? 'Tous' : lv === 'lecture' ? '🌿 MG' : lv}
             </button>
           `).join('')}
         </div>
 
-        <div class="rd-text-grid">
-          ${filtered.map(t => {
-            const done = readingMap[t.id];
-            const pct  = done ? Math.round((done.score / done.total) * 100) : null;
-            return `
-              <div class="rd-text-card" data-id="${t.id}">
+        ${activeLevel === 'lecture' ? `
+          <div class="rd-text-grid">
+            ${LECTURE_TEXTS.map(t => `
+              <div class="rd-text-card rd-lec-card" data-lecid="${t.id}">
                 <div class="rd-card-top">
                   <span class="rd-card-icon">${t.icon}</span>
-                  <span class="rd-level-badge" style="background:${LEVEL_BG[t.level]};color:${LEVEL_TEXT[t.level]}">${t.level}</span>
-                  ${done ? `<span class="rd-done-badge">✅</span>` : ''}
+                  <span class="rd-level-badge" style="background:#D1FAE5;color:#065F46">A1</span>
+                  <span class="rd-lec-badge">🌿 MG</span>
                 </div>
                 <div class="rd-card-title">${escHtml(t.title)}</div>
-                <div class="rd-card-meta">${t.wordCount} mots · ${t.questions.length} questions · ⭐ ${t.xpReward} XP</div>
-                ${done ? `
-                  <div class="rd-card-score">
-                    <div class="rd-card-score-bar">
-                      <div class="rd-card-score-fill" style="width:${pct}%;background:${pct >= 80 ? '#4CAF50' : pct >= 60 ? '#FF9800' : '#E53935'}"></div>
-                    </div>
-                    <span class="rd-card-pct">${done.score}/${done.total} — ${pct}%</span>
-                  </div>
-                ` : ''}
+                <div class="rd-card-meta">${t.questions.length} questions · traduction malgache mot-à-mot</div>
               </div>
-            `;
-          }).join('')}
-        </div>
+            `).join('')}
+          </div>
+        ` : `
+          <div class="rd-text-grid">
+            ${filtered.map(t => {
+              const done = readingMap[t.id];
+              const pct  = done ? Math.round((done.score / done.total) * 100) : null;
+              return `
+                <div class="rd-text-card" data-id="${t.id}">
+                  <div class="rd-card-top">
+                    <span class="rd-card-icon">${t.icon}</span>
+                    <span class="rd-level-badge" style="background:${LEVEL_BG[t.level]};color:${LEVEL_TEXT[t.level]}">${t.level}</span>
+                    ${done ? `<span class="rd-done-badge">✅</span>` : ''}
+                  </div>
+                  <div class="rd-card-title">${escHtml(t.title)}</div>
+                  <div class="rd-card-meta">${t.wordCount} mots · ${t.questions.length} questions · ⭐ ${t.xpReward} XP</div>
+                  ${done ? `
+                    <div class="rd-card-score">
+                      <div class="rd-card-score-bar">
+                        <div class="rd-card-score-fill" style="width:${pct}%;background:${pct >= 80 ? '#4CAF50' : pct >= 60 ? '#FF9800' : '#E53935'}"></div>
+                      </div>
+                      <span class="rd-card-pct">${done.score}/${done.total} — ${pct}%</span>
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `}
       </div>
     `;
 
@@ -118,9 +137,15 @@ function renderList(container) {
       });
     });
 
-    container.querySelectorAll('.rd-text-card').forEach(card => {
+    container.querySelectorAll('.rd-text-card:not(.rd-lec-card)').forEach(card => {
       card.addEventListener('click', () => {
         location.hash = `#reading?id=${card.dataset.id}`;
+      });
+    });
+
+    container.querySelectorAll('.rd-lec-card').forEach(card => {
+      card.addEventListener('click', () => {
+        location.hash = '#lecture?id=' + card.dataset.lecid;
       });
     });
   };

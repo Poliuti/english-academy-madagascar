@@ -97,7 +97,7 @@ export function renderDashboard() {
             <span class="legend-icon">🌿</span>
             <div>
               <div class="legend-name">Lecture MG</div>
-              <div class="legend-desc">5 textes A1 simples avec traduction malgache mot-à-mot.</div>
+              <div class="legend-desc">10 textes A1 simples avec traduction malgache mot-à-mot (accessible via Compréhension → 🌿 MG).</div>
             </div>
           </div>
           <div class="legend-item">
@@ -222,7 +222,7 @@ export function renderDashboard() {
     location.hash = '#tutor';
   });
   container.querySelector('#btn-lecture').addEventListener('click', () => {
-    location.hash = '#lecture';
+    location.hash = '#reading?filter=lecture';
   });
   if (ENABLE_COMPETITIVE_MODE) {
     container.querySelector('#btn-competitive')?.addEventListener('click', () => {

@@ -10,13 +10,19 @@ function escHtml(s) {
     ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 }
 
-export function renderLecture() {
+export function renderLecture(textId) {
   const profile = getActiveProfile();
   if (!profile) { location.hash = '#profiles'; return document.createElement('div'); }
 
   const container = document.createElement('div');
   container.className = 'lecture-page';
-  renderList(container);
+  if (textId) {
+    const found = LECTURE_TEXTS.find(t => t.id === textId);
+    if (found) renderText(container, found.id);
+    else renderList(container);
+  } else {
+    renderList(container);
+  }
   return container;
 }
 
