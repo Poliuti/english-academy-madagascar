@@ -4,7 +4,7 @@
  *  - questions: 5 MCQ sur le contenu
  *  - sentences: traduction mot-à-mot + traduction libre en malgasy
  *
- * [À VÉRIFIER] = traduction malgasy incertaine
+
  */
 export const LECTURE_TEXTS = [
 
@@ -68,7 +68,7 @@ export const LECTURE_TEXTS = [
         words: [
           { en: 'I',        mg: 'Aho' },
           { en: 'like',     mg: 'tia' },
-          { en: 'football', mg: 'baolina kitra [À VÉRIFIER]' },
+          { en: 'football', mg: 'baolina kitra' },
         ],
         mgFree: 'Tia baolina kitra aho.',
       },
@@ -162,7 +162,7 @@ export const LECTURE_TEXTS = [
           { en: 'ends',   mg: 'mifarana' },
           { en: 'at',     mg: "amin'ny" },
           { en: 'four',   mg: 'efatra' },
-          { en: "o'clock",mg: 'adiny [À VÉRIFIER]' },
+          { en: "o'clock", mg: 'adiny' },
         ],
         mgFree: "Mifarana amin'ny efatra adiny ny sekoly.",
       },
@@ -230,8 +230,8 @@ export const LECTURE_TEXTS = [
         en: 'My grandmother cooks every day.',
         words: [
           { en: 'My',         mg: 'Ny' },
-          { en: 'grandmother',mg: 'reninbeniko [À VÉRIFIER]' },
-          { en: 'cooks',      mg: 'mahandro [À VÉRIFIER]' },
+          { en: 'grandmother', mg: 'renibe' },
+          { en: 'cooks', mg: 'mahandro' },
           { en: 'every',      mg: "isan'" },
           { en: 'day',        mg: 'andro' },
         ],
@@ -292,7 +292,7 @@ export const LECTURE_TEXTS = [
           { en: 'My',   mg: 'Ny' },
           { en: 'dog',  mg: 'alikanako' },
           { en: 'is',   mg: 'dia' },
-          { en: 'brown',mg: 'mena-volotany [À VÉRIFIER]' },
+          { en: 'brown', mg: 'volon-tany' },
           { en: 'and',  mg: 'sy' },
           { en: 'big',  mg: 'lehibe' },
         ],
@@ -324,7 +324,7 @@ export const LECTURE_TEXTS = [
           { en: 'They',    mg: 'Izy ireo' },
           { en: 'are',     mg: 'no' },
           { en: 'my best', mg: 'tsara indrindra' },
-          { en: 'friends', mg: 'sakaizako [À VÉRIFIER]' },
+          { en: 'friends', mg: 'sakaiza' },
         ],
         mgFree: 'Izy ireo no sakaizako tsara indrindra.',
       },
@@ -380,7 +380,7 @@ export const LECTURE_TEXTS = [
           { en: 'I',                  mg: 'Aho' },
           { en: 'go',                 mg: 'mandeha' },
           { en: 'to school',          mg: 'any an-tsekoly' },
-          { en: 'at half past seven', mg: "amin'ny fito sy sasany [À VÉRIFIER]" },
+          { en: 'at half past seven', mg: "amin'ny fito sy sasany" },
         ],
         mgFree: "Mandeha any an-tsekoly aho amin'ny fito sy sasany.",
       },
@@ -390,7 +390,7 @@ export const LECTURE_TEXTS = [
           { en: 'I',       mg: 'Aho' },
           { en: 'arrive',  mg: 'tonga' },
           { en: 'at eight',mg: "amin'ny valo" },
-          { en: "o'clock", mg: 'adiny [À VÉRIFIER]' },
+          { en: "o'clock", mg: 'adiny' },
         ],
         mgFree: "Tonga amin'ny valo adiny aho.",
       },
@@ -452,7 +452,7 @@ export const LECTURE_TEXTS = [
           { en: 'is', mg: 'dia' },
           { en: 'big', mg: 'lehibe' },
           { en: 'and', mg: 'ary' },
-          { en: 'colourful', mg: 'maro loko [À VÉRIFIER]' },
+          { en: 'colourful', mg: 'maro loko' },
         ],
         mgFree: 'Lehibe sy maro loko ny tsena.',
       },
@@ -483,7 +483,7 @@ export const LECTURE_TEXTS = [
         en: 'The market closes at noon.',
         words: [
           { en: 'The market', mg: 'Ny tsena' },
-          { en: 'closes', mg: 'mikatona [À VÉRIFIER]' },
+          { en: 'closes', mg: 'mikatona' },
           { en: 'at noon', mg: "amin'ny antoandro" },
         ],
         mgFree: "Mikatona amin'ny antoandro ny tsena.",
@@ -530,7 +530,7 @@ export const LECTURE_TEXTS = [
       {
         en: 'My neighbours are very friendly.',
         words: [
-          { en: 'My neighbours', mg: 'Ny tandriny [À VÉRIFIER]' },
+          { en: 'My neighbours', mg: 'Ny mpifanila' },
           { en: 'are', mg: 'dia' },
           { en: 'very friendly', mg: 'tsara fanahy' },
         ],
@@ -606,9 +606,9 @@ export const LECTURE_TEXTS = [
       {
         en: 'The temperature is twenty-five degrees.',
         words: [
-          { en: 'The temperature', mg: 'Ny hafanana [À VÉRIFIER]' },
+          { en: 'The temperature', mg: 'Ny hafanana' },
           { en: 'is', mg: 'dia' },
-          { en: 'twenty-five degrees', mg: 'dimy amby roapolo degre [À VÉRIFIER]' },
+          { en: 'twenty-five degrees', mg: 'dimy amby roapolo degre' },
         ],
         mgFree: 'Dimy amby roapolo degre ny hafanana.',
       },
@@ -618,7 +618,7 @@ export const LECTURE_TEXTS = [
           { en: 'We', mg: 'Izahay' },
           { en: 'go outside', mg: 'mivoaka' },
           { en: 'to play', mg: 'milalao' },
-          { en: 'in the garden', mg: 'ao am-parihy [À VÉRIFIER]' },
+          { en: 'in the garden', mg: "ao amin'ny zaridaina" },
         ],
         mgFree: 'Mivoaka milalao ao am-parihy izahay.',
       },
@@ -748,7 +748,7 @@ export const LECTURE_TEXTS = [
         words: [
           { en: 'My favourite sport', mg: 'Ny fanatanjahantena tiako indrindra' },
           { en: 'is', mg: 'dia' },
-          { en: 'football', mg: 'baolina kitra [À VÉRIFIER]' },
+          { en: 'football', mg: 'baolina kitra' },
         ],
         mgFree: 'Baolina kitra no fanatanjahantena tiako indrindra.',
       },
@@ -776,7 +776,7 @@ export const LECTURE_TEXTS = [
         words: [
           { en: 'I also like', mg: 'Tia koa aho' },
           { en: 'swimming', mg: 'milomano' },
-          { en: 'in the river', mg: 'ao am-pony [À VÉRIFIER]' },
+          { en: 'in the river', mg: "ao amin'ny renirano" },
         ],
         mgFree: 'Tia koa milomano ao am-pony aho.',
       },
@@ -784,7 +784,7 @@ export const LECTURE_TEXTS = [
         en: 'Sport keeps me healthy and happy.',
         words: [
           { en: 'Sport', mg: 'Ny fanatanjahantena' },
-          { en: 'keeps me', mg: 'mahatazona ahy [À VÉRIFIER]' },
+          { en: 'keeps me', mg: 'mahatazona ahy' },
           { en: 'healthy', mg: 'salama' },
           { en: 'and happy', mg: 'sy faly' },
         ],

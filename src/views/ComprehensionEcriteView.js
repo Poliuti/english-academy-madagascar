@@ -199,7 +199,6 @@ function renderResults(container, text, answers) {
         <h3 class="lec-trans-title">🌿 Traduction malgache mot-à-mot</h3>
         <p class="lec-trans-note">Format : <em>mot anglais</em> → <em>traduction malgache</em></p>
         ${translationHtml}
-        <p class="lec-av-note">💡 Les mots marqués [À VÉRIFIER] sont à confirmer avec un locuteur natif.</p>
       </div>
 
       <div class="lec-end-actions">
