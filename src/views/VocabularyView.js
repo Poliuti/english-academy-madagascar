@@ -7,6 +7,7 @@ import {
   getVoteData, castVote, submitProposal,
   isAccepted, hasMarker, stripMarker, vocabKey,
 } from '../mgReview.js';
+import { getTkEmoji } from '../data/totKelyEmojis.js';
 
 export function renderVocabulary(categoryId) {
   const container = document.createElement('div');
@@ -47,6 +48,7 @@ export function renderVocabulary(categoryId) {
   let spellTyped = '';
   // Target language for Quiz/Spell games: 'fr' (default) or 'mg'
   let targetLang = 'fr';
+  let totKelyMode = false; // Tot Kely toggle (super-débutant, 100% MG, no FR)
 
   // ── SM-2 Spaced Repetition ─────────────────────────────────────────────
   // Load all vocab SM-2 data from profile once at init
@@ -230,7 +232,7 @@ export function renderVocabulary(categoryId) {
           <button class="btn-sidebar-close" id="btn-sidebar-close">✕ Fermer</button>
           <button class="btn-back sidebar-back" id="btn-back">← Retour</button>
           <h3 class="sidebar-title">📚 Vocabulaire
-            <button class="tk-shortcut" id="btn-tk-shortcut" title="Version Tot Kely (très débutant)">🌱</button>
+            <button class="tk-shortcut ${totKelyMode ? 'tk-shortcut-active' : ''}" id="btn-tk-shortcut" title="${totKelyMode ? 'Mode normal' : 'Tot Kely : version simplifiée 100% malgache'}">🌱</button>
           </h3>
           ${inGame ? '' : `<input type="text" class="vocab-search" id="vocab-search" placeholder="🔎 Rechercher..." value="${escHtml(search)}" />`}
           <nav class="sidebar-nav">
@@ -259,7 +261,7 @@ export function renderVocabulary(categoryId) {
             <button class="btn-back" id="btn-back-mobile">← Retour</button>
             <button class="btn-mobile-toc" id="btn-mobile-toc">☰ Catégories</button>
           </div>
-          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : quizMode ? renderQuizUI() : spellMode ? renderSpellUI() : renderCategory(current, search, computeSm2Stats(current), _initProfile?.id)}
+          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : quizMode ? renderQuizUI() : spellMode ? renderSpellUI() : renderCategory(current, search, computeSm2Stats(current), _initProfile?.id, targetLang, totKelyMode)}
         </main>
       </div>
       <div class="mg-proposal-modal" id="mg-proposal-modal" hidden>
@@ -456,7 +458,10 @@ export function renderVocabulary(categoryId) {
     container.querySelector('#btn-mobile-toc')?.addEventListener('click', openVocabSidebar);
     container.querySelector('#btn-tk-shortcut')?.addEventListener('click', (e) => {
       e.stopPropagation();
-      location.hash = '#totkely';
+      totKelyMode = !totKelyMode;
+      // In Tot Kely mode, force MG target lang
+      if (totKelyMode) targetLang = 'mg';
+      render();
     });
     container.querySelector('#btn-sidebar-close')?.addEventListener('click', closeVocabSidebar);
     container.querySelector('#vocab-backdrop')?.addEventListener('click', closeVocabSidebar);
@@ -570,7 +575,7 @@ export function renderVocabulary(categoryId) {
         searchInput.addEventListener('input', e => {
           search = e.target.value.trim().toLowerCase();
           const main = container.querySelector('.vocab-main');
-          if (main) main.innerHTML = renderCategory(current, search, computeSm2Stats(current), _initProfile?.id);
+          if (main) main.innerHTML = renderCategory(current, search, computeSm2Stats(current), _initProfile?.id, targetLang, totKelyMode);
           bindTts();
           bindFlashStart();
           bindMatchStart();
@@ -926,7 +931,7 @@ function renderMgBlock(catId, w, profileId) {
   `;
 }
 
-function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, soon:0, due:0, new:0, statusMap:{}, pctKnown:0, pctSoon:0, pctDue:0 }, profileId = null) {
+function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, soon:0, due:0, new:0, statusMap:{}, pctKnown:0, pctSoon:0, pctDue:0 }, profileId = null, targetLang = 'fr', totKelyMode = false) {
   const cat = VOCAB_CATEGORIES.find(c => c.id === catId);
   let words = VOCABULARY[catId] || [];
 
@@ -971,6 +976,18 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
       ` : ''}
       ${words.length === 0 ? `
         <div class="vocab-empty">Aucun mot trouvé pour "${escHtml(search)}".</div>
+      ` : totKelyMode ? `
+        <div class="vocab-grid vocab-grid-totkely">
+          ${words.filter(w => w.mg).map(w => `
+            <div class="vocab-card vocab-card-totkely">
+              <div class="tk-icon">${getTkEmoji(w)}</div>
+              <div class="tk-en">${escHtml(w.en)}
+                <button class="tts-btn" data-text="${escHtml(w.en)}" title="Henoy">🔊</button>
+              </div>
+              <div class="tk-mg">${escHtml(stripMarker(w.mg))}</div>
+            </div>
+          `).join('')}
+        </div>
       ` : `
         <div class="vocab-grid">
           ${words.map(w => {

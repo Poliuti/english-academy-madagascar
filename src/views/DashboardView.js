@@ -70,7 +70,7 @@ export function renderDashboard() {
             <span class="legend-icon">📚</span>
             <div>
               <div class="legend-name">Vocabulaire</div>
-              <div class="legend-desc">Flashcards avec répétition espacée (SM-2) pour mémoriser les mots.</div>
+              <div class="legend-desc">Flashcards avec répétition espacée (SM-2). Toggle 🌱 Tot Kely pour version 100% malgache (très débutant).</div>
             </div>
           </div>
           <div class="legend-item">
@@ -115,13 +115,6 @@ export function renderDashboard() {
               <div class="legend-desc">Évalue ton niveau CECR (A1→B1+) pour personnaliser ton parcours.</div>
             </div>
           </div>
-          <div class="legend-item">
-            <span class="legend-icon">🌱</span>
-            <div>
-              <div class="legend-name">Tot Kely</div>
-              <div class="legend-desc">Version simplifiée 100% malgache pour les très jeunes — images + audio anglais.</div>
-            </div>
-          </div>
           ${ENABLE_COMPETITIVE_MODE ? `
           <div class="legend-item">
             <span class="legend-icon">🏆</span>
@@ -158,10 +151,6 @@ export function renderDashboard() {
         <button class="quick-btn" id="btn-tutor">
           <span class="quick-icon">🤖</span>
           <span>Tutor IA</span>
-        </button>
-        <button class="quick-btn" id="btn-tot-kely">
-          <span class="quick-icon">🌱</span>
-          <span>Tot Kely</span>
         </button>
       </div>
       ${ENABLE_COMPETITIVE_MODE ? `
@@ -234,10 +223,6 @@ export function renderDashboard() {
   container.querySelector('#btn-tutor').addEventListener('click', () => {
     location.hash = '#tutor';
   });
-  container.querySelector('#btn-tot-kely').addEventListener('click', () => {
-    location.hash = '#totkely';
-  });
-
   const btnMgReport = container.querySelector('#btn-mg-report');
   if (btnMgReport) {
     btnMgReport.addEventListener('click', () => {

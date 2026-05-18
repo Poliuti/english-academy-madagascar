@@ -2751,18 +2751,37 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   color: #10B981;
   font-size: 13px;
   margin-top: 4px;
+  text-transform: none;
+  letter-spacing: normal;
 }
 .quiz-prompt-mg {
   color: #10B981;
   font-size: 13px;
   margin-top: 4px;
   font-style: italic;
+  text-transform: none;
+  letter-spacing: normal;
 }
 .instr-mg {
   color: #10B981;
   font-size: 13px;
   font-style: italic;
   margin-top: 2px;
+  text-transform: none;
+  letter-spacing: normal;
+}
+/* All MG sub-labels: force normal case to distinguish from FR (often uppercase) */
+.rd-phase-mg,
+.rd-q-type-mg,
+.task-mg,
+.ex-instruction-mg,
+.ex-q-mg,
+.comp-q-label-mg,
+.comp-q-type-mg,
+.mg-note,
+.lecture-instr-mg {
+  text-transform: none !important;
+  letter-spacing: normal !important;
 }
 
 /* ─── MG Vote Widget (Task 1) ─────────────────────────────────────── */
@@ -3012,3 +3031,55 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   font-size: 14px;
 }
 .tk-shortcut:hover { background: rgba(16, 185, 129, 0.12); }
+.tk-shortcut-active {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+  font-weight: 700;
+}
+.tk-shortcut-active:hover { background: #059669; }
+
+/* Tot Kely inline mode inside Vocabulary */
+.vocab-grid-totkely {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+  gap: 18px !important;
+}
+.vocab-card-totkely {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 14px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border: 2px solid #6ee7b7;
+  border-radius: 18px;
+  min-height: 180px;
+  text-align: center;
+}
+.vocab-card-totkely .tk-icon {
+  font-size: 56px;
+  line-height: 1;
+}
+.vocab-card-totkely .tk-en {
+  font-size: 24px;
+  font-weight: 800;
+  color: #064e3b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.vocab-card-totkely .tk-mg {
+  font-size: 18px;
+  color: #047857;
+  font-style: italic;
+}
+.vocab-card-totkely .tts-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+}
