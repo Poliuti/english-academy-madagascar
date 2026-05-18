@@ -1,0 +1,123 @@
+Fichier;Ligne;Categorie;EN;FR;MG actuelle;MG corrigee;Notes/Probleme connu
+vocabulary.js;40;routine;brush teeth;se brosser les dents;mitsedry nify;;
+vocabulary.js;54;routine;go for a walk;faire une promenade;mimandroso;;
+vocabulary.js;55;routine;water the plants;arroser les plantes;manondrana zavamaniry;;
+vocabulary.js;72;family;cousin;cousin/cousine;zanak'olo-mpirahalahy;;
+vocabulary.js;76;family;nephew;neveu;zanak'rahalahy;;
+vocabulary.js;77;family;niece;niece;zanak'rahavavy;;
+vocabulary.js;78;family;stepfather;beau-pere;ray nitaiza;;
+vocabulary.js;121;time;later;plus tard;afaka fotoana;;
+vocabulary.js;160;colors;grey;gris;volomparasy;;volomparasy = violet !
+vocabulary.js;168;colors;beige;beige;beige;;Emprunt - verifier graphie
+vocabulary.js;169;colors;turquoise;turquoise;manga-maitso;;
+vocabulary.js;170;colors;navy;bleu marine;manga matroka;;
+vocabulary.js;171;colors;cream;creme;fotsy mavo kely;;
+vocabulary.js;224;animals;dolphin;dauphin;lamena;;
+vocabulary.js;234;school;pencil;crayon;pensilihazo;;
+vocabulary.js;235;school;eraser;gomme;famafana;;
+vocabulary.js;238;school;blackboard;tableau;tarafasika;;Suggestion: solaitrabe
+vocabulary.js;239;school;classroom;salle de classe;efi-pianarana;;
+vocabulary.js;246;school;ruler;regle (objet);fitsipika;;fitsipika = regle abstraite !
+vocabulary.js;268;places;restaurant;restaurant;hotely fisakafoanana;;
+vocabulary.js;287;professions;mechanic;mecanicien(ne);mpanao mekanika;;
+vocabulary.js;288;professions;accountant;comptable;mpitantana vola;;
+vocabulary.js;292;professions;businessman;homme d'affaires;mpivarotra;;mpivarotra = vendeur !
+vocabulary.js;325;verbs;to be;etre;ho;;ho = devenir/sera !
+vocabulary.js;380;verbs;to close;fermer;manapaka;;manapaka = couper !
+vocabulary.js;383;verbs;to remember;se souvenir;tsarovanao;;Imperatif au lieu d'infinitif
+vocabulary.js;399;pronouns;our;notre;-ntsika/-nay;;Distinction inclusif/exclusif
+vocabulary.js;429;connectors;therefore;donc;koa izany;;
+vocabulary.js;435;presentation;Good morning;Bonjour (matin);Moron'ny maraina;;Suggestion: Salama / Manao ahoana
+vocabulary.js;440;presentation;How do you do?;Comment allez-vous ?;Ahoana ny valinao?;;Litt: quelle est ta reponse
+vocabulary.js;443;presentation;Hey;Salut (informel);He;;
+vocabulary.js;444;presentation;How are you?;Comment vas-tu ?;Tsara ve ianao?;;Litt: es-tu bon
+vocabulary.js;456;presentation;I like / I love;J'aime / J'adore;Tia / Tia indrindra aho;;
+vocabulary.js;458;presentation;This is my friend;Voici mon ami(e);Ity ny namako;;
+vocabulary.js;459;presentation;He / She is...;Il / Elle est...;Izy dia...;;
+vocabulary.js;466;presentation;Thank you for listening;Merci de m'avoir ecoute;Misaotra tamin'ny fihainoana;;
+vocabulary.js;467;presentation;Do you have any questions?;Avez-vous des questions ?;Manan-tsoru-kevitra ve ianareo?;;
+vocabulary.js;468;presentation;I would like to add;J'aimerais ajouter;Te-hanampy koa aho;;
+vocabulary.js;484;activities;brush your teeth;se brosser les dents;mitsedry nify;;
+vocabulary.js;496;activities;ride a bike;faire du velo;mitaingin-jiro;;Litt: monter sur la lampe !
+vocabulary.js;501;activities;play basketball;jouer au basketball;milalao kitra;;kitra = football !
+vocabulary.js;504;activities;go for a walk;faire une promenade;mimandroso;;
+vocabulary.js;508;weather;sunny;ensoleille;masoandro be;;Substantif au lieu d'adjectif
+vocabulary.js;509;weather;rainy;pluvieux;ranonorana;;ranonorana = pluie (substantif)
+vocabulary.js;527;weather;mild;doux / clement;malamay;;
+vocabulary.js;531;clothes;shirt;chemise;akanjo lahy;;Litt: vetement masculin
+vocabulary.js;532;clothes;dress;robe;akanjo vavy;;Litt: vetement feminin
+vocabulary.js;534;clothes;skirt;jupe;setroka;;setroka = fumee !
+vocabulary.js;535;clothes;jacket;veste;jaky;;jaky = pourpre !
+vocabulary.js;537;clothes;socks;chaussettes;hosory;;hosory = frotte (verbe) !
+vocabulary.js;545;clothes;jumper;pull;sipa tanana;;
+vocabulary.js;547;clothes;gloves;gants;sarona tanana;;
+vocabulary.js;548;clothes;swimsuit;maillot de bain;akanjo fanandrana;;
+vocabulary.js;554;house;bedroom;chambre;efitra fatoriana;;
+vocabulary.js;555;house;kitchen;cuisine;efitra fanoa;;
+vocabulary.js;556;house;bathroom;salle de bain;efitra fiandry;;
+vocabulary.js;557;house;living room;salon;efitra fitoerana;;
+vocabulary.js;570;house;shelf;etagere;seranan-javatra;;
+vocabulary.js;571;house;ceiling;plafond;sandrin-trano;;
+vocabulary.js;573;house;sink;evier / lavabo;dobo fanasana;;
+vocabulary.js;581;emotions;excited;enthousiaste;faly dia faly;;
+vocabulary.js;583;emotions;tired;fatigue;vizaka;;
+vocabulary.js;584;emotions;bored;ennuye;misy ambony roa;;Absurde litt: y a 2 au-dessus
+vocabulary.js;585;emotions;worried;inquiet;anahiana;;
+vocabulary.js;587;emotions;nervous;nerveux;tsy tony;;
+vocabulary.js;594;emotions;grateful;reconnaissant;misaotra;;misaotra = remercier (verbe)
+vocabulary.js;601;transport;bus;bus;fiara-lehibe;;Suggestion: bisy / taxibe
+vocabulary.js;615;transport;underground;metro;lamasinina anatin-tany;;
+vocabulary.js;617;transport;traffic;circulation;fifamoivozana;;
+vocabulary.js;618;transport;traffic jam;embouteillage;fiara mivangona;;
+vocabulary.js;619;transport;petrol station;station-service;toerana fividianana solika;;
+vocabulary.js;638;nature;waterfall;cascade;rano miantsatsaka;;Suggestion: riana
+vocabulary.js;639;nature;desert;desert;efikandro;;Suggestion: tanin'efitra
+vocabulary.js;649;sports;basketball;basketball;baolina kabija;;
+vocabulary.js;661;sports;gym;salle de sport;gymnasium;;Emprunt
+vocabulary.js;663;sports;championship;championnat;fiadiana lehibe;;
+vocabulary.js;670;health;cold (illness);rhume;gripa;;gripa = grippe ! Suggestion: sery
+vocabulary.js;672;health;cough;toux;fikorohana;;Suggestion: kohaka
+vocabulary.js;684;health;injection;piqure;fanindroana;;
+vocabulary.js;685;health;bandage;bandage;farendesy;;
+vocabulary.js;686;health;allergy;allergie;alerzia;;Emprunt
+vocabulary.js;701;shopping;receipt;recu;resisoa;;
+vocabulary.js;702;shopping;discount;reduction;vidiny mihena;;
+vocabulary.js;704;shopping;cash;especes;vola tanana;;
+vocabulary.js;707;shopping;change;monnaie;fitodiam-bola;;
+vocabulary.js;709;shopping;sale;soldes;fivarotana midina vidiny;;
+vocabulary.js;710;shopping;size;taille;haben'ny akanjo;;
+vocabulary.js;721;travel;reservation;reservation;fandraharahana;;fandraharahana = gestion !
+vocabulary.js;723;travel;destination;destination;tany halehana;;
+vocabulary.js;728;travel;boarding pass;carte d'embarquement;tapakila fiondrana;;
+vocabulary.js;730;travel;delay;retard;fahalengahana;;
+vocabulary.js;731;travel;souvenir;souvenir;fanomezana fahatsiarovana;;
+vocabulary.js;732;travel;adventure;aventure;fisafoana;;
+vocabulary.js;734;travel;check-in;enregistrement;fidirana hotely;;
+vocabulary.js;742;technology;email;email;imeyly;;
+vocabulary.js;746;technology;screen;ecran;efijery;;
+vocabulary.js;748;technology;download;telecharger;misitraka;;
+vocabulary.js;751;technology;mouse (computer);souris;mousina;;
+vocabulary.js;754;technology;charger;chargeur;fitaovam-pameno bateria;;
+vocabulary.js;755;technology;social media;reseaux sociaux;tambazotra sosialy;;
+vocabulary.js;756;technology;video call;appel video;antso sary mihetsika;;
+vocabulary.js;757;technology;software;logiciel;vokatra solosaina;;
+theory.js;1797;routine;take a shower;prendre une douche;manasa vatana;;Suggestion: mandro
+theory.js;1799;routine;go to school;aller a l'ecole;mankany sekoly;;Suggestion: mankany an-tsekoly
+theory.js;1800;routine;have lunch;dejeuner;misakafo atoandro;;Suggestion: antoandro
+theory.js;1803;routine;go to bed;se coucher;matory;;
+theory.js;1804;routine;brush teeth;se brosser les dents;manasa nify;;
+theory.js;1818;family;cousin;cousin(e);zanak'olo-mpiray tam-po;;
+theory.js;1833;body;leg;jambe;ranjo;;
+theory.js;2404;example;past simple;Il est alle a l'ecole;Nankany an'ny sekoly izy.;;
+theory.js;2411;example;past negation;Je ne suis pas alle;Tsy nankany an'ny sekoly aho.;;
+theory.js;2566;example;greeting;Comment vas-tu ?;Ahoana ny valinao? / Tsara ve ianao?;;
+theory.js;2763;example;how long;Depuis combien...;Hatriniry no nianaranao anglisy?;;
+theory.js;2825;example;gerund;J'aime lire / Il evite de...;Tia mamaky aho. / Menatra mitaingina fiara izy.;;menatra = avoir honte
+theory.js;2879;example;relative;L'eleve dont le sac...;Ny mpianatra izay nangalarina ny entany...;;Syntaxe a verifier
+exercises.js;93;routine sentence;-;Je me brosse les dents apres le petit-dejeuner;Mitsedry nify aorian'ny sakafo maraina aho.;;
+ExerciseView.js;15;consigne;-;Completez avec la bonne forme du verbe.;Fenoy ny banga amin'ny endrika mety ny matoanteny.;;
+ExerciseView.js;52;consigne;-;Mettez les mots dans le bon ordre.;Ataovy ny teny araka ny filaharan'ny mety.;;
+ExerciseView.js;85;consigne;-;Remettez les mots dans le bon ordre.;Ataovy ny teny araka ny filaharan'ny mety.;;
+CompetitiveView.js;260;consigne;-;Completez avec la bonne forme du verbe.;Fenoy ny banga amin'ny endrika mety ny matoanteny.;;
+CompetitiveView.js;286;consigne;-;Mettez les mots dans le bon ordre.;Ataovy ny teny araka ny filaharan'ny mety.;;
+CompetitiveView.js;287;consigne;-;Remettez les mots dans le bon ordre.;Ataovy ny teny araka ny filaharan'ny mety.;;
