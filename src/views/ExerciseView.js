@@ -12,7 +12,7 @@ const LEVEL_LABELS = { 1: '🌱 Débutant', 2: '📈 Intermédiaire', 3: '🚀 A
 // ─── Malagasy instruction translations ───────────────────────────────────────
 // Consegne standard tradotte in malgascio (verifcate con attenzione)
 const INSTRUCTION_MG = {
-  'Complétez avec la bonne forme du verbe.':     "Fenoy ny banga amin'ny endrika mety ny matoanteny.",
+  'Complétez avec la bonne forme du verbe.':     "Fenoy ny banga amin'ny endrika mety ny matoanteny. [À VÉRIFIER]",
   'Complétez avec la bonne forme négative.':      "Fenoy amin'ny fandavana mety.",
   'Complétez avec la bonne préposition.':         "Fenoy amin'ny teny mampifandray mety.",
   'Complétez avec le bon mot.':                   "Fenoy amin'ny teny mety.",
@@ -49,7 +49,7 @@ const INSTRUCTION_MG = {
   'Traduisez en anglais.':                       "Adikao amin'ny teny anglisy.",
   'Traduisez.':                                  "Adikao amin'ny teny anglisy.",
   'Traduisez la question.':                      "Adikao ny fanontaniana amin'ny teny anglisy.",
-  'Mettez les mots dans le bon ordre.':          "Ataovy ny teny araka ny filaharan'ny mety.",
+  'Mettez les mots dans le bon ordre.':          "Ataovy ny teny araka ny filaharan'ny mety. [À VÉRIFIER]",
   'Écoutez et écrivez ce que vous entendez.':    "Henoy ka soratoy izay re.",
   'Écoutez et écrivez le nombre en lettres.':    "Henoy ka soratoy ny isa amin'ny litera.",
   "Trouvez et corrigez l'erreur dans la phrase.": "Tadiavo ny hadisoana ka amboary ny fehezanteny.",
@@ -82,7 +82,7 @@ const INSTRUCTION_MG = {
   'Utilisez le mot donné dans une phrase.':      "Mampiasao ny teny omena anaty fehezanteny.",
   'Traduisez en français.':                      "Adikao amin'ny teny frantsay.",
   'Écoutez et répondez à la question.':          "Henoy ka valio ny fanontaniana.",
-  'Remettez les mots dans le bon ordre.':        "Ataovy ny teny araka ny filaharan'ny mety.",
+  'Remettez les mots dans le bon ordre.':        "Ataovy ny teny araka ny filaharan'ny mety. [À VÉRIFIER]",
 };
 function getMgInstruction(fr) {
   if (INSTRUCTION_MG[fr]) return INSTRUCTION_MG[fr];

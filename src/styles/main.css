@@ -2722,3 +2722,45 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 [data-theme="dark"] .lec-score-msg { color: #A7F3D0; }
 [data-theme="dark"] .lecture-instr { background: #0F2418; }
 [data-theme="dark"] .lec-sen-free { color: #6EE7B7; }
+
+/* ── Task A: Vocabulary FR/MG language toggle ───────────────────────────── */
+.vocab-lang-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-soft, #f5f5f5);
+  border-radius: 8px;
+  margin-right: 8px;
+}
+.lang-toggle-btn {
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-muted, #888);
+  transition: all 0.2s;
+}
+.lang-toggle-btn.active {
+  background: var(--accent, #4CAF50);
+  color: white;
+  font-weight: 600;
+}
+.spell-mg-hint {
+  color: #10B981;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.quiz-prompt-mg {
+  color: #10B981;
+  font-size: 13px;
+  margin-top: 4px;
+  font-style: italic;
+}
+.instr-mg {
+  color: #10B981;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 2px;
+}

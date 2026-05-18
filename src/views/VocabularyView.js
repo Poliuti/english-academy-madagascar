@@ -41,6 +41,8 @@ export function renderVocabulary(categoryId) {
   let spellAnswered = false;
   let spellCorrect = false;
   let spellTyped = '';
+  // Target language for Quiz/Spell games: 'fr' (default) or 'mg'
+  let targetLang = 'fr';
 
   // ── SM-2 Spaced Repetition ─────────────────────────────────────────────
   // Load all vocab SM-2 data from profile once at init
@@ -159,18 +161,30 @@ export function renderVocabulary(categoryId) {
   function genQuizOptions(idx) {
     const word = quizDeck[idx];
     const allWords = VOCABULARY[current] || [];
+    if (targetLang === 'mg') {
+      const wrong = allWords
+        .filter(w => w.en !== word.en && w.mg)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      quizCurrentOptions = [
+        { fr: word.mg, isCorrect: true, lang: 'mg' },
+        ...wrong.map(w => ({ fr: w.mg, isCorrect: false, lang: 'mg' })),
+      ].sort(() => Math.random() - 0.5);
+      return;
+    }
     const wrong = allWords
       .filter(w => w.en !== word.en)
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
     quizCurrentOptions = [
-      { fr: word.fr, isCorrect: true },
-      ...wrong.map(w => ({ fr: w.fr, isCorrect: false })),
+      { fr: word.fr, isCorrect: true, lang: 'fr' },
+      ...wrong.map(w => ({ fr: w.fr, isCorrect: false, lang: 'fr' })),
     ].sort(() => Math.random() - 0.5);
   }
 
   function startQuiz() {
-    const words = VOCABULARY[current] || [];
+    let words = VOCABULARY[current] || [];
+    if (targetLang === 'mg') words = words.filter(w => w.mg);
     quizDeck = [...words].sort(() => Math.random() - 0.5);
     quizIndex = 0; quizScore = 0;
     quizAnswered = false; quizChoice = null;
@@ -188,7 +202,8 @@ export function renderVocabulary(categoryId) {
   }
 
   function startSpell() {
-    const words = VOCABULARY[current] || [];
+    let words = VOCABULARY[current] || [];
+    if (targetLang === 'mg') words = words.filter(w => w.mg);
     spellDeck = [...words].sort(() => Math.random() - 0.5);
     spellIndex = 0; spellScore = 0;
     spellAnswered = false; spellCorrect = false; spellTyped = '';
@@ -255,6 +270,7 @@ export function renderVocabulary(categoryId) {
         <div class="flash-summary">
           <div class="flash-summary-icon">🎉</div>
           <h2 class="flash-summary-title">${reviewMode ? 'Révision terminée !' : 'Session terminée !'}</h2>
+          <div class="instr-mg">🇲🇬 ${reviewMode ? "Vita ny famerenana !" : "Vita ny fitsidihana !"}</div>
           <div class="flash-summary-stats">
             <div class="flash-stat flash-stat-known">
               <div class="flash-stat-num">${flashKnown.length}</div>
@@ -446,7 +462,10 @@ export function renderVocabulary(categoryId) {
           e.preventDefault();
           const inp = container.querySelector('#spell-input');
           spellTyped = (inp?.value || '').trim();
-          spellCorrect = normSpell(spellTyped) === normSpell(spellDeck[spellIndex]?.en || '');
+          const target = targetLang === 'mg'
+            ? (spellDeck[spellIndex]?.mg || '')
+            : (spellDeck[spellIndex]?.en || '');
+          spellCorrect = normSpell(spellTyped) === normSpell(target);
           if (spellCorrect) spellScore++;
           saveWord(current, spellDeck[spellIndex], spellCorrect ? 4 : 1);
           spellAnswered = true;
@@ -467,6 +486,7 @@ export function renderVocabulary(categoryId) {
           bindQuizStart();
           bindSpellStart();
           bindReviewStart();
+          bindLangToggle();
         });
       }
       bindFlashStart();
@@ -474,6 +494,7 @@ export function renderVocabulary(categoryId) {
       bindQuizStart();
       bindSpellStart();
       bindReviewStart();
+      bindLangToggle();
     } else {
       // Flash mode events
       const stopBtn = container.querySelector('#btn-flash-stop');
@@ -534,6 +555,7 @@ export function renderVocabulary(categoryId) {
         <div class="flash-summary">
           <div class="flash-summary-icon">🎉</div>
           <h2 class="flash-summary-title">Bravo ! Tout trouvé !</h2>
+          <div class="instr-mg">🇲🇬 Mahay ! Tafita avokoa !</div>
           <div class="flash-summary-stats">
             <div class="flash-stat flash-stat-known">
               <div class="flash-stat-num">${matchMoves}</div>
@@ -599,6 +621,7 @@ export function renderVocabulary(categoryId) {
         <div class="flash-summary">
           <div class="flash-summary-icon">${pct === 100 ? '🏆' : pct >= 60 ? '🎉' : '💪'}</div>
           <h2 class="flash-summary-title">Quiz terminé !</h2>
+          <div class="instr-mg">🇲🇬 Vita ny adina !</div>
           <div class="flash-summary-stats">
             <div class="flash-stat flash-stat-known">
               <div class="flash-stat-num">${quizScore}</div>
@@ -631,7 +654,8 @@ export function renderVocabulary(categoryId) {
         <div class="quiz-question-card">
           <div class="quiz-word">${escHtml(w.en)}</div>
           <button class="tts-btn quiz-tts" data-text="${escHtml(w.en)}" title="Écouter">🔊</button>
-          <div class="quiz-prompt">Quelle est la traduction ?</div>
+          <div class="quiz-prompt">${targetLang === 'mg' ? "Quelle est la traduction malgache ?" : "Quelle est la traduction ?"}</div>
+          <div class="quiz-prompt-mg">🇲🇬 ${targetLang === 'mg' ? "Inona ny dikany amin'ny teny malagasy ?" : "Inona ny dikany ?"}</div>
         </div>
         <div class="quiz-options">
           ${quizCurrentOptions.map((opt, i) => {
@@ -649,7 +673,7 @@ export function renderVocabulary(categoryId) {
           <div class="quiz-feedback ${quizCurrentOptions[quizChoice]?.isCorrect ? 'quiz-fb-ok' : 'quiz-fb-err'}">
             ${quizCurrentOptions[quizChoice]?.isCorrect
               ? '✅ Correct !'
-              : `❌ La bonne réponse : <strong>${escHtml(w.fr)}</strong>`}
+              : `❌ La bonne réponse : <strong>${escHtml(targetLang === 'mg' ? (w.mg || w.fr) : w.fr)}</strong>`}
           </div>
           <button class="btn-primary quiz-next-btn" id="btn-quiz-next">
             ${quizIndex + 1 < total ? 'Question suivante →' : 'Voir les résultats 🏁'}
@@ -668,6 +692,7 @@ export function renderVocabulary(categoryId) {
         <div class="flash-summary">
           <div class="flash-summary-icon">${pct === 100 ? '🏆' : pct >= 60 ? '🎉' : '💪'}</div>
           <h2 class="flash-summary-title">Dictée terminée !</h2>
+          <div class="instr-mg">🇲🇬 Vita ny tsofiana !</div>
           <div class="flash-summary-stats">
             <div class="flash-stat flash-stat-known">
               <div class="flash-stat-num">${spellScore}</div>
@@ -687,6 +712,7 @@ export function renderVocabulary(categoryId) {
     const w = spellDeck[spellIndex];
     const total = spellDeck.length;
     const progressPct = Math.round((spellIndex / total) * 100);
+    const isMg = targetLang === 'mg';
     const exGap = (w.example || '').replace(
       new RegExp('\\b' + w.en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi'),
       '___'
@@ -702,18 +728,21 @@ export function renderVocabulary(categoryId) {
           <button class="flash-stop-x" id="btn-spell-stop" title="Arrêter">✕</button>
         </div>
         <div class="spell-question-card">
-          <div class="spell-fr">🇫🇷 ${escHtml(w.fr)}</div>
-          ${w.mg ? `<div class="spell-mg">🇲🇬 ${escHtml(w.mg)}</div>` : ''}
-          <div class="spell-hint"><em>${escHtml(exGap)}</em></div>
+          ${isMg
+            ? `<div class="spell-fr">🇬🇧 EN: ${escHtml(w.en)}</div>
+               <div class="spell-mg-hint">🇲🇬 Sorata amin'ny teny malagasy</div>`
+            : `<div class="spell-fr">🇫🇷 ${escHtml(w.fr)}</div>
+               ${w.mg ? `<div class="spell-mg">🇲🇬 ${escHtml(w.mg)}</div>` : ''}
+               <div class="spell-hint"><em>${escHtml(exGap)}</em></div>`}
         </div>
         <form id="spell-form" class="spell-form" autocomplete="off">
           <input id="spell-input" class="spell-input" type="text"
-            placeholder="Écrivez le mot en anglais…"
+            placeholder="${isMg ? 'Écrivez le mot en malgache…' : 'Écrivez le mot en anglais…'}"
             value="${spellAnswered ? escHtml(spellTyped) : ''}"
             ${spellAnswered ? 'disabled' : ''}
             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
           ${!spellAnswered
-            ? `<button type="submit" class="btn-primary spell-submit-btn">Vérifier ✓</button>`
+            ? `<button type="submit" class="btn-primary spell-submit-btn">Vérifier ✓ <span class="instr-mg">/ Hamarino</span></button>`
             : `<button type="button" class="btn-secondary spell-submit-btn" id="btn-spell-next">
                 ${spellIndex + 1 < total ? 'Suivant →' : 'Voir les résultats 🏁'}
                </button>`
@@ -723,7 +752,7 @@ export function renderVocabulary(categoryId) {
           <div class="quiz-feedback ${spellCorrect ? 'quiz-fb-ok' : 'quiz-fb-err'}">
             ${spellCorrect
               ? '✅ Correct !'
-              : `❌ La bonne réponse : <strong>${escHtml(w.en)}</strong>`}
+              : `❌ La bonne réponse : <strong>${escHtml(isMg ? (w.mg || w.en) : w.en)}</strong>`}
             <button class="tts-btn spell-tts" data-text="${escHtml(w.en)}" title="Écouter">🔊</button>
           </div>
         ` : ''}
@@ -754,6 +783,15 @@ export function renderVocabulary(categoryId) {
   function bindReviewStart() {
     const btn = container.querySelector('#btn-review-start');
     if (btn) btn.addEventListener('click', startReview);
+  }
+
+  function bindLangToggle() {
+    container.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        targetLang = btn.dataset.lang;
+        render();
+      });
+    });
   }
 
   function bindTts() {
@@ -796,6 +834,10 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
         </div>
         ${words.length > 0 ? `
           <div class="vocab-game-btns">
+            <div class="vocab-lang-toggle" id="vocab-lang-toggle" title="Langue cible / Fiteny kendrena">
+              <button class="lang-toggle-btn ${targetLang === 'fr' ? 'active' : ''}" data-lang="fr">🇫🇷 FR</button>
+              <button class="lang-toggle-btn ${targetLang === 'mg' ? 'active' : ''}" data-lang="mg">🇲🇬 MG</button>
+            </div>
             <button class="btn-primary flash-start-btn" id="btn-flash-start" title="Mode Flashcards">🃏 Flashcards</button>
             <button class="btn-secondary match-start-btn" id="btn-match-start" title="Jeu de mémorisation">🔀 Match</button>
             <button class="btn-secondary quiz-start-btn" id="btn-quiz-start" title="Quiz QCM">🧠 Quiz</button>

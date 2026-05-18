@@ -90,7 +90,7 @@ export const exercises = {
     { id: 'r09', type: 'translate', diffLevel: 1, level: 'A1',
       instruction: 'Traduisez en anglais.',
       french: 'Je me brosse les dents après le petit-déjeuner.',
-      mg: 'Mitsedry nify aorian\'ny sakafo maraina aho.',
+      mg: 'Mitsedry nify aorian\'ny sakafo maraina aho. [À VÉRIFIER]',
       answer: 'I brush my teeth after breakfast.',
       acceptedAnswers: ['I brush my teeth after breakfast.', 'I brush my teeth after having breakfast.'],
       hint: 'brush + teeth', explanation: 'Brush your teeth = se brosser les dents.' },

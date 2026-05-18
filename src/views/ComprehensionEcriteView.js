@@ -83,13 +83,49 @@ function renderText(container, textId) {
     </div>
   `;
   container.querySelector('#lec-back').addEventListener('click', () => renderList(container));
-  container.querySelector('#lec-start').addEventListener('click', () => renderQuestion(container, text, 0, []));
+  container.querySelector('#lec-start').addEventListener('click', () => {
+    _mgQuestionsCache.delete(text);
+    renderQuestion(container, text, 0, []);
+  });
+}
+
+// ─── MG QUESTIONS GENERATOR ──────────────────────────────────────────────────
+function generateMgQuestions(text) {
+  if (!text.sentences || text.sentences.length < 4) return [];
+  const shuffled = [...text.sentences].sort(() => Math.random() - 0.5).slice(0, 2);
+  return shuffled.map(sentence => {
+    const otherMgs = text.sentences
+      .filter(s => s.en !== sentence.en)
+      .map(s => s.mgFree)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+    const options = [sentence.mgFree, ...otherMgs].sort(() => Math.random() - 0.5);
+    const correctIdx = options.indexOf(sentence.mgFree);
+    return {
+      question: `🌿 Quelle est la traduction malgache de : "${sentence.en}" ?`,
+      options,
+      correct: correctIdx,
+      isMg: true,
+    };
+  });
+}
+
+// Cache MG questions across re-renders for the same text so they remain stable
+const _mgQuestionsCache = new WeakMap();
+function getCombinedQuestions(text) {
+  let cached = _mgQuestionsCache.get(text);
+  if (!cached) {
+    cached = generateMgQuestions(text);
+    _mgQuestionsCache.set(text, cached);
+  }
+  return [...text.questions, ...cached];
 }
 
 // ─── QUESTION ────────────────────────────────────────────────────────────────
 function renderQuestion(container, text, qIndex, answers) {
-  const q = text.questions[qIndex];
-  const total = text.questions.length;
+  const combinedQuestions = getCombinedQuestions(text);
+  const q = combinedQuestions[qIndex];
+  const total = combinedQuestions.length;
 
   container.innerHTML = `
     <div class="lecture-q-view">
@@ -160,7 +196,7 @@ function renderQuestion(container, text, qIndex, answers) {
 // ─── RESULTS + TRADUCTION ────────────────────────────────────────────────────
 function renderResults(container, text, answers) {
   const score = answers.filter(a => a.correct).length;
-  const total = text.questions.length;
+  const total = answers.length || getCombinedQuestions(text).length;
   const xpEarned = score * 3;
 
   // Award XP
@@ -202,13 +238,19 @@ function renderResults(container, text, answers) {
       </div>
 
       <div class="lec-end-actions">
-        <button class="btn-primary" id="lec-retry">🔄 Recommencer</button>
-        <button class="btn-secondary" id="lec-list">📋 Autres textes</button>
+        <button class="btn-primary" id="lec-retry" title="Atomboy indray">🔄 Recommencer</button>
+        <button class="btn-secondary" id="lec-list" title="Lahatsoratra hafa">📋 Autres textes</button>
       </div>
     </div>
   `;
 
   container.querySelector('#lec-back').addEventListener('click', () => renderList(container));
-  container.querySelector('#lec-retry').addEventListener('click', () => renderText(container, text.id));
-  container.querySelector('#lec-list').addEventListener('click', () => renderList(container));
+  container.querySelector('#lec-retry').addEventListener('click', () => {
+    _mgQuestionsCache.delete(text);
+    renderText(container, text.id);
+  });
+  container.querySelector('#lec-list').addEventListener('click', () => {
+    _mgQuestionsCache.delete(text);
+    renderList(container);
+  });
 }

@@ -111,6 +111,15 @@ function buildVocabPool(catId, difficulty) {
       category: w.category,
     };
     if (difficulty === 1) {
+      // 30% chance to ask MG translation when the word has a malgache entry
+      const useMg = w.mg && Math.random() < 0.3;
+      if (useMg) {
+        const allMg = all.filter(x => x.mg).map(x => x.mg);
+        const distractors = shuffle(allMg.filter(mg => mg !== w.mg)).slice(0, 3);
+        while (distractors.length < 3) distractors.push('—');
+        const options = shuffle([w.mg, ...distractors]);
+        return { ...base, mode: 'mcq', direction: 'en-to-mg', options, correct: w.mg, targetMg: true };
+      }
       // L1 → EN→FR MCQ (choose the correct French word)
       const distractors = shuffle(allFr.filter(fr => fr !== w.fr)).slice(0, 3);
       while (distractors.length < 3) distractors.push('—');
@@ -248,7 +257,7 @@ const ENCOURAGEMENTS = [
 
 // Malagasy instruction lookup for competitive mode (Task 2)
 const COMP_INSTR_MG = {
-  'Complétez avec la bonne forme du verbe.':    "Fenoy ny banga amin'ny endrika mety ny matoanteny.",
+  'Complétez avec la bonne forme du verbe.':    "Fenoy ny banga amin'ny endrika mety ny matoanteny. [À VÉRIFIER]",
   'Complétez avec la bonne forme négative.':    "Fenoy amin'ny fandavana mety.",
   'Complétez avec la bonne préposition.':       "Fenoy amin'ny teny mampifandray mety.",
   'Complétez avec le bon mot.':                 "Fenoy amin'ny teny mety.",
@@ -274,8 +283,8 @@ const COMP_INSTR_MG = {
   "Corrigez l'erreur.":                       "Amboary ny hadisoana.",
   'Corrigez la phrase.':                      "Amboary ny fehezanteny.",
   "Corrigez.":                                "Amboary.",
-  'Mettez les mots dans le bon ordre.':       "Ataovy ny teny araka ny filaharan'ny mety.",
-  'Remettez les mots dans le bon ordre.':     "Ataovy ny teny araka ny filaharan'ny mety.",
+  'Mettez les mots dans le bon ordre.':       "Ataovy ny teny araka ny filaharan'ny mety. [À VÉRIFIER]",
+  'Remettez les mots dans le bon ordre.':     "Ataovy ny teny araka ny filaharan'ny mety. [À VÉRIFIER]",
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -633,16 +642,27 @@ export function renderCompetitive() {
 
   function renderVocabQuestion(ex) {
     const isFrToEn = ex.direction === 'fr-to-en';
-    const frLabel = isFrToEn ? 'Traduisez en anglais :' : 'Traduisez en français :';
-    const mgLabel = isFrToEn ? "Adikao amin'ny teny anglisy :" : "Adikao amin'ny teny frantsay :";
+    const isEnToMg = ex.targetMg === true;
+    let frLabel, mgLabel;
+    if (isEnToMg) {
+      frLabel = 'Quelle est la traduction malgache ?';
+      mgLabel = "Inona ny dikany amin'ny teny malagasy ?";
+    } else if (isFrToEn) {
+      frLabel = 'Traduisez en anglais :';
+      mgLabel = "Adikao amin'ny teny anglisy :";
+    } else {
+      frLabel = 'Traduisez en français :';
+      mgLabel = "Adikao amin'ny teny frantsay :";
+    }
     return `
       <div class="comp-vocab-q">
         <div class="comp-q-label">
           ${frLabel}
-          <div class="comp-q-label-mg">${mgLabel}</div>
+          <div class="comp-q-label-mg">🇲🇬 ${mgLabel}</div>
         </div>
         <div class="comp-q-word">${escHtml(isFrToEn ? ex.fr : ex.en)}</div>
         ${isFrToEn ? '<div class="comp-q-hint">🇬🇧 Donnez le mot anglais</div>' : ''}
+        ${isEnToMg ? '<div class="comp-q-hint">🇲🇬 Choisissez la traduction malgache</div>' : ''}
       </div>
     `;
   }
