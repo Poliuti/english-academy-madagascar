@@ -2,6 +2,7 @@ import { getActiveProfile, getLevelTitle, getTopicCompletionPercent, getLevelSco
 import { TOPICS, isTopicUnlocked } from '../data/topics.js';
 import { ENABLE_COMPETITIVE_MODE } from '../config.js';
 import { toggleTheme, isDark } from '../theme.js';
+import { getAllFlagged, getAllAccepted } from '../mgReview.js';
 
 export function renderDashboard() {
   const profile = getActiveProfile();
@@ -114,6 +115,13 @@ export function renderDashboard() {
               <div class="legend-desc">Évalue ton niveau CECR (A1→B1+) pour personnaliser ton parcours.</div>
             </div>
           </div>
+          <div class="legend-item">
+            <span class="legend-icon">🌱</span>
+            <div>
+              <div class="legend-name">Tot Kely</div>
+              <div class="legend-desc">Version simplifiée 100% malgache pour les très jeunes — images + audio anglais.</div>
+            </div>
+          </div>
           ${ENABLE_COMPETITIVE_MODE ? `
           <div class="legend-item">
             <span class="legend-icon">🏆</span>
@@ -151,6 +159,10 @@ export function renderDashboard() {
           <span class="quick-icon">🤖</span>
           <span>Tutor IA</span>
         </button>
+        <button class="quick-btn" id="btn-tot-kely">
+          <span class="quick-icon">🌱</span>
+          <span>Tot Kely</span>
+        </button>
       </div>
       ${ENABLE_COMPETITIVE_MODE ? `
       <button class="quick-btn-competitive" id="btn-competitive">
@@ -169,6 +181,18 @@ export function renderDashboard() {
         </div>
         <span class="assessment-arrow">›</span>
       </div>
+
+      ${(() => {
+        const flagged = getAllFlagged();
+        const accepted = getAllAccepted();
+        if (flagged.length === 0 && accepted.length === 0) return '';
+        return `
+          <div class="mg-report-bar">
+            <span class="mg-report-info">🇲🇬 Révisions MG : ${accepted.length} acceptées · ${flagged.length} avec propositions</span>
+            <button class="btn-secondary" id="btn-mg-report">📋 Rapport MG</button>
+          </div>
+        `;
+      })()}
 
       <!-- Learning Path -->
       <h2 class="section-title">📍 Mon Parcours</h2>
@@ -210,6 +234,38 @@ export function renderDashboard() {
   container.querySelector('#btn-tutor').addEventListener('click', () => {
     location.hash = '#tutor';
   });
+  container.querySelector('#btn-tot-kely').addEventListener('click', () => {
+    location.hash = '#totkely';
+  });
+
+  const btnMgReport = container.querySelector('#btn-mg-report');
+  if (btnMgReport) {
+    btnMgReport.addEventListener('click', () => {
+      const accepted = getAllAccepted();
+      const flagged = getAllFlagged();
+      const today = new Date().toISOString().slice(0, 10);
+      const totalProposals = flagged.reduce((acc, f) => acc + (f.proposals?.length || 0), 0);
+      const report = {
+        generatedAt: today,
+        accepted,
+        flagged,
+        stats: {
+          totalAccepted: accepted.length,
+          totalFlagged: flagged.length,
+          totalProposals,
+        },
+      };
+      const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `mg-review-${today}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+  }
   if (ENABLE_COMPETITIVE_MODE) {
     container.querySelector('#btn-competitive')?.addEventListener('click', () => {
       location.hash = '#competitive';

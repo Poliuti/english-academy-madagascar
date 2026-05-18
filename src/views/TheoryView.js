@@ -1,5 +1,10 @@
 import { theory, theoryTopics, vocabTopics, malgasyManual } from '../data/theory.js';
 import { speak } from '../tts.js';
+import {
+  getVoteData, castVote, submitProposal,
+  isAccepted, hasMarker, stripMarker, theoryKey,
+} from '../mgReview.js';
+import { getActiveProfile } from '../storage.js';
 
 export function renderTheory(topicId) {
   const container = document.createElement('div');
@@ -65,6 +70,19 @@ export function renderTheory(topicId) {
           </div>
         </main>
       </div>
+      <div class="mg-proposal-modal" id="mg-proposal-modal" hidden>
+        <div class="mg-proposal-content">
+          <h3>🇲🇬 Proposer une correction</h3>
+          <p class="mg-proposal-context" id="mg-proposal-context"></p>
+          <label for="mg-proposal-input">Votre proposition de traduction :</label>
+          <input type="text" id="mg-proposal-input" placeholder="Écrivez la traduction correcte..." />
+          <p class="mg-proposal-hint">🇲🇬 Soraty ny dikany marina amin'ny teny malagasy</p>
+          <div class="mg-proposal-actions">
+            <button class="btn-secondary" id="mg-proposal-cancel">Annuler</button>
+            <button class="btn-primary" id="mg-proposal-submit">Envoyer</button>
+          </div>
+        </div>
+      </div>
     `;
 
     // Restore sidebar scroll, then ensure active item is visible
@@ -87,6 +105,71 @@ export function renderTheory(topicId) {
     }
 
     bindEvents();
+  }
+
+  function openProposalModal(key, originalMg, en, fr) {
+    const modal = container.querySelector('#mg-proposal-modal');
+    if (!modal) return;
+    modal.hidden = false;
+    modal.dataset.key = key;
+    modal.dataset.originalMg = originalMg;
+    modal.dataset.en = en;
+    modal.dataset.fr = fr;
+    const ctx = container.querySelector('#mg-proposal-context');
+    if (ctx) {
+      ctx.innerHTML = `
+        <strong>Anglais :</strong> ${escHtml(en)}<br>
+        ${fr ? `<strong>Français :</strong> ${escHtml(fr)}<br>` : ''}
+        <strong>Traduction actuelle :</strong> ${escHtml(stripMarker(originalMg))}
+      `;
+    }
+    const inp = container.querySelector('#mg-proposal-input');
+    if (inp) { inp.value = ''; setTimeout(() => inp.focus(), 30); }
+  }
+
+  function closeProposalModal() {
+    const modal = container.querySelector('#mg-proposal-modal');
+    if (modal) modal.hidden = true;
+  }
+
+  function bindMgVoting() {
+    const profile = getActiveProfile();
+    container.querySelectorAll('.mg-vote-widget').forEach(widget => {
+      const key = widget.dataset.key;
+      const en = widget.dataset.en;
+      const fr = widget.dataset.fr || '';
+      const originalMg = widget.dataset.originalmg;
+      widget.querySelectorAll('.mg-vote-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (!profile) return;
+          const dir = btn.dataset.action;
+          if (dir === 'up') {
+            castVote(key, profile.id, 'up', { originalMg, contextEn: en, contextFr: fr });
+            render();
+          } else {
+            openProposalModal(key, originalMg, en, fr);
+          }
+        });
+      });
+    });
+    const cancelBtn = container.querySelector('#mg-proposal-cancel');
+    if (cancelBtn) cancelBtn.addEventListener('click', closeProposalModal);
+    const submitBtn = container.querySelector('#mg-proposal-submit');
+    if (submitBtn) submitBtn.addEventListener('click', () => {
+      const modal = container.querySelector('#mg-proposal-modal');
+      const inp = container.querySelector('#mg-proposal-input');
+      if (!modal || !inp || !profile) return;
+      const text = (inp.value || '').trim();
+      if (!text) { inp.focus(); return; }
+      submitProposal(modal.dataset.key, profile.id, text, modal.dataset.originalMg, modal.dataset.en, modal.dataset.fr);
+      castVote(modal.dataset.key, profile.id, 'down', {
+        originalMg: modal.dataset.originalMg,
+        contextEn: modal.dataset.en,
+        contextFr: modal.dataset.fr,
+      });
+      closeProposalModal();
+      render();
+    });
   }
 
   function openTheorySidebar() {
@@ -168,6 +251,8 @@ export function renderTheory(topicId) {
         speak(btn.dataset.text, { onEnd: restore, onError: restore });
       });
     });
+
+    bindMgVoting();
 
     container.querySelectorAll('.do-exercises-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -316,7 +401,7 @@ function renderMalgasySection(id) {
             </tr>
           </thead>
           <tbody>
-            ${m.rows.map(r => `
+            ${m.rows.map((r, idx) => `
               <tr>
                 <td class="mg-col-label"><strong>${escHtml(r.label)}</strong></td>
                 <td class="mg-col-struct"><code>${escHtml(r.structure)}</code></td>
@@ -324,7 +409,7 @@ function renderMalgasySection(id) {
                   <button class="tts-btn" data-text="${escHtml(r.example_en)}" title="Écouter">▶</button>
                   <em>${escHtml(r.example_en)}</em>
                 </td>
-                <td class="mg-col-mg">🇲🇬 ${escHtml(r.example_mg)}</td>
+                <td class="mg-col-mg">${renderTheoryMg(id, idx, r)}</td>
                 <td class="mg-col-note">${escHtml(r.note || '')}</td>
               </tr>
             `).join('')}
@@ -506,4 +591,26 @@ function renderGrammar(topicId) {
 function escHtml(str) {
   if (!str) return '';
   return String(str).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+
+function renderTheoryMg(topicId, idx, r) {
+  const mg = r.example_mg || '';
+  const en = r.example_en || '';
+  const marked = hasMarker(mg);
+  const key = theoryKey(topicId, idx);
+  const accepted = isAccepted(key);
+  if (!marked || accepted) {
+    return `🇲🇬 ${escHtml(stripMarker(mg))}${accepted ? ' ✅' : ''}`;
+  }
+  const vd = getVoteData(key);
+  const profile = getActiveProfile();
+  const voted = profile ? vd.hasVoted(profile.id) : false;
+  return `
+    🇲🇬 ${escHtml(stripMarker(mg))}
+    <div class="mg-vote-widget" data-key="${escHtml(key)}" data-en="${escHtml(en)}" data-fr="" data-originalmg="${escHtml(mg)}">
+      <button class="mg-vote-btn mg-vote-up" data-action="up" ${voted ? 'disabled' : ''}>👍 ${vd.up}</button>
+      <button class="mg-vote-btn mg-vote-down" data-action="down" ${voted ? 'disabled' : ''}>👎 ${vd.down}</button>
+      <span class="mg-vote-status">${voted ? '✓ Vous avez voté' : '⚠️ À vérifier'}</span>
+    </div>
+  `;
 }

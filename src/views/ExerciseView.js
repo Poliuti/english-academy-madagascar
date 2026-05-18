@@ -5,6 +5,10 @@ import { assessmentExercises } from '../data/exercises.js';
 import { TOPICS, getTopicById } from '../data/topics.js';
 import { calculateNextReview, qualityFromResult, sortByPriority } from '../sm2.js';
 import { speak, stop, isSupported } from '../tts.js';
+import {
+  getVoteData, castVote, submitProposal,
+  isAccepted, hasMarker, stripMarker, exerciseKey,
+} from '../mgReview.js';
 
 const SESSION_SIZE = 12;
 const LEVEL_LABELS = { 1: '🌱 Débutant', 2: '📈 Intermédiaire', 3: '🚀 Avancé' };
@@ -234,9 +238,85 @@ function renderExerciseCard(container, state, profile) {
 
       <div id="feedback-box" class="feedback-box hidden"></div>
     </div>
+    <div class="mg-proposal-modal" id="mg-proposal-modal" hidden>
+      <div class="mg-proposal-content">
+        <h3>🇲🇬 Proposer une correction</h3>
+        <p class="mg-proposal-context" id="mg-proposal-context"></p>
+        <label for="mg-proposal-input">Votre proposition de traduction :</label>
+        <input type="text" id="mg-proposal-input" placeholder="Écrivez la traduction correcte..." />
+        <p class="mg-proposal-hint">🇲🇬 Soraty ny dikany marina amin'ny teny malagasy</p>
+        <div class="mg-proposal-actions">
+          <button class="btn-secondary" id="mg-proposal-cancel">Annuler</button>
+          <button class="btn-primary" id="mg-proposal-submit">Envoyer</button>
+        </div>
+      </div>
+    </div>
   `;
 
   bindExerciseEvents(container, state, profile, ex);
+  bindMgVotingExercise(container, state, profile, ex);
+}
+
+function bindMgVotingExercise(container, state, profile, ex) {
+  function openModal(key, originalMg, en, fr) {
+    const modal = container.querySelector('#mg-proposal-modal');
+    if (!modal) return;
+    modal.hidden = false;
+    modal.dataset.key = key;
+    modal.dataset.originalMg = originalMg;
+    modal.dataset.en = en;
+    modal.dataset.fr = fr;
+    const ctx = container.querySelector('#mg-proposal-context');
+    if (ctx) {
+      ctx.innerHTML = `
+        ${en ? `<strong>Anglais :</strong> ${escHtml(en)}<br>` : ''}
+        ${fr ? `<strong>Français :</strong> ${escHtml(fr)}<br>` : ''}
+        <strong>Traduction actuelle :</strong> ${escHtml(stripMarker(originalMg))}
+      `;
+    }
+    const inp = container.querySelector('#mg-proposal-input');
+    if (inp) { inp.value = ''; setTimeout(() => inp.focus(), 30); }
+  }
+  function closeModal() {
+    const modal = container.querySelector('#mg-proposal-modal');
+    if (modal) modal.hidden = true;
+  }
+  container.querySelectorAll('.mg-vote-widget').forEach(widget => {
+    const key = widget.dataset.key;
+    const en = widget.dataset.en;
+    const fr = widget.dataset.fr || '';
+    const originalMg = widget.dataset.originalmg;
+    widget.querySelectorAll('.mg-vote-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!profile) return;
+        const dir = btn.dataset.action;
+        if (dir === 'up') {
+          castVote(key, profile.id, 'up', { originalMg, contextEn: en, contextFr: fr });
+          renderExerciseCard(container, state, profile);
+        } else {
+          openModal(key, originalMg, en, fr);
+        }
+      });
+    });
+  });
+  const cancelBtn = container.querySelector('#mg-proposal-cancel');
+  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+  const submitBtn = container.querySelector('#mg-proposal-submit');
+  if (submitBtn) submitBtn.addEventListener('click', () => {
+    const modal = container.querySelector('#mg-proposal-modal');
+    const inp = container.querySelector('#mg-proposal-input');
+    if (!modal || !inp || !profile) return;
+    const text = (inp.value || '').trim();
+    if (!text) { inp.focus(); return; }
+    submitProposal(modal.dataset.key, profile.id, text, modal.dataset.originalMg, modal.dataset.en, modal.dataset.fr);
+    castVote(modal.dataset.key, profile.id, 'down', {
+      originalMg: modal.dataset.originalMg,
+      contextEn: modal.dataset.en,
+      contextFr: modal.dataset.fr,
+    });
+    closeModal();
+    renderExerciseCard(container, state, profile);
+  });
 }
 
 function renderQuestion(ex) {
@@ -249,7 +329,7 @@ function renderQuestion(ex) {
   if (ex.type === 'translate') {
     return `<div class="ex-question translate-q">
     <span class="flag">🇫🇷</span> ${escHtml(ex.french)}
-    ${ex.mg ? `<div class="ex-q-mg">🇲🇬 ${escHtml(ex.mg)}</div>` : ''}
+    ${ex.mg ? renderExerciseMg(ex) : ''}
   </div>`;
   }
   if (ex.type === 'word-order') {
@@ -1085,4 +1165,25 @@ function shuffle(arr) {
 function escHtml(str) {
   if (!str) return '';
   return String(str).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+
+function renderExerciseMg(ex) {
+  const mg = ex.mg || '';
+  const marked = hasMarker(mg);
+  const key = exerciseKey(ex.id);
+  const accepted = isAccepted(key);
+  if (!marked || accepted) {
+    return `<div class="ex-q-mg">🇲🇬 ${escHtml(stripMarker(mg))}${accepted ? ' ✅' : ''}</div>`;
+  }
+  const vd = getVoteData(key);
+  const profile = getActiveProfile();
+  const voted = profile ? vd.hasVoted(profile.id) : false;
+  return `
+    <div class="ex-q-mg">🇲🇬 ${escHtml(stripMarker(mg))}</div>
+    <div class="mg-vote-widget" data-key="${escHtml(key)}" data-en="${escHtml(ex.english || ex.template || '')}" data-fr="${escHtml(ex.french || '')}" data-originalmg="${escHtml(mg)}">
+      <button class="mg-vote-btn mg-vote-up" data-action="up" ${voted ? 'disabled' : ''}>👍 ${vd.up}</button>
+      <button class="mg-vote-btn mg-vote-down" data-action="down" ${voted ? 'disabled' : ''}>👎 ${vd.down}</button>
+      <span class="mg-vote-status">${voted ? '✓ Vous avez voté' : '⚠️ À vérifier'}</span>
+    </div>
+  `;
 }

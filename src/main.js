@@ -10,6 +10,7 @@ import { renderCompetitive } from './views/CompetitiveView.js';
 import { renderStats } from './views/StatsView.js';
 import { renderReading } from './views/ReadingView.js';
 import { renderLecture } from './views/ComprehensionEcriteView.js';
+import { renderTotKely } from './views/TotKelyView.js';
 import { initTheme } from './theme.js';
 import { getActiveProfile } from './storage.js';
 
@@ -76,6 +77,9 @@ function router() {
       break;
     case 'lecture':
       view = renderLecture(params.get('id'));
+      break;
+    case 'totkely':
+      view = renderTotKely();
       break;
     default:
       view = profile ? renderDashboard() : renderProfileSelector();

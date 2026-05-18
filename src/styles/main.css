@@ -2764,3 +2764,251 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   font-style: italic;
   margin-top: 2px;
 }
+
+/* ─── MG Vote Widget (Task 1) ─────────────────────────────────────── */
+.mg-vote-widget {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 4px 8px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border-radius: 8px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.mg-vote-btn {
+  padding: 4px 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform .1s ease, background .15s ease;
+}
+.mg-vote-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+.mg-vote-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.mg-vote-up { color: #16a34a; }
+.mg-vote-down { color: #dc2626; }
+.mg-vote-status {
+  font-size: 12px;
+  color: #92400e;
+  font-style: italic;
+}
+.mg-proposal-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+.mg-proposal-modal[hidden] { display: none; }
+.mg-proposal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+.mg-proposal-content h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+.mg-proposal-context {
+  background: #f5f5f4;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.mg-proposal-content label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+.mg-proposal-content input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 2px solid #d6d3d1;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.mg-proposal-content input:focus {
+  outline: none;
+  border-color: #10B981;
+}
+.mg-proposal-hint {
+  font-size: 12px;
+  color: #10B981;
+  font-style: italic;
+  margin: 6px 0 16px;
+}
+.mg-proposal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.mg-report-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.mg-report-info { color: #065f46; }
+
+/* ─── Tot Kely (Task 2) ───────────────────────────────────────────── */
+.totkely-page {
+  min-height: 100vh;
+  padding: 16px;
+  background: linear-gradient(160deg, #fef9c3 0%, #ecfccb 50%, #d1fae5 100%);
+  font-size: 18px;
+}
+.tk-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.tk-title-wrap { flex: 1; }
+.tk-title {
+  font-size: 32px;
+  margin: 0;
+  color: #065f46;
+}
+.tk-sub {
+  margin: 4px 0 0;
+  font-size: 16px;
+  color: #047857;
+  font-style: italic;
+}
+.tk-counter {
+  font-size: 18px;
+  font-weight: 700;
+  color: #065f46;
+  background: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.tk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+.tk-card {
+  background: white;
+  border: 3px solid #a7f3d0;
+  border-radius: 18px;
+  padding: 16px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  font-family: inherit;
+}
+.tk-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  border-color: #10b981;
+}
+.tk-icon {
+  font-size: 48px;
+  line-height: 1;
+}
+.tk-en {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+}
+.tk-mg {
+  font-size: 16px;
+  color: #047857;
+  font-style: italic;
+}
+.tk-bigcard {
+  background: white;
+  border: 4px solid #10b981;
+  border-radius: 22px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 520px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+}
+.tk-bigicon { font-size: 120px; line-height: 1; }
+.tk-bigen {
+  font-size: 52px;
+  font-weight: 900;
+  color: #064e3b;
+  text-align: center;
+}
+.tk-listen {
+  font-size: 26px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: #10b981;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+.tk-listen:hover { background: #059669; }
+.tk-bigmg {
+  font-size: 28px;
+  color: #047857;
+  font-style: italic;
+  text-align: center;
+}
+.tk-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 22px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tk-navbtn {
+  flex: 1;
+  font-size: 18px;
+  padding: 14px;
+}
+.tk-shortcut {
+  margin-left: 8px;
+  background: transparent;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 8px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.tk-shortcut:hover { background: rgba(16, 185, 129, 0.12); }

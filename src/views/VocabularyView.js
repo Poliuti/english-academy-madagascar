@@ -3,6 +3,10 @@ import { speak } from '../tts.js';
 import { getActiveProfile } from '../storage.js';
 import { saveVocabSM2, getVocabSM2Map } from '../storage.js';
 import { calculateNextReview, isDue } from '../sm2.js';
+import {
+  getVoteData, castVote, submitProposal,
+  isAccepted, hasMarker, stripMarker, vocabKey,
+} from '../mgReview.js';
 
 export function renderVocabulary(categoryId) {
   const container = document.createElement('div');
@@ -225,7 +229,9 @@ export function renderVocabulary(categoryId) {
         <aside class="vocab-sidebar" id="vocab-sidebar">
           <button class="btn-sidebar-close" id="btn-sidebar-close">✕ Fermer</button>
           <button class="btn-back sidebar-back" id="btn-back">← Retour</button>
-          <h3 class="sidebar-title">📚 Vocabulaire</h3>
+          <h3 class="sidebar-title">📚 Vocabulaire
+            <button class="tk-shortcut" id="btn-tk-shortcut" title="Version Tot Kely (très débutant)">🌱</button>
+          </h3>
           ${inGame ? '' : `<input type="text" class="vocab-search" id="vocab-search" placeholder="🔎 Rechercher..." value="${escHtml(search)}" />`}
           <nav class="sidebar-nav">
             ${VOCAB_CATEGORIES.map(c => {
@@ -253,12 +259,93 @@ export function renderVocabulary(categoryId) {
             <button class="btn-back" id="btn-back-mobile">← Retour</button>
             <button class="btn-mobile-toc" id="btn-mobile-toc">☰ Catégories</button>
           </div>
-          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : quizMode ? renderQuizUI() : spellMode ? renderSpellUI() : renderCategory(current, search, computeSm2Stats(current))}
+          ${flashMode ? renderFlashcardUI() : matchMode ? renderMatchUI() : quizMode ? renderQuizUI() : spellMode ? renderSpellUI() : renderCategory(current, search, computeSm2Stats(current), _initProfile?.id)}
         </main>
+      </div>
+      <div class="mg-proposal-modal" id="mg-proposal-modal" hidden>
+        <div class="mg-proposal-content">
+          <h3>🇲🇬 Proposer une correction</h3>
+          <p class="mg-proposal-context" id="mg-proposal-context"></p>
+          <label for="mg-proposal-input">Votre proposition de traduction :</label>
+          <input type="text" id="mg-proposal-input" placeholder="Écrivez la traduction correcte..." />
+          <p class="mg-proposal-hint">🇲🇬 Soraty ny dikany marina amin'ny teny malagasy</p>
+          <div class="mg-proposal-actions">
+            <button class="btn-secondary" id="mg-proposal-cancel">Annuler</button>
+            <button class="btn-primary" id="mg-proposal-submit">Envoyer</button>
+          </div>
+        </div>
       </div>
     `;
 
     bindEvents();
+    bindMgVoting();
+  }
+
+  function openProposalModal(key, originalMg, en, fr) {
+    const modal = container.querySelector('#mg-proposal-modal');
+    if (!modal) return;
+    modal.hidden = false;
+    modal.dataset.key = key;
+    modal.dataset.originalMg = originalMg;
+    modal.dataset.en = en;
+    modal.dataset.fr = fr;
+    const ctx = container.querySelector('#mg-proposal-context');
+    if (ctx) {
+      ctx.innerHTML = `
+        <strong>Anglais :</strong> ${escHtml(en)}<br>
+        <strong>Français :</strong> ${escHtml(fr)}<br>
+        <strong>Traduction actuelle :</strong> ${escHtml(stripMarker(originalMg))}
+      `;
+    }
+    const inp = container.querySelector('#mg-proposal-input');
+    if (inp) { inp.value = ''; setTimeout(() => inp.focus(), 30); }
+  }
+
+  function closeProposalModal() {
+    const modal = container.querySelector('#mg-proposal-modal');
+    if (modal) modal.hidden = true;
+  }
+
+  function bindMgVoting() {
+    const profile = getActiveProfile();
+    container.querySelectorAll('.mg-vote-widget').forEach(widget => {
+      const key = widget.dataset.key;
+      const en = widget.dataset.en;
+      const fr = widget.dataset.fr;
+      const originalMg = widget.dataset.originalmg;
+      widget.querySelectorAll('.mg-vote-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (!profile) return;
+          const dir = btn.dataset.action;
+          if (dir === 'up') {
+            castVote(key, profile.id, 'up', { originalMg, contextEn: en, contextFr: fr });
+            render();
+          } else {
+            openProposalModal(key, originalMg, en, fr);
+          }
+        });
+      });
+    });
+
+    const cancelBtn = container.querySelector('#mg-proposal-cancel');
+    if (cancelBtn) cancelBtn.addEventListener('click', closeProposalModal);
+    const submitBtn = container.querySelector('#mg-proposal-submit');
+    if (submitBtn) submitBtn.addEventListener('click', () => {
+      const modal = container.querySelector('#mg-proposal-modal');
+      const inp = container.querySelector('#mg-proposal-input');
+      if (!modal || !inp || !profile) return;
+      const text = (inp.value || '').trim();
+      if (!text) { inp.focus(); return; }
+      submitProposal(modal.dataset.key, profile.id, text, modal.dataset.originalMg, modal.dataset.en, modal.dataset.fr);
+      // Also count it as a down vote for the voter
+      castVote(modal.dataset.key, profile.id, 'down', {
+        originalMg: modal.dataset.originalMg,
+        contextEn: modal.dataset.en,
+        contextFr: modal.dataset.fr,
+      });
+      closeProposalModal();
+      render();
+    });
   }
 
   function renderFlashcardUI() {
@@ -367,6 +454,10 @@ export function renderVocabulary(categoryId) {
       location.hash = '#dashboard';
     });
     container.querySelector('#btn-mobile-toc')?.addEventListener('click', openVocabSidebar);
+    container.querySelector('#btn-tk-shortcut')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      location.hash = '#totkely';
+    });
     container.querySelector('#btn-sidebar-close')?.addEventListener('click', closeVocabSidebar);
     container.querySelector('#vocab-backdrop')?.addEventListener('click', closeVocabSidebar);
 
@@ -479,7 +570,7 @@ export function renderVocabulary(categoryId) {
         searchInput.addEventListener('input', e => {
           search = e.target.value.trim().toLowerCase();
           const main = container.querySelector('.vocab-main');
-          if (main) main.innerHTML = renderCategory(current, search, computeSm2Stats(current));
+          if (main) main.innerHTML = renderCategory(current, search, computeSm2Stats(current), _initProfile?.id);
           bindTts();
           bindFlashStart();
           bindMatchStart();
@@ -487,6 +578,7 @@ export function renderVocabulary(categoryId) {
           bindSpellStart();
           bindReviewStart();
           bindLangToggle();
+          bindMgVoting();
         });
       }
       bindFlashStart();
@@ -813,7 +905,28 @@ export function renderVocabulary(categoryId) {
   return container;
 }
 
-function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, soon:0, due:0, new:0, statusMap:{}, pctKnown:0, pctSoon:0, pctDue:0 }) {
+function renderMgBlock(catId, w, profileId) {
+  const marked = hasMarker(w.mg);
+  const accepted = isAccepted(vocabKey(catId, w.en));
+  if (!marked || accepted) {
+    const cleanMg = stripMarker(w.mg);
+    return `<div class="vocab-mg">🇲🇬 ${escHtml(cleanMg)}${accepted ? ' ✅' : ''}</div>`;
+  }
+  const key = vocabKey(catId, w.en);
+  const vd = getVoteData(key);
+  const voted = profileId ? vd.hasVoted(profileId) : false;
+  const cleanMg = stripMarker(w.mg);
+  return `
+    <div class="vocab-mg">🇲🇬 ${escHtml(cleanMg)}</div>
+    <div class="mg-vote-widget" data-key="${escHtml(key)}" data-catid="${escHtml(catId)}" data-en="${escHtml(w.en)}" data-fr="${escHtml(w.fr)}" data-originalmg="${escHtml(w.mg)}">
+      <button class="mg-vote-btn mg-vote-up" data-action="up" ${voted ? 'disabled' : ''}>👍 ${vd.up}</button>
+      <button class="mg-vote-btn mg-vote-down" data-action="down" ${voted ? 'disabled' : ''}>👎 ${vd.down}</button>
+      <span class="mg-vote-status">${voted ? '✓ Vous avez voté' : '⚠️ À vérifier'}</span>
+    </div>
+  `;
+}
+
+function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, soon:0, due:0, new:0, statusMap:{}, pctKnown:0, pctSoon:0, pctDue:0 }, profileId = null) {
   const cat = VOCAB_CATEGORIES.find(c => c.id === catId);
   let words = VOCABULARY[catId] || [];
 
@@ -873,7 +986,7 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
                   <button class="tts-btn" data-text="${escHtml(w.en)}" title="Écouter">▶</button>
                 </div>
                 <div class="vocab-fr">🇫🇷 ${escHtml(w.fr)}</div>
-                ${w.mg ? `<div class="vocab-mg">🇲🇬 ${escHtml(w.mg)}</div>` : ''}
+                ${w.mg ? renderMgBlock(catId, w, profileId) : ''}
               </div>
               <div class="vocab-example">
                 <em>${escHtml(w.example)}</em>
