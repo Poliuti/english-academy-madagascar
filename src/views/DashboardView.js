@@ -2,7 +2,6 @@ import { getActiveProfile, getLevelTitle, getTopicCompletionPercent, getLevelSco
 import { TOPICS, isTopicUnlocked } from '../data/topics.js';
 import { ENABLE_COMPETITIVE_MODE } from '../config.js';
 import { toggleTheme, isDark } from '../theme.js';
-import { getAllFlagged, getAllAccepted, getAllOverrides } from '../mgReview.js';
 
 export function renderDashboard() {
   const profile = getActiveProfile();
@@ -171,18 +170,6 @@ export function renderDashboard() {
         <span class="assessment-arrow">›</span>
       </div>
 
-      ${(() => {
-        const flagged = getAllFlagged();
-        const accepted = getAllAccepted();
-        const overrides = getAllOverrides();
-        if (flagged.length === 0 && accepted.length === 0 && overrides.length === 0) return '';
-        return `
-          <div class="mg-report-bar">
-            <span class="mg-report-info">🇲🇬 Traductions MG : ${overrides.length} appliquées · ${flagged.length} avec propositions</span>
-            <button class="btn-secondary" id="btn-mg-report">🇲🇬 Gérer les traductions</button>
-          </div>
-        `;
-      })()}
 
       <!-- Learning Path -->
       <h2 class="section-title">📍 Mon Parcours</h2>
@@ -224,12 +211,6 @@ export function renderDashboard() {
   container.querySelector('#btn-tutor').addEventListener('click', () => {
     location.hash = '#tutor';
   });
-  const btnMgReport = container.querySelector('#btn-mg-report');
-  if (btnMgReport) {
-    btnMgReport.addEventListener('click', () => {
-      location.hash = '#mgadmin';
-    });
-  }
   if (ENABLE_COMPETITIVE_MODE) {
     container.querySelector('#btn-competitive')?.addEventListener('click', () => {
       location.hash = '#competitive';

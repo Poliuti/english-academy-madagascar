@@ -32,4 +32,10 @@ export const SUPABASE_KEY = '';   // clé "anon public" (safe à exposer côté 
 // FALSE per nasconderla completamente dall'interfaccia.
 // Una sola riga da cambiare per abilitare o disabilitare tutto.
 export const ENABLE_COMPETITIVE_MODE = true;
+
+// ─── CODE PIN ADMIN TRADUCTIONS ───────────────────────────────────────────────
+// Code à 4 chiffres demandé pour accéder à la page de gestion des
+// traductions malgaches (#mgadmin). Seuls les parents / enseignants
+// devraient le connaître. Changez-le ici.
+export const MG_ADMIN_PIN = '2024';
 // ─────────────────────────────────────────────────────────────────────────────

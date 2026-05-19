@@ -6,6 +6,9 @@ import {
   acceptProposal, acceptAllProposals, setOverride, removeOverride,
   clearAllOverrides, dismissProposals,
 } from '../mgReview.js';
+import { MG_ADMIN_PIN } from '../config.js';
+
+const UNLOCK_KEY = 'ea_mgadmin_unlocked';
 
 function escHtml(str) {
   if (!str) return '';
@@ -45,6 +48,48 @@ export function renderMgAdmin() {
   const container = document.createElement('div');
   container.className = 'mgadmin-page';
 
+  // ── PIN gate ──────────────────────────────────────────────────────────────
+  function isUnlocked() {
+    try { return sessionStorage.getItem(UNLOCK_KEY) === '1'; } catch (_) { return false; }
+  }
+  function unlock() {
+    try { sessionStorage.setItem(UNLOCK_KEY, '1'); } catch (_) {}
+  }
+
+  function renderPinGate(errorMsg) {
+    container.innerHTML = `
+      <div class="mgadmin-header">
+        <button class="btn-back" id="btn-back">← Retour</button>
+        <h2 class="mgadmin-title">🔒 Accès protégé</h2>
+        <div></div>
+      </div>
+      <div class="mgadmin-pin-box">
+        <p class="mgadmin-pin-label">Gestion des traductions — réservé aux parents / enseignants.</p>
+        <p class="mgadmin-pin-sub">Entrez le code PIN à 4 chiffres :</p>
+        <input type="password" inputmode="numeric" maxlength="4" id="mgadmin-pin"
+               class="mgadmin-pin-input" placeholder="••••" autocomplete="off" />
+        ${errorMsg ? `<p class="mgadmin-pin-error">${escHtml(errorMsg)}</p>` : ''}
+        <button class="btn-primary" id="mgadmin-pin-ok">Valider</button>
+      </div>
+    `;
+    container.querySelector('#btn-back').addEventListener('click', () => {
+      location.hash = '#dashboard';
+    });
+    const input = container.querySelector('#mgadmin-pin');
+    const submit = () => {
+      const val = (input.value || '').trim();
+      if (val === String(MG_ADMIN_PIN)) {
+        unlock();
+        render();
+      } else {
+        renderPinGate('Code incorrect. Réessayez.');
+      }
+    };
+    container.querySelector('#mgadmin-pin-ok').addEventListener('click', submit);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+
   function pendingItems() {
     const overrides = getOverridesMap();
     return getAllFlagged()
@@ -52,6 +97,7 @@ export function renderMgAdmin() {
   }
 
   function render() {
+    if (!isUnlocked()) { renderPinGate(); return; }
     const pending = pendingItems();
     const overrides = getAllOverrides()
       .sort((a, b) => String(b.acceptedAt || '').localeCompare(String(a.acceptedAt || '')));

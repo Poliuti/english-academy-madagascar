@@ -3123,6 +3123,32 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   margin: 0 auto;
   padding: 16px;
 }
+.mgadmin-pin-box {
+  max-width: 360px;
+  margin: 48px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 22px;
+  background: var(--card, #fff);
+  border: 1px solid var(--border, #eee);
+  border-radius: 16px;
+}
+.mgadmin-pin-label { font-weight: 700; color: var(--text); }
+.mgadmin-pin-sub { font-size: 14px; color: var(--text-muted, #888); }
+.mgadmin-pin-input {
+  font-size: 28px;
+  letter-spacing: 12px;
+  text-align: center;
+  padding: 12px;
+  border: 2px solid var(--border, #ddd);
+  border-radius: 10px;
+  width: 160px;
+  margin: 0 auto;
+}
+.mgadmin-pin-input:focus { outline: none; border-color: var(--accent, #4CAF50); }
+.mgadmin-pin-error { color: #dc2626; font-size: 13px; font-weight: 600; }
 .mgadmin-toast {
   position: fixed;
   left: 50%;
