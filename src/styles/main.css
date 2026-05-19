@@ -2204,6 +2204,43 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 }
 [data-theme="dark"] .xp-badge { background: rgba(196, 130, 10, 0.18); }
 
+/* ── Icônes des sections : pastille orange foncé pour les distinguer ── */
+/* Couvre aussi le drapeau 🇲🇬 qui se rabat en lettres "MG" peu lisibles. */
+[data-theme="dark"] .quick-btn:not(.quick-btn-competitive) .quick-icon,
+[data-theme="dark"] .legend-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 4px;
+  border-radius: 10px;
+  background: #3A2A0A;
+  color: #F2B33D;
+  border: 1px solid rgba(242, 179, 61, 0.35);
+  box-sizing: border-box;
+}
+[data-theme="dark"] .legend-icon {
+  min-width: 2.2rem;
+  min-height: 2.2rem;
+}
+/* Boutons icône en-tête (profil / stats / thème) : contraste accru */
+[data-theme="dark"] .btn-icon-only {
+  background: #2E2008;
+  border: 2px solid rgba(242, 179, 61, 0.4);
+  color: #F2B33D;
+}
+[data-theme="dark"] .btn-icon-only:hover {
+  background: #3F2D0B;
+  border-color: rgba(242, 179, 61, 0.65);
+}
+/* Texte secondaire un peu plus clair pour les descriptions */
+[data-theme="dark"] .legend-desc,
+[data-theme="dark"] .quick-btn .quick-desc,
+[data-theme="dark"] .dash-title {
+  color: #A89985;
+}
+
 /* ── XP & progress bar gradients (tone down vivid orange endpoint) ── */
 [data-theme="dark"] .xp-bar-fill      { background: linear-gradient(90deg, var(--primary), #A36B08); }
 [data-theme="dark"] .ex-progress-fill { background: linear-gradient(90deg, var(--primary), #A36B08); }
