@@ -3116,3 +3116,143 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   font-size: 14px;
   cursor: pointer;
 }
+
+/* ─── Page admin traductions malgaches (#mgadmin) ─────────────────────────── */
+.mgadmin-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.mgadmin-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%) translateY(20px);
+  background: #065f46;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9999;
+}
+.mgadmin-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.mgadmin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.mgadmin-title {
+  margin: 0;
+  font-size: 1.25rem;
+  text-align: center;
+  flex: 1;
+}
+.mgadmin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.mgadmin-section {
+  margin-bottom: 28px;
+}
+.mgadmin-section-title {
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border, #ddd);
+}
+.mgadmin-card,
+.mgadmin-row {
+  border: 1px solid var(--border, #ddd);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: var(--card-bg, #fff);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mgadmin-ctx {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.92rem;
+}
+.mgadmin-en { color: var(--text, #222); font-weight: 600; }
+.mgadmin-fr { color: var(--text-muted, #666); }
+.mgadmin-orig {
+  font-size: 0.92rem;
+  color: var(--text-muted, #666);
+  word-break: break-word;
+}
+.mgadmin-orig span { font-style: italic; }
+.mgadmin-applied { color: #1a8a3a; }
+.mgadmin-props {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mgadmin-prop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--bg-subtle, #f6f6f6);
+  border-radius: 6px;
+}
+.mgadmin-prop-text { font-weight: 600; }
+.mgadmin-prop-meta { font-size: 0.82rem; color: var(--text-muted, #888); }
+.mgadmin-edit,
+.mgadmin-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.mgadmin-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 10px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+.mgadmin-mini-btn {
+  padding: 6px 12px;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+.mgadmin-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--text-muted, #888);
+}
+.mgadmin-tag {
+  background: var(--bg-subtle, #eee);
+  border-radius: 4px;
+  padding: 1px 8px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+.mgadmin-empty,
+.mgadmin-empty-mini {
+  text-align: center;
+  color: var(--text-muted, #888);
+  padding: 16px;
+  font-style: italic;
+}

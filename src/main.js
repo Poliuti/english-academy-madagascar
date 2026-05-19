@@ -10,6 +10,7 @@ import { renderCompetitive } from './views/CompetitiveView.js';
 import { renderStats } from './views/StatsView.js';
 import { renderReading } from './views/ReadingView.js';
 import { renderLecture } from './views/ComprehensionEcriteView.js';
+import { renderMgAdmin } from './views/MgAdminView.js';
 import { initTheme } from './theme.js';
 import { getActiveProfile } from './storage.js';
 
@@ -76,6 +77,9 @@ function router() {
       break;
     case 'lecture':
       view = renderLecture(params.get('id'));
+      break;
+    case 'mgadmin':
+      view = renderMgAdmin();
       break;
     case 'totkely':
       // Redirect: Tot Kely is now an inline toggle inside Vocabulary

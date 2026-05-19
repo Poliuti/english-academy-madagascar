@@ -143,4 +143,115 @@ export function vocabKey(catId, en) { return `vocab:${catId}:${en}`; }
 export function theoryKey(topicId, exampleIdx) { return `theory:${topicId}:${exampleIdx}`; }
 export function exerciseKey(id) { return `exercise:${id}`; }
 
+// ─── Couche d'override des traductions (remplacement instantané) ─────────────
+const STORAGE_KEY_OVERRIDES = 'ea_mg_overrides';
+// structure : { [itemKey]: { mg, en, fr, originalMg, source, acceptedAt } }
+//   source : 'proposal' | 'manual' | 'bulk' | 'import'
+
+function loadOverrides() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY_OVERRIDES) || '{}'); }
+  catch (_) { return {}; }
+}
+
+function saveOverrides(o) {
+  try { localStorage.setItem(STORAGE_KEY_OVERRIDES, JSON.stringify(o)); }
+  catch (_) { /* ignore quota errors */ }
+}
+
+export function getOverride(itemKey) {
+  const o = loadOverrides();
+  return o[itemKey] ? o[itemKey].mg : null;
+}
+
+export function setOverride(itemKey, mgText, ctx = {}, source = 'manual') {
+  if (!itemKey || !mgText || !String(mgText).trim()) return false;
+  const o = loadOverrides();
+  const prev = o[itemKey] || {};
+  o[itemKey] = {
+    mg: String(mgText).trim(),
+    en: ctx.en || prev.en || '',
+    fr: ctx.fr || prev.fr || '',
+    originalMg: ctx.originalMg || prev.originalMg || '',
+    source,
+    acceptedAt: new Date().toISOString(),
+  };
+  saveOverrides(o);
+  return true;
+}
+
+export function removeOverride(itemKey) {
+  const o = loadOverrides();
+  if (o[itemKey]) { delete o[itemKey]; saveOverrides(o); return true; }
+  return false;
+}
+
+export function getOverridesMap() { return loadOverrides(); }
+
+export function getAllOverrides() {
+  const o = loadOverrides();
+  return Object.entries(o).map(([key, v]) => ({ key, ...v }));
+}
+
+// Helper central : retourne l'override s'il existe, sinon la chaîne nettoyée du marqueur.
+export function resolveMg(itemKey, rawMg) {
+  const ov = itemKey ? getOverride(itemKey) : null;
+  if (ov) return ov;
+  return stripMarker(rawMg);
+}
+
+// Accepte une proposition précise d'un item → devient un override
+export function acceptProposal(itemKey, proposalIndex = -1) {
+  const data = loadAll();
+  const item = data[itemKey];
+  if (!item || !item.proposals || item.proposals.length === 0) return false;
+  const idx = proposalIndex < 0 ? item.proposals.length - 1 : proposalIndex;
+  const p = item.proposals[idx];
+  if (!p) return false;
+  setOverride(itemKey, p.text, { en: p.contextEn, fr: p.contextFr, originalMg: p.originalMg }, 'proposal');
+  item.status = 'accepted';
+  saveAll(data);
+  return true;
+}
+
+// Accepte TOUTES les propositions (la dernière de chaque item) d'un coup
+export function acceptAllProposals() {
+  const data = loadAll();
+  let count = 0;
+  for (const [key, item] of Object.entries(data)) {
+    if (item.proposals && item.proposals.length > 0) {
+      const p = item.proposals[item.proposals.length - 1];
+      setOverride(key, p.text, { en: p.contextEn, fr: p.contextFr, originalMg: p.originalMg }, 'bulk');
+      item.status = 'accepted';
+      count++;
+    }
+  }
+  saveAll(data);
+  return count;
+}
+
+// Marque un item comme accepté sans créer d'override (utilitaire interne exposé)
+export function markAccepted(itemKey) {
+  if (!itemKey) return false;
+  const data = loadAll();
+  const item = ensureItem(data, itemKey);
+  item.status = 'accepted';
+  saveAll(data);
+  return true;
+}
+
+// Supprime les propositions d'un item (bouton « Ignorer »)
+export function dismissProposals(itemKey) {
+  const data = loadAll();
+  const item = data[itemKey];
+  if (!item) return false;
+  item.proposals = [];
+  if (item.status === 'flagged') item.status = 'pending';
+  saveAll(data);
+  return true;
+}
+
+export function clearAllOverrides() {
+  try { localStorage.removeItem(STORAGE_KEY_OVERRIDES); } catch (_) {}
+}
+
 export const _ACCEPT_THRESHOLD = ACCEPT_THRESHOLD;

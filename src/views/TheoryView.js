@@ -3,6 +3,7 @@ import { speak } from '../tts.js';
 import {
   getVoteData, castVote, submitProposal,
   isAccepted, hasMarker, stripMarker, theoryKey,
+  getOverride,
 } from '../mgReview.js';
 import { getActiveProfile } from '../storage.js';
 
@@ -596,8 +597,12 @@ function escHtml(str) {
 function renderTheoryMg(topicId, idx, r) {
   const mg = r.example_mg || '';
   const en = r.example_en || '';
-  const marked = hasMarker(mg);
   const key = theoryKey(topicId, idx);
+  const override = getOverride(key);
+  if (override) {
+    return `🇲🇬 ${escHtml(override)} ✅`;
+  }
+  const marked = hasMarker(mg);
   const accepted = isAccepted(key);
   if (!marked || accepted) {
     return `🇲🇬 ${escHtml(stripMarker(mg))}${accepted ? ' ✅' : ''}`;

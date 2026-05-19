@@ -8,6 +8,7 @@ import { speak, stop, isSupported } from '../tts.js';
 import {
   getVoteData, castVote, submitProposal,
   isAccepted, hasMarker, stripMarker, exerciseKey,
+  resolveMg, getOverride,
 } from '../mgReview.js';
 
 const SESSION_SIZE = 12;
@@ -1173,8 +1174,12 @@ function escHtml(str) {
 
 function renderExerciseMg(ex) {
   const mg = ex.mg || '';
-  const marked = hasMarker(mg);
   const key = exerciseKey(ex.id);
+  const override = getOverride(key);
+  if (override) {
+    return `<div class="ex-q-mg">🇲🇬 ${escHtml(override)} ✅</div>`;
+  }
+  const marked = hasMarker(mg);
   const accepted = isAccepted(key);
   if (!marked || accepted) {
     return `<div class="ex-q-mg">🇲🇬 ${escHtml(stripMarker(mg))}${accepted ? ' ✅' : ''}</div>`;

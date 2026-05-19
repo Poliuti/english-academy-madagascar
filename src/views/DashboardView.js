@@ -2,7 +2,7 @@ import { getActiveProfile, getLevelTitle, getTopicCompletionPercent, getLevelSco
 import { TOPICS, isTopicUnlocked } from '../data/topics.js';
 import { ENABLE_COMPETITIVE_MODE } from '../config.js';
 import { toggleTheme, isDark } from '../theme.js';
-import { getAllFlagged, getAllAccepted } from '../mgReview.js';
+import { getAllFlagged, getAllAccepted, getAllOverrides } from '../mgReview.js';
 
 export function renderDashboard() {
   const profile = getActiveProfile();
@@ -174,11 +174,12 @@ export function renderDashboard() {
       ${(() => {
         const flagged = getAllFlagged();
         const accepted = getAllAccepted();
-        if (flagged.length === 0 && accepted.length === 0) return '';
+        const overrides = getAllOverrides();
+        if (flagged.length === 0 && accepted.length === 0 && overrides.length === 0) return '';
         return `
           <div class="mg-report-bar">
-            <span class="mg-report-info">🇲🇬 Révisions MG : ${accepted.length} acceptées · ${flagged.length} avec propositions</span>
-            <button class="btn-secondary" id="btn-mg-report">📋 Rapport MG</button>
+            <span class="mg-report-info">🇲🇬 Traductions MG : ${overrides.length} appliquées · ${flagged.length} avec propositions</span>
+            <button class="btn-secondary" id="btn-mg-report">🇲🇬 Gérer les traductions</button>
           </div>
         `;
       })()}
@@ -226,29 +227,7 @@ export function renderDashboard() {
   const btnMgReport = container.querySelector('#btn-mg-report');
   if (btnMgReport) {
     btnMgReport.addEventListener('click', () => {
-      const accepted = getAllAccepted();
-      const flagged = getAllFlagged();
-      const today = new Date().toISOString().slice(0, 10);
-      const totalProposals = flagged.reduce((acc, f) => acc + (f.proposals?.length || 0), 0);
-      const report = {
-        generatedAt: today,
-        accepted,
-        flagged,
-        stats: {
-          totalAccepted: accepted.length,
-          totalFlagged: flagged.length,
-          totalProposals,
-        },
-      };
-      const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `mg-review-${today}.json`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      location.hash = '#mgadmin';
     });
   }
   if (ENABLE_COMPETITIVE_MODE) {

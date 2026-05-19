@@ -6,6 +6,7 @@ import { calculateNextReview, isDue } from '../sm2.js';
 import {
   getVoteData, castVote, submitProposal,
   isAccepted, hasMarker, stripMarker, vocabKey,
+  resolveMg, getOverride,
 } from '../mgReview.js';
 import { getTkEmoji, getVocabIcon } from '../data/totKelyEmojis.js';
 
@@ -173,8 +174,8 @@ export function renderVocabulary(categoryId) {
         .sort(() => Math.random() - 0.5)
         .slice(0, 3);
       quizCurrentOptions = [
-        { fr: stripMarker(word.mg), isCorrect: true, lang: 'mg' },
-        ...wrong.map(w => ({ fr: stripMarker(w.mg), isCorrect: false, lang: 'mg' })),
+        { fr: resolveMg(vocabKey(current, word.en), word.mg), isCorrect: true, lang: 'mg' },
+        ...wrong.map(w => ({ fr: resolveMg(vocabKey(current, w.en), w.mg), isCorrect: false, lang: 'mg' })),
       ].sort(() => Math.random() - 0.5);
       return;
     }
@@ -411,7 +412,7 @@ export function renderVocabulary(categoryId) {
                   <button class="tts-btn flash-tts" data-text="${escHtml(w.en)}" title="Écouter">🔊</button>
                 </div>
                 <div class="flash-fr">🇫🇷 ${escHtml(w.fr)}</div>
-                ${w.mg ? `<div class="flash-mg">🇲🇬 ${escHtml(stripMarker(w.mg))}</div>` : ''}
+                ${w.mg ? `<div class="flash-mg">🇲🇬 ${escHtml(resolveMg(vocabKey(current, w.en), w.mg))}</div>` : ''}
                 <div class="flash-example">
                   <em>${escHtml(w.example)}</em>
                   <button class="tts-btn flash-tts" data-text="${escHtml(w.example)}" title="Écouter l'exemple">🔊</button>
@@ -558,9 +559,10 @@ export function renderVocabulary(categoryId) {
           e.preventDefault();
           const inp = container.querySelector('#spell-input');
           spellTyped = (inp?.value || '').trim();
+          const sw = spellDeck[spellIndex];
           const target = targetLang === 'mg'
-            ? stripMarker(spellDeck[spellIndex]?.mg || '')
-            : (spellDeck[spellIndex]?.en || '');
+            ? resolveMg(sw ? vocabKey(current, sw.en) : null, sw?.mg || '')
+            : (sw?.en || '');
           spellCorrect = normSpell(spellTyped) === normSpell(target);
           if (spellCorrect) spellScore++;
           saveWord(current, spellDeck[spellIndex], spellCorrect ? 4 : 1);
@@ -770,7 +772,7 @@ export function renderVocabulary(categoryId) {
           <div class="quiz-feedback ${quizCurrentOptions[quizChoice]?.isCorrect ? 'quiz-fb-ok' : 'quiz-fb-err'}">
             ${quizCurrentOptions[quizChoice]?.isCorrect
               ? '✅ Correct !'
-              : `❌ La bonne réponse : <strong>${escHtml(targetLang === 'mg' ? stripMarker(w.mg || w.fr) : w.fr)}</strong>`}
+              : `❌ La bonne réponse : <strong>${escHtml(targetLang === 'mg' ? resolveMg(vocabKey(current, w.en), w.mg || w.fr) : w.fr)}</strong>`}
           </div>
           <button class="btn-primary quiz-next-btn" id="btn-quiz-next">
             ${quizIndex + 1 < total ? 'Question suivante →' : 'Voir les résultats 🏁'}
@@ -829,7 +831,7 @@ export function renderVocabulary(categoryId) {
             ? `<div class="spell-fr">🇬🇧 EN: ${escHtml(w.en)}</div>
                <div class="spell-mg-hint">🇲🇬 Sorata amin'ny teny malagasy</div>`
             : `<div class="spell-fr">🇫🇷 ${escHtml(w.fr)}</div>
-               ${w.mg ? `<div class="spell-mg">🇲🇬 ${escHtml(stripMarker(w.mg))}</div>` : ''}
+               ${w.mg ? `<div class="spell-mg">🇲🇬 ${escHtml(resolveMg(vocabKey(current, w.en), w.mg))}</div>` : ''}
                <div class="spell-hint"><em>${escHtml(exGap)}</em></div>`}
         </div>
         <form id="spell-form" class="spell-form" autocomplete="off">
@@ -849,7 +851,7 @@ export function renderVocabulary(categoryId) {
           <div class="quiz-feedback ${spellCorrect ? 'quiz-fb-ok' : 'quiz-fb-err'}">
             ${spellCorrect
               ? '✅ Correct !'
-              : `❌ La bonne réponse : <strong>${escHtml(isMg ? stripMarker(w.mg || w.en) : w.en)}</strong>`}
+              : `❌ La bonne réponse : <strong>${escHtml(isMg ? resolveMg(vocabKey(current, w.en), w.mg || w.en) : w.en)}</strong>`}
             <button class="tts-btn spell-tts" data-text="${escHtml(w.en)}" title="Écouter">🔊</button>
           </div>
         ` : ''}
@@ -911,13 +913,17 @@ export function renderVocabulary(categoryId) {
 }
 
 function renderMgBlock(catId, w, profileId) {
+  const key = vocabKey(catId, w.en);
+  const override = getOverride(key);
+  if (override) {
+    return `<div class="vocab-mg">🇲🇬 ${escHtml(override)} ✅</div>`;
+  }
   const marked = hasMarker(w.mg);
-  const accepted = isAccepted(vocabKey(catId, w.en));
+  const accepted = isAccepted(key);
   if (!marked || accepted) {
     const cleanMg = stripMarker(w.mg);
     return `<div class="vocab-mg">🇲🇬 ${escHtml(cleanMg)}${accepted ? ' ✅' : ''}</div>`;
   }
-  const key = vocabKey(catId, w.en);
   const vd = getVoteData(key);
   const voted = profileId ? vd.hasVoted(profileId) : false;
   const cleanMg = stripMarker(w.mg);
@@ -993,7 +999,7 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
               <div class="tk-en">${escHtml(w.en)}
                 <button class="tts-btn" data-text="${escHtml(w.en)}" title="Henoy">🔊</button>
               </div>
-              <div class="tk-mg">${escHtml(stripMarker(w.mg))}</div>
+              <div class="tk-mg">${escHtml(resolveMg(vocabKey(catId, w.en), w.mg))}</div>
             </div>
           `).join('')}
         </div>
