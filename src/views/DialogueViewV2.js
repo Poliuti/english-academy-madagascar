@@ -51,7 +51,7 @@ export function renderDialogue(scenarioId) {
   const dialogues = getDialoguesByScenario(scenarioId);
 
   if (!scenario || dialogues.length === 0) {
-    container.innerHTML = `<div class="empty-page"><p>Dialogue non trouvé.</p><button onclick="location.hash='#dialogues'">Retour</button></div>`;
+    container.innerHTML = `<div class="empty-page"><p>Dialogue non trouvé.</p><p class="instr-mg">🇲🇬 Tsy hita ny resaka.</p><button onclick="location.hash='#dialogues'">Retour</button></div>`;
     return container;
   }
 
@@ -200,8 +200,8 @@ export function renderDialogue(scenarioId) {
     feedback.classList.remove('hidden', 'correct', 'incorrect');
     feedback.classList.add(correct ? 'correct' : 'incorrect');
     feedback.innerHTML = correct
-      ? `<div class="feedback-msg"><strong>✅ Bravo !</strong> +10 XP</div>`
-      : `<div class="feedback-msg"><strong>❌ Pas tout à fait.</strong> Réponse : <em>${escHtml(task.answer)}</em></div>`;
+      ? `<div class="feedback-msg"><strong>✅ Bravo !</strong> <span class="instr-mg">🇲🇬 Mahay !</span> +10 XP</div>`
+      : `<div class="feedback-msg"><strong>❌ Pas tout à fait.</strong> <span class="instr-mg">🇲🇬 Mbola tsy marina.</span> Réponse : <em>${escHtml(task.answer)}</em></div>`;
 
     if (correct && profile) {
       addXP(profile.id, 10);
@@ -243,6 +243,7 @@ export function renderDialogue(scenarioId) {
       <div class="dialogue-complete">
         <div class="results-emoji">🎉</div>
         <h2>Dialogue terminé !</h2>
+        <div class="instr-mg">🇲🇬 Vita ny resaka !</div>
         <div class="results-score-line">${correctCount} / ${total} · +${state.xpGained} XP</div>
         <div class="results-actions">
           <button class="btn-primary" id="btn-retry">🔄 Refaire</button>

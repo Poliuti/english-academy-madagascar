@@ -585,6 +585,7 @@ function showFeedback(container, correct, ex, rawAnswer, xp) {
       <div class="feedback-icon">✅</div>
       <div class="feedback-msg">
         <strong>Bravo !</strong>
+        <span class="instr-mg">🇲🇬 Mahay !</span>
         ${xp > 0 ? `<span class="xp-gain">+${xp} XP</span>` : ''}
       </div>
       ${ex.explanation ? `<p class="feedback-explanation">${ex.explanation}</p>` : ''}
@@ -593,6 +594,7 @@ function showFeedback(container, correct, ex, rawAnswer, xp) {
       <div class="feedback-icon">❌</div>
       <div class="feedback-msg">
         <strong>Pas tout à fait !</strong>
+        <span class="instr-mg">🇲🇬 Mbola tsy marina !</span>
       </div>
       <div class="feedback-answer">
         <span class="your-answer">Toi : <em>${escHtml(rawAnswer)}</em></span>
@@ -694,6 +696,7 @@ function finishSession(container, state, profile) {
       <div class="results-header">
         <div class="results-emoji">${emoji}</div>
         <h2>${detectedLevel ? 'Test terminé !' : msg}</h2>
+        <div class="instr-mg">🇲🇬 ${detectedLevel ? 'Vita ny fitsapana !' : 'Tsara ny asanao !'}</div>
       </div>
 
       ${detectedLevel ? `
@@ -1133,6 +1136,7 @@ function renderEmpty(topicId) {
   div.innerHTML = `
     <div class="empty-page">
       <p>Aucun exercice trouvé pour ce sujet.</p>
+      <p class="instr-mg">🇲🇬 Tsy misy fanazaran-tena hita amin'ity lohahevitra ity.</p>
       <button onclick="location.hash='#dashboard'">Retour</button>
     </div>
   `;

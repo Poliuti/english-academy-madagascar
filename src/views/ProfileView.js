@@ -25,6 +25,7 @@ export function renderProfileSelector() {
 
     <div class="profile-body">
       <h2 class="section-title">Qui es-tu ?</h2>
+      <p class="instr-mg">🇲🇬 Iza ianao ?</p>
       <div id="profiles-grid" class="profiles-grid"></div>
       <div class="profile-actions-row">
         <button class="btn-new-profile" id="btn-new">
@@ -168,6 +169,7 @@ function renderProfiles(container) {
     grid.innerHTML = `
       <div class="empty-profiles">
         <p>Pas encore de profil.</p>
+        <p class="instr-mg">🇲🇬 Mbola tsy misy mombamomba.</p>
         <p>Clique sur <strong>"Nouveau profil"</strong> pour commencer !</p>
       </div>
     `;

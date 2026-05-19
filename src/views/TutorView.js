@@ -39,6 +39,7 @@ export function renderTutor() {
         <div class="tutor-welcome">
           <div class="tutor-welcome-icon">🎓</div>
           <h2>Bonjour ! Je suis ton tuteur d'anglais.</h2>
+          <p class="instr-mg">🇲🇬 Manao ahoana ! Izaho no mpampianatra anglisinao.</p>
           <p>Pose-moi des questions sur la grammaire anglaise, le vocabulaire, les temps verbaux ou la prononciation.</p>
           <p class="tutor-welcome-mg">Manontania ahy momba ny fiteny anglisy — grammaire, vocabulaire, fotoana, fanononana.</p>
           <div class="tutor-suggestions">

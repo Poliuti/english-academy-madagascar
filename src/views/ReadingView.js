@@ -544,6 +544,7 @@ function renderResults(text, answers, hintsUsed) {
       <div class="rd-results-header">
         <div class="rd-results-emoji">${emoji}</div>
         <div class="rd-results-msg">${msg}</div>
+        <div class="instr-mg">🇲🇬 ${pct >= 80 ? 'Tsara dia tsara !' : pct >= 60 ? 'Tsara !' : 'Tohizo ny ezakao !'}</div>
         <div class="rd-results-score">${score} / ${total} correct</div>
         <div class="rd-results-pct">${pct}%</div>
       </div>

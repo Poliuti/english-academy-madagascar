@@ -21,6 +21,7 @@ export function renderDashboard() {
         <button class="btn-icon-only" id="btn-profiles" title="Changer de profil">👤</button>
         <div>
           <div class="dash-name">Bonjour, ${escHtml(profile.name)} 👋</div>
+          <div class="instr-mg">🇲🇬 Manao ahoana, ${escHtml(profile.name)} !</div>
           <div class="dash-title">${titleInfo.sub} · ${titleInfo.label}</div>
         </div>
       </div>
@@ -166,6 +167,7 @@ export function renderDashboard() {
           <div>
             <div class="assessment-title">Test de niveau</div>
             <div class="assessment-sub">Découvre ton niveau d'anglais</div>
+            <div class="instr-mg">🇲🇬 Fantaro ny ambaratonganao amin'ny teny anglisy</div>
           </div>
         </div>
         <span class="assessment-arrow">›</span>

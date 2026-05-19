@@ -35,6 +35,7 @@ function renderList(container) {
         <div>
           <h2 class="lecture-list-title">🌿 Lecture MG</h2>
           <p class="lecture-list-sub">Lis, comprends, et découvre la traduction en malgache</p>
+          <p class="instr-mg">🇲🇬 Vakio, fantaro, ary jereo ny dikany amin'ny teny malagasy</p>
         </div>
       </div>
       <div class="lecture-cards">
@@ -229,6 +230,7 @@ function renderResults(container, text, answers) {
         <div class="lec-score-num">${score} / ${total}</div>
         <div class="lec-score-xp">+${xpEarned} XP ⭐</div>
         <div class="lec-score-msg">${score === total ? '🎉 Parfait !' : score >= total * 0.6 ? '👍 Bien joué !' : '💪 Continue !'}</div>
+        <div class="instr-mg">🇲🇬 ${score === total ? 'Tsara dia tsara !' : score >= total * 0.6 ? 'Tsara !' : 'Tohizo !'}</div>
       </div>
 
       <div class="lec-translation-section">

@@ -2747,6 +2747,43 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   color: white;
   font-weight: 600;
 }
+.vocab-lang-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-right: 8px;
+}
+.vocab-lang-wrap .vocab-lang-toggle { margin-right: 0; }
+.vocab-lang-caption {
+  font-size: 11px;
+  color: var(--text-muted, #888);
+  max-width: 230px;
+  line-height: 1.3;
+}
+.vocab-lang-caption .instr-mg {
+  display: block;
+  font-size: 11px;
+  margin-top: 1px;
+}
+/* Emphasise the target language in vocab cards, fade the other */
+.vocab-card-lang-mg .vocab-fr {
+  font-size: .72rem;
+  opacity: .5;
+}
+.vocab-card-lang-mg .vocab-mg {
+  font-size: .95rem;
+  font-weight: 700;
+  opacity: 1;
+}
+.vocab-card-lang-fr .vocab-fr {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.vocab-card-lang-fr .vocab-mg {
+  font-size: .72rem;
+  opacity: .5;
+}
 .spell-mg-hint {
   color: #10B981;
   font-size: 13px;

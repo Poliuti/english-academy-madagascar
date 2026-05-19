@@ -351,7 +351,7 @@ export function renderVocabulary(categoryId) {
   }
 
   function renderFlashcardUI() {
-    if (flashDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.</div>';
+    if (flashDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.<div class="instr-mg">🇲🇬 Tsy misy teny ato amin\'ity sokajy ity.</div></div>';
 
     // Summary screen
     if (flashIndex >= flashDeck.length) {
@@ -710,7 +710,7 @@ export function renderVocabulary(categoryId) {
   }
 
   function renderQuizUI() {
-    if (quizDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.</div>';
+    if (quizDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.<div class="instr-mg">🇲🇬 Tsy misy teny ato amin\'ity sokajy ity.</div></div>';
 
     if (quizIndex >= quizDeck.length) {
       const pct = Math.round((quizScore / quizDeck.length) * 100);
@@ -781,7 +781,7 @@ export function renderVocabulary(categoryId) {
   }
 
   function renderSpellUI() {
-    if (spellDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.</div>';
+    if (spellDeck.length === 0) return '<div class="vocab-empty">Aucun mot dans cette catégorie.<div class="instr-mg">🇲🇬 Tsy misy teny ato amin\'ity sokajy ity.</div></div>';
 
     if (spellIndex >= spellDeck.length) {
       const pct = Math.round((spellScore / spellDeck.length) * 100);
@@ -952,9 +952,19 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
         </div>
         ${words.length > 0 ? `
           <div class="vocab-game-btns">
-            <div class="vocab-lang-toggle" id="vocab-lang-toggle" title="Langue cible / Fiteny kendrena">
-              <button class="lang-toggle-btn ${targetLang === 'fr' ? 'active' : ''}" data-lang="fr">🇫🇷 FR</button>
-              <button class="lang-toggle-btn ${targetLang === 'mg' ? 'active' : ''}" data-lang="mg">🇲🇬 MG</button>
+            <div class="vocab-lang-wrap">
+              <div class="vocab-lang-toggle" id="vocab-lang-toggle" title="Langue cible / Fiteny kendrena">
+                <button class="lang-toggle-btn ${targetLang === 'fr' ? 'active' : ''}" data-lang="fr">🇫🇷 FR</button>
+                <button class="lang-toggle-btn ${targetLang === 'mg' ? 'active' : ''}" data-lang="mg">🇲🇬 MG</button>
+              </div>
+              <div class="vocab-lang-caption">
+                ${targetLang === 'mg'
+                  ? 'Langue mise en avant + testée dans Quiz / Écrire : malgache'
+                  : 'Langue mise en avant + testée dans Quiz / Écrire : français'}
+                <span class="instr-mg">🇲🇬 ${targetLang === 'mg'
+                  ? "Teny malagasy no aseho sy zahana amin'ny Quiz / Écrire"
+                  : "Teny frantsay no aseho sy zahana amin'ny Quiz / Écrire"}</span>
+              </div>
             </div>
             <button class="btn-primary flash-start-btn" id="btn-flash-start" title="Mode Flashcards">🃏 Flashcards</button>
             <button class="btn-secondary match-start-btn" id="btn-match-start" title="Jeu de mémorisation">🔀 Match</button>
@@ -975,7 +985,7 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
         </div>
       ` : ''}
       ${words.length === 0 ? `
-        <div class="vocab-empty">Aucun mot trouvé pour "${escHtml(search)}".</div>
+        <div class="vocab-empty">Aucun mot trouvé pour "${escHtml(search)}".<div class="instr-mg">🇲🇬 Tsy misy teny hita.</div></div>
       ` : totKelyMode ? `
         <div class="vocab-grid vocab-grid-totkely">
           ${words.filter(w => w.mg).map(w => `
@@ -994,7 +1004,7 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
             const st = sm2Stats.statusMap[w.en] || 'new';
             const dot = { due: '🔴', soon: '🟡', known: '🟢' }[st] || '';
             return `
-            <div class="vocab-card">
+            <div class="vocab-card vocab-card-lang-${targetLang}">
               <div class="vocab-card-top">
                 ${dot ? `<span class="vocab-sm2-dot">${dot}</span>` : ''}
                 ${w.icon ? `<div class="vocab-icon">${w.icon}</div>` : ''}

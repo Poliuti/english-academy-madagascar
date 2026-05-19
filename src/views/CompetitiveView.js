@@ -352,6 +352,7 @@ export function renderCompetitive() {
           <div class="comp-setup-header">
             <h1 class="comp-setup-title">Défi entre amis</h1>
             <p class="comp-setup-sub">Un quiz multijoueur — le meilleur gagne !</p>
+            <p class="instr-mg">🇲🇬 Lalao iarahana — izay mahay no mandresy !</p>
           </div>
 
           <!-- Players -->
@@ -887,6 +888,7 @@ export function renderCompetitive() {
         <div class="comp-end-card">
           <div class="comp-end-trophy">🏆</div>
           <h2 class="comp-end-title">Fin de la partie !</h2>
+          <p class="instr-mg">🇲🇬 Vita ny lalao !</p>
           <p class="comp-end-msg">${encouragement}</p>
 
           <div class="comp-rankings">

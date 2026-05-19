@@ -109,6 +109,7 @@ function buildHTML(profile, s) {
     <div class="stats-header">
       <button class="btn-icon-only" id="btn-stats-back" title="Retour">‹</button>
       <h1 class="stats-title">📊 Mes Statistiques</h1>
+      <span class="instr-mg">🇲🇬 Ny statistikako</span>
       <button class="btn-icon-only btn-theme-stats" id="btn-stats-theme" title="Changer de thème" style="margin-left:auto">${isDark() ? '☀️' : '🌙'}</button>
     </div>
 
@@ -238,6 +239,7 @@ function buildHTML(profile, s) {
       <section class="stats-section stats-empty">
         <div class="stats-empty-icon">🎓</div>
         <div class="stats-empty-msg">Fais ton premier exercice pour voir tes statistiques ici !</div>
+        <div class="instr-mg">🇲🇬 Ataovy ny fanazaran-tena voalohany mba ho hitanao eto ny statistikao !</div>
       </section>
       `}
 

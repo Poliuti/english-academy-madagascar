@@ -455,7 +455,7 @@ function renderVocabNav(currentVocab) {
 
 function renderVocab(vocabId) {
   const data = theory.vocabulary?.[vocabId];
-  if (!data) return '<p>Vocabulaire non trouvé.</p>';
+  if (!data) return '<p>Vocabulaire non trouvé.<span class="instr-mg"> 🇲🇬 Tsy hita ny voambolana.</span></p>';
 
   return `
     <div class="theory-content-inner">
@@ -530,7 +530,7 @@ const GRAMMAR_TO_BOKY = {
 
 function renderGrammar(topicId) {
   const t = theory[topicId];
-  if (!t) return '<p>Section non trouvée.</p>';
+  if (!t) return '<p>Section non trouvée.<span class="instr-mg"> 🇲🇬 Tsy hita ny fizarana.</span></p>';
   const bokyChapter = GRAMMAR_TO_BOKY[topicId];
 
   return `
