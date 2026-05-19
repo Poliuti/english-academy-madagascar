@@ -7,7 +7,7 @@ import {
   getVoteData, castVote, submitProposal,
   isAccepted, hasMarker, stripMarker, vocabKey,
 } from '../mgReview.js';
-import { getTkEmoji } from '../data/totKelyEmojis.js';
+import { getTkEmoji, getVocabIcon } from '../data/totKelyEmojis.js';
 
 export function renderVocabulary(categoryId) {
   const container = document.createElement('div');
@@ -232,7 +232,7 @@ export function renderVocabulary(categoryId) {
           <button class="btn-sidebar-close" id="btn-sidebar-close">✕ Fermer</button>
           <button class="btn-back sidebar-back" id="btn-back">← Retour</button>
           <h3 class="sidebar-title">📚 Vocabulaire
-            <button class="tk-shortcut ${totKelyMode ? 'tk-shortcut-active' : ''}" id="btn-tk-shortcut" title="${totKelyMode ? 'Mode normal' : 'Tot Kely : version simplifiée 100% malgache'}">🌱</button>
+            <button class="tk-shortcut ${totKelyMode ? 'tk-shortcut-active' : ''}" id="btn-tk-shortcut" title="${totKelyMode ? 'Revenir au mode normal' : 'Tot Kely : version très simple 100% malgache (petits enfants)'}">👶 Tot Kely</button>
           </h3>
           ${inGame ? '' : `<input type="text" class="vocab-search" id="vocab-search" placeholder="🔎 Rechercher..." value="${escHtml(search)}" />`}
           <nav class="sidebar-nav">
@@ -689,7 +689,7 @@ export function renderVocabulary(categoryId) {
                 class="match-card match-en ${isMatched ? 'matched' : ''} ${isSelected ? 'selected' : ''}"
                 data-idx="${i}" data-side="en"
                 ${isMatched ? 'disabled' : ''}
-              >${w.icon ? w.icon + ' ' : ''}${escHtml(w.en)}</button>`;
+              >${getVocabIcon(w) ? getVocabIcon(w) + ' ' : ''}${escHtml(w.en)}</button>`;
             }).join('')}
           </div>
           <div class="match-col" id="match-col-fr">
@@ -952,20 +952,6 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
         </div>
         ${words.length > 0 ? `
           <div class="vocab-game-btns">
-            <div class="vocab-lang-wrap">
-              <div class="vocab-lang-toggle" id="vocab-lang-toggle" title="Langue cible / Fiteny kendrena">
-                <button class="lang-toggle-btn ${targetLang === 'fr' ? 'active' : ''}" data-lang="fr">🇫🇷 FR</button>
-                <button class="lang-toggle-btn ${targetLang === 'mg' ? 'active' : ''}" data-lang="mg">🇲🇬 MG</button>
-              </div>
-              <div class="vocab-lang-caption">
-                ${targetLang === 'mg'
-                  ? 'Langue mise en avant + testée dans Quiz / Écrire : malgache'
-                  : 'Langue mise en avant + testée dans Quiz / Écrire : français'}
-                <span class="instr-mg">🇲🇬 ${targetLang === 'mg'
-                  ? "Teny malagasy no aseho sy zahana amin'ny Quiz / Écrire"
-                  : "Teny frantsay no aseho sy zahana amin'ny Quiz / Écrire"}</span>
-              </div>
-            </div>
             <button class="btn-primary flash-start-btn" id="btn-flash-start" title="Mode Flashcards">🃏 Flashcards</button>
             <button class="btn-secondary match-start-btn" id="btn-match-start" title="Jeu de mémorisation">🔀 Match</button>
             <button class="btn-secondary quiz-start-btn" id="btn-quiz-start" title="Quiz QCM">🧠 Quiz</button>
@@ -974,6 +960,19 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
           </div>
         ` : ''}
       </div>
+      ${words.length > 0 ? `
+        <div class="vocab-lang-bar">
+          <div class="vocab-lang-toggle" id="vocab-lang-toggle" title="Langue cible / Fiteny kendrena">
+            <button class="lang-toggle-btn ${targetLang === 'fr' ? 'active' : ''}" data-lang="fr">🇫🇷 FR</button>
+            <button class="lang-toggle-btn ${targetLang === 'mg' ? 'active' : ''}" data-lang="mg">🇲🇬 MG</button>
+          </div>
+          <div class="vocab-lang-caption">
+            ${targetLang === 'mg'
+              ? 'Langue mise en avant + testée dans Quiz / Écrire : malgache'
+              : 'Langue mise en avant + testée dans Quiz / Écrire : français'}
+          </div>
+        </div>
+      ` : ''}
       ${sm2Stats.seen > 0 ? `
         <div class="vocab-sm2-bar">
           <div class="vocab-sm2-segments">
@@ -1007,7 +1006,7 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
             <div class="vocab-card vocab-card-lang-${targetLang}">
               <div class="vocab-card-top">
                 ${dot ? `<span class="vocab-sm2-dot">${dot}</span>` : ''}
-                ${w.icon ? `<div class="vocab-icon">${w.icon}</div>` : ''}
+                ${(() => { const ic = getVocabIcon(w); return ic ? `<div class="vocab-icon">${ic}</div>` : ''; })()}
                 <div class="vocab-en">
                   ${escHtml(w.en)}
                   <button class="tts-btn" data-text="${escHtml(w.en)}" title="Écouter">▶</button>

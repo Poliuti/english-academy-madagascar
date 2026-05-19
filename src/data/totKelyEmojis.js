@@ -55,6 +55,99 @@ export const TK_EMOJI = {
   // Greetings / common phrases
   'hello': '👋', 'goodbye': '👋', 'thank you': '🙏', 'please': '🙏', 'sorry': '😔',
   'yes': '✅', 'no': '❌',
+
+  // School
+  'school': '🏫', 'teacher': '👩‍🏫', 'student': '🧑‍🎓', 'book': '📕', 'notebook': '📓',
+  'pen': '🖊️', 'pencil': '✏️', 'eraser': '🧽', 'desk': '🪑', 'chair': '🪑',
+  'blackboard': '📋', 'classroom': '🏫', 'lesson': '📖', 'homework': '📝', 'test': '📄',
+  'question': '❓', 'answer': '💬', 'library': '📚', 'ruler': '📏', 'dictionary': '📔',
+
+  // Places
+  'house': '🏠', 'home': '🏡', 'market': '🏪', 'shop': '🏬', 'hospital': '🏥',
+  'church': '⛪', 'street': '🛣️', 'road': '🛤️', 'city': '🏙️', 'village': '🏘️',
+  'country': '🗺️', 'park': '🏞️', 'restaurant': '🍴', 'post office': '🏤', 'bank': '🏦',
+
+  // Professions
+  'doctor': '👨‍⚕️', 'nurse': '👩‍⚕️', 'farmer': '👨‍🌾', 'fisherman': '🎣', 'driver': '🚗',
+  'cook': '👨‍🍳', 'policeman': '👮', 'engineer': '👷', 'shopkeeper': '🛒', 'pastor': '⛪',
+  'lawyer': '⚖️', 'mechanic': '🔧', 'accountant': '🧮', 'journalist': '📰', 'soldier': '🪖',
+  'musician': '🎸', 'businessman': '💼', 'builder': '👷',
+
+  // Adjectives
+  'big': '🐘', 'small': '🐜', 'tall': '📏', 'short': '📐', 'long': '➖',
+  'good': '👍', 'bad': '👎', 'nice': '😊', 'beautiful': '🌸', 'ugly': '👹',
+  'happy': '😄', 'sad': '😢', 'tired': '😩', 'hungry': '🍽️', 'thirsty': '🥤',
+  'easy': '✅', 'difficult': '🧗', 'fast': '⚡', 'slow': '🐌', 'new': '✨',
+  'old': '👴', 'rich': '💰', 'poor': '🪙',
+
+  // Weather extra
+  'windy': '🌬️', 'storm': '⛈️', 'fog': '🌫️', 'temperature': '🌡️', 'season': '🍂',
+  'climate': '🌍', 'weather': '🌤️', 'thunder': '🌩️', 'lightning': '⚡', 'humid': '💦',
+  'dry': '🏜️', 'mild': '🌤️',
+
+  // Clothes
+  'shirt': '👔', 'dress': '👗', 'trousers': '👖', 'skirt': '👚', 'jacket': '🧥',
+  'shoes': '👟', 'socks': '🧦', 'hat': '🎩', 'scarf': '🧣', 'coat': '🧥',
+  'glasses': '👓', 'bag': '👜', 't-shirt': '👕', 'uniform': '👮', 'jumper': '🧶',
+  'belt': '🪢', 'gloves': '🧤', 'swimsuit': '🩱', 'tie': '👔', 'boots': '🥾',
+
+  // House
+  'door': '🚪', 'window': '🪟', 'stairs': '🪜', 'roof': '🏠', 'wall': '🧱',
+  'floor': '🟫', 'table': '🪑', 'lamp': '💡', 'fridge': '🧊', 'sofa': '🛋️',
+  'shelf': '🗄️', 'ceiling': '⬆️', 'curtain': '🪟', 'sink': '🚰', 'garden': '🌷',
+
+  // Emotions
+  'angry': '😠', 'scared': '😨', 'surprised': '😲', 'bored': '😑', 'worried': '😟',
+  'proud': '😌', 'nervous': '😰', 'calm': '😌', 'love': '❤️', 'smile': '😊',
+  'hope': '🤞', 'embarrassed': '😳', 'jealous': '😒', 'grateful': '🙏', 'lonely': '😔',
+  'confused': '😕', 'excited': '🤩',
+
+  // Transport
+  'car': '🚗', 'bus': '🚌', 'train': '🚆', 'bicycle': '🚲', 'plane': '✈️',
+  'boat': '⛵', 'taxi': '🚕', 'motorbike': '🏍️', 'on foot': '🚶', 'station': '🚉',
+  'ticket': '🎫', 'helicopter': '🚁', 'ferry': '⛴️', 'tram': '🚊', 'underground': '🚇',
+  'port': '⚓', 'traffic': '🚦', 'traffic jam': '🚗', 'petrol station': '⛽',
+
+  // Nature
+  'tree': '🌳', 'river': '🏞️', 'mountain': '⛰️', 'sea': '🌊', 'forest': '🌲',
+  'flower': '🌸', 'grass': '🌿', 'sky': '🌌', 'moon': '🌙', 'star': '⭐',
+  'lake': '🏞️', 'island': '🏝️', 'beach': '🏖️', 'rock': '🪨', 'waterfall': '💦',
+  'desert': '🏜️', 'soil': '🟤', 'plant': '🪴',
+
+  // Sports
+  'football': '⚽', 'swimming': '🏊', 'running': '🏃', 'basketball': '🏀', 'volleyball': '🏐',
+  'cycling': '🚴', 'tennis': '🎾', 'sport': '🏅', 'team': '👥', 'match': '🆚',
+  'win': '🏆', 'lose': '😞', 'boxing': '🥊', 'yoga': '🧘', 'gym': '🏋️',
+  'race': '🏁', 'championship': '🏆', 'athlete': '🏃', 'score': '🔢',
+
+  // Health
+  'headache': '🤕', 'fever': '🤒', 'cough': '😷', 'medicine': '💊', 'healthy': '💪',
+  'ill': '🤢', 'pain': '😣', 'rest': '🛌', 'exercise': '🤸', 'diet': '🥗',
+  'toothache': '🦷', 'pharmacy': '💊', 'injection': '💉', 'bandage': '🩹', 'allergy': '🤧',
+  'appointment': '📅', 'surgery': '🏥',
+
+  // Shopping
+  'price': '🏷️', 'cheap': '🪙', 'expensive': '💎', 'buy': '🛒', 'sell': '🤝',
+  'money': '💵', 'pay': '💳', 'receipt': '🧾', 'discount': '🏷️', 'queue': '🚶‍♂️',
+  'cash': '💵', 'card': '💳', 'supermarket': '🛒', 'change': '🪙', 'sale': '🏷️',
+  'size': '📏', 'customer': '🧍',
+
+  // Travel
+  'hotel': '🏨', 'airport': '🛫', 'passport': '🛂', 'suitcase': '🧳', 'map': '🗺️',
+  'tourist': '📷', 'reservation': '📅', 'trip': '🧳', 'destination': '📍', 'guide': '🧭',
+  'visa': '📄', 'currency': '💱', 'luggage': '🧳', 'boarding pass': '🎫', 'customs': '🛃',
+  'delay': '⏳', 'souvenir': '🎁', 'adventure': '🗺️', 'journey': '🧭', 'check-in': '🏨',
+
+  // Technology
+  'phone': '📱', 'computer': '💻', 'internet': '🌐', 'message': '💬', 'website': '🌐',
+  'application': '📲', 'camera': '📷', 'screen': '🖥️', 'battery': '🔋', 'password': '🔑',
+  'keyboard': '⌨️', 'mouse': '🖱️', 'printer': '🖨️', 'wifi': '📶', 'charger': '🔌',
+  'social media': '📲', 'video call': '📹', 'software': '💿',
+
+  // Activities extra
+  'listen to music': '🎧', 'watch tv': '📺', 'draw': '🎨', 'cook': '👨‍🍳', 'swim': '🏊',
+  'play guitar': '🎸', 'take photos': '📸', 'write': '✍️', 'paint': '🎨',
+  'watch a film': '🎬', 'chat with friends': '💬',
 };
 
 /**
@@ -66,4 +159,15 @@ export function getTkEmoji(word) {
   if (!word?.en) return '📖';
   const key = word.en.toLowerCase().trim();
   return TK_EMOJI[key] || '📖';
+}
+
+/**
+ * Like getTkEmoji but returns '' (no icon) when there is no good match,
+ * so normal vocab cards don't all show a generic book fallback.
+ */
+export function getVocabIcon(word) {
+  if (word?.icon) return word.icon;
+  if (!word?.en) return '';
+  const key = word.en.toLowerCase().trim();
+  return TK_EMOJI[key] || '';
 }
