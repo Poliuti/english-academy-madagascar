@@ -136,7 +136,24 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   transition: border-color .15s;
 }
 .modal-input:focus { border-color: var(--primary); }
-.modal-actions { display: flex; gap: 12px; justify-content: center; }
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.modal-actions .btn-secondary,
+.modal-actions .btn-primary,
+.modal-actions .btn-danger {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 220px;
+  font-size: .9rem;
+  padding: 10px 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* ─── PROFILE PAGE ──────────────────────────────────────────────────────────── */
 .profile-page {
@@ -1447,14 +1464,21 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.2));
 }
 
-/* PIN input: large digits, centered */
+/* PIN input: digits, centered */
 .pin-input {
-  font-size: 2rem !important;
-  letter-spacing: .4em !important;
+  font-size: 1.5rem !important;
+  letter-spacing: .18em !important;
   text-align: center !important;
-  font-weight: 900 !important;
-  max-width: 160px;
-  margin: 0 auto;
+  font-weight: 700 !important;
+  max-width: 200px;
+  margin: 0 auto 20px;
+  box-sizing: border-box;
+}
+.pin-input::placeholder {
+  font-size: 1rem !important;
+  letter-spacing: .05em !important;
+  font-weight: 500 !important;
+  opacity: .5;
 }
 
 /* Restore error message */
