@@ -3344,28 +3344,26 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   font-style: italic;
 }
 
-/* ─── Dashboard footer link ──────────────────────────────────────────────── */
-.dash-footer-links {
+/* ─── Dashboard MG review button ─────────────────────────────────────────── */
+.dash-mgreview-btn {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 24px 0 8px;
-  border-top: 1px solid var(--border, #e5e7eb);
-  margin-top: 32px;
-}
-.dash-footer-link {
+  gap: 6px;
+  width: 100%;
+  margin: 12px 0 4px;
+  padding: 11px 16px;
   background: none;
-  border: none;
-  color: var(--text-muted, #9ca3af);
-  font-size: 0.78rem;
+  border: 1.5px dashed var(--primary, #22c55e);
+  border-radius: var(--radius, 12px);
+  color: var(--primary-dark, #16a34a);
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 20px;
-  transition: color 0.2s, background 0.2s;
-  letter-spacing: 0.01em;
+  transition: background 0.18s, border-color 0.18s;
 }
-.dash-footer-link:hover {
-  color: var(--primary, #22c55e);
-  background: var(--surface2, #f0fdf4);
+.dash-mgreview-btn:hover {
+  background: var(--primary-light, #f0fdf4);
 }
 
 /* ─── MgReviewUser page ──────────────────────────────────────────────────── */

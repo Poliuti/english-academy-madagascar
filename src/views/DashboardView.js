@@ -170,18 +170,15 @@ export function renderDashboard() {
         <span class="assessment-arrow">›</span>
       </div>
 
+      <!-- Translation review link -->
+      <button class="dash-mgreview-btn" id="btn-mgreview">
+        🌿 Améliorer les traductions malgaches
+      </button>
 
       <!-- Learning Path -->
       <h2 class="section-title">📍 Mon Parcours</h2>
       <div class="learning-path" id="learning-path">
         ${renderLearningPath(profile)}
-      </div>
-
-      <!-- Discrete footer link for translation review -->
-      <div class="dash-footer-links">
-        <button class="dash-footer-link" id="btn-mgreview" title="Améliorer les traductions malgaches">
-          🌿 Améliorer les traductions
-        </button>
       </div>
 
     </div>
