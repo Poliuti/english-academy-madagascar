@@ -65,9 +65,9 @@ export function renderProfileSelector() {
       <div class="modal-backdrop"></div>
       <div class="modal-box">
         <div class="choice-header">☁️</div>
-        <h3>Sauvegarder dans le cloud ?</h3>
-        <p>Choisis un code PIN à 4 chiffres pour retrouver ton profil sur n'importe quel appareil.</p>
-        <p class="modal-sub">🇲🇬 <em>Asio kaody 4 isa hahazoanao ny profilinao amin'ny fitaovana hafa.</em></p>
+        <h3>Crée ton code PIN</h3>
+        <p>Choisis un code PIN à 4 chiffres : il protège l'accès à ton profil et permet de le retrouver sur n'importe quel appareil.</p>
+        <p class="modal-sub">🇲🇬 <em>Asio kaody 4 isa hiarovana sy hahazoanao ny profilinao amin'ny fitaovana hafa.</em></p>
         <input
           type="text"
           id="cloud-pin-input"
@@ -132,6 +132,32 @@ export function renderProfileSelector() {
           <button class="btn-primary"   id="btn-do-restore">
             <span id="restore-btn-text">☁️ Récupérer</span>
           </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: login PIN (personal access) -->
+    <div id="login-pin-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-box">
+        <div class="choice-header">🔒</div>
+        <h3>Bonjour <span class="login-name"></span> !</h3>
+        <p>Entre ton code PIN pour accéder à ton profil.</p>
+        <p class="modal-sub">🇲🇬 <em>Soraty ny kaodinao hidirana.</em></p>
+        <input
+          type="password"
+          id="login-pin-input"
+          class="modal-input pin-input"
+          placeholder="••••"
+          maxlength="4"
+          inputmode="numeric"
+          pattern="[0-9]{4}"
+          autocomplete="off"
+        />
+        <div id="login-pin-error" class="restore-error hidden">❌ Code incorrect.</div>
+        <div class="modal-actions">
+          <button class="btn-secondary" id="btn-cancel-login">Annuler</button>
+          <button class="btn-primary"   id="btn-do-login">Entrer</button>
         </div>
       </div>
     </div>
@@ -218,8 +244,13 @@ function bindEvents(container, { cloudEnabled, getPendingId, setPendingId }) {
       return;
     }
     if (card) {
-      setActiveProfile(card.dataset.id);
-      location.hash = '#dashboard';
+      const profile = getProfiles().find(p => p.id === card.dataset.id);
+      if (profile && profile.cloudPin) {
+        showLoginPin(container, profile);
+      } else {
+        setActiveProfile(card.dataset.id);
+        location.hash = '#dashboard';
+      }
     }
   });
 
@@ -377,6 +408,41 @@ function showAssessmentChoice(container, profileId) {
   const modal    = container.querySelector('#assessment-choice-modal');
   modal.querySelector('.choice-name').textContent = profile?.name || '';
   modal.classList.remove('hidden');
+}
+
+function showLoginPin(container, profile) {
+  const modal = container.querySelector('#login-pin-modal');
+  const input = container.querySelector('#login-pin-input');
+  const errEl = container.querySelector('#login-pin-error');
+  modal.querySelector('.login-name').textContent = profile.name || '';
+  input.value = '';
+  errEl.classList.add('hidden');
+  modal.classList.remove('hidden');
+  setTimeout(() => input.focus(), 50);
+
+  // Digits only
+  input.oninput = e => { e.target.value = e.target.value.replace(/\D/g, ''); };
+
+  const close = () => { modal.classList.add('hidden'); input.value = ''; errEl.classList.add('hidden'); };
+  const submit = () => {
+    const val = (input.value || '').trim();
+    if (val === String(profile.cloudPin)) {
+      close();
+      setActiveProfile(profile.id);
+      location.hash = '#dashboard';
+    } else {
+      errEl.classList.remove('hidden');
+      input.classList.add('shake');
+      setTimeout(() => input.classList.remove('shake'), 400);
+      input.value = '';
+      input.focus();
+    }
+  };
+
+  container.querySelector('#btn-cancel-login').onclick = close;
+  container.querySelector('#login-pin-modal .modal-backdrop').onclick = close;
+  container.querySelector('#btn-do-login').onclick = submit;
+  input.onkeydown = e => { if (e.key === 'Enter') submit(); };
 }
 
 function showDeleteConfirm(container, profileId) {

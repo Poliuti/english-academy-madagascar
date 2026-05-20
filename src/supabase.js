@@ -1,9 +1,15 @@
 // src/supabase.js — Cloud sync via Supabase (optional, graceful degradation)
-import { SUPABASE_URL, SUPABASE_KEY } from './config.js';
+//
+// Sécurité :
+//  - Le PIN n'est JAMAIS envoyé ni stocké en clair. On envoie un hash
+//    SHA-256 de (APP_SALT + name + pin).
+//  - L'accès à la table `profiles` est verrouillé (RLS) ; le client passe
+//    par des fonctions RPC SECURITY DEFINER qui exigent name + pin_hash.
+//    => La clé anon seule ne permet PAS de lire/écraser les profils.
+import { SUPABASE_URL, SUPABASE_KEY, APP_SALT } from './config.js';
 
-let _client     = null;
-let _initDone   = false;
-let _initPromise = null;
+let _client      = null;
+let _initPromise  = null;
 
 export function isConfigured() {
   return !!(SUPABASE_URL && SUPABASE_KEY);
@@ -17,10 +23,8 @@ export async function getClient() {
 
   _initPromise = (async () => {
     try {
-      // Import from CDN — works with vanilla ES modules, no build step needed
       const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
       _client = createClient(SUPABASE_URL, SUPABASE_KEY);
-      _initDone = true;
       return _client;
     } catch (e) {
       console.warn('[Supabase] SDK load failed:', e.message);
@@ -31,12 +35,19 @@ export async function getClient() {
   return _initPromise;
 }
 
+// ─── PIN hashing (SHA-256, Web Crypto) ───────────────────────────────────────
+async function hashPin(name, pin) {
+  const raw = `${APP_SALT}|${(name || '').trim().toLowerCase()}|${(pin || '').trim()}`;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
 // ─── Public API ───────────────────────────────────────────────────────────────
 
 /**
- * Upload a local profile to the cloud.
+ * Upload a local profile to the cloud (insert or update).
  * The profile must have .cloudPin set (4-digit string).
- * Uses UPSERT so it also works as an update.
+ * A row can only be overwritten if the PIN hash matches (server-side check).
  * Returns true on success, false on error.
  */
 export async function pushProfile(profile) {
@@ -45,16 +56,13 @@ export async function pushProfile(profile) {
   if (!client) return false;
 
   try {
-    const { error } = await client.from('profiles').upsert(
-      {
-        id:         profile.id,
-        name:       profile.name,
-        pin:        profile.cloudPin,
-        data:       profile,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: 'id' }
-    );
+    const pinHash = await hashPin(profile.name, profile.cloudPin);
+    const { error } = await client.rpc('upsert_profile', {
+      p_id:       profile.id,
+      p_name:     (profile.name || '').trim(),
+      p_pin_hash: pinHash,
+      p_data:     profile,
+    });
     if (error) { console.warn('[Supabase] Push error:', error.message); return false; }
     return true;
   } catch (e) {
@@ -72,15 +80,13 @@ export async function fetchProfile(name, pin) {
   if (!client) return null;
 
   try {
-    const { data, error } = await client
-      .from('profiles')
-      .select('data, updated_at')
-      .eq('name', name.trim())
-      .eq('pin', pin.trim())
-      .maybeSingle();
-
+    const pinHash = await hashPin(name, pin);
+    const { data, error } = await client.rpc('get_profile', {
+      p_name:     (name || '').trim(),
+      p_pin_hash: pinHash,
+    });
     if (error || !data) return null;
-    return data.data;  // the full profile JSON
+    return data; // the full profile JSON
   } catch (e) {
     console.warn('[Supabase] Fetch failed:', e.message);
     return null;
@@ -88,14 +94,23 @@ export async function fetchProfile(name, pin) {
 }
 
 /**
- * Delete a profile from the cloud (called when deleting locally + PIN known).
+ * Delete a profile from the cloud. Requires the matching PIN hash so a
+ * malicious client cannot delete arbitrary profiles.
+ * Accepts the full profile object (needs .id, .name, .cloudPin).
  */
-export async function deleteCloudProfile(id) {
+export async function deleteCloudProfile(profile) {
+  if (!profile?.cloudPin) return;
   const client = await getClient();
   if (!client) return;
   try {
-    await client.from('profiles').delete().eq('id', id);
-  } catch {}
+    const pinHash = await hashPin(profile.name, profile.cloudPin);
+    await client.rpc('delete_profile', {
+      p_id:       profile.id,
+      p_pin_hash: pinHash,
+    });
+  } catch (e) {
+    console.warn('[Supabase] Delete failed:', e.message);
+  }
 }
 
 // ─── Debounced auto-sync ─────────────────────────────────────────────────────

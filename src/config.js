@@ -27,6 +27,11 @@
 export const SUPABASE_URL = '';   // ex: 'https://abcdefgh.supabase.co'
 export const SUPABASE_KEY = '';   // clé "anon public" (safe à exposer côté client)
 
+// Sel applicatif pour le hachage du PIN (le PIN n'est JAMAIS stocké en clair).
+// Vous pouvez changer cette chaîne, mais une fois en production NE LA CHANGEZ
+// PLUS (sinon les anciens PIN ne correspondront plus). Ce n'est pas un secret.
+export const APP_SALT = 'eam-mg-2024-v1';
+
 // ─── FEATURE FLAGS ────────────────────────────────────────────────────────────
 // Imposta su TRUE per abilitare la modalità competitiva multiplayer,
 // FALSE per nasconderla completamente dall'interfaccia.

@@ -88,8 +88,8 @@ export function deleteProfile(profileId) {
     data.activeProfileId = data.profiles[0]?.id || null;
   }
   save(data);
-  // Remove from cloud if it was synced
-  if (profile?.cloudPin) deleteCloudProfile(profileId).catch(() => {});
+  // Remove from cloud if it was synced (pass full profile: needs name + PIN)
+  if (profile?.cloudPin) deleteCloudProfile(profile).catch(() => {});
 }
 
 // ─── PROFILE UPDATES ─────────────────────────────────────────────────────────
