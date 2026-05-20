@@ -3319,3 +3319,117 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   padding: 16px;
   font-style: italic;
 }
+
+/* ─── Dashboard footer link ──────────────────────────────────────────────── */
+.dash-footer-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 8px;
+  border-top: 1px solid var(--border, #e5e7eb);
+  margin-top: 32px;
+}
+.dash-footer-link {
+  background: none;
+  border: none;
+  color: var(--text-muted, #9ca3af);
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.01em;
+}
+.dash-footer-link:hover {
+  color: var(--primary, #22c55e);
+  background: var(--surface2, #f0fdf4);
+}
+
+/* ─── MgReviewUser page ──────────────────────────────────────────────────── */
+.mgreview-intro {
+  max-width: 640px;
+  margin: 0 auto 20px;
+  padding: 0 16px;
+  color: var(--text-secondary, #555);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.mgreview-count {
+  font-weight: 600;
+  color: var(--primary, #22c55e);
+  margin-top: 8px;
+}
+.mgreview-list {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mgreview-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.mgreview-langs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+.mgreview-en { color: var(--text-primary, #111); }
+.mgreview-fr { color: var(--text-secondary, #555); }
+.mgreview-current {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+  color: var(--text-secondary, #555);
+  margin-bottom: 12px;
+}
+.mgreview-badge {
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.mgreview-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.mgreview-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid var(--border, #d1d5db);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: var(--input-bg, #f9fafb);
+  color: var(--text-primary, #111);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.mgreview-input:focus {
+  border-color: var(--primary, #22c55e);
+  box-shadow: 0 0 0 2px rgba(34,197,94,.15);
+}
+.mgreview-submit {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+}
+.mgreview-thanks {
+  font-size: 0.88rem;
+  color: var(--primary-dark, #16a34a);
+  font-weight: 600;
+  padding: 6px 0;
+}

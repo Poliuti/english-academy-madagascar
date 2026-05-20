@@ -177,11 +177,21 @@ export function renderDashboard() {
         ${renderLearningPath(profile)}
       </div>
 
+      <!-- Discrete footer link for translation review -->
+      <div class="dash-footer-links">
+        <button class="dash-footer-link" id="btn-mgreview" title="Améliorer les traductions malgaches">
+          🌿 Améliorer les traductions
+        </button>
+      </div>
+
     </div>
   `;
 
   container.querySelector('#btn-profiles').addEventListener('click', () => {
     location.hash = '#profiles';
+  });
+  container.querySelector('#btn-mgreview').addEventListener('click', () => {
+    location.hash = '#mgreview';
   });
   container.querySelector('#btn-stats').addEventListener('click', () => {
     location.hash = '#stats';
