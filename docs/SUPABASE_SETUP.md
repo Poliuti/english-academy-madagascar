@@ -110,16 +110,65 @@ Puis `commit` + `push` + déploiement Vercel.
 ## Étape 5 — Empêcher la mise en pause (keep-alive)
 
 Les projets gratuits se mettent en pause après **7 jours sans activité**.
-Un workflow GitHub Actions (`.github/workflows/keepalive.yml`, déjà inclus)
-fait une micro-requête tous les 3 jours pour garder le projet actif.
+On ajoute un workflow GitHub Actions qui fait une micro-requête tous les
+3 jours pour garder le projet actif.
 
-Pour l'activer, ajouter 2 secrets dans le dépôt GitHub :
+### 5a. Créer le fichier du workflow
+
+1. Aller sur GitHub → le dépôt **english-academy-madagascar**
+2. Cliquer **Add file** → **Create new file**
+3. Comme nom de fichier, taper exactement : `.github/workflows/keepalive.yml`
+   (les `/` créent automatiquement les dossiers)
+4. Coller exactement ce contenu :
+
+```yaml
+name: Supabase keep-alive
+
+on:
+  schedule:
+    - cron: '17 6 */3 * *'   # toutes les ~72 h (06:17 UTC)
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase RPC (get_profile dummy)
+        run: |
+          if [ -z "${{ secrets.SUPABASE_URL }}" ] || [ -z "${{ secrets.SUPABASE_ANON_KEY }}" ]; then
+            echo "Secrets non configurés — keep-alive ignoré."
+            exit 0
+          fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/rpc/get_profile" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{"p_name":"__keepalive__","p_pin_hash":"__none__"}')
+          echo "HTTP $code"
+          if [ "$code" = "200" ] || [ "$code" = "404" ] || [ "$code" = "204" ]; then
+            echo "Supabase actif ✅"
+          else
+            echo "Réponse inattendue ($code) — vérifier la config."
+            exit 1
+          fi
+```
+
+5. En bas de page : **Commit new file** (sur la branche `main`).
+
+### 5b. Ajouter les secrets GitHub
 
 1. GitHub → le dépôt → **Settings** → **Secrets and variables** →
    **Actions** → **New repository secret**
-2. Créer :
-   - `SUPABASE_URL` = votre Project URL
-   - `SUPABASE_ANON_KEY` = votre clé anon public
+2. Créer deux secrets :
+   - **Name** `SUPABASE_URL` — **Secret** votre Project URL
+   - **Name** `SUPABASE_ANON_KEY` — **Secret** votre clé anon public
+
+### 5c. Tester immédiatement (facultatif)
+
+1. GitHub → **Actions** → cliquer le workflow *Supabase keep-alive*
+2. À droite : **Run workflow** → confirmer
+3. Si tout est bon, le job se termine en vert ✅
 
 C'est tout : le projet ne se mettra plus en pause.
 
