@@ -9,3 +9,6 @@ node_modules/
 voices.bin
 
 .vercel
+
+# Documenti locali — non pushare online
+CODEBASE_GUIDE.md
