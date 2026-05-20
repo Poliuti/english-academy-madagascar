@@ -24,8 +24,8 @@
 // Si laissé vide, l'app fonctionne normalement en mode local (localStorage).
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const SUPABASE_URL = '';   // ex: 'https://abcdefgh.supabase.co'
-export const SUPABASE_KEY = '';   // clé "anon public" (safe à exposer côté client)
+export const SUPABASE_URL = 'https://xsfyzmytzlqfqlzqdqxq.supabase.co';   // ex: 'https://abcdefgh.supabase.co'
+export const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhzZnl6bXl0emxxZnFsenFkcXhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkyMzEzMTQsImV4cCI6MjA5NDgwNzMxNH0.VMTV7J47FW2Wh7O8MDBWoAsAX7PrX-7QPIf6apb0cPM';        // clé "anon public" (safe à exposer côté client)
 
 // Sel applicatif pour le hachage du PIN (le PIN n'est JAMAIS stocké en clair).
 // Vous pouvez changer cette chaîne, mais une fois en production NE LA CHANGEZ
