@@ -1,21 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40">
-  <!-- Union Jack — simplified but recognisable -->
-  <!-- Blue background -->
-  <rect width="60" height="40" fill="#012169" rx="5"/>
+  <defs>
+    <!-- clip ai bordi arrotondati della bandiera -->
+    <clipPath id="flag-clip">
+      <rect width="60" height="40" rx="5" ry="5"/>
+    </clipPath>
+  </defs>
 
-  <!-- White diagonals (St Andrew) -->
-  <line x1="0" y1="0"  x2="60" y2="40" stroke="#fff" stroke-width="10"/>
-  <line x1="60" y1="0" x2="0"  y2="40" stroke="#fff" stroke-width="10"/>
+  <g clip-path="url(#flag-clip)">
+    <!-- sfondo blu -->
+    <rect width="60" height="40" fill="#012169"/>
 
-  <!-- Red diagonals (St Patrick) — offset halves -->
-  <polygon points="0,0 8,0 60,36 60,40 52,40 0,4" fill="#C8102E"/>
-  <polygon points="60,0 52,0 0,36 0,40 8,40 60,4" fill="#C8102E"/>
+    <!-- diagonali bianche (croce di Sant'Andrea) -->
+    <line x1="0" y1="0"  x2="60" y2="40" stroke="#fff" stroke-width="12"/>
+    <line x1="60" y1="0" x2="0"  y2="40" stroke="#fff" stroke-width="12"/>
 
-  <!-- White cross (St George) -->
-  <rect x="23" y="0" width="14" height="40" fill="#fff"/>
-  <rect x="0" y="13" width="60" height="14" fill="#fff"/>
+    <!-- diagonali rosse offset (croce di San Patrizio) -->
+    <line x1="0" y1="0"  x2="60" y2="40" stroke="#C8102E" stroke-width="4"/>
+    <line x1="60" y1="0" x2="0"  y2="40" stroke="#C8102E" stroke-width="4"/>
 
-  <!-- Red cross (St George) -->
-  <rect x="25" y="0" width="10" height="40" fill="#C8102E"/>
-  <rect x="0" y="15" width="60" height="10" fill="#C8102E"/>
+    <!-- croce bianca verticale/orizzontale (San Giorgio) -->
+    <rect x="22" y="0"  width="16" height="40" fill="#fff"/>
+    <rect x="0"  y="12" width="60" height="16" fill="#fff"/>
+
+    <!-- croce rossa (San Giorgio) -->
+    <rect x="25" y="0"  width="10" height="40" fill="#C8102E"/>
+    <rect x="0"  y="15" width="60" height="10" fill="#C8102E"/>
+  </g>
+
+  <!-- bordo sottile -->
+  <rect width="60" height="40" rx="5" ry="5" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"/>
 </svg>
