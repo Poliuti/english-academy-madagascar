@@ -47,18 +47,27 @@ body {
   background: var(--bg);
 }
 .splash-icon { font-size: 4rem; animation: bounce 1s infinite; display: flex; align-items: center; justify-content: center; }
-.splash-en-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-  color: #fff;
-  font-size: 2.6rem;
-  font-weight: 900;
-  padding: .12em .45em;
-  border-radius: 20px;
-  letter-spacing: .10em;
-  box-shadow: 0 6px 28px rgba(99, 102, 241, .45);
-  font-family: var(--font);
-  user-select: none;
+.splash-mascot {
+  position: relative;
+  width: 110px;
+  height: 120px;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+.splash-lemur {
+  width: 110px;
+  height: 110px;
+  display: block;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,.18));
+}
+.splash-flag {
+  position: absolute;
+  bottom: 0;
+  right: -14px;
+  width: 44px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.30);
+  border: 1.5px solid rgba(255,255,255,.6);
 }
 .splash h1 { font-size: 1.8rem; font-weight: 900; color: var(--primary-dark); }
 .splash p  { color: var(--text-muted); }
