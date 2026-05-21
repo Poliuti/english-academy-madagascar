@@ -46,7 +46,20 @@ body {
   min-height: 100vh; gap: 12px;
   background: var(--bg);
 }
-.splash-icon { font-size: 4rem; animation: bounce 1s infinite; }
+.splash-icon { font-size: 4rem; animation: bounce 1s infinite; display: flex; align-items: center; justify-content: center; }
+.splash-en-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 900;
+  padding: .12em .45em;
+  border-radius: 20px;
+  letter-spacing: .10em;
+  box-shadow: 0 6px 28px rgba(99, 102, 241, .45);
+  font-family: var(--font);
+  user-select: none;
+}
 .splash h1 { font-size: 1.8rem; font-weight: 900; color: var(--primary-dark); }
 .splash p  { color: var(--text-muted); }
 @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
