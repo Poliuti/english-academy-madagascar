@@ -2,29 +2,53 @@ name: Supabase keep-alive
 
 on:
   schedule:
-    - cron: '17 6 */3 * *'
-  workflow_dispatch:
+    - cron: '17 6 */3 * *'   # ogni 3 giorni alle 06:17 UTC
+  workflow_dispatch:           # esecuzione manuale dalla UI GitHub
 
 jobs:
   ping:
     runs-on: ubuntu-latest
+
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+
     steps:
-      - name: Ping Supabase RPC (get_profile dummy)
+      - name: Ping Supabase RPC (keep-alive)
         run: |
-          if [ -z "${{ secrets.SUPABASE_URL }}" ] || [ -z "${{ secrets.SUPABASE_ANON_KEY }}" ]; then
-            echo "Secrets non configurés — keep-alive ignoré."
+          # Se i secrets non sono configurati, esci silenziosamente
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "⚠️  Secrets SUPABASE_URL / SUPABASE_ANON_KEY non configurati."
+            echo "    Vai su: Settings → Secrets and variables → Actions"
             exit 0
           fi
-          code=$(curl -s -o /dev/null -w "%{http_code}" \
-            -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/rpc/get_profile" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+
+          echo "→ Ping a: $SUPABASE_URL"
+
+          # || true evita che curl exit-code != 0 interrompa lo script (-e)
+          http_code=$(curl -s -o /dev/null -w "%{http_code}" \
+            --max-time 20 \
+            -X POST "$SUPABASE_URL/rest/v1/rpc/get_profile" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
             -H "Content-Type: application/json" \
-            -d '{"p_name":"__keepalive__","p_pin_hash":"__none__"}')
-          echo "HTTP $code"
-          if [ "$code" = "200" ] || [ "$code" = "404" ] || [ "$code" = "204" ]; then
-            echo "Supabase actif ✅"
-          else
-            echo "Réponse inattendue ($code) — vérifier la config."
-            exit 1
-          fi
+            -d '{"p_name":"__keepalive__","p_pin_hash":"__none__"}' \
+            2>/dev/null) || http_code="CURL_ERROR"
+
+          echo "← HTTP $http_code"
+
+          case "$http_code" in
+            200|204|400|404|422)
+              # Tutti questi codici significano che Supabase risponde → è attivo
+              echo "✅ Supabase attivo (HTTP $http_code)"
+              ;;
+            CURL_ERROR)
+              echo "❌ Impossibile raggiungere Supabase."
+              echo "   Il progetto potrebbe essere in pausa — riattivarlo manualmente su app.supabase.com"
+              exit 1
+              ;;
+            *)
+              echo "⚠️  Risposta inattesa: $http_code"
+              exit 1
+              ;;
+          esac
