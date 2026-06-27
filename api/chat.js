@@ -51,7 +51,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model:       'llama-3.1-8b-instant',  // fast + free Groq model
+        model:       'openai/gpt-oss-20b',  // fast + free Groq model (replaces deprecated llama-3.1-8b-instant)
         messages,
         max_tokens:  600,
         temperature: 0.4,

@@ -129,7 +129,7 @@ export function renderTutor() {
       if (res.ok) {
         _mode = 'groq';
         setStatus('online', '🟢 Tutor IA en ligne (Groq)');
-        setInfo('Propulsé par <strong>Groq</strong> (llama-3.1-8b-instant) · Cloud · Gratuit');
+        setInfo('Propulsé par <strong>Groq</strong> (GPT OSS 20B) · Cloud · Gratuit');
       } else {
         const errBody = await res.json().catch(() => ({}));
         setStatus('warn', `⚠️ Groq erreur ${res.status}`);
