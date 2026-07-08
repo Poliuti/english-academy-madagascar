@@ -1391,8 +1391,18 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .results-next-lv { width: 100%; margin-bottom: 8px; }
 
 /* ─── VOCAB: game buttons + icon ────────────────────────────────────────────── */
-.vocab-game-btns { display: flex; gap: 10px; flex-shrink: 0; }
+.vocab-game-btns { display: flex; gap: 10px; flex-shrink: 0; align-items: center; }
 .vocab-icon { font-size: 1.6rem; line-height: 1; }
+
+.quiz-diff-toggle {
+  display: flex; gap: 2px; background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 2px;
+}
+.quiz-diff-opt {
+  border: none; background: transparent; border-radius: 18px; padding: 5px 10px;
+  font-size: .75rem; font-weight: 700; color: var(--text-light); cursor: pointer;
+}
+.quiz-diff-opt.active { background: var(--primary); color: #fff; }
 
 /* ─── MATCH GAME ─────────────────────────────────────────────────────────────── */
 .match-wrap {

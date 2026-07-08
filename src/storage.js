@@ -27,6 +27,17 @@ export function setExcludeAudio(value) {
   localStorage.setItem(EXCLUDE_AUDIO_KEY, value ? '1' : '0');
 }
 
+const QUIZ_DIFFICULTY_KEY = 'ea_quiz_difficulty';
+
+/** Vocabulary quiz difficulty: 'easy' (random distractors) or 'hard' (similar/confusable distractors). */
+export function getQuizDifficulty() {
+  return localStorage.getItem(QUIZ_DIFFICULTY_KEY) === 'hard' ? 'hard' : 'easy';
+}
+
+export function setQuizDifficulty(value) {
+  localStorage.setItem(QUIZ_DIFFICULTY_KEY, value === 'hard' ? 'hard' : 'easy');
+}
+
 // ─── PROFILES ────────────────────────────────────────────────────────────────
 
 export function getProfiles() {

@@ -1,7 +1,7 @@
 import { VOCAB_CATEGORIES, VOCABULARY } from '../data/vocabulary.js';
 import { speak } from '../tts.js';
 import { getActiveProfile } from '../storage.js';
-import { saveVocabSM2, getVocabSM2Map } from '../storage.js';
+import { saveVocabSM2, getVocabSM2Map, getQuizDifficulty, setQuizDifficulty } from '../storage.js';
 import { calculateNextReview, isDue } from '../sm2.js';
 import {
   getVoteData, castVote, submitProposal,
@@ -39,6 +39,7 @@ export function renderVocabulary(categoryId) {
   let quizAnswered = false;
   let quizChoice = null;        // index (0–3) of the chosen option
   let quizCurrentOptions = [];  // [{fr, isCorrect}] for current question
+  let quizDifficulty = getQuizDifficulty(); // 'easy' | 'hard'
   // Spell state
   let spellMode = false;
   let spellDeck = [];
@@ -165,24 +166,57 @@ export function renderVocabulary(categoryId) {
     render();
   }
 
+  // Levenshtein edit distance — used to rank "hard" distractors by orthographic
+  // closeness to the correct answer (harder to eliminate at a glance than a
+  // wildly different random word).
+  function editDistance(a, b) {
+    const m = a.length, n = b.length;
+    const dp = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        dp[i][j] = a[i-1] === b[j-1]
+          ? dp[i-1][j-1]
+          : 1 + Math.min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1]);
+      }
+    }
+    return dp[m][n];
+  }
+
+  // Pick the 3 closest (most confusable) candidates by string length + edit
+  // distance to the correct answer, instead of pure random — makes the
+  // "Avancé" quiz genuinely harder instead of trivially eliminable options.
+  function pickDistractors(candidates, correctStr, getStr) {
+    if (quizDifficulty !== 'hard') {
+      return candidates.sort(() => Math.random() - 0.5).slice(0, 3);
+    }
+    const correct = correctStr.toLowerCase();
+    const scored = candidates.map(c => {
+      const s = getStr(c).toLowerCase();
+      const lenDiff = Math.abs(s.length - correct.length);
+      return { c, score: lenDiff * 3 + editDistance(correct, s) };
+    });
+    scored.sort((a, b) => a.score - b.score);
+    // Add slight shuffle among close-scoring candidates so it's not 100% deterministic
+    const pool = scored.slice(0, Math.min(6, scored.length));
+    return pool.sort(() => Math.random() - 0.5).slice(0, 3).map(x => x.c);
+  }
+
   function genQuizOptions(idx) {
     const word = quizDeck[idx];
     const allWords = VOCABULARY[current] || [];
     if (targetLang === 'mg') {
-      const wrong = allWords
-        .filter(w => w.en !== word.en && w.mg)
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3);
+      const candidates = allWords.filter(w => w.en !== word.en && w.mg);
+      const correctMg = resolveMg(vocabKey(current, word.en), word.mg);
+      const wrong = pickDistractors(candidates, correctMg, w => resolveMg(vocabKey(current, w.en), w.mg));
       quizCurrentOptions = [
-        { fr: resolveMg(vocabKey(current, word.en), word.mg), isCorrect: true, lang: 'mg' },
+        { fr: correctMg, isCorrect: true, lang: 'mg' },
         ...wrong.map(w => ({ fr: resolveMg(vocabKey(current, w.en), w.mg), isCorrect: false, lang: 'mg' })),
       ].sort(() => Math.random() - 0.5);
       return;
     }
-    const wrong = allWords
-      .filter(w => w.en !== word.en)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
+    const candidates = allWords.filter(w => w.en !== word.en);
+    const wrong = pickDistractors(candidates, word.fr, w => w.fr);
     quizCurrentOptions = [
       { fr: word.fr, isCorrect: true, lang: 'fr' },
       ...wrong.map(w => ({ fr: w.fr, isCorrect: false, lang: 'fr' })),
@@ -872,6 +906,14 @@ export function renderVocabulary(categoryId) {
   function bindQuizStart() {
     const btn = container.querySelector('#btn-quiz-start');
     if (btn) btn.addEventListener('click', startQuiz);
+    container.querySelectorAll('.quiz-diff-opt').forEach(b => {
+      b.addEventListener('click', () => {
+        quizDifficulty = b.dataset.diff;
+        setQuizDifficulty(quizDifficulty);
+        container.querySelectorAll('.quiz-diff-opt').forEach(x =>
+          x.classList.toggle('active', x.dataset.diff === quizDifficulty));
+      });
+    });
   }
 
   function bindSpellStart() {
@@ -961,6 +1003,10 @@ function renderCategory(catId, search, sm2Stats = { total:0, seen:0, known:0, so
             <button class="btn-primary flash-start-btn" id="btn-flash-start" title="Mode Flashcards">🃏 Flashcards</button>
             <button class="btn-secondary match-start-btn" id="btn-match-start" title="Jeu de mémorisation">🔀 Match</button>
             <button class="btn-secondary quiz-start-btn" id="btn-quiz-start" title="Quiz QCM">🧠 Quiz</button>
+            <div class="quiz-diff-toggle" id="quiz-diff-toggle" title="Difficulté du Quiz QCM">
+              <button class="quiz-diff-opt ${getQuizDifficulty() === 'easy' ? 'active' : ''}" data-diff="easy">🟢 Facile</button>
+              <button class="quiz-diff-opt ${getQuizDifficulty() === 'hard' ? 'active' : ''}" data-diff="hard">🔴 Avancé</button>
+            </div>
             <button class="btn-secondary spell-start-btn" id="btn-spell-start" title="Écrire le mot">✏️ Écrire</button>
             ${sm2Stats.due > 0 ? `<button class="btn-review-start" id="btn-review-start" title="Révision du jour">🔄 Révision <span class="review-due-count">${sm2Stats.due}</span></button>` : ''}
           </div>
