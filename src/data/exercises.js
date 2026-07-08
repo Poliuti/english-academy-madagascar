@@ -4349,7 +4349,8 @@ exercises.pastPerfect.push(
    instruction:"Trouvez et corrigez l'erreur.",
    sentence:'I found my keys after I looked everywhere.',
    answer:'I found my keys after I had looked everywhere.',
-   hint:"'after' indique qu'une action est antérieure → Past Perfect",explanation:'Quand l\'ordre chronologique des actions doit être clarifié, on utilise le Past Perfect pour la première action.'}
+   acceptedAnswers:['I found my keys after I looked everywhere.'],
+   hint:"'after' indique qu'une action est antérieure → Past Perfect",explanation:'Avec "after", le Past Perfect est possible mais pas obligatoire : l\'ordre chronologique est déjà clair grâce à "after". Les deux formes sont correctes.'}
 );
 
 // ── presentContinuous L2 (10-12) ─────────────────────────────

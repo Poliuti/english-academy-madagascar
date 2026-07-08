@@ -55,15 +55,22 @@ answer key locks in a single resolution.
 | ta30 | 874 | We are rarely angry never. | We are rarely angry. | We are never angry. | The double adverb can be fixed by dropping either "rarely" or "never"; both grammatical. |
 | ta03 | 784 | I go sometimes to the market. | I sometimes go to the market. | I go to the market sometimes. | End-position "sometimes" is valid; only mid-position and fronted forms are accepted. |
 
-## Related (not counted): questionable "errors" with no unique fix
+## Related (reviewed separately): questionable "errors" with no unique fix
 
 A few exercises mark a stylistic/pedagogical preference as the only error, where the
-original sentence is arguably already grammatical, so the "corrected" answer and a
-minimally-changed learner answer can both be defensible. These are a slightly different
-class from the v31 ambiguity but worth a second look:
+original sentence is arguably already grammatical. Reviewed individually:
 
-- **gt_3_01** (line 5745): "It will rain soon." is flagged wrong in favour of "It is going to rain soon." — `will` for predictions is grammatical.
-- **ppt_3_12** (line 4348): "I found my keys after I looked everywhere." is flagged wrong in favour of the past perfect; the all-past-simple original is perfectly acceptable English.
+- **gt_3_01** (line 5747): "Look at those dark clouds! It will rain soon." flagged wrong
+  in favour of "It is going to rain soon." — **kept as-is**. This is a standard, widely
+  taught ESL contrast (the same "dark clouds" example appears in Murphy's *English
+  Grammar in Use*, Unit 19): with visible present evidence, "going to" is the textbook
+  target form. Not a bug — it's the intended teaching point.
+- **ppt_3_12** (line 4348): "I found my keys after I looked everywhere." flagged wrong
+  in favour of the Past Perfect version — **fixed**. With "after"/"before", the
+  chronological order is already clear from the connector, so the Past Perfect is
+  optional, not required (Swan, *Practical English Usage*). Added the unmodified
+  sentence to `acceptedAnswers` and updated the explanation to note both forms are
+  correct.
 
 ## Summary
 
