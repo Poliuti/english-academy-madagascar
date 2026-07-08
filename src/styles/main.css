@@ -1361,6 +1361,14 @@ button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .level-card-badge { font-size: .8rem; background: #FEF9C3; color: #92400E; border-radius: 10px; padding: 2px 8px; font-weight: 700; }
 .level-card-lock-msg { font-size: .75rem; color: var(--text-muted); font-style: italic; }
 
+.exclude-audio-toggle {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 22px; padding: 10px 16px;
+  font-size: .85rem; font-weight: 600; color: var(--text-light);
+  cursor: pointer; user-select: none;
+}
+.exclude-audio-toggle input { width: 17px; height: 17px; cursor: pointer; accent-color: var(--primary); }
+
 /* ─── LEVEL DOTS on topic cards ─────────────────────────────────────────────── */
 .lv-dots { display: flex; gap: 5px; margin-top: 4px; }
 .lv-dot { font-size: .7rem; cursor: default; }

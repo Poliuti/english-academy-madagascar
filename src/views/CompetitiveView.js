@@ -1,6 +1,7 @@
 import { getExercisesByTopic, getExercisesByLevel, GRAMMAR_TOPICS } from '../data/exercises.js';
 import { VOCABULARY, VOCAB_CATEGORIES } from '../data/vocabulary.js';
 import { speak } from '../tts.js';
+import { getExcludeAudio, setExcludeAudio } from '../storage.js';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // HELPERS
@@ -225,7 +226,7 @@ function checkAnswerText(ex, userAnswer) {
   const norm = normalise(userAnswer);
   if (!norm) return false;
   if (ex.type === 'vocab-match') {
-    return checkVariants(ex.en, norm) || checkVariants(ex.fr, norm);
+    return ex.direction === 'fr-to-en' ? checkVariants(ex.en, norm) : checkVariants(ex.fr, norm);
   }
   if (ex.answer) {
     if (normalise(ex.answer) === norm) return true;
@@ -432,6 +433,14 @@ export function renderCompetitive() {
             </div>
           </div>
 
+          <!-- Accessibility -->
+          <div class="comp-section">
+            <label class="exclude-audio-toggle">
+              <input type="checkbox" id="comp-exclude-audio-checkbox" ${getExcludeAudio() ? 'checked' : ''}/>
+              🔇 Exclure les exercices audio
+            </label>
+          </div>
+
           <button class="comp-start-btn" id="btn-start">🎮 Commencer la partie !</button>
           <div class="comp-start-error" id="start-error"></div>
         </div>
@@ -493,6 +502,10 @@ export function renderCompetitive() {
       if (el) el.addEventListener('input', () => { playerNames[i] = el.value; });
     });
 
+    container.querySelector('#comp-exclude-audio-checkbox').addEventListener('change', e => {
+      setExcludeAudio(e.target.checked);
+    });
+
     container.querySelector('#btn-start').addEventListener('click', startGame);
   }
 
@@ -520,6 +533,8 @@ export function renderCompetitive() {
     } else {
       pool = buildMixedPool(difficulty);
     }
+
+    if (getExcludeAudio()) pool = pool.filter(ex => ex.type !== 'listening');
 
     if (pool.length === 0) {
       container.querySelector('#start-error').textContent = '⚠️ Aucun exercice disponible pour cette sélection.';
@@ -678,6 +693,7 @@ export function renderCompetitive() {
       questionText = escHtml(ex.french || '');
     } else if (ex.type === 'error-correct') {
       questionText = `Corrigez la phrase : <em>${escHtml(ex.sentence)}</em>`;
+      instruction = `${instruction} <br><span class="comp-q-hint">✍️ Réécrivez la phrase entière, corrigée</span>`;
     } else if (ex.type === 'word-order') {
       questionText = `<em>${escHtml(shuffle([...(ex.words||[])]).join(' / '))}</em>`;
       instruction = 'Remettez les mots dans le bon ordre.';
@@ -744,9 +760,14 @@ export function renderCompetitive() {
 
   function renderAnswerResult(ex) {
     const correct = lastCorrect;
-    const answer = ex.mode === 'mcq'
-      ? ex.correct
-      : (ex.answer || ex.fr || ex.en || '');
+    let answer;
+    if (ex.mode === 'mcq') {
+      answer = ex.correct;
+    } else if (ex.type === 'vocab-match') {
+      answer = ex.direction === 'fr-to-en' ? ex.en : ex.fr;
+    } else {
+      answer = ex.answer || '';
+    }
     return `
       <div class="comp-result ${correct ? 'correct' : 'wrong'}">
         <div class="comp-result-icon">${correct ? '✅' : '⏱️'}</div>

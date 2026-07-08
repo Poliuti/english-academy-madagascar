@@ -1,5 +1,6 @@
 import { getActiveProfile, addXP, updateStreak, saveTopicProgress, saveSM2, saveSession,
-         saveLevelProgress, getLevelScore, isLevelUnlocked, setProfileLevel } from '../storage.js';
+         saveLevelProgress, getLevelScore, isLevelUnlocked, setProfileLevel,
+         getExcludeAudio, setExcludeAudio } from '../storage.js';
 import { getExercisesByTopic, getExercisesByLevel } from '../data/exercises.js';
 import { assessmentExercises } from '../data/exercises.js';
 import { TOPICS, getTopicById } from '../data/topics.js';
@@ -162,11 +163,19 @@ function renderLevelPicker(container, topicId, mode, profile) {
           `;
         }).join('')}
       </div>
+      <label class="exclude-audio-toggle">
+        <input type="checkbox" id="exclude-audio-checkbox" ${getExcludeAudio() ? 'checked' : ''}/>
+        🔇 Exclure les exercices audio
+      </label>
     </div>
   `;
 
   container.querySelector('#btn-back').addEventListener('click', () => {
     location.hash = '#dashboard';
+  });
+
+  container.querySelector('#exclude-audio-checkbox').addEventListener('change', e => {
+    setExcludeAudio(e.target.checked);
   });
 
   container.querySelectorAll('.level-card:not([disabled])').forEach(btn => {
@@ -185,12 +194,15 @@ function loadExercises(topicId, mode, profile, diffLevel) {
   let pool;
   if (mode === 'assessment') {
     // Return ALL assessment questions – never apply SESSION_SIZE slice
-    return [...assessmentExercises];
+    pool = [...assessmentExercises];
+    return getExcludeAudio() ? pool.filter(ex => ex.type !== 'listening') : pool;
   } else if (diffLevel) {
     pool = getExercisesByLevel(topicId, diffLevel);
   } else {
     pool = getExercisesByTopic(topicId);
   }
+
+  if (getExcludeAudio()) pool = pool.filter(ex => ex.type !== 'listening');
 
   const sm2Map = profile.sm2Items || {};
   const sorted = sortByPriority(pool, sm2Map);
@@ -359,7 +371,7 @@ function renderQuestion(ex) {
       <div class="ex-question error-q">
         <p class="error-label">❌ Phrase incorrecte :</p>
         <p class="error-sentence">"${escHtml(ex.sentence)}"</p>
-        <p class="error-task">Écris la version correcte ↓</p>
+        <p class="error-task">✍️ Réécris la phrase entière, corrigée ↓</p>
       </div>
     `;
   }

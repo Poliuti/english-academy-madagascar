@@ -14,6 +14,19 @@ function save(data) {
   localStorage.setItem(STORE_KEY, JSON.stringify(data));
 }
 
+// ─── PREFERENCES ─────────────────────────────────────────────────────────────
+
+const EXCLUDE_AUDIO_KEY = 'ea_exclude_audio';
+
+/** Whether the user wants to skip audio/listening exercises (accessibility). */
+export function getExcludeAudio() {
+  return localStorage.getItem(EXCLUDE_AUDIO_KEY) === '1';
+}
+
+export function setExcludeAudio(value) {
+  localStorage.setItem(EXCLUDE_AUDIO_KEY, value ? '1' : '0');
+}
+
 // ─── PROFILES ────────────────────────────────────────────────────────────────
 
 export function getProfiles() {
