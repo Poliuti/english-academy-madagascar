@@ -26,6 +26,7 @@ function normalise(s) {
     .normalize('NFD').replace(/[̀-ͯ]/g, '') // é→e, à→a, ç→c, ê→e…
     .replace(/œ/g, 'oe').replace(/Œ/g, 'oe') // œ/Œ
     .replace(/æ/g, 'ae').replace(/Æ/g, 'ae') // æ/Æ
+    .replace(/[—–-]/g, ' ') // dashes/hyphens → space
     .replace(/[.,!?;:'"()\[\]]/g, '')
     .replace(/\s+/g, ' ');
 }

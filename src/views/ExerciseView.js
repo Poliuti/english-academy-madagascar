@@ -966,6 +966,8 @@ const SYNONYMS = [
   // ── Missing British/American spelling variants ────────────────────────────
   ['grey',              'gray'],
   ['gray',              'grey'],
+  ['cancelled',         'canceled'],
+  ['canceled',          'cancelled'],
   ['apologise',         'apologize'],
   ['apologize',         'apologise'],
   ['apologised',        'apologized'],
@@ -1012,6 +1014,7 @@ function checkAnswer(raw, ex) {
     // Ligature normalisation: œ/æ ↔ oe/ae
     .replace(/œ/g, 'oe').replace(/Œ/g, 'oe')
     .replace(/æ/g, 'ae').replace(/Æ/g, 'ae')
+    .replace(/[—–-]/g, ' ')     // dashes/hyphens → space (inaudible in dictation; "twenty-five" ≈ "twenty five")
     .replace(/[.!?,;:]/g, '')   // strip punctuation
     .replace(/\s+/g, ' ')
     .trim()
