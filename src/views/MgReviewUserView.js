@@ -1,6 +1,6 @@
 // Page utilisateur pour proposer des corrections aux traductions malgaches [À VÉRIFIER]
 import { VOCABULARY } from '../data/vocabulary.js';
-import { hasMarker, stripMarker, vocabKey, submitProposal, getVoteData } from '../mgReview.js';
+import { hasMarker, stripMarker, vocabKey, submitProposal, getVoteData, castVote } from '../mgReview.js';
 import { getActiveProfile } from '../storage.js';
 
 function escHtml(str) {
@@ -36,13 +36,40 @@ export function renderMgReviewUser() {
   const profileId = profile?.id || 'anonymous';
   const items    = collectFlaggedItems();
 
-  // Track submitted keys in this session
+  // Track submitted/confirmed keys in this session
   const submitted = new Set();
+  const confirmed = new Set();
 
   function renderItem(item) {
     const vd = getVoteData(item.key);
     const alreadyProposed = vd.proposals.some(p => p.profileId === profileId);
+    const alreadyVoted = vd.hasVoted(profileId);
     const wasJustSubmitted = submitted.has(item.key);
+    const wasJustConfirmed = confirmed.has(item.key);
+
+    let bodyHtml;
+    if (wasJustSubmitted || alreadyProposed) {
+      bodyHtml = `<div class="mgreview-thanks">✅ Merci — ta suggestion sera examinée par un enseignant.</div>`;
+    } else if (wasJustConfirmed || alreadyVoted) {
+      bodyHtml = `<div class="mgreview-thanks">👍 Merci d'avoir confirmé cette traduction !</div>`;
+    } else {
+      bodyHtml = `
+        <button class="btn-secondary mgreview-confirm" data-key="${escHtml(item.key)}">
+          👍 Cette traduction est correcte
+        </button>
+        <div class="mgreview-form">
+          <input
+            type="text"
+            class="mgreview-input"
+            data-key="${escHtml(item.key)}"
+            placeholder="Propose une meilleure traduction malgache…"
+            autocomplete="off"
+          />
+          <button class="btn-primary mgreview-submit" data-key="${escHtml(item.key)}">
+            ✉️ Soumettre
+          </button>
+        </div>`;
+    }
 
     return `
       <div class="mgreview-card" data-key="${escHtml(item.key)}" id="card-${escHtml(item.key)}">
@@ -54,21 +81,7 @@ export function renderMgReviewUser() {
           🇲🇬 Traduction actuelle : <em>${escHtml(item.mg)}</em>
           <span class="mgreview-badge">À vérifier</span>
         </div>
-        ${wasJustSubmitted || alreadyProposed
-          ? `<div class="mgreview-thanks">✅ Merci — ta suggestion sera examinée par un enseignant.</div>`
-          : `<div class="mgreview-form">
-               <input
-                 type="text"
-                 class="mgreview-input"
-                 data-key="${escHtml(item.key)}"
-                 placeholder="Propose une meilleure traduction malgache…"
-                 autocomplete="off"
-               />
-               <button class="btn-primary mgreview-submit" data-key="${escHtml(item.key)}">
-                 ✉️ Soumettre
-               </button>
-             </div>`
-        }
+        ${bodyHtml}
       </div>
     `;
   }
@@ -83,7 +96,8 @@ export function renderMgReviewUser() {
 
       <div class="mgreview-intro">
         <p>Ces traductions malgaches sont marquées <strong>« À vérifier »</strong>.
-           Si tu connais une meilleure version, propose-la ci-dessous —
+           Si elles te semblent correctes, confirme-le. Si tu connais une
+           meilleure version, propose-la ci-dessous —
            un enseignant l'examinera avant de l'appliquer.</p>
         <p class="mgreview-count">${items.length} traduction${items.length > 1 ? 's' : ''} à vérifier</p>
       </div>
@@ -99,6 +113,31 @@ export function renderMgReviewUser() {
     // Back button
     container.querySelector('#btn-back').addEventListener('click', () => {
       location.hash = '#dashboard';
+    });
+
+    // Confirm buttons ("this translation is correct")
+    container.querySelectorAll('.mgreview-confirm').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key  = btn.dataset.key;
+        const item = items.find(i => i.key === key);
+        castVote(key, profileId, 'up', {
+          originalMg: item?.mg || '',
+          contextEn:  item?.en || '',
+          contextFr:  item?.fr || '',
+        });
+
+        confirmed.add(key);
+
+        const card = container.querySelector(`#card-${CSS.escape(key)}`);
+        if (card) {
+          const confirmBtn = card.querySelector('.mgreview-confirm');
+          const form = card.querySelector('.mgreview-form');
+          confirmBtn?.remove();
+          if (form) {
+            form.outerHTML = `<div class="mgreview-thanks">👍 Merci d'avoir confirmé cette traduction !</div>`;
+          }
+        }
+      });
     });
 
     // Submit buttons
